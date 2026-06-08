@@ -4,6 +4,8 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Exo_2 } from "next/font/google";
+import {IBM_Plex_Sans} from "next/font/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || "https://connectec.app"),
@@ -28,6 +30,21 @@ export const metadata: Metadata = {
   },
 };
 
+const exo2 = Exo_2({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable:"--font-exo2",
+  display: "swap",
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-ibm",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,7 +67,7 @@ export default function RootLayout({
         {/* End Google Tag Manager */}
       </head>
       <body
-        className={` bg-white relative
+        className={`${exo2.variable} ${ibmPlexSans.variable} bg-white relative
        antialiased`}
       >
         {/* GTM NoScript */}
