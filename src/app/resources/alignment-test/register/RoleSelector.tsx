@@ -76,6 +76,16 @@ export function RoleSelector({
   // const mode = searchParams.get("mode") || "single";
   // const phase = searchParams.get("phase") || "uncertainty";
 
+  // time stamp
+
+  const [registerStartTime, setRegisterStartTime] = useState<number | null>(null);
+const [registerEndTime, setRegisterEndTime] = useState<number | null>(null);
+
+const [otpStartTime, setOtpStartTime] = useState<number | null>(null);
+const [otpEndTime, setOtpEndTime] = useState<number | null>(null);
+
+// time stamp end
+
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
@@ -132,6 +142,11 @@ export function RoleSelector({
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
+//  time stamp   
+
+const startTime = Date.now();
+  setRegisterStartTime(startTime);
+
     setError("");
 
     if (!selectedRole) {
@@ -160,6 +175,20 @@ export function RoleSelector({
     formData.append("role", selectedRole);
 
     const res = await registerUserAction(formData);
+
+    // time stamp
+      const endTime = Date.now();
+    setRegisterEndTime(endTime);
+
+    console.log("Register Start:", new Date(startTime).toISOString());
+    console.log("Register End:", new Date(endTime).toISOString());
+    console.log(
+      "Register Duration:",
+      ((endTime - startTime) / 1000).toFixed(2),
+      "seconds"
+    );
+
+
 
     if (res.error) {
       setError(res.error);
@@ -200,10 +229,27 @@ export function RoleSelector({
 
     if (!userId || !selectedRole || otpString.length !== 6) return;
 
+    // time stapm
+      const startTime = Date.now();
+  setOtpStartTime(startTime);
+
+
     setVerifyLoading(true);
     setError("");
 
     const res = await verifyOtpAction(userId, otpString);
+
+// time stamp
+    const endTime = Date.now();
+    setOtpEndTime(endTime);
+
+    console.log("OTP Verify Start:", new Date(startTime).toISOString());
+    console.log("OTP Verify End:", new Date(endTime).toISOString());
+    console.log(
+      "OTP Verify Duration:",
+      ((endTime - startTime) / 1000).toFixed(2),
+      "seconds"
+    );
 
     if (res.error) {
       setError(res.error);

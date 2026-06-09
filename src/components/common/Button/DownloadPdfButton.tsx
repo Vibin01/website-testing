@@ -16,6 +16,7 @@ export default function DownloadPdfButton({
   const [loading, setLoading] = useState(false);
 
   const handleDownload = async () => {
+     const start = performance.now();
     try {
       setLoading(true);
 
@@ -55,6 +56,14 @@ export default function DownloadPdfButton({
       console.error("DOWNLOAD ERROR:", error);
       alert("PDF download failed");
     } finally {
+      // time stamp
+       const end = performance.now();
+       console.log("PDF Generated At:", new Date().toISOString());
+    console.log(
+      "PDF Generation Time:",
+      ((end - start) / 1000).toFixed(2),
+      "seconds"
+    );
       setLoading(false);
     }
   };

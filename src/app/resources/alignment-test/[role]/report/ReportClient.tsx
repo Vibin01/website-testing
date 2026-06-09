@@ -791,6 +791,12 @@ function OverallReport({
 }
 
 export default function ReportClient({ role }: { role: Role }) {
+
+  // time stamp
+
+  const [reportLoadTime, setReportLoadTime] =
+  useState<number | null>(null);
+
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -811,12 +817,29 @@ export default function ReportClient({ role }: { role: Role }) {
 
   useEffect(() => {
     async function loadReport() {
+
+      // time stamp
+
+      const start = performance.now();
+
       try {
         const res = await getReportAction({
           role: role as any,
           mode,
           phase,
         });
+
+        // time stamp 
+
+            const end = performance.now();
+
+    setReportLoadTime(end - start);
+
+console.log(
+  "Report Load Time:",
+  ((end - start) / 1000).toFixed(2),
+  "seconds"
+);
 
         if (res?.success) {
           setReport(res.report);

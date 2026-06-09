@@ -21,8 +21,6 @@ import {
 } from "@/server/actions/assignment-action";
 import Image from "next/image";
 
-
-
 type Role = "candidate" | "recruiter" | "employer";
 type Mode = "single" | "full";
 
@@ -71,7 +69,7 @@ const questionMap = {
 };
 
 function mergeUniqueAnswers(answers: AnswerRecord[]) {
-  const map = new Map<string , AnswerRecord>();
+  const map = new Map<string, AnswerRecord>();
 
   for (const answer of answers) {
     map.set(answer.questionId, answer);
@@ -91,6 +89,12 @@ export default function AssessmentTestClient({
 }) {
   const router = useRouter();
 
+  // time stamp
+
+  const [pageLoadStart] = useState(() => performance.now());
+const [pageLoadTime, setPageLoadTime] = useState<number | null>(null);
+const [submitTime, setSubmitTime] = useState<number | null>(null);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -105,15 +109,17 @@ export default function AssessmentTestClient({
 
   useEffect(() => {
     async function init() {
+      // time stamp
+      const start = performance.now();
       setLoading(true);
 
-const [status, journey] = await Promise.all([
-  getAssessmentStatusAction(role as any),
-  startAssessmentJourneyAction({
-    role: role as any,
-    mode,
-  }),
-]);
+      const [status, journey] = await Promise.all([
+        getAssessmentStatusAction(role as any),
+        startAssessmentJourneyAction({
+          role: role as any,
+          mode,
+        }),
+      ]);
       if (status.success) {
         const reports = (status.phaseReports || {}) as Record<string, any>;
 
@@ -141,15 +147,21 @@ const [status, journey] = await Promise.all([
       }
 
       setAnswers([]);
-setQuestionIndex(0);
+      setQuestionIndex(0);
 
-const selectedPhaseIndex = phases.findIndex(
-  (item) => item.key === phase
-);
+      const selectedPhaseIndex = phases.findIndex((item) => item.key === phase);
 
-setPhaseIndex(selectedPhaseIndex >= 0 ? selectedPhaseIndex : 0);
+      setPhaseIndex(selectedPhaseIndex >= 0 ? selectedPhaseIndex : 0);
 
-setLoading(false);
+      setLoading(false);
+
+      // time stamp
+        const end = performance.now();
+  const duration = end - start;
+
+  setPageLoadTime(duration);
+
+  console.log("Assessment Page Load Time:", duration.toFixed(2), "ms");
     }
 
     init();
@@ -164,19 +176,14 @@ setLoading(false);
   }, [mode, completedPhases]);
 
   useEffect(() => {
-  if (mode === "full" && availablePhases.length === 0) {
-    if (phaseReports && Object.keys(phaseReports).length >= 5) {
-      router.replace(
-        `/resources/alignment-test/${role}/report?mode=full`
-      );
-    } else {
-      router.replace(
-        `/resources/alignment-test/${role}?mode=full`
-      );
+    if (mode === "full" && availablePhases.length === 0) {
+      if (phaseReports && Object.keys(phaseReports).length >= 5) {
+        router.replace(`/resources/alignment-test/${role}/report?mode=full`);
+      } else {
+        router.replace(`/resources/alignment-test/${role}?mode=full`);
+      }
     }
-  }
-}, [mode, availablePhases, phaseReports, role, router]);
-
+  }, [mode, availablePhases, phaseReports, role, router]);
 
   const currentPhase =
     availablePhases[Math.min(phaseIndex, availablePhases.length - 1)];
@@ -187,28 +194,22 @@ setLoading(false);
   }, [role, currentPhase]);
 
   const currentQuestion = questions[questionIndex];
-useEffect(() => {
-  if (!currentQuestion) return;
+  useEffect(() => {
+    if (!currentQuestion) return;
 
-  const allAnswers = [
-    ...answers,
-    ...Object.values(phaseReports).flatMap(
-      (report: any) => report?.answers || []
-    ),
-  ];
+    const allAnswers = [
+      ...answers,
+      ...Object.values(phaseReports).flatMap(
+        (report: any) => report?.answers || [],
+      ),
+    ];
 
-  const existingAnswer = allAnswers.find(
-    (a) => a.questionId === currentQuestion.id
-  );
+    const existingAnswer = allAnswers.find(
+      (a) => a.questionId === currentQuestion.id,
+    );
 
-  setSelectedOption(existingAnswer?.selectedOption || "");
-}, [
-  questionIndex,
-  phaseIndex,
-  currentQuestion,
-  answers,
-  phaseReports,
-]);
+    setSelectedOption(existingAnswer?.selectedOption || "");
+  }, [questionIndex, phaseIndex, currentQuestion, answers, phaseReports]);
 
   const isFirstQuestion = questionIndex === 0;
   const isLastQuestion = questionIndex === questions.length - 1;
@@ -249,266 +250,268 @@ useEffect(() => {
   const [situationTitle, situationDescription = ""] =
     currentQuestion.situation.split("\n\n");
 
+  const handleBack = () => {
+    // Previous question in same phase
+    if (questionIndex > 0) {
+      const prevQuestionIndex = questionIndex - 1;
+      const prevQuestion = questions[prevQuestionIndex];
 
-const handleBack = () => {
-  // Previous question in same phase
-  if (questionIndex > 0) {
-    const prevQuestionIndex = questionIndex - 1;
-    const prevQuestion = questions[prevQuestionIndex];
+      const allAnswers = [
+        ...answers,
+        ...Object.values(phaseReports).flatMap(
+          (report: any) => report?.answers || [],
+        ),
+      ];
 
-    const allAnswers = [
-      ...answers,
-      ...Object.values(phaseReports).flatMap(
-        (report: any) => report?.answers || []
-      ),
-    ];
+      const previousAnswer = allAnswers.find(
+        (a) => a.questionId === prevQuestion.id,
+      );
 
-    const previousAnswer = allAnswers.find(
-      (a) => a.questionId === prevQuestion.id
-    );
+      setQuestionIndex(prevQuestionIndex);
+      setSelectedOption(previousAnswer?.selectedOption || "");
 
-    setQuestionIndex(prevQuestionIndex);
-    setSelectedOption(previousAnswer?.selectedOption || "");
+      return;
+    }
 
-    return;
-  }
+    // Previous phase
+    if (mode === "full" && phaseIndex > 0) {
+      const prevPhaseIndex = phaseIndex - 1;
+      const prevPhase = availablePhases[prevPhaseIndex];
 
-  // Previous phase
-  if (mode === "full" && phaseIndex > 0) {
-    const prevPhaseIndex = phaseIndex - 1;
-    const prevPhase = availablePhases[prevPhaseIndex];
+      const prevQuestions = questionMap[role].filter(
+        (q) => q.phase === prevPhase.key,
+      );
 
-    const prevQuestions = questionMap[role].filter(
-      (q) => q.phase === prevPhase.key
-    );
+      const lastQuestion = prevQuestions[prevQuestions.length - 1];
 
-    const lastQuestion = prevQuestions[prevQuestions.length - 1];
+      const allAnswers = [
+        ...answers,
+        ...Object.values(phaseReports).flatMap(
+          (report: any) => report?.answers || [],
+        ),
+      ];
 
-    const allAnswers = [
-      ...answers,
-      ...Object.values(phaseReports).flatMap(
-        (report: any) => report?.answers || []
-      ),
-    ];
+      const previousAnswer = allAnswers.find(
+        (a) => a.questionId === lastQuestion.id,
+      );
 
-    const previousAnswer = allAnswers.find(
-      (a) => a.questionId === lastQuestion.id
-    );
+      setPhaseIndex(prevPhaseIndex);
+      setQuestionIndex(prevQuestions.length - 1);
+      setSelectedOption(previousAnswer?.selectedOption || "");
 
-    setPhaseIndex(prevPhaseIndex);
-    setQuestionIndex(prevQuestions.length - 1);
-    setSelectedOption(previousAnswer?.selectedOption || "");
-
-    return;
-  }
-};
-
-const handleNext = async () => {
-  if (!selectedOption) {
-    setError("Please select an option before continuing.");
-    return;
-  }
-
-  if (!journeyId) {
-    setError("Assessment journey not started. Please refresh.");
-    return;
-  }
-
-  setError("");
-
-  const optionKey =
-    selectedOption as keyof typeof currentQuestion.options;
-
-  const option =
-    currentQuestion.options[optionKey];
-// console.log(currentQuestion);
-// console.log(currentQuestion.id);
-// console.log(candidateQuestions[0])
-
-  const newAnswer: AnswerRecord = {
-    questionId: currentQuestion.id,
-    phase: currentQuestion.phase,
-    selectedOption: optionKey,
-    tendency: option.tendency,
-    situation: currentQuestion.situation,
-    answerText: option.text,
+      return;
+    }
   };
 
-  const updatedAnswers = mergeUniqueAnswers([
-    ...answers,
-    newAnswer,
-  ]);
-
-  setAnswers(updatedAnswers);
-
-  // Move to next question
-  if (questionIndex < questions.length - 1) {
-    setQuestionIndex((prev) => prev + 1);
-    return;
-  }
-
-  // Save phase and move to next phase
-  if (
-    mode === "full" &&
-    isLastQuestion &&
-    !isLastPhase
-  ) {
-    const phaseAnswers = updatedAnswers.filter(
-      (a) => a.phase === currentPhase.key
-    );
-
-    const phaseReport = buildPhaseReport(
-      currentPhase.key,
-      phaseAnswers
-    );
-
-    const save = await completeAssessmentAction({
-      journeyId,
-      phase: currentPhase.key,
-      answers: phaseAnswers,
-      report: phaseReport,
-    });
-
-    if (save.error) {
-      setError(save.error);
+  const handleNext = async () => {
+    if (!selectedOption) {
+      setError("Please select an option before continuing.");
       return;
     }
 
-    setPhaseReports((prev) => ({
-      ...prev,
-      [currentPhase.key]: phaseReport,
-    }));
-
-    setPhaseIndex((prev) => prev + 1);
-    setQuestionIndex(0);
-    setSelectedOption("");
-
-    return;
-  }
-
-  // SINGLE MODE SUBMIT
-  if (mode === "single") {
-    const report = buildPhaseReport(
-      currentPhase.key,
-      updatedAnswers
-    );
-
-    const save = await completeAssessmentAction({
-      journeyId,
-      phase: currentPhase.key,
-      answers: updatedAnswers,
-      report,
-    });
-
-    if (save.error) {
-      setError(save.error);
+    if (!journeyId) {
+      setError("Assessment journey not started. Please refresh.");
       return;
     }
 
-    router.push(
-      `/resources/alignment-test/${role}/report?mode=single&phase=${currentPhase.key}`
+    setError("");
+
+    const optionKey = selectedOption as keyof typeof currentQuestion.options;
+
+    const option = currentQuestion.options[optionKey];
+    // console.log(currentQuestion);
+    // console.log(currentQuestion.id);
+    // console.log(candidateQuestions[0])
+
+    const newAnswer: AnswerRecord = {
+      questionId: currentQuestion.id,
+      phase: currentQuestion.phase,
+      selectedOption: optionKey,
+      tendency: option.tendency,
+      situation: currentQuestion.situation,
+      answerText: option.text,
+    };
+
+    const updatedAnswers = mergeUniqueAnswers([...answers, newAnswer]);
+
+    setAnswers(updatedAnswers);
+
+    // Move to next question
+    if (questionIndex < questions.length - 1) {
+      setQuestionIndex((prev) => prev + 1);
+      return;
+    }
+
+    // Save phase and move to next phase
+    if (mode === "full" && isLastQuestion && !isLastPhase) {
+      const phaseAnswers = updatedAnswers.filter(
+        (a) => a.phase === currentPhase.key,
+      );
+
+      const phaseReport = buildPhaseReport(currentPhase.key, phaseAnswers);
+
+      const save = await completeAssessmentAction({
+        journeyId,
+        phase: currentPhase.key,
+        answers: phaseAnswers,
+        report: phaseReport,
+      });
+
+      if (save.error) {
+        setError(save.error);
+        return;
+      }
+
+      setPhaseReports((prev) => ({
+        ...prev,
+        [currentPhase.key]: phaseReport,
+      }));
+
+      setPhaseIndex((prev) => prev + 1);
+      setQuestionIndex(0);
+      setSelectedOption("");
+
+      return;
+    }
+
+    // SINGLE MODE SUBMIT
+    if (mode === "single") {
+      // time stamp
+        const submitStart = performance.now();
+      const report = buildPhaseReport(currentPhase.key, updatedAnswers);
+
+      const save = await completeAssessmentAction({
+        journeyId,
+        phase: currentPhase.key,
+        answers: updatedAnswers,
+        report,
+      });
+
+      // time stamp
+
+  const submitEnd = performance.now();
+
+  const duration = submitEnd - submitStart;
+
+  setSubmitTime(duration);
+
+  console.log(
+    "Single Assessment Submit Time:",
+    duration.toFixed(2),
+    "ms"
+  );
+
+      if (save.error) {
+        setError(save.error);
+        return;
+      }
+
+      router.push(
+        `/resources/alignment-test/${role}/report?mode=single&phase=${currentPhase.key}`,
+      );
+
+      return;
+    }
+
+    // LAST PHASE OF FULL MODE
+
+    const currentPhaseAnswers = updatedAnswers.filter(
+      (a) => a.phase === currentPhase.key,
     );
 
-    return;
-  }
+    const currentPhaseReport = buildPhaseReport(
+      currentPhase.key,
+      currentPhaseAnswers,
+    );
 
-  // LAST PHASE OF FULL MODE
-
-  const currentPhaseAnswers = updatedAnswers.filter(
-    (a) => a.phase === currentPhase.key
-  );
-
-  const currentPhaseReport = buildPhaseReport(
-    currentPhase.key,
-    currentPhaseAnswers
-  );
-
-  await completeAssessmentAction({
-    journeyId,
-    phase: currentPhase.key,
-    answers: currentPhaseAnswers,
-    report: currentPhaseReport,
-  });
-
- const savedAnswers = Object.values(
-  phaseReports
-).flatMap(
-  (report: any) => report?.answers || []
-) as AnswerRecord[];
-
-// Merge all answers
-const allAnswers = mergeUniqueAnswers([
-  ...savedAnswers,
-  ...currentPhaseAnswers,
-]);
-
-// Remove duplicates by questionId
-const uniqueAnswers = Array.from(
-  new Map(
-    allAnswers.map((item) => [
-      item.questionId,
-      item,
-    ])
-  ).values()
-);
-
-  // VALIDATION
-const expectedCount = phases.length * 3;
-
-// Check total answers
-if (uniqueAnswers.length !== expectedCount) {
-  alert(
-    `Please answer all questions before submitting.\n\nAnswered: ${uniqueAnswers.length}/${expectedCount}`
-  );
-
-  return;
-}
-
-// Check phase-wise answers
-const incompletePhases = phases.filter((phase) => {
-  const count = uniqueAnswers.filter(
-    (a) => a.phase === phase.key
-  ).length;
-
-  return count !== 3;
-});
-
-if (incompletePhases.length > 0) {
-  alert(
-    `Please complete all questions.\n\nMissing phases:\n${incompletePhases
-      .map((p) => p.label)
-      .join("\n")}`
-  );
-
-  return;
-}
-
-  // console.log(
-  //   "Final Answers Count:",
-  //   allAnswers.length
-  // );
-
-  const overallReport = buildOverallReport(
-    role,
-    allAnswers
-  );
-
-  const saveOverall =
     await completeAssessmentAction({
+      journeyId,
+      phase: currentPhase.key,
+      answers: currentPhaseAnswers,
+      report: currentPhaseReport,
+    });
+
+    const savedAnswers = Object.values(phaseReports).flatMap(
+      (report: any) => report?.answers || [],
+    ) as AnswerRecord[];
+
+    // Merge all answers
+    const allAnswers = mergeUniqueAnswers([
+      ...savedAnswers,
+      ...currentPhaseAnswers,
+    ]);
+
+    // Remove duplicates by questionId
+    const uniqueAnswers = Array.from(
+      new Map(allAnswers.map((item) => [item.questionId, item])).values(),
+    );
+
+    // VALIDATION
+    const expectedCount = phases.length * 3;
+
+    // Check total answers
+    if (uniqueAnswers.length !== expectedCount) {
+      alert(
+        `Please answer all questions before submitting.\n\nAnswered: ${uniqueAnswers.length}/${expectedCount}`,
+      );
+
+      return;
+    }
+
+    // Check phase-wise answers
+    const incompletePhases = phases.filter((phase) => {
+      const count = uniqueAnswers.filter((a) => a.phase === phase.key).length;
+
+      return count !== 3;
+    });
+
+    if (incompletePhases.length > 0) {
+      alert(
+        `Please complete all questions.\n\nMissing phases:\n${incompletePhases
+          .map((p) => p.label)
+          .join("\n")}`,
+      );
+
+      return;
+    }
+
+    // console.log(
+    //   "Final Answers Count:",
+    //   allAnswers.length
+    // );
+
+    const overallReport = buildOverallReport(role, allAnswers);
+
+    //  time stamp 
+
+    const finalSubmitStart = performance.now();
+
+
+    const saveOverall = await completeAssessmentAction({
       journeyId,
       answers: allAnswers,
       report: overallReport,
     });
 
-  if (saveOverall.error) {
-    setError(saveOverall.error);
-    return;
-  }
+    if (saveOverall.error) {
+      setError(saveOverall.error);
+      return;
+    }
 
-  router.push(
-    `/resources/alignment-test/${role}/report?mode=full`
-  );
-};
+    //  time stamp 
+    const finalSubmitEnd = performance.now();
+
+const duration = finalSubmitEnd - finalSubmitStart;
+
+setSubmitTime(duration);
+
+console.log(
+  "Overall Assessment Submit Time:",
+  duration.toFixed(2),
+  "ms"
+);
+    router.push(`/resources/alignment-test/${role}/report?mode=full`);
+  };
   return (
     <section className="w-full px-[7%] py-[5%]">
       <div className="grid grid-cols-1 items-center gap-xl md:grid-cols-[0.25fr_1fr]">
@@ -532,8 +535,8 @@ if (incompletePhases.length > 0) {
                       <Image
                         src={iconSrc}
                         alt="status-icon"
-                          width={40}
-                          height={40}
+                        width={40}
+                        height={40}
                         className="size-iconsize-lg object-contain"
                       />
                     </div>
@@ -542,7 +545,7 @@ if (incompletePhases.length > 0) {
                         active ? "font-bold text-[#1B1C17]" : "text-[#9F9F9F]"
                       } ${completed ? "!text-[#1B1C17]" : ""}`}
                     >
-                      Situation {index + 1}  
+                      Situation {index + 1}
                     </p>
                   </div>
                 );
@@ -566,18 +569,17 @@ if (incompletePhases.length > 0) {
                       <Image
                         src={iconSrc}
                         alt="status-icon"
-                          width={40}
-                          height={40}
+                        width={40}
+                        height={40}
                         className="size-iconsize-lg object-contain"
                       />
-                      
                     </div>
                     <p
                       className={`text-center text-xl font-medium ${
                         active ? "font-bold text-[#1B1C17]" : "text-[#9F9F9F]"
                       } ${completed ? "!text-[#1B1C17]" : ""}`}
                     >
-                      {item.label} 
+                      {item.label}
                     </p>
                   </div>
                 );
@@ -587,8 +589,6 @@ if (incompletePhases.length > 0) {
         <main className="w-full">
           <div className="w-full">
             <div className="flex items-center gap-xs">
-              
-
               <div>
                 <h3 className="text-h5 font-bold text-[#1B1C17]">
                   {currentPhase.title}
@@ -614,7 +614,7 @@ if (incompletePhases.length > 0) {
 
             <div className="mt-md rounded-sm border border-[#DEEDFF] bg-white p-sm shadow-[0px_4px_40px_5px_#0668E11A]">
               <h3 className="text-base font-bold text-[#0668E1]">
-                {situationTitle}  
+                {situationTitle}
               </h3>
 
               <div className="my-sm border-t border-[#BBD7F8]" />
@@ -690,7 +690,9 @@ if (incompletePhases.length > 0) {
                 disabled={!selectedOption}
                 className={`flex h-[48px] cursor-pointer items-center gap-sm rounded-sm px-md text-xl font-medium text-white
                   ${
-                    !selectedOption?"cursor-not-allowed bg-gray-400":"bg-[#0668E1]"
+                    !selectedOption
+                      ? "cursor-not-allowed bg-gray-400"
+                      : "bg-[#0668E1]"
                   }
                   `}
               >
