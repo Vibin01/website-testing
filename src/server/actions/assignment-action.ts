@@ -3,7 +3,7 @@
 import prisma from "@/lib/db/prisma";
 import { verifySession } from "@/lib/security/tokens";
 import { Role } from "@prisma/client";
-import { AnswerRecord } from "@/domain/assessment/report-builder";
+import { AnswerRecord, buildOverallReport } from "@/domain/assessment/report-builder";
 
 type Mode = "single" | "full";
 
@@ -127,7 +127,7 @@ export async function completeAssessmentAction({
   answers,
   report,
 }: {
-  journeyId: string;
+  journeyId: number;
   phase?: string;
   answers: AnswerRecord[];
   report: any;
@@ -139,71 +139,172 @@ export async function completeAssessmentAction({
   }
 
   // phase report
-  if (
-    report.type === "phase" &&
-    phase
-  ) {
-    const result = report.result;
+if (
+  report.type === "phase" &&
+  phase
+) {
+  const result = report.result;
 
-    await prisma.phaseAttempt.upsert({
-      where: {
-        journeyId_phaseKey: {
-          journeyId,
-          phaseKey: phase,
-        },
-      },
-
-      create: {
+  await prisma.phaseAttempt.upsert({
+    where: {
+      journeyId_phaseKey: {
         journeyId,
         phaseKey: phase,
-
-        status: "COMPLETED",
-
-        responsesJson: answers,
-
-        dominantTendency:
-          result.dominantTendency,
-
-        secondaryTendency:
-          result.secondaryTendency,
-
-        dominanceRatio:
-          result.dominanceRatio,
-
-        percentage:
-          result.percentage,
-
-        band:
-          result.band,
-
-        mode:
-          result.mode,
-
-        reportJson:
-          report,
-
-        submittedAt:
-          new Date(),
       },
+    },
 
-      update: {
+    create: {
+      journeyId,
+      phaseKey: phase,
+
+      status: "COMPLETED",
+
+      responsesJson: answers,
+
+      dominantTendency:
+        result.dominantTendency,
+
+      secondaryTendency:
+        result.secondaryTendency,
+
+      dominanceRatio:
+        result.dominanceRatio,
+
+      percentage:
+        result.percentage,
+
+      band:
+        result.band,
+
+      mode:
+        result.mode,
+
+      reportJson:
+        report,
+
+      submittedAt:
+        new Date(),
+    },
+
+    update: {
+      status: "COMPLETED",
+
+      responsesJson:
+        answers,
+
+      reportJson:
+        report,
+
+      submittedAt:
+        new Date(),
+    },
+  });
+
+  // Check all completed phases
+  const completedPhases =
+    await prisma.phaseAttempt.findMany({
+      where: {
+        journeyId,
         status: "COMPLETED",
-
-        responsesJson:
-          answers,
-
-        reportJson:
-          report,
-
-        submittedAt:
-          new Date(),
       },
     });
 
-    return {
-      success: true,
-    };
+  // All 5 phases completed
+  if (completedPhases.length === 5) {
+    const existingOverall =
+      await prisma.overallReport.findUnique({
+        where: {
+          journeyId,
+        },
+      });
+
+    // Prevent duplicate overall report
+    if (!existingOverall) {
+      const allAnswers =
+        completedPhases.flatMap(
+          (item) =>
+            (item.responsesJson as AnswerRecord[]) || []
+        );
+
+      const journey =
+        await prisma.assessmentJourney.findUnique({
+          where: {
+            id: journeyId,
+          },
+          select: {
+            role: true,
+          },
+        });
+
+      if (journey) {
+        const overallReport =
+          buildOverallReport(
+            journey.role.toLowerCase(),
+            allAnswers
+          );
+
+        await prisma.overallReport.create({
+          data: {
+            journeyId,
+
+            templateVersion: "v1",
+
+            scoresJson:
+              overallReport.overall,
+
+            dominantTendency:
+              overallReport.overall
+                .dominantTendency,
+
+            secondaryTendency:
+              overallReport.overall
+                .secondaryTendency,
+
+            dominanceRatio:
+              overallReport.overall
+                .dominanceRatio,
+
+            percentage:
+              overallReport.overall
+                .percentage,
+
+            band:
+              overallReport.overall.band,
+
+            mode:
+              overallReport.overall.mode,
+
+            patternVectorJson: {},
+
+            alignmentHealthJson:
+              overallReport.health,
+
+            phaseSummaryJson:
+              overallReport.phaseResults,
+
+            reportJson:
+              overallReport,
+          },
+        });
+
+        await prisma.assessmentJourney.update({
+          where: {
+            id: journeyId,
+          },
+
+          data: {
+            status: "COMPLETED",
+            completedAt: new Date(),
+          },
+        });
+      }
+    }
   }
+
+  return {
+    success: true,
+  };
+}
 
   // overall report
   if (

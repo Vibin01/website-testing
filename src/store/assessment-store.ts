@@ -5,8 +5,8 @@ type Role = "candidate" | "recruiter" | "employer";
 type Mode = "single" | "full";
 
 type AssessmentStore = {
-  userId: string | null;
-  sessionId: string | null;
+  userId: number | null;
+  sessionId: number | string | null;
   role: Role | null;
   mode: Mode;
   phase: string;
@@ -16,8 +16,8 @@ type AssessmentStore = {
   overallReport: any | null;
   currentReport: any | null;
 
-  setUser: (userId: string) => void;
-  setSessionId: (sessionId: string) => void;
+  setUser: (userId: number) => void;
+  setSessionId: (sessionId: number | string) => void;
   setRoleModePhase: (role: Role, mode: Mode, phase: string) => void;
   setCompletedData: (data: {
     completedPhases: string[];

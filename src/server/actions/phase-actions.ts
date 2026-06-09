@@ -41,7 +41,10 @@ export async function savePhaseResponseAction(phaseKey: PhaseKey, response: Phas
   return { success: true };
 }
 
-export async function submitPhaseAction(phaseKey: PhaseKey, responsesMap: Record<string, string>) {
+export async function submitPhaseAction(
+  phaseKey: PhaseKey,
+  responsesMap: { [questionId: number]: string }
+) {
   const userId = await verifySession();
   if (!userId) return { error: "Unauthorized" };
 
@@ -50,7 +53,8 @@ export async function submitPhaseAction(phaseKey: PhaseKey, responsesMap: Record
   });
   if (!journey) return { error: "No active journey" };
 
-  const questionIds = Object.keys(responsesMap);
+  const questionIds = Object.keys(responsesMap).map(Number); 
+  
   if (questionIds.length !== 3) {
     return { error: "All 3 questions must be answered" };
   }

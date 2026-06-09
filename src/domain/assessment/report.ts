@@ -8,7 +8,7 @@ import { computeDominance } from "./scoring";
 import { computeAlignmentHealth } from "./alignment-health";
 
 export type AnswerRecord = {
-  questionId: string;
+  questionId: number;
   phase: PhaseKey;
   selectedOption: Option;
   tendency: Tendency;

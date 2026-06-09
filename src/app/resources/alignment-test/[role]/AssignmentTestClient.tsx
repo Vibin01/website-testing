@@ -71,7 +71,7 @@ const questionMap = {
 };
 
 function mergeUniqueAnswers(answers: AnswerRecord[]) {
-  const map = new Map<string, AnswerRecord>();
+  const map = new Map<string , AnswerRecord>();
 
   for (const answer of answers) {
     map.set(answer.questionId, answer);
@@ -94,13 +94,13 @@ export default function AssessmentTestClient({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const [journeyId, setJourneyId] = useState<string | null>(null);
+  const [journeyId, setJourneyId] = useState<number | null>(null);
   const [completedPhases, setCompletedPhases] = useState<string[]>([]);
   const [phaseReports, setPhaseReports] = useState<Record<string, any>>({});
 
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState<string | null>("");
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
 
   useEffect(() => {
@@ -135,8 +135,6 @@ const [status, journey] = await Promise.all([
           return;
         }
       }
-
-      
 
       if (journey.success) {
         setJourneyId(journey.journeyId);
@@ -189,16 +187,28 @@ setLoading(false);
   }, [role, currentPhase]);
 
   const currentQuestion = questions[questionIndex];
-
-  useEffect(() => {
+useEffect(() => {
   if (!currentQuestion) return;
 
-  const existingAnswer = answers.find(
-    (a) => a.questionId === currentQuestion.id,
+  const allAnswers = [
+    ...answers,
+    ...Object.values(phaseReports).flatMap(
+      (report: any) => report?.answers || []
+    ),
+  ];
+
+  const existingAnswer = allAnswers.find(
+    (a) => a.questionId === currentQuestion.id
   );
 
   setSelectedOption(existingAnswer?.selectedOption || "");
-}, [questionIndex, phaseIndex, currentQuestion, answers]);
+}, [
+  questionIndex,
+  phaseIndex,
+  currentQuestion,
+  answers,
+  phaseReports,
+]);
 
   const isFirstQuestion = questionIndex === 0;
   const isLastQuestion = questionIndex === questions.length - 1;
@@ -239,13 +249,22 @@ setLoading(false);
   const [situationTitle, situationDescription = ""] =
     currentQuestion.situation.split("\n\n");
 
+
 const handleBack = () => {
+  // Previous question in same phase
   if (questionIndex > 0) {
     const prevQuestionIndex = questionIndex - 1;
     const prevQuestion = questions[prevQuestionIndex];
 
-    const previousAnswer = answers.find(
-      (a) => a.questionId === prevQuestion.id,
+    const allAnswers = [
+      ...answers,
+      ...Object.values(phaseReports).flatMap(
+        (report: any) => report?.answers || []
+      ),
+    ];
+
+    const previousAnswer = allAnswers.find(
+      (a) => a.questionId === prevQuestion.id
     );
 
     setQuestionIndex(prevQuestionIndex);
@@ -254,123 +273,242 @@ const handleBack = () => {
     return;
   }
 
+  // Previous phase
   if (mode === "full" && phaseIndex > 0) {
     const prevPhaseIndex = phaseIndex - 1;
     const prevPhase = availablePhases[prevPhaseIndex];
 
     const prevQuestions = questionMap[role].filter(
-      (q) => q.phase === prevPhase.key,
+      (q) => q.phase === prevPhase.key
     );
 
     const lastQuestion = prevQuestions[prevQuestions.length - 1];
 
-    const previousAnswer = answers.find(
-      (a) => a.questionId === lastQuestion.id,
+    const allAnswers = [
+      ...answers,
+      ...Object.values(phaseReports).flatMap(
+        (report: any) => report?.answers || []
+      ),
+    ];
+
+    const previousAnswer = allAnswers.find(
+      (a) => a.questionId === lastQuestion.id
     );
 
     setPhaseIndex(prevPhaseIndex);
     setQuestionIndex(prevQuestions.length - 1);
     setSelectedOption(previousAnswer?.selectedOption || "");
+
+    return;
   }
 };
 
-  const handleNext = async () => {
-    if(!selectedOption){
-      setError("Please select an option before continuing.");
+const handleNext = async () => {
+  if (!selectedOption) {
+    setError("Please select an option before continuing.");
     return;
-    }
-    if (!journeyId) {
-      setError("Assessment journey not started. Please refresh.");
-      return;
-    }
+  }
 
-    const optionKey = selectedOption as keyof typeof currentQuestion.options;
-    const option = currentQuestion.options[optionKey];
+  if (!journeyId) {
+    setError("Assessment journey not started. Please refresh.");
+    return;
+  }
 
-    const newAnswer: AnswerRecord = {
-      questionId: currentQuestion.id,
-      phase: currentQuestion.phase,
-      selectedOption: optionKey,
-      tendency: option.tendency,
-      situation: currentQuestion.situation,
-      answerText: option.text,
-    };
+  setError("");
 
-    const updatedAnswers = mergeUniqueAnswers([...answers, newAnswer]);
-    setAnswers(updatedAnswers);
+  const optionKey =
+    selectedOption as keyof typeof currentQuestion.options;
 
-    if (questionIndex < questions.length - 1) {
-      setQuestionIndex((prev) => prev + 1);
-      
-      return;
-    }
+  const option =
+    currentQuestion.options[optionKey];
+// console.log(currentQuestion);
+// console.log(currentQuestion.id);
+// console.log(candidateQuestions[0])
 
-    if (mode === "full" && phaseIndex < availablePhases.length - 1) {
-      setPhaseIndex((prev) => prev + 1);
-      setQuestionIndex(0);
-      
-      return;
-    }
+  const newAnswer: AnswerRecord = {
+    questionId: currentQuestion.id,
+    phase: currentQuestion.phase,
+    selectedOption: optionKey,
+    tendency: option.tendency,
+    situation: currentQuestion.situation,
+    answerText: option.text,
+  };
 
-    if (mode === "single") {
-      const report = buildPhaseReport(currentPhase.key, updatedAnswers);
+  const updatedAnswers = mergeUniqueAnswers([
+    ...answers,
+    newAnswer,
+  ]);
 
-      const save = await completeAssessmentAction({
-        journeyId,
-        phase: currentPhase.key,
-        answers: updatedAnswers,
-        report,
-      });
+  setAnswers(updatedAnswers);
 
-      if (save.error) {
-        setError(save.error);
-        return;
-      }
+  // Move to next question
+  if (questionIndex < questions.length - 1) {
+    setQuestionIndex((prev) => prev + 1);
+    return;
+  }
 
-      router.push(
-        `/resources/alignment-test/${role}/report?mode=single&phase=${currentPhase.key}`,
-      );
+  // Save phase and move to next phase
+  if (
+    mode === "full" &&
+    isLastQuestion &&
+    !isLastPhase
+  ) {
+    const phaseAnswers = updatedAnswers.filter(
+      (a) => a.phase === currentPhase.key
+    );
 
-      return;
-    }
+    const phaseReport = buildPhaseReport(
+      currentPhase.key,
+      phaseAnswers
+    );
 
-    const oldAnswers = Object.values(phaseReports).flatMap(
-      (report: any) => report?.answers || [],
-    ) as AnswerRecord[];
-
-    const finalAnswers = mergeUniqueAnswers([...oldAnswers, ...updatedAnswers]);
-
-    for (const item of availablePhases) {
-      const phaseAnswers = finalAnswers.filter((a) => a.phase === item.key);
-
-      if (phaseAnswers.length > 0) {
-        const phaseReport = buildPhaseReport(item.key, phaseAnswers);
-
-        await completeAssessmentAction({
-          journeyId,
-          phase: item.key,
-          answers: phaseAnswers,
-          report: phaseReport,
-        });
-      }
-    }
-
-    const overallReport = buildOverallReport(role, finalAnswers);
-
-    const saveOverall = await completeAssessmentAction({
+    const save = await completeAssessmentAction({
       journeyId,
-      answers: finalAnswers,
+      phase: currentPhase.key,
+      answers: phaseAnswers,
+      report: phaseReport,
+    });
+
+    if (save.error) {
+      setError(save.error);
+      return;
+    }
+
+    setPhaseReports((prev) => ({
+      ...prev,
+      [currentPhase.key]: phaseReport,
+    }));
+
+    setPhaseIndex((prev) => prev + 1);
+    setQuestionIndex(0);
+    setSelectedOption("");
+
+    return;
+  }
+
+  // SINGLE MODE SUBMIT
+  if (mode === "single") {
+    const report = buildPhaseReport(
+      currentPhase.key,
+      updatedAnswers
+    );
+
+    const save = await completeAssessmentAction({
+      journeyId,
+      phase: currentPhase.key,
+      answers: updatedAnswers,
+      report,
+    });
+
+    if (save.error) {
+      setError(save.error);
+      return;
+    }
+
+    router.push(
+      `/resources/alignment-test/${role}/report?mode=single&phase=${currentPhase.key}`
+    );
+
+    return;
+  }
+
+  // LAST PHASE OF FULL MODE
+
+  const currentPhaseAnswers = updatedAnswers.filter(
+    (a) => a.phase === currentPhase.key
+  );
+
+  const currentPhaseReport = buildPhaseReport(
+    currentPhase.key,
+    currentPhaseAnswers
+  );
+
+  await completeAssessmentAction({
+    journeyId,
+    phase: currentPhase.key,
+    answers: currentPhaseAnswers,
+    report: currentPhaseReport,
+  });
+
+ const savedAnswers = Object.values(
+  phaseReports
+).flatMap(
+  (report: any) => report?.answers || []
+) as AnswerRecord[];
+
+// Merge all answers
+const allAnswers = mergeUniqueAnswers([
+  ...savedAnswers,
+  ...currentPhaseAnswers,
+]);
+
+// Remove duplicates by questionId
+const uniqueAnswers = Array.from(
+  new Map(
+    allAnswers.map((item) => [
+      item.questionId,
+      item,
+    ])
+  ).values()
+);
+
+  // VALIDATION
+const expectedCount = phases.length * 3;
+
+// Check total answers
+if (uniqueAnswers.length !== expectedCount) {
+  alert(
+    `Please answer all questions before submitting.\n\nAnswered: ${uniqueAnswers.length}/${expectedCount}`
+  );
+
+  return;
+}
+
+// Check phase-wise answers
+const incompletePhases = phases.filter((phase) => {
+  const count = uniqueAnswers.filter(
+    (a) => a.phase === phase.key
+  ).length;
+
+  return count !== 3;
+});
+
+if (incompletePhases.length > 0) {
+  alert(
+    `Please complete all questions.\n\nMissing phases:\n${incompletePhases
+      .map((p) => p.label)
+      .join("\n")}`
+  );
+
+  return;
+}
+
+  // console.log(
+  //   "Final Answers Count:",
+  //   allAnswers.length
+  // );
+
+  const overallReport = buildOverallReport(
+    role,
+    allAnswers
+  );
+
+  const saveOverall =
+    await completeAssessmentAction({
+      journeyId,
+      answers: allAnswers,
       report: overallReport,
     });
 
-    if (saveOverall.error) {
-      setError(saveOverall.error);
-      return;
-    }
+  if (saveOverall.error) {
+    setError(saveOverall.error);
+    return;
+  }
 
-    router.push(`/resources/alignment-test/${role}/report?mode=full`);
-  };
-
+  router.push(
+    `/resources/alignment-test/${role}/report?mode=full`
+  );
+};
   return (
     <section className="w-full px-[7%] py-[5%]">
       <div className="grid grid-cols-1 items-center gap-xl md:grid-cols-[0.25fr_1fr]">

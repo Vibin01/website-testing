@@ -97,7 +97,7 @@ export async function registerUserAction(formData: FormData) {
   }
 }
 
-export async function verifyOtpAction(userId: string, otp: string) {
+export async function verifyOtpAction(userId: number, otp: string) {
     try {
 
   const otpHash = hashOtp(otp);

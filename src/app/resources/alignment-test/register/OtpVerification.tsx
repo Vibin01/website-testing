@@ -62,9 +62,6 @@ export default function OtpVerification({
                         inputRefs.current[index] = el;
                       }}
                       type="text"
-  inputMode="numeric"
-  pattern="[0-9]*"
-  autoComplete={index === 0 ? "one-time-code" : "off"}
                       maxLength={1}
                       value={value}
                       onChange={(e) => handleOtpChange(index, e.target.value)}

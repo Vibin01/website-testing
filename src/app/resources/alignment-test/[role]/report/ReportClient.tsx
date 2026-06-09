@@ -251,7 +251,7 @@ function PhaseReport({
     loadStatus();
   }, [role]);
 
-  console.log(user);
+  // console.log(user);
 
   return (
     <section className="w-full bg-[#FAFDFF] px-[5%] pb-20">

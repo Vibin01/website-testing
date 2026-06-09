@@ -6,7 +6,7 @@ export type Band = 'Strong' | 'Moderate' | 'Dynamic';
 export type Mode = 'Unaligned' | 'Aligned' | 'Auto-Aligned' | 'Misaligned' | 'Dynamic';
 
 export interface PhaseResponse {
-  questionId: string;
+  questionId: number;
   selectedOption: Option;
   tendency: Tendency;
 }

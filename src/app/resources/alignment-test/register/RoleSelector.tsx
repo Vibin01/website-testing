@@ -80,7 +80,7 @@ export function RoleSelector({
 
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [step, setStep] = useState<"REGISTER" | "OTP">("REGISTER");
-  const [userId, setUserId] = useState<string | null>(null);
+  const [userId, setUserId] = useState<number | null>(null);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

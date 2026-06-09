@@ -6,7 +6,7 @@ if (!process.env.JWT_SECRET) {
 }
 const secretKey = new TextEncoder().encode(process.env.JWT_SECRET);
 
-export async function createSession(userId: string) {
+export async function createSession(userId: number) {
   const jwt = await new SignJWT({ userId })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
@@ -23,18 +23,22 @@ export async function createSession(userId: string) {
   });
 }
 
-export async function verifySession() {
+export async function verifySession(): Promise<number | null> {
   const cookieStore = await cookies();
-  const sessionCookie = cookieStore.get('session');
-  
+  const sessionCookie = cookieStore.get("session");
+
   if (!sessionCookie?.value) {
     return null;
   }
-  
+
   try {
-    const { payload } = await jwtVerify(sessionCookie.value, secretKey);
-    return payload.userId as string;
-  } catch (e) {
+    const { payload } = await jwtVerify(
+      sessionCookie.value,
+      secretKey
+    );
+
+    return Number(payload.userId);
+  } catch {
     return null;
   }
 }
