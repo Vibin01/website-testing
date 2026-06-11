@@ -4,15 +4,15 @@ const meansCards = [
     title: "For Candidates",
     points: [
       "Clear interview timelines",
-      "Visibility into progress clarifies",
-      "Confident career decisions",
+      "Visibility into progress and next steps",
+      "Confidence in career decisions",
     ],
   },
   {
     icon: "/about/icons/recruiters-icon.svg",
     title: "For Recruiters",
     points: [
-      "Structured coordination across stages",
+      "Coordination across hiring stages",
       "Reduced drop-offs and no-shows",
       "Stronger offer conversion",
     ],
@@ -21,9 +21,9 @@ const meansCards = [
     icon: "/about/icons/employers-icon.svg",
     title: "For Employers",
     points: [
-      "Visibility into hiring demand and progress",
-      "Early signals across interviews and offers",
-      "Alignment between direction and execution",
+      "Visibility into hiring progress",
+      "Early signals across hiring stages ",
+      "Direction and execution aligned",
     ],
   },
 ];

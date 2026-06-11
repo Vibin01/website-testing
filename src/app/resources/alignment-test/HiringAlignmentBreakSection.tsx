@@ -25,14 +25,12 @@ export default function HiringAlignmentBreakSection() {
         
         {/* Heading */}
         <h2 className="text-h1 font-extrabold text-[#0668E1]">
-          Where Does
-          <br />
-          Hiring Alignment Break?
+         Test Your Alignment Within
         </h2>
 
         {/* Subtitle */}
         <p className=" text-h6 font-bold text-[#1B1C17]">
-          Test how your decisions shift across real hiring situations.
+          Understand how your decisions shift across real hiring situations.
         </p>
 
         {/* Cards */}

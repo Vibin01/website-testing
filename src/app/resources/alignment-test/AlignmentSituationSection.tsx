@@ -38,18 +38,18 @@ const situationCards = [
 const bottomCards = [
   {
     icon: "/resources/alignment-test/real-hiring-scenarios-and-decision-insights.svg",
-    title: "Built on real hiring scenarios",
-    description: "Grounded in interviews and hiring decisions",
+    title: "Built on real-world hiring experiences and scenarios",
+    description: "Grounded in real hiring situations and decisions.",
   },
   {
     icon: "/resources/alignment-test/hiring-alignment-assessment-across-all-roles.svg",
-    title: "Used by candidates, recruiters, and employers",
-    description: "Across industries and roles",
+    title: "Designed for candidates, recruiters, and employers",
+    description: "Relevant across roles, industries, and hiring stages.",
   },
   {
     icon: "/icons/tick-gradient-icon.svg",
-    title: "Actionable insights — not personality labels",
-    description: "Focused on decisions, not traits",
+    title: "Actionable insights, not personality labels",
+    description: "Focused on decisions and alignment – not traits.",
   },
 ];
 
@@ -90,10 +90,12 @@ export default function AlignmentSituationsSection() {
     <section className="w-full px-[1.5%] py-[5%]">
       <div className="text-center">
         <h2 className="text-h2 font-extrabold text-[#1B1C17]">
-          Alignment shifts by situation
+          Alignment shifts across situations
         </h2>
-        <p className="text-base font-medium text-[#2C2C2C]">
-          Each group takes ~1 minute. 3 situations per group. Start anywhere.
+        <p className="text-base font-medium my-xs">
+        Explore how your decisions respond to different hiring conditions. </p>
+        <p className="text-base font-medium">
+         Each phase takes ~1 minute. 3 situations per phase. Start anywhere.
         </p>
       </div>
       <div className="mt-xl">
@@ -157,7 +159,7 @@ export default function AlignmentSituationsSection() {
             Want the complete picture?
           </h3>
           <p className=" text-xl font-medium">
-            Take all 5 groups for your full Alignment Report.
+            Take all 5 phases to see how your alignment shifts across hiring situations.
           </p>
         </div>
 

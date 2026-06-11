@@ -7,20 +7,14 @@ import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa6";
 import dynamic from "next/dynamic";
 
-const SolutionsDropdown = dynamic(
-  () => import("./SolutionsDropdown")
-);
+const SolutionsDropdown = dynamic(() => import("./SolutionsDropdown"));
 
-const ResourcesDropdown = dynamic(
-  () => import("./ResourcesDropdown")
-);
+const ResourcesDropdown = dynamic(() => import("./ResourcesDropdown"));
 
-const MobileMenu = dynamic(
-  () => import("./MobileMenu")
-);
+const MobileMenu = dynamic(() => import("./MobileMenu"));
 
 const navItems = [
-  { name: "Home", link: "/"  },
+  { name: "Home", link: "/" },
   { name: "Employers", link: "/employers" },
   { name: "Candidates", link: "/candidates" },
   { name: "Recruiters", link: "/recruiters" },
@@ -44,14 +38,14 @@ const authOptions = [
     login: "https://recruiter.connectec.app/login",
     register: "https://recruiter.connectec.app/register",
     icon: "/icons/recruiters-round-icon.svg",
-    block:false,
+    block: false,
   },
   {
     label: "Employer",
     login: "https://employer.connectec.app/login",
     register: "https://employer.connectec.app/register",
     icon: "/icons/employer-round-icon.svg",
-    block:false,
+    block: false,
   },
 ];
 
@@ -63,11 +57,11 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSolutions, setShowSolutions] = useState(false);
   const [showResources, setShowResources] = useState(false);
-  const [authDropdown, setAuthDropdown] = useState<
-  "login" | "register" | null
->(null);
+  const [authDropdown, setAuthDropdown] = useState<"login" | "register" | null>(
+    null,
+  );
 
-const authTimer = useRef<NodeJS.Timeout | null>(null);
+  const authTimer = useRef<NodeJS.Timeout | null>(null);
 
   const resourcesTimer = useRef<NodeJS.Timeout | null>(null);
 
@@ -91,7 +85,6 @@ const authTimer = useRef<NodeJS.Timeout | null>(null);
       clearTimeout(closeTimer.current);
     }
     setShowSolutions(true);
-
   };
 
   const handleMouseLeave = () => {
@@ -146,227 +139,281 @@ const authTimer = useRef<NodeJS.Timeout | null>(null);
               <>
                 <ul className="hidden  w-4/5 items-center justify-center text-[#1B1C17] lg:flex lg:gap-[15px] xl:gap-[2.5%]">
                   {navItems.map((item) => {
-  const isActive =
-    item.name === "Home"
-      ? pathname === "/" || pathname.startsWith("/home")
-      : pathname.startsWith(item.link);
+                    const isActive =
+                      item.name === "Home"
+                        ? pathname === "/" || pathname.startsWith("/home")
+                        : pathname.startsWith(item.link);
 
-  // Resources Dropdown
-  if (item.name === "Resources") {
-    return (
-      <li
-        key={item.name}
-        className="flex cursor-pointer flex-col items-center justify-center font-medium text-[#1B1C17]"
-        onMouseEnter={handleResourcesEnter}
-        onMouseLeave={handleResourcesLeave}
-      >
-        <div className="flex items-center gap-2">
-          <span
-            className={
-              showResources ||
-    pathname.includes("/resources") ? "font-semibold text-[#0668E1]" : ""
-            }
-          >
-            Resources
-          </span>
+                    // Resources Dropdown
+                    if (item.name === "Resources") {
+                      return (
+                        <li
+                          key={item.name}
+                          className="flex cursor-pointer flex-col items-center justify-center font-medium text-[#1B1C17]"
+                          onMouseEnter={handleResourcesEnter}
+                          onMouseLeave={handleResourcesLeave}
+                        >
+                          <div className="flex items-center gap-2">
+                            <span
+                              className={
+                                showResources || pathname.includes("/resources")
+                                  ? "font-semibold text-[#0668E1]"
+                                  : ""
+                              }
+                            >
+                              Resources
+                            </span>
 
-          <FaChevronDown
-            className={`transition-transform duration-200 ${
-              showResources  ? "rotate-180 text-[#0668E1]" : ""
-            }`}
-          />
-        </div>
+                            <FaChevronDown
+                              className={`transition-transform duration-200 ${
+                                showResources ? "rotate-180 text-[#0668E1]" : ""
+                              }`}
+                            />
+                          </div>
 
-        <div className="mt-1 h-[4px] w-[85%]" />
+                          <div className="mt-1 h-[4px] w-[85%]" />
 
-        {showResources && (
-          <ResourcesDropdown
-            onClose={() => setShowResources(false)}
-          />
-        )}
-      </li>
-    );
-  }
+                          {showResources && (
+                            <ResourcesDropdown
+                              onClose={() => setShowResources(false)}
+                            />
+                          )}
+                        </li>
+                      );
+                    }
 
-  // Solutions Dropdown
-  if (item.name === "Solutions") {
-    return (
-      <li
-        key={item.name}
-        className="flex cursor-pointer flex-col items-center justify-center font-medium text-[#1B1C17]"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className="flex items-center gap-2">
-          <span
-            className={
-              showSolutions ||
-    pathname.includes("/solutions")  ? "font-semibold text-[#0668E1]" : ""
-            }
-          >
-            Solutions
-          </span>
+                    // Solutions Dropdown
+                    if (item.name === "Solutions") {
+                      return (
+                        <li
+                          key={item.name}
+                          className="flex cursor-pointer flex-col items-center justify-center font-medium text-[#1B1C17]"
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          <div className="flex items-center gap-2">
+                            <span
+                              className={
+                                showSolutions || pathname.includes("/solutions")
+                                  ? "font-semibold text-[#0668E1]"
+                                  : ""
+                              }
+                            >
+                              Solutions
+                            </span>
 
-          <FaChevronDown
-            className={`transition-transform duration-200 ${
-              showSolutions ? "rotate-180 text-[#0668E1]" : ""
-            }`}
-          />
-        </div>
+                            <FaChevronDown
+                              className={`transition-transform duration-200 ${
+                                showSolutions ? "rotate-180 text-[#0668E1]" : ""
+                              }`}
+                            />
+                          </div>
 
-        <div className="mt-1 h-[4px] w-[85%]" />
+                          <div className="mt-1 h-[4px] w-[85%]" />
 
-        {showSolutions && (
-          <SolutionsDropdown
-            onClose={() => setShowSolutions(false)}
-          />
-        )}
-      </li>
-    );
-  }
+                          {showSolutions && (
+                            <SolutionsDropdown
+                              onClose={() => setShowSolutions(false)}
+                            />
+                          )}
+                        </li>
+                      );
+                    }
 
-  // Normal Nav Items
-  return (
-    <li
-      key={item.name}
-      className={`cursor-pointer ${
-        isActive
-          ? "font-semibold text-[#0668E1]"
-          : "font-medium"
-      } flex flex-col items-center justify-center`}
-      onClick={() => router.push(item.link)}
-    >
-      {item.name}
+                    // Normal Nav Items
+                    return (
+                      <li
+                        key={item.name}
+                        className={`cursor-pointer ${
+                          isActive
+                            ? "font-semibold text-[#0668E1]"
+                            : "font-medium"
+                        } flex flex-col items-center justify-center`}
+                        onClick={() => router.push(item.link)}
+                      >
+                        {item.name}
 
-      {isActive ? (
-        <div className="mt-1 rounded-[4px] bg-[#0668E1] lg:h-[4px] lg:w-[40px] 2xl:h-[6px]" />
-      ) : (
-        <div className="mt-1 w-[85%] lg:h-[4px] 2xl:h-[6px]" />
-      )}
-    </li>
-  );
-})}
-                 
+                        {isActive ? (
+                          <div className="mt-1 rounded-[4px] bg-[#0668E1] lg:h-[4px] lg:w-[40px] 2xl:h-[6px]" />
+                        ) : (
+                          <div className="mt-1 w-[85%] lg:h-[4px] 2xl:h-[6px]" />
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <div className=" md:flex md:w-[30%] gap-lg items-center justify-end lg:justify-center relative">
+                  {/* Login */}
+                  <div
+                    className="relative hidden md:flex"
+                    onMouseEnter={() => {
+                      if (authTimer.current) {
+                        clearTimeout(authTimer.current);
+                      }
 
-  {/* Login */}
-  <div
-  className="relative hidden md:flex"
-  onMouseEnter={() => {
-    if (authTimer.current) {
-      clearTimeout(authTimer.current);
-    }
+                      setTimeout(() => {
+                        setAuthDropdown("login");
+                      }, 300);
+                    }}
+                    onMouseLeave={() => {
+                      authTimer.current = setTimeout(() => {
+                        setAuthDropdown(null);
+                      }, 500);
+                    }}
+                  >
+                    <button
+                      onClick={() =>
+                        setAuthDropdown((prev) =>
+                          prev === "login" ? null : "login",
+                        )
+                      }
+                      className="w-[110px] h-[44px] cursor-pointer border border-[#0668E1] text-[#0668E1] rounded-sm"
+                    >
+                      Login
+                    </button>
 
-    setTimeout(() => {
-      setAuthDropdown("login");
-    }, 300);
-  }}
-  onMouseLeave={() => {
-    authTimer.current = setTimeout(() => {
-      setAuthDropdown(null);
-    }, 500);
-  }}
->
-    <button
-      onClick={() =>
-        setAuthDropdown((prev) =>
-          prev === "login" ? null : "login"
-        )
-      }
-      className="w-[110px] h-[44px] cursor-pointer border border-[#0668E1] text-[#0668E1] rounded-sm"
-    >
-      Login
-    </button>
+                    {authDropdown === "login" && (
+                      <div className="absolute top-[60px] right-0 w-[200px] rounded-md border border-[#D6E8FF] bg-white p-sm z-[9999]">
+  <div className="space-y-sm">
+    {authOptions.map((item) => (
+      <Link
+        key={item.label}
+        href={item.login}
+        target="_blank"
+        className={`
+          ${item.block ? "cursor-no-drop pointer-events-none opacity-50" : "cursor-pointer"}
+          group
+          relative
+          flex
+          items-center
+          gap-3
+          rounded-sm
+          p-sm
+        `}
+      >
+        <img
+          src={item.icon}
+          alt={item.label}
+          className="size-iconsize-sm object-contain"
+        />
 
-    {authDropdown === "login" && (
-      <div className="absolute top-[60px] right-0 w-[200px] rounded-md border border-[#D6E8FF] bg-white p-sm z-[9999]">
-        <div className="space-y-sm">
-          {authOptions.map((item) => (
-            <Link
-              key={item.label}
-              href={item.login}
-              target="_blank"
-              className={`${item.block ? 'cursor-no-drop' : 'cursor-pointer'} flex items-center gap-3 rounded-sm p-sm hover:bg-[#F4F8FF] transition`}
-            >
-              <img
-                src={item.icon}
-                alt={item.label}
-                className="size-iconsize-sm object-contain"
-              />
+        <span className="text-xl font-semibold">
+          {item.label}
+        </span>
 
-              <span className="text-xl font-semibold">
-                {item.label}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    )}
+        {/* Bottom Border Animation */}
+        <span
+          className="
+            absolute
+            bottom-0
+            left-1/2
+            h-[2px]
+            w-0
+            -translate-x-1/2
+            bg-[#0668E1]
+            transition-all
+            duration-300
+            ease-out
+            group-hover:w-[calc(100%-16px)]
+          "
+        />
+      </Link>
+    ))}
   </div>
-
-  {/* Register */}
- <div
-  className="relative hidden md:flex"
-  onMouseEnter={() => {
-    if (authTimer.current) {
-      clearTimeout(authTimer.current);
-    }
-
-    setTimeout(() => {
-      setAuthDropdown("register");
-    }, 300);
-  }}
-  onMouseLeave={() => {
-    authTimer.current = setTimeout(() => {
-      setAuthDropdown(null);
-    }, 500);
-  }}
->
-    <button
-      onClick={() =>
-        setAuthDropdown((prev) =>
-          prev === "register" ? null : "register"
-        )
-      }
-      className="w-[110px] h-[44px] cursor-pointer bg-[#0668E1] rounded-sm text-white"
-    >
-      Register
-    </button>
-
-    {authDropdown === "register" && (
-      <div className="absolute top-[60px] right-0 w-[200px] rounded-md border border-[#D6E8FF] bg-white p-sm z-[9999]">
-        <div className="space-y-sm">
-          {authOptions.map((item) => (
-            <Link
-              key={item.label}
-              href={item.register}
-              target="_blank"
-              aria-disabled={item.block}
-              className={`${item.block ? 'cursor-no-drop' : 'cursor-pointer'} flex items-center gap-3 rounded-xl p-sm hover:bg-[#F4F8FF] transition`}
-            >
-              <img
-                src={item.icon}
-                alt={item.label}
-                className="size-iconsize-sm object-contain"
-              />
-
-              <span className="text-xl font-semibold ">
-                {item.label}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    )}
-  </div>
-
-  <MobileMenu
-    isMenuOpen={isMenuOpen}
-    setIsMenuOpen={setIsMenuOpen}
-  />
 </div>
+                    )}
+                  </div>
+
+                  {/* Register */}
+                  <div
+                    className="relative hidden md:flex"
+                    onMouseEnter={() => {
+                      if (authTimer.current) {
+                        clearTimeout(authTimer.current);
+                      }
+
+                      setTimeout(() => {
+                        setAuthDropdown("register");
+                      }, 300);
+                    }}
+                    onMouseLeave={() => {
+                      authTimer.current = setTimeout(() => {
+                        setAuthDropdown(null);
+                      }, 500);
+                    }}
+                  >
+                    <button
+                      onClick={() =>
+                        setAuthDropdown((prev) =>
+                          prev === "register" ? null : "register",
+                        )
+                      }
+                      className="w-[110px] h-[44px] cursor-pointer bg-[#0668E1] rounded-sm text-white"
+                    >
+                      Register
+                    </button>
+
+                    {authDropdown === "register" && (
+                    <div className="absolute top-[60px] right-0 w-[200px] rounded-md border border-[#D6E8FF] bg-white p-sm z-[9999]">
+  <div className="space-y-sm">
+    {authOptions.map((item) => (
+      <Link
+        key={item.label}
+        href={item.register}
+        target="_blank"
+        aria-disabled={item.block}
+        className={`
+          ${item.block ? "cursor-no-drop pointer-events-none opacity-50" : "cursor-pointer"}
+          group
+          relative
+          flex
+          items-center
+          gap-3
+          rounded-xl
+          p-sm
+          transition-all
+          duration-300
+        `}
+      >
+        <img
+          src={item.icon}
+          alt={item.label}
+          className="size-iconsize-sm object-contain"
+        />
+
+        <span className="text-xl font-semibold">
+          {item.label}
+        </span>
+
+        {/* Animated Bottom Border */}
+        <span
+          className="
+            absolute
+            bottom-0
+            left-1/2
+            h-[2px]
+            w-0
+            -translate-x-1/2
+            bg-[#0668E1]
+            transition-all
+            duration-300
+            ease-out
+            group-hover:w-[90%]
+          "
+        />
+      </Link>
+    ))}
+  </div>
+</div>
+                    )}
+                  </div>
+
+                  <MobileMenu
+                    isMenuOpen={isMenuOpen}
+                    setIsMenuOpen={setIsMenuOpen}
+                  />
+                </div>
               </>
             )}
         </nav>

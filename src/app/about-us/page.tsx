@@ -2,6 +2,14 @@ import React from "react";
 import AlignmentWeakensSection from "./AlignmentWeaknesSection";
 import AlignmentRestoreSection from "./AlignmentRestoreSection";
 import WhatThisMeansSection from "./WhatThisMeanSection";
+import OurGoal from "./OurGoal";
+import AlignmentCards from "./AlginemntCard";
+
+export const metadata = {
+  title: "Bringing Clarity and Predictability to Hiring | Connect EC",
+  description:
+    "Connecting candidates, recruiters, and employers brings clarity, continuity, and predictability to the hiring journey. Restore hiring alignment with Connect EC.",
+};
 
 const Page = () => {
   return (
@@ -18,10 +26,14 @@ const Page = () => {
                 </h2>
 
                 <p className="text-center text-base font-medium ">
-                  Bringing clarity, continuity, and predictability
-                  <br /> across candidates, recruiters, and employers.
+                 Bringing visibility, continuity, and alignment across candidates, recruiters, and employers.
                 </p>
               </div>
+            </section>
+          </div>
+          <div className="py-[5%] md:py-0">
+            <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
+              <AlignmentCards />
             </section>
           </div>
           <div className="py-[5%] md:py-0">
@@ -42,23 +54,7 @@ const Page = () => {
         </div>
 
         <div className="bg-[#F7FBFF] px-[5%] py-[10%] md:py-[5%]">
-          <section className="w-full ">
-            <div className="mx-auto max-w-[900px] text-center">
-              {/* Title */}
-              <h2 className="text-h2 font-extrabold text-[#0668E1]">
-                Our goal
-              </h2>
-
-              {/* Description */}
-              <p className="mt-6 text-base md:leading-[34px] font-medium text-[#2C2C2C]">
-                To make hiring a system where alignment holds—
-                <br className="block" />
-                so decisions, execution, and outcomes move together,
-                <br className="block" />
-                and outcomes become inevitable.
-              </p>
-            </div>
-          </section>
+          <OurGoal/>
         </div>
       </section>
     </>

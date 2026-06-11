@@ -92,8 +92,8 @@ export default function AssessmentTestClient({
   // time stamp
 
   const [pageLoadStart] = useState(() => performance.now());
-const [pageLoadTime, setPageLoadTime] = useState<number | null>(null);
-const [submitTime, setSubmitTime] = useState<number | null>(null);
+  const [pageLoadTime, setPageLoadTime] = useState<number | null>(null);
+  const [submitTime, setSubmitTime] = useState<number | null>(null);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -156,12 +156,12 @@ const [submitTime, setSubmitTime] = useState<number | null>(null);
       setLoading(false);
 
       // time stamp
-        const end = performance.now();
-  const duration = end - start;
+      const end = performance.now();
+      const duration = (end - start) / 1000;
 
-  setPageLoadTime(duration);
+      setPageLoadTime(duration);
 
-  console.log("Assessment Page Load Time:", duration.toFixed(2), "ms");
+      console.log("Assessment Page Load Time:", duration.toFixed(2), "seconds");
     }
 
     init();
@@ -377,7 +377,7 @@ const [submitTime, setSubmitTime] = useState<number | null>(null);
     // SINGLE MODE SUBMIT
     if (mode === "single") {
       // time stamp
-        const submitStart = performance.now();
+      const submitStart = performance.now();
       const report = buildPhaseReport(currentPhase.key, updatedAnswers);
 
       const save = await completeAssessmentAction({
@@ -389,17 +389,13 @@ const [submitTime, setSubmitTime] = useState<number | null>(null);
 
       // time stamp
 
-  const submitEnd = performance.now();
+      const submitEnd = performance.now();
 
-  const duration = submitEnd - submitStart;
+      const duration = submitEnd - submitStart;
 
-  setSubmitTime(duration);
+      setSubmitTime(duration);
 
-  console.log(
-    "Single Assessment Submit Time:",
-    duration.toFixed(2),
-    "ms"
-  );
+      console.log("Single Assessment Submit Time:", duration.toFixed(2), "ms");
 
       if (save.error) {
         setError(save.error);
@@ -482,10 +478,9 @@ const [submitTime, setSubmitTime] = useState<number | null>(null);
 
     const overallReport = buildOverallReport(role, allAnswers);
 
-    //  time stamp 
+    //  time stamp
 
     const finalSubmitStart = performance.now();
-
 
     const saveOverall = await completeAssessmentAction({
       journeyId,
@@ -498,18 +493,14 @@ const [submitTime, setSubmitTime] = useState<number | null>(null);
       return;
     }
 
-    //  time stamp 
+    //  time stamp
     const finalSubmitEnd = performance.now();
 
-const duration = finalSubmitEnd - finalSubmitStart;
+    const duration = finalSubmitEnd - finalSubmitStart;
 
-setSubmitTime(duration);
+    setSubmitTime(duration);
 
-console.log(
-  "Overall Assessment Submit Time:",
-  duration.toFixed(2),
-  "ms"
-);
+    console.log("Overall Assessment Submit Time:", duration.toFixed(2), "ms");
     router.push(`/resources/alignment-test/${role}/report?mode=full`);
   };
   return (

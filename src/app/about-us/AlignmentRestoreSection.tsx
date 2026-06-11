@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const leftPoints = [
   "Interviews and schedules remain coordinated",
-  "Feedback and updates move consistently across stages",
-  "Engagement signals continue across the entire journey",
+  "Feedback and updates continue consistently across stages",
+  "Engagement signals remain visible across the entire hiring journey",
 ];
 
 const rightPoints = [
@@ -34,7 +34,7 @@ export default function AlignmentRestoreSection() {
         </h2>
 
         <p className="mt-2 text-base font-medium">
-          Connect EC brings the hiring journey into one visible, connected flow:
+          Connect EC brings hiring into one visible, connected continuity.
         </p>
 
         {/* Layout */}

@@ -15,7 +15,7 @@ const cardData = [
   },
   {
     icon: "/home/icons/one-outcome-icon.svg",
-    title: "One Outcome",
+    title: "When All Three Align",
     items: ["Seamless Yield"],
   },
 ];

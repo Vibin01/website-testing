@@ -2,17 +2,17 @@ const systemCards = [
   {
     icon: "/about/icons/candidate-icon.svg",
     title: "For Candidates",
-    text: "Candidates experience gaps in feedback and clarity",
+    text: "Visibility into progress, expectations, and next steps weakens.",
   },
   {
     icon: "/about/icons/recruiters-icon.svg",
     title: "For Recruiters",
-    text: "Recruiters coordinate across fragmented tools and signals",
+    text: "Coordination becomes fragmented across interactions, tools, and signals.",
   },
   {
     icon: "/about/icons/employers-icon.svg",
     title: "For Employers",
-    text: "Employers operate without visibility into execution and outcomes",
+    text: "Visibility into hiring execution, progress, and outcomes becomes limited.",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function AlignmentWeakensSection() {
     <section className="w-full">
       <div className="mx-auto">
         <p className="text-base font-bold text-[#1B1C17]">
-          When alignment weakens across interactions,
+         When alignment weakens across interactions,
         </p>
 
         <p className="mt-1 text-base font-medium text-[#1B1C17]">
@@ -42,11 +42,11 @@ export default function AlignmentWeakensSection() {
           {systemCards.map((card, index) => (
             <div
               key={index}
-              className="rounded-md border border-[#D0E5FF] bg-white p-4 shadow-[0px_0px_40px_5px_#0668E11A]"
+              className="rounded-md border border-[#D0E5FF] bg-white p-sm shadow-[0px_0px_40px_5px_#0668E11A]"
             >
-                <img src={card.icon} alt={card.title} className="size-[30px] md:size-iconsize-md " />
+                {/* <img src={card.icon} alt={card.title} className="size-[30px] md:size-iconsize-md " /> */}
 
-              <p className="mt-sm text-base font-bold text-[#0668E1]">
+              <p className=" text-base font-bold text-[#0668E1]">
                 {card.title}
               </p>
 

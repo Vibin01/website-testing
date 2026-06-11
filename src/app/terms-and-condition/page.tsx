@@ -1,183 +1,371 @@
+import Link from "next/link";
 import React from "react";
+
+export const metadata = {
+  title: "Platform Terms of Service and User Agreement | Connect EC",
+  description:
+    "Review our platform guidelines, user responsibilities, and legal agreements to use our alignment systems safely with Connect EC.",
+};
 
 export default function page() {
   return (
-    <div className="text-[16px] lg:text-[20px] py-[6%] px-[20%] space-y-3">
-       <h1 className=" font-bold  mb-16 ">
-          <span className="text-[24px]">CONNECT <span className="text-[#0668E1]">EC</span></span> <br/> <span className="text-[40px] ">TERMS & CONDITIONS</span>
-        </h1>
-      <h2 className="font-semibold text-[30px]">Effective Date: 10th December 2025</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        By accessing, registering on, or using the Connect EC platform,
-        including its mobile application, website, or related services
-        (“Platform”), you agree to be bound by these Terms & Conditions
-        (“Terms”). If you do not agree, you must discontinue use of the Platform
-        immediately. These Terms constitute a legally binding agreement between
-        you and Connect EC.
-      </p>
-        <div className="border-t border-[#DFDFDF] mb-[100px]"> </div>
-
-      <h2 className="font-bold text-[30px] mb-5">1. Definitions</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        For the purposes of these Terms, “Platform” refers to the Connect EC
-        mobile application, website, systems, and services. “Employer” means any
-        organization or authorized representative using the Platform to post
-        jobs and engage Recruiters or Candidates. “Recruiter” refers to a person
-        authorized by an Employer to conduct hiring-related activities.
-        “Candidate” means an individual using the Platform to seek employment or
-        interact with Employers or Recruiters. “User” means any person accessing
-        or using the Platform. “Content” includes all data, information,
-        messages, documents, images, videos, and materials uploaded or shared
-        through the Platform.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">2. Nature of Service</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Connect EC is a technology-enabled facilitation platform that connects
-        Employers, Recruiters, and Candidates. Connect EC does not guarantee
-        employment, verify all user information, act as an agent or
-        representative, or participate in employment contracts or commercial
-        arrangements between Users. All hiring decisions are solely the
-        responsibility of the Users involved.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">3. User Eligibility and Representations</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        By using the Platform, Users represent that they are at least eighteen
-        years of age, that all information provided is accurate and complete,
-        and that they will comply with applicable laws. Users agree not to
-        impersonate others, misuse the Platform, or engage in illegal or harmful
-        activities. Any false representation may result in suspension,
-        termination, or legal action.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">4. Registration and Account Security</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Users may be required to register using valid contact details. Users are
-        solely responsible for maintaining the confidentiality of their login
-        credentials and for all activities conducted through their accounts.
-        Connect EC reserves the right to modify or remove accounts or usernames
-        that are inappropriate or violate these Terms.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">5. User Responsibilities and Conduct</h2>
-      <p className="mb-12 text-[20px] leading-[32px] space-y-3">
-        All Users shall use the Platform in a lawful, ethical, and professional
-        manner. <p> Employers are responsible for posting genuine job opportunities,
-        providing accurate information, managing Recruiters under their
-        accounts, and ensuring compliance with applicable laws. All actions
-        taken by Recruiters shall be deemed actions of the Employer. Employers
-        are solely responsible for interviews, feedback, and all content
-        uploaded through their accounts.
-        </p> <p> Recruiters shall communicate
-        professionally, provide accurate information, respect Candidate privacy,
-        and maintain integrity in hiring processes.</p> <p> Candidates shall provide
-        accurate information, behave professionally, and engage honestly with
-        Employers and Recruiters.
+    <div className="text-h4 py-[6%] px-[15%] ">
+      <h1 className=" font-bold  mb-xl ">
+        <span className="text-h4">
+          CONNECT <span className="text-[#0668E1]">EC</span>
+        </span>{" "}
+        <br /> <span className="text-h2 ">TERMS & CONDITIONS</span>
+      </h1>
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          Effective Date: 10th December 2025
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          By accessing, registering on, or using Connect EC, including its
+          mobile applications, websites, hiring alignment tools, assessments,
+          reports, and related services (collectively, the "Platform"), you
+          agree to be bound by these Terms & Conditions ("Terms").
         </p>
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">6. Prohibited Activities</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Users shall not engage in unauthorized access, reverse engineering, data
-        scraping, malware distribution, impersonation, harassment, submission of
-        false information, or any activity that is illegal or harmful. Users
-        shall not misuse Platform content for competing commercial purposes.
-      </p>
-
-      <h2 className="font-bold text-[30px] mb-5">
-        7. User-Generated Content and Communications
-      </h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        The Platform provides in-app communication features. Connect EC does not
-        actively monitor communications but may access content for compliance,
-        safety, or legal purposes. Users are solely responsible for their
-        content. By posting content, Users grant Connect EC a perpetual,
-        worldwide, royalty-free license to use such content for Platform
-        operations. Connect EC may remove content at its discretion.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">8. Gamification and Badges</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        The Platform may offer recognition badges or points based on user
-        participation. Such badges are indicative only and do not create any
-        legal rights or obligations.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">9. License to Use Platform</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Users are granted a limited, revocable, non-exclusive, and
-        non-transferable license to use the Platform in accordance with these
-        Terms.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">10. Third-Party Services</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        The Platform may integrate third-party services. Connect EC is not
-        responsible for the policies or practices of third-party providers.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">11. Enforcement and Safety</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Connect EC reserves the right to suspend or terminate accounts for
-        violations of these Terms, fraudulent conduct, or legal non-compliance.
-        Connect EC may cooperate with law enforcement authorities as required by
-        law.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">12. Termination</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Users may discontinue use of the Platform at any time. Connect EC may
-        suspend or terminate access without prior notice for violation of these
-        Terms. Upon termination, user access shall cease immediately.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">13. Limitation of Liability</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        The Platform is provided on an “as is” basis. Connect EC shall not be
-        liable for employment outcomes, user decisions, or user-generated
-        content, to the maximum extent permitted by law.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">14. Dispute Resolution</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        All disputes shall be resolved by binding arbitration in accordance with
-        the Arbitration and Conciliation Act, 1996. The seat of arbitration
-        shall be Chennai, India, the language shall be English, and the
-        arbitration shall be conducted by a sole arbitrator. Courts at Chennai
-        shall have jurisdiction for interim relief and enforcement.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">15. Governing Law</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        These Terms shall be governed by the laws of India.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">16. Privacy Policy</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Use of the Platform is subject to the Privacy Policy, which forms an
-        integral part of these Terms.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">17. Changes to Terms</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        Connect EC may modify these Terms from time to time. Continued use of
-        the Platform constitutes acceptance of the revised Terms.
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">18. Intellectual Property Rights</h2>
-      <p className="mb-12 text-[20px] leading-[32px] space-y-3">
-        <p className="text-[20px] ">
-        All content, materials, and works available on or through the<span className="font-bold "> Connect EC </span>
-        platform, including but not limited to software, documentation,
-        workflows, user interfaces, text, graphics, icons, badges, scores, and
-        visual elements, are the exclusive property of <span className="font-bold "> PRIMETHIC</span> or its
-        licensors and are protected under the <span className="font-bold ">Copyright Act, 1957</span>, trademark
-        laws, and other applicable intellectual property laws.
+        <p className="font-medium text-h6 leading-[32px]">
+          These Terms constitute a legally binding agreement between you and
+          PRIMETHIC, the owner and operator of Connect EC.
         </p>
-        <p className="text-[20px] "> The platform name
-        <span className="font-bold "> Connect EC</span>, and badge identifiers including <span className="font-bold "> HonestTalent</span> and
-        <span className="font-bold  "> RockstaRecruiter</span>, are registered wordmarks owned by PRIMETHIC. 
-        </p> <p className="text-[20px] ">The
-        timer-driven ethical action framework, including its documented
-        structure, sequencing, and expressive implementation of timers, scores,
-        and badges, is protected as a copyrighted literary work.
-        </p> <p className="text-[20px] "> Except as
-        expressly permitted under these Terms, no part of the Platform or its
-        content may be copied, reproduced, modified, distributed, displayed,
-        transmitted, or exploited in any form without the prior written consent
-        of PRIMETHIC.
-      </p>
-      </p>
-      <h2 className="font-bold text-[30px] mb-5">19. Contact Information</h2>
-      <p className="mb-12 text-[20px] leading-[32px]">
-        For any queries, Users may contact Connect EC at <span className="text-[#0668E1]"> hello@connectec.app</span>
+      </div>
+
+      <div className="border-t border-[#DFDFDF] mb-xl pb-xl"> </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">1. Definitions</h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          "PRIMETHIC" means the company that owns and operates Connect EC and
+          related products and services.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          "Assessment Outputs" means alignment assessments, alignment reports,
+          predictive indicators, engagement indicators, recommendations, scores,
+          badges, workflow suggestions, and other informational outputs
+          generated by the Platform.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          For the purposes of these Terms, “Platform” refers to the Connect EC
+          mobile application, website, systems, and services. “Employer” means
+          any organization or authorized representative using the Platform to
+          post jobs and engage Recruiters or Candidates. “Recruiter” refers to a
+          person authorized by an Employer to conduct hiring-related activities.
+          “Candidate” means an individual using the Platform to seek employment
+          or interact with Employers or Recruiters. “User” means any person
+          accessing or using the Platform. “Content” includes all data,
+          information, messages, documents, images, videos, and materials
+          uploaded or shared through the Platform.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">2. Nature of Service</h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Connect EC is a technology-enabled facilitation platform that connects
+          Employers, Recruiters, and Candidates. Connect EC does not guarantee
+          employment, independently verify all information provided by users,
+          act as an agent or representative, act as an agent or representative,
+          or participate in employment contracts or commercial arrangements
+          between Users. All hiring decisions are solely the responsibility of
+          the Users involved.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Connect EC may generate assessments, reports, predictive indicators,
+          engagement signals, recommendations, scheduling indicators, badges,
+          scores, and other informational outputs designed to support hiring
+          visibility, coordination, and decision-making.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Such outputs are informational tools only and do not constitute
+          employment decisions, legal advice, professional advice, guarantees of
+          outcomes, or representations regarding any Candidate, Recruiter,
+          Employer, or hiring decision.
+        </p>
+      </div>
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          3. User Eligibility and Representations
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          By using the Platform, Users represent that they are at least eighteen
+          years of age, that all information provided is accurate and complete,
+          and that they will comply with applicable laws. Users agree not to
+          impersonate others, misuse the Platform, or engage in illegal or
+          harmful activities. Any false representation may result in suspension,
+          termination, or legal action.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          4. Registration and Account Security
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Users may be required to register using valid contact details. Users
+          are solely responsible for maintaining the confidentiality of their
+          login credentials and for all activities conducted through their
+          accounts. Connect EC reserves the right to modify or remove accounts
+          or usernames that are inappropriate or violate these Terms.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          5. User Responsibilities and Conduct
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px] ">
+          All Users shall use the Platform in a lawful, ethical, and
+          professional manner.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Employers are responsible for posting genuine job opportunities,
+          providing accurate information, managing Recruiters under their
+          accounts, and ensuring compliance with applicable laws. All actions
+          taken by Recruiters shall be deemed actions of the Employer.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Employers are solely responsible for interviews, feedback, and all
+          content uploaded through their accounts.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Recruiters shall communicate professionally, provide accurate
+          information, respect Candidate privacy, and maintain integrity in
+          hiring processes.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Candidates shall provide accurate information, behave professionally,
+          and engage honestly with Employers and Recruiters.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Users remain solely responsible for evaluating information,
+          recommendations, reports, indicators, and other outputs generated by
+          the Platform before making employment, recruitment, or hiring
+          decisions.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          6. Prohibited Activities
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Users shall not engage in unauthorized access, reverse engineering,
+          data scraping, malware distribution, impersonation, harassment,
+          submission of false information, or any activity that is illegal or
+          harmful. Users shall not misuse Platform content for competing
+          commercial purposes.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          7. User-Generated Content and Communications
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          The Platform provides in-app communication features. Connect EC does
+          not actively monitor communications but may access content for
+          compliance, safety, or legal purposes. Users are solely responsible
+          for their content.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          By submitting content, Users grant PRIMETHIC a worldwide,
+          royalty-free, non-exclusive license to host, process, display,
+          reproduce, and use such content solely for operating, maintaining,
+          improving, securing, and providing the Platform.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          8. Gamification and Badges
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          The Platform may offer recognition badges or points based on user
+          participation. Such badges are indicative only and do not create any
+          legal rights or obligations.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          8A. Assessments, Reports, and Platform Outputs
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Connect EC may generate alignment assessments, alignment reports,
+          predictive indicators, engagement signals, recommendations, badges,
+          scores, workflow suggestions, and other informational outputs.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          These outputs are intended to support user awareness, visibility,
+          coordination, and decision-making.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          PRIMETHIC does not guarantee the accuracy, completeness, suitability,
+          future performance, employment outcomes, recruitment outcomes, hiring
+          outcomes, or business outcomes associated with any Platform output.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Users remain solely responsible for decisions made based on such
+          outputs.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          9. License to Use Platform
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Users are granted a limited, revocable, non-exclusive, and
+          non-transferable license to use the Platform in accordance with these
+          Terms.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          10. Third-Party Services
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          The Platform may integrate third-party services. Connect EC is not
+          responsible for the policies or practices of third-party providers.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          11. Enforcement and Safety
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          PRIMETHIC reserves the right to suspend or terminate accounts for
+          violations of these Terms, fraudulent conduct, or legal
+          non-compliance. PRIMETHIC may cooperate with law enforcement
+          authorities as required by law.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">12. Termination</h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Users may discontinue use of the Platform at any time. PRIMETHIC may
+          suspend or terminate access without prior notice for violation of
+          these Terms. Upon termination, user access shall cease immediately.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          12A. No Employment Relationship
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Use of the Platform does not create any employment, agency,
+          partnership, joint venture, fiduciary, recruiter-client,
+          employer-employee, or representative relationship between PRIMETHIC
+          and any User.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          13. Limitation of Liability
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          The Platform is provided on an "as is" and "as available" basis.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          To the maximum extent permitted by law, PRIMETHIC shall not be liable
+          for employment outcomes, hiring outcomes, recruitment outcomes,
+          business outcomes, user decisions, platform recommendations,
+          predictive indicators, assessment outputs, engagement signals, badges,
+          scores, user-generated content, service interruptions, or any
+          indirect, incidental, consequential, or special damages arising from
+          the use of the Platform.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">14. Dispute Resolution</h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          All disputes shall be resolved by binding arbitration in accordance
+          with the Arbitration and Conciliation Act, 1996. The seat of
+          arbitration shall be Chennai, India, the language shall be English,
+          and the arbitration shall be conducted by a sole arbitrator. Courts at
+          Chennai shall have jurisdiction for interim relief and enforcement.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">15. Governing Law</h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          These Terms shall be governed by the laws of India.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">16. Privacy Policy</h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Use of the Platform is subject to the Privacy Policy, which forms an
+          integral part of these Terms.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">17. Changes to Terms</h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          PRIMETHIC may modify these Terms from time to time. Continued use of
+          the Platform constitutes acceptance of the revised Terms.
+        </p>
+      </div>
+
+      <div className="mb-xl pb-xl">
+        <h2 className="font-semibold text-h4 mb-md">
+          18. Intellectual Property Rights
+        </h2>
+        <p className="mb-sm text-h6 leading-[32px]">
+          All content, materials, and works available on or through the{" "}
+          <span className="font-bold">Connect EC</span> platform, including but
+          not limited to software, documentation, workflows, user interfaces,
+          text, graphics, icons, badges, scores, and visual elements, are the
+          exclusive property of <span className="font-bold">PRIMETHIC</span> or
+          its licensors and are protected under the{" "}
+          <span className="font-bold">Copyright Act, 1957,</span> trademark
+          laws, and other applicable intellectual property laws.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          The platform name <span className="font-bold">Connect EC,</span> and
+          badge identifiers including{" "}
+          <span className="font-bold">HonestTalent</span> and{" "}
+          <span className="font-bold">RockstaRecruiter,</span> are registered
+          wordmarks owned by PRIMETHIC.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          The Connect EC alignment architecture, hiring workflows, timer-driven
+          action framework, assessment structures, scoring systems, badge
+          systems, reports, and related implementations, including its
+          documented structure, sequencing, and expressive implementation of
+          timers, scores, and badges, are protected under applicable copyright,
+          trademark, trade secret, and other intellectual property laws.
+        </p>
+        <p className="mb-sm text-h6 leading-[32px]">
+          Except as expressly permitted under these Terms, no part of the
+          Platform or its content may be copied, reproduced, modified,
+          distributed, displayed, transmitted, or exploited in any form without
+          the prior written consent of PRIMETHIC.
+        </p>
+      </div>
+      <h2 className="font-semibold text-h4 mb-md">19. Contact Information</h2>
+      <p className="mb-sm text-h6 leading-[32px]">
+        For any questions regarding these Terms, users may contact PRIMETHIC at{" "}
+        <span className="text-[#0668E1]"> hello@connectec.app</span> or visit{" "}
+        <Link
+          href={"https://connectec.app"}
+          target="_blank"
+          className="text-[#0668E1]"
+        >
+          https://connectec.app.
+        </Link>
       </p>
     </div>
   );
-};
-
+}

@@ -82,6 +82,7 @@
   --spacing-iconsize-md: clamp(24px, calc(36 / var(--width) * 100vw), 80px);
   --spacing-iconsize-lg: clamp(26px, calc(46 / var(--width) * 100vw), 100px);
   --spacing-iconsize-xl: clamp(28px, calc(48 / var(--width) * 100vw), 120px);
+  --spacing-iconsize-2xl:clamp(30px, calc(60 / var(--width) * 100vw), 160px);
 
   --spacing-img-lg: clamp(32px, calc(60 / var(--width) * 100vw), 150px);
   

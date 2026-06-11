@@ -12,6 +12,7 @@ import UnifiedOutcomeBanner from "./UnifiedOutComeBanner";
 import UniversalBehaviorSection from "./UniversalBehaviorSection";
 import AspirationToAchievementSection from "./AspirationToAchievementSection";
 import  AAABehaviouralFramework  from "./AAABehaviouralFramework";
+import AlignmentTabWithinAcrossComponent from "./AlignmentTabWithinAcrossComponent";
 
 export const HomePage = () => {
   return (
@@ -57,6 +58,9 @@ export const HomePage = () => {
         </div>    
         <div className="mt-[5%] md:mt-0 py-[5%] mb-[15%] md:mb-0">
           <AspirationToAchievementSection />
+        </div>
+                <div className="mt-[5%] md:mt-0 py-[5%] mb-[15%] md:mb-0">
+          <AlignmentTabWithinAcrossComponent/>
         </div>
       </main>
     </>
