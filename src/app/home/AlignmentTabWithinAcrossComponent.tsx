@@ -7,11 +7,13 @@ import { MdGroups } from "react-icons/md";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { VscArrowBoth } from "react-icons/vsc";
+import Link from "next/link";
 
-const roles = ["Candidates", "Recruiters", "Employers"];
+const withinRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg",url:"/resources/alignment-test/register?mode=single&phase=uncertainty"},{role: "Recruiters",img:"/icons/recruiter-icon.svg", url:"/resources/alignment-test/register?mode=single&phase=uncertainty"}, {role:"Employers",img:"/icons/employer-icon.svg",url:"/resources/alignment-test/register?mode=single&phase=uncertainty"}];
+const acrossRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg",url:"https://candidate.connectec.app/register"}, {role:"Recruiters",img:"/icons/recruiter-icon.svg", url:"https://recruiter.connectec.app/register"}, {role:"Employers",img:"/icons/employer-icon.svg",url: "https://employer.connectec.app/register"}];
+
 
 export default function AlignmentTabWithinAcrossComponent() {
-  const [activeRole, setActiveRole] = useState("");
 
   return (
     <Tabs defaultValue="within" className="w-full md:px-[5%]">
@@ -101,10 +103,10 @@ text-start
       {/* WITHIN */}
       <TabsContent value="within" className="mt-lg">
         <div className="flex flex-col sm:flex-row items-center gap-lg sm:gap-0 ">
-          {roles.map((role, index) => (
-            <div key={role} className="flex items-center flex-1 w-full md:w-auto">
-              <button
-                onClick={() => setActiveRole(role)}
+          {withinRoles.map((role, index) => (
+            <div key={role.role} className="flex items-center flex-1 w-full md:w-auto">
+              <Link
+              href={role.url}
                 className={`
             group
             w-full
@@ -128,7 +130,7 @@ hover:font-bold
 
           `}
               >
-                <span>{role}</span>
+                <span>{role.role}</span>
 
                 <ArrowRight
                   className={`
@@ -141,9 +143,9 @@ hover:font-bold
               opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0
             `}
                 />
-              </button>
+              </Link>
 
-              {index < roles.length - 1 && (
+              {index < withinRoles.length - 1 && (
                 <div className="hidden  w-iconsize-sm h-full md:flex justify-center items-center mx-md ">
                   <span className="block bg-[#DEEDFF] h-iconsize-md w-[2px] " />
                 </div>
@@ -156,11 +158,13 @@ hover:font-bold
       {/* ACROSS */}
       <TabsContent value="across" className="mt-md">
         <div className="flex flex-col md:flex-row items-center  ">
-          {roles.map((role, index) => (
-            <div key={role} className="flex flex-col md:flex-row items-center w-full md:w-auto flex-1">
-              <button
-                onClick={() => setActiveRole(role)}
+          {acrossRoles.map((role, index) => (
+            <div key={role.role} className="flex flex-col md:flex-row items-center w-full md:w-auto flex-1">
+              <Link
+              href={role.url}
+              target="_blank"
                 className={`
+                  ${role.role==="Candidates"?"pointer-events-none":"cursor-pointer"}
             group
             w-full
             h-btn-h
@@ -183,7 +187,7 @@ hover:font-bold
 
           `}
               >
-                <span>{role}</span>
+                <span>{role.role}</span>
 
                 <ArrowRight
                   className={`
@@ -198,9 +202,9 @@ hover:font-bold
               
             `}
                 />
-              </button>
+              </Link>
 
-              {index < roles.length - 1 && (
+              {index < acrossRoles.length - 1 && (
                 <VscArrowBoth className="size-iconsize-sm rotate-90 md:rotate-0 my-sm font-medium mx-md" />
               )}
             </div>

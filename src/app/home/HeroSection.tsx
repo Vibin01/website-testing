@@ -5,7 +5,44 @@ import { MdGroups } from "react-icons/md";
 import { IoPersonSharp } from "react-icons/io5";
 import { VscArrowBoth } from "react-icons/vsc";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import React from "react";
+
+const withinRoles = [
+  {
+    role: "Candidates",
+    img: "/icons/candidate-icon.svg",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+
+  },
+  {
+    role: "Recruiters",
+    img: "/icons/recruiter-icon.svg",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+  },
+  {
+    role: "Employers",
+    img: "/icons/employer-icon.svg",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+  },
+];
+const acrossRoles = [
+  {
+    role: "Candidates",
+    img: "/icons/candidate-icon.svg",
+    url: "https://candidate.connectec.app/register",
+  },
+  {
+    role: "Recruiters",
+    img: "/icons/recruiter-icon.svg",
+    url: "https://recruiter.connectec.app/register",
+  },
+  {
+    role: "Employers",
+    img: "/icons/employer-icon.svg",
+    url: "https://employer.connectec.app/register",
+  },
+];
 
 export const HeroSection = () => {
   return (
@@ -19,7 +56,10 @@ export const HeroSection = () => {
           Seamlessly Aligning Talent, Strategy, and Execution.
         </h2>
 
-        <Tabs defaultValue="across" className="w-full sm:max-w-[85%] md:max-w-[70%] lg:max-w-[50%] mx-auto">
+        <Tabs
+          defaultValue="within"
+          className="w-full sm:max-w-[85%] md:max-w-[70%] lg:max-w-[50%] mx-auto"
+        >
           <TabsList className="grid w-full mx-auto grid-cols-2 bg-transparent">
             <TabsTrigger
               value="within"
@@ -39,167 +79,70 @@ export const HeroSection = () => {
           </TabsList>
 
           <TabsContent value="within" className="mt-xl">
-            <div className="flex justify-evenly items-center  h-[clamp(80px,11vw,200px)]  ">
-              <div className=" w-1/3 group flex flex-col items-center gap-sm cursor-pointer">
-                <img
-                  src="/icons/candidate-icon.svg"
-                  alt="candidate"
-                  className="
-      size-iconsize-2xl
-      transition-all
-      duration-400
-      group-hover:scale-110
-    "
-                />
+            <div className="flex justify-evenly items-center h-[clamp(80px,11vw,200px)]">
+              {withinRoles.map((role, index) => (
+                <React.Fragment key={role.role}>
+                  <Link
+                    href={role.url}
+                    className="w-1/3 group flex flex-col items-center gap-sm cursor-pointer"
+                  >
+                    <img
+                      src={role.img}
+                      alt={role.role}
+                      className={`
+            size-iconsize-2xl
+            transition-all
+            duration-400
+            group-hover:scale-110
+          `}
+                    />
 
-                <div
-                  className="
-                  mt-sm
-      flex items-center gap-xs
-      px-0 py-0
-      rounded-sm
-      border border-transparent
-      bg-transparent
+                    <div
+                      className={`
+            mt-sm
+            flex items-center gap-xs
+            px-0 py-0
+            rounded-sm
+            border border-transparent
+            bg-transparent
+            transition-all
+            duration-400
+            group-hover:px-4
+            group-hover:py-2
+            group-hover:bg-white
+            group-hover:border-[#0066FF]
+            group-hover:scale-100
+          `}
+                    >
+                      <span className="font-medium text-base group-hover:text-[#0066FF]">
+                        {role.role}
+                      </span>
 
-      transition-all
-      duration-400
+                      <ArrowRight
+                        className="
+              size-iconsize-sm
+              scale-90
+              text-[#0066FF]
+              opacity-0
+              -translate-x-2
+              transition-all
+              duration-400
+              group-hover:opacity-100
+              group-hover:translate-x-0
+            "
+                      />
+                    </div>
+                  </Link>
 
-      group-hover:px-4
-      group-hover:py-2
-      group-hover:bg-white
-      group-hover:border-[#0066FF]
-      group-hover:scale-100
-    "
-                >
-                  <span className="font-medium text-base  group-hover:text-[#0066FF]">
-                    Candidates
-                  </span>
-
-                  <ArrowRight
-                    className="
-        size-iconsize-sm scale-90 
-        text-[#0066FF]
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-400
-
-        group-hover:opacity-100
-        group-hover:translate-x-0
-      "
-    />
-                </div>
-              </div>
-
-<div className="w-iconsize-sm h-full flex justify-center items-center ">
-              <span className="block bg-[#DEEDFF] h-iconsize-2xl w-[2px] " />
-</div>
-               <div className=" w-1/3  group flex flex-col items-center gap-sm cursor-pointer">
-                <img
-                  src="/icons/recruiter-icon.svg"
-                  alt="Recruiter"
-                  className="
-      size-iconsize-2xl
-      transition-all
-      duration-400
-      group-hover:scale-125
-    "
-                />
-
-                <div
-                  className="
-                  mt-sm
-      flex items-center gap-xs
-      px-0 py-0
-      rounded-sm
-      border border-transparent
-      bg-transparent
-
-      transition-all
-      duration-400
-
-      group-hover:px-4
-      group-hover:py-2
-      group-hover:bg-white
-      group-hover:border-[#0066FF]
-      group-hover:scale-105
-    "
-                >
-                  <span className="font-medium text-base  group-hover:text-[#0066FF]">
-                    Recruiter
-                  </span>
-
-                  <ArrowRight
-                    className="
-        size-iconsize-sm scale-90
-        text-[#0066FF]
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-400
-
-        group-hover:opacity-100
-        group-hover:translate-x-0
-      "
-    />
-                </div>
-              </div>
-
-            <div className="w-iconsize-sm h-full flex items-center justify-center ">
-              <span className=" block bg-[#DEEDFF] h-iconsize-2xl w-[2px] " />
-</div>
-               <div className=" w-1/3  group flex flex-col items-center gap-sm cursor-pointer">
-                <img
-                  src="/icons/employer-icon.svg"
-                  alt="Employer"
-                  className="
-      size-iconsize-2xl
-      transition-all
-      duration-400
-      group-hover:scale-125
-    "
-                />
-
-                <div
-                  className="
-                  mt-sm
-      flex items-center gap-xs
-      px-0 py-0
-      rounded-sm
-      border border-transparent
-      bg-transparent
-
-      transition-all
-      duration-400
-
-      group-hover:px-4
-      group-hover:py-2
-      group-hover:bg-white
-      group-hover:border-[#0066FF]
-      group-hover:scale-105
-    "
-                >
-                  <span className="font-medium text-base  group-hover:text-[#0066FF]">
-                    Employer
-                  </span>
-
-                  <ArrowRight
-                    className="
-        size-iconsize-sm scale-90
-        text-[#0066FF]
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-400
-
-        group-hover:opacity-100
-        group-hover:translate-x-0
-      "
-    />
-                </div>
-              </div>
+                  {index < withinRoles.length - 1 && (
+                    <div className="w-iconsize-sm h-full flex justify-center items-center">
+                      <span className="block bg-[#DEEDFF] h-iconsize-2xl w-[2px]" />
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-xl flex justify-center">
               <div className="border border-[#0668E1] rounded-md min-w-[85%] px-md py-sm bg-[#EEF6FF] text-[#0668E1] text-h6 font-medium">
                 Discover your hiring alignment in real-world scenarios
               </div>
@@ -207,168 +150,67 @@ export const HeroSection = () => {
           </TabsContent>
 
           <TabsContent value="across" className="mt-xl">
-            <div className="flex justify-evenly items-center  h-[clamp(80px,11vw,200px)]  ">
-              <div className=" w-1/3 group flex flex-col items-center gap-sm cursor-pointer">
-                <img
-                  src="/icons/candidate-icon.svg"
-                  alt="candidate"
-                  className="
-      size-iconsize-2xl
-      transition-all
-      duration-400
-      group-hover:scale-110
-    "
-                />
+            <div className="flex justify-evenly items-center h-[clamp(80px,11vw,200px)]">
+              {acrossRoles.map((role, index) => (
+                <React.Fragment key={role.role}>
+                  <Link href={role.url} target="_blank" 
+                  className={`${role.role==="Candidates"?"pointer-events-none":"cursor-pointer"} w-1/3 group flex flex-col items-center gap-sm cursor-pointer`}>
+                    <img
+                      src={role.img}
+                      alt={role.role}
+                      className={`
+            size-iconsize-2xl
+            transition-all
+            duration-400
+            group-hover:scale-110
+          `}
+                    />
 
-                <div
-                  className="
-                  mt-sm
-      flex items-center gap-xs
-      px-0 py-0
-      rounded-sm
-      border border-transparent
-      bg-transparent
+                    <div
+                      className={`
+            mt-sm
+            flex items-center gap-xs
+            px-0 py-0
+            rounded-sm
+            border border-transparent
+            bg-transparent
+            transition-all
+            duration-400
+            group-hover:px-4
+            group-hover:py-2
+            group-hover:bg-white
+            group-hover:border-[#0066FF]
+            group-hover:scale-100
+          `}
+                    >
+                      <span className="font-medium text-base group-hover:text-[#0066FF]">
+                        {role.role}
+                      </span>
 
-      transition-all
-      duration-400
+                      <ArrowRight
+                        className="
+              size-iconsize-sm
+              scale-90
+              text-[#0066FF]
+              opacity-0
+              -translate-x-2
+              transition-all
+              duration-400
+              group-hover:opacity-100
+              group-hover:translate-x-0
+            "
+                      />
+                    </div>
+                  </Link>
 
-      group-hover:px-4
-      group-hover:py-2
-      group-hover:bg-white
-      group-hover:border-[#0066FF]
-      group-hover:scale-100
-    "
-                >
-                  <span className="font-medium text-base  group-hover:text-[#0066FF]">
-                    Candidates
-                  </span>
-
-                  <ArrowRight
-                    className="
-        size-iconsize-sm scale-90 
-        text-[#0066FF]
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-400
-
-        group-hover:opacity-100
-        group-hover:translate-x-0
-      "
-    />
-                </div>
-              </div>
-
-                            <VscArrowBoth className="size-iconsize-sm font-medium" />
-
-
-               <div className=" w-1/3  group flex flex-col items-center gap-sm cursor-pointer">
-                <img
-                  src="/icons/recruiter-icon.svg"
-                  alt="Recruiter"
-                  className="
-      size-iconsize-2xl
-      transition-all
-      duration-400
-      group-hover:scale-125
-    "
-                />
-
-                <div
-                  className="
-                  mt-sm
-      flex items-center gap-xs
-      px-0 py-0
-      rounded-sm
-      border border-transparent
-      bg-transparent
-
-      transition-all
-      duration-400
-
-      group-hover:px-4
-      group-hover:py-2
-      group-hover:bg-white
-      group-hover:border-[#0066FF]
-      group-hover:scale-105
-    "
-                >
-                  <span className="font-medium text-base  group-hover:text-[#0066FF]">
-                    Recruiter
-                  </span>
-
-                  <ArrowRight
-                    className="
-        size-iconsize-sm scale-90
-        text-[#0066FF]
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-400
-
-        group-hover:opacity-100
-        group-hover:translate-x-0
-      "
-    />
-                </div>
-              </div>
-
-                            <VscArrowBoth className="size-iconsize-sm font-medium" />
-
-
-               <div className=" w-1/3  group flex flex-col items-center gap-sm cursor-pointer">
-                <img
-                  src="/icons/employer-icon.svg"
-                  alt="Employer"
-                  className="
-      size-iconsize-2xl
-      transition-all
-      duration-400
-      group-hover:scale-125
-    "
-                />
-
-                <div
-                  className="
-                  mt-sm
-      flex items-center gap-xs
-      px-0 py-0
-      rounded-sm
-      border border-transparent
-      bg-transparent
-
-      transition-all
-      duration-400
-
-      group-hover:px-4
-      group-hover:py-2
-      group-hover:bg-white
-      group-hover:border-[#0066FF]
-      group-hover:scale-105
-    "
-                >
-                  <span className="font-medium text-base  group-hover:text-[#0066FF]">
-                    Employer
-                  </span>
-
-                  <ArrowRight
-                    className="
-        size-iconsize-sm scale-90
-        text-[#0066FF]
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-400
-
-        group-hover:opacity-100
-        group-hover:translate-x-0
-      "
-    />
-                </div>
-              </div>
+                  {index < acrossRoles.length - 1 && (
+                    <VscArrowBoth className="size-iconsize-sm font-medium" />
+                  )}
+                </React.Fragment>
+              ))}
             </div>
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-xl flex justify-center">
               <div className="border border-[#0668E1] rounded-md min-w-[85%] py-sm bg-[#EEF6FF] text-[#0668E1] text-h6 font-medium">
                 Experience alignment across the hiring ecosystem.
               </div>

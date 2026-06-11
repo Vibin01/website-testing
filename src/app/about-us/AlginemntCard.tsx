@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGroups } from "react-icons/md";
 import { VscArrowBoth } from "react-icons/vsc";
 
-const withinRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg"},{role: "Recruiters",img:"/icons/recruiter-icon.svg"}, {role:"Employers",img:"/icons/employer-icon.svg"}];
-const acrossRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg"}, {role:"Recruiters",img:"/icons/recruiter-icon.svg"}, {role:"Employers",img:"/icons/employer-icon.svg"}];
+const withinRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg",url:"/resources/alignment-test/register?mode=single&phase=uncertainty"},{role: "Recruiters",img:"/icons/recruiter-icon.svg", url:"/resources/alignment-test/register?mode=single&phase=uncertainty"}, {role:"Employers",img:"/icons/employer-icon.svg",url:"/resources/alignment-test/register?mode=single&phase=uncertainty"}];
+const acrossRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg",url:"https://candidate.connectec.app/register"}, {role:"Recruiters",img:"/icons/recruiter-icon.svg", url:"https://recruiter.connectec.app/register"}, {role:"Employers",img:"/icons/employer-icon.svg",url: "https://employer.connectec.app/register"}];
 
 export default function AlignmentCards() {
   return (
@@ -42,9 +43,10 @@ export default function AlignmentCards() {
         </p>
 
         <div className="mb-sm flex items-center gap-xs md:gap-sm">
-          {acrossRoles.map((role, index) => (
+          {withinRoles.map((role, index) => (
             <div key={role.role} className="flex items-center gap-xs md:gap-sm">
-              <button
+              <Link
+              href={role.url}
                 className="
                   group
                   flex
@@ -80,7 +82,7 @@ text-[#0668E1]
                 <span className="text-xl font-medium">{role.role}</span>
 
                 
-              </button>
+              </Link>
 
               {index < acrossRoles.length - 1 && (
                  <div className="  w-iconsize-sm h-full flex justify-center items-center">
@@ -133,8 +135,10 @@ text-[#0668E1]
         <div className="mb-sm flex items-center gap-xs md:gap-sm">
           {acrossRoles.map((role, index) => (
             <div key={role.role} className="flex items-center gap-xs md:gap-sm">
-              <button
-                className="
+              <Link
+              href={role.url}
+              target="_blank"
+                className={`${role.role==="Candidates"?"pointer-events-none":"cursor-pointer"}
                   group
                   flex
                  flex-col
@@ -150,7 +154,7 @@ text-[#0668E1]
                   duration-300
                   hover:border-[#0668E1]
                   hover:text-[#0668E1]
-                "
+                `}
               >
                 <div className="flex w-full items-center justify-between"> 
                   
@@ -169,7 +173,7 @@ text-[#0668E1]
                 <span className="text-xl font-medium">{role.role}</span>
 
                 
-              </button>
+              </Link>
 
               {index < acrossRoles.length - 1 && (
                                 <VscArrowBoth className="size-iconsize-sm font-medium" />
