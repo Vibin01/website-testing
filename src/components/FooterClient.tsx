@@ -114,9 +114,9 @@ export default function FooterClient({
                 <div className="mt-10 lg:mt-0 flex flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between ">
                   <div className="flex justify-center items-center flex-wrap lg:flex-nowrap lg:block   text-[12px] md:text-[14px]  text-start lg:font-medium space-x-3">
                     <Link href="/about-us">About us</Link>|{" "}
-                    <a href="/terms-and-condition">&nbsp;&nbsp;Terms & Conditions</a>
+                    <Link href="/terms-and-condition" target="_blank">&nbsp;&nbsp;Terms & Conditions</Link>
                     |&nbsp;&nbsp; {""}
-                    <a href="/privacy-policy">Privacy Policy</a>|{" "}
+                    <Link href="/privacy-policy" target="_blank">Privacy Policy</Link>|{" "}
                     <button onClick={handleFaqClick} className="cursor-pointer">
                       &nbsp;&nbsp;FAQs
                     </button>

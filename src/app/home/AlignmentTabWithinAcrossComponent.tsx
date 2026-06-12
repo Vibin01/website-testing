@@ -146,7 +146,7 @@ hover:font-bold
               </Link>
 
               {index < withinRoles.length - 1 && (
-                <div className="hidden  w-iconsize-sm h-full md:flex justify-center items-center mx-md ">
+                <div className="hidden  w-iconsize-sm h-full md:flex justify-center items-center my-sm mx-md ">
                   <span className="block bg-[#DEEDFF] h-iconsize-md w-[2px] " />
                 </div>
               )}
@@ -156,7 +156,7 @@ hover:font-bold
       </TabsContent>
 
       {/* ACROSS */}
-      <TabsContent value="across" className="mt-md">
+      <TabsContent value="across" className="mt-lg">
         <div className="flex flex-col md:flex-row items-center  ">
           {acrossRoles.map((role, index) => (
             <div key={role.role} className="flex flex-col md:flex-row items-center w-full md:w-auto flex-1">
@@ -205,7 +205,7 @@ hover:font-bold
               </Link>
 
               {index < acrossRoles.length - 1 && (
-                <VscArrowBoth className="size-iconsize-sm rotate-90 md:rotate-0 my-sm font-medium mx-md" />
+                <VscArrowBoth className="size-iconsize-sm rotate-90 md:rotate-0 my-xs font-medium mx-md" />
               )}
             </div>
           ))}

@@ -27,7 +27,7 @@ export default function AlignmentCards() {
 
                 "
             >
-              <MdGroups
+              <IoPersonSharp
                 className="
                   scale-110
                     text-white
@@ -86,7 +86,7 @@ text-[#0668E1]
 
               {index < acrossRoles.length - 1 && (
                  <div className="  w-iconsize-sm h-full flex justify-center items-center">
-                  <span className="inline-block bg-[#DEEDFF] h-iconsize-2xl w-[2px] " />
+                  <span className="inline-block bg-[#DEEDFF]  w-[2px] " />
                 </div>
               )}
             </div>

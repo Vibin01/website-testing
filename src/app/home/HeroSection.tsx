@@ -11,19 +11,21 @@ import React from "react";
 const withinRoles = [
   {
     role: "Candidates",
+    roleId: "candidate",
     img: "/icons/candidate-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
-
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=candidate",
   },
   {
     role: "Recruiters",
+    roleId: "recruiter",
     img: "/icons/recruiter-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=recruiter",
   },
   {
     role: "Employers",
+    roleId: "employer",
     img: "/icons/employer-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=employer",
   },
 ];
 const acrossRoles = [
@@ -46,9 +48,9 @@ const acrossRoles = [
 
 export const HeroSection = () => {
   return (
-    <section className="flex items-center justify-center px-[5%] sm:px-0 py-[12%]">
-      <div className="text-center mt-[10%] md:mt-0 w-full">
-        <h1 className="font-extrabold text-h1 text-[#0668E1]">
+    <section className="flex items-center justify-center px-[5%] sm:px-0  pt-[32%] md:pt-[7%] pb-[12%]">
+      <div className="text-center  w-full">
+        <h1 className="-mt-[5%] md:-mt-0 font-extrabold text-h1 text-[#0668E1]">
           Hiring Alignment System
         </h1>
 
@@ -92,8 +94,9 @@ export const HeroSection = () => {
                       className={`
             size-iconsize-2xl
             transition-all
+            scale-90
             duration-400
-            group-hover:scale-110
+            group-hover:scale-105
           `}
                     />
 
@@ -107,30 +110,33 @@ export const HeroSection = () => {
             bg-transparent
             transition-all
             duration-400
-            group-hover:px-4
+            group-hover:px-3
             group-hover:py-2
             group-hover:bg-white
             group-hover:border-[#0066FF]
             group-hover:scale-100
           `}
                     >
-                      <span className="font-medium text-base group-hover:text-[#0066FF]">
+                      <span className="font-medium text-xl group-hover:text-[#0066FF]">
                         {role.role}
                       </span>
 
-                      <ArrowRight
-                        className="
-              size-iconsize-sm
-              scale-90
-              text-[#0066FF]
-              opacity-0
-              -translate-x-2
-              transition-all
-              duration-400
-              group-hover:opacity-100
-              group-hover:translate-x-0
-            "
-                      />
+<ArrowRight
+  className="
+    size-iconsize-sm
+    text-[#0066FF]
+    opacity-0
+    w-0
+    -translate-x-2
+    overflow-hidden
+    transition-all
+    duration-300
+    group-hover:opacity-100
+    group-hover:w-iconsize-sm
+    group-hover:scale-85
+    group-hover:translate-x-0
+  "
+/>
                     </div>
                   </Link>
 
@@ -161,8 +167,9 @@ export const HeroSection = () => {
                       className={`
             size-iconsize-2xl
             transition-all
+             scale-90
             duration-400
-            group-hover:scale-110
+            group-hover:scale-105
           `}
                     />
 
@@ -183,23 +190,26 @@ export const HeroSection = () => {
             group-hover:scale-100
           `}
                     >
-                      <span className="font-medium text-base group-hover:text-[#0066FF]">
+                      <span className="font-medium text-xl group-hover:text-[#0066FF]">
                         {role.role}
                       </span>
 
-                      <ArrowRight
-                        className="
-              size-iconsize-sm
-              scale-90
-              text-[#0066FF]
-              opacity-0
-              -translate-x-2
-              transition-all
-              duration-400
-              group-hover:opacity-100
-              group-hover:translate-x-0
-            "
-                      />
+                     <ArrowRight
+  className="
+    size-iconsize-sm
+    text-[#0066FF]
+    opacity-0
+    w-0
+    -translate-x-2
+    overflow-hidden
+    transition-all
+    duration-300
+    group-hover:opacity-100
+    group-hover:w-iconsize-sm
+    group-hover:scale-85
+    group-hover:translate-x-0
+  "
+/>
                     </div>
                   </Link>
 

@@ -105,7 +105,7 @@ export default function GoalsDiagramMobile() {
 
           <div className="mt-12">
             <ArcherElement id="goals-mobile">
-              <div className="flex h-12 px-4 items-center justify-center rounded-full bg-white text-[13px] font-bold border border-[#DEEDFF] shadow-[0px_0px_40px_5px_#0668E11A]">
+              <div className="flex py-md min-w-[140px] items-center justify-center rounded-full bg-white text-[13px] font-bold border border-[#DEEDFF] shadow-[0px_0px_40px_5px_#0668E11A]">
                 Different goals
               </div>
             </ArcherElement>

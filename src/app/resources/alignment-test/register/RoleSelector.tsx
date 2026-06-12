@@ -107,11 +107,18 @@ const [otpEndTime, setOtpEndTime] = useState<number | null>(null);
 
  
 
-  useEffect(() => {
-    if (window.innerWidth >= 768) {
-      setSelectedRole("candidate");
-    }
-  }, []);
+useEffect(() => {
+  const role = searchParams.get("role") as Role | null;
+
+  if (
+    role &&
+    ["candidate", "recruiter", "employer"].includes(role)
+  ) {
+    setSelectedRole(role);
+  } else if (window.innerWidth >= 768) {
+    setSelectedRole("candidate");
+  }
+}, [searchParams]);
 
   const routeAfterLogin = async (role: Role) => {
     const status = await getAssessmentStatusAction(role as any);

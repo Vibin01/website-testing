@@ -18,7 +18,7 @@ export const HomePage = () => {
   return (
     <>
       <main className="px-[5%] overflow-x-hidden">
-          <div className=" -mx-[7%] bg-[url('/background/bg-hero-home-section.svg')] bg-no-repeat bg-cover bg-center">
+          <div className=" -mx-[7%] bg-[url('/background/bg-hero-home-section-mobile.svg')] sm:bg-[url('/background/bg-hero-home-section.svg')] bg-no-repeat bg-cover bg-center">
             <HeroSection />
           </div>
           <div className="py-[5%] -mx-[7%] md:-mx-0 ">
@@ -38,9 +38,7 @@ export const HomePage = () => {
         <div className="mt-[5%] md:mt-0 py-[5%]">
           <StrategyGapSection />
         </div>
-        <div className=" -mx-[7%] bg-white">
-          <UnifiedOutcomeBanner />
-        </div>
+       
         <div className="py-[5%]  ">
           <UniversalBehaviorSection />
         </div>

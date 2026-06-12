@@ -290,6 +290,7 @@ export const Header = () => {
           gap-3
           rounded-sm
           p-sm
+          hover:text-[#0668E1]
         `}
       >
         <img
@@ -374,6 +375,7 @@ export const Header = () => {
           p-sm
           transition-all
           duration-300
+          hover:text-[#0668E1]
         `}
       >
         <img

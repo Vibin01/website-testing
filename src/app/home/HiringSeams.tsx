@@ -82,7 +82,7 @@ const handleScroll = () => {
       <div className="w-full">
 
         {/* Heading */}
-        <h1 className="text-h2 font-extrabold mb-lg">
+        <h1 className="text-h2 font-extrabold mb-sm">
           Seams of the Hiring System
         </h1>
 

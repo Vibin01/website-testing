@@ -41,7 +41,7 @@ export default function AlignmentRestoreSection() {
         <div className="mt-md flex flex-col md:flex-row items-center justify-around gap-6">
           
           {/* Left */}
-          <div className="flex flex-col gap-7 md:w-[29%]">
+          <div className="hidden md:flex flex-col gap-7 md:w-[29%]">
             {leftPoints.map((point, i) => (
               <PointCard key={i} text={point} />
             ))}
@@ -59,8 +59,13 @@ export default function AlignmentRestoreSection() {
           </div>
 
           {/* Right */}
-          <div className="flex flex-col md:w-[27%] gap-7">
+          <div className="hidden md:flex flex-col md:w-[27%] gap-7">
             {rightPoints.map((point, i) => (
+              <PointCard key={i} text={point} />
+            ))}
+          </div>
+          <div className=" flex md:hidden flex-col md:w-[27%] gap-sm md:gap-7">
+            {[...leftPoints,...rightPoints].map((point, i) => (
               <PointCard key={i} text={point} />
             ))}
           </div>

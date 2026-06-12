@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoAddCircle, IoCloseCircle } from "react-icons/io5";
 
 type FAQSectionProps = {
@@ -17,8 +17,22 @@ export default function FAQSection({ data }: FAQSectionProps) {
     setOpenItem((prev) => (prev === index ? null : index));
   };
 
+const faqRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const shouldScroll = sessionStorage.getItem("scrollToFaq");
+
+  if (shouldScroll) {
+    sessionStorage.removeItem("scrollToFaq");
+    faqRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}, []);
+
   return (
-    <section className="w-full bg-white md:px-[15%] pb-[10%] md:pb-[2%]">
+    <section ref={faqRef} className="w-full bg-white md:px-[15%] pb-[10%] md:pb-[2%]">
       <div className="mx-auto">
         <h2 className="text-center text-h2 font-extrabold text-[#1B1C17]">
           Frequently Asked Questions

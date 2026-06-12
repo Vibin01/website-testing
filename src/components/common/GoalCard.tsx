@@ -29,8 +29,8 @@ export default function GoalCard({
     <div
       className="
         relative
-        h-[clamp(130px,calc(210/1280*100vw),440px)]
-        w-[clamp(130px,calc(220/1280*100vw),440px)]
+        h-[clamp(125px,calc(210/1280*100vw),440px)]
+        w-[clamp(125px,calc(220/1280*100vw),440px)]
         rounded-md
         bg-[#0668E1]
       "
@@ -53,7 +53,7 @@ export default function GoalCard({
     bottom-0
     z-10
     flex
-    w-[clamp(130px,calc(220/1280*100vw),440px)]
+    w-[clamp(125px,calc(220/1280*100vw),440px)]
     flex-col
     rounded-2xl
     bg-white

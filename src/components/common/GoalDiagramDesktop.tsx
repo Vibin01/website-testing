@@ -148,13 +148,14 @@ export default function GoalsDiagramDesktop() {
             <div
               className="
                 flex
-                h-[clamp(40px,calc(64/1280*100vw),128px)]
-                w-[clamp(180px,calc(320/1280*100vw),640px)]
+                py-md
+                min-w-[140px]
+                md:min-w-[260px]
                 items-center
                 justify-center
                 rounded-full
                 bg-white
-                text-base
+                text-xl
                 font-bold
                  border border-[#DEEDFF] shadow-[0px_0px_40px_5px_#0668E11A]
                 z-20

@@ -26,7 +26,7 @@ export default function OurGoal() {
               key={index}
               className="flex items-center text-left rounded-md border border-[#D3E6FF] bg-white p-md shadow-[1px_9px_20px_0px_#BDDBFF0D,_3px_37px_37px_0px_#BDDBFF0A,_8px_82px_50px_0px_#BDDBFF08,_14px_146px_59px_0px_#BDDBFF03,_21px_229px_64px_0px_#BDDBFF00]"
             >
-              <p className="text-base font-bold">
+              <p className="text-xl font-bold">
                 {goal.title}
               </p>
             </div>

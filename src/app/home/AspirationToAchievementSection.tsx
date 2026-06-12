@@ -20,7 +20,7 @@ const flowSteps = [
 
 function AchievementDiagramCard() {
   return (
-    <div className="rounded-md border flex flex-col items-center justify-center border-[#D3E6FF] bg-white p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
+    <div className="rounded-md border flex flex-col items-center justify-center border-[#D3E6FF] bg-white p-md md:p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
       <h3 className="text-center text-base font-bold text-[#0668E1] flex items-start gap-xs">
         Everyone Achieves Seamless Yield{" "}
         <img
@@ -55,7 +55,7 @@ function AchievementDiagramCard() {
 }
 function AAAAppliedCard() {
   return (
-    <div className="rounded-md border border-[#D3E6FF] bg-white p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
+    <div className="rounded-md border border-[#D3E6FF] bg-white p-md md:p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
       <h3 className="text-base font-bold">
         When AAA Is Applied
       </h3>
@@ -85,7 +85,7 @@ function AAAAppliedCard() {
 
 function AAAFrameworkCard() {
   return (
-    <div className="rounded-md border border-[#D3E6FF] bg-white p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
+    <div className="rounded-md border border-[#D3E6FF] bg-white p-md md:p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
       <h3 className="text-base font-bold">
         The AAA Framework synchronizes:
       </h3>
@@ -140,13 +140,7 @@ function ResultCard() {
           </span>
         </h3>
 
-        <button className="h-btn-h text-nowrap  bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
-          <span className=" font-bold text-xl text-white">
-            Unlock Connect EC for Free
-          </span>
 
-          <FaArrowRight className="text-white text-base" />
-        </button>
       </div>
     </div>
   );
