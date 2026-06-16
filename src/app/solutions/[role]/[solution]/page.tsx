@@ -8,6 +8,7 @@ import FeatureHighlightSection from "../../FeatureHighlightSection";
 import AlignmentComparisonSection from "../../AlignmentComparisonSection";
 import AlignmentSection from "../../AlignementSection";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 type PageProps = {
   params: Promise<{
@@ -61,13 +62,13 @@ export default async function Page({ params }: PageProps) {
               <h2 className="text-h2 font-extrabold text-center">
                 {data.description}
               </h2>
-              <button className=" mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 border-[#0072FF] cursor-pointer rounded-sm px-md py-sm flex items-center justify-center gap-sm">
+              <Link  href={"https://play.google.com/store/apps/details?id=com.primethic.connectec"} target="_blank" className=" mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 border-[#0072FF] cursor-pointer rounded-sm px-md py-sm flex items-center justify-center gap-sm">
                 <span className=" font-bold text-xl text-white">
                   Unlock Connect EC for Free
                 </span>
 
                 <FaArrowRight className="text-white text-base" />
-              </button>
+              </Link>
             </div>
           </section>
         </div>

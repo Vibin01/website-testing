@@ -95,7 +95,7 @@ export default function InsightTabsSection({ data }: InsightTabsSectionProps) {
         </div>
 
         {/* Right Content */}
-        <div className="rounded-lg bg-white p-md border border-[#D3E6FF] shadow-[0px_4px_40px_5px_#0668E11A] min-h-[450px] md:min-h-[600px] sm:w-[69%]">
+        <div className="rounded-lg bg-white p-md border border-[#D3E6FF] shadow-[0px_4px_40px_5px_#0668E11A] min-h-[450px]  sm:w-[69%]">
           <h2 className="mb-lg text-h2 font-extrabold text-[#0668E1]">
             {activeItem.contentTitle}
           </h2>

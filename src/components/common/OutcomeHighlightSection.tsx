@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 type OutcomeHighlightSectionData = {
@@ -97,13 +98,13 @@ export default function OutcomeHighlightSection({
               </h3>
             )}
           </div>
-          <button className=" mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
+          <Link href={"https://play.google.com/store/apps/details?id=com.primethic.connectec"} target="_blank" className="w-fit mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
             <span className=" font-bold text-xl text-white">
               Unlock Connect EC for Free
             </span>
 
             <FaArrowRight className="text-white text-base" />
-          </button>
+          </Link>
         </div>
 
         {/* Right Image */}

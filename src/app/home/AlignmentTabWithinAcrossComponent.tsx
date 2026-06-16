@@ -146,10 +146,10 @@ hover:font-bold
               </Link>
 
               {index < withinRoles.length - 1 && (
-                <div className="hidden  w-iconsize-sm h-full md:flex justify-center items-center my-sm mx-md ">
-                  <span className="block bg-[#DEEDFF] h-iconsize-md w-[2px] " />
-                </div>
-              )}
+  <div className="hidden md:flex self-stretch justify-center mx-md">
+    <span className="w-[2px] bg-[#DEEDFF]" />
+  </div>
+)}
             </div>
           ))}
         </div>
@@ -166,6 +166,7 @@ hover:font-bold
                 className={`
                   ${role.role==="Candidates"?"pointer-events-none":"cursor-pointer"}
             group
+            flex-1
             w-full
             h-btn-h
             rounded-md

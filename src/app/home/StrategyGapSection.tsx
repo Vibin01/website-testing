@@ -14,8 +14,8 @@ type GapPage = {
   title: string;
   icon: string;
   seam: string;
-  dimensionInteraction: string;
-  intro: string;
+  // dimensionInteraction: string;
+  intro: string[];
   impacts: ImpactSection[];
   structuralCauseImage: string;
   alt:string;
@@ -28,43 +28,43 @@ const gapPagesData: GapPage[] = [
     title: "Strategy Gap",
     icon: "/home/icons/strategy-gap-icon.svg",
     seam: "Employer ↔ Recruiter",
-    dimensionInteraction: "Direction ↔ Execution",
-    intro:
-      "Employer direction weakens when visibility into recruiting execution is limited.",
-    impacts: [
+    // dimensionInteraction: "Direction ↔ Execution",
+    intro:[
+      "The Strategy Gap emerges when employer-designed hiring direction fails to translate into consistent recruiting execution because visibility into operational progress across teams and roles is limited.",
+      "Direction weakens not because intent is unclear, but because execution signals are fragmented, delayed, or disconnected from decision-making.",],
+      impacts: [
       {
         title: "Employer Impact",
         points: [
-          "Hiring targets are missed despite high recruiting activity.",
-          "Recruiting priorities drift across teams and roles.",
-          "Workforce planning becomes difficult to sequence and control.",
+          "Hiring targets are missed despite high recruiting activity ",
+          "Priorities drift across teams, roles, and timelines ",
+          "Workforce planning becomes difficult to sequence and control",
         ],
       },
       {
         title: "Candidate Impact",
         points: [
-          "Communication feels inconsistent across stages.",
-          "Signals from the employer lack continuity.",
-          "The hiring experience becomes fragmented.",
+          "Communication becomes inconsistent across hiring ",
+          "Employer signals appear fragmented across key touchpoints",
+          "The hiring experience feels unstructured ",
         ],
       },
       {
         title: "Recruiter Impact",
         points: [
-          "Priorities shift without clear direction.",
-          "Execution is driven by activity rather than outcomes.",
-          "Operational pressure builds over time.",
+          "Priorities shift frequently without stable direction ",
+          "Execution becomes activity-focused instead of outcome-focused",
+          "Operational pressure increases due to unclear expectations",
         ],
       },
     ],
     structuralCauseImage: "/home/hiring-strategy-gap-between-direction-and-execution.svg",
     alt:"Diagram showing strategy gap between employer direction and recruiter execution in hiring",
     structuralCauseText: [
-      "Without visibility into recruiting execution and candidate signals:",
-      "Employers define hiring direction in isolation ",
-      "Recruiters operate without clarity on evolving priorities.",
-      "Alignment weakens between planning and execution. ",
-      "As direction loses signal, execution amplifies noise.",
+      "Employers define hiring direction without visibility into execution realities",
+      "Recruiters operate without clarity on evolving priorities and demands",
+      "Execution signals are not structured into a shared feedback system",
+      "Direction loses signal, execution amplifies noise, and hiring outcomes become inconsistent.",
     ],
   },
   {
@@ -72,43 +72,43 @@ const gapPagesData: GapPage[] = [
     title: "Execution Gap",
     icon: "/home/icons/execution-gap-icon.svg",
     seam: "Recruiter ↔ Candidate",
-    dimensionInteraction: "Execution ↔ Situation",
+    // dimensionInteraction: "Execution ↔ Situation",
     intro:
-      "Recruiter execution and candidate engagement fall out of sync during the hiring process.",
-    impacts: [
+  [    "The Execution Gap emerges when recruiter coordination and candidate engagement fall out of sync because visibility into candidate intent, responsiveness, and stage-level progression is limited.",
+    "Execution loses consistency, not because effort is lacking, but because recruiter actions and candidate signals are not continuously aligned."
+    ],impacts: [
       {
         title: "Employer Impact",
         points: [
-          "Pipeline visibility deteriorates across stages.",
-          "Interview reliability declines.",
-          "Hiring timelines become unpredictable.",
+          "Pipeline visibility becomes unstable and unreliable ",
+          "Interview reliability declines due to coordination breakdowns",
+          "Hiring timelines become unpredictable across roles",
         ],
       },
       {
         title: "Candidate Impact",
          points: [
-          "Delays and missing feedback create anxiety.",
-          "Process progress becomes unclear.",
-          "Next steps remain uncertain.",
+          "Delays and missing feedback increase uncertainty and disengagement",
+          "Process progression becomes unclear across hiring ",
+          "Visibility into next steps and communication consistency declines",
         ],
       },
       {
         title: "Recruiter Impact",
         points: [
-          "Interview no-shows and cancellations increase.",
-          "Coordination and preparation efforts are wasted.",
-          "Rescheduling creates ongoing instability.",
+          "Interview no-shows and drop-offs increase complexity",
+          "Time and effort are lost through rescheduling and re-alignment",
+          "Execution instability increases across hiring stages",
         ],
       },
     ],
     structuralCauseImage: "/home/hiring-execution-gap-between-recruiter-and-candidate.svg",
     alt:"Diagram showing execution gap between recruiter coordination and candidate engagement",
     structuralCauseText: [
-      "Without visibility into candidate engagement and responsiveness:",
-      "Recruiters coordinate interviews without clarity on candidate intent",
-      "Candidates move through the process without visibility into progress.",
-      "Outcomes drift through delays and drop-offs.",
-      "Execution loses consistency across stages."
+      "Recruiters coordinate hiring without visibility into candidate intent ",
+      "Candidates move through the process without clarity on progress or expectations",
+      "Execution signals are not structured into a shared coordination flow",
+      "As a result:  Coordination breaks down, engagement weakens, and execution becomes unstable.",
     ],
   },
   {
@@ -116,16 +116,17 @@ const gapPagesData: GapPage[] = [
     title: "Vision Gap",
     icon: "/home/icons/vision-gap-icon.svg",
     seam: "Employer ↔ Candidate",
-    dimensionInteraction: "Direction ↔ Situation",
+    // dimensionInteraction: "Direction ↔ Situation",
     intro:
-      "Employer direction weakens when visibility into candidate expectations and decision behaviour is limited.",
-    impacts: [
+   [   "The Vision Gap emerges when employer hiring direction and candidate decision-making evolve without shared visibility into expectations, opportunity perception, and decision behaviour.",
+    "Direction loses alignment not because hiring objectives are unclear, but because expectation and decision signals remain disconnected throughout the hiring journey.",
+   ], impacts: [
       {
         title: "Employer Impact",
         points: [
           "Roles are defined without clarity on candidate expectations.",
-          "Late-stage offer declines increase.",
-          "Hiring timelines are disrupted by misaligned decisions.",
+          "Offer declines increase from expectation misalignment.",
+          "Hiring timelines are disrupted by candidate decisions that surface late.",
         ],
       },
       {
@@ -133,33 +134,32 @@ const gapPagesData: GapPage[] = [
         points: [
           "Expectations around role, compensation, and growth remain unclear.",
           "Employer signals vary across interviews and touchpoints.",
-          "Confidence in decision-making weakens.",
+          "Confidence in committing to opportunities weakens.",
         ],
       },
       {
         title: "Recruiter Impact",
         points: [
-          "Late-stage drop-offs reset hiring progress.",
-          "Additional effort is required to realign candidates.",
-          "Time-to-fill pressure increases.",
+          "Late-stage drop-offs reset hiring progress & momentum.",
+          "Additional effort is required to realign expectations.",
+          "Time-to-fill pressure increases as decisions become less predictable.",
         ],
       },
     ],
     structuralCauseImage: "/home/hiring-vision-gap-between-employer-and-candidate.svg",
     alt:"Diagram showing vision gap between employer expectations and candidate reality in hiring",
     structuralCauseText: [
-      "Without visibility into candidate expectations and decision behaviour:",
-      "Employers design roles without market-aligned insight.",
-      "Candidates evaluate opportunities without full context.",
-      "Signals are misread or missed across both sides.",
-      "Misalignment surfaces late — when decisions are already at risk."
+      "Employers design opportunities without continuous visibility into candidate expectations.",
+      "Candidates evaluate opportunities without clarity on role realities.",
+      "Expectation and decision signals lack shared understanding",
+      "Expectations diverge, perception becomes inconsistent, and decisions become vulnerable.",
     ],
   },
 ];
 
 function LeftCard({ page }: { page: GapPage }) {
   return (
-    <div className="rounded-md h-[250px] md:h-auto bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)] md:rounded-b-sm">
+    <div className="rounded-md h-auto bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)] md:rounded-b-sm">
       <div className="flex flex-col gap-sm">
         <div className="flex flex-row items-center md:items-start md:flex-col gap-xs md:gap-md">
           <img
@@ -180,17 +180,20 @@ function LeftCard({ page }: { page: GapPage }) {
 
           <div>
             <h3 className="text-base font-bold text-[#1B1C17]">
-              Dimension Interaction
+              Misalignment
             </h3>
-            <p className="text-xl font-medium text-[#2C2C2C]">
+            {/* <p className="text-xl font-medium text-[#2C2C2C]">
               {page.dimensionInteraction}
+            </p> */}
+            {page.intro.map((text,index)=>(
+            <div key={index}>
+             <p className="mb-sm text-xl font-medium text-[#2C2C2C] leading-relaxed">
+              {text}
             </p>
           </div>
-          <div>
-             <p className="text-xl font-medium text-[#2C2C2C]">
-              {page.intro}
-            </p>
+          ))}
           </div>
+          
         </div>
       </div>
     </div>
@@ -236,15 +239,23 @@ function StructuralCauseContent({ page }: { page: GapPage }) {
           alt={page.alt}
           className="w-full  object-contain"
         />
+        <p className="font-bold text-xl mt-sm">The {page.title} is created</p>
       </div>
 
-      <div className="space-y-sm">
-        {page.structuralCauseText.map((text, i) => (
-          <p key={i} className="text-xl font-medium">
-            {text}
-          </p>
-        ))}
-      </div>
+
+<div className="space-y-sm">
+  {page.structuralCauseText.map((text, i) => (
+    <p key={i} className="text-xl font-medium">
+      {i === page.structuralCauseText.length - 1 ? (
+        <>
+         <span className="font-bold"> As a result:  </span>{text}
+        </>
+      ) : (
+        text
+      )}
+    </p>
+  ))}
+</div>
     </div>
   );
 }

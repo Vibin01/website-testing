@@ -69,6 +69,7 @@ export default function FooterClient({
 </p>
                 </div>
                 <div className="flex flex-col lg:flex-row h-full gap-3 lg:gap-14 items-start lg:justify-between lg:items-center px-[2%] ">
+                 <Link  href={"https://play.google.com/store/apps/details?id=com.primethic.connectec"} target="_blank">
                   <Image
                     src="/googleplay.svg"
                     alt="Google Play"
@@ -77,6 +78,7 @@ export default function FooterClient({
                     height={200}
                     className=" w-auto h-[50px]"
                   />
+                  </Link>
 
                   {/* Social Icons */}
                   <div className="mt-3 lg:mt-0 flex items-center gap-3 lg:gap-6  lg:text-xl">

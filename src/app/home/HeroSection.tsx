@@ -48,9 +48,9 @@ const acrossRoles = [
 
 export const HeroSection = () => {
   return (
-    <section className="flex items-center justify-center px-[5%] sm:px-0  pt-[32%] md:pt-[7%] pb-[12%]">
-      <div className="text-center  w-full">
-        <h1 className="-mt-[5%] md:-mt-0 font-extrabold text-h1 text-[#0668E1]">
+        <section className="flex items-center justify-center px-[5%] sm:px-0  pt-[32%] md:pt-[7%] pb-[12%]">
+      <div className="text-center mt-[10%] md:mt-0 w-full">
+        <h1 className="font-extrabold text-h1 text-[#0668E1]">
           Hiring Alignment System
         </h1>
 
@@ -65,7 +65,7 @@ export const HeroSection = () => {
           <TabsList className="grid w-full mx-auto grid-cols-2 bg-transparent">
             <TabsTrigger
               value="within"
-              className="flex items-center justify-center gap-xs  py-3 text-base font-bold border-b-2 border-[#EDEDED] data-[state=active]:text-[#0668E1] data-[state=active]:border-[#0668E1]"
+              className="flex items-center justify-center gap-xs cursor-pointer py-3 text-base font-bold border-b-2 border-[#EDEDED] data-[state=active]:text-[#0668E1] data-[state=active]:border-[#0668E1]"
             >
               <IoPersonSharp className="size-iconsize-sm" />
               Alignment Within
@@ -73,7 +73,7 @@ export const HeroSection = () => {
 
             <TabsTrigger
               value="across"
-              className="flex items-center justify-center gap-sm  py-3 text-base font-bold border-b-2 border-[#EDEDED] data-[state=active]:text-[#0668E1] data-[state=active]:border-[#0668E1]"
+              className="flex items-center justify-center gap-sm cursor-pointer  py-3 text-base font-bold border-b-2 border-[#EDEDED] data-[state=active]:text-[#0668E1] data-[state=active]:border-[#0668E1]"
             >
               <MdGroups className="size-iconsize-sm" />
               Alignment Across

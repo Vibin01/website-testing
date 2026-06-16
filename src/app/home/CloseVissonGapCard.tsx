@@ -35,15 +35,14 @@ const gapCardsData: GapCardData[] = [
       {
         title: "Misalignment",
         content:
-          "Roles are designed without visibility into candidate expectations. Expectation gaps surface late, leading to offer declines.",
+          "Expectation signals remain hidden when employers lack visibility into candidate expectations, and candidates lack clarity on opportunities.",
       },
       {
         title: "Situation Alignment",
         content: [
-          "Alignment Triggers capture candidate intent, timelines, and opportunity context",
-          "Structured employer participation in interviews generates reliable signals.",
-          "Candidate expectations become visible",
-          "Role perception becomes clearer.",
+          "Connect EC establishes a shared visibility layer between employer direction and candidate reality through signals from candidate intent, employer participation, and decision readiness.",
+          "Alignment triggers capture candidate expectations, timelines, and opportunity context",
+          "Expectation and decision signals create shared understanding between employer direction and candidate decision-making.",
         ],
       },
     ],
@@ -53,22 +52,22 @@ const gapCardsData: GapCardData[] = [
         {
           title: "Candidate Impact:",
           content: [
-            "Candidates gain trusted insight into employer expectations and interview experience.",
+            "Candidates gain trusted insight into employer expectations, role realities, and the interview experience.",
           ],
         },
         {
           title: "Employer Impact: ",
           content: [
-            "Employers receive early visibility into candidate expectations and decision behaviour.",
+            "Employers receive continuous visibility into candidate expectations, opportunity perception, and decision behaviour.",
           ],
         },
         {
           title: "System Shift: ",
-          content: ["Direction becomes informed by real candidate signals."],
+          content: ["Direction and decision-making become continuously informed through shared visibility into expectations, opportunity perception, and decision readiness."],
         },
         {
-          title: "After Intervention",
-          content: ["Offer decisions become predictable."],
+          title: "Final State: ",
+          content: [" Direction and candidate decision-making operate in continuous alignment through shared visibility into expectations, role perception, and decision signals."],
         },
       ],
     },
@@ -85,15 +84,14 @@ const gapCardsData: GapCardData[] = [
       {
         title: "Misalignment",
         content:
-          "Communication signals disappear during the hiring process, causing missed interviews, delays, and instability.",
+          "Communication signals disappear when candidate engagement and recruiter coordination lack shared visibility.",
       },
       {
         title: "Execution Alignment",
         content: [
-          "Candidate and recruiter participation generates signals of responsiveness and engagement.",
-          "These signals create continuous visibility across coordination and communication.",
-          "Engagement becomes visible.",
-          "Participation becomes consistent.",
+          "Connect EC establishes shared visibility between candidate engagement and recruiter coordination through scheduling, participation, communication, and evaluation signals.",
+          "Interaction signals capture engagement, responsiveness, intent, and progress across hiring stages.",
+          "Execution signals create shared coordination between recruiter actions and candidate engagement.",
         ],
       },
     ],
@@ -103,24 +101,24 @@ const gapCardsData: GapCardData[] = [
         {
           title: "Recruiter Impact: ",
           content: [
-            "Recruiters maintain stable and reliable interview pipelines.",
+            " Recruiters maintain stable interview pipelines through continuous visibility into candidate responsiveness and participation.",
           ],
         },
         {
           title: "Candidate Impact: ",
           content: [
-            "Candidates receive timely updates, coordination clarity, and feedback.",
+            "Candidates receive timely updates, coordination clarity, and consistent feedback throughout the hiring process.",
           ],
         },
         {
           title: "System Shift: ",
           content: [
-            "Execution becomes consistent across coordination and communication.",
+            "Execution becomes continuously informed through shared visibility into engagement, participation, and progression signals.",
           ],
         },
         {
-          title: "After Intervention:",
-          content: ["Execution stabilizes across the hiring process."],
+          title: "Final State: ",
+          content: ["Execution and engagement operate in continuous alignment through shared visibility into participation, coordination, and hiring progress across stages."],
         },
       ],
     },
@@ -137,14 +135,14 @@ const gapCardsData: GapCardData[] = [
       {
         title: "Misalignment",
         content:
-          "Recruiting effort fails to convert into hires when direction lacks visibility into candidate signals and execution.",
+          "Recruiting effort fails to convert into hires when employer direction lacks visibility into execution progress and candidate signals.",
       },
       {
         title: "Direction Alignment",
         content: [
-          "Recruiting actions generate signals that reveal alignment with hiring priorities.",
-          "Candidate signals expose expectation patterns and commitment behaviour.",
-          "Hiring dynamics become visible across the system.",
+          "Connect EC establishes shared visibility between employer direction and recruiter execution through role, candidate, and recruiting signals.",
+          "Interaction signals capture role calibration, candidate alignment, and execution progress.",
+          "Execution signals create shared feedback between employer direction and recruiter execution.",
         ],
       },
     ],
@@ -154,24 +152,24 @@ const gapCardsData: GapCardData[] = [
         {
           title: "Employer Impact: ",
           content: [
-            "Employers gain visibility into candidate expectations and recruiting execution.",
+            "Employers gain continuous visibility into role definition accuracy, execution progress, and candidate alignment across hiring stages.",
           ],
         },
         {
           title: "Recruiter Impact: ",
           content: [
-            "Recruiters focus on roles aligned with real hiring priorities.",
+            "Recruiters operate with clearer role definitions, live execution visibility, and structured evaluation signals tied to hiring priorities.",
           ],
         },
         {
           title: "System Shift: ",
           content: [
-            "Hiring strategy becomes continuously informed by real-time signals.",
+            "Direction becomes continuously informed through shared visibility into execution progress, candidate signals, and hiring priorities.",
           ],
         },
         {
-          title: "After Intervention:",
-          content: ["Execution and direction move in alignment."],
+          title: "Final State: ",
+          content: ["Direction and execution operate in continuous alignment through shared visibility into priorities, progress, and hiring signals across the system."],
         },
       ],
     },
@@ -301,15 +299,15 @@ function DesktopView({
             <div className="mt-md space-y-sm">
               {activeCard.rightSide.content.map((item, index) => (
                
-                <div key={index}>
-      <h2 className="text-xl font-bold text-[#1B1C17]">{item.title}</h2>
-        <div className="mt-xs space-y-sm text-xl font-medium text-[#2C2C2C]">    
-            <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-              {item.content}
-            </p>   
-        </div>
+<div key={index}>
+  <p className="pt-1 text-xl font-medium text-[#2C2C2C] leading-relaxed">
+    <span className="font-bold text-[#1B1C17]">
+      {item.title}
+    </span>{" "}
+     {item.content}
+  </p>
+</div>
       
-    </div>
               ))}
             </div>
           </div>

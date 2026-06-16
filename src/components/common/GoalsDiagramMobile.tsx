@@ -13,7 +13,7 @@ export default function GoalsDiagramMobile() {
   return (
     <ArcherContainer
       strokeColor="#B8D3FF"
-      strokeWidth={2}
+      strokeWidth={3}
       endMarker={false}
     >
       <div className="rounded-lg bg-[#F1F7FF] px-4 py-8">

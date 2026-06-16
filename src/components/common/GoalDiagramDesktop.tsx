@@ -6,7 +6,7 @@ export default function GoalsDiagramDesktop() {
   return (
 <ArcherContainer
       strokeColor="#B8D3FF"
-      strokeWidth={2}
+      strokeWidth={4}
       endMarker={false}
       className="relative"
       svgContainerStyle={{

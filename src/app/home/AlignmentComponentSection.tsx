@@ -71,7 +71,12 @@ export default function AlignmentCompoundsSection() {
             md:gap-[clamp(0.5rem,1.1vw,1.25rem)]
           "
         >
-          {cards.map((card, index) => (
+          {cards.map((card, index) => {
+            const words = card.title.split(" ");
+const lastWord = words.pop();
+const remainingText = words.join(" ");
+            return (
+            
             <div
               key={index}
               className={`
@@ -107,23 +112,23 @@ export default function AlignmentCompoundsSection() {
 
               {/* Content */}
               <div className="flex h-full items-center justify-center">
-                <p
-                 
-                  className={`
-                    ${card.pClass}
-                    text-center
-                    ${
-                      card.highlight
-                        ? "font-bold text-base text-[#0668E1]"
-                        : "text-[#1B1C17] font-medium text-xl"
-                    }
-                  `}
-                >
-                  {card.title}
-                </p>
-              </div>
+  <p
+    className={`
+      ${card.pClass}
+      text-center
+      ${
+        card.highlight
+          ? "text-base font-bold text-[#0668E1]"
+          : "text-[#1B1C17] text-xl font-medium"
+      }
+    `}
+  >
+    {remainingText}{" "}
+    <span className="font-bold">{lastWord}</span>
+  </p>
+</div>
             </div>
-          ))}
+)})}
         </div>
 
         {/* Bottom Pill */}
