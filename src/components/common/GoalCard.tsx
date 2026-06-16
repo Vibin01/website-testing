@@ -1,9 +1,5 @@
 "use client";
 
-<<<<<<< HEAD
-=======
-import { Briefcase, TrendingUp, Users } from "lucide-react";
->>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
 
 const icons = {
   candidate: "/home/icons/right-opportunity-icon.svg",
@@ -27,13 +23,9 @@ export default function GoalCard({
   position = "middle",
 }: Props) {
   const Icon = icons[icon];
-<<<<<<< HEAD
 const words = description.split(" ");
 const lastWord = words.pop();
 const remainingText = words.join(" ");
-=======
-
->>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
   return (
     <div
       className="
@@ -75,10 +67,6 @@ const remainingText = words.join(" ");
           -left-2.5
           items-start
           text-left
-<<<<<<< HEAD
-=======
-
->>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
           sm:-left-[clamp(12px,calc(24/1280*100vw),48px)]
         `
         : ""
@@ -127,16 +115,10 @@ const remainingText = words.join(" ");
           />
         </div>
 
-<<<<<<< HEAD
 <p className="text-[clamp(12px,calc(18/1280*100vw),36px)] font-medium">
   {remainingText}{" "}
   <span className="font-bold">{lastWord}</span>
 </p>
-=======
-        <p className="text-[clamp(12px,calc(18/1280*100vw),36px)] font-medium">
-          {description}
-        </p>
->>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
       </div>
     </div>
   );

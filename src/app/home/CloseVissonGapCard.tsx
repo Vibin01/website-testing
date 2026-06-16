@@ -38,11 +38,7 @@ const gapCardsData: GapCardData[] = [
           "Expectation signals remain hidden when employers lack visibility into candidate expectations, and candidates lack clarity on opportunities.",
       },
       {
-<<<<<<< HEAD
         title: "Expectation Alignment",
-=======
-        title: "Situation Alignment",
->>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
         content: [
           "Connect EC establishes a shared visibility layer between employer direction and candidate reality through signals from candidate intent, employer participation, and decision readiness.",
           "Alignment triggers capture candidate expectations, timelines, and opportunity context",

@@ -233,19 +233,11 @@ function MiddleCard({ page }: { page: GapPage }) {
 function StructuralCauseContent({ page }: { page: GapPage }) {
   return (
     <div className="flex flex-col">
-<<<<<<< HEAD
       <div className="mb-sm overflow-hidden ">
         <img
           src={page.structuralCauseImage}
           alt={page.alt}
           className="w-full min-h-[190px] object-cover rounded-md"
-=======
-      <div className="mb-sm overflow-hidden">
-        <img
-          src={page.structuralCauseImage}
-          alt={page.alt}
-          className="w-full  object-contain"
->>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
         />
         <p className="font-bold text-xl mt-sm">The {page.title} is created</p>
       </div>
