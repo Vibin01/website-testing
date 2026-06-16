@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+type CornerCard = {
+  title: string;
+  subtitle: string;
+  icon: string;
+  position:
+    | "top"
+    | "bottomLeft"
+    | "bottomRight";
+};
+
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
 
 
 export default function AlignmentBreaksDiagram() {

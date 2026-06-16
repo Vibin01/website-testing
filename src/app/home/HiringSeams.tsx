@@ -45,7 +45,7 @@ function SeamCard({ item }: { item: CardItem }) {
 
       {/* Content */}
       <div className="mt-sm ">
-        <p className="font-bold text-xl">Seam</p>
+        <p className="font-bold text-xl">Dimension</p>
         <p className="mt-xs text-xl font-medium">{item.dimension}</p>
 
         <p className="font-bold text-xl mt-sm">
@@ -82,11 +82,9 @@ const handleScroll = () => {
       <div className="w-full">
 
         {/* Heading */}
-        <h1 className="text-h2 font-extrabold mb-1">
-          The Alignment Challenge
+        <h1 className="text-h2 font-extrabold mb-sm">
+          Seams of the Hiring System
         </h1>
-        <h3 className="text-base font-bold mb-sm">Seams of the Hiring System</h3>
-          
 
 
         {/* Cards */}

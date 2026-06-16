@@ -18,9 +18,15 @@ const navItems = [
   { name: "Employers", link: "/employers" },
   { name: "Candidates", link: "/candidates" },
   { name: "Recruiters", link: "/recruiters" },
+<<<<<<< HEAD
   { name: "Solutions", link: "#solutions" },
 
   { name: "Resources", link: "#resources" },
+=======
+
+  { name: "Resources", link: "#resources" },
+  { name: "Solutions", link: "#solutions" },
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
 
   { name: "Pricing", link: "/pricing" },
 ];
@@ -144,6 +150,7 @@ export const Header = () => {
                         ? pathname === "/" || pathname.startsWith("/home")
                         : pathname.startsWith(item.link);
 
+<<<<<<< HEAD
   // Solutions Dropdown
                     if (item.name === "Solutions") {
                       return (
@@ -183,6 +190,8 @@ export const Header = () => {
                     }
 
 
+=======
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
                     // Resources Dropdown
                     if (item.name === "Resources") {
                       return (
@@ -221,7 +230,48 @@ export const Header = () => {
                       );
                     }
 
+<<<<<<< HEAD
                   
+=======
+                    // Solutions Dropdown
+                    if (item.name === "Solutions") {
+                      return (
+                        <li
+                          key={item.name}
+                          className="flex cursor-pointer flex-col items-center justify-center font-medium text-[#1B1C17]"
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          <div className="flex items-center gap-2">
+                            <span
+                              className={
+                                showSolutions || pathname.includes("/solutions")
+                                  ? "font-semibold text-[#0668E1]"
+                                  : ""
+                              }
+                            >
+                              Solutions
+                            </span>
+
+                            <FaChevronDown
+                              className={`transition-transform duration-200 ${
+                                showSolutions ? "rotate-180 text-[#0668E1]" : ""
+                              }`}
+                            />
+                          </div>
+
+                          <div className="mt-1 h-[4px] w-[85%]" />
+
+                          {showSolutions && (
+                            <SolutionsDropdown
+                              onClose={() => setShowSolutions(false)}
+                            />
+                          )}
+                        </li>
+                      );
+                    }
+
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
                     // Normal Nav Items
                     return (
                       <li

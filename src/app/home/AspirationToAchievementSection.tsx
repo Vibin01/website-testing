@@ -11,7 +11,11 @@ const topItems: TopItem[] = [
 ];
 
 const flowSteps = [
+<<<<<<< HEAD
   "Expectation becomes visible",
+=======
+  "Situation becomes visible",
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
   "Direction becomes aligned",
   "Execution becomes consistent",
   "Momentum builds",

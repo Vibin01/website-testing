@@ -10,6 +10,7 @@ const cardData = [
   },
   {
     icon: "/home/icons/three-dimensions-icon.svg",
+<<<<<<< HEAD
     title: "Three Goals",
     items: ["Opportunity", "Talent", "Closure"],
   },
@@ -17,6 +18,15 @@ const cardData = [
     icon: "/home/icons/one-outcome-icon.svg",
     title: "Three Seams",
     items: ["Expectation","Direction","Execution"],
+=======
+    title: "Three dimensions",
+    items: ["Situation", "Direction", "Execution"],
+  },
+  {
+    icon: "/home/icons/one-outcome-icon.svg",
+    title: "When All Three Align",
+    items: ["Seamless Yield"],
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
   },
 ];
 

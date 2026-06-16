@@ -46,7 +46,11 @@ export default function GoalsDiagramMobile() {
               <GoalCard
                 title="Recruiters"
                 position="middle"
+<<<<<<< HEAD
                 description="Seek successful Closure."
+=======
+                description="Seek successful placements."
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
                 icon="recruiter"
               />
             </div>
@@ -96,7 +100,11 @@ export default function GoalsDiagramMobile() {
               <GoalCard
                 title="Employers"
                 position="right"
+<<<<<<< HEAD
                 description="Seek efficient Talent."
+=======
+                description="Seek efficient Talent acquisition."
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
                 icon="employer"
               />
               </div>

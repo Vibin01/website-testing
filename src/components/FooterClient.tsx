@@ -118,7 +118,14 @@ export default function FooterClient({
                     <Link href="/about-us">About us</Link>|{" "}
                     <Link href="/terms-and-condition" target="_blank">&nbsp;&nbsp;Terms & Conditions</Link>
                     |&nbsp;&nbsp; {""}
+<<<<<<< HEAD
                     <Link href="/privacy-policy" target="_blank">Privacy Policy</Link>
+=======
+                    <Link href="/privacy-policy" target="_blank">Privacy Policy</Link>|{" "}
+                    <button onClick={handleFaqClick} className="cursor-pointer">
+                      &nbsp;&nbsp;FAQs
+                    </button>
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
                   </div>
                 </div>
               </div>

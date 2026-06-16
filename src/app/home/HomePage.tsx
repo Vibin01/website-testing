@@ -24,9 +24,15 @@ export const HomePage = () => {
           <FlowCards />
         </div>
 
+<<<<<<< HEAD
         {/* <div className="mt-[5%] md:mt-0 py-[5%]">
           <AlignmentChallenge />
         </div> */}
+=======
+        <div className="mt-[5%] md:mt-0 py-[5%]">
+          <AlignmentChallenge />
+        </div>
+>>>>>>> 84c6fd0841308a8ccb0c4d55aecfff3a70477c1b
 
         <div className="mt-[5%] md:mt-0 py-[5%]">
           <HiringSeams />
