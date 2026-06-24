@@ -15,14 +15,30 @@ type PageProps = {
     solution: string;
   }>;
 };
+
+type SolutionData = {
+  metadata: {
+    title: string;
+    description: string;
+  };
+  title: string;
+  description: string;
+  InsightTabItem: any;
+  FeatureHighlightData: any;
+  AlignmentComparisonData: any;
+  AlignmentSectionData: any;
+  outcomeHighlightData: any;
+};
+
 export async function generateMetadata({ params }: PageProps) {
   const { role, solution } = await params;
 
   const roleData =
     solutionPageMap[role as keyof typeof solutionPageMap];
 
-  const data =
-    roleData?.[solution as keyof typeof roleData];
+const data = roleData?.[
+  solution as keyof typeof roleData
+] as SolutionData | undefined;
 
   if (!data) {
     return {
@@ -43,7 +59,9 @@ export default async function Page({ params }: PageProps) {
 
   const roleData = solutionPageMap[role as keyof typeof solutionPageMap];
 
-  const data = roleData?.[solution as keyof typeof roleData];
+  const data = roleData?.[
+  solution as keyof typeof roleData
+] as SolutionData | undefined;
 
   if (!data) {
     return <div>Not Found</div>;
