@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { MdGroups } from "react-icons/md";
 import { IoPersonSharp } from "react-icons/io5";
-import { VscArrowBoth } from "react-icons/vsc";
+import { PiArrowsLeftRightBold } from "react-icons/pi";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { ArrowRight } from "lucide-react";
 import React from "react";
@@ -48,10 +48,19 @@ const acrossRoles = [
 
 export const HeroSection = () => {
   return (
-        <section className="flex items-center justify-center px-[5%] sm:px-0  pt-[32%] md:pt-[7%] pb-[12%]">
-      <div className="text-center mt-[10%] md:mt-0 w-full">
+        <section className="flex items-center justify-center px-[5%] sm:px-0 pt-[5%] pb-[15%] md:pb-[10%]">
+      <div className="text-center w-full mt-[15%] md:mt-[5%]">
         <h1 className="font-extrabold text-h1 text-[#0668E1]">
-          Hiring Alignment System
+          Hiring Alignment
+           {" "}
+          <span className="inline-flex  gap-xs">
+              System 
+              <img
+                src={"/icons/tm-badge.svg"}
+                alt="tm-badge"
+                className="size-iconsize-sm inline"
+              />
+            </span>
         </h1>
 
         <h2 className="font-extrabold text-h2 pb-lg">
@@ -149,7 +158,7 @@ export const HeroSection = () => {
               ))}
             </div>
             <div className="mt-xl flex justify-center">
-              <div className="border border-[#0668E1] rounded-md min-w-[85%] px-md py-sm bg-[#EEF6FF] text-[#0668E1] text-h6 font-medium">
+              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] px-md py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-[0px_2px_10px_2px_#0668E10D]">
                 Discover your hiring alignment in real-world scenarios
               </div>
             </div>
@@ -214,74 +223,35 @@ export const HeroSection = () => {
                   </Link>
 
                   {index < acrossRoles.length - 1 && (
-                    <VscArrowBoth className="size-iconsize-sm font-medium" />
+                    <PiArrowsLeftRightBold  className="size-iconsize-sm scale-125 font-medium text-[#B2D0F6]" />
                   )}
                 </React.Fragment>
               ))}
             </div>
 
             <div className="mt-xl flex justify-center">
-              <div className="border border-[#0668E1] rounded-md min-w-[85%] py-sm bg-[#EEF6FF] text-[#0668E1] text-h6 font-medium">
+              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-[0px_2px_10px_2px_#0668E10D]">
                 Experience alignment across the hiring ecosystem.
               </div>
             </div>
           </TabsContent>
         </Tabs>
 
-        <p className="font-medium text-h6 pb-md mt-xl">When aligned</p>
-
-        <div className="flex flex-col md:flex-row items-center justify-center gap-sm">
-          <div className="flex-[0.2] min-w-[200px] p-sm bg-white border border-[#D0E5FF] rounded-md flex  items-center gap-xs">
-            <div className="size-iconsize-md scale-85 text-[#0668E1]">
+        <h2 className="text-h2 font-extrabold text-[#0668E1]  mt-xl">
+          <span className="inline-flex items-center gap-sm">
+              
               <img
-                src="/home/icons/faster-hiring-decisions-through-alignment.svg"
-                alt="Aligned hiring signals helping decisions move faster across the hiring process"
-                className="w-full h-auto"
+                src={"/icons/star-icon.svg"}
+                alt="Star icon"
+                className="size-iconsize-md inline animate-pulse"
               />
-            </div>
+               Alignment Intelligence
+            </span>
+         </h2>
 
-            <p className="font-bold text-base text-[#0668E1] text-nowrap">
-              Decisions accelerate
-            </p>
-          </div>
+        
 
-          <div className="flex-[0.2] min-w-[240px] p-sm bg-white border border-[#D0E5FF] rounded-md flex items-center gap-xs">
-            <div className="size-iconsize-md scale-85 text-[#0668E1]">
-              <img
-                src="/home/icons/hiring-momentum-strengthens-with-alignment.svg"
-                alt="Hiring momentum strengthening through coordinated decisions and execution"
-                className="w-full h-auto"
-              />
-            </div>
 
-            <p className="font-bold text-base text-[#0668E1] text-nowrap">
-              Momentum strengthens
-            </p>
-          </div>
-
-          <div className="flex-[0.2] min-w-[200px] p-sm bg-white border border-[#D0E5FF] rounded-md flex items-center gap-xs">
-            <div className="size-iconsize-md scale-85 text-[#0668E1]">
-              <img
-                src="/home/icons/compounding-hiring-outcomes-through-alignment.svg"
-                alt="Compounding hiring outcomes created through consistent alignment and execution"
-                className="w-full h-auto"
-              />
-            </div>
-
-            <p className="font-bold text-base text-[#0668E1] text-nowrap">
-              Yield compounds
-            </p>
-          </div>
-        </div>
-
-        <p className="font-medium text-h6 mt-md">
-          That state is{" "}
-          <span className="italic font-bold text-[#0668E1]">
-            Seamless Yield
-          </span>
-        </p>
-
-        <p className="font-bold text-h6 mt-md">Everyone aspires to it.</p>
       </div>
     </section>
   );

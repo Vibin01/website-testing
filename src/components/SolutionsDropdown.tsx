@@ -27,22 +27,22 @@ const solutionGroups: SolutionGroup[] = [
       {
         title: "Easy Evaluator",
         description: "The Feedback Transparency System.",
-        href: "/solutions/candidate/easy-evaluator",
+        href: "/solutions/candidate-alignment-system/interview-feedback-for-candidates",
       },
       {
         title: "Easy Facilitator",
         description: "The Offer Decision System.",
-        href: "/solutions/candidate/easy-facilitator",
+        href: "/solutions/candidate-alignment-system/manage-job-offers",
       },
       {
         title: "Easy Scheduler",
         description: "The Interview Coordination System.",
-        href: "/solutions/candidate/easy-scheduler",
+        href: "/solutions/candidate-alignment-system/manage-interview-schedule",
       },
       {
         title: "Easy Reviewer",
         description: "The Employer Insight System.",
-        href: "/solutions/candidate/easy-reviewer",
+        href: "/solutions/candidate-alignment-system/verified-employer-interview-insights",
       },
     ],
   },
@@ -54,22 +54,22 @@ const solutionGroups: SolutionGroup[] = [
       {
         title: "Easy Evaluator",
         description: "Interview Evaluation System.",
-        href: "/solutions/recruiter/easy-evaluator",
+        href: "/solutions/recruiter-alignment-system/collect-interview-feedback",
       },
       {
         title: "Easy Facilitator",
         description: "The Offer Decision System.",
-        href: "/solutions/recruiter/easy-facilitator",
+        href: "/solutions/recruiter-alignment-system/improve-offer-to-joining-conversion",
       },
       {
         title: "Easy Scheduler",
         description: "The Interview Coordination System.",
-        href: "/solutions/recruiter/easy-scheduler",
+        href: "/solutions/recruiter-alignment-system/manage-interview-scheduling",
       },
       {
         title: "Easy Predictor",
         description: "The Interview Transition System.",
-        href: "/solutions/recruiter/easy-predictor",
+        href: "/solutions/recruiter-alignment-system/predict-interview-no-shows",
       },
     ],
   },
@@ -81,37 +81,37 @@ const solutionGroups: SolutionGroup[] = [
       {
         title: "Easy Calibrator",
         description: "Transform Targets into Outcomes.",
-        href: "/solutions/employer/easy-calibrator",
+        href: "/solutions/employer-alignment-system/improve-hiring-target-achievement",
       },
       {
         title: "Easy Evaluator",
         description: "Transform Templates into Touchpoints.",
-        href: "/solutions/employer/easy-evaluator",
+        href: "/solutions/employer-alignment-system/standardize-hiring-communication",
       },
       {
         title: "Easy Explorer",
         description: "Transform Information into Insights.",
-        href: "/solutions/employer/easy-explorer",
+        href: "/solutions/employer-alignment-system/analyze-hiring-workload-and-velocity",
       },
       {
         title: "Easy Facilitator",
         description: "Transform Offer into Onboarding.",
-        href: "/solutions/employer/easy-facilitator",
+        href: "/solutions/employer-alignment-system/improve-offer-acceptance-to-joining",
       },
       {
         title: "Easy Navigator",
         description: "Transform Declines into directions.",
-        href: "/solutions/employer/easy-navigator",
+        href: "/solutions/employer-alignment-system/identify-hiring-misalignment-signals",
       },
       {
         title: "Easy Predictor",
         description: "Transform No-shows into Know-shows.",
-        href: "/solutions/employer/easy-predictor",
+        href: "/solutions/employer-alignment-system/predict-hiring-drop-offs-early",
       },
       {
         title: "Easy Role Tracker",
         description: "Transform Inactive Pipeline into Active Progress.",
-        href: "/solutions/employer/easy-role-tracker",
+        href: "/solutions/employer-alignment-system/track-hiring-progress-and-bottlenecks",
       },
     ],
   },
@@ -160,7 +160,7 @@ export default function SolutionsDropdown({onClose}:SolutionsDropdownProps) {
                           : "font-medium text-[#1B1C17]"
                       }`}
                     >
-                      {group.label}
+                      {group.label} 
                     </span>
                   </div>
 

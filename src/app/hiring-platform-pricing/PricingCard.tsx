@@ -114,7 +114,7 @@ export default function PricingCardsSection() {
             >
               {/* Header */}
               <div
-                className={`border-b px-sm py-md ${
+                className={`border-b px-md md:px-sm py-md ${
                   card.active
                     ? "border-[#2E83EC] bg-[#1E77E4] rounded-t-md"
                     : "border-[#D3E6FF]"
@@ -146,7 +146,7 @@ export default function PricingCardsSection() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-1 flex-col justify-between px-sm py-md">
+              <div className="flex flex-1 flex-col justify-between px-md md:px-sm py-md">
                 <div className="space-y-md">
                   {card.sections.map((section) => (
                     <div key={section.title}>

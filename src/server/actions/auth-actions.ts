@@ -71,7 +71,7 @@ export async function registerUserAction(formData: FormData) {
     });
 
     try {
-      await sendOTPEmail(email, otp);
+      await sendOTPEmail(email, otp, name);
     } catch (err) {
       console.error(
         "Failed to send OTP email:",

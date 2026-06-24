@@ -146,7 +146,7 @@ key={index}
             .map((card) => (
               <div
                 key={card.id}
-                className="rounded-md border border-[#CFE1F7] bg-[#F8F8F8] px-4 py-3 shadow-[0_3px_10px_rgba(6,104,225,0.08)]"
+                className="rounded-md border border-[#CFE1F7] bg-[#FFFFFF] px-4 py-3 shadow-[0_3px_10px_rgba(6,104,225,0.08)]"
               >
                 <div className="mb-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#0B67E9] text-[12px] font-bold text-white">
                   {card.id}

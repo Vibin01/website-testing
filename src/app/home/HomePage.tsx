@@ -12,12 +12,16 @@ import UniversalBehaviorSection from "./UniversalBehaviorSection";
 import AspirationToAchievementSection from "./AspirationToAchievementSection";
 import AAABehaviouralFramework from "./AAABehaviouralFramework";
 import AlignmentTabWithinAcrossComponent from "./AlignmentTabWithinAcrossComponent";
+import AlignmentIntelligence from "./AlignmentIntelligence";
 
 export const HomePage = () => {
   return (
     <>
       <main className="px-[5%] overflow-x-hidden">
-        <div className=" -mx-[7%] bg-[url('/background/bg-hero-home-section-mobile.svg')] sm:bg-[url('/background/bg-hero-home-section.svg')] bg-no-repeat bg-cover bg-center">
+        <div className=" relative -mx-[7%] bg-[url('/background/bg-hero-home-section.svg')] bg-no-repeat bg-cover bg-center">
+        <img src={"/background/bg-home-triangle.svg"} alt="bg-triangle" className="h-iconsize-2xl w-auto absolute top-[3%] right-[5%]"/>
+        <img src={"/background/bg-home-triangle.svg"} alt="bg-triangle" className="h-iconsize-2xl w-auto absolute bottom-[3%] left-[5%]"/>
+
           <HeroSection />
         </div>
         <div className="py-[5%] -mx-[7%] md:-mx-0 ">
@@ -27,7 +31,6 @@ export const HomePage = () => {
         {/* <div className="mt-[5%] md:mt-0 py-[5%]">
           <AlignmentChallenge />
         </div> */}
-
         <div className="mt-[5%] md:mt-0 py-[5%]">
           <HiringSeams />
         </div>
@@ -50,8 +53,11 @@ export const HomePage = () => {
         <div className="mt-[5%] md:mt-0">
           <ClosingVisionGapCard />
         </div>
-        <div>
+        {/* <div>
           <AlignmentCompoundsSection />
+        </div> */}
+        <div>
+          <AlignmentIntelligence/>
         </div>
         <div className="mt-[5%] md:mt-0 py-[5%] mb-[15%] md:mb-0">
           <AspirationToAchievementSection />

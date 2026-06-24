@@ -1,29 +1,7 @@
 import GoalsDiagram from "@/components/common/GoalDiagram";
 import { FaArrowRight } from "react-icons/fa";
 
-type Card = {
-  textTop: string;
-  textBottom: string;
-  icon: string;
-};
 
-const cards: Card[] = [
-  {
-    textTop: "Candidates seek the",
-    textBottom: "right opportunity.",
-    icon: "/home/icons/right-opportunity-icon.svg",
-  },
-  {
-    textTop: "Recruiters seek",
-    textBottom: "successful placements.",
-    icon: "/home/icons/successful-placements-icon.svg",
-  },
-  {
-    textTop: "Employers seek",
-    textBottom: "the right talent to be hired efficiently.",
-    icon: "/home/icons/right-talent-icon.svg",
-  },
-];
 
 
 

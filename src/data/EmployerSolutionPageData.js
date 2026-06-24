@@ -55,7 +55,7 @@ export const easyCalibrator  =
     "Easy Calibrator converts hiring gaps into visible intervention signals—with real-time, data-driven recommendations to secure quarterly targets.",
 
   points: [
-    "Clear levers.",
+    "Clear intervention priorities",
     "Measurable impact.",
     "Predictable outcomes.",
   ],
@@ -410,11 +410,9 @@ export const easyPredictor  =
     icon: "question-round-icon",
     points: [
       "Interview no-shows disrupt planned hiring schedules",
-      "Recruiters discover disengagement only near offer closure",
-      "Hiring teams spend effort on reactive recovery coordination",
-      "Project timelines slow down as critical roles remain unfilled",
-      "Budget pressure increases as hiring delays compound across teams",
-      "Last-stage drop-offs weaken forecasting confidence and execution planning"
+      "Disengagement becomes visible only near offer closure",
+      "Teams rely on reactive recovery efforts",
+      "Last-stage drop-offs weaken planning confidence",
     ],
   },
   {
@@ -423,11 +421,9 @@ export const easyPredictor  =
     icon: "tick-gradient-icon",
     points: [
       "Intent risk becomes visible before disruption occurs",
-      "Recruiters gain time to re-engage high-risk candidates",
+      "Recruiters gain intervention time for high-risk candidates",
       "Teams intervene earlier with clearer hiring priorities",
-      "Hiring continuity improves across business-critical roles",
-      "Early visibility reduces downstream hiring inefficiency and disruption",
-      "Hiring decisions become more reliable before business impact escalates"
+      "Hiring continuity improves across critical roles",
     ],
   },
 ],

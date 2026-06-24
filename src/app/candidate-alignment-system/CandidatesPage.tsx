@@ -23,9 +23,9 @@ export const CandidatesPage = () => {
 
       <section className="relative ">
         <div className="">
-          <div className="">
-            <section className="relative flex items-center justify-center mt-[5%] py-[5%] px-[5%] bg-transparent">
-              <div >
+          <div className="bg-[url('/background/bg-hero-candidate-section.svg')] bg-no-repeat bg-cover bg-center">
+            <section className="relative flex items-center justify-center  bg-transparent">
+              <div className="mt-[5%] py-[5%] px-[5%]" >
                 <HeroTextContainerSection data={HeroData} />
               </div>
               

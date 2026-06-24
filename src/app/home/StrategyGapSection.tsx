@@ -108,7 +108,7 @@ const gapPagesData: GapPage[] = [
       "Recruiters coordinate hiring without visibility into candidate intent ",
       "Candidates move through the process without clarity on progress or expectations",
       "Execution signals are not structured into a shared coordination flow",
-      "As a result:  Coordination breaks down, engagement weakens, and execution becomes unstable.",
+      "Coordination breaks down, engagement weakens, and execution becomes unstable.",
     ],
   },
   {

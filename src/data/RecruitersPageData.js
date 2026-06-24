@@ -116,7 +116,7 @@ export const insightComparisonData= [
             <div className="space-y-sm mt-md">
               {[
                 "Coordination restarts repeatedly",
-                "Updates are resent across stakeholders",
+                "Updates are repeated across stakeholders",
                 "Preparation becomes fragmented",
                 "Early momentum weakens",
                 "Recruiters repeat scheduling across steps",
@@ -418,7 +418,7 @@ export const insightComparisonData= [
   {
     id: 4,
     header: {
-      title: "Offer Communication",
+      title: "Offer Transition",
       label: "Seam: Recruiter ↔ Candidate",
       description:
         "The final stage carries the highest uncertainty. Candidate accept offers. But between acceptance and joining, engagement signals fade.",
@@ -531,10 +531,10 @@ export const workflowAlignmentSectionData = {
 
 
   steps: [
-    { id: 1, text: "Gathering meaningful, actionable feedback" },
-    { id: 2, text: "Managing interview transitions" },
-    { id: 3, text: "Coordinating interview schedules" },
-    { id: 4, text: "Converting accepted offers into reliable hires" },
+    { id: 1, text: "Coordinating interview schedules" },
+    { id: 2, text: "Managing interview transitions." },
+    { id: 3, text: "Gathering meaningful, actionable feedback." },
+    { id: 4, text: "Converting accepted offers into reliable hires." },
   ],
 
   leftPanel: {
@@ -556,8 +556,8 @@ export const workflowAlignmentSectionData = {
     subtitle: "Alignment Drives Execution Control",
     signals: [
       "Interview momentum remains stable",
-      "Coordination becomes predictable",
-      "Intervention happens before execution breaks down",
+      "Intervene before execution failure",
+      "Offers convert into committed hires",
     ],
     description:
       "Every interaction generates Alignment Signals, enabling timely intervention and strengthening clarity across the hiring journey.",

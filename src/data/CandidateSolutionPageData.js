@@ -18,7 +18,7 @@
     contentTitle: "The Aspiration",
     paragraphs: [
       "Candidates want to understand how they are evaluated.",
-      "Each application reflects effort and inte  nt.",
+      "Each application reflects effort and intent.",
       "Every interview represents an opportunity to improve.",
     ],
     listTitle: "Candidates seek a simple outcome:",
@@ -54,10 +54,10 @@
   },
   {
     id: 3,
-    title: "The Learning Friction",
+    title: "The Learning Gap",
     subtitle: "Learning becomes fragmented",
     icon: "/solutions/candidate/learning-friction-icon.svg",
-    contentTitle: "The Learning Friction",
+    contentTitle: "The Learning Gap",
     paragraphs: [
       "When feedback is unclear, clarity begins to break.",
       "Evaluation signals become difficult to interpret.",
@@ -351,9 +351,9 @@ outcomeHighlightData: {
 
   {
     id: 3,
-    title: "The Decision Friction",
+    title: "The Decision Gap",
     subtitle: "Decisions become fragmented",
-    contentTitle: "The Decision Friction",
+    contentTitle: "The Decision Gap",
     icon: "/solutions/candidate/decision-friction-icon.svg",
     paragraphs: [
       "When the offer communication spreads, clarity begins to break.",
@@ -656,10 +656,10 @@ outcomeHighlightData: {
 
   {
     id: 3,
-    title: "The Coordination Friction",
+    title: "The Coordination Gap",
     subtitle: "Progress becomes fragmented",
     icon: "/solutions/candidate/coordination-friction-icon.svg",
-    contentTitle: "The Coordination Friction",
+    contentTitle: "The Coordination Gap",
     paragraphs: [
       "When coordination spreads across channels, clarity begins to break.",
       "Alignment becomes harder to maintain.",
@@ -955,10 +955,10 @@ outcomeHighlightData: {
 
   {
     id: 3,
-    title: "The Preparation Friction  ",
+    title: "The Preparation Gap  ",
     subtitle: "Preparation stays fragmented",
     icon: "/solutions/candidate/preparation-friction-icon.svg", 
-    contentTitle: "The Preparation Friction  ",
+    contentTitle: "The Preparation Gap  ",
     paragraphs: [
       "When insight sources are unclear, clarity begins to break.",
       "Preparation alignment becomes difficult to maintain.",

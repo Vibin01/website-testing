@@ -20,24 +20,24 @@ const flowSteps = [
 
 function AchievementDiagramCard() {
   return (
-    <div className="rounded-md border flex flex-col md:flex-row md:items-center justify-between border-[#D3E6FF] bg-white p-md md:p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
-      <div className="md:w-1/2">
-        <h1 className="flex flex-col text-center text-h2 font-extrabold text-[#0668E1] flex items-start leading-none gap-xs">
+    <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-xl ">
+      <div className="md:w-[70%] flex flex-col justify-between rounded-md  border border-[#DEEDFF] bg-white p-md md:p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
+        <h1 className="flex flex-col items-start  text-center text-h2 font-extrabold text-[#0668E1] leading-none gap-xs">
           <span>
             {" "}
-            <span className="inline font-extrabold text-h1">E</span>veryone{" "}
+            <span className="inline font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">E</span>veryone{" "}
           </span>
           <span>
             {" "}
-            <span className="inline font-extrabold text-h1">A</span>chieves{" "}
+            <span className="inline font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">A</span>chieves{" "}
           </span>
           <span>
             {" "}
-            <span className="inline font-extrabold text-h1">S</span>eamless
+            <span className="inline font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">S</span>eamless
           </span>
           <span>
             {" "}
-            <span className="font-extrabold text-h1 ">Y</span>
+            <span className="font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">Y</span>
             <span className="inline-flex gap-xs">
               ield
               <img
@@ -75,11 +75,11 @@ function AchievementDiagramCard() {
           </span>
         </div>
       </div>
-      <div className="w-full md:w-1/2 sm:flex items-end justify-end">
+      <div className="w-full h-full md:w-[30%]  rounded-md  border border-[#DEEDFF] bg-white p-md md:p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
         <img
           src="/home/aspire-align-achieve-hiring-alignment-across-candidate-recruiter-employer.svg"
           alt=""
-          className="mt-sm w-full sm:w-[50%]"
+          className="w-auto h-full "
         />
       </div>
     </div>
@@ -180,17 +180,17 @@ export default function AspirationToAchievementSection() {
   return (
     <>
       <div className="py-[5%]">
-        <h2 className="text-h2 font-extrabold ">Aspiration to Achievement</h2>
-        <p className="text-base font-bold mt-xs">
+        <h2 className="text-h2 font-extrabold text-center ">Aspiration to Achievement</h2>
+        <p className="text-base font-bold mt-xs text-center">
           When alignment becomes a system, aspiration converts into
           achievement.{" "}
         </p>
 
-        <div className="mt-lg grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-md">
+        {/* <div className="mt-lg grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-md">
           <AAAFrameworkCard />
           <AAAAppliedCard />
-        </div>
-        <div className="mt-md ">
+        </div> */}
+        <div className="mt-xl ">
           <AchievementDiagramCard />
         </div>
 

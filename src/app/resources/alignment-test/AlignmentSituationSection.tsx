@@ -11,27 +11,27 @@ const situationCards = [
   {
     icon: "/resources/alignment-test/uncertainty-icon.svg",
     title: "1. Uncertainty",
-    description: "When expectations are unclear or incomplete",
+    description: "When clarity is incomplete",
   },
   {
     icon: "/resources/alignment-test/pressure-icon.svg",
     title: "2. Pressure",
-    description: "When time, stakes, or expectations increase",
+    description: "When demands increase",
   },
   {
     icon: "/resources/alignment-test/control-icon.svg",
     title: "3. Control",
-    description: "When outcomes depend on others",
+    description: "When influence is shared",
   },
   {
     icon: "/resources/alignment-test/perception-icon.svg",
     title: "4. Perception",
-    description: "When interpretation shapes decisions",
+    description: "When interpretation varies",
   },
   {
     icon: "/resources/alignment-test/outcome-icon.svg",
     title: "5. Outcome",
-    description: "When results are evaluated",
+    description: "When results are reviewed",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function AlignmentSituationsSection() {
             return (
               <div
                 key={card.title}
-                className="flex-shrink-0 basis-[50%] md:w-auto rounded-md border border-[#D0E5FF] bg-white p-md text-center shadow-[0px_4px_40px_5px_#0668E10D]"
+                className="flex-shrink-0 basis-[55%] md:w-auto rounded-md border border-[#D0E5FF] bg-white p-md text-center shadow-[0px_4px_40px_5px_#0668E10D]"
               >
                 <div className="mx-auto flex size-fit p-sm items-center justify-center rounded-full border border-[#D0E5FF] bg-[#EEF6FF] text-[#0668E1]">
                   <img src={card.icon} alt={card.title} className="size-iconsize-md" />
@@ -122,7 +122,7 @@ export default function AlignmentSituationsSection() {
 
                 <h3 className="mt-sm text-base font-bold">{card.title}</h3>
 
-                <p className="mt-sm text-xl font-medium">{card.description}</p>
+                <p className="mt-sm text-xl font-medium md:px-sm">{card.description}</p>
 
                 <button
                   onClick={() => handleSingleStart(phase)}

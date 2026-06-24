@@ -2,7 +2,6 @@ import React from "react";
 
 import OutcomeHighlightSection from "@/components/common/OutcomeHighlightSection";
 import { solutionPageMap } from "@/data/SolutionPageMap";
-import { notFound } from "next/navigation";
 import InsightTabsSection from "../../InsightTabsSection";
 import FeatureHighlightSection from "../../FeatureHighlightSection";
 import AlignmentComparisonSection from "../../AlignmentComparisonSection";
@@ -62,13 +61,13 @@ export default async function Page({ params }: PageProps) {
               <h2 className="text-h2 font-extrabold text-center">
                 {data.description}
               </h2>
-              <Link  href={"https://play.google.com/store/apps/details?id=com.primethic.connectec"} target="_blank" className=" mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 border-[#0072FF] cursor-pointer rounded-sm px-md py-sm flex items-center justify-center gap-sm">
-                <span className=" font-bold text-xl text-white">
-                  Unlock Connect EC for Free
-                </span>
+                       <Link href={"https://play.google.com/store/apps/details?id=com.primethic.connectec"} target="_blank" className="w-fit mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
+            <span className=" font-bold text-xl text-white">
+              Unlock Connect EC for Free
+            </span>
 
-                <FaArrowRight className="text-white text-base" />
-              </Link>
+            <FaArrowRight className="text-white text-base" />
+          </Link>
             </div>
           </section>
         </div>

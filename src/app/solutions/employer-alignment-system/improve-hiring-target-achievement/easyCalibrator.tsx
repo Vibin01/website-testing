@@ -21,7 +21,11 @@ export default function EasyCalibrator() {
 
   const projectedHires = baseHires + addedHires;
   const hiresGap = Math.max(quarterlyTarget - projectedHires, 0);
-  const isTargetReached = hiresGap === 0;
+  // const isTargetReached = hiresGap === 0;
+
+  const excessHires = Math.max(projectedHires - quarterlyTarget, 0);
+const isTargetReached = projectedHires >= quarterlyTarget;
+const isTargetExceeded = projectedHires > quarterlyTarget;
 
   const summaryCards = [
     {
@@ -40,7 +44,11 @@ export default function EasyCalibrator() {
     },
     {
       value: hiresGap,
-      label: isTargetReached ? "Target Reached" : "Hiring Gap",
+      label: isTargetExceeded
+    ? "Target Exceeded"
+    : isTargetReached
+    ? "Target Reached"
+    : "Hiring Gap",
       bg: isTargetReached ? "bg-[#E7FFF3]" : "bg-[#FFF4F2]",
       border: isTargetReached ? "border-[#9ADFA9]" : "border-[#FFD3CA]",
       text: isTargetReached ? "text-[#2B9B43]" : "text-[#F0431D]",
@@ -70,16 +78,23 @@ export default function EasyCalibrator() {
             key={index}
             className={`${card.bg} ${card.border} flex md:flex-row flex-col justify-center rounded-md border p-4 text-center`}
           >
-            <div
-              className={`text-h2  block font-extrabold md:text-nowrap ${card.text}`}
-            >
-              <span className="exo-2">
-              {card.value} 
-              </span>
-              <span className=" text-base font-medium md:pl-[3%] block md:inline-block">
-                {card.label}
-              </span>
-            </div>
+           <div
+  className={`text-h2 block font-extrabold md:text-nowrap ${card.text}`}
+>
+  {!(index === 2 && isTargetReached) && (
+    <span className="exo-2">
+      {card.value}
+    </span>
+  )}
+
+  <span
+    className={`text-base font-medium ${
+      !(index === 2 && isTargetReached) ? "md:pl-[3%]" : ""
+    } block md:inline-block`}
+  >
+    {card.label}
+  </span>
+</div>
           </div>
         ))}
       </div>

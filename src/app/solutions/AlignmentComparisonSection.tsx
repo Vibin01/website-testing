@@ -79,7 +79,7 @@ function MobileHeaderRow({
       {headers.map((item, index) => (
         <div key={index} className="relative min-w-0 ml-1.5">
           <div className="absolute -left-[12px] top-1/2 z-10 flex h-[32px] w-[28px] -translate-y-1/2 items-center justify-center rounded-[4px] bg-[#0A6BEB] text-sm text-white">
-            <FaQuestion className="size-iconsize-sm" />
+                    <img src={"/icons/banner-question-icon.svg"} alt="question-icon" className="size-iconsize-sm" />
           </div>
 
           <div className="flex min-h-[54px] items-center rounded-[12px] bg-[#044AA0] py-3 pl-7 pr-3">

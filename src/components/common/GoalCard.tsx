@@ -115,7 +115,7 @@ const remainingText = words.join(" ");
           />
         </div>
 
-<p className="text-[clamp(12px,calc(18/1280*100vw),36px)] font-medium">
+<p className="text-[clamp(12px,calc(18/1280*100vw),36px)] font-medium md:pl-3">
   {remainingText}{" "}
   <span className="font-bold">{lastWord}</span>
 </p>

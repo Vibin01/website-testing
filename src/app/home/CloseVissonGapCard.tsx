@@ -262,7 +262,7 @@ function DesktopView({
   onPageChange: (page: number) => void;
 }) {
   return (
-    <div className="hidden py-[5%] md:flex ">
+    <div className="hidden py-[4%] min-h-[750px] md:flex ">
       <div className="">
         {/* Header */}
         <div className="flex items-center gap-xs">
@@ -278,7 +278,7 @@ function DesktopView({
         </div>
 
         {/* Main Card */}
-        <div className="min-h-[420px] grid grid-cols-2 gap-lg mt-md rounded-lg border border-[#DDECFF] bg-white p-md shadow-[0px_4px_35px_4px_#0668E11A]">
+        <div className="min-h-[450px] grid grid-cols-2 gap-lg mt-md rounded-lg border border-[#DDECFF] bg-white p-md shadow-[0px_4px_35px_4px_#0668E11A]">
           {/* Left Side */}
           <div className="space-y-sm">
             {activeCard.leftSide.map((item, index) => (

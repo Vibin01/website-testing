@@ -13,14 +13,14 @@ const cardsData: CardItem[] = [
   {
     image: "/home/candidate-employer-alignment-in-hiring.svg",
     alt:"Candidate and employer alignment in hiring decisions and expectations",
-    dimension: "Situation ↔ Direction",
+    dimension: "Expectation ↔ Direction",
     interaction: "Candidate realities meet employer-designed roles",
     outcome: "Expectation alignment and decision confidence",
   },
   {
     image: "/home/recruiter-candidate-coordination-in-hiring.svg",
     alt:"Recruiter and candidate coordination for interview engagement and communication",
-    dimension: "Execution ↔ Situation",
+    dimension: "Execution ↔ Expectation",
     interaction: "Recruiter coordination meets candidate engagement",
     outcome: "Communication continuity and interview reliability",
   },

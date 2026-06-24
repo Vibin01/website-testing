@@ -101,7 +101,7 @@ export const insightComparisonData = [
     id: 1,
     header: {
       title: "Workload Visibility",
-      label: "Seam: Recruiter ↔ Candidate",
+      label: "Seam: Employer ↔ Recruiter",
       description:
         "Leaders define hiring direction. Recruiters execute hiring activity. But visibility into how effort is distributed remains limited.",
       icon: "/employer/icons/workload-visibility-icon.svg",
@@ -545,11 +545,11 @@ export const workflowAlignmentSectionData = {
     subtitle: "From workload visibility to Alignment Signals",
     signals: [
       "Hiring friction signals",
-      "hiring progress Clarity",
-      "offer engagement Continuity",
+      "Hiring progress Clarity",
+      "Offer engagement Continuity",
     ],
     description:
-      "A unified behavioral system that helps leadership interpret hiring signals clearly and steer hiring strategy with confidence.",
+      "A unified behavioral system that helps leadership to interpret hiring signals clearly and steer hiring strategy with confidence.",
   },
 
   rightPanel: {

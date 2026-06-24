@@ -55,10 +55,10 @@ metadata: {
 
   {
     id: 3,
-    title: "The Evaluation Friction",
+    title: "The Evaluation Gap",
     subtitle: "Decisions become delayed",
     icon: "/solutions/recruiter/evaluation-friction-icon.svg",
-    contentTitle: "The Evaluation Friction",
+    contentTitle: "The Evaluation Gap",
     paragraphs: [
       "When evaluation signals slow, clarity begins to break.",
       "Feedback cycles become difficult to manage.",
@@ -369,10 +369,10 @@ outcomeHighlightData: {
 
   {
     id: 3,
-    title: "The Commitment Friction",
+    title: "The Commitment Gap",
     subtitle: "Outcomes become uncertain",
     icon: "/solutions/recruiter/commitment-friction-icon.svg",
-    contentTitle: "The Commitment Friction",
+    contentTitle: "The Commitment Gap",
     paragraphs: [
       "When engagement signals fade, clarity begins to break.",
       "Post-offer commitment becomes difficult to assess.",
@@ -588,7 +588,7 @@ outcomeHighlightData: {
     "Joining reflects the final commitment in the hiring journey.",
 
   description_top:
-  "Easy Predictor transforms engagement behavior into visible participation signals that enable timely intervention:"
+  "Easy Facilitator transforms post-offer engagement into visible commitment signals that enable timely intervention:"
 ,
   points: [
     "Stronger engagement.",
@@ -668,10 +668,10 @@ outcomeHighlightData: {
 
   {
     id: 3,
-    title: "The Coordination Friction",
+    title: "The Coordination Gap",
     subtitle: "Execution becomes fragmented",
     icon: "/solutions/recruiter/coordination-friction-icon.svg",
-    contentTitle: "The Coordination Friction",
+    contentTitle: "The Coordination Gap",
     paragraphs: [
       "When coordination spreads across channels, clarity begins to break.",
       "Coordination alignment becomes difficult to maintain.",
@@ -839,7 +839,7 @@ structuredData: {
 },
 
   AlignmentSectionData : {
-  title: "Employer Insight Alignment",
+  title: "Coordination Alignment",
   cards: [
     {
       icon: "/solutions/recruiter/signal-visibility-icon.svg",
@@ -982,9 +982,9 @@ export const  easyPredictor={
 
   {
     id: 3,
-    title: "The Participation Friction",
+    title: "The Participation Gap",
     subtitle: "Reliability becomes uncertain",
-    contentTitle: "The Participation Friction",
+    contentTitle: "The Participation Gap",
     icon: "/solutions/recruiter/participation-friction-icon.svg",
     paragraphs: [
       "When participation alignment remains hidden,  clarity begins to break.",

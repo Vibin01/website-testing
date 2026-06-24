@@ -51,7 +51,7 @@ export default function SignalFlowSection({ data }: { data: SignalFlowData }) {
             {data.leftCards.map((card, index) => (
               <div
                 key={index}
-                className={`absolute left-0 sm:left-auto p-sm w-[78px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]`}
+                className={`absolute left-0 sm:left-auto p-sm w-[85px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]`}
                 style={{
                   top: isMobile ? card.mobile_top : card.top,
                   left: isMobile ? card.mobile_left : card.left,
@@ -99,7 +99,7 @@ export default function SignalFlowSection({ data }: { data: SignalFlowData }) {
             {data.rightCards.map((card, index) => (
               <div
                 key={index}
-                className="absolute p-sm w-[78px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+                className="absolute p-sm w-[85px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
                 style={{
                   top: isMobile ? card.mobile_top : card.top,
                   right: isMobile ? card.mobile_right : card.right,

@@ -390,7 +390,7 @@ const handleChange = (key: keyof typeof fields, value: string) => {
             })()}
         </div>
 
-        <div className="md:w-[35%] rounded-md border border-[#CFE1FF] bg-[#FDFDFD] px-6 py-7 shadow-[0px_4px_40px_5px_#0668E11A]">
+        <div className="md:w-[35%] rounded-md border border-[#CFE1FF] bg-[#FDFDFD] p-md shadow-[0px_4px_40px_5px_#0668E11A]">
           <h3 className="text-base font-bold leading-[28px] text-[#2C2C2C]">
             Alignment Signal Calculator
           </h3>

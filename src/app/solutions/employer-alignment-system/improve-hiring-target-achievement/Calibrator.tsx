@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 
 const baseHires = 104;
 
@@ -57,6 +59,8 @@ type CalibratorProps = {
 };
 
 export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
   const getCardTotal = (index: number) => {
     return leverCards[index].items
       .slice(0, ranges[index])
@@ -112,7 +116,7 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
                   }`}
                 >
                   {total > 0 ? "+" : ""}
-                  {total} Hires 
+                  {total} Hires
                 </div>
               </div>
 
@@ -137,7 +141,7 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
                     <div key={itemIndex} className="flex justify-between gap-4">
                       <span>{item.text}</span>
                       <span className="text-nowrap">
-                        {itemIndex < ranges[index] ? item.value : "0 Hires"} 
+                        {itemIndex < ranges[index] ? item.value : "0 Hires"}
                       </span>
                     </div>
                   ))}
@@ -187,30 +191,41 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
             </div>
           ))}
 
-          <div className="group relative mt-4 inline-flex items-center gap-2">
-  {/* Hover Icon */}
-  <img
-    src={"/icons/info-round-icon.svg"}
-    alt="info-icon"
-    className="size-iconsize-sm cursor-pointer"
-  />
+          <div className="relative mt-4 inline-flex items-center gap-2">
+            {/* Icon */}
+            <img
+              src="/icons/info-round-icon.svg"
+              alt="info-icon"
+              className="size-iconsize-sm cursor-pointer"
+              onClick={() => setShowTooltip(!showTooltip)}
+            />
 
-  {/* Text */}
-  <span className="text-lg font-medium text-[#2C2C2C]">
-    Recommendations powered by real-time hiring data
-  </span>
+            {/* Text */}
+            <span className="text-lg font-medium text-[#2C2C2C]">
+              Recommendations powered by real-time hiring data
+            </span>
 
-  {/* Tooltip Box */}
-  <div className="pointer-events-none absolute bottom-[140%] -left-[6%] z-50 hidden  rounded-[18px] border border-[#9EC5FF] bg-[#EAF4FF] px-5 py-4 shadow-[0px_4px_15px_0px_#0668E11A] group-hover:block">
-    <p className="text-xl font-medium text-[#0668E1]">
-      Derived from your hiring data, these insights are aligned to help you
-      achieve your quarterly targets.
-    </p>
+            {/* Tooltip */}
+            <div
+              className={`
+      absolute bottom-[140%] -left-[6%] z-50
+      rounded-[18px] border border-[#9EC5FF]
+      bg-[#EAF4FF] px-5 py-4
+      shadow-[0px_4px_15px_0px_#0668E11A]
+      transition-all duration-300
+      ${showTooltip ? "opacity-100 visible" : "opacity-0 invisible"}
+      md:group-hover:opacity-100
+      md:group-hover:visible
+    `}
+            >
+              <p className="text-xl font-medium text-[#0668E1]">
+                Derived from your hiring data, these insights are aligned to
+                help you achieve your quarterly targets.
+              </p>
 
-    {/* Arrow */}
-    <div className="absolute left-[18px] top-full h-4 w-4 -translate-y-1/2 rotate-45 border-b border-r border-[#9EC5FF] bg-[#EAF4FF]" />
-  </div>
-</div>
+              <div className="absolute left-[18px] top-full h-4 w-4 -translate-y-1/2 rotate-45 border-b border-r border-[#9EC5FF] bg-[#EAF4FF]" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

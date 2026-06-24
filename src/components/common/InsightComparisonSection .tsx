@@ -101,7 +101,7 @@ function DesktopView({
             </div>
 
             <div>
-              <h2 className="text-h3 font-bold">{pageData.header.title}</h2>
+              <h2 className="text-h2 font-extrabold">{pageData.header.title}</h2>
               <p className="text-xl font-medium">
                 <span className="text-base font-bold text-[#0668E1]">
                   {pageData.header.label.split(":")[0]}:

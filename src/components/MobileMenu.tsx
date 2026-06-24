@@ -36,7 +36,7 @@ export default function MobileMenu({
   setIsMenuOpen: (open: boolean) => void;
 }) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [showAuthSheet, setShowAuthSheet] = useState(false);
+  const [showAuthSheet, setShowAuthSheet] = useState(true);
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
@@ -112,7 +112,7 @@ export default function MobileMenu({
 
             {/* Employers */}
             <Link
-              href="/employers"
+              href="/employer-alignment-system"
               onClick={handleCloseMenu}
               className="border-b border-[#E5E5E5] py-md text-base font-medium text-[#1B1C17]"
             >
@@ -121,7 +121,7 @@ export default function MobileMenu({
 
             {/* Candidates */}
             <Link
-              href="/candidates"
+              href="/candidate-alignment-system"
               onClick={handleCloseMenu}
               className="border-b border-[#E5E5E5] py-md text-base font-medium text-[#1B1C17]"
             >
@@ -130,12 +130,249 @@ export default function MobileMenu({
 
             {/* Recruiters */}
             <Link
-              href="/recruiters"
+              href="/recruiter-alignment-system"
               onClick={handleCloseMenu}
               className="border-b border-[#E5E5E5] py-md text-base font-medium text-[#1B1C17]"
             >
               Recruiters
             </Link>
+
+                {/* Solutions */}
+            <div className="border-b border-[#E5E5E5]">
+              <div
+                className="flex items-center justify-between py-md "
+                onClick={() => toggleDropdown("Solutions")}
+              >
+                <span
+                  className={`text-base font-medium ${
+                    openDropdown === "Solutions"
+                      ? "text-[#0668E1]"
+                      : "text-[#1B1C17]"
+                  }`}
+                >
+                  Solutions
+                </span>
+
+                <span
+                  className={`text-base transition-transform duration-300 ${
+                    openDropdown === "Solutions"
+                      ? "rotate-180 text-[#0668E1]"
+                      : ""
+                  }`}
+                >
+                  <FaChevronDown className="size-iconsize-sm" />
+                </span>
+              </div>
+
+              {/* FIRST PAGE */}
+              {openDropdown === "Solutions" && (
+                <div className="pb-4">
+                  {/* Candidate */}
+                  <details className="group">
+                    <summary className=" group-open:text-[#0668E1] flex cursor-pointer items-center justify-between py-3 text-xl font-medium text-[#1B1C17] list-none">
+                      Candidate
+                      <span className="transition-transform group-open:text-[#0668E1] group-open:rotate-180">
+                        <FaChevronDown className="size-iconsize-sm" />
+                      </span>
+                    </summary>
+
+                    {/* SECOND PAGE */}
+                    <div className="mt-2 flex flex-col gap-2 pl-4">
+                      <Link
+                        href="/solutions/candidate-alignment-system/interview-feedback-for-candidates"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Evaluator
+                        <span className="mt-xs block text-lg font-medium">
+                          The Feedback Transparency System.
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/solutions/candidate-alignment-system/manage-job-offers"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Facilitator
+                        <span className="mt-xs block text-lg font-medium">
+                          The Offer Decision System.
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/solutions/candidate-alignment-system/manage-interview-schedule"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Scheduler
+                        <span className="mt-xs block text-lg font-medium">
+                          The Interview Coordination System.
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/solutions/candidate-alignment-system/verified-employer-interview-insights"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Reviewer
+                         <span className="mt-xs block text-lg font-medium">
+                          The Employer Insight System.
+                        </span>
+                      </Link>
+                    </div>
+                  </details>
+
+                  {/* Recruiter */}
+                  <details className="group">
+                    <summary className="group-open:text-[#0668E1] flex cursor-pointer items-center justify-between py-3 text-xl font-medium text-[#1B1C17] list-none">
+                      Recruiter
+                      <span className="transition-transform group-open:text-[#0668E1] group-open:rotate-180">
+                        <FaChevronDown className="size-iconsize-sm" />
+                      </span>
+                    </summary>
+
+                    <div className="mt-2 flex flex-col gap-2 pl-4">
+                      <Link
+                        href="/solutions/recruiter-alignment-system/collect-interview-feedback"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Evaluator
+                         <span className="mt-xs block text-lg font-medium">
+                          Interview Evaluation System.
+                        </span>
+                        
+                      </Link>
+
+                      <Link
+                        href="/solutions/recruiter-alignment-system/improve-offer-to-joining-conversion"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Facilitator
+                         <span className="mt-xs block text-lg font-medium">
+                          The Offer Decision System.
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/solutions/recruiter-alignment-system/manage-interview-scheduling"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Scheduler
+                         <span className="mt-xs block text-lg font-medium">
+                          The Interview Coordination System.
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/solutions/recruiter-alignment-system/predict-interview-no-shows"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Predictor
+                         <span className="mt-xs block text-lg font-medium">
+                          The Interview Transition System.
+                        </span>
+                      </Link>
+                     
+                      
+                    </div>
+                  </details>
+
+                  {/* Employer */}
+                  <details className="group">
+                    <summary className="group-open:text-[#0668E1] flex cursor-pointer items-center justify-between py-3 text-xl font-medium text-[#1B1C17] list-none">
+                      Employer
+                      <span className="transition-transform group-open:text-[#0668E1] group-open:rotate-180">
+                        <FaChevronDown className="size-iconsize-sm" />
+                      </span>
+                    </summary>
+
+                    <div className="mt-2 flex flex-col gap-2 pl-4">
+                      <Link
+                        href="/solutions/employer-alignment-system/improve-hiring-target-achievement"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Calibrator
+                        <span className="mt-xs block text-lg font-medium">
+                          Transform Targets into Outcomes.
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/solutions/employer-alignment-system/standardize-hiring-communication"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Evaluator
+                        <span className="mt-xs block text-lg font-medium">
+                          Transform Templates into Touchpoints.
+                        </span>
+                      </Link>
+
+                      <Link
+                        onClick={handleCloseMenu}
+                        href="/solutions/employer-alignment-system/analyze-hiring-workload-and-velocity"
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Explorer
+                        <span className="mt-xs block text-lg font-medium">
+                          Transform Information into Insights.
+                        </span>
+                      </Link>
+
+                      <Link
+                        onClick={handleCloseMenu}
+                        href="/solutions/employer-alignment-system/improve-offer-acceptance-to-joining"
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Facilitator
+                        <span className="mt-xs block text-lg font-medium">
+                          Transform Offer into Onboarding.
+                        </span>
+                      </Link>
+
+                      <Link
+                        onClick={handleCloseMenu}
+                        href="/solutions/employer-alignment-system/identify-hiring-misalignment-signals"
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Navigator
+                        <span className="mt-xs block text-lg font-medium">
+                          Transform Declines into directions.
+                        </span>
+                      </Link>
+
+                      <Link
+                        onClick={handleCloseMenu}
+                        href="/solutions/employer-alignment-system/predict-hiring-drop-offs-early"
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Predictor
+                        <span className="mt-xs block text-lg font-medium">
+                         Transform No-shows into Know-shows.
+                        </span>
+                      </Link>
+                        <Link
+                        href="/solutions/employer-alignment-system/track-hiring-progress-and-bottlenecks"
+                        onClick={handleCloseMenu}
+                        className="py-2 text-xl font-medium"
+                      >
+                        Easy Role Tracker
+                        <span className="mt-xs block text-lg font-medium">
+                          Transform Inactive Pipeline into Active Progress.
+                        </span>
+                      </Link>
+                    </div>
+                  </details>
+                </div>
+              )}
+            </div>
 
             {/* Resources */}
             <div className="border-b border-[#E5E5E5]">
@@ -212,221 +449,10 @@ export default function MobileMenu({
               )}
             </div>
 
-            {/* Solutions */}
-            <div className="border-b border-[#E5E5E5]">
-              <div
-                className="flex items-center justify-between py-md "
-                onClick={() => toggleDropdown("Solutions")}
-              >
-                <span
-                  className={`text-base font-medium ${
-                    openDropdown === "Solutions"
-                      ? "text-[#0668E1]"
-                      : "text-[#1B1C17]"
-                  }`}
-                >
-                  Solutions
-                </span>
-
-                <span
-                  className={`text-base transition-transform duration-300 ${
-                    openDropdown === "Solutions"
-                      ? "rotate-180 text-[#0668E1]"
-                      : ""
-                  }`}
-                >
-                  <FaChevronDown className="size-iconsize-sm" />
-                </span>
-              </div>
-
-              {/* FIRST PAGE */}
-              {openDropdown === "Solutions" && (
-                <div className="pb-4">
-                  {/* Candidate */}
-                  <details className="group">
-                    <summary className=" group-open:text-[#0668E1] flex cursor-pointer items-center justify-between py-3 text-xl font-medium text-[#1B1C17] list-none">
-                      Candidate
-                      <span className="transition-transform group-open:text-[#0668E1] group-open:rotate-180">
-                        <FaChevronDown className="size-iconsize-sm" />
-                      </span>
-                    </summary>
-
-                    {/* SECOND PAGE */}
-                    <div className="mt-2 flex flex-col gap-2 pl-4">
-                      <Link
-                        href="/solutions/candidate/easy-evaluator"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Evaluator
-                      </Link>
-
-                      <Link
-                        href="/solutions/candidate/easy-facilitator"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Facilitator
-                      </Link>
-
-                      <Link
-                        href="/solutions/candidate/easy-scheduler"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Scheduler
-                      </Link>
-
-                      <Link
-                        href="/solutions/candidate/easy-reviewer"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Reviewer
-                      </Link>
-                    </div>
-                  </details>
-
-                  {/* Recruiter */}
-                  <details className="group">
-                    <summary className="group-open:text-[#0668E1] flex cursor-pointer items-center justify-between py-3 text-xl font-medium text-[#1B1C17] list-none">
-                      Recruiter
-                      <span className="transition-transform group-open:text-[#0668E1] group-open:rotate-180">
-                        <FaChevronDown className="size-iconsize-sm" />
-                      </span>
-                    </summary>
-
-                    <div className="mt-2 flex flex-col gap-2 pl-4">
-                      <Link
-                        href="/solutions/recruiter/easy-evaluator"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Evaluator
-                      </Link>
-
-                      <Link
-                        href="/solutions/recruiter/easy-facilitator"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Facilitator
-                      </Link>
-
-                      <Link
-                        href="/solutions/recruiter/easy-scheduler"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Scheduler
-                      </Link>
-
-                      <Link
-                        href="/solutions/recruiter/easy-predictor"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Predictor
-                      </Link>
-                     
-                      
-                    </div>
-                  </details>
-
-                  {/* Employer */}
-                  <details className="group">
-                    <summary className="group-open:text-[#0668E1] flex cursor-pointer items-center justify-between py-3 text-xl font-medium text-[#1B1C17] list-none">
-                      Employer
-                      <span className="transition-transform group-open:text-[#0668E1] group-open:rotate-180">
-                        <FaChevronDown className="size-iconsize-sm" />
-                      </span>
-                    </summary>
-
-                    <div className="mt-2 flex flex-col gap-2 pl-4">
-                      <Link
-                        href="/solutions/employer/easy-calibrator"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Calibrator
-                        <span className="mt-xs block text-lg font-medium">
-                          Transform Targets into Outcomes.
-                        </span>
-                      </Link>
-
-                      <Link
-                        href="/solutions/employer/easy-evaluator"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Evaluator
-                        <span className="mt-xs block text-lg font-medium">
-                          Transform Templates into Touchpoints.
-                        </span>
-                      </Link>
-
-                      <Link
-                        onClick={handleCloseMenu}
-                        href="/solutions/employer/easy-explorer"
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Explorer
-                        <span className="mt-xs block text-lg font-medium">
-                          Transform Information into Insights.
-                        </span>
-                      </Link>
-
-                      <Link
-                        onClick={handleCloseMenu}
-                        href="/solutions/employer/easy-facilitator"
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Facilitator
-                        <span className="mt-xs block text-lg font-medium">
-                          Transform Offer into Onboarding.
-                        </span>
-                      </Link>
-
-                      <Link
-                        onClick={handleCloseMenu}
-                        href="/solutions/employer/easy-navigator"
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Navigator
-                        <span className="mt-xs block text-lg font-medium">
-                          Transform Declines into directions.
-                        </span>
-                      </Link>
-
-                      <Link
-                        onClick={handleCloseMenu}
-                        href="/solutions/employer/easy-predictor"
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Predictor
-                        <span className="mt-xs block text-lg font-medium">
-                         Transform No-shows into Know-shows.
-                        </span>
-                      </Link>
-                        <Link
-                        href="/solutions/employer/easy-role-tracker"
-                        onClick={handleCloseMenu}
-                        className="py-2 text-xl font-medium"
-                      >
-                        Easy Role Tracker
-                        <span className="mt-xs block text-lg font-medium">
-                          Transform Inactive Pipeline into Active Progress.
-                        </span>
-                      </Link>
-                    </div>
-                  </details>
-                </div>
-              )}
-            </div>
 
             {/* Pricing */}
             <Link
-              href="/pricing"
+              href="/hiring-platform-pricing"
               onClick={handleCloseMenu}
               className="border-b border-[#E5E5E5] py-md text-base font-medium text-[#1B1C17]"
             >

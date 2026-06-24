@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGroups } from "react-icons/md";
@@ -8,13 +8,44 @@ import { MdGroups } from "react-icons/md";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { VscArrowBoth } from "react-icons/vsc";
 import Link from "next/link";
+import { PiArrowsLeftRightBold } from "react-icons/pi";
 
-const withinRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg",url:"/resources/alignment-test/register?mode=single&phase=uncertainty"},{role: "Recruiters",img:"/icons/recruiter-icon.svg", url:"/resources/alignment-test/register?mode=single&phase=uncertainty"}, {role:"Employers",img:"/icons/employer-icon.svg",url:"/resources/alignment-test/register?mode=single&phase=uncertainty"}];
-const acrossRoles = [{role:"Candidates",img:"/icons/candidate-icon.svg",url:"https://candidate.connectec.app/register"}, {role:"Recruiters",img:"/icons/recruiter-icon.svg", url:"https://recruiter.connectec.app/register"}, {role:"Employers",img:"/icons/employer-icon.svg",url: "https://employer.connectec.app/register"}];
-
+const withinRoles = [
+  {
+    role: "Candidates",
+    img: "/icons/candidate-icon.svg",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+  },
+  {
+    role: "Recruiters",
+    img: "/icons/recruiter-icon.svg",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+  },
+  {
+    role: "Employers",
+    img: "/icons/employer-icon.svg",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+  },
+];
+const acrossRoles = [
+  {
+    role: "Candidates",
+    img: "/icons/candidate-icon.svg",
+    url: "https://candidate.connectec.app/register",
+  },
+  {
+    role: "Recruiters",
+    img: "/icons/recruiter-icon.svg",
+    url: "https://recruiter.connectec.app/register",
+  },
+  {
+    role: "Employers",
+    img: "/icons/employer-icon.svg",
+    url: "https://employer.connectec.app/register",
+  },
+];
 
 export default function AlignmentTabWithinAcrossComponent() {
-
   return (
     <Tabs defaultValue="within" className="w-full md:px-[5%]">
       {/* Top Tabs */}
@@ -101,21 +132,25 @@ text-start
       </TabsList>
 
       {/* WITHIN */}
-      <TabsContent value="within" className="mt-lg">
-        <div className="flex flex-col sm:flex-row items-center gap-lg sm:gap-0 ">
+      <TabsContent value="within" className="mt-lg ">
+        <div className="flex flex-col sm:flex-row items-center   w-full gap-lg- sm:gap-0 ">
           {withinRoles.map((role, index) => (
-            <div key={role.role} className="flex items-center flex-1 w-full md:w-auto">
+            <React.Fragment key={role.role}>
+            <div
+              className="flex flex-col sm:flex-row items-center w-full "
+            >
               <Link
-              href={role.url}
+                href={role.url}
                 className={`
             group
-            w-full
+           w-full
             h-btn-h
             rounded-md
             border
             border-[#DEEDFF]
             hover:border-[#0668E1]
             hover:text-[#0668E1]
+            hover:bg-[#F0F6FF]
             bg-white
             flex
             items-center
@@ -145,28 +180,34 @@ hover:font-bold
                 />
               </Link>
 
-              {index < withinRoles.length - 1 && (
-  <div className="hidden md:flex self-stretch justify-center mx-md">
-    <span className="w-[2px] bg-[#DEEDFF]" />
-  </div>
-)}
+              
             </div>
+            {index < withinRoles.length - 1 && (
+                <div className="flex self-stretch justify-center items-center mx-md">
+                  <span className=" h-[2px] sm:h-iconsize-lg w-[60%] sm:w-[2px] bg-[#DEEDFF] my-md" />
+                </div>
+              )}
+            </React.Fragment>
           ))}
+          
         </div>
       </TabsContent>
 
       {/* ACROSS */}
       <TabsContent value="across" className="mt-lg">
-        <div className="flex flex-col md:flex-row items-center  ">
+        <div className="flex flex-col md:flex-row items-center">
           {acrossRoles.map((role, index) => (
-            <div key={role.role} className="flex flex-col md:flex-row items-center w-full md:w-auto flex-1">
+           <React.Fragment key={index}>
+             
+           <div
+              className="flex flex-col md:flex-row items-center w-full "
+            >
               <Link
-              href={role.url}
-              target="_blank"
+                href={role.url}
+                target="_blank"
                 className={`
-                  ${role.role==="Candidates"?"pointer-events-none":"cursor-pointer"}
+                  ${role.role === "Candidates" ? "pointer-events-none" : "cursor-pointer"}
             group
-            flex-1
             w-full
             h-btn-h
             rounded-md
@@ -174,6 +215,7 @@ hover:font-bold
             border-[#DEEDFF]
             hover:border-[#0668E1]
             hover:text-[#0668E1]
+            hover:bg-[#F0F6FF]
             bg-white
             flex
             items-center
@@ -205,10 +247,12 @@ hover:font-bold
                 />
               </Link>
 
-              {index < acrossRoles.length - 1 && (
-                <VscArrowBoth className="size-iconsize-sm rotate-90 md:rotate-0 my-xs font-medium mx-md" />
-              )}
+             
             </div>
+            {index < acrossRoles.length - 1 && (
+                <PiArrowsLeftRightBold className="size-iconsize-lg md:size-iconsize-2xl md:scale-125 rotate-90 sm:rotate-0 my-sm font-medium text-[#B2D0F6] mx-md" />
+               )}
+           </React.Fragment>
           ))}
         </div>
       </TabsContent>

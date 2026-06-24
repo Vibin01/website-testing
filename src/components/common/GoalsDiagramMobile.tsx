@@ -58,12 +58,12 @@ export default function GoalsDiagramMobile() {
               id="candidate-mobile"
               relations={[
                 {
-                  targetId: "goals-mobile",
-                  sourceAnchor: "bottom",
+                  targetId: "goals-mobile-gap-left",
+                  sourceAnchor: "top",
                   targetAnchor: "left",
                   style: {
                     strokeDasharray: "6,6",
-                    lineStyle: "angle",
+                    lineStyle: "straight",
                   },
                 },
               ]}
@@ -82,12 +82,12 @@ export default function GoalsDiagramMobile() {
               id="employer-mobile"
               relations={[
                 {
-                  targetId: "goals-mobile",
-                  sourceAnchor: "bottom",
+                  targetId: "goals-mobile-gap-right",
+                  sourceAnchor: "top",
                   targetAnchor: "right",
                   style: {
                     strokeDasharray: "6,6",
-                    lineStyle: "angle",
+                    lineStyle: "straight",
                   },
                 },
               ]}
@@ -103,10 +103,47 @@ export default function GoalsDiagramMobile() {
             </ArcherElement>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-12 flex items-center gap-sm ">
+            <ArcherElement
+              id="goals-mobile-gap-left"
+              relations={[
+                {
+                  targetId: "goals-mobile",
+                  sourceAnchor: "bottom",
+                  targetAnchor: "left",
+                  style: {
+                    strokeDasharray: "6,6",
+                    lineStyle: "straight",
+                  },
+                },
+              ]}
+            >
+                <div className="size-px">
+            
+              </div>
+            </ArcherElement>
             <ArcherElement id="goals-mobile">
               <div className="flex py-md min-w-[140px] items-center justify-center rounded-full bg-white text-[13px] font-bold border border-[#DEEDFF] shadow-[0px_0px_40px_5px_#0668E11A]">
                 Different goals
+              </div>
+              
+            </ArcherElement>
+             <ArcherElement
+              id="goals-mobile-gap-right"
+              relations={[
+                {
+                  targetId: "goals-mobile",
+                  sourceAnchor: "bottom",
+                  targetAnchor: "right",
+                  style: {
+                    strokeDasharray: "6,6",
+                    lineStyle: "straight",
+                  },
+                },
+              ]}
+            >
+                <div className="size-px"> 
+            
               </div>
             </ArcherElement>
           </div>
