@@ -17,13 +17,7 @@ export async function sendOTPEmail(email: string, otp: string, name:string): Pro
   from: `"Connect EC" <${process.env.SMTP_USER}>`,
    to: email,
     subject: 'Your OTP for AAA Framework Alignment',
-     attachments: [
-    {
-      filename: "Connect_EC_Logo.webp",
-      path: path.join(process.cwd(), "public", "Connect_EC_Logo.webp"),
-      cid: "connectec-logo",
-    },
-  ],
+    
     html:  `<!DOCTYPE html>
       <html>
       <body style="margin:0;padding:0;font-family:Arial,sans-serif;background:#ffffff;">
@@ -38,11 +32,10 @@ export async function sendOTPEmail(email: string, otp: string, name:string): Pro
                     <table width="100%">
                       <tr>
                         <td>
-                          <img
-                            src="cid:connectec-logo"
-                            alt="ConnectEC"
-                            width="250"
-                          />
+                           src="${process.env.BASE_URL}/Connect_EC_Logo.webp"
+  alt="Logo"
+  width="180"
+/>
                         </td>
 
                       
@@ -124,10 +117,10 @@ export async function sendOTPEmail(email: string, otp: string, name:string): Pro
 
                         <td>
                           <img
-                            src="cid:connectec-logo"
-                            alt="ConnectEC"
-                            width="180"
-                          />
+  src="${process.env.BASE_URL}/Connect_EC_Logo.webp"
+  alt="Logo"
+  width="180"
+/>
 
                           <p
                             style="
