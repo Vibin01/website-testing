@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, useTransition } from "react";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -95,6 +95,8 @@ export default function AssessmentTestClient({
   const [pageLoadTime, setPageLoadTime] = useState<number | null>(null);
   const [submitTime, setSubmitTime] = useState<number | null>(null);
 
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -106,6 +108,12 @@ export default function AssessmentTestClient({
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>("");
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
+
+const [isPending, startTransition] = useTransition();
+
+const handleOptionChange = useCallback((key: string) => {
+  setSelectedOption(key);
+}, []);
 
   useEffect(() => {
     async function init() {
@@ -193,16 +201,22 @@ export default function AssessmentTestClient({
     return questionMap[role].filter((q) => q.phase === currentPhase.key);
   }, [role, currentPhase]);
 
-  const currentQuestion = questions[questionIndex];
+  const currentQuestion = useMemo(
+  () => questions[questionIndex],
+  [questions, questionIndex]
+);
+
   useEffect(() => {
     if (!currentQuestion) return;
 
-    const allAnswers = [
-      ...answers,
-      ...Object.values(phaseReports).flatMap(
-        (report: any) => report?.answers || [],
-      ),
-    ];
+ const allAnswers = useMemo(() => {
+  return [
+    ...answers,
+    ...Object.values(phaseReports).flatMap(
+      (report: any) => report?.answers || []
+    ),
+  ];
+}, [answers, phaseReports]);
 
     const existingAnswer = allAnswers.find(
       (a) => a.questionId === currentQuestion.id,
@@ -251,6 +265,8 @@ export default function AssessmentTestClient({
     currentQuestion.situation.split("\n\n");
 
   const handleBack = () => {
+     if (isProcessing) return;
+
     // Previous question in same phase
     if (questionIndex > 0) {
       const prevQuestionIndex = questionIndex - 1;
@@ -270,7 +286,7 @@ export default function AssessmentTestClient({
       setQuestionIndex(prevQuestionIndex);
       setSelectedOption(previousAnswer?.selectedOption || "");
 
-      return
+      return;
     }
 
     // Previous phase
@@ -304,6 +320,11 @@ export default function AssessmentTestClient({
   };
 
   const handleNext = async () => {
+
+    if (isProcessing) return;
+
+  setIsProcessing(true);
+  try{
     if (!selectedOption) {
       setError("Please select an option before continuing.");
       return;
@@ -338,7 +359,9 @@ export default function AssessmentTestClient({
 
     // Move to next question
     if (questionIndex < questions.length - 1) {
-      setQuestionIndex((prev) => prev + 1);
+      startTransition(() => {
+    setQuestionIndex(prev => prev + 1);
+});
       return;
     }
 
@@ -502,14 +525,25 @@ export default function AssessmentTestClient({
 
     console.log("Overall Assessment Submit Time:", duration.toFixed(2), "ms");
     router.push(`/resources/alignment-test/${role}/report?mode=full`);
+    } catch (error) {
+    console.error(error);
+    setError("Something went wrong. Please try again.");
+  } finally {
+    setIsProcessing(false);
+  }
   };
+
+
   const startIndex = Math.max(
-  0,
-  Math.min(phaseIndex - 1, availablePhases.length - 3)
-);
+    0,
+    Math.min(phaseIndex - 1, availablePhases.length - 3),
+  );
 
-const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
+  const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
 
+  const options = useMemo(() => {
+  return Object.entries(currentQuestion.options);
+}, [currentQuestion]);
 
   return (
     <section className="w-full px-[7%] py-[5%]">
@@ -550,24 +584,24 @@ const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
                 );
               })
             : visibleItems.map((item, index) => {
-  const actualIndex = startIndex + index;
+                const actualIndex = startIndex + index;
 
-  const active = actualIndex === phaseIndex;
-  const completed = actualIndex < phaseIndex;
+                const active = actualIndex === phaseIndex;
+                const completed = actualIndex < phaseIndex;
 
-  const iconSrc = completed
-    ? "/icons/tick-gradient-icon.svg"
-    : active
-      ? "/icons/question-active-icon.svg"
-      : item.inactiveIcon;
+                const iconSrc = completed
+                  ? "/icons/tick-gradient-icon.svg"
+                  : active
+                    ? "/icons/question-active-icon.svg"
+                    : item.inactiveIcon;
 
-  return (
-    <div
-      key={item.key}
-      className="flex flex-col items-center gap-2 min-w-[80px]"
-    >
-      <div
-        className={`
+                return (
+                  <div
+                    key={item.key}
+                    className="flex flex-col items-center gap-2 min-w-[80px]"
+                  >
+                    <div
+                      className={`
           flex items-center justify-center
           w-10 h-10 rounded-full
           transition-all duration-300
@@ -579,18 +613,18 @@ const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
                 : "bg-[#F2F2F2]"
           }
         `}
-      >
-        <Image
-          src={iconSrc}
-          alt="status-icon"
-          width={20}
-          height={20}
-          className="object-contain"
-        />
-      </div>
+                    >
+                      <Image
+                        src={iconSrc}
+                        alt="status-icon"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
+                    </div>
 
-      <p
-        className={`
+                    <p
+                      className={`
           text-center text-xs sm:text-sm font-medium whitespace-nowrap
           ${
             active || completed
@@ -598,12 +632,12 @@ const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
               : "text-[#9F9F9F]"
           }
         `}
-      >
-        {item.label}
-      </p>
-    </div>
-  );
-})}
+                    >
+                      {item.label}
+                    </p>
+                  </div>
+                );
+              })}
         </aside>
 
         <main className="w-full">
@@ -646,7 +680,7 @@ const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
               {/* <p className="mt-md text-xl font-medium">What do you do?</p> */}
 
               <div className="mt-md space-y-sm">
-                {Object.entries(currentQuestion.options).map(
+                {options.map(
                   ([key, option]) => {
                     const active = selectedOption === key;
 
@@ -664,7 +698,7 @@ const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
                           name="assessment-option"
                           value={key}
                           checked={active}
-                          onChange={() => setSelectedOption(key)}
+                          onChange={() => handleOptionChange(key)}
                           className="size-md shrink-0 mt-1 md:mt-0 accent-[#0668E1]"
                         />
 
@@ -707,17 +741,20 @@ const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
               <button
                 type="button"
                 onClick={handleNext}
-                disabled={!selectedOption}
-                className={`flex h-[48px] cursor-pointer items-center gap-sm rounded-md px-md text-xl font-medium text-white
+                disabled={!selectedOption || isProcessing}
+                className={`flex h-[48px] cursor-pointer items-center gap-sm rounded-md w-[200px] text-xl font-medium text-white
                   ${
-                    !selectedOption
+                    !selectedOption || isProcessing
                       ? "cursor-not-allowed bg-gray-400"
-                      : "bg-[#0668E1]"
+                      : "bg-[#0668E1] hover:bg-[#0556bc]"
                   }
                   `}
               >
-                {buttonText}
-
+                {isProcessing
+  ? isSubmitButton
+      ? "Submitting..."
+      : "Loading..."
+  : buttonText}
                 {!isSubmitButton && <ArrowRight size={20} />}
               </button>
             </div>
