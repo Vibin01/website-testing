@@ -31,9 +31,9 @@ const engagementData = [
 export default function CandidateEngagementFlow() {
   return (
     <div className="mx-auto relative mt-[20%] md:mt-xl">
-      <h2 className="text-base font-bold text-[#1B1C17]">
+      <h3 className="text-base font-bold text-[#1B1C17]">
         Candidate Engagement Flow
-      </h2>
+      </h3>
 
       <div className="mt-md w-full rounded-md border border-[#D3E6FF] bg-white p-6 shadow-[0px_4px_40px_5px_#0668E11A]">
         {/* Steps */}

@@ -239,7 +239,7 @@ export default function AssessmentTestClient({
           onClick={() =>
             router.push(`/resources/alignment-test/${role}/report?mode=full`)
           }
-          className="rounded-sm bg-primary px-md py-xs text-white"
+          className="rounded-md bg-primary px-md py-xs text-white"
         >
           View Overall Report
         </button>
@@ -270,7 +270,7 @@ export default function AssessmentTestClient({
       setQuestionIndex(prevQuestionIndex);
       setSelectedOption(previousAnswer?.selectedOption || "");
 
-      return;
+      return
     }
 
     // Previous phase
@@ -503,6 +503,14 @@ export default function AssessmentTestClient({
     console.log("Overall Assessment Submit Time:", duration.toFixed(2), "ms");
     router.push(`/resources/alignment-test/${role}/report?mode=full`);
   };
+  const startIndex = Math.max(
+  0,
+  Math.min(phaseIndex - 1, availablePhases.length - 3)
+);
+
+const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
+
+
   return (
     <section className="w-full px-[7%] py-[5%]">
       <div className="grid grid-cols-1 items-center gap-xl md:grid-cols-[0.25fr_1fr]">
@@ -541,40 +549,61 @@ export default function AssessmentTestClient({
                   </div>
                 );
               })
-            : availablePhases.map((item, index) => {
-                const active = index === phaseIndex;
-                const completed = index < phaseIndex;
+            : visibleItems.map((item, index) => {
+  const actualIndex = startIndex + index;
 
-                const iconSrc = completed
-                  ? "/icons/tick-gradient-icon.svg"
-                  : active
-                    ? "/icons/question-active-icon.svg"
-                    : item.inactiveIcon;
+  const active = actualIndex === phaseIndex;
+  const completed = actualIndex < phaseIndex;
 
-                return (
-                  <div
-                    key={item.key}
-                    className="flex flex-col items-center gap-xs  "
-                  >
-                    <div className="flex size-iconsize-lg items-center justify-center">
-                      <Image
-                        src={iconSrc}
-                        alt="status-icon"
-                        width={40}
-                        height={40}
-                        className="size-iconsize-lg object-contain"
-                      />
-                    </div>
-                    <p
-                      className={`text-center text-xl font-medium ${
-                        active ? "font-bold text-[#1B1C17]" : "text-[#9F9F9F]"
-                      } ${completed ? "!text-[#1B1C17]" : ""}`}
-                    >
-                      {item.label}
-                    </p>
-                  </div>
-                );
-              })}
+  const iconSrc = completed
+    ? "/icons/tick-gradient-icon.svg"
+    : active
+      ? "/icons/question-active-icon.svg"
+      : item.inactiveIcon;
+
+  return (
+    <div
+      key={item.key}
+      className="flex flex-col items-center gap-2 min-w-[80px]"
+    >
+      <div
+        className={`
+          flex items-center justify-center
+          w-10 h-10 rounded-full
+          transition-all duration-300
+          ${
+            active
+              ? "bg-[#0668E1] ring-4 ring-[#0668E1]/20"
+              : completed
+                ? "bg-[#0668E1]/10"
+                : "bg-[#F2F2F2]"
+          }
+        `}
+      >
+        <Image
+          src={iconSrc}
+          alt="status-icon"
+          width={20}
+          height={20}
+          className="object-contain"
+        />
+      </div>
+
+      <p
+        className={`
+          text-center text-xs sm:text-sm font-medium whitespace-nowrap
+          ${
+            active || completed
+              ? "text-[#1B1C17] font-semibold"
+              : "text-[#9F9F9F]"
+          }
+        `}
+      >
+        {item.label}
+      </p>
+    </div>
+  );
+})}
         </aside>
 
         <main className="w-full">
@@ -590,7 +619,7 @@ export default function AssessmentTestClient({
               </div>
             </div>
 
-            <div className="mt-sm rounded-sm border border-[#B2D0F6] bg-[#F7FBFF] p-sm text-[12px] md:text-lg font-medium text-[#0668E1]">
+            <div className="mt-sm rounded-md border border-[#B2D0F6] bg-[#F7FBFF] p-sm text-[12px] md:text-lg font-medium text-[#0668E1]">
               Choose what you would actually do — not what seems ideal.{" "}
               <span className="italic text-[#1B1C17]">
                 Your first instinct is usually the most accurate.
@@ -603,7 +632,7 @@ export default function AssessmentTestClient({
               </p>
             )}
 
-            <div className="mt-md rounded-sm border border-[#DEEDFF] bg-white p-sm shadow-[0px_4px_40px_5px_#0668E11A]">
+            <div className="mt-md rounded-md border border-[#DEEDFF] bg-white p-sm shadow-[0px_4px_40px_5px_#0668E11A]">
               <h3 className="text-base font-bold text-[#0668E1]">
                 {situationTitle}
               </h3>
@@ -624,7 +653,7 @@ export default function AssessmentTestClient({
                     return (
                       <label
                         key={key}
-                        className={`flex w-full cursor-pointer items-center gap-sm rounded-sm border px-4 py-3 text-left text-xl font-medium transition ${
+                        className={`flex w-full cursor-pointer items-start gap-sm rounded-md border px-4 py-3 text-left text-xl font-medium transition ${
                           active
                             ? "border-[#B2D0F6] text-[#2C2C2C]"
                             : "border-transparent text-[#9F9F9F]"
@@ -636,7 +665,7 @@ export default function AssessmentTestClient({
                           value={key}
                           checked={active}
                           onChange={() => setSelectedOption(key)}
-                          className="size-sm shrink-0 accent-[#0668E1]"
+                          className="size-md shrink-0 mt-1 md:mt-0 accent-[#0668E1]"
                         />
 
                         <span>
@@ -667,7 +696,7 @@ export default function AssessmentTestClient({
                 <button
                   type="button"
                   onClick={handleBack}
-                  className="flex h-[48px] cursor-pointer items-center rounded-sm border border-[#0668E1] px-md text-xl font-medium text-[#0668E1]"
+                  className="flex h-[48px] cursor-pointer items-center rounded-md border border-[#0668E1] px-md text-xl font-medium text-[#0668E1]"
                 >
                   Back
                 </button>
@@ -679,7 +708,7 @@ export default function AssessmentTestClient({
                 type="button"
                 onClick={handleNext}
                 disabled={!selectedOption}
-                className={`flex h-[48px] cursor-pointer items-center gap-sm rounded-sm px-md text-xl font-medium text-white
+                className={`flex h-[48px] cursor-pointer items-center gap-sm rounded-md px-md text-xl font-medium text-white
                   ${
                     !selectedOption
                       ? "cursor-not-allowed bg-gray-400"

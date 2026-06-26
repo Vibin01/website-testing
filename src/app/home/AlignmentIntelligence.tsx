@@ -72,7 +72,7 @@ export default function AlignmentIntelligence() {
                 key={index}
                 className="flex flex-col items-center text-center"
               >
-                  <img src={item.icon} alt={item.title} className="size-iconsize-2xl"/>
+                  <img src={item.icon} alt={item.title} className="size-[45px] sm:size-iconsize-2xl"/>
 
                 <h3 className="mt-sm text-base font-bold">
                   {item.title}
@@ -85,8 +85,8 @@ export default function AlignmentIntelligence() {
                   </span>
                 </p>
 
-                <button className="mt-md p-1.5 flex rotate-90 sm:rotate-0  items-center justify-center rounded-full bg-[#0668E1] text-white transition hover:scale-110">
-                  <ChevronRight className="size-iconsize-sm scale-105" />
+                <button className="mt-md p-[0.5%] md:p-1.5 flex rotate-90 sm:rotate-0  items-center justify-center rounded-full bg-[#0668E1] text-white transition hover:scale-110">
+                  <ChevronRight className="size-iconsize-sm md:scale-105" />
                 </button>
               </div>
             );
@@ -109,7 +109,7 @@ export default function AlignmentIntelligence() {
             return (
               <div
                 key={index}
-                className="group rounded-lg bg-[#0668E1] p-xl text-center text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                className="flex flex-col justify-center items-center group rounded-lg bg-[#0668E1] p-xl text-center text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
                 <img 
                 src={item.icon}
@@ -121,11 +121,12 @@ export default function AlignmentIntelligence() {
                 <h3 className="text-base font-bold">{item.title}</h3>
 
                 <p className="mt-2 font-medium text-xl text-white">{item.description}</p>
+{index !== resultCards.length - 1 && (
+                <button className="mx-auto mt-md p-[1%] md:p-1.5 rotate-90 sm:rotate-0 flex  items-center justify-center rounded-full bg-white text-[#0668E1] transition hover:scale-110">
 
-                <button className="mx-auto mt-md p-1.5 rotate-90 sm:rotate-0 flex  items-center justify-center rounded-full bg-white text-[#0668E1] transition hover:scale-110">
-
-                  <ChevronRight className="size-iconsize-sm scale-105"/>
+                  <ChevronRight className="size-iconsize-sm md:scale-105"/>
                 </button>
+)}
               </div>
             );
           })}

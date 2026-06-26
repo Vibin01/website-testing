@@ -1,6 +1,5 @@
 "use client";
 
-import { downloadPdf } from "@/lib/download-pdf";
 
 import { useEffect, useState } from "react";
 import { Anchor, ArrowRight, Share2, ShieldCheck } from "lucide-react";
@@ -179,13 +178,21 @@ function HeaderBlock({
             </div>
           </div>
 
-          <button
-            onClick={() => window.print()}
-            className="flex items-center cursor-pointer gap-2 text-[16px] font-bold"
-          >
-            <Share2 size={18} />
-            Share
-          </button>
+<button
+  onClick={() => {
+    const pageUrl = encodeURIComponent(window.location.href);
+
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }}
+  className="flex items-center cursor-pointer gap-2 text-[16px] font-bold"
+>
+  <Share2 size={18} />
+  Share
+</button>
         </div>
       </div>
 
@@ -462,14 +469,14 @@ function PhaseReport({
         </SectionCard>
       </div>
 
-      <div className="mt-md flex justify-end gap-sm">
+      <div className="mt-xl flex justify-between md:justify-end gap-md">
         <button
           onClick={() =>
             fullCompleted
               ? router.back()
               : router.push(`/resources/alignment-test`)
           }
-          className="h-[54px] cursor-pointer rounded-sm border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
+          className="h-[54px] cursor-pointer rounded-md border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
         >
           Back
         </button>
@@ -481,7 +488,7 @@ function PhaseReport({
             onClick={() =>
               router.push(`/resources/alignment-test/${role}?mode=full`)
             }
-            className="flex h-[54px] cursor-pointer items-center gap-sm rounded-sm bg-[#0668E1] px-8 text-xl font-medium text-white"
+            className="flex h-[54px] cursor-pointer items-center gap-sm rounded-md bg-[#0668E1] px-8 text-xl font-medium text-white"
           >
             Continue Full Test
             <ArrowRight size={20} />
@@ -776,10 +783,10 @@ function OverallReport({
           ))}
         </SectionCard>
       </div>
-      <div className="mt-md flex justify-end gap-sm">
+      <div className="mt-md flex justify-between md:justify-end gap-md">
         <button
           onClick={() => router.push("/resources/alignment-test")}
-          className="h-[54px] cursor-pointer rounded-sm border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
+          className="h-[54px] cursor-pointer rounded-md border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
         >
           Back
         </button>

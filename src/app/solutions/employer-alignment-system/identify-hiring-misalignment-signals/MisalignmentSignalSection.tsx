@@ -10,7 +10,7 @@ export default function MisalignmentSignalsCard() {
     <div className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)]">
       
       {/* Top Info Box */}
-      <div className="w-full rounded-sm border border-[#B2D0F6] bg-[#EEF6FF] p-sm text-xl font-medium text-[#0668E1]">
+      <div className="w-full rounded-md border border-[#B2D0F6] bg-[#EEF6FF] p-sm text-xl font-medium text-[#0668E1]">
         Decline patterns convert hiring outcomes into{" "}
         <span className="font-bold ">
           measurable alignment signals.

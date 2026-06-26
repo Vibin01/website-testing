@@ -48,7 +48,7 @@ const bottomCards = [
   },
   {
     icon: "/icons/tick-gradient-icon.svg",
-    title: "Actionable insights, not personality labels",
+    title: "Real-world actionable insights, not personality labels",
     description: "Focused on decisions and alignment – not traits.",
   },
 ];
@@ -111,10 +111,13 @@ export default function AlignmentSituationsSection() {
             const phase = phaseKeys[index];
             const isCompleted = completedPhases.includes(phase);
 
+            const words = card.description.split(" ");
+const lastWord = words.pop();
+
             return (
               <div
                 key={card.title}
-                className="flex-shrink-0 basis-[55%] md:w-auto rounded-md border border-[#D0E5FF] bg-white p-md text-center shadow-[0px_4px_40px_5px_#0668E10D]"
+                className="flex-shrink-0 basis-[55%] md:w-auto rounded-md border border-[#D0E5FF] bg-white p-md text-center shadow-[0px_4px_40px_5px_#0668E10D]-"
               >
                 <div className="mx-auto flex size-fit p-sm items-center justify-center rounded-full border border-[#D0E5FF] bg-[#EEF6FF] text-[#0668E1]">
                   <img src={card.icon} alt={card.title} className="size-iconsize-md" />
@@ -122,11 +125,14 @@ export default function AlignmentSituationsSection() {
 
                 <h3 className="mt-sm text-base font-bold">{card.title}</h3>
 
-                <p className="mt-sm text-xl font-medium md:px-sm">{card.description}</p>
-
+            <p className="mt-sm text-xl font-medium">
+  {words.join(" ")}
+  <br />
+  {lastWord}
+</p>
                 <button
                   onClick={() => handleSingleStart(phase)}
-                  className={`mt-md flex h-[46px] w-full items-center justify-center gap-xs rounded-sm cursor-pointer text-xl font-medium ${
+                  className={`mt-md flex h-[46px] w-full items-center justify-center gap-xs rounded-md md:rounded-sm cursor-pointer text-xl font-medium ${
                     isCompleted
                       ? "bg-[#E7FFF3] text-[#2B9B43]"
                       : "bg-[#E6F0FC] text-[#0668E1]"

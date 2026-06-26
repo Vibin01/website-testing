@@ -32,5 +32,5 @@ export default async function Page({
   }
 
   return (<div className="mt-[10%] md:mt-0">
-  <AssessmentTestClient role={role} mode={mode} phase={phase} />;
+  <AssessmentTestClient role={role} mode={mode} phase={phase} />
 </div>)}

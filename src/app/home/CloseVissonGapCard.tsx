@@ -181,7 +181,7 @@ function ContentBlock({ title, content }: SectionBlock) {
 
   return (
     <div>
-      <h2 className="text-base font-bold text-[#1B1C17]">{title}</h2>
+      <h3 className="text-base font-bold text-[#1B1C17]">{title} </h3>
 
       {isArrayContent ? (
         <div className="mt-sm space-y-sm text-xl font-medium text-[#2C2C2C]">
@@ -220,7 +220,7 @@ function MobileAccordion({
         onClick={onToggle}
         className="flex w-full items-center justify-between text-left"
       >
-        <h2 className="text-base font-bold text-[#1B1C17]">{title}</h2>
+        <h3 className="text-base font-bold text-[#1B1C17]">{title}</h3>
         {isOpen ? (
           <ChevronUp className="h-5 w-5 text-[#1B1C17]" />
         ) : (
@@ -292,9 +292,9 @@ function DesktopView({
 
           {/* Right Side */}
           <div className="space-y-sm ">
-            <h2 className="text-base font-bold text-[#1B1C17]">
+            <h3 className="text-base font-bold text-[#1B1C17]">
               {activeCard.rightSide.title} 
-            </h2>
+            </h3>
 
             <div className="mt-md space-y-sm">
               {activeCard.rightSide.content.map((item, index) => (
@@ -356,9 +356,9 @@ useEffect(() => {
         <div className="space-y-md">
           {/* Seam only */}
           <div>
-            <h2 className="text-h6 font-bold text-[#1B1C17]">
+            <h3 className="text-h6 font-bold text-[#1B1C17]">
               {activeCard.leftSide[0].title}
-            </h2>
+            </h3>
 
             <p className="mt-sm text-xl font-medium text-[#2C2C2C]">
               {activeCard.leftSide[0].content}

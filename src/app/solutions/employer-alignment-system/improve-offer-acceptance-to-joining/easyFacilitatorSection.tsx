@@ -60,7 +60,7 @@ export default function EasyFacilitatorSection() {
                     alt="tick icon"
                     className="size-iconsize-sm p-[0.1%]"
                   />
-                  <span className="text-base font-medium">
+                  <span className="text-xl font-medium">
                     {point}
                   </span>
                 </div>

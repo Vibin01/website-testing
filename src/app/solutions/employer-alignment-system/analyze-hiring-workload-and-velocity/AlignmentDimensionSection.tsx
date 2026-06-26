@@ -46,9 +46,9 @@ export default function AlignmentDimensionsSection() {
     <div className="mx-auto space-y-sm">
       {/* Top Box */}
       <div className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
-        <h2 className="text-base font-bold text-[#1B1C17]">
+        <h3 className="text-base font-bold text-[#1B1C17]">
           The four Alignment Dimensions
-        </h2>
+        </h3>
 
         {/* 4 Columns */}
         <div className="mt-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-md">
@@ -81,9 +81,9 @@ export default function AlignmentDimensionsSection() {
                 <img
                     src="/icons/tick-gradient-icon.svg"
                     alt="tick icon"
-                    className="mt-[0.5%] size-iconsize-sm p-[0.1%]"
+                    className="mt-[0.5%] size-iconsize-sm p-[0.2%]"
                   />
-                <span className="font-medium text-base">{point}</span>
+                <span className="font-medium text-xl">{point}</span>
               </div>
             ))}
           </div>

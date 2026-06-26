@@ -25,14 +25,14 @@ export const CandidatesPage = () => {
         <div className="">
           <div className="bg-[url('/background/bg-hero-candidate-section.svg')] bg-no-repeat bg-cover bg-center">
             <section className="relative flex items-center justify-center  bg-transparent">
-              <div className="mt-[5%] py-[5%] px-[5%]" >
+              <div className="mt-[5%] pt-[5%] pb-[15%] px-[5%]" >
                 <HeroTextContainerSection data={HeroData} />
               </div>
               
             </section>
           </div>
           <div className="">
-            <section className="relative mt-[5%] md:mt-0 py-[5%] px-[5%]- md:px-[7%] bg-transparent">
+            <section className="relative pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
              <SignalFlowSection data={signalFlowData} />
             </section>
           </div>

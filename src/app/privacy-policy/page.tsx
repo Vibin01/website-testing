@@ -10,7 +10,7 @@ export const metadata = {
 export default function page() {
   return (
     <>
-      <div className="text-base py-[6%] px-[15%]">
+      <div className="text-base py-[6%] px-[5%] md:px-[15%]">
         <div className="flex justify-between items-center ">
           <h1 className="font-bold  text-h5 mb-xl ">
             <span className="text-base">

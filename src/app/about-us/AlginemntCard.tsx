@@ -4,23 +4,24 @@ import Link from "next/link";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGroups } from "react-icons/md";
+import { PiArrowsLeftRightBold } from "react-icons/pi";
 import { VscArrowBoth } from "react-icons/vsc";
 
 const withinRoles = [
   {
     role: "Candidates",
     img: "/icons/candidate-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=candidate",
   },
   {
     role: "Recruiters",
     img: "/icons/recruiter-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=recruiter",
   },
   {
     role: "Employers",
     img: "/icons/employer-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=employer",
   },
 ];
 const acrossRoles = [
@@ -211,8 +212,8 @@ text-[#0668E1]
               </Link>
 
               {index < acrossRoles.length - 1 && (
-                <VscArrowBoth className="size-iconsize-sm font-medium" />
-              )}
+                            <PiArrowsLeftRightBold className="size-iconsize-sm  rotate-90 sm:rotate-0 my-sm font-medium text-[#B2D0F6] " />
+             )}
             </div>
           ))}
         </div>

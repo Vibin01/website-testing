@@ -159,7 +159,7 @@ const gapPagesData: GapPage[] = [
 
 function LeftCard({ page }: { page: GapPage }) {
   return (
-    <div className="rounded-md h-auto bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)] md:rounded-b-sm">
+    <div className="rounded-md h-auto bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)] md:rounded-none md:rounded-b-sm">
       <div className="flex flex-col gap-sm">
         <div className="flex flex-row items-center md:items-start md:flex-col gap-xs md:gap-md">
           <img
@@ -237,7 +237,7 @@ function StructuralCauseContent({ page }: { page: GapPage }) {
         <img
           src={page.structuralCauseImage}
           alt={page.alt}
-          className="w-full min-h-[190px] object-cover rounded-md"
+          className="w-full h-[clamp(180px,calc(200_/_var(--width)*100vw),500px)] object-cover rounded-md"
         />
         <p className="font-bold text-xl mt-sm">The {page.title} is created</p>
       </div>

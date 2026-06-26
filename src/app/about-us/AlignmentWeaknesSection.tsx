@@ -18,7 +18,7 @@ const systemCards = [
 
 const scatterSignals = [
   "Decisions delay.",
-  "Execution weakens.",
+  "Progress slows.",
   "Outcomes become uncertain.",
 ];
 

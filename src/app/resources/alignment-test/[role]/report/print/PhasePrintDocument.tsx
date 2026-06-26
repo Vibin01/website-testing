@@ -61,9 +61,9 @@ export default function PhasePrintDocument({
       </div>
 
       <section className="mt-8 flex items-center gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#DEEDFF] bg-[#EEF6FF]">
+        {/* <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#DEEDFF] bg-[#EEF6FF]">
           🛡️
-        </div>
+        </div> */}
         <div>
           <h1 className="text-[18px] font-extrabold">
             Your Alignment Insight -{" "}

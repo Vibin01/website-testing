@@ -23,7 +23,7 @@ const meansCards = [
     points: [
       "Visibility into hiring progress",
       "Early signals across hiring stages ",
-      "Direction and execution aligned",
+      "Hiring Priorities and execution aligned",
     ],
   },
 ];
@@ -51,9 +51,9 @@ export default function WhatThisMeansSection() {
                 </h3>
               </div>
 
-              <div className="mt-6 space-y-7">
+              <div className="mt-md space-y-md">
                 {card.points.map((point) => (
-                  <div key={point} className="flex items-start gap-4">
+                  <div key={point} className="flex items-start gap-xs">
                   <img src={"/icons/tick-gradient-icon.svg"} alt="tick icon" className="size-iconsize-sm" />
 
                     <p className="text-xl font-medium">

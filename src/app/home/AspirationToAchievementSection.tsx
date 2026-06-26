@@ -194,7 +194,7 @@ export default function AspirationToAchievementSection() {
           <AchievementDiagramCard />
         </div>
 
-        <ResultCard />
+        {/* <ResultCard /> */}
       </div>
     </>
   );

@@ -32,6 +32,7 @@ export async function sendOTPEmail(email: string, otp: string, name:string): Pro
                     <table width="100%">
                       <tr>
                         <td>
+                        <img
                            src="${process.env.BASE_URL}/Connect_EC_Logo.webp"
   alt="Logo"
   width="180"

@@ -31,8 +31,8 @@ const unit = activeTab === "interview" ? "Hours" : "Days";
     },
     {
       title: "Misalignment Risk Reduction",
-      value: "40%",
-      unit: "Reduction",
+      value: "Tier 3  ",
+      unit: "Visibility",
       desc1: `Based on 10 high-risk transitions`,
       desc2: "Earlier intervention reduces enterprise hiring risk across critical transitions.",
     },
@@ -71,7 +71,7 @@ const unit = activeTab === "interview" ? "Hours" : "Days";
 
   return (
     <div className="mx-auto w-full">
-      <h1 className="text-h2 font-bold text-[#1B1C17]">Easy Predictor</h1>
+      <h1 className="text-h2 font-extrabold text-[#1B1C17]">Easy Predictor</h1>
 
       <p className="mt-sm text-base font-bold text-[#1B1C17]">
         The Alignment Visibility Law.

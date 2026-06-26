@@ -21,9 +21,9 @@ const Page = () => {
                 <h1 className="mb-[0.5%] text-h1 font-extrabold text-[#0668E1]">
                   Connect EC
                 </h1>
-                <h2 className="mb-[2%] text-base font-bold text-center">
+                <h3 className="mb-[2%] text-base font-bold text-center">
                   The Hiring Alignment System
-                </h2>
+                </h3>
 
                 <p className="text-center text-base font-medium ">
                  Bringing visibility, continuity, and alignment across candidates, recruiters, and employers.

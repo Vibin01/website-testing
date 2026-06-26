@@ -14,17 +14,17 @@ const withinRoles = [
   {
     role: "Candidates",
     img: "/icons/candidate-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=candidate",
   },
   {
     role: "Recruiters",
     img: "/icons/recruiter-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=recruiter",
   },
   {
     role: "Employers",
     img: "/icons/employer-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=employer",
   },
 ];
 const acrossRoles = [
@@ -183,7 +183,7 @@ hover:font-bold
               
             </div>
             {index < withinRoles.length - 1 && (
-                <div className="flex self-stretch justify-center items-center mx-md">
+                <div className="flex self-stretch justify-center items-center mx-lg">
                   <span className=" h-[2px] sm:h-iconsize-lg w-[60%] sm:w-[2px] bg-[#DEEDFF] my-md" />
                 </div>
               )}

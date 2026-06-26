@@ -105,6 +105,7 @@ const [otpEndTime, setOtpEndTime] = useState<number | null>(null);
 
   const [resendLoading, setResendLoading] = useState(false);
 
+  const roleFromSearch = searchParams.get("role") as Role | null;
  
 
 useEffect(() => {
@@ -115,11 +116,15 @@ useEffect(() => {
     ["candidate", "recruiter", "employer"].includes(role)
   ) {
     setSelectedRole(role);
+
+    // Auto open drawer on mobile
+    if (window.innerWidth < 768) {
+      setDrawerOpen(true);
+    }
   } else if (window.innerWidth >= 768) {
     setSelectedRole("candidate");
   }
 }, [searchParams]);
-
   const routeAfterLogin = async (role: Role) => {
     const status = await getAssessmentStatusAction(role as any);
 
@@ -351,54 +356,75 @@ const startTime = Date.now();
 
         <div className="mt-md max-w-[420px] space-y-md">
           {roles.map((role) => {
-            const Icon = role.icon;
-            const active = selectedRole === role.id;
+  const active = selectedRole === role.id;
 
-            return (
-              <div
-                key={role.id}
-                onClick={() => {
-                  if (selectedRole !== role.id) {
-                    resetFormState();
-                  }
+const isLocked =
+  roleFromSearch && roleFromSearch !== role.id;
 
-                  setSelectedRole(role.id);
+  return (
+   <div
+  key={role.id}
+  onClick={() => {
+    if (isLocked) return;
 
-                  if (window.innerWidth < 768) {
-                    setDrawerOpen(true);
-                  }
-                }}
-                className={`flex cursor-pointer items-center gap-sm rounded-md border-[1.5px] p-sm transition-all ${
-                  active
-                    ? "border-primary shadow-[0_4px_20px_rgba(15,98,254,0.12)]"
-                    : "border-[#ECF5FF] bg-white hover:border-blue-300"
-                }`}
-              >
-                <div
-                  className={`flex size-iconsize-xl items-center justify-center rounded-full ${role.bgLight}`}
-                >
-                  <Image
-  src={Icon}
-  alt={`${role.title} icon`}
-  width={64}
-  height={64}
-                    className={`size-iconsize-lg `}
-                  />
-                </div>
+    if (selectedRole !== role.id) {
+      resetFormState();
+    }
 
-                <div>
-                  <h3
-                    className={`text-base font-bold ${
-                      active ? "text-primary" : ""
-                    }`}
-                  >
-                    {role.title}
-                  </h3>
-                  <p className="text-xl font-medium">{role.description}</p>
-                </div>
-              </div>
-            );
-          })}
+    setSelectedRole(role.id);
+
+    if (window.innerWidth < 768) {
+      setDrawerOpen(true);
+    }
+  }}
+  className={`
+    flex items-center gap-sm rounded-md border-[1.5px] p-sm transition-all
+    ${
+      active
+        ? "border-primary shadow-[0_4px_20px_rgba(15,98,254,0.12)]"
+        : "border-[#ECF5FF] bg-white hover:border-blue-300"
+    }
+    ${
+      isLocked
+        ? "opacity-40 cursor-not-allowed pointer-events-none"
+        : "cursor-pointer"
+    }
+  `}
+>
+      <div
+        className={`flex size-iconsize-xl items-center justify-center rounded-full ${role.bgLight}`}
+      >
+        <Image
+          src={role.icon}
+          alt={`${role.title} icon`}
+          width={64}
+          height={64}
+          className="size-iconsize-lg"
+        />
+      </div>
+
+      <div>
+        <h3
+          className={`
+            text-base font-bold
+            ${active ? "text-primary" : ""}
+            ${isLocked ? "line-through" : ""}
+          `}
+        >
+          {role.title}
+        </h3>
+
+        <p
+          className={`text-xl font-medium ${
+            isLocked ? "line-through" : ""
+          }`}
+        >
+          {role.description}
+        </p>
+      </div>
+    </div>
+  );
+})}
         </div>
       </div>
 
@@ -425,7 +451,7 @@ const startTime = Date.now();
                 placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-sm border border-[#C5C4C4] px-sm py-xs text-[15px] font-medium outline-none focus:border-primary"
+                className="w-full rounded-sm border border-[#C5C4C4] px-sm py-xs text-[15px] font-medium outline-none focus:border-primary placeholder:text-[#9F9F9F] placeholder:opacity-100"
                 required
               />
 
@@ -436,7 +462,7 @@ const startTime = Date.now();
                 }
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-sm border border-[#C5C4C4] px-sm py-xs text-[15px] font-medium outline-none focus:border-primary"
+                className="w-full rounded-sm border border-[#C5C4C4] px-sm py-xs text-[15px] font-medium outline-none focus:border-primary placeholder:text-[#9F9F9F] placeholder:opacity-100"
                 required
               />
 

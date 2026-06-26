@@ -80,8 +80,8 @@ export default function MobileMenu({
             : "-translate-y-full opacity-0"
         }`}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between border-b border-[#DCEBFF] px-6 py-7">
+        
+        <div className={` flex items-center justify-between border-b border-[#DCEBFF] px-6 py-7`}>
           <div className="flex items-center gap-md">
             <Image
               src="/Connect_EC_Logo.svg"
@@ -99,7 +99,7 @@ export default function MobileMenu({
         </div>
 
         {/* Menu */}
-        <div className="px-lg">
+        <div className={`px-lg ${showAuthSheet && "pointer-events-none  bg-black/10 "}`}>
           <nav className="flex flex-col">
             {/* Home */}
             <Link
@@ -459,12 +459,16 @@ export default function MobileMenu({
               Pricing
             </Link>
           </nav>
-          <button
+          
+        </div>
+        {!showAuthSheet &&(
+        <button
             onClick={() => setShowAuthSheet(true)}
             className="mt-xl w-full rounded-md bg-[#0668E1] py-4 text-xl font-semibold text-white"
           >
             Log in / Sign up
           </button>
+          ) }
           {/* Auth Bottom Sheet */}
           <div
             className={`fixed bottom-0 left-0 z-[999999] w-full rounded-t-xl bg-white transition-all duration-300 ${
@@ -505,7 +509,6 @@ export default function MobileMenu({
               ))}
             </div>
           </div>
-        </div>
       </div>
     </>
   );

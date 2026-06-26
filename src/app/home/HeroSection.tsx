@@ -111,6 +111,7 @@ export const HeroSection = () => {
 
                     <div
                       className={`
+                        relative
             mt-sm
             flex items-center gap-xs
             px-0 py-0
@@ -124,28 +125,24 @@ export const HeroSection = () => {
             group-hover:bg-white
             group-hover:border-[#0066FF]
             group-hover:scale-100
+            group-hover:pr-xl
           `}
                     >
                       <span className="font-medium text-xl group-hover:text-[#0066FF]">
                         {role.role}
                       </span>
 
-<ArrowRight
-  className="
-    size-iconsize-sm
-    text-[#0066FF]
-    opacity-0
-    w-0
-    -translate-x-2
-    overflow-hidden
-    transition-all
-    duration-300
-    group-hover:opacity-100
-    group-hover:w-iconsize-sm
-    group-hover:scale-85
-    group-hover:translate-x-0
-  "
-/>
+      <ArrowRight
+    className="
+      absolute right-2
+      text-[#0066FF]
+      opacity-0
+      
+      transition-all duration-300
+      group-hover:opacity-100
+      group-hover:scale-85
+    "
+  />
                     </div>
                   </Link>
 
@@ -184,6 +181,7 @@ export const HeroSection = () => {
 
                     <div
                       className={`
+                        relative
             mt-sm
             flex items-center gap-xs
             px-0 py-0
@@ -197,28 +195,24 @@ export const HeroSection = () => {
             group-hover:bg-white
             group-hover:border-[#0066FF]
             group-hover:scale-100
+            group-hover:pr-xl
           `}
                     >
                       <span className="font-medium text-xl group-hover:text-[#0066FF]">
                         {role.role}
                       </span>
 
-                     <ArrowRight
-  className="
-    size-iconsize-sm
-    text-[#0066FF]
-    opacity-0
-    w-0
-    -translate-x-2
-    overflow-hidden
-    transition-all
-    duration-300
-    group-hover:opacity-100
-    group-hover:w-iconsize-sm
-    group-hover:scale-85
-    group-hover:translate-x-0
-  "
-/>
+            <ArrowRight
+    className="
+      absolute right-2
+      text-[#0066FF]
+      opacity-0
+      
+      transition-all duration-300
+      group-hover:opacity-100
+      group-hover:scale-85
+    "
+  />
                     </div>
                   </Link>
 

@@ -72,7 +72,7 @@ export default function DownloadPdfButton({
     <button
       onClick={handleDownload}
       disabled={loading}
-      className="flex h-[54px] cursor-pointer items-center gap-sm rounded-sm bg-[#0668E1] px-8 text-xl font-medium text-white disabled:opacity-50"
+      className="flex h-[54px] cursor-pointer items-center justify-center gap-sm rounded-md  bg-[#0668E1] w-[200px] text-xl font-medium text-white disabled:opacity-50"
     >
       {loading ? "Generating PDF..." : "Download PDF"}
     </button>

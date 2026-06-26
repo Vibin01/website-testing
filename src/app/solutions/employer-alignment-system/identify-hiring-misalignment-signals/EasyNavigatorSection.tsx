@@ -44,6 +44,9 @@ const rangeCards = [
 ];
 
 export default function EasyNavigatorSection() {
+
+  const [error, setError] = useState("");
+
   const [fields, setFields] = useState({
     interviewDeclines: "2",
     totalInterviews: "10",
@@ -77,13 +80,6 @@ const handleChange = (key: keyof typeof fields, value: string) => {
   // Max 2 digits
   if (value.length > 2) return;
 
-  // Total Interviews & Total Offers minimum = 10
-  if (
-    (key === "totalInterviews" || key === "totalOffers") &&
-    numValue < 10
-  ) {
-    return;
-  }
 
   // Declines minimum = 1
   if (
@@ -109,21 +105,6 @@ const handleChange = (key: keyof typeof fields, value: string) => {
     return;
   }
 
-  // Total Interviews cannot go below Interview Declines
-  if (
-    key === "totalInterviews" &&
-    numValue < Number(fields.interviewDeclines)
-  ) {
-    return;
-  }
-
-  // Total Offers cannot go below Offer Declines
-  if (
-    key === "totalOffers" &&
-    numValue < Number(fields.offerDeclines)
-  ) {
-    return;
-  }
 
   setFields((prev) => ({
     ...prev,
@@ -141,34 +122,35 @@ const handleChange = (key: keyof typeof fields, value: string) => {
   // OD OffferDecline
   // TO TotalOffers
   const handleCalculate = () => {
+    setError("")
     const ID = Number(fields.interviewDeclines);
     const TI = Number(fields.totalInterviews);
     const OD = Number(fields.offerDeclines);
     const TO = Number(fields.totalOffers);
 
     if (TI < 10) {
-      alert("Minimum 10 interviews required");
+      setError("Minimum 10 interviews required");
       return;
     }
 
     if (TO < 5) {
-      alert("Minimum 5 offers required");
+      setError("Minimum 5 offers required");
       return;
     }
 
     // existing validation
     if (ID < 0 || OD < 0) {
-      alert("Declines must be ≥ 0");
+      setError("Declines must be ≥ 0");
       return;
     }
 
     if (ID > TI || OD > TO) {
-      alert("Declines cannot exceed totals");
+      setError("Declines cannot exceed totals");
       return;
     }
 
     if (TI === 0 && TO === 0) {
-      alert("At least one of Interview or Offer must be > 0");
+      setError("At least one of Interview or Offer must be > 0");
       return;
     }
 
@@ -394,8 +376,13 @@ const handleChange = (key: keyof typeof fields, value: string) => {
           <h3 className="text-base font-bold leading-[28px] text-[#2C2C2C]">
             Alignment Signal Calculator
           </h3>
+  <p className=" text-[12px] font-medium text-red-500">
+                  {error}
+                </p>
 
-          <div className="mt-md space-y-md">
+
+
+          <div className="mt-sm space-y-md">
             <div>
               <h4 className="text-xl font-bold text-[#2C2C2C]">
                 Interview Stage
@@ -429,10 +416,7 @@ const handleChange = (key: keyof typeof fields, value: string) => {
                   onChange={(e) =>
                     handleChange("totalInterviews", e.target.value)
                   }
-                  onKeyDown={(e) =>
-                    ["e", "E", "+", "-", "."].includes(e.key) &&
-                    e.preventDefault()
-                  }
+                 
                   className="h-[46px] w-full rounded-sm border border-[#E6E6E6] bg-white px-5 text-[15px] font-medium text-[#2C2C2C] outline-none placeholder:text-[#A3A3A3]"
                 />
               </div>
@@ -468,10 +452,7 @@ const handleChange = (key: keyof typeof fields, value: string) => {
                   min={10}
                   value={fields.totalOffers}
                   onChange={(e) => handleChange("totalOffers", e.target.value)}
-                  onKeyDown={(e) =>
-                    ["e", "E", "+", "-", "."].includes(e.key) &&
-                    e.preventDefault()
-                  }
+                 
                   className="h-[46px] w-full rounded-sm border border-[#E6E6E6] bg-white px-5 text-[15px] font-medium text-[#2C2C2C] outline-none placeholder:text-[#A3A3A3]"
                 />
               </div>
@@ -479,7 +460,7 @@ const handleChange = (key: keyof typeof fields, value: string) => {
 
             <button
               onClick={handleCalculate}
-              className="mt-2 h-[48px] w-full rounded-sm bg-[#0668E1] text-[16px] font-extrabold text-white"
+              className="mt-2 h-[48px] w-full rounded-md md:rounded-sm bg-[#0668E1] text-[16px] font-extrabold text-white"
             >
               Check Alignment
             </button>

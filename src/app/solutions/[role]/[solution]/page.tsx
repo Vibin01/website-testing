@@ -15,7 +15,6 @@ type PageProps = {
     solution: string;
   }>;
 };
-
 type SolutionData = {
   metadata: {
     title: string;
@@ -59,7 +58,7 @@ export default async function Page({ params }: PageProps) {
 
   const roleData = solutionPageMap[role as keyof typeof solutionPageMap];
 
-  const data = roleData?.[
+const data = roleData?.[
   solution as keyof typeof roleData
 ] as SolutionData | undefined;
 
