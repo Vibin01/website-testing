@@ -206,25 +206,22 @@ const handleOptionChange = useCallback((key: string) => {
   [questions, questionIndex]
 );
 
-  useEffect(() => {
-    if (!currentQuestion) return;
+useEffect(() => {
+  if (!currentQuestion) return;
 
- const allAnswers = useMemo(() => {
-  return [
+  const allAnswers = [
     ...answers,
     ...Object.values(phaseReports).flatMap(
       (report: any) => report?.answers || []
     ),
   ];
-}, [answers, phaseReports]);
 
-    const existingAnswer = allAnswers.find(
-      (a) => a.questionId === currentQuestion.id,
-    );
+  const existingAnswer = allAnswers.find(
+    (a) => a.questionId === currentQuestion.id
+  );
 
-    setSelectedOption(existingAnswer?.selectedOption || "");
-  }, [questionIndex, phaseIndex, currentQuestion, answers, phaseReports]);
-
+  setSelectedOption(existingAnswer?.selectedOption || "");
+}, [currentQuestion, answers, phaseReports]);
   const isFirstQuestion = questionIndex === 0;
   const isLastQuestion = questionIndex === questions.length - 1;
   const isLastPhase = phaseIndex === availablePhases.length - 1;
@@ -236,6 +233,12 @@ const handleOptionChange = useCallback((key: string) => {
     mode === "single" ? isLastQuestion : isLastQuestion && isLastPhase;
 
   const buttonText = isSubmitButton ? "Submit" : "Next";
+
+    const options = useMemo(() => {
+  return Object.entries(currentQuestion.options);
+}, [currentQuestion]);
+
+
 
   if (loading) {
     return (
@@ -541,9 +544,6 @@ const handleOptionChange = useCallback((key: string) => {
 
   const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
 
-  const options = useMemo(() => {
-  return Object.entries(currentQuestion.options);
-}, [currentQuestion]);
 
   return (
     <section className="w-full px-[7%] py-[5%]">
