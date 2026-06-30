@@ -29,7 +29,7 @@ export const RecruitersPage = () => {
           </section>
         </div>
         <div className="">
-          <section className="relative   pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
+          <section className="relative  pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
             <SignalFlowSection data={signalFlowData} />
           </section>
         </div>

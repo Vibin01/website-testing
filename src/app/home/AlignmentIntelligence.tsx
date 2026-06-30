@@ -115,7 +115,7 @@ export default function AlignmentIntelligence() {
                 src={item.icon}
                 alt={item.title}
                   
-                  className="size-iconsize-lg mx-auto mb-5 transition-transform duration-300 group-hover:scale-110"
+                  className={`${index !== resultCards.length - 1 ?" size-iconsize-lg":"size-iconsize-[clamp(30px,_calc(60_/_var(--width)_*_100vw),_100px)] "} mx-auto mb-5 transition-transform duration-300 group-hover:scale-110`}
                 />
 
                 <h3 className="text-base font-bold">{item.title}</h3>

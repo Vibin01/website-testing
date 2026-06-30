@@ -7,7 +7,7 @@ datasource db {
 }
 
 model User {
-  id         Int       @id @default(autoincrement())
+  id         BigInt       @id @default(autoincrement())
   name       String
   email      String
   role       Role
@@ -23,8 +23,8 @@ model User {
 }
 
 model OtpVerification {
-  id           Int       @id @default(autoincrement())
-  userId       Int       @map("user_id")
+  id           BigInt       @id @default(autoincrement())
+  userId       BigInt       @map("user_id")
   otpHash      String    @map("otp_hash")
   expiresAt    DateTime  @map("expires_at")
   verifiedAt   DateTime? @map("verified_at")
@@ -37,8 +37,8 @@ model OtpVerification {
 }
 
 model AssessmentJourney {
-  id     Int            @id @default(autoincrement())
-  userId Int            @map("user_id")
+  id     BigInt            @id @default(autoincrement())
+  userId BigInt            @map("user_id")
   role   Role
   mode   AssessmentMode @default(single)
   status JourneyStatus  @default(IN_PROGRESS)
@@ -58,8 +58,8 @@ model AssessmentJourney {
 }
 
 model PhaseAttempt {
-  id        Int         @id @default(autoincrement())
-  journeyId Int         @map("journey_id")
+  id        BigInt         @id @default(autoincrement())
+  journeyId BigInt         @map("journey_id")
   phaseKey  String      @map("phase_key")
   status    PhaseStatus @default(NOT_STARTED)
 
@@ -86,8 +86,8 @@ model PhaseAttempt {
 }
 
 model OverallReport {
-  id        Int @id @default(autoincrement())
-  journeyId Int @unique @map("journey_id")
+  id        BigInt @id @default(autoincrement())
+  journeyId BigInt @unique @map("journey_id")
 
   scoresJson          Json    @map("scores_json")
   dominantTendency    String? @map("dominant_tendency")

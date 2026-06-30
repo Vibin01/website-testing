@@ -184,7 +184,7 @@ hover:font-bold
             </div>
             {index < withinRoles.length - 1 && (
                 <div className="flex self-stretch justify-center items-center mx-lg">
-                  <span className=" h-[2px] sm:h-iconsize-lg w-[60%] sm:w-[2px] bg-[#DEEDFF] my-md" />
+                  <span className=" h-[2px] sm:h-iconsize-lg w-[60%] sm:w-[2px] bg-[#DEEDFF] my-lg md:my-md" />
                 </div>
               )}
             </React.Fragment>

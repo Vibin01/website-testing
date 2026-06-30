@@ -100,7 +100,7 @@ export default function AssessmentTestClient({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const [journeyId, setJourneyId] = useState<number | null>(null);
+  const [journeyId, setJourneyId] = useState< bigint | number | null>(null);
   const [completedPhases, setCompletedPhases] = useState<string[]>([]);
   const [phaseReports, setPhaseReports] = useState<Record<string, any>>({});
 
@@ -109,7 +109,20 @@ export default function AssessmentTestClient({
   const [selectedOption, setSelectedOption] = useState<string | null>("");
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
 
-const [isPending, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const check = () => setIsMobile(window.innerWidth < 768);
+  check();
+
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
+
+
+
 
 const handleOptionChange = useCallback((key: string) => {
   setSelectedOption(key);
@@ -238,6 +251,17 @@ useEffect(() => {
   return Object.entries(currentQuestion.options);
 }, [currentQuestion]);
 
+const visibleItems = useMemo(() => {
+  if (!isMobile) return availablePhases; // desktop → show all
+
+  const startIndex = Math.max(
+    0,
+    Math.min(phaseIndex - 1, availablePhases.length - 3),
+  );
+
+  return availablePhases.slice(startIndex, startIndex + 3);
+}, [isMobile, availablePhases, phaseIndex]);
+
 
 
   if (loading) {
@@ -281,6 +305,8 @@ useEffect(() => {
           (report: any) => report?.answers || [],
         ),
       ];
+
+      
 
       const previousAnswer = allAnswers.find(
         (a) => a.questionId === prevQuestion.id,
@@ -368,37 +394,30 @@ useEffect(() => {
       return;
     }
 
-    // Save phase and move to next phase
-    if (mode === "full" && isLastQuestion && !isLastPhase) {
-      const phaseAnswers = updatedAnswers.filter(
-        (a) => a.phase === currentPhase.key,
-      );
+   // Move to next phase WITHOUT saving
+if (mode === "full" && isLastQuestion && !isLastPhase) {
 
-      const phaseReport = buildPhaseReport(currentPhase.key, phaseAnswers);
+  const phaseAnswers = updatedAnswers.filter(
+    (a) => a.phase === currentPhase.key,
+  );
 
-      const save = await completeAssessmentAction({
-        journeyId,
-        phase: currentPhase.key,
+  const phaseReport = buildPhaseReport(currentPhase.key, phaseAnswers);
+
+  // Only keep report in React state
+ setPhaseReports(prev => ({
+    ...prev,
+    [currentPhase.key]: {
+        ...phaseReport,
         answers: phaseAnswers,
-        report: phaseReport,
-      });
+    },
+}));
 
-      if (save.error) {
-        setError(save.error);
-        return;
-      }
+  setPhaseIndex((prev) => prev + 1);
+  setQuestionIndex(0);
+  setSelectedOption("");
 
-      setPhaseReports((prev) => ({
-        ...prev,
-        [currentPhase.key]: phaseReport,
-      }));
-
-      setPhaseIndex((prev) => prev + 1);
-      setQuestionIndex(0);
-      setSelectedOption("");
-
-      return;
-    }
+  return;
+}
 
     // SINGLE MODE SUBMIT
     if (mode === "single") {
@@ -435,33 +454,21 @@ useEffect(() => {
       return;
     }
 
-    // LAST PHASE OF FULL MODE
+ 
 
-    const currentPhaseAnswers = updatedAnswers.filter(
-      (a) => a.phase === currentPhase.key,
-    );
+const previousAnswers = Object.values(phaseReports).flatMap(
+    (report: any) => report.answers || []
+);
 
-    const currentPhaseReport = buildPhaseReport(
-      currentPhase.key,
-      currentPhaseAnswers,
-    );
+const currentPhaseAnswers = updatedAnswers.filter(
+    (a) => a.phase === currentPhase.key
+);
 
-    await completeAssessmentAction({
-      journeyId,
-      phase: currentPhase.key,
-      answers: currentPhaseAnswers,
-      report: currentPhaseReport,
-    });
+const allAnswers = mergeUniqueAnswers([
+    ...previousAnswers,
+    ...currentPhaseAnswers,
+]);
 
-    const savedAnswers = Object.values(phaseReports).flatMap(
-      (report: any) => report?.answers || [],
-    ) as AnswerRecord[];
-
-    // Merge all answers
-    const allAnswers = mergeUniqueAnswers([
-      ...savedAnswers,
-      ...currentPhaseAnswers,
-    ]);
 
     // Remove duplicates by questionId
     const uniqueAnswers = Array.from(
@@ -496,6 +503,31 @@ useEffect(() => {
 
       return;
     }
+
+    // Save every phase AFTER submit
+for (const phase of phases) {
+
+  const phaseAnswers = allAnswers.filter(
+    (answer) => answer.phase === phase.key
+  );
+
+  const phaseReport = buildPhaseReport(
+    phase.key,
+    phaseAnswers
+  );
+
+  const savePhase = await completeAssessmentAction({
+    journeyId,
+    phase: phase.key,
+    answers: phaseAnswers,
+    report: phaseReport,
+  });
+
+  if (savePhase.error) {
+    setError(savePhase.error);
+    return;
+  }
+}
 
     // console.log(
     //   "Final Answers Count:",
@@ -537,12 +569,12 @@ useEffect(() => {
   };
 
 
-  const startIndex = Math.max(
-    0,
-    Math.min(phaseIndex - 1, availablePhases.length - 3),
-  );
-
-  const visibleItems = availablePhases.slice(startIndex, startIndex + 3);
+const startIndex = isMobile
+  ? Math.max(
+      0,
+      Math.min(phaseIndex - 1, availablePhases.length - 3),
+    )
+  : 0;
 
 
   return (
@@ -583,12 +615,14 @@ useEffect(() => {
                   </div>
                 );
               })
-            : visibleItems.map((item, index) => {
-                const actualIndex = startIndex + index;
+            : visibleItems.map((item) => {
 
-                const active = actualIndex === phaseIndex;
-                const completed = actualIndex < phaseIndex;
+  const actualIndex = availablePhases.findIndex(
+    phase => phase.key === item.key
+  );
 
+  const active = actualIndex === phaseIndex;
+  const completed = actualIndex < phaseIndex;
                 const iconSrc = completed
                   ? "/icons/tick-gradient-icon.svg"
                   : active
@@ -598,12 +632,12 @@ useEffect(() => {
                 return (
                   <div
                     key={item.key}
-                    className="flex flex-col items-center gap-2 min-w-[80px]"
+                    className="flex flex-col items-center gap-2 "
                   >
                     <div
                       className={`
           flex items-center justify-center
-          w-10 h-10 rounded-full
+          p-sm rounded-full
           transition-all duration-300
           ${
             active
@@ -619,7 +653,7 @@ useEffect(() => {
                         alt="status-icon"
                         width={20}
                         height={20}
-                        className="object-contain"
+                        className="object-contain size-iconsize-md"
                       />
                     </div>
 
@@ -730,7 +764,7 @@ useEffect(() => {
                 <button
                   type="button"
                   onClick={handleBack}
-                  className="flex h-[48px] cursor-pointer items-center rounded-md border border-[#0668E1] px-md text-xl font-medium text-[#0668E1]"
+                  className="flex h-[52px] cursor-pointer items-center rounded-md border border-[#0668E1] px-md text-xl font-medium text-[#0668E1]"
                 >
                   Back
                 </button>
@@ -742,7 +776,7 @@ useEffect(() => {
                 type="button"
                 onClick={handleNext}
                 disabled={!selectedOption || isProcessing}
-                className={`flex h-[48px] cursor-pointer items-center gap-sm rounded-md w-[200px] text-xl font-medium text-white
+                className={`flex h-[52px] cursor-pointer items-center justify-center text-center gap-sm rounded-md w-[170px] text-xl font-medium text-white
                   ${
                     !selectedOption || isProcessing
                       ? "cursor-not-allowed bg-gray-400"

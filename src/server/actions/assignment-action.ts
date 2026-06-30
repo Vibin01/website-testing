@@ -127,7 +127,7 @@ export async function completeAssessmentAction({
   answers,
   report,
 }: {
-  journeyId: number;
+  journeyId: number | bigint;
   phase?: string;
   answers: AnswerRecord[];
   report: any;

@@ -252,3 +252,12 @@
   animation: marquee 20s linear infinite;
 }
 
+input::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+  color: #6b7280;
+  opacity: 1;
+}

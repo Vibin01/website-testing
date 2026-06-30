@@ -8,7 +8,7 @@ export async function GET() {
   try {
     console.log("Seeding All Questions...");
 
-    // await prisma.question.deleteMany({});
+    await prisma.question.deleteMany({});
 
 
     

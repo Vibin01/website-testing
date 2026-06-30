@@ -182,9 +182,7 @@ export default function page() {
           8. Gamification and Badges
         </h2>
         <p className="mb-xs text-xl">
-          The Platform may offer recognition badges or points based on user
-          participation. Such badges are indicative only and do not create any
-          legal rights or obligations.
+          The Platform may offer participation scores, alignment scores, recognition badges, leaderboards, or other gamification features based on user participation, engagement, responsiveness, and alignment-related activities. Such scores, badges, rankings, and recognitions are indicative only and do not create any legal rights, obligations, employment rights, contractual rights, or entitlements.
         </p>
       </div>
 
@@ -193,9 +191,7 @@ export default function page() {
           8A. Assessments, Reports, and Platform Outputs
         </h2>
         <p className="mb-xs text-xl">
-          Connect EC may generate alignment assessments, alignment reports,
-          predictive indicators, engagement signals, recommendations, badges,
-          scores, workflow suggestions, and other informational outputs.
+         Connect EC may generate alignment assessments, alignment reports, predictive indicators, engagement signals, recommendations, participation scores, alignment scores, alignment badges, leaderboard rankings, workflow suggestions, and other informational outputs.
         </p>
         <p className="mb-xs text-xl">
           These outputs are intended to support user awareness, visibility,
@@ -274,13 +270,7 @@ export default function page() {
           The Platform is provided on an "as is" and "as available" basis.
         </p>
         <p className="mb-xs text-xl">
-          To the maximum extent permitted by law, PRIMETHIC shall not be liable
-          for employment outcomes, hiring outcomes, recruitment outcomes,
-          business outcomes, user decisions, platform recommendations,
-          predictive indicators, assessment outputs, engagement signals, badges,
-          scores, user-generated content, service interruptions, or any
-          indirect, incidental, consequential, or special damages arising from
-          the use of the Platform.
+         To the maximum extent permitted by law, PRIMETHIC shall not be liable for employment outcomes, hiring outcomes, recruitment outcomes, business outcomes, user decisions, platform recommendations, predictive indicators, assessment outputs, engagement signals, participation scores, alignment scores, alignment badges, leaderboard rankings, user-generated content, service interruptions, or any indirect, incidental, consequential, or special damages arising from the use of the Platform.
         </p>
       </div>
 
@@ -333,19 +323,11 @@ export default function page() {
           laws, and other applicable intellectual property laws.
         </p>
         <p className="mb-xs text-xl">
-          The platform name <span className="font-bold">Connect EC,</span> and
-          badge identifiers including{" "}
-          <span className="font-bold">HonestTalent</span> and{" "}
-          <span className="font-bold">RockstaRecruiter,</span> are registered
-          wordmarks owned by PRIMETHIC.
+          The platform name <span className="font-bold">Connect EC,</span> together with associated scoring systems, alignment badges, alignment league identifiers, and related proprietary marks, names, symbols, and identifiers, are owned by PRIMETHIC and protected under applicable intellectual property laws.
+          
         </p>
         <p className="mb-xs text-xl">
-          The Connect EC alignment architecture, hiring workflows, timer-driven
-          action framework, assessment structures, scoring systems, badge
-          systems, reports, and related implementations, including its
-          documented structure, sequencing, and expressive implementation of
-          timers, scores, and badges, are protected under applicable copyright,
-          trademark, trade secret, and other intellectual property laws.
+          The Connect EC alignment architecture, hiring workflows, timer-driven action framework, assessment structures, participation scoring systems, alignment scoring systems, alignment badge systems, alignment league systems, reports, and related implementations, including their documented structure, sequencing, scoring logic, timer mechanisms, and expressive implementations, are protected under applicable copyright, trademark, trade secret, and other intellectual property laws.
         </p>
         <p className="mb-xs text-xl">
           Except as expressly permitted under these Terms, no part of the

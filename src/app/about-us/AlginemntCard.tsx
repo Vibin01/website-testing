@@ -212,7 +212,7 @@ text-[#0668E1]
               </Link>
 
               {index < acrossRoles.length - 1 && (
-                            <PiArrowsLeftRightBold className="size-iconsize-sm  rotate-90 sm:rotate-0 my-sm font-medium text-[#B2D0F6] " />
+                            <PiArrowsLeftRightBold className="size-iconsize-sm my-sm font-medium text-[#B2D0F6] " />
              )}
             </div>
           ))}

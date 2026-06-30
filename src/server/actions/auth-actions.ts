@@ -86,18 +86,22 @@ export async function registerUserAction(formData: FormData) {
     };
 
   } catch (error) {
-    console.error(
-      "REGISTER USER ACTION ERROR:",
-      error
-    );
+  console.error("REGISTER USER ACTION ERROR");
 
-    return {
-      error: "Something went wrong during registration.",
-    };
+  if (error instanceof Error) {
+    console.error("Message:", error.message);
+    console.error("Stack:", error.stack);
+  } else {
+    console.error(error);
   }
+
+  return {
+    error: "Something went wrong during registration.",
+  };
+}
 }
 
-export async function verifyOtpAction(userId: number, otp: string) {
+export async function verifyOtpAction(userId: number|bigint, otp: string) {
     try {
 
   const otpHash = hashOtp(otp);
@@ -154,7 +158,7 @@ if (!journey) {
 }
 
   try {
-  await createSession(userId);
+  await createSession(BigInt(userId));
 } catch (err) {
   console.error("SESSION ERROR:", err);
 

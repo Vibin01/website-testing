@@ -62,8 +62,7 @@ export default function page() {
           4. Behavioural and Usage Information
         </h2>
         <p className="mb-xs text-xl">
-         To enhance platform performance and hiring outcomes, we collect behavioural and activity-related data such as interview scheduling activity, feedback exchanged between users, engagement levels, gamification progress, clickstream data, navigation patterns, time spent on the Platform, and hiring funnel progression. This information helps us generate insights, predictive indicators, and service improvements.
-        </p>
+        To enhance platform performance and hiring outcomes, we collect behavioural and activity-related data such as interview scheduling activity, feedback exchanged between users, engagement levels, alignment scores, alignment badges, alignment league rankings, gamification progress, clickstream data, navigation patterns, time spent on the Platform, and hiring funnel progression. This information helps us generate insights, predictive indicators, and service improvements.</p>
         <p className="mb-xs text-xl">Behavioural and usage information may also include responses provided during alignment assessments, hiring scenarios, platform interactions, communication patterns, scheduling activity, engagement signals, and workflow participation.</p>
         <p className="mb-xs text-xl">Such information may be used to generate alignment insights, hiring visibility indicators, engagement trends, and predictive signals designed to improve hiring coordination and user experience.</p>
         </div>
@@ -99,8 +98,7 @@ export default function page() {
           7A. Alignment Assessments, Reports, and Automated Insights
         </h2>
         <p className="mb-xs text-xl">
-          PRIMETHIC processes personal data through Connect EC and related services. Connect EC may generate alignment assessments, alignment reports, engagement indicators, predictive insights, workflow recommendations, scheduling indicators, and hiring visibility signals using information provided by users and platform activity.
-        </p>
+       PRIMETHIC processes personal data through Connect EC and related services. Connect EC may generate alignment assessments, alignment reports, participation scores, alignment scores, alignment badges, alignment league rankings, engagement indicators, predictive insights, workflow recommendations, scheduling indicators, and hiring visibility signals using information provided by users and platform activity.</p>
         <p className="mb-xs text-xl">These outputs are intended to assist decision-making and improve hiring visibility and coordination. They should not be treated as guarantees, employment decisions, legal advice, professional advice, or the sole basis for hiring decisions.</p>
         <p className="mb-xs text-xl">Users remain responsible for their own recruitment, employment, and hiring decisions. Alignment assessments, predictive indicators, engagement signals, and recommendations are designed to support hiring workflows and platform coordination. They do not determine employment eligibility, suitability, selection, promotion, compensation, or other employment decisions.</p>
         </div>
@@ -118,8 +116,7 @@ export default function page() {
           9. Sharing of Information
         </h2>
         <p className="mb-xs text-xl">
-         PRIMETHIC does not sell personal data, behavioural data, alignment assessment results, engagement indicators, predictive insights, or user-generated hiring information to third parties. Personal data may be shared with Employers and Recruiters when a Candidate applies for a role, expresses interest, or participates in hiring workflows. Shared data may include profile information, job-related activity, and hiring journey status. We may also share data with trusted third-party service providers such as analytics services, hosting providers, communication APIs, authentication providers, and security partners, who act as Data Processors and are contractually obligated to process data only in accordance with our instructions and applicable laws.
-        </p>
+       PRIMETHIC does not sell personal data, behavioural data, alignment assessment results, participation scores, alignment scores, alignment badges, alignment league rankings, engagement indicators, predictive insights, or user-generated hiring information to third parties. Personal data may be shared with Employers and Recruiters when a Candidate applies for a role, expresses interest, or participates in hiring workflows. Shared data may include profile information, job-related activity, and hiring journey status. We may also share data with trusted third-party service providers such as analytics services, hosting providers, communication APIs, authentication providers, and security partners, who act as Data Processors and are contractually obligated to process data only in accordance with our instructions and applicable laws.</p>
 </div>
 <div className="mb-xl">
         <h2 className="font-semibold text-base mb-sm">

@@ -90,7 +90,7 @@ const [otpEndTime, setOtpEndTime] = useState<number | null>(null);
 
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [step, setStep] = useState<"REGISTER" | "OTP">("REGISTER");
-  const [userId, setUserId] = useState<number | null>(null);
+  const [userId, setUserId] = useState< bigint |number | null>(null);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -408,16 +408,14 @@ const isLocked =
           className={`
             text-base font-bold
             ${active ? "text-primary" : ""}
-            ${isLocked ? "line-through" : ""}
+            
           `}
         >
           {role.title}
         </h3>
 
         <p
-          className={`text-xl font-medium ${
-            isLocked ? "line-through" : ""
-          }`}
+          className={`text-xl font-medium `}
         >
           {role.description}
         </p>

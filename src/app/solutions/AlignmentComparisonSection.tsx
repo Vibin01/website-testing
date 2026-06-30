@@ -33,8 +33,7 @@ function HeaderCard({ item }: { item: AlignmentHeader }) {
       </div>
 
       <div
-        className="flex items-center rounded-md bg-[#044AA0] py-[4%] pl-[12%]
-        shadow-[1px_5px_11px_#0668E11A,2px_21px_21px_#0668E117,5px_47px_28px_#0668E10D,8px_83px_33px_#0668E103]"
+        className="flex items-center rounded-md bg-[#044AA0] py-[4%] pl-[12%]"
       >
         <span className="text-base font-bold text-white">{item.title}</span>
       </div>
