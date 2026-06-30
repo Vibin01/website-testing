@@ -45,7 +45,7 @@ export default function AlignmentDimensionsSection() {
   return (
     <div className="mx-auto space-y-sm">
       {/* Top Box */}
-      <div className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
         <h3 className="text-base font-bold text-[#1B1C17]">
           The four Alignment Dimensions
         </h3>

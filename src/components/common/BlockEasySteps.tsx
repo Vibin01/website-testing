@@ -53,7 +53,7 @@ export default function BlockEasySteps({ data }: BlockEasyStepsProps) {
                       Learn more
                     </Link>
                   ) : (
-                    <div className="mt-3 md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] xl:w-[100px] xl:h-[100px] 2xl:w-[120px] 2xl:h-[120px] md:px-4 md:py-3 xl:px-6 xl:py-4 2xl:px-8 2xl:py-6 flex items-center justify-center md:rounded-[20px] xl:rounded-[25px] 2xl:rounded-[30px] bg-[#FFFFFF33]  shadow-[2px_4px_8px_-2px_#00000026,_-2px_-2px_0px_2px_#FFFFFF33,_0px_0px_10px_0px_#0668E126]">
+                    <div className="mt-3 md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] xl:w-[100px] xl:h-[100px] 2xl:w-[120px] 2xl:h-[120px] md:px-4 md:py-3 xl:px-6 xl:py-4 2xl:px-8 2xl:py-6 flex items-center justify-center md:rounded-[20px] xl:rounded-[25px] 2xl:rounded-[30px] bg-[#FFFFFF33]">
                       <Image
                         src={step.icon}
                         alt={`${step.title} icon`}
@@ -66,7 +66,7 @@ export default function BlockEasySteps({ data }: BlockEasyStepsProps) {
                 </div>
 
                 <div className="w-2/12 relative flex flex-col gap-4 items-center ">
-                  <div className="w-[60px] h-[60px] rounded-md opacity-[50%] border border-white text-[#0668E11A] flex items-center justify-center font-bold text-[26px] italic z-10 shadow-[0px_0px_20px_0px_#FFFFFF,_0px_0px_10px_0px_#0668E126] bg-[radial-gradient(54.17%_54.17%_at_50%_50%,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.6)_100%)]">
+                  <div className="w-[60px] h-[60px] rounded-md opacity-[50%] border border-white text-[#0668E11A] flex items-center justify-center font-bold text-[26px] italic z-10 ">
                     {step.letter}
                   </div>
                   {![
@@ -109,7 +109,7 @@ export default function BlockEasySteps({ data }: BlockEasyStepsProps) {
                 <div className="flex  items-center gap-4 mb-6">
                   {" "}
                   {step.icon && (
-                    <div className=" w-[24px] h-[24px] p-1 flex justify-center items-center rounded-[6px]  bg-[#FFFFFF] shadow-[0.4px_0.8px_1.6px_-0.4px_#00000026,_-0.4px_-0.4px_0px_0.4px_#FFFFFF33,_0px_0px_2px_0px_#0668E126]">
+                    <div className=" w-[24px] h-[24px] p-1 flex justify-center items-center rounded-[6px]  bg-[#FFFFFF] ">
                       <Image
                         src={step.icon}
                         alt={`${step.title} icon`}

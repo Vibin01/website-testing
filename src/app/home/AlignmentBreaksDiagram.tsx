@@ -8,7 +8,7 @@ export default function AlignmentBreaksDiagram() {
           Where Alignment Breaks
         </h2>
 
-        <div className="relative flex items-center justify-center mt-sm p-md  overflow-hidden rounded-lg bg-[url('/background/bg-alignment-breaks.svg')] bg-white border border-[#F2F2F2] shadow-[0px_4px_40px_5px_#0668E11A]">
+        <div className="relative flex items-center justify-center mt-sm p-md  overflow-hidden rounded-lg bg-[url('/background/bg-alignment-breaks.svg')] bg-white border border-[#F2F2F2] shadow-mobile-medium md:shadow-web-medium">
     
           {/* Center triangle image */}
           {/* <div className=" flex justify-center items-center h-full">

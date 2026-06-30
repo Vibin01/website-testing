@@ -117,7 +117,7 @@ const lastWord = words.pop();
             return (
               <div
                 key={card.title}
-                className="flex-shrink-0 basis-[55%] md:w-auto rounded-md border border-[#D0E5FF] bg-white p-md text-center shadow-[0px_4px_40px_5px_#0668E10D]-"
+                className="flex-shrink-0 basis-[55%] md:w-auto rounded-md border border-[#D0E5FF] bg-white p-md text-center"
               >
                 <div className="mx-auto flex size-fit p-sm items-center justify-center rounded-full border border-[#D0E5FF] bg-[#EEF6FF] text-[#0668E1]">
                   <img src={card.icon} alt={card.title} className="size-iconsize-md" />
@@ -171,7 +171,7 @@ const lastWord = words.pop();
 
         <button
           onClick={handleFullStart}
-          className={`flex h-btn-h mt-md  items-center justify-center gap-sm rounded-[12px] cursor-pointer px-lg text-xl font-medium shadow-[0px_4px_20px_#0668E133] ${
+          className={`flex h-btn-h mt-md  items-center justify-center gap-sm rounded-[12px] cursor-pointer px-lg text-xl font-medium ${
             fullCompleted
               ? "bg-[#E7FFF3] text-[#2B9B43]"
               : "bg-[#0668E1] text-white"
@@ -191,7 +191,7 @@ const lastWord = words.pop();
           return (
             <div
               key={card.title}
-              className="flex items-start gap-sm rounded-[12px] border border-[#D0E5FF] bg-white p-sm shadow-[0px_4px_40px_5px_#0668E10D]"
+              className="flex items-start gap-sm rounded-[12px] border border-[#D0E5FF] bg-white p-sm shadow-mobile-small md:shadow-web-small"
             >
               <div className="flex size-iconsize-md shrink-0 items-center justify-center">
                 <img

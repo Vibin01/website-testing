@@ -103,7 +103,7 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
           return (
             <div
               key={index}
-              className="bg-white border border-[#D1E4FF] rounded-md p-md shadow-[0px_4px_40px_5px_#0668E11A]"
+              className="bg-white border border-[#D1E4FF] rounded-md p-md shadow-mobile-medium md:shadow-web-medium"
             >
               <div className="flex justify-between items-center">
                 <h3 className="font-bold text-base">{card.title}</h3>
@@ -153,7 +153,7 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="bg-white border border-[#D1E4FF] rounded-md p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="bg-white border border-[#D1E4FF] rounded-md p-md shadow-mobile-medium md:shadow-web-medium">
         <h3 className="font-bold text-base">Alignment Recovery Path</h3>
 
         <p className="mt-1 text-xl font-medium">
@@ -211,7 +211,7 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
       absolute bottom-[140%] -left-[6%] z-50
       rounded-[18px] border border-[#9EC5FF]
       bg-[#EAF4FF] px-5 py-4
-      shadow-[0px_4px_15px_0px_#0668E11A]
+      shadow-mobile-small md:shadow-web-small
       transition-all duration-300
       ${showTooltip ? "opacity-100 visible" : "opacity-0 invisible"}
       md:group-hover:opacity-100

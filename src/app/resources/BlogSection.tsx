@@ -36,7 +36,7 @@ export const BlogSection = () => {
           {resourceCards.map((card, index) => (
             <div
               key={index}
-              className="rounded-[12px] border border-[#CFE1FF] bg-white p-3 shadow-[0px_4px_30px_rgba(6,104,225,0.08)]"
+              className="rounded-[12px] border border-[#CFE1FF] bg-white p-3 shadow-mobile-small md:shadow-web-small"
             >
               <div className="">
                 <Image

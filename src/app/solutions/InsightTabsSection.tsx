@@ -59,7 +59,7 @@ export default function InsightTabsSection({ data }: InsightTabsSectionProps) {
                     });
                   }
                 }}
-                className={`relative flex flex-shrink-0 basis-[90%] items-center gap-xs rounded-md border p-md text-left shadow-[0px_4px_10px_0px_#C5DBFCA8] transition-all sm:basis-auto ${
+                className={`relative flex flex-shrink-0 basis-[90%] items-center gap-xs rounded-md border p-md text-left shadow-mobile-small md:shadow-web-small transition-all sm:basis-auto ${
                   isActive
                     ? "border-[#0668E1] bg-[#0668E1] text-white"
                     : "border-[#D3E6FF] bg-white text-[#1B1C17]"
@@ -95,7 +95,7 @@ export default function InsightTabsSection({ data }: InsightTabsSectionProps) {
         </div>
 
         {/* Right Content */}
-        <div className="rounded-lg bg-white p-md border border-[#D3E6FF] shadow-[0px_4px_40px_5px_#0668E11A] min-h-[450px]  sm:w-[69%]">
+        <div className="rounded-lg bg-white p-md border border-[#D3E6FF] shadow-mobile-medium md:shadow-web-medium  min-h-[450px]  sm:w-[69%]">
           <h2 className="mb-lg text-h2 font-extrabold text-[#0668E1]">
             {activeItem.contentTitle}
           </h2>

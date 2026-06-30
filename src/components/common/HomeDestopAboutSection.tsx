@@ -51,10 +51,10 @@ const HomeDestopAboutSection = () => {
            }
           relative xl:py-6 py-3 px-8 xl:px-12 w-auto lg:max-w-[340px] xl:max-w-[500px] 2xl:max-w-[540px]
           bg-white font-semibold lg:text-[18px] xl:text-[24px] 2xl:text-[28px] text-center
-          shadow-[0px_4px_6px_0px_#0000000D]
+          
           transition-all 
           duration-100
-          group-hover:shadow-[0px_4px_6px_0px_#0000000D,_0px_10px_15px_0px_#0000001A]
+          
           group-hover:text-[#0668E1]
         `}
             >
@@ -68,7 +68,7 @@ const HomeDestopAboutSection = () => {
             }
             absolute w-[40px] h-[40px] bg-white
             [clip-path:polygon(100%_0,0_0,100%_100%)]
-            shadow-[0px_4px_6px_0px_#0000000D]-
+          
           `}
               ></div>
 

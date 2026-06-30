@@ -80,7 +80,7 @@ export default function TabsSection({ data }: TabsSectionData) {
 
         {data.tabData.map((items) => (
           <TabsContent key={items.id} value={items.id}>
-            <div className="mt-14 md:h-[450px]  xl:h-[500px] rounded-[12px] md:rounded-[30px] xl:rounded-[40px] bg-[#FFFFFF1A] md:bg-[#FFFFFF66] shadow-[0px_0px_10px_0px_#0668E126] md:shadow-none md:border-[2px] border-white ">
+            <div className="mt-14 md:h-[450px]  xl:h-[500px] rounded-[12px] md:rounded-[30px] xl:rounded-[40px] bg-[#FFFFFF1A] md:bg-[#FFFFFF66] shadow-mobile-small  md:shadow-none md:border-[2px] border-white ">
               <div className="flex flex-col items-center justify-between text-center space-y-6 px-5 md:px-[3%] py-8">
                 {/* Center Icon */}
                 <div className="w-[120px] h-[120px] hidden md:flex items-center justify-center ">
@@ -147,7 +147,7 @@ export default function TabsSection({ data }: TabsSectionData) {
               data-title={items.title}
               className="tab-section group flex-shrink-0 snap-center w-full sm:w-[350px] md:w-[400px] p-2"
             >
-              <div className="bg-[#FFFFFF1A] shadow-[0px_0px_10px_0px_#0668E126] rounded-[12px] h-full flex flex-col items-center justify-between p-6">
+              <div className="bg-[#FFFFFF1A] shadow-mobile-small md:shadow-web-small rounded-[12px] h-full flex flex-col items-center justify-between p-6">
                 <div>
                   <p className=" border-[linear-gradient(90deg,_#FFFFFF_0%,_#C8C8C8_50%,_#FFFFFF_100%)] flex md:hidden mt-3 font-bold  text-[18px]">
                     {items.title}

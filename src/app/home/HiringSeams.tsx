@@ -36,7 +36,7 @@ const cardsData: CardItem[] = [
 function SeamCard({ item }: { item: CardItem }) {
 
   return (
-    <div className="flex-shrink-0 basis-[90%] sm:basis-0 bg-white border border-[#D3E6FF] rounded-md p-sm shadow-[0px_2px_20px_2px_#0668E10D] md:shadow-[0px_4px_40px_5px_#0668E11A]">
+    <div className="flex-shrink-0 basis-[90%] sm:basis-0 bg-white border border-[#D3E6FF] rounded-md p-sm shadow-mobile-medium md:shadow-web-medium">
       
       {/* Image */}
       <div className="w-full flex items-center justify-center">

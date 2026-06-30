@@ -14,7 +14,7 @@ const rightPoints = [
 
 function PointCard({ text }: { text: string }) {
   return (
-    <div className="flex items-start gap-2 rounded-md border border-[#D3E6FF] bg-white px-4 py-3 shadow-[0px_2px_10px_2px_#0668E10D]">
+    <div className="flex items-start gap-2 rounded-md border border-[#D3E6FF] bg-white px-4 py-3 shadow-mobile-small shadow-web-small">
       <img src={"/icons/tick-gradient-icon.svg"} alt="tick icon" className="size-iconsize-sm" />
       <p className="text-xl font-medium text-start text-[#2C2C2C]">
         {text}

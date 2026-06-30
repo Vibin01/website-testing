@@ -85,7 +85,7 @@ const unit = activeTab === "interview" ? "Hours" : "Days";
           {statsCards.map((card, index) => (
             <div
               key={index}
-              className="rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]"
+              className="rounded-md border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium"
             >
               <p className="text-base font-bold text-[#2C2C2C]">
                 {card.title}
@@ -126,7 +126,7 @@ const unit = activeTab === "interview" ? "Hours" : "Days";
         {bottomCards.map((card, index) => (
           <div
             key={index}
-            className={`rounded-md border border-[#D3E6FF] p-4 shadow-[0px_4px_40px_5px_#0668E11A] ${card.bg} ${card.text}`}
+            className={`rounded-md border border-[#D3E6FF] p-4 shadow-mobile-medium md:shadow-web-medium ${card.bg} ${card.text}`}
           >
             <p className="font-bold">{card.title}</p>
 

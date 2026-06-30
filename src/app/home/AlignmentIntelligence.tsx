@@ -109,7 +109,7 @@ export default function AlignmentIntelligence() {
             return (
               <div
                 key={index}
-                className="flex flex-col justify-center items-center group rounded-lg bg-[#0668E1] p-xl text-center text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                className="flex flex-col justify-center items-center group rounded-lg bg-[#0668E1] p-xl text-center text-white shadow-mobile-small md:shadow-web-small transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
                 <img 
                 src={item.icon}

@@ -157,7 +157,7 @@ const handleChange = (index: number, value: string) => {
       {/* Main Layout */}
       <div className="mt-md flex flex-col-reverse md:flex-row  gap-lg">
         {/* Left Card */}
-        <div className="md:w-[65%] rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+        <div className="md:w-[65%] rounded-md border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
           <h3 className="text-base font-bold text-[#2C2C2C]">
             Alignment Pressure Index
           </h3>
@@ -253,7 +253,7 @@ const handleChange = (index: number, value: string) => {
         </div>
 
         {/* Right Card */}
-        <div className="md:w-[35%] rounded-md h-fit border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+        <div className="md:w-[35%] rounded-md h-fit border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
           <h3 className="text-base font-bold text-[#2C2C2C]">
             Alignment Pressure Calculator
           </h3>

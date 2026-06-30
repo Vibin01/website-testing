@@ -155,7 +155,7 @@ export const HeroSection = () => {
               ))}
             </div>
             <div className="mt-xl flex justify-center">
-              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] px-md py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-[0px_2px_10px_2px_#0668E10D]">
+              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] px-md py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-mobile-small md:shadow-web-small">
                 Discover your hiring alignment in real-world scenarios
               </div>
             </div>
@@ -224,7 +224,7 @@ export const HeroSection = () => {
             </div>
 
             <div className="mt-xl flex justify-center">
-              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-[0px_2px_10px_2px_#0668E10D]">
+              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-mobile-small md:shadow-web-small">
                 Experience alignment across the hiring ecosystem.
               </div>
             </div>

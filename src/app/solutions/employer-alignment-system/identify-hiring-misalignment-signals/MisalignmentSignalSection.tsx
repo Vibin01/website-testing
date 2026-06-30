@@ -7,7 +7,7 @@ const misalignmentPoints = [
 
 export default function MisalignmentSignalsCard() {
   return (
-    <div className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)]">
+    <div className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
       
       {/* Top Info Box */}
       <div className="w-full rounded-md border border-[#B2D0F6] bg-[#EEF6FF] p-sm text-xl font-medium text-[#0668E1]">

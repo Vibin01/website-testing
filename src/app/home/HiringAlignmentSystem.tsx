@@ -42,7 +42,7 @@ function InputField({
 
 function AlignmentFormCard() {
   return (
-    <div className="mt-[2%] flex flex-col justify-between rounded-md border border-[#DDECFF] bg-white p-6 shadow-[0px_4px_35px_4px_#0668E11A]">
+    <div className="mt-[2%] flex flex-col justify-between rounded-md border border-[#DDECFF] bg-white p-6 shadow-mobile-medium md:shadow-web-medium">
       <div className="space-y-[2%]">
         <h2 className="text-h6 font-bold">
           Unlock Alignment with Connect EC

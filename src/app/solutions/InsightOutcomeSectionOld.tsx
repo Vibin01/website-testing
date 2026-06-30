@@ -39,21 +39,6 @@ type InsightOutcomeSectionProps = {
   data: InsightOutcomeData;
 };
 
-function BlueCheckIcon() {
-  return (
-    <span className="mt-[0.5%] flex size-6 items-center justify-center rounded-full bg-[#0668E1] text-sm text-white sm:size-[1.5vw] sm:text-xl">
-      ✓
-    </span>
-  );
-}
-
-function OrangeAlertIcon() {
-  return (
-    <span className="mt-[0.2%] flex size-6 items-center justify-center rounded-full border border-[#FF6B3D] text-sm font-bold text-[#FF6B3D] sm:text-base">
-      i
-    </span>
-  );
-}
 
 export default function InsightOutcomeSection({
   data,
@@ -62,7 +47,7 @@ export default function InsightOutcomeSection({
     <section className="w-full">
       <div className="flex flex-col gap-[2vw] ">
         {/* Main Card */}
-        <div className="flex flex-col lg:flex-row items-start w-full gap-[3%] rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-[0px_4px_20px_5px_#0668E11A]">
+        <div className="flex flex-col lg:flex-row items-start w-full gap-[3%] rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-mobile-small md:shadow-web-small ">
           <div className="lg:w-[40%] w-full">
             <img
               src={data.mainCard.image.src}
@@ -103,7 +88,7 @@ export default function InsightOutcomeSection({
         {/* Right Side */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[3%]">
           {/* Outcome Card */}
-          <div className="rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-[0px_4px_20px_5px_#0668E11A]">
+          <div className="rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-mobile-small md:shadow-web-small">
             <h3 className="mb-[4%] text-h3 font-bold">
               {data.outcomeCard.title}
             </h3>
@@ -131,7 +116,7 @@ export default function InsightOutcomeSection({
           </div>
 
           {/* Behavioral Card */}
-          <div className="rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-[0px_4px_20px_5px_#0668E11A]">
+          <div className="rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-mobile-small md:shadow-web-small">
             <h3 className="mb-[4%] text-h3 font-bold">
               {data.behavioralCard.title}
             </h3>

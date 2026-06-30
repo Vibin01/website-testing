@@ -85,7 +85,7 @@ function DesktopView({
 }) {
   return (
     <div className="hidden md:block">
-      <div className="rounded-t-md border border-[#D3E6FF] p-sm shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="rounded-t-md border border-[#D3E6FF] p-sm shadow-mobile-medium md:shadow-web-medium">
         <div>
           <div className="flex   gap-sm">
             <div className="flex my-[0.4%] w-[6%] items-center justify-center rounded-sm bg-[#E6F0FC]">
@@ -123,7 +123,7 @@ function DesktopView({
             key={`${pageData.id}-${index}`}
             ref={index === 0 ? measureRef : null}
             style={{ minHeight: maxCardHeight ? `${maxCardHeight}px` : undefined }}
-            className="rounded-b-md border border-[#D3E6FF] bg-white p-[4%] shadow-[0px_4px_20px_5px_#0668E11A]"
+            className="rounded-b-md border border-[#D3E6FF] bg-white p-[4%] shadow-mobile-small md:shadow-web-small"
           >
             <h3 className="mb-sm text-xl font-bold">{card.title}</h3>
             {card.data}
@@ -163,7 +163,7 @@ function MobileView({
 
   return (
     <div className="block md:hidden">
-      <div className="rounded-[16px] border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="rounded-[16px] border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
         <div className="flex items-start gap-md">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-[#E6F0FC]">
             {pageData.header.icon ? (
@@ -196,7 +196,7 @@ function MobileView({
         </p>
       </div>
 
-      <div className="mt-[3.5%] rounded-[16px] border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="mt-[3.5%] rounded-[16px] border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
         {pageData.cards.map((card, index) => (
           <MobileAccordionItem
             key={`${pageData.id}-${index}`}

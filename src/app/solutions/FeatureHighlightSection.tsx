@@ -175,7 +175,7 @@ export default function FeatureHighlightSection({
 
         {/* Right Image */}
         <div className="flex w-full items-center justify-center lg:w-[45%]">
-          <div className="bg-white md:w-[90%] p-lg rounded-md border-[#DEEDFF] shadow-[0px_4px_40px_5px_#0668E11A]">
+          <div className="bg-white md:w-[90%] p-lg rounded-md border-[#DEEDFF] shadow-mobile-medium md:shadow-web-medium">
           <img
             src={data.image.src}
             alt={data.image.alt}

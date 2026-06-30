@@ -700,7 +700,7 @@ const startIndex = isMobile
               </p>
             )}
 
-            <div className="mt-md rounded-md border border-[#DEEDFF] bg-white p-sm shadow-[0px_4px_40px_5px_#0668E11A]">
+            <div className="mt-md rounded-md border border-[#DEEDFF] bg-white p-sm shadow-mobile-medium md:shadow-web-medium">
               <h3 className="text-base font-bold text-[#0668E1]">
                 {situationTitle}
               </h3>

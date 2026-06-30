@@ -79,7 +79,7 @@ function SignalCard({
       )}
 
       {/* Icon */}
-      <div className="z-10 flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[8px] border border-[#5B9CFF] bg-[#F3F8FF] shadow-[0_2px_8px_rgba(6,104,225,0.10)] md:h-[66px] md:w-[66px] md:rounded-[14px]">
+      <div className="z-10 flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[8px] border border-[#5B9CFF] bg-[#F3F8FF] shadow-mobile-small md:shadow-web-small md:h-[66px] md:w-[66px] md:rounded-[14px]">
         <Image
           src={signalData.find((s) => s.title === title)?.icon || "/placeholder-icon.svg"}
           alt={title}
@@ -115,7 +115,7 @@ function SignalCard({
 export default function SignalsSection() {
   return (
     <section className="w-full py-[5%]">
-      <div className="mx-auto w-full rounded-lg border border-[#D0E5FF] bg-white p-3 shadow-[0px_4px_40px_5px_#0668E11A] md:p-[2%]">
+      <div className="mx-auto w-full rounded-lg border border-[#D0E5FF] bg-white p-3 shadow-mobile-medium md:shadow-web-medium md:p-[2%]">
         
         {/* Grid */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.4fr_auto_1.4fr_auto_1.4fr] md:gap-0 md:items-start">

@@ -92,7 +92,7 @@ function SectionCard({
 }) {
   return (
     <div
-      className={`rounded-md border p-md shadow-[0px_4px_40px_5px_#0668E11A] ${
+      className={`rounded-md border p-md shadow-mobile-medium md:shadow-web-medium ${
         blue
           ? "border-[#0668E1] bg-[#0668E1] text-white"
           : "border-[#DEEDFF] bg-white text-[#2C2C2C]"
@@ -269,7 +269,7 @@ function PhaseReport({
         mode={mode}
       />
 
-      <div className="mt-lg rounded-md border border-[#DEEDFF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="mt-lg rounded-md border border-[#DEEDFF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
         <h2 className="text-base font-extrabold uppercase text-[#2C2C2C]">
           Alignment Insights for {phaseLabel}
         </h2>
@@ -342,7 +342,7 @@ function PhaseReport({
             <div
               className={`rounded-md bg-white p-sm transition-all ${
                 result.band === "Strong"
-                  ? "border border-[#B2D0F6] shadow-[0px_2px_20px_2px_#0668E126]"
+                  ? "border border-[#B2D0F6] shadow-mobile-medium md:shadow-web-medium"
                   : "border border-[#DEEDFF]"
               }`}
             >
@@ -592,7 +592,7 @@ function OverallReport({
         subtitle="Based on your response across 5 key situations in hiring."
       />
 
-      <div className="mt-lg rounded-md border border-[#DEEDFF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="mt-lg rounded-md border border-[#DEEDFF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
         <h2 className="text-base font-bold uppercase text-[#2C2C2C]">
           Overall Alignment
         </h2>
@@ -641,7 +641,7 @@ function OverallReport({
                 `/resources/alignment-test/${role}/report?mode=single&phase=${phase.phaseKey}`,
               )
             }
-            className="rounded-md cursor-pointer border border-[#DEEDFF] bg-white p-sm text-center shadow-[0px_4px_20px_#0668E10D]"
+            className="rounded-md cursor-pointer border border-[#DEEDFF] bg-white p-sm text-center"
           >
             <div className="flex justify-center">
               <ScoreCircle

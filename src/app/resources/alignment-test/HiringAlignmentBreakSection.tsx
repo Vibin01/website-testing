@@ -38,7 +38,7 @@ export default function HiringAlignmentBreakSection() {
           {audienceCards.map((card, index) => (
             <div
               key={index}
-              className="md:w-[28%] rounded-md border border-[#D0E5FF] bg-white p-sm shadow-[0px_4px_40px_5px_#0668E10D]"
+              className="md:w-[28%] rounded-md border border-[#D0E5FF] bg-white p-sm shadow-mobile-small md:shadow-web-small"
             >
               
               {/* Icon */}

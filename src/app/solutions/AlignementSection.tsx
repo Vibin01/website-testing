@@ -24,7 +24,7 @@ export default function AlignmentSection({data}: {data: AlignmentComparisonData}
           return (
             <div
               key={index}
-              className="rounded-md border border-[#D3E6FF] bg-white p-md md:p-sm shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)]"
+              className="rounded-md border border-[#D3E6FF] bg-white p-md md:p-sm shadow-mobile-small md:shadow-web-small"
             >
               <div className="flex items-center gap-xs">
                 <div className="flex size-iconsize-md items-center justify-center rounded-sm bg-[#EAF4FF]">

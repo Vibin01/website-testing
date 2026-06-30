@@ -28,7 +28,7 @@ export default function ResourcesDropdown({onClose}:ResourcesDropdownProps) {
   
   
   return (
-    <div className="absolute left-0  top-full z-[9999] w-[100vw] -translate-x-1/2- rounded-b-[8px] border border-[#D3E6FF] bg-white p-md shadow-[0px_10px_30px_rgba(6,104,225,0.12)]">
+    <div className="absolute left-0  top-full z-[9999] w-[100vw] -translate-x-1/2- rounded-b-[8px] border border-[#D3E6FF] bg-white p-md shadow-mobile-small md:shadow-web-small">
       <div className="flex gap-md pl-[5%]">
       
 

@@ -157,7 +157,7 @@ export default function GoalsDiagramDesktop() {
                 bg-white
                 text-xl
                 font-bold
-                 border border-[#DEEDFF] shadow-[0px_0px_40px_5px_#0668E11A]
+                 border border-[#DEEDFF] shadow-mobile-medium md:shadow-web-medium
                 z-20
               "
             >

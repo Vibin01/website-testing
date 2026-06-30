@@ -278,7 +278,7 @@ function DesktopView({
         </div>
 
         {/* Main Card */}
-        <div className="min-h-[450px] grid grid-cols-2 gap-lg mt-md rounded-lg border border-[#DDECFF] bg-white p-md shadow-[0px_4px_35px_4px_#0668E11A]">
+        <div className="min-h-[450px] grid grid-cols-2 gap-lg mt-md rounded-lg border border-[#DDECFF] bg-white p-md">
           {/* Left Side */}
           <div className="space-y-sm">
             {activeCard.leftSide.map((item, index) => (
@@ -352,7 +352,7 @@ useEffect(() => {
         </h1>
       </div>
 
-      <div className="rounded-lg border border-[#DDECFF] bg-white p-md shadow-[0px_4px_35px_4px_#0668E11A]">
+      <div className="rounded-lg border border-[#DDECFF] bg-white p-md">
         <div className="space-y-md">
           {/* Seam only */}
           <div>

@@ -40,7 +40,7 @@ export default function WhatThisMeansSection() {
           {meansCards.map((card) => (
             <div
               key={card.title}
-              className="rounded-md border border-[#D0E5FF] bg-white p-4 shadow-[0px_4px_40px_5px_#0668E10D]"
+              className="rounded-md border border-[#D0E5FF] bg-white p-md"
             >
               <div className="flex items-center gap-4 rounded-md border border-[#D0E5FF] bg-white px-4 py-3">
                                 <img src={card.icon} alt="" className="size-[30px] md:size-iconsize-md " />

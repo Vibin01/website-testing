@@ -159,7 +159,7 @@ const gapPagesData: GapPage[] = [
 
 function LeftCard({ page }: { page: GapPage }) {
   return (
-    <div className="rounded-md h-auto bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)] md:rounded-none md:rounded-b-sm">
+    <div className="rounded-md h-auto bg-white p-md shadow-mobile-medium md:shadow-web-medium md:rounded-none md:rounded-b-sm">
       <div className="flex flex-col gap-sm">
         <div className="flex flex-row items-center md:items-start md:flex-col gap-xs md:gap-md">
           <img
@@ -224,7 +224,7 @@ function ImpactContent({ page }: { page: GapPage }) {
 
 function MiddleCard({ page }: { page: GapPage }) {
   return (
-    <div className="rounded-b-sm bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)]">
+    <div className="rounded-b-sm bg-white p-md shadow-mobile-medium md:shadow-web-medium">
       <ImpactContent page={page} />
     </div>
   );
@@ -262,7 +262,7 @@ function StructuralCauseContent({ page }: { page: GapPage }) {
 
 function RightCard({ page }: { page: GapPage }) {
   return (
-    <div className="rounded-b-sm bg-white p-md shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)]">
+    <div className="rounded-b-sm bg-white p-md shadow-mobile-medium md:shadow-web-medium">
       <div className="flex flex-col">
         <h3 className="mb-sm text-base font-bold text-[#1B1C17]">
           Structural Cause
@@ -287,7 +287,7 @@ function MobileAccordionItem({
   children,
 }: MobileAccordionItemProps) {
   return (
-    <div className="overflow-hidden rounded-md border border-[#BFD8FF] bg-white shadow-[0px_4px_40px_5px_rgba(6,104,225,0.10)]">
+    <div className="overflow-hidden rounded-md border border-[#BFD8FF] bg-white shadow-mobile-medium md:shadow-web-medium">
       <button
         type="button"
         onClick={onToggle}

@@ -39,7 +39,7 @@ const roleTrackerData = [
 
 function Card({ item }: { item: (typeof roleTrackerData)[0] }) {
   return (
-    <div className="rounded-md border border-[#D3E6FF]  p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+    <div className="rounded-md border border-[#D3E6FF]  p-md shadow-mobile-medium md:shadow-web-medium">
       {/* Header */}
       <div className="flex items-center gap-xs">
         <img

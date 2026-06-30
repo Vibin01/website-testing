@@ -381,7 +381,7 @@ const isLocked =
     flex items-center gap-sm rounded-md border-[1.5px] p-sm transition-all
     ${
       active
-        ? "border-primary shadow-[0_4px_20px_rgba(15,98,254,0.12)]"
+        ? "border-primary shadow-mobile-small md:shadow-web-small"
         : "border-[#ECF5FF] bg-white hover:border-blue-300"
     }
     ${
@@ -428,7 +428,7 @@ const isLocked =
 
       {selectedRole && (
         <div className="hidden md:block flex-1">
-          <div className="rounded-sm border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E10A] md:max-w-[80%]">
+          <div className="rounded-sm border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium md:max-w-[80%]">
             <h3 className="mb-md flex items-center gap-xs text-h5 font-bold">
               {roles.find((r) => r.id === selectedRole)?.title} Alignment Test
             </h3>

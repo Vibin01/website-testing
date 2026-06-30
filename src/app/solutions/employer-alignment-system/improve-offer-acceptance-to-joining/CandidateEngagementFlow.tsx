@@ -35,7 +35,7 @@ export default function CandidateEngagementFlow() {
         Candidate Engagement Flow
       </h3>
 
-      <div className="mt-md w-full rounded-md border border-[#D3E6FF] bg-white p-6 shadow-[0px_4px_40px_5px_#0668E11A]">
+      <div className="mt-md w-full rounded-md border border-[#D3E6FF] bg-white p-6 shadow-mobile-medium md:shadow-web-medium">
         {/* Steps */}
        <div className="grid w-full grid-cols-3 text-xl font-bold text-[#2C2C2C]">
   <div className="flex items-center justify-start gap-[6vw]">

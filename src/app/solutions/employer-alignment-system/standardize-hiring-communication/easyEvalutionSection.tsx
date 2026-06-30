@@ -33,7 +33,7 @@ export default function EasyEvaluatorSection() {
         <div className="flex flex-col gap-md">
           
           {/* Card 1 */}
-          <div className="bg-white border border-[#D3E6FF] rounded-md p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+          <div className="bg-white border border-[#D3E6FF] rounded-md p-md shadow-mobile-medium md:shadow-web-medium">
             <div className="w-full ">
               <Image
                 src="/solutions/employer/system-structured.svg" // replace with your image
@@ -55,7 +55,7 @@ export default function EasyEvaluatorSection() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white border border-[#D3E6FF] rounded-md p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+          <div className="bg-white border border-[#D3E6FF] rounded-md p-md shadow-mobile-medium md:shadow-web-medium">
             <div className="">
               <Image
                 src="/solutions/employer/brand-aligned.svg" // replace with your image

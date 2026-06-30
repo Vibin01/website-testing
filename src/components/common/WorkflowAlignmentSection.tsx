@@ -45,7 +45,7 @@ export default function WorkflowAlignmentSection({
         {data.steps.map((step) => (
           <div
             key={step.id}
-            className="relative rounded-md border-2 border-[#D3E6FF] bg-white py-md sm:p-sm shadow-[0px_2px_10px_2px_#0668E10D] md:shadow-[0px_0px_40px_5px_#0668E11A]"
+            className="relative rounded-md border-2 border-[#D3E6FF] bg-white py-md sm:p-sm shadow-mobile-small md:shadow-web-small"
           >
             <div className="absolute left-0 top-0 flex size-iconsize-sm items-center justify-center rounded bg-[#0668E1] text-lg font-bold text-white">
               {step.id}

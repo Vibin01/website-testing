@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FaArrowDown } from "react-icons/fa6";
-import { MdKeyboardArrowDown } from "react-icons/md";
+
 
 type SignalFlowCard = {
   top: string;
@@ -51,7 +51,7 @@ export default function SignalFlowSection({ data }: { data: SignalFlowData }) {
             {data.leftCards.map((card, index) => (
               <div
                 key={index}
-                className={`absolute left-0 sm:left-auto p-sm w-[85px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]`}
+                className={`absolute left-0 sm:left-auto p-sm w-[85px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-mobile-small md:shadow-web-small`}
                 style={{
                   top: isMobile ? card.mobile_top : card.top,
                   left: isMobile ? card.mobile_left : card.left,
@@ -82,7 +82,7 @@ export default function SignalFlowSection({ data }: { data: SignalFlowData }) {
             ))}
 
             {/* center card */}
-            <div className="relative mx-auto flex flex-col justify-evenly items-left  w-[40%] md:w-[22%] rounded-md border border-[#D3E6FF] bg-white p-sm text-center shadow-[1px_-1px_3px_0px_#0668E10D,_5px_-4px_6px_0px_#0668E10A,_11px_-8px_8px_0px_#0668E108,_19px_-15px_10px_0px_#0668E103,_29px_-23px_10px_0px_#0668E100]">
+            <div className="relative mx-auto flex flex-col justify-evenly items-left  w-[40%] md:w-[22%] rounded-md border border-[#D3E6FF] bg-white p-sm text-center shadow-mobile-small md:shadow-web-small">
               <img
                 src={data.centerImage}
                 alt="Changing Situation Icon"
@@ -99,7 +99,7 @@ export default function SignalFlowSection({ data }: { data: SignalFlowData }) {
             {data.rightCards.map((card, index) => (
               <div
                 key={index}
-                className="absolute p-sm w-[85px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+                className="absolute p-sm w-[85px] sm:w-[10vw] rounded-md border border-[#e5e7eb] bg-white shadow-mobile-small md:shadow-web-small"
                 style={{
                   top: isMobile ? card.mobile_top : card.top,
                   right: isMobile ? card.mobile_right : card.right,

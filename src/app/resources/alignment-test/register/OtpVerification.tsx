@@ -40,7 +40,7 @@ export default function OtpVerification({
                 className=" md:max-w-full w-[55%] md:w-[80%]"
               />
             </div>
-            <div className="mt-[15%] md:mt-0 rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0_4px_40px_5px_#0668E10A]">
+            <div className="mt-[15%] md:mt-0 rounded-md border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
               <h2 className="mb-md text-h5 font-bold">OTP Verification</h2>
     
               <p className="mb-xs text-xl font-medium">

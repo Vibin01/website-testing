@@ -46,7 +46,7 @@ export default function EasyFacilitatorSection() {
         {facilitatorCards.map((card, index) => (
           <div
             key={index}
-            className="flex h-[406px]- w-full flex-col gap-sm rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-[0px_4px_40px_5px_#0668E11A]"
+            className="flex h-[406px]- w-full flex-col gap-sm rounded-md border border-[#D3E6FF] bg-white p-[4%] shadow-mobile-medium md:shadow-web-medium"
           >
             <div className=" w-full rounded-sm bg-[#F9F9F9] p-[3%]">
               <img src={`${card.img}`} alt={`${card.title}`} className="" />

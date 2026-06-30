@@ -103,6 +103,13 @@
   --spacing-gap-xl:4%;
   --spacing-gap-2xl:5%;
 
+  --shadow-mobile-mini: 1px 2px 10px 2px #0668E11A;
+  --shadow-web-mini: 1px 2px 10px 2px #0668E11A;
+  --shadow-web-small: 0px 0px 40px 5px #0668E11A;
+--shadow-mobile-small: 0px 2px 10px 2px #0668E10D;
+  --shadow-mobile-medium: 0px 2px 20px 2px #0668E10D;
+  --shadow-web-medium: 0px 4px 40px 5px #0668E11A
+
   --shadow-lg: 5px 6px 16px 0px #0668E10A, 18px 23px 29px 0px #0668E108, 41px 51px 39px 0px #0668E105, 72px 91px 46px 0px #0668E103, 113px 142px 51px 0px #0668E100;
   /* -2px 2px 6px 0px #0668E10F, -8px 7px 11px 0px #0668E10D, -18px 16px 15px 0px #0668E108, -32px 29px 17px 0px #0668E103, -51px 45px 19px 0px #0668E100; */
 
@@ -206,7 +213,7 @@
   }
 
     .container-navbar {
-    @apply fixed w-full top-0 left-0 max-h-[15vh] py-[1%] z-[10000] px-[5%]  flex justify-between items-center bg-[#F6F6F61A] shadow-[0px_4px_2px_0px_#00000033] bg-[linear-gradient(270deg,#006AE9_0%,#0052BA_100%)] transition-transform duration-300;
+    @apply fixed w-full top-0 left-0 max-h-[15vh] py-[1%] z-[10000] px-[5%]  flex justify-between items-center bg-[#F6F6F61A] bg-[linear-gradient(270deg,#006AE9_0%,#0052BA_100%)] transition-transform duration-300;
   }
 
  

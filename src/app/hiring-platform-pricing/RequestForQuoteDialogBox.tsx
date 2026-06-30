@@ -145,7 +145,7 @@ export default function ButtonDialog({
         onClick={handleClick}
         className={`w-full h-[44px] md:h-[50px] lg:h-[60px] text-xl cursor-pointer font-semibold rounded-[12px] ${
           active == true
-            ? "text-[#0668E1]  bg-white shadow-[0px_4px_20px_0px_#0000001A]"
+            ? "text-[#0668E1]  bg-white"
             : "text-[#0668E1] border border-[#0668E1]"
         }`}
       >

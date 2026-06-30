@@ -27,7 +27,7 @@ const mechanisms: Mechanism[] = [
 
 export default function AAABehaviouralFramework() {
   return (
-    <section className="w-full rounded-lg border border-[#DEEDFF] bg-[#ffffff] p-lg shadow-[0px_4px_40px_5px_#0668E11A]">
+    <section className="w-full rounded-lg border border-[#DEEDFF] bg-[#ffffff] p-lg shadow-mobile-medium md:shadow-web-medium">
       {/* Heading */}
       <div className="text-center">
         <h2 className="text-h2 font-extrabold text-[#1B1C17]">

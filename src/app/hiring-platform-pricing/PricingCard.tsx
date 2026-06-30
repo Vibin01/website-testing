@@ -106,10 +106,10 @@ export default function PricingCardsSection() {
           {pricingCards.map((card) => (
             <div
               key={card.tier}
-              className={`flex flex-col rounded-md border border-[#C8DEFA] ${
+              className={`flex flex-col rounded-md border border-[#C8DEFA] shadow-mobile-medium md:shadow-web-medium ${
                 card.active
-                  ? "bg-[#0668E1] text-white shadow-[0px_4px_18px_rgba(6,104,225,0.35)]"
-                  : "bg-white text-[#1B1C17] shadow-[0px_4px_20px_rgba(6,104,225,0.08)]"
+                  ? "bg-[#0668E1] text-white"
+                  : "bg-white text-[#1B1C17] "
               }`}
             >
               {/* Header */}

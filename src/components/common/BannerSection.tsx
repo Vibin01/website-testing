@@ -24,7 +24,7 @@ export default function BannerSection({data}:BannerSectionProps) {
              <div className="flex w-max animate-marquee gap-lg md:hidden">
                {marqueeCards.map((card, index) => (
                  <div key={index} className=" relative flex-shrink-0 basis-[12%] ml-5  bg-[#044AA0] text-white py-md pl-xl pr-sm rounded-md
-           shadow-[1px_5px_11px_0px_#0668E11A,_2px_10px_20px_0px_#0668E11A,_5px_15px_28px_0px_#0668E10D,_8px_83px_33px_0px_#0668E103,_13px_130px_37px_0px_#0668E100]
+           shadow-mobile-small md:shadow-web-small
             text-left">
             <p className="text-xl font-medium">
               {card.text}
@@ -43,7 +43,7 @@ export default function BannerSection({data}:BannerSectionProps) {
           
           {data.cards.map((card, index) => (
           <div key={index} className="w-[90%]  md:w-[31%] relative flex-shrink-0 basis-[85%] sm:basis-[50%] md:basis-auto  bg-[#044AA0] text-white py-md pl-xl md:pl-[5%] ml-[4%] md:ml-0 pr-sm rounded-md
-           shadow-[1px_5px_11px_0px_#0668E11A,_2px_10px_20px_0px_#0668E11A,_5px_15px_28px_0px_#0668E10D,_8px_83px_33px_0px_#0668E103,_13px_130px_37px_0px_#0668E100]
+           shadow-mobile-small md:shadow-web-small
             text-left">
             <p className="text-xl font-medium">
               {card.text}

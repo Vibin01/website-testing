@@ -35,7 +35,7 @@ const handleTabChange = (tab: ActiveTab) => {
 };
 
   return (
-    <div className="flex md:w-[35%] h-fit flex-col gap-6 rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]">
+    <div className="flex md:w-[35%] h-fit flex-col gap-6 rounded-md border border-[#D3E6FF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
       <p className="text-base font-bold text-[#2C2C2C]">
         Alignment Intent Calculator
       </p>

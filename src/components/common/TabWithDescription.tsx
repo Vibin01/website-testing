@@ -39,14 +39,14 @@ export const TabWithDescription = ({ data }: TabWithDescriptionProps) => {
           {data.title}
         </h2>
 
-        <div className="bg-[#FFFFFF1A] md:h-[510px]- lg:h-[600px] xl:h-[580px] 2xl:h-[570px] px-10 py-20 shadow-[0px_0px_10px_0px_#0668E11A] rounded-[40px] hidden md:flex flex-wrap justify-center items-center gap-4 mb-8">
+        <div className="bg-[#FFFFFF1A] md:h-[510px]- lg:h-[600px] xl:h-[580px] 2xl:h-[570px] px-10 py-20 shadow-mobile-small md:shadow-web-small rounded-[40px] hidden md:flex flex-wrap justify-center items-center gap-4 mb-8">
           {/* Active Tab */}
           {data.tabs.map((tab, index) => (
             <div
               key={index}
               onClick={() => setActiveTab(tab.tab)}
                data-title={tab.tab}
-              className={` subpage-tab-section group flex flex-col items-center justify-center gap-2 px-6 py-4  md:w-[180px] lg:w-[210px] xl:w-[240px] 2xl:w-[260px]  shadow-[0px_0px_4px_0px_#0668E14D]  md:h-[110px] xl:h-[120px] 2xl:h-[140px] ${
+              className={` subpage-tab-section group flex flex-col items-center justify-center gap-2 px-6 py-4  md:w-[180px] lg:w-[210px] xl:w-[240px] 2xl:w-[260px]  shadow-mobile-small md:shadow-web-small  md:h-[110px] xl:h-[120px] 2xl:h-[140px] ${
                 activeTab === tab.tab
                   ? "bg-[#0668E1] text-white font-bold"
                   : "text-black font-semibold"
@@ -95,7 +95,7 @@ export const TabWithDescription = ({ data }: TabWithDescriptionProps) => {
                  data-title={tab.tab}
               className="subpage-tab-section group flex-shrink-0 snap-center w-full sm:w-[350px] md:w-[400px] p-3"
               >
-                <div className="bg-[#FFFFFF1A] shadow-[0px_0px_10px_0px_#0668E126] rounded-[12px] h-full flex flex-col justify-between p-6">
+                <div className="bg-[#FFFFFF1A] rounded-[12px] h-full flex flex-col justify-between p-6">
                   <h3 className="text-[18px] font-bold mb-2">{tab.tab}</h3>
                   <h4 className="text-center text-[#0668E1] text-[16px] font-bold  lg:mb-3">
                     {tab.heading}

@@ -90,7 +90,7 @@ export default function AlignmentCards() {
                   border
                   border-[#DEEDFF]
                   p-sm
-                  shadow-[0px_2px_10px_2px_#0668E10D]
+                  shadow-mobile-small md:shadow-web-small
                  
                   transition-all
                   duration-300
@@ -183,7 +183,7 @@ text-[#0668E1]
                   border
                   border-[#DEEDFF]
                   p-sm
-                  shadow-[0px_2px_10px_2px_#0668E10D]
+                  shadow-mobile-small md:shadow-web-small
                  
                   transition-all
                   duration-300

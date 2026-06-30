@@ -128,7 +128,7 @@ export default function SolutionsDropdown({onClose}:SolutionsDropdownProps) {
     solutionGroups.find((group) => group.key === activeTab) || solutionGroups[0];
 
   return (
-    <div className="absolute left-0 top-full z-[9999] w-[100vw] -translate-x-1/2- rounded-b-[8px] border border-[#D3E6FF] bg-white p-[18px] shadow-[0px_10px_30px_rgba(6,104,225,0.12)]">
+    <div className="absolute left-0 top-full z-[9999] w-[100vw] -translate-x-1/2- rounded-b-[8px] border border-[#D3E6FF] bg-white p-[18px] shadow-mobile-small md:shadow-web-small">
       <div className="grid grid-cols-[0.3fr_0.7fr] gap-md">
         {/* Left Menu */}
         <div className="border-r border-[#E5EEF9] pr-sm">

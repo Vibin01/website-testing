@@ -24,7 +24,7 @@ const ComparisonCardSection = ({data}:ComparisionCardSection) => {
         {data.content.map((card, index) => (
           <div
             key={index}
-            className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-[0px_4px_40px_5px_#0668E11A]"
+            className="w-full rounded-md border border-[#D3E6FF] bg-white p-md shadow-mobile-small md:shadow-web-small"
           >
             <img src={card.titleicon} alt={`${card.title} icon`} className="size-iconsize-xl scale-125 md:scale-105 " />
             <h3 className="mt-md text-base font-bold text-[#1B1C17]">

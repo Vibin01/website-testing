@@ -42,7 +42,7 @@ export default function AlignmentChallenge() {
         Seamless Yield depends on alignment across three dimensions of hiring.
       </p>
 
-    <div className="mt-xl w-full rounded-lg border border-[#DEEDFF] bg-[#FFFFFF] p-md shadow-[0px_4px_40px_5px_#0668E11A]">     
+    <div className="mt-xl w-full rounded-lg border border-[#DEEDFF] bg-[#FFFFFF] p-md shadow-mobile-medium md:shadow-web-medium">     
       <div className=" grid gap-lg lg:grid-cols-[1.1fr_1fr_1fr]">
         {/* Left Card */}
         <div className="">

@@ -50,7 +50,7 @@ function InfoCard({
 }) {
   return (
     <div
-      className={`absolute w-[18vw] rounded-md border border-[#D0E5FF] bg-white p-[1%] shadow-[-1px_2px_10px_2px_#0668E11A] ${className}`}
+      className={`absolute w-[18vw] rounded-md border border-[#D0E5FF] bg-white p-[1%] shadow-mobile-small md:shadow-web-small ${className}`}
     >
       <div className="mb-4 flex size-iconsize-sm items-center justify-center rounded-full bg-[#0B67E9] text-lg font-bold text-white">
         {id}
@@ -146,7 +146,7 @@ key={index}
             .map((card) => (
               <div
                 key={card.id}
-                className="rounded-md border border-[#CFE1F7] bg-[#FFFFFF] px-4 py-3 shadow-[0_3px_10px_rgba(6,104,225,0.08)]"
+                className="rounded-md border border-[#CFE1F7] bg-[#FFFFFF] px-4 py-3 shadow-mobile-small md:shadow-web-small"
               >
                 <div className="mb-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#0B67E9] text-[12px] font-bold text-white">
                   {card.id}

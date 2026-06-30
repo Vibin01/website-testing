@@ -23,10 +23,10 @@ export default function UniversalBehaviorSection() {
       </div>
       <section className="mt-4 md:mt-0 relative flex justify-center">
         {/* Main Card */}
-        <div className="relative w-full rounded-lg border border-[#D3E6FF]  p-xl text-center shadow-[0px_0px_40px_5px_#0668E11A]">
+        <div className="relative w-full rounded-lg border border-[#D3E6FF]  p-xl text-center shadow-mobile-small md:shadow-web-small">
           {/* Top Badge */}
           <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-            <div className="min-w-[140px] md:min-w-[260px] rounded-full border border-[#D6E6FF] bg-[#FFFFFF] px-md py-md shadow-[0px_0px_40px_5px_#0668E11A]">
+            <div className="min-w-[140px] md:min-w-[260px] rounded-full border border-[#D6E6FF] bg-[#FFFFFF] px-md py-md shadow-mobile-small md:shadow-web-small">
               <span className="text-xl font-bold">
                 Same Aspiration
               </span>
@@ -40,7 +40,7 @@ export default function UniversalBehaviorSection() {
 
           {/* Bottom Pill */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-            <div className="min-w-[140px] md:min-w-[260px] rounded-full bg-[#0668E1] border border-[#D3E6FF] px-md py-md shadow-[0px_0px_40px_5px_#0668E11A]">
+            <div className="min-w-[140px] md:min-w-[260px] rounded-full bg-[#0668E1] border border-[#D3E6FF] px-md py-md shadow-mobile-small md:shadow-web-small">
               <span className="text-xl font-bold text-white">
                 Seamless Yield
               </span>

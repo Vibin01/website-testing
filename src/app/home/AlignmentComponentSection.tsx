@@ -89,7 +89,7 @@ const remainingText = words.join(" ");
                 border-[#D8E8FF]
                 bg-white
                 p-sm
-                shadow-[0px_4px_30px_rgba(6,104,225,0.08)]
+                
               `}
             >
               {/* Floating Icon */}
@@ -143,7 +143,7 @@ const remainingText = words.join(" ");
               rounded-full
               bg-[#0668E1]
               p-md
-              shadow-[-1.2px_-4.8px_3px_0px_#00000040_inset,0px_1.2px_18px_6px_#0668E10D]
+              
             "
           >
             <div className="text-center flex justify-center items-center gap-xs ">

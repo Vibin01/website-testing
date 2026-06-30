@@ -42,7 +42,7 @@ export default function AlignmentWeakensSection() {
           {systemCards.map((card, index) => (
             <div
               key={index}
-              className="rounded-md border border-[#D0E5FF] bg-white p-sm shadow-[0px_0px_40px_5px_#0668E11A]"
+              className="rounded-md border border-[#D0E5FF] bg-white p-sm shadow-mobile-small md:shadow-web-small"
             >
                 {/* <img src={card.icon} alt={card.title} className="size-[30px] md:size-iconsize-md " /> */}
 

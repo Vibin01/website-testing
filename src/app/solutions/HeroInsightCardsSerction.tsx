@@ -32,7 +32,7 @@ export default function HeroInsightCardsSection({
             className={`
                flex gap-[clamp(8px,calc(12/_var(--width)_*_100vw),30px)] rounded-md
               border border-[#D0E5FF] bg-white p-[clamp(12px,calc(16/_var(--width)_*_100vw),40px)]
-              shadow-[0px_2px_10px_2px_#0668E10D]
+              shadow-mobile-small md:shadow-web-small
               md:flex-col items-start md:justify-center
               ${card.active ? "w-full" : "w-[90%]"}
             `}
