@@ -19,6 +19,11 @@ const nextConfig = {
     esmExternals: true,
     swcPlugins: [],
   },
+   outputFileTracingIncludes: {
+      "/api/export-pdf": [
+        "./node_modules/@sparticuz/chromium/bin/**/*",
+      ],
+    },
 };
 
 // const withBundleAnalyzer = require("@next/bundle-analyzer")({
