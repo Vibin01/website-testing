@@ -6,6 +6,7 @@ import {
 } from "./types";
 import { computeDominance } from "./scoring";
 import { computeAlignmentHealth } from "./alignment-health";
+import { Role } from "@prisma/client";
 
 export type AnswerRecord = {
   questionId: number;
@@ -16,7 +17,7 @@ export type AnswerRecord = {
   answerText: string;
 };
 
-export function buildPhaseReport(phase: PhaseKey, answers: AnswerRecord[]) {
+export function buildPhaseReport(role: Role, phase: PhaseKey, answers: AnswerRecord[]) {
   const phaseAnswers = answers.filter((a) => a.phase === phase);
 
   const result: PhaseComputationResult = {

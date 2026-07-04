@@ -259,7 +259,10 @@ function PhaseReport({
   }, [role]);
 
   // console.log(user);
+  // console.log(content)
 
+  // console.log(report)
+console.log(result.mode);
   return (
     <section className="w-full bg-[#FAFDFF] px-[5%] pb-20">
       <HeaderBlock
@@ -351,90 +354,60 @@ function PhaseReport({
               </h4>
 
               <p className="mt-sm text-xl font-bold">
-                Across these situations, you{" "}
-                {result.band === "Strong" ? "consistently" : "tend to"} follow
-                this response pattern.
+                {content.yourPattern?.[result.band] ?? ""}
               </p>
+              {result.mode === "Dynamic" &&(
+              <p className="mt-sm text-xl font-medium text-[#2C2C2C]">
+                Sometimes you act quickly,<br/> sometimes you evaluate, <br/> and sometimes you continue without change.
+                </p>
+              )}
 
               <div className="my-sm p-sm rounded-md bg-[#F2F8FF] border border-[#DEEDFF]">
                 <div className=" md:flex md:items-center gap-xs">
-                  <span className=" font-bold text-[#0668E1]">Insight: </span>
+                  <span><span  className="font-bold text-[#0668E1] ">Insight: </span>
                   <span className="text-xl font-medium ">
                     {report.primaryExpression.insight}
-                  </span>
+                  </span></span>
                 </div>
                 <div className="my-xs border-t border-[#DEEDFF]" />
-                <div className="md:flex md:items-center gap-xs">
-                  <span className="font-bold text-[#0668E1]">Belief: </span>
-                  <span className="text-xl font-medium">
+                <div className="md:flex- md:items-center gap-xs inline-flex ">
+                  <span><span  className="font-bold text-[#0668E1] ">Belief: </span> <span className="text-xl font-medium">
                     {report.primaryExpression.belief}
-                  </span>
+                  </span></span>
+                  
                 </div>
               </div>
 
               <p className="text-xl font-medium mt-xs">
-                Over time, this shapes how consistently your decisions align
-                with the situation.
+                {result.mode === "Dynamic" ? (
+                  "This suggests no single pattern consistently guides your decisions."
+                ) : (
+                  " Over time, this shapes how consistently your decisions align with the situation."
+                  
+                )}
               </p>
             </div>
 
 <div className="flex flex-col gap-sm">
-            {(() => {
-              const mode = result?.mode?.toUpperCase?.() || "DYNAMIC";
-
-              const modeSummary: Record<string, string> = {
-                UNALIGNED:
-                  "This suggests a pattern where action often comes before full evaluation.",
-
-                ALIGNED:
-                  "This suggests a pattern where decisions are guided by clarity rather than urgency.",
-
-                "AUTO-ALIGNED":
-                  "This suggests a pattern of staying steady regardless of uncertainty or changing conditions.",
-
-                MISALIGNED:
-                  "This suggests a pattern where external signals shape your decisions.",
-
-                DYNAMIC:
-                  "This suggests no single pattern consistently guides your decisions.",
-
-                MIXED:
-                  "This suggests no single pattern consistently guides your decisions.",
-              };
-
-              return (
-                <div className="rounded-md border border-[#DEEDFF] bg-white p-sm">
-                  {report?.secondaryExpression ? (
-                    <>
-                      <h4 className="text-base font-bold uppercase text-[#2C2C2C]">
-                        Secondary Expression —{" "}
-                        {report.secondaryExpression.tendency}
+{result.mode !== "Dynamic" && report.secondaryExpression && (
+                <div  className="rounded-md border border-[#DEEDFF] bg-white p-sm">
+                      <h4 className="text-base font-bold uppercase text-[#2C2C2C]">    
+                        {report?.secondaryExpression?.tendency ?? ""}
                       </h4>
 
                       <p className="mt-sm text-xl font-medium">
-                        {report.secondaryExpression.expression}
+                        {report?.secondaryExpression?.expression ?? ""}
                       </p>
-
+{report?.secondaryExpression?.tendency &&(
                       <hr className="my-sm border-[#DEEDFF]" />
-
+)}
                       <p className="text-xl font-medium text-[#2C2C2C]">
-                        {modeSummary[mode]}
+                        {report?.secondaryExpression?.summary ?? ""}
                       </p>
-                    </>
-                  ) : (
-                    <>
-                      <h4 className="text-base font-bold uppercase text-[#2C2C2C]">
-                        Secondary Expression
-                      </h4>
-
-                      <p className="mt-sm text-xl font-medium text-[#2C2C2C]">
-                        {modeSummary[mode]}
-                      </p>
-                    </>
-                  )}
+                 
                 </div>
-              );
-            })()}
+               
+              )}
              <div className="rounded-md border border-[#B2D0F6] bg-white p-sm">
               <h4 className="font-bold text-[#0668E1] uppercase">Summary</h4>
               <p className="text-xl text-[#0668E1] font-medium mt-xs">
@@ -621,9 +594,9 @@ function OverallReport({
         </div>
 
         <div className="mt-md grid grid-cols-1 gap-md md:grid-cols-3">
-          <SmallInfoCard title="Pattern" lines={content.pattern} />
-          <SmallInfoCard title="Trigger" lines={content.trigger} />
-          <SmallInfoCard title="Outcome" lines={content.outcome} />
+          <SmallInfoCard title="Your Natural Response" lines={content.pattern} />
+          <SmallInfoCard title="What Drives Your Decisions" lines={content.trigger} />
+          <SmallInfoCard title="What This Creates" lines={content.outcome} />
         </div>
       </div>
 
@@ -743,7 +716,7 @@ function OverallReport({
       </div>
 
       <div className="mt-lg">
-        <SectionCard title="Behavioral Summary">
+        <SectionCard title="Your Decision Pattern">
           <div className="space-y-sm">
             {content.behavioralSummary.map((line: string, index: number) => (
               <p key={index} className="text-xl font-medium mt-xs">

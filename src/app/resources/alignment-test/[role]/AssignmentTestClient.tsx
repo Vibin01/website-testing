@@ -182,7 +182,7 @@ const handleOptionChange = useCallback((key: string) => {
 
       setPageLoadTime(duration);
 
-      console.log("Assessment Page Load Time:", duration.toFixed(2), "seconds");
+      // console.log("Assessment Page Load Time:", duration.toFixed(2), "seconds");
     }
 
     init();
@@ -374,6 +374,7 @@ const visibleItems = useMemo(() => {
     // console.log(candidateQuestions[0])
 
     const newAnswer: AnswerRecord = {
+      role,
       questionId: currentQuestion.id,
       phase: currentQuestion.phase,
       selectedOption: optionKey,
@@ -401,7 +402,7 @@ if (mode === "full" && isLastQuestion && !isLastPhase) {
     (a) => a.phase === currentPhase.key,
   );
 
-  const phaseReport = buildPhaseReport(currentPhase.key, phaseAnswers);
+  const phaseReport = buildPhaseReport(role,currentPhase.key, phaseAnswers);
 
   // Only keep report in React state
  setPhaseReports(prev => ({
@@ -423,7 +424,7 @@ if (mode === "full" && isLastQuestion && !isLastPhase) {
     if (mode === "single") {
       // time stamp
       const submitStart = performance.now();
-      const report = buildPhaseReport(currentPhase.key, updatedAnswers);
+      const report = buildPhaseReport(role,currentPhase.key, updatedAnswers);
 
       const save = await completeAssessmentAction({
         journeyId,
@@ -440,7 +441,7 @@ if (mode === "full" && isLastQuestion && !isLastPhase) {
 
       setSubmitTime(duration);
 
-      console.log("Single Assessment Submit Time:", duration.toFixed(2), "ms");
+      // console.log("Single Assessment Submit Time:", duration.toFixed(2), "ms");
 
       if (save.error) {
         setError(save.error);
@@ -512,6 +513,7 @@ for (const phase of phases) {
   );
 
   const phaseReport = buildPhaseReport(
+    role,
     phase.key,
     phaseAnswers
   );

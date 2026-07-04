@@ -165,7 +165,7 @@ export async function sendOTPEmail(email: string, otp: string, name:string): Pro
   };
 
   await transporter.verify();
-console.log("SMTP Connected");
+// console.log("SMTP Connected");
 
   await transporter.sendMail(mailOptions);
 }

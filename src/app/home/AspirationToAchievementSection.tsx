@@ -1,22 +1,3 @@
-import { FaArrowDown, FaArrowRight } from "react-icons/fa6";
-
-type TopItem = {
-  text: string;
-};
-
-const topItems: TopItem[] = [
-  { text: "What candidates experience" },
-  { text: "What employers require" },
-  { text: "How recruiters operate" },
-];
-
-const flowSteps = [
-  "Expectation becomes visible",
-  "Direction becomes aligned",
-  "Execution becomes consistent",
-  "Momentum builds",
-  "Outcomes compound",
-];
 
 function AchievementDiagramCard() {
   return (

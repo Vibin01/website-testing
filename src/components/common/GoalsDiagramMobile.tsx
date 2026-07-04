@@ -5,11 +5,11 @@ import GoalCard from "./GoalCard";
 import { useEffect } from "react";
 
 export default function GoalsDiagramMobile() {
- useEffect(() => {
-  console.log("candidate", document.getElementById("candidate-mobile"));
-  console.log("employer", document.getElementById("employer-mobile"));
-  console.log("goals", document.getElementById("goals-mobile"));
-}, []);
+//  useEffect(() => {
+//   console.log("candidate", document.getElementById("candidate-mobile"));
+//   console.log("employer", document.getElementById("employer-mobile"));
+//   console.log("goals", document.getElementById("goals-mobile"));
+// }, []);
   return (
     <ArcherContainer
       strokeColor="#B8D3FF"

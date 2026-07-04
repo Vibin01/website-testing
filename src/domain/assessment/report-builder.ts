@@ -2,7 +2,7 @@
 
 import { computeDominance } from "./scoring";
 import { computeAlignmentHealth } from "./alignment-health";
-import { Mode, Option, PhaseKey, Tendency } from "./types";
+import { Mode, Option, PhaseKey, Role, Tendency } from "./types";
 import {
   primaryExpressionByPhase,
   getSecondaryExpression,
@@ -11,6 +11,7 @@ import {
 } from "./report-content";
 
 export type AnswerRecord = {
+  role: Role;
   questionId: string;
   phase: PhaseKey;
   selectedOption: Option;
@@ -44,7 +45,8 @@ export function getContentKey(result: {
   return result.dominantTendency;
 }
 
-export function buildPhaseReport(phase: PhaseKey, answers: AnswerRecord[]) {
+
+export function buildPhaseReport(role: Role, phase: PhaseKey, answers: AnswerRecord[]) {
   const phaseAnswers = answers.filter((item) => item.phase === phase);
 
   const result = {
@@ -55,12 +57,14 @@ export function buildPhaseReport(phase: PhaseKey, answers: AnswerRecord[]) {
     ),
   };
 
-  const content = tendencyContent[getContentKey(result)];
+  const content = tendencyContent[role][getContentKey(result)];
 
   const primaryExpression =
-  primaryExpressionByPhase[phase][result.band];
+  primaryExpressionByPhase[role][phase][result.mode][result.band];
+
 
 const secondaryExpression = getSecondaryExpression(
+  result.mode,
   result.band,
   result.secondaryTendency
 );
@@ -80,7 +84,7 @@ const secondaryExpression = getSecondaryExpression(
 
 
 
-export function buildOverallReport(role:string,answers: AnswerRecord[]) {
+export function buildOverallReport(role:Role,answers: AnswerRecord[]) {
   
  
   const phaseResults = phaseKeys.map((phase) => {
@@ -95,11 +99,14 @@ export function buildOverallReport(role:string,answers: AnswerRecord[]) {
     ),
   };
 
-  const content = tendencyContent[getContentKey(result)];
+  const content = tendencyContent[role][getContentKey(result)];
 
-  const primaryExpression = primaryExpressionByPhase[phase][result.band];
+  
+
+  const primaryExpression = primaryExpressionByPhase[role][phase][result.mode][result.band];
 
   const secondaryExpression = getSecondaryExpression(
+    result.mode,
     result.band,
     result.secondaryTendency
   );
@@ -126,9 +133,11 @@ export function buildOverallReport(role:string,answers: AnswerRecord[]) {
 
   const health = computeAlignmentHealth(phaseBands);
 
-  const content = overallContentByMode[overall.mode];
+  const content = overallContentByMode[role][overall.mode];
+
 
   const secondaryExpression = getSecondaryExpression(
+    overall.mode,
   overall.band,
   overall.secondaryTendency
 );

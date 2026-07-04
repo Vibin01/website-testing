@@ -1,10 +1,4 @@
 import GoalsDiagram from "@/components/common/GoalDiagram";
-import { FaArrowRight } from "react-icons/fa";
-
-
-
-
-
 
 export default function UniversalBehaviorSection() {
   return (

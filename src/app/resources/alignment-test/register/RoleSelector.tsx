@@ -192,13 +192,13 @@ const startTime = Date.now();
       const endTime = Date.now();
     setRegisterEndTime(endTime);
 
-    console.log("Register Start:", new Date(startTime).toISOString());
-    console.log("Register End:", new Date(endTime).toISOString());
-    console.log(
-      "Register Duration:",
-      ((endTime - startTime) / 1000).toFixed(2),
-      "seconds"
-    );
+    // console.log("Register Start:", new Date(startTime).toISOString());
+    // console.log("Register End:", new Date(endTime).toISOString());
+    // console.log(
+    //   "Register Duration:",
+    //   ((endTime - startTime) / 1000).toFixed(2),
+    //   "seconds"
+    // );
 
 
 

@@ -1,3 +1,4 @@
+import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const RoleSelector = dynamic(
@@ -7,8 +8,8 @@ const RoleSelector = dynamic(
     })),
   {
     loading: () => (
-      <div className="flex justify-center items-center">
-        Loading...
+      <div className="flex items-center justify-center min-h-screen p-6">
+        <Loader2 className="h-10 w-10 animate-spin text-primary" />
       </div>
     ),
   }

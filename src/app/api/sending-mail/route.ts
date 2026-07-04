@@ -6,7 +6,7 @@ import { generateEmailTemplate } from "@/lib/generateEmailTemplate";
 export async function POST(req: Request) {
   try {
     const { name, email, phone, queryType, message } = await req.json();
-console.log(name, email, phone, queryType, message);
+// console.log(name, email, phone, queryType, message);
     if (!name || !email || !phone || !message) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }

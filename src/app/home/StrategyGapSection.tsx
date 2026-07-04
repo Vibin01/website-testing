@@ -159,7 +159,7 @@ const gapPagesData: GapPage[] = [
 
 function LeftCard({ page }: { page: GapPage }) {
   return (
-    <div className="rounded-md h-auto bg-white p-md shadow-mobile-medium md:shadow-web-medium md:rounded-none md:rounded-b-sm">
+    <div className="rounded-md h-auto bg-white p-md border border-[#D3E6FF] md:border-none shadow-mobile-medium md:shadow-web-medium md:rounded-none md:rounded-b-sm">
       <div className="flex flex-col gap-sm">
         <div className="flex flex-row items-center md:items-start md:flex-col gap-xs md:gap-md">
           <img

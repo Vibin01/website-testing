@@ -6,10 +6,10 @@ export function getBandScore(band: Band): number {
   return 1;
 }
 
-export function getHealthLabel(normalizedScore: number): 'Strong' | 'Moderate' | 'Weak' {
+export function getHealthLabel(normalizedScore: number): 'Strong' | 'Moderate' | 'Dynamic' {
   if (normalizedScore >= 1) return 'Strong';
   if (normalizedScore >= 0.6) return 'Moderate';
-  return 'Weak';
+  return 'Dynamic';
 }
 
 export function computeAlignmentHealth(phaseBands: Record<PhaseKey, Band>) {

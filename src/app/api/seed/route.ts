@@ -6,7 +6,7 @@ import { employerQuestions } from "@/content/questions/employer";
 
 export async function GET() {
   try {
-    console.log("Seeding All Questions...");
+    // console.log("Seeding All Questions...");
 
     await prisma.question.deleteMany({});
 

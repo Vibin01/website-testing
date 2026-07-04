@@ -239,7 +239,7 @@ if (
       if (journey) {
         const overallReport =
           buildOverallReport(
-            journey.role.toLowerCase(),
+            journey.role.toLowerCase() as Role,
             allAnswers
           );
 

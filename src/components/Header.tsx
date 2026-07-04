@@ -69,14 +69,14 @@ export const Header = () => {
     if (resourcesTimer.current) {
       clearTimeout(resourcesTimer.current);
     }
-
+setShowSolutions(false)
     setShowResources(true);
   };
 
   const handleResourcesLeave = () => {
     resourcesTimer.current = setTimeout(() => {
       setShowResources(false);
-    }, 1000);
+    }, 200);
   };
   const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
@@ -84,13 +84,15 @@ export const Header = () => {
     if (closeTimer.current) {
       clearTimeout(closeTimer.current);
     }
+setShowResources(false)
     setShowSolutions(true);
+
   };
 
   const handleMouseLeave = () => {
     closeTimer.current = setTimeout(() => {
       setShowSolutions(false);
-    }, 1000);
+    }, 200);
   };
 
   useEffect(() => {

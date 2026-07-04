@@ -58,12 +58,12 @@ export default function DownloadPdfButton({
     } finally {
       // time stamp
        const end = performance.now();
-       console.log("PDF Generated At:", new Date().toISOString());
-    console.log(
-      "PDF Generation Time:",
-      ((end - start) / 1000).toFixed(2),
-      "seconds"
-    );
+    //    console.log("PDF Generated At:", new Date().toISOString());
+    // console.log(
+    //   "PDF Generation Time:",
+    //   ((end - start) / 1000).toFixed(2),
+    //   "seconds"
+    // );
       setLoading(false);
     }
   };

@@ -6,7 +6,7 @@ export async function downloadPdf() {
 
   if (!element) return;
 
-  console.log("Generating PDF...");
+  // console.log("Generating PDF...");
 
   await new Promise((r) => setTimeout(r, 200));
 

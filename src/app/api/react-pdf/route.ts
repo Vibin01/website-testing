@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
   let browser: Browser | null = null;
 
   try {
-    console.log("PDF REQUEST STARTED");
+    // console.log("PDF REQUEST STARTED");
 
     const sessionCookie = req.cookies.get("session");
 
@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
       `${baseUrl}/resources/alignment-test/${role}/report/print` +
       `?mode=${mode}&phase=${phase}`;
 
-    console.log("Report URL:", reportUrl);
+    // console.log("Report URL:", reportUrl);
 
     browser = await puppeteer.launch({
       args: chromium.args,
@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
 
     // Debug logs from page
     page.on("console", (msg) => {
-      console.log("[PAGE]", msg.text());
+      // console.log("[PAGE]", msg.text());
     });
 
     page.on("pageerror", (err) => {
@@ -76,7 +76,7 @@ export async function GET(req: NextRequest) {
 
     await page.emulateMediaType("print");
 
-    console.log("Generating PDF...");
+    // console.log("Generating PDF...");
 
     const pdf = await page.pdf({
       format: "A4",
@@ -91,7 +91,7 @@ export async function GET(req: NextRequest) {
       },
     });
 
-    console.log("PDF generated successfully");
+    // console.log("PDF generated successfully");
 
     return new NextResponse(Buffer.from(pdf), {
       headers: {
