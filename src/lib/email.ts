@@ -16,7 +16,7 @@ export async function sendOTPEmail(email: string, otp: string, name:string): Pro
   const mailOptions = {
   from: `"Connect EC" <${process.env.SMTP_USER}>`,
    to: email,
-    subject: 'Your OTP for AAA Framework Alignment',
+    subject: 'Connect EC | Your OTP for the Hiring Alignment Test',
     
     html:  `<!DOCTYPE html>
       <html>

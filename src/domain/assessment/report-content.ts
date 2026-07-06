@@ -1392,7 +1392,7 @@ Strong: "Across these situations, you consistently act early when clarity is mis
         "It’s deliberate decision-making."
       ],
       whatToDo: [
-        "It’s deliberate decision-making.",
+        "Continue evaluating before acting.",
         "Act when clarity is sufficient — not perfect.",
         "Maintain balance between understanding and execution.",
       ],
@@ -1622,7 +1622,7 @@ Strong: "Across these situations, you consistently act early when clarity is mis
         "It’s deliberate decision-making."
       ],
       whatToDo: [
-        "It’s deliberate decision-making.",
+        "Continue evaluating before acting.",
         "Act when clarity is sufficient — not perfect.",
         "Maintain balance between understanding and execution.",
       ],
@@ -1853,7 +1853,7 @@ Strong: "Across these situations, you consistently act early when clarity is mis
         "It’s deliberate decision-making."
       ],
       whatToDo: [
-        "It’s deliberate decision-making.",
+        "Continue evaluating before acting.",
         "Act when clarity is sufficient — not perfect.",
         "Maintain balance between understanding and execution.",
       ],
