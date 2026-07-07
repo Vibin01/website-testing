@@ -86,7 +86,7 @@ export default function DownloadPdfButton({
       ) : (
         <>
           <Share2 size={18} />
-          { "Share"}
+           {loading ? "Sharing..." :"Share"}
         </>
       )}
     </button>
