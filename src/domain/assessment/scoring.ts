@@ -14,12 +14,8 @@ export const TendencyToModeMap: Record<Tendency, Mode> = {
   PERCEPTION: 'Misaligned',
 };
 
-export function computeDominance(
-  responses: Tendency[],
-  isGlobal: boolean = false
-): Omit<PhaseComputationResult, 'phaseKey'> {
+export function computeDominance(responses: Tendency[], isGlobal: boolean = false): Omit<PhaseComputationResult, 'phaseKey'> {
   const totalQuestions = isGlobal ? 15 : 3;
-
   const counts: Record<Tendency, number> = {
     ACTION: 0,
     EVALUATION: 0,
@@ -31,14 +27,17 @@ export function computeDominance(
     counts[r]++;
   }
 
-  const sorted = (Object.entries(counts) as [Tendency, number][])
-    .sort((a, b) => b[1] - a[1]);
+  let maxCount = 0;
+  let dominantTendencies: Tendency[] = [];
 
-  const maxCount = sorted[0][1];
-
-  const dominantTendencies = sorted
-    .filter(([_, count]) => count === maxCount)
-    .map(([t]) => t);
+  for (const [tendency, count] of Object.entries(counts)) {
+    if (count > maxCount) {
+      maxCount = count;
+      dominantTendencies = [tendency as Tendency];
+    } else if (count === maxCount) {
+      dominantTendencies.push(tendency as Tendency);
+    }
+  }
 
   const dominanceRatio = maxCount / totalQuestions;
   const percentage = Math.round(dominanceRatio * 100);
@@ -56,11 +55,15 @@ export function computeDominance(
     mode = TendencyToModeMap[finalDominant];
 
     if (band === 'Moderate') {
-      const second = sorted.find(
-        ([t]) => t !== finalDominant
-      );
-
-      secondary = second ? second[0] : null;
+      let secondMax = 0;
+      let possibleSecondary: Tendency | null = null;
+      for (const [tendency, count] of Object.entries(counts)) {
+        if (tendency !== finalDominant && count > secondMax) {
+          secondMax = count;
+          possibleSecondary = tendency as Tendency;
+        }
+      }
+      secondary = possibleSecondary;
     }
   }
 

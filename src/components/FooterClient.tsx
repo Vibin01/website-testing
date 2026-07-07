@@ -51,7 +51,7 @@ export default function FooterClient({
                   </div>
 
                   <p className="mt-4 text-[14px] xl:text-[18px] lg:font-medium">
-                    Phone : <a href="tel:+919499045981">+91 9499045981</a>
+                    Phone : <a href="tel:+919499045851">+91 9499045851</a>
                   </p>
 
                   <p className="mt-1 lg:mt-2 text-[14px] xl:text-[18px] lg:font-medium">

@@ -1,17 +1,20 @@
 "use client";
 
+import { Share2 } from "lucide-react";
 import { useState } from "react";
 
 type Props = {
   role: string;
   mode: string;
   phase: string;
+  action?: "download" | "share";
 };
 
 export default function DownloadPdfButton({
   role,
   mode,
   phase,
+  action="download",
 }: Props) {
   const [loading, setLoading] = useState(false);
 
@@ -72,9 +75,20 @@ export default function DownloadPdfButton({
     <button
       onClick={handleDownload}
       disabled={loading}
-      className="flex h-[54px] cursor-pointer items-center justify-center gap-sm rounded-md  bg-[#0668E1] w-[200px] text-xl font-medium text-white disabled:opacity-50"
+
+      className={action==="download" ?"flex h-[54px] cursor-pointer items-center justify-center gap-sm rounded-md  bg-[#0668E1] w-[200px] text-xl font-medium text-white disabled:opacity-50"
+        :"flex items-center cursor-pointer gap-2 text-[16px] font-bold"}
     >
-      {loading ? "Generating PDF..." : "Download PDF"}
+       {action === "download" ? (
+        <>
+          {loading ? "Generating PDF..." : "Download PDF"}
+        </>
+      ) : (
+        <>
+          <Share2 size={18} />
+          { "Share"}
+        </>
+      )}
     </button>
   );
 }

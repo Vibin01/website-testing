@@ -125,10 +125,14 @@ function HeaderBlock({
   subtitle,
   user,
   mode,
+  phase,
+  role
 }: {
   title: string;
   subtitle: string;
   user: any;
+  phase: string;
+  role: string;
   mode: "single" | "full";
 }) {
   const firstLetter = user?.name?.charAt(0)?.toUpperCase() || "U";
@@ -178,21 +182,7 @@ function HeaderBlock({
             </div>
           </div>
 
-<button
-  onClick={() => {
-    const pageUrl = encodeURIComponent(window.location.href);
-
-    window.open(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
-  }}
-  className="flex items-center cursor-pointer gap-2 text-[16px] font-bold"
->
-  <Share2 size={18} />
-  Share
-</button>
+<DownloadPdfButton mode={mode} role={role} phase={phase} action="share"/>
         </div>
       </div>
 
@@ -269,6 +259,8 @@ console.log(result.mode);
         title={phaseLabel}
         subtitle="Based on your response across 3 key situations in hiring."
         user={user}
+        phase={phase}
+        role={role}
         mode={mode}
       />
 
@@ -562,6 +554,8 @@ function OverallReport({
         user={user}
         title="Overall"
         mode={mode}
+        phase={phase}
+        role={role}
         subtitle="Based on your response across 5 key situations in hiring."
       />
 
