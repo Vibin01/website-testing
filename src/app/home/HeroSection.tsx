@@ -154,11 +154,7 @@ export const HeroSection = () => {
                 </React.Fragment>
               ))}
             </div>
-            <div className="mt-xl flex justify-center">
-              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] px-md py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-mobile-small md:shadow-web-small">
-                Discover your hiring alignment in real-world scenarios
-              </div>
-            </div>
+           
           </TabsContent>
 
           <TabsContent value="across" className="mt-xl">
@@ -223,21 +219,17 @@ export const HeroSection = () => {
               ))}
             </div>
 
-            <div className="mt-xl flex justify-center">
-              <div className="border border-[#DEEDFF] rounded-md min-w-[85%] py-sm bg-white text-[#2C2C2C] text-h6 font-medium shadow-mobile-small md:shadow-web-small">
-                Experience alignment across the hiring ecosystem.
-              </div>
-            </div>
+            
           </TabsContent>
         </Tabs>
 
-        <h2 className="text-h2 font-extrabold text-[#0668E1]  mt-xl">
+        <h2 className="text-h2 font-extrabold text-[#0668E1]  mt-xl pt-sm">
           <span className="inline-flex items-center gap-sm">
               
               <img
                 src={"/icons/star-icon.svg"}
                 alt="Star icon"
-                className="size-iconsize-md inline animate-pulse"
+                className="size-iconsize-lg inline animate-pulse"
               />
                Alignment Intelligence
             </span>

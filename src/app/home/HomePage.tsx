@@ -19,8 +19,6 @@ export const HomePage = () => {
     <>
       <main className="px-[5%] overflow-x-hidden">
         <div className=" relative -mx-[7%] bg-[url('/background/bg-hero-home-section.svg')] bg-no-repeat bg-cover bg-center">
-        <img src={"/background/bg-home-triangle.svg"} alt="bg-triangle" className="h-iconsize-2xl w-auto absolute top-[3%] right-[5%]"/>
-        <img src={"/background/bg-home-triangle.svg"} alt="bg-triangle" className="h-iconsize-2xl w-auto absolute bottom-[3%] left-[5%]"/>
 
           <HeroSection />
         </div>
