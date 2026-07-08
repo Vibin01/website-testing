@@ -19,7 +19,7 @@ function AchievementDiagramCard() {
           </span>
           <span >
             {" "}
-            <span className="inline font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">A</span>chieves{" "}
+            <span className="inline font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">A</span>spires{" "}
           </span>
           <br className="md:hidden" />
           <span>
