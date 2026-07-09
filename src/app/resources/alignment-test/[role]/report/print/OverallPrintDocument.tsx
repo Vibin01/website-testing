@@ -43,7 +43,7 @@ export default function OverallPrintDocument({
     if (!overall) return null;
 
   const color = getColor(overall?.mode);
-
+const isOldInsight = Array.isArray(content.insight);
   return (
 <main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">    
       <div className=" mt-[5%] flex items-center justify-between border-b border-[#D1E5FF] pb-4">
@@ -94,11 +94,19 @@ export default function OverallPrintDocument({
               </p>
             </div>
 
-            {content.insight.map((line: string, index: number) => (
-              <p key={index} className="mt-1 text-[11px] font-semibold">
-                {line}
-              </p>
-            ))}
+            {isOldInsight
+  ? content.insight.map((line: string, index: number) => (
+      <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+        {line}
+      </p>
+    ))
+  : (content.insight[overall.band ?? "Strong"] ?? []).map(
+      (line: string, index: number) => (
+        <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+          {line}
+        </p>
+      )
+    )}
           </div>
         </div>
 

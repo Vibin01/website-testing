@@ -44,6 +44,8 @@ export default function PhasePrintDocument({
 
   const color = getColor(result?.mode);
 
+    const isOldData = typeof content.patternName === "string";
+
   return (
     <main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">
       <div className="mt-[5%] flex items-center justify-between border-b border-[#D1E5FF] pb-4">
@@ -87,13 +89,16 @@ export default function PhasePrintDocument({
         </h2>
 
         <div className="mt-5 flex items-center gap-8">
+          {result.band !== "Dynamic" && (
           <MiniScoreCircle percentage={result.percentage} color={color} />
-
+          )}
           <div>
             <div className="flex items-center gap-3">
+              {result.band !== "Dynamic" && (
               <p className="text-[34px] font-extrabold" style={{ color }}>
                 {result.percentage}%
               </p>
+              )}
               <p
                 className="text-[17px] font-extrabold uppercase"
                 style={{ color }}
@@ -103,9 +108,13 @@ export default function PhasePrintDocument({
             </div>
 
             <p className="mt-1 text-[11px] font-extrabold">
-              Your Pattern: {content.patternName}
+              {isOldData
+      ? content.patternName
+      : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
             </p>
-            <p className="mt-1 text-[11px] font-medium">{content.phaseIntro}</p>
+            <p className="mt-1 text-[11px] font-medium">{isOldData ? content.phaseIntro
+    :
+    content.patternName[result.band ?? "Strong"]?.[1] ?? ""}</p>
           </div>
         </div>
 

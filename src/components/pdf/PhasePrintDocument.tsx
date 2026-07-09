@@ -123,7 +123,7 @@ export default function PhasePrintDocument({ report, user }: any) {
               </Text>
 
               <Text style={tw("text-xs mt-1")}>
-                Pattern: {content.patternName}
+                Pattern: {content.patternName[result.band][0]}
               </Text>
             </View>
           </View>

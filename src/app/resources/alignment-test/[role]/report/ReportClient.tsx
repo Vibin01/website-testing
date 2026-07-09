@@ -248,6 +248,8 @@ function PhaseReport({
     loadStatus();
   }, [role]);
 
+  const isOldData = typeof content.patternName === "string";
+
   // console.log(user);
   // console.log(content)
 
@@ -270,25 +272,38 @@ console.log(result.mode);
         </h2>
 
         <div className="mt-md flex flex-col gap-8 md:flex-row md:items-center">
-          <ScoreCircle percentage={result.percentage} mode={result.mode} />
-
+          {result.band !== "Dynamic" && (
+            <ScoreCircle percentage={result.percentage} mode={result.mode} />
+          )}
           <div>
             <div className="flex items-center gap-md">
+              {result.band !== "Dynamic" && (
               <p className="text-h2 font-extrabold" style={{ color }}>
                 {result.percentage}%
               </p>
+              )}
               <p className="text-h5 font-bold uppercase" style={{ color }}>
                 {result.mode}
               </p>
             </div>
 
-            <p className="mt-sm text-xl font-bold text-[#2C2C2C]">
-              Your Pattern:{" "}
-              <span className="text-xl font-medium">{content.patternName}</span>
-            </p>
+                <p className="mt-sm text-xl font-bold text-[#2C2C2C]">
+  Your Pattern:{" "}
+  <span className="text-xl font-medium">
+    {isOldData
+      ? content.patternName
+      : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
+  </span>
+</p>
 
-            <p className="text-xl font-medium">{content.phaseIntro}</p>
-          </div>
+
+  
+  <p className="text-xl font-medium">
+    {isOldData ? content.phaseIntro
+    :
+    content.patternName[result.band ?? "Strong"]?.[1] ?? ""}
+  </p>
+</div>
         </div>
 
         <div className="mt-lg grid grid-cols-1 gap-md md:grid-cols-3">
@@ -518,6 +533,7 @@ function OverallReport({
       icon: "/resources/alignment-test/execution-icon.svg",
     },
   ];
+const isOldInsight = Array.isArray(content.insight);
 
   if (report === null) {
     return (
@@ -578,11 +594,19 @@ function OverallReport({
             </div>
 
             <div className="mt-sm space-y-xs">
-              {content.insight.map((line: string, index: number) => (
-                <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-                  {line}
-                </p>
-              ))}
+{isOldInsight
+  ? content.insight.map((line: string, index: number) => (
+      <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+        {line}
+      </p>
+    ))
+  : (content.insight[overall.band ?? "Strong"] ?? []).map(
+      (line: string, index: number) => (
+        <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+          {line}
+        </p>
+      )
+    )}
             </div>
           </div>
         </div>

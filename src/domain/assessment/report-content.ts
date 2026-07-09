@@ -1295,7 +1295,7 @@ export const tendencyContent: Record<
     Tendency | "DYNAMIC",
     {
       mode: Mode;
-      patternName: string;
+      patternName: { Strong: string[]; Moderate: string[], Dynamic:string[]  };
       phaseIntro: string;
       centerCards: { title: string; lines: string[] }[];
       yourPattern: { Strong?: string; Moderate?: string, Dynamic?:string  };
@@ -1309,7 +1309,17 @@ export const tendencyContent: Record<
   candidate: {
     ACTION: {
       mode: "Unaligned",
-      patternName: "Acting Under Uncertainty",
+      patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your job search actions may begin before you fully understand the opportunity, making it harder for your career decisions and actions to stay connected over time."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your job search actions may begin before you fully understand the opportunity, making it harder for your career decisions and actions to stay connected over time."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your job search actions may begin before you fully understand the opportunity, making it harder for your career decisions and actions to stay connected over time."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how you respond when uncertainty feels difficult to tolerate",
       centerCards: [
@@ -1355,7 +1365,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     EVALUATION: {
       mode: "Aligned",
-      patternName: "Deciding With Clarity",
+       patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your understanding of opportunities, career decisions, and job search actions stays closely connected, helping you pursue roles that consistently support your career goals."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your understanding of opportunities, career decisions, and job search actions stays closely connected, helping you pursue roles that consistently support your career goals."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your understanding of opportunities, career decisions, and job search actions stays closely connected, helping you pursue roles that consistently support your career goals."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how you use understanding to guide action.",
       centerCards: [
@@ -1402,7 +1422,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     STABILITY: {
       mode: "Auto-Aligned",
-      patternName: "Staying Steady",
+       patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your career decisions and job search actions are guided by familiar experiences and established routines, creating consistency while making it easier to overlook changing opportunities."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your career decisions and job search actions are guided by familiar experiences and established routines, creating consistency while making it easier to overlook changing opportunities."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your career decisions and job search actions are guided by familiar experiences and established routines, creating consistency while making it easier to overlook changing opportunities."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how consistency shapes the way you respond.",
       centerCards: [
@@ -1448,7 +1478,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     PERCEPTION: {
       mode: "Misaligned",
-      patternName: "Acting Through Perception",
+      patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your career decisions may become influenced by how opportunities appear and the career outcomes you anticipate, making it easier to commit before those expectations are fully confirmed."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your career decisions may become influenced by how opportunities appear and the career outcomes you anticipate, making it easier to commit before those expectations are fully confirmed."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your career decisions may become influenced by how opportunities appear and the career outcomes you anticipate, making it easier to commit before those expectations are fully confirmed."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how interpretation influences the way you respond.",
       centerCards: [
@@ -1494,7 +1534,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     DYNAMIC: {
       mode: "Dynamic",
-      patternName: "Adapting to the Situation",
+      patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "The connection between opportunities, career decisions, and job search actions shifts from one situation to another, making it harder to maintain a consistent career direction."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "The connection between opportunities, career decisions, and job search actions shifts from one situation to another, making it harder to maintain a consistent career direction."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "The connection between opportunities, career decisions, and job search actions shifts from one situation to another, making it harder to maintain a consistent career direction."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how your response changes across situations.",
       centerCards: [
@@ -1539,7 +1589,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
   recruiter: {
     ACTION: {
       mode: "Unaligned",
-      patternName: "Acting Under Uncertainty",
+       patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Recruitment activities may begin before role expectations are fully understood, making it harder for hiring decisions and execution to remain connected throughout the hiring process."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Recruitment activities may begin before role expectations are fully understood, making it harder for hiring decisions and execution to remain connected throughout the hiring process."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Recruitment activities may begin before role expectations are fully understood, making it harder for hiring decisions and execution to remain connected throughout the hiring process."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how you respond when uncertainty feels difficult to tolerate",
       centerCards: [
@@ -1585,7 +1645,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     EVALUATION: {
       mode: "Aligned",
-      patternName: "Deciding With Clarity",
+       patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your understanding of candidate fit, hiring decisions, and recruitment execution stays closely connected, helping you move the right candidates through the hiring process with consistency."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your understanding of candidate fit, hiring decisions, and recruitment execution stays closely connected, helping you move the right candidates through the hiring process with consistency."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your understanding of candidate fit, hiring decisions, and recruitment execution stays closely connected, helping you move the right candidates through the hiring process with consistency."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how you use understanding to guide action.",
       centerCards: [
@@ -1632,7 +1702,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     STABILITY: {
       mode: "Auto-Aligned",
-      patternName: "Staying Steady",
+        patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your hiring decisions and recruitment execution are guided by established hiring practices and familiar workflows, creating consistency while making it harder to adapt to changing talent needs."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring decisions and recruitment execution are guided by established hiring practices and familiar workflows, creating consistency while making it harder to adapt to changing talent needs."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring decisions and recruitment execution are guided by established hiring practices and familiar workflows, creating consistency while making it harder to adapt to changing talent needs."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how consistency shapes the way you respond.",
       centerCards: [
@@ -1678,7 +1758,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     PERCEPTION: {
       mode: "Misaligned",
-      patternName: "Acting Through Perception",
+       patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your hiring decisions may become influenced by candidate signals and first impressions, together with the hiring outcomes you anticipate, making it easier to advance candidates before those expectations are fully validated."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring decisions may become influenced by candidate signals and first impressions, together with the hiring outcomes you anticipate, making it easier to advance candidates before those expectations are fully validated."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring decisions may become influenced by candidate signals and first impressions, together with the hiring outcomes you anticipate, making it easier to advance candidates before those expectations are fully validated."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how interpretation influences the way you respond.",
       centerCards: [
@@ -1724,7 +1814,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     DYNAMIC: {
       mode: "Dynamic",
-      patternName: "Adapting to the Situation",
+      patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "The connection between candidate evaluation, hiring decisions, and recruitment execution shifts across situations, making it harder to maintain a consistent hiring process."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "The connection between candidate evaluation, hiring decisions, and recruitment execution shifts across situations, making it harder to maintain a consistent hiring process."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "The connection between candidate evaluation, hiring decisions, and recruitment execution shifts across situations, making it harder to maintain a consistent hiring process."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how your response changes across situations.",
       centerCards: [
@@ -1769,7 +1869,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
   }, employer: {
     ACTION: {
       mode: "Unaligned",
-      patternName: "Acting Under Uncertainty",
+       patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Hiring initiatives may begin before business priorities are fully aligned, making it harder for hiring decisions and workforce direction to remain connected as hiring progresses."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Hiring initiatives may begin before business priorities are fully aligned, making it harder for hiring decisions and workforce direction to remain connected as hiring progresses."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Hiring initiatives may begin before business priorities are fully aligned, making it harder for hiring decisions and workforce direction to remain connected as hiring progresses."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how you respond when uncertainty feels difficult to tolerate",
       centerCards: [
@@ -1816,7 +1926,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     EVALUATION: {
       mode: "Aligned",
-      patternName: "Deciding With Clarity",
+        patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your understanding of business needs, hiring decisions, and workforce direction stays closely connected, helping your hiring investments consistently support long-term business growth.  "
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your understanding of business needs, hiring decisions, and workforce direction stays closely connected, helping your hiring investments consistently support long-term business growth.  "
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your understanding of business needs, hiring decisions, and workforce direction stays closely connected, helping your hiring investments consistently support long-term business growth.  "
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how you use understanding to guide action.",
       centerCards: [
@@ -1863,7 +1983,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     STABILITY: {
       mode: "Auto-Aligned",
-      patternName: "Staying Steady",
+       patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your hiring decisions and workforce direction are guided by established hiring policies and talent acquisition practices, creating stability while making it harder to respond to changing business priorities."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring decisions and workforce direction are guided by established hiring policies and talent acquisition practices, creating stability while making it harder to respond to changing business priorities."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring decisions and workforce direction are guided by established hiring policies and talent acquisition practices, creating stability while making it harder to respond to changing business priorities."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how consistency shapes the way you respond.",
       centerCards: [
@@ -1909,7 +2039,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     PERCEPTION: {
       mode: "Misaligned",
-      patternName: "Acting Through Perception",
+      patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "Your hiring direction may become influenced by interpreted business and market signals, together with the growth outcomes you anticipate, making it easier to expand hiring before those expectations are fully validated."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring direction may become influenced by interpreted business and market signals, together with the growth outcomes you anticipate, making it easier to expand hiring before those expectations are fully validated."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring direction may become influenced by interpreted business and market signals, together with the growth outcomes you anticipate, making it easier to expand hiring before those expectations are fully validated."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how interpretation influences the way you respond.",
       centerCards: [
@@ -1955,7 +2095,17 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 
     DYNAMIC: {
       mode: "Dynamic",
-      patternName: "Adapting to the Situation",
+      patternName: {
+      Strong: ["Across these situations, the same alignment pattern consistently guided your decisions.",
+        "The connection between business priorities, hiring decisions, and workforce direction shifts across situations, making it harder to sustain a consistent hiring strategy."
+      ],
+      Moderate: ["Across these situations, one alignment pattern guided your decisions more often than the others.",
+        "The connection between business priorities, hiring decisions, and workforce direction shifts across situations, making it harder to sustain a consistent hiring strategy."
+      ],
+      Dynamic: ["Across these situations, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "The connection between business priorities, hiring decisions, and workforce direction shifts across situations, making it harder to sustain a consistent hiring strategy."
+      ],
+    },
       phaseIntro:
         "Your decisions in this phase reveal how your response changes across situations.",
       centerCards: [
@@ -2002,7 +2152,7 @@ Strong: "Across these situations, you consistently act early when clarity is mis
 export const overallContentByMode:Record<Role, Record<
   Mode,
   {
-    insight: string[];
+    insight:  { Strong: string[]; Moderate: string[], Dynamic:string[]  };
     pattern: string[];
     trigger: string[];
     outcome: string[];
@@ -2019,11 +2169,17 @@ export const overallContentByMode:Record<Role, Record<
 >> = {
 candidate: {
   Aligned: {
-    insight: [
-      "You reduce uncertainty by understanding first.",
-      "Clarity becomes your reference point before action.",
-      "This helps keep decisions connected to the outcomes you want to achieve.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your understanding of opportunities, career decisions, and job search actions remained closely connected, helping you pursue career opportunities with greater clarity, consistency, and long-term direction. "
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your understanding of opportunities, career decisions, and job search actions remained closely connected, helping you pursue career opportunities with greater clarity, consistency, and long-term direction. "
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your understanding of opportunities, career decisions, and job search actions remained closely connected, helping you pursue career opportunities with greater clarity, consistency, and long-term direction. "
+      ],
+    },
     pattern: [
       "You evaluate situations before deciding how to respond.",
       "Your decisions are guided by understanding rather than urgency.",
@@ -2068,11 +2224,17 @@ candidate: {
     ],
   },
    "Auto-Aligned": {
-    insight: [
-      "You reduce uncertainty through consistency.",
-      "Previous experiences guide how you respond.",
-      "This reduces the need to continually reassess every situation.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your career decisions and job search actions were consistently guided by familiar experiences and established routines, creating stability while making it easier to overlook changing career opportunities."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your career decisions and job search actions were consistently guided by familiar experiences and established routines, creating stability while making it easier to overlook changing career opportunities."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your career decisions and job search actions were consistently guided by familiar experiences and established routines, creating stability while making it easier to overlook changing career opportunities."
+      ],
+    },
     pattern: [
       "You rely on familiar approaches rather than re-evaluating every situation.",
       "Your responses remain consistent based on previous experiences.",
@@ -2117,11 +2279,17 @@ candidate: {
     ],
   },
     Misaligned: {
-    insight: [
-      "You reduce uncertainty through interpretation.",
-      "The meaning you assign to situations guides how you respond.",
-      "This creates direction, even when clarity is still developing.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your career decisions were often influenced by how opportunities appeared and the career outcomes you anticipated, making it easier to commit before those expectations were fully confirmed."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your career decisions were often influenced by how opportunities appeared and the career outcomes you anticipated, making it easier to commit before those expectations were fully confirmed."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your career decisions were often influenced by how opportunities appeared and the career outcomes you anticipated, making it easier to commit before those expectations were fully confirmed."
+      ],
+    },
     pattern: [
       "You respond based on how situations appear rather than waiting for complete confirmation.",
       "Your decisions are influenced by signals, interpretations, and perceived meaning.",
@@ -2166,11 +2334,17 @@ candidate: {
     ],
   },
    Unaligned: {
-    insight: [
-      "You reduce uncertainty by moving forward.",
-      "Taking action becomes a way to regain momentum.",
-      "This creates progress, even when clarity is still developing.",
-    ],
+   insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your job search actions often began before the opportunity was fully understood, making it harder for your career decisions and actions to remain connected over time."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your job search actions often began before the opportunity was fully understood, making it harder for your career decisions and actions to remain connected over time."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your job search actions often began before the opportunity was fully understood, making it harder for your career decisions and actions to remain connected over time."
+      ],
+    },
     pattern: [
       "You act early when hiring situations become unclear or uncertain.",
       "Progress becomes more important than waiting for complete clarity.",
@@ -2215,11 +2389,17 @@ candidate: {
     ],
   },
    Dynamic: {
-    insight: [
-      "You reduce uncertainty differently across situations.",
-      "Your response changes depending on what matters most at the time.",
-      "This creates flexibility, but not always consistency.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "The connection between opportunities, career decisions, and job search actions shifted across situations, making it harder to maintain a consistent career direction over time."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "The connection between opportunities, career decisions, and job search actions shifted across situations, making it harder to maintain a consistent career direction over time."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "The connection between opportunities, career decisions, and job search actions shifted across situations, making it harder to maintain a consistent career direction over time."
+      ],
+    },
     pattern: [
       "Your responses change across hiring situations without following one consistent approach.",
       "Different priorities guide your decisions depending on the opportunity and context.",
@@ -2266,11 +2446,17 @@ candidate: {
 },
 recruiter: {
    Aligned: {
-    insight: [
-      "You reduce uncertainty by understanding first.",
-      "Clarity becomes your reference point before action.",
-      "This helps keep hiring decisions connected to execution.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your understanding of candidate fit, hiring decisions, and recruitment execution remained closely connected, helping you maintain a consistent hiring process and deliver better recruitment outcomes."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your understanding of candidate fit, hiring decisions, and recruitment execution remained closely connected, helping you maintain a consistent hiring process and deliver better recruitment outcomes."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your understanding of candidate fit, hiring decisions, and recruitment execution remained closely connected, helping you maintain a consistent hiring process and deliver better recruitment outcomes."
+      ],
+    },
     pattern: [
       "You evaluate hiring situations before deciding how to respond.",
       "Your decisions are guided by understanding rather than urgency.",
@@ -2315,11 +2501,17 @@ recruiter: {
     ],
   },
    "Auto-Aligned": {
-    insight: [
-      "You reduce uncertainty through consistency.",
-      "Previous hiring experiences guide how you respond.",
-      "This reduces the need to continually reassess every situation.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your hiring decisions and recruitment execution were consistently guided by established hiring practices and familiar workflows, creating operational stability while making it harder to adapt to changing talent needs."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring decisions and recruitment execution were consistently guided by established hiring practices and familiar workflows, creating operational stability while making it harder to adapt to changing talent needs."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring decisions and recruitment execution were consistently guided by established hiring practices and familiar workflows, creating operational stability while making it harder to adapt to changing talent needs."
+      ],
+    },
     pattern: [
       "You rely on established hiring approaches rather than re-evaluating every situation.",
       "Your responses remain consistent based on previous hiring experiences.",
@@ -2364,11 +2556,17 @@ recruiter: {
     ],
   },
      Misaligned: {
-    insight: [
-      "You reduce uncertainty through interpretation.",
-      "The meaning you assign to hiring situations guides how you respond.",
-      "This creates direction, even when clarity is still developing.",
-    ],
+   insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your hiring decisions were often influenced by candidate signals and the hiring outcomes you anticipated, making it easier to advance candidates before those expectations were fully validated."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring decisions were often influenced by candidate signals and the hiring outcomes you anticipated, making it easier to advance candidates before those expectations were fully validated."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring decisions were often influenced by candidate signals and the hiring outcomes you anticipated, making it easier to advance candidates before those expectations were fully validated."
+      ],
+    },
     pattern: [
       "You respond based on how hiring situations appear rather than waiting for complete confirmation.",
       "Your decisions are influenced by signals, interpretations, and perceived intent.",
@@ -2413,11 +2611,17 @@ recruiter: {
     ],
   },
   Unaligned: {
-    insight: [
-      "You reduce uncertainty by creating movement.",
-      "Taking action becomes a way to maintain hiring momentum.",
-      "This creates progress, even when clarity is still developing.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your recruitment activities often began before role expectations were fully understood, making it harder for hiring decisions and execution to remain connected throughout the hiring process."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your recruitment activities often began before role expectations were fully understood, making it harder for hiring decisions and execution to remain connected throughout the hiring process."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your recruitment activities often began before role expectations were fully understood, making it harder for hiring decisions and execution to remain connected throughout the hiring process."
+      ],
+    },
     pattern: [
       "You act early when hiring progress begins to slow or become unclear.",
       "Maintaining momentum becomes more important than waiting for additional information.",
@@ -2462,11 +2666,17 @@ recruiter: {
     ],
   },
   Dynamic: {
-    insight: [
-      "You reduce uncertainty differently across hiring situations.",
-      "Your response changes depending on current hiring priorities.",
-      "This creates flexibility, but not always consistency.",
-    ],
+     insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "The connection between candidate evaluation, hiring decisions, and recruitment execution shifted across situations, making it harder to maintain a consistent hiring process over time."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "The connection between candidate evaluation, hiring decisions, and recruitment execution shifted across situations, making it harder to maintain a consistent hiring process over time."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "The connection between candidate evaluation, hiring decisions, and recruitment execution shifted across situations, making it harder to maintain a consistent hiring process over time."
+      ],
+    },
     pattern: [
       "Your responses change across hiring situations without following one consistent approach.",
       "Different priorities guide your decisions depending on hiring conditions and stakeholder needs.",
@@ -2513,11 +2723,17 @@ recruiter: {
 },
 employer: {
    Aligned: {
-    insight: [
-      "You reduce uncertainty by understanding first.",
-      "Clarity becomes your reference point before action.",
-      "This helps keep decisions connected to organizational outcomes.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your understanding of business needs, hiring decisions, and workforce direction remained closely connected, helping your hiring investments consistently support long-term business growth."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your understanding of business needs, hiring decisions, and workforce direction remained closely connected, helping your hiring investments consistently support long-term business growth."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your understanding of business needs, hiring decisions, and workforce direction remained closely connected, helping your hiring investments consistently support long-term business growth."
+      ],
+    },
     pattern: [
       "You evaluate situations before making hiring decisions.",
       "Your decisions are guided by understanding rather than urgency.",
@@ -2562,11 +2778,17 @@ employer: {
     ],
   },
    "Auto-Aligned": {
-    insight: [
-      "You reduce uncertainty through consistency.",
-      "Previous outcomes guide how you respond.",
-      "This reduces the need to continually reassess every situation.",
-    ],
+    insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your hiring decisions and workforce direction were consistently guided by established hiring policies and talent acquisition practices, creating organizational stability while making it harder to respond to evolving business priorities."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring decisions and workforce direction were consistently guided by established hiring policies and talent acquisition practices, creating organizational stability while making it harder to respond to evolving business priorities."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring decisions and workforce direction were consistently guided by established hiring policies and talent acquisition practices, creating organizational stability while making it harder to respond to evolving business priorities."
+      ],
+    },
     pattern: [
       "You rely on established approaches rather than re-evaluating every situation.",
       "Your decisions remain consistent based on previous business outcomes.",
@@ -2611,11 +2833,17 @@ employer: {
     ],
   },
      Misaligned: {
-    insight: [
-      "You reduce uncertainty through interpretation.",
-      "The meaning you assign to business situations guides how you respond.",
-      "This creates direction, even when clarity is still developing.",
-    ],
+   insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your hiring direction was often influenced by interpreted business and market signals and the growth outcomes you anticipated, making it easier to expand hiring before those expectations were fully validated."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring direction was often influenced by interpreted business and market signals and the growth outcomes you anticipated, making it easier to expand hiring before those expectations were fully validated."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring direction was often influenced by interpreted business and market signals and the growth outcomes you anticipated, making it easier to expand hiring before those expectations were fully validated."
+      ],
+    },
     pattern: [
       "You respond based on how business situations appear rather than waiting for complete confirmation.",
       "Your decisions are influenced by signals, interpretations, and perceived impact.",
@@ -2660,11 +2888,17 @@ employer: {
     ],
   },
   Unaligned: {
-    insight: [
-      "You reduce uncertainty by moving decisions forward.",
-      "Taking action becomes a way to maintain organizational direction.",
-      "This creates progress, even when clarity is still developing.",
-    ],
+   insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "Your hiring initiatives often began before business priorities were fully understood, making it harder for hiring decisions and workforce direction to remain connected as hiring progressed."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "Your hiring initiatives often began before business priorities were fully understood, making it harder for hiring decisions and workforce direction to remain connected as hiring progressed."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "Your hiring initiatives often began before business priorities were fully understood, making it harder for hiring decisions and workforce direction to remain connected as hiring progressed."
+      ],
+    },
     pattern: [
       "You act early when hiring outcomes or priorities become uncertain.",
       "Maintaining progress becomes more important than waiting for additional clarity.",
@@ -2709,11 +2943,17 @@ employer: {
     ],
   },
    Dynamic: {
-    insight: [
-      "You reduce uncertainty differently across business situations.",
-      "Your response changes depending on current organizational priorities.",
-      "This creates flexibility, but not always consistency.",
-    ],
+      insight: {
+      Strong: ["Throughout the assessment, the same alignment pattern consistently guided your decisions.",
+        "The connection between business priorities, hiring decisions, and workforce direction shifted across situations, making it harder to sustain a consistent hiring strategy over time."
+      ],
+      Moderate: ["Throughout the assessment, one alignment pattern guided your decisions more often than the others.",
+        "The connection between business priorities, hiring decisions, and workforce direction shifted across situations, making it harder to sustain a consistent hiring strategy over time."
+      ],
+      Dynamic: ["Throughout the assessment, different alignment patterns emerged, so no single pattern consistently guided your decisions.",
+        "The connection between business priorities, hiring decisions, and workforce direction shifted across situations, making it harder to sustain a consistent hiring strategy over time."
+      ],
+    },
     pattern: [
       "Your responses change across business situations without following one consistent approach.",
       "Different priorities guide your decisions depending on organizational needs and context.",
