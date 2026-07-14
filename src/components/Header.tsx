@@ -30,23 +30,20 @@ const authOptions = [
     label: "Candidate",
     login:
       "https://play.google.com/store/apps/details?id=com.primethic.connectec",
-    register: "https://candidate.connectec.app/register",
+    register: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
     icon: "/icons/candidate-round-icon.svg",
-    block: true,
   },
   {
     label: "Recruiter",
     login: "https://recruiter.connectec.app/login",
     register: "https://recruiter.connectec.app/register",
     icon: "/icons/recruiters-round-icon.svg",
-    block: false,
   },
   {
     label: "Employer",
     login: "https://employer.connectec.app/login",
     register: "https://employer.connectec.app/register",
     icon: "/icons/employer-round-icon.svg",
-    block: false,
   },
 ];
 
@@ -284,7 +281,7 @@ export const Header = () => {
                               href={item.login}
                               target="_blank"
                               className={`
-          ${item.block ? "cursor-no-drop pointer-events-none opacity-50" : "cursor-pointer"}
+          cursor-pointer
           group
           relative
           flex
@@ -365,9 +362,9 @@ export const Header = () => {
                               key={item.label}
                               href={item.register}
                               target="_blank"
-                              aria-disabled={item.block}
+                              
                               className={`
-          ${item.block ? "cursor-no-drop pointer-events-none opacity-50" : "cursor-pointer"}
+          cursor-pointer
           group
           relative
           flex

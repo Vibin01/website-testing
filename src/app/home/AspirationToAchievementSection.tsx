@@ -131,7 +131,7 @@ function AchievementDiagramCard() {
           </button>
 </div>
           <button className="py-sm rounded-md border border-[#B2D0F6] text-nowrap bg-white px-sm text-h5 font-bold text-[#0668E1]">
-            Hiring Alignment made EASY
+            Hiring Alignment Made EASY
           </button>
 
         </div>
