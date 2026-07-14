@@ -30,6 +30,8 @@ export async function getBlog(slug: string) {
 export function getAllBlogs(): {
   slug: string;
   date: string;
+  heading_highlight: string;
+  img_url:string;
   heading: string;
   title: string;
 }[] {
@@ -37,6 +39,6 @@ export function getAllBlogs(): {
     const slug = file.replace(/\.mdx$/, "");
     const fileContent = fs.readFileSync(path.join(BLOGS_PATH, file), "utf-8");
     const { data } = matter(fileContent);
-    return { slug, date: data.date, heading: data.heading, title: data.title };
+    return { slug, date: data.date, heading: data.heading, heading_highlight: data.heading_highlight, img_url: data.img_url, title: data.title };
   });
 }

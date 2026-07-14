@@ -41,14 +41,16 @@ export const BlogSection = ({ blogs }: { blogs: any[] }) => {
         ))}
       </div>
 
-      <div className="mt-7 flex justify-center">
-        <button
-          onClick={() => setShowAll((prev) => !prev)}
-          className="h-[34px] rounded-[6px] border border-[#0668E1] px-7 text-[14px] font-bold text-[#0668E1]"
-        >
-          See All
-        </button>
-      </div>
+     {blogs.length > 3 && (
+  <div className="mt-7 flex justify-center">
+    <button
+      onClick={() => setShowAll((prev) => !prev)}
+      className="h-[34px] rounded-[6px] border border-[#0668E1] px-7 text-[14px] font-bold text-[#0668E1]"
+    >
+      {showAll ? "Show Less" : "See All"}
+    </button>
+  </div>
+)}
     </section>
   );
 };
