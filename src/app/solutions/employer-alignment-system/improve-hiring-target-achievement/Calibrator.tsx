@@ -219,8 +219,9 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
     `}
             >
               <p className="text-xl font-medium text-[#0668E1]">
-                Derived from your hiring data, these insights are aligned to
-                help you achieve your quarterly targets.
+                The interface shown is a conceptual representation of the
+                Connect EC solution. Features, styling, content, workflows, and
+                screen layouts may vary in the final product.
               </p>
 
               <div className="absolute left-[18px] top-full h-4 w-4 -translate-y-1/2 rotate-45 border-b border-r border-[#9EC5FF] bg-[#EAF4FF]" />

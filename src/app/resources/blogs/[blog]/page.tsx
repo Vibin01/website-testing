@@ -2,6 +2,8 @@ import { getAllBlogs, getBlog } from "@/lib/mdx";
 
 export async function generateStaticParams() {
   const blogs = await getAllBlogs();
+  // console.log(blogs);
+
   return blogs.map((b) => ({ blog: b.slug }));
 }
 
@@ -25,8 +27,8 @@ export default async function BlogPage(props: {
   const { content } = await getBlog(blog);
 
   return (
-    <article className="bg-[url('/background/mobile-blog-bg.svg')] lg:bg-[url('/background/blog-bg.svg')] bg-cover bg-center">
-      <div className=" px-[7%]">{content}</div>
+    <article className="">
+      <div className=" px-[5%] md:px-[10%] py-[5%]">{content}</div>
     </article>
   );
 }

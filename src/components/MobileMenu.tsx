@@ -11,7 +11,8 @@ const authOptions = [
   {
     label: "Candidate",
     icon: "/icons/candidate-round-icon.svg",
-    login: "https://candidate.connectec.app/login",
+    login:
+      "https://play.google.com/store/apps/details?id=com.primethic.connectec",
     register: "https://candidate.connectec.app/register",
   },
   {
@@ -80,8 +81,9 @@ export default function MobileMenu({
             : "-translate-y-full opacity-0"
         }`}
       >
-        
-        <div className={` flex items-center justify-between border-b border-[#DCEBFF] px-6 py-7`}>
+        <div
+          className={` flex items-center justify-between border-b border-[#DCEBFF] px-6 py-7`}
+        >
           <div className="flex items-center gap-md">
             <Image
               src="/Connect_EC_Logo.svg"
@@ -99,7 +101,9 @@ export default function MobileMenu({
         </div>
 
         {/* Menu */}
-        <div className={`px-lg ${showAuthSheet && "pointer-events-none  bg-black/10 "}`}>
+        <div
+          className={`px-lg ${showAuthSheet && "pointer-events-none  bg-black/10 "}`}
+        >
           <nav className="flex flex-col">
             {/* Home */}
             <Link
@@ -137,7 +141,7 @@ export default function MobileMenu({
               Recruiters
             </Link>
 
-                {/* Solutions */}
+            {/* Solutions */}
             <div className="border-b border-[#E5E5E5]">
               <div
                 className="flex items-center justify-between py-md "
@@ -217,7 +221,7 @@ export default function MobileMenu({
                         className="py-2 text-xl font-medium"
                       >
                         Easy Reviewer
-                         <span className="mt-xs block text-lg font-medium">
+                        <span className="mt-xs block text-lg font-medium">
                           The Employer Insight System.
                         </span>
                       </Link>
@@ -240,10 +244,9 @@ export default function MobileMenu({
                         className="py-2 text-xl font-medium"
                       >
                         Easy Evaluator
-                         <span className="mt-xs block text-lg font-medium">
+                        <span className="mt-xs block text-lg font-medium">
                           Interview Evaluation System.
                         </span>
-                        
                       </Link>
 
                       <Link
@@ -252,7 +255,7 @@ export default function MobileMenu({
                         className="py-2 text-xl font-medium"
                       >
                         Easy Facilitator
-                         <span className="mt-xs block text-lg font-medium">
+                        <span className="mt-xs block text-lg font-medium">
                           The Offer Decision System.
                         </span>
                       </Link>
@@ -263,7 +266,7 @@ export default function MobileMenu({
                         className="py-2 text-xl font-medium"
                       >
                         Easy Scheduler
-                         <span className="mt-xs block text-lg font-medium">
+                        <span className="mt-xs block text-lg font-medium">
                           The Interview Coordination System.
                         </span>
                       </Link>
@@ -274,12 +277,10 @@ export default function MobileMenu({
                         className="py-2 text-xl font-medium"
                       >
                         Easy Predictor
-                         <span className="mt-xs block text-lg font-medium">
+                        <span className="mt-xs block text-lg font-medium">
                           The Interview Transition System.
                         </span>
                       </Link>
-                     
-                      
                     </div>
                   </details>
 
@@ -355,10 +356,10 @@ export default function MobileMenu({
                       >
                         Easy Predictor
                         <span className="mt-xs block text-lg font-medium">
-                         Transform No-shows into Know-shows.
+                          Transform No-shows into Know-shows.
                         </span>
                       </Link>
-                        <Link
+                      <Link
                         href="/solutions/employer-alignment-system/track-hiring-progress-and-bottlenecks"
                         onClick={handleCloseMenu}
                         className="py-2 text-xl font-medium"
@@ -449,7 +450,6 @@ export default function MobileMenu({
               )}
             </div>
 
-
             {/* Pricing */}
             <Link
               href="/hiring-platform-pricing"
@@ -459,56 +459,52 @@ export default function MobileMenu({
               Pricing
             </Link>
           </nav>
-          
         </div>
-        {!showAuthSheet &&(
-        <button
+        {!showAuthSheet && (
+          <button
             onClick={() => setShowAuthSheet(true)}
             className="mt-xl w-full rounded-md bg-[#0668E1] py-4 text-xl font-semibold text-white"
           >
             Log in / Sign up
           </button>
-          ) }
-          {/* Auth Bottom Sheet */}
-          <div
-            className={`fixed bottom-0 left-0 z-[999999] w-full rounded-t-xl bg-white transition-all duration-300 ${
-              showAuthSheet
-                ? " translate-y-0 opacity-100"
-                : "hidden! translate-y-full opacity-0"
-            }`}
-          >
-            <div className="flex items-center justify-between border-b border-[#E5E5E5] px-6 py-5">
-              <h2 className="text-base font-bold text-[#1B1C17]">
-                Log in/Sign up
-              </h2>
+        )}
+        {/* Auth Bottom Sheet */}
+        <div
+          className={`fixed bottom-0 left-0 z-[999999] w-full rounded-t-xl bg-white transition-all duration-300 ${
+            showAuthSheet
+              ? " translate-y-0 opacity-100"
+              : "hidden! translate-y-full opacity-0"
+          }`}
+        >
+          <div className="flex items-center justify-between border-b border-[#E5E5E5] px-6 py-5">
+            <h2 className="text-base font-bold text-[#1B1C17]">
+              Log in/Sign up
+            </h2>
 
-              <X
-                onClick={() => setShowAuthSheet(false)}
-                className="size-8 cursor-pointer text-[#B3B3B3]"
-              />
-            </div>
-
-            <div className="flex flex-col gap-4 p-md">
-              {authOptions.map((item, index) => (
-                <Link
-                  key={item.label}
-                  href={item.login}
-                  className={`flex items-center gap-4 rounded-md border p-4 transition hover:border hover:border-[#B9D8FF] hover:bg-[#F4F8FF]  border-transparent`}>
-                  <img
-                    src={item.icon}
-                    alt={item.label}
-                    className="size-iconsize-md object-contain"
-                  />
-
-                  <span
-                    className={`text-xl font-semibold `}
-                  >
-                    {item.label}
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <X
+              onClick={() => setShowAuthSheet(false)}
+              className="size-8 cursor-pointer text-[#B3B3B3]"
+            />
           </div>
+
+          <div className="flex flex-col gap-4 p-md">
+            {authOptions.map((item, index) => (
+              <Link
+                key={item.label}
+                href={item.login}
+                className={`flex items-center gap-4 rounded-md border p-4 transition hover:border hover:border-[#B9D8FF] hover:bg-[#F4F8FF]  border-transparent`}
+              >
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  className="size-iconsize-md object-contain"
+                />
+
+                <span className={`text-xl font-semibold `}>{item.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

@@ -28,7 +28,8 @@ const navItems = [
 const authOptions = [
   {
     label: "Candidate",
-    login: "https://candidate.connectec.app/login",
+    login:
+      "https://play.google.com/store/apps/details?id=com.primethic.connectec",
     register: "https://candidate.connectec.app/register",
     icon: "/icons/candidate-round-icon.svg",
     block: true,
@@ -69,7 +70,7 @@ export const Header = () => {
     if (resourcesTimer.current) {
       clearTimeout(resourcesTimer.current);
     }
-setShowSolutions(false)
+    setShowSolutions(false);
     setShowResources(true);
   };
 
@@ -84,9 +85,8 @@ setShowSolutions(false)
     if (closeTimer.current) {
       clearTimeout(closeTimer.current);
     }
-setShowResources(false)
+    setShowResources(false);
     setShowSolutions(true);
-
   };
 
   const handleMouseLeave = () => {
@@ -146,7 +146,7 @@ setShowResources(false)
                         ? pathname === "/" || pathname.startsWith("/home")
                         : pathname.startsWith(item.link);
 
-  // Solutions Dropdown
+                    // Solutions Dropdown
                     if (item.name === "Solutions") {
                       return (
                         <li
@@ -183,7 +183,6 @@ setShowResources(false)
                         </li>
                       );
                     }
-
 
                     // Resources Dropdown
                     if (item.name === "Resources") {
@@ -223,7 +222,6 @@ setShowResources(false)
                       );
                     }
 
-                  
                     // Normal Nav Items
                     return (
                       <li
@@ -279,13 +277,13 @@ setShowResources(false)
 
                     {authDropdown === "login" && (
                       <div className="absolute top-[60px] right-0 w-[200px] rounded-md border border-[#D6E8FF] bg-white p-sm z-[9999]">
-  <div className="space-y-sm">
-    {authOptions.map((item) => (
-      <Link
-        key={item.label}
-        href={item.login}
-        target="_blank"
-        className={`
+                        <div className="space-y-sm">
+                          {authOptions.map((item) => (
+                            <Link
+                              key={item.label}
+                              href={item.login}
+                              target="_blank"
+                              className={`
           ${item.block ? "cursor-no-drop pointer-events-none opacity-50" : "cursor-pointer"}
           group
           relative
@@ -296,20 +294,20 @@ setShowResources(false)
           p-sm
           hover:text-[#0668E1]
         `}
-      >
-        <img
-          src={item.icon}
-          alt={item.label}
-          className="size-iconsize-sm object-contain"
-        />
+                            >
+                              <img
+                                src={item.icon}
+                                alt={item.label}
+                                className="size-iconsize-sm object-contain"
+                              />
 
-        <span className="text-xl font-semibold">
-          {item.label}
-        </span>
+                              <span className="text-xl font-semibold">
+                                {item.label}
+                              </span>
 
-        {/* Bottom Border Animation */}
-        <span
-          className="
+                              {/* Bottom Border Animation */}
+                              <span
+                                className="
             absolute
             bottom-0
             left-1/2
@@ -322,11 +320,11 @@ setShowResources(false)
             ease-out
             group-hover:w-[calc(100%-16px)]
           "
-        />
-      </Link>
-    ))}
-  </div>
-</div>
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     )}
                   </div>
 
@@ -360,15 +358,15 @@ setShowResources(false)
                     </button>
 
                     {authDropdown === "register" && (
-                    <div className="absolute top-[60px] right-0 w-[200px] rounded-md border border-[#D6E8FF] bg-white p-sm z-[9999]">
-  <div className="space-y-sm">
-    {authOptions.map((item) => (
-      <Link
-        key={item.label}
-        href={item.register}
-        target="_blank"
-        aria-disabled={item.block}
-        className={`
+                      <div className="absolute top-[60px] right-0 w-[200px] rounded-md border border-[#D6E8FF] bg-white p-sm z-[9999]">
+                        <div className="space-y-sm">
+                          {authOptions.map((item) => (
+                            <Link
+                              key={item.label}
+                              href={item.register}
+                              target="_blank"
+                              aria-disabled={item.block}
+                              className={`
           ${item.block ? "cursor-no-drop pointer-events-none opacity-50" : "cursor-pointer"}
           group
           relative
@@ -381,20 +379,20 @@ setShowResources(false)
           duration-300
           hover:text-[#0668E1]
         `}
-      >
-        <img
-          src={item.icon}
-          alt={item.label}
-          className="size-iconsize-sm object-contain"
-        />
+                            >
+                              <img
+                                src={item.icon}
+                                alt={item.label}
+                                className="size-iconsize-sm object-contain"
+                              />
 
-        <span className="text-xl font-semibold">
-          {item.label}
-        </span>
+                              <span className="text-xl font-semibold">
+                                {item.label}
+                              </span>
 
-        {/* Animated Bottom Border */}
-        <span
-          className="
+                              {/* Animated Bottom Border */}
+                              <span
+                                className="
             absolute
             bottom-0
             left-1/2
@@ -407,11 +405,11 @@ setShowResources(false)
             ease-out
             group-hover:w-[90%]
           "
-        />
-      </Link>
-    ))}
-  </div>
-</div>
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     )}
                   </div>
 

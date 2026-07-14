@@ -32,7 +32,7 @@ const acrossRoles = [
   {
     role: "Candidates",
     img: "/icons/candidate-icon.svg",
-    url: "https://candidate.connectec.app/register",
+    url: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
   },
   {
     role: "Recruiters",
@@ -48,19 +48,18 @@ const acrossRoles = [
 
 export const HeroSection = () => {
   return (
-        <section className="flex items-center justify-center px-[5%] sm:px-0 pt-[5%] pb-[15%] md:pb-[10%]">
+    <section className="flex items-center justify-center px-[5%] sm:px-0 pt-[5%] pb-[15%] md:pb-[10%]">
       <div className="text-center w-full mt-[15%] md:mt-[5%]">
         <h1 className="font-extrabold text-h1 text-[#0668E1]">
-          Hiring Alignment
-           {" "}
+          Hiring Alignment{" "}
           <span className="inline-flex  gap-xs">
-              System 
-              <img
-                src={"/icons/tm-badge.svg"}
-                alt="tm-badge"
-                className="size-iconsize-sm inline"
-              />
-            </span>
+            System
+            <img
+              src={"/icons/tm-badge.svg"}
+              alt="tm-badge"
+              className="size-iconsize-sm inline"
+            />
+          </span>
         </h1>
 
         <h2 className="font-extrabold text-h2 pb-lg">
@@ -132,8 +131,8 @@ export const HeroSection = () => {
                         {role.role}
                       </span>
 
-      <ArrowRight
-    className="
+                      <ArrowRight
+                        className="
       absolute right-2
       text-[#0066FF]
       opacity-0
@@ -142,7 +141,7 @@ export const HeroSection = () => {
       group-hover:opacity-100
       group-hover:scale-85
     "
-  />
+                      />
                     </div>
                   </Link>
 
@@ -154,15 +153,17 @@ export const HeroSection = () => {
                 </React.Fragment>
               ))}
             </div>
-           
           </TabsContent>
 
           <TabsContent value="across" className="mt-xl">
             <div className="flex justify-evenly items-center h-[clamp(80px,11vw,200px)]">
               {acrossRoles.map((role, index) => (
                 <React.Fragment key={role.role}>
-                  <Link href={role.url} target="_blank" 
-                  className={`${role.role==="Candidates"?"pointer-events-none":"cursor-pointer"} w-1/3 group flex flex-col items-center gap-sm cursor-pointer`}>
+                  <Link
+                    href={role.url}
+                    target="_blank"
+                    className={`w-1/3 group flex flex-col items-center gap-sm cursor-pointer`}
+                  >
                     <img
                       src={role.img}
                       alt={role.role}
@@ -198,8 +199,8 @@ export const HeroSection = () => {
                         {role.role}
                       </span>
 
-            <ArrowRight
-    className="
+                      <ArrowRight
+                        className="
       absolute right-2
       text-[#0066FF]
       opacity-0
@@ -208,36 +209,29 @@ export const HeroSection = () => {
       group-hover:opacity-100
       group-hover:scale-85
     "
-  />
+                      />
                     </div>
                   </Link>
 
                   {index < acrossRoles.length - 1 && (
-                    <PiArrowsLeftRightBold  className="size-iconsize-sm scale-125 font-medium text-[#B2D0F6]" />
+                    <PiArrowsLeftRightBold className="size-iconsize-sm scale-125 font-medium text-[#B2D0F6]" />
                   )}
                 </React.Fragment>
               ))}
             </div>
-
-            
           </TabsContent>
         </Tabs>
 
         <h2 className="text-h2 font-extrabold text-[#0668E1]  mt-xl pt-sm">
           <span className="inline-flex items-center gap-sm">
-              
-              <img
-                src={"/icons/star-icon.svg"}
-                alt="Star icon"
-                className="size-iconsize-lg inline animate-pulse"
-              />
-               Alignment Intelligence
-            </span>
-         </h2>
-
-        
-
-
+            <img
+              src={"/icons/star-icon.svg"}
+              alt="Star icon"
+              className="size-iconsize-lg inline animate-pulse"
+            />
+            Alignment Intelligence
+          </span>
+        </h2>
       </div>
     </section>
   );

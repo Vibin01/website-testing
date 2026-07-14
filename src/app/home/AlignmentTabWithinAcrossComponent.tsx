@@ -31,7 +31,7 @@ const acrossRoles = [
   {
     role: "Candidates",
     img: "/icons/candidate-icon.svg",
-    url: "https://candidate.connectec.app/register",
+    url: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
   },
   {
     role: "Recruiters",
@@ -136,12 +136,10 @@ text-start
         <div className="flex flex-col sm:flex-row items-center   w-full gap-lg- sm:gap-0 ">
           {withinRoles.map((role, index) => (
             <React.Fragment key={role.role}>
-            <div
-              className="flex flex-col sm:flex-row items-center w-full "
-            >
-              <Link
-                href={role.url}
-                className={`
+              <div className="flex flex-col sm:flex-row items-center w-full ">
+                <Link
+                  href={role.url}
+                  className={`
             group
            w-full
             h-btn-h
@@ -164,11 +162,11 @@ hover:font-bold
 
 
           `}
-              >
-                <span>{role.role}</span>
+                >
+                  <span>{role.role}</span>
 
-                <ArrowRight
-                  className={`
+                  <ArrowRight
+                    className={`
               size-iconsize-sm 
               scale-90
               stroke-3
@@ -177,19 +175,16 @@ hover:font-bold
 
               opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0
             `}
-                />
-              </Link>
-
-              
-            </div>
-            {index < withinRoles.length - 1 && (
+                  />
+                </Link>
+              </div>
+              {index < withinRoles.length - 1 && (
                 <div className="flex self-stretch justify-center items-center mx-lg">
                   <span className=" h-[2px] sm:h-iconsize-lg w-[60%] sm:w-[2px] bg-[#DEEDFF] my-lg md:my-md" />
                 </div>
               )}
             </React.Fragment>
           ))}
-          
         </div>
       </TabsContent>
 
@@ -197,16 +192,13 @@ hover:font-bold
       <TabsContent value="across" className="mt-lg">
         <div className="flex flex-col md:flex-row items-center">
           {acrossRoles.map((role, index) => (
-           <React.Fragment key={index}>
-             
-           <div
-              className="flex flex-col md:flex-row items-center w-full "
-            >
-              <Link
-                href={role.url}
-                target="_blank"
-                className={`
-                  ${role.role === "Candidates" ? "pointer-events-none" : "cursor-pointer"}
+            <React.Fragment key={index}>
+              <div className="flex flex-col md:flex-row items-center w-full ">
+                <Link
+                  href={role.url}
+                  target="_blank"
+                  className={`
+              cursor-pointer
             group
             w-full
             h-btn-h
@@ -229,11 +221,11 @@ hover:font-bold
 
 
           `}
-              >
-                <span>{role.role}</span>
+                >
+                  <span>{role.role}</span>
 
-                <ArrowRight
-                  className={`
+                  <ArrowRight
+                    className={`
               size-iconsize-sm 
               scale-90
               stroke-3
@@ -244,15 +236,13 @@ hover:font-bold
             opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0
               
             `}
-                />
-              </Link>
-
-             
-            </div>
-            {index < acrossRoles.length - 1 && (
+                  />
+                </Link>
+              </div>
+              {index < acrossRoles.length - 1 && (
                 <PiArrowsLeftRightBold className="size-iconsize-lg md:size-iconsize-2xl md:scale-125 rotate-90 sm:rotate-0 my-sm font-medium text-[#B2D0F6] mx-md" />
-               )}
-           </React.Fragment>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </TabsContent>

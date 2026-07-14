@@ -16,7 +16,11 @@ export default function BlogCard({
   heading,
 }: BlogCardProps) {
   return (
-    <Link data-title={heading} className="blog-section" href={`/resources/blog/${slug}`}>
+    <Link
+      data-title={heading}
+      className="blog-section"
+      href={`/resources/blogs/${slug}`}
+    >
       <div className="group flex flex-col justify-between items-stretch h-full lg:max-h-[500px] shadow-mobile-small md:shadow-web-small relative overflow-hidden rounded-2xl bg-white  transition border hover:border-transparent  border-[#0668E11A] hover:shadow-mobile-medium md:shadow-web-medium dark:bg-neutral-900">
         <div className="p-5 h-full flex flex-col justify-between">
           <h1 className="mb-4 font-semibold text-[18px] md:text-[20px] lg:text-[22px] xl:text-[28px] 2xl:text-[32px] text-[#0668E1] ">

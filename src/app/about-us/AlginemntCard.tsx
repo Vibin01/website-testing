@@ -28,7 +28,7 @@ const acrossRoles = [
   {
     role: "Candidates",
     img: "/icons/candidate-icon.svg",
-    url: "https://candidate.connectec.app/register",
+    url: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
   },
   {
     role: "Recruiters",
@@ -173,7 +173,7 @@ text-[#0668E1]
               <Link
                 href={role.url}
                 target="_blank"
-                className={`${role.role === "Candidates" ? "pointer-events-none" : "cursor-pointer"}
+                className={`cursor-pointer
                   group
                   flex
                  flex-col
@@ -212,8 +212,8 @@ text-[#0668E1]
               </Link>
 
               {index < acrossRoles.length - 1 && (
-                            <PiArrowsLeftRightBold className="size-iconsize-sm my-sm font-medium text-[#B2D0F6] " />
-             )}
+                <PiArrowsLeftRightBold className="size-iconsize-sm my-sm font-medium text-[#B2D0F6] " />
+              )}
             </div>
           ))}
         </div>
