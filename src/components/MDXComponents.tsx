@@ -38,7 +38,7 @@ const MDXComponents = {
   ),
 
   blockquote: ({ children, ...props }: any) => (
-    <blockquote className="text-[#0668E1] font-semibold" {...props}>
+    <blockquote className="text-[#0668E1] font-bold" {...props}>
       {children}
     </blockquote>
   ),

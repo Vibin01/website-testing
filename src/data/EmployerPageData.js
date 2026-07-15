@@ -3,8 +3,8 @@ export const HeroData = {
   title: "Hiring Strategy, Aligned",
   sub_title: "Aligning priorities, signals, and outcomes",
   description:"Creating Seamless Yield across the hiring system",
-button_text: "Unlock Alignment for Free",
-  button_link: "#",
+button_text: "Unlock Connect EC for Free",
+  button_link: "https://employer.connectec.app/register",
 
 };
 

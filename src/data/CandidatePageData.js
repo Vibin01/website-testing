@@ -3,8 +3,8 @@ export const HeroData = {
   title: "Career Progress, Aligned",
   sub_title: "Aligning opportunities, signals, and decisions",
   description:"Creating Seamless Yield across the hiring system",
-button_text: "Unlock Alignment for Free",
-  button_link: "#",
+button_text: "Unlock Connect EC for Free",
+  button_link: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
 
 };
 

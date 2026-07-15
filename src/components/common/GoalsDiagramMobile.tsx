@@ -2,7 +2,6 @@
 
 import { ArcherContainer, ArcherElement } from "react-archer";
 import GoalCard from "./GoalCard";
-import { useEffect } from "react";
 
 export default function GoalsDiagramMobile() {
 //  useEffect(() => {
@@ -24,7 +23,7 @@ export default function GoalsDiagramMobile() {
             relations={[
               {
                 targetId: "candidate-mobile",
-                sourceAnchor: "right",
+                sourceAnchor: "bottom",
                 targetAnchor: "top",
                 style: {
                   strokeDasharray: "6,6",
@@ -33,7 +32,7 @@ export default function GoalsDiagramMobile() {
               },
               {
                 targetId: "employer-mobile",
-                sourceAnchor: "left",
+                sourceAnchor: "bottom",
                 targetAnchor: "top",
                 style: {
                   strokeDasharray: "6,6",
@@ -53,7 +52,7 @@ export default function GoalsDiagramMobile() {
           </ArcherElement>
 
           {/* Row */}
-          <div className="flex w-full justify-between">
+          <div className="flex w-full justify-between mt-5">
             <ArcherElement
               id="candidate-mobile"
               relations={[

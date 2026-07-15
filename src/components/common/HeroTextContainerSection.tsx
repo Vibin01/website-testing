@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { JSX } from "react";
 import { FaArrowRight } from "react-icons/fa6";
+import { AppLinkButton } from "./Button/AppLinkButton";
 
 interface HeroTextContainerSectionProps {
   data: {
@@ -33,13 +34,7 @@ export const HeroTextContainerSection =  ({
           <span className="font-medium">{data.description} </span>
           
         </p>
-        <Link href={"https://play.google.com/store/apps/details?id=com.primethic.connectec"} target="_blank" className=" h-btn-h text-nowrap  bg-[#0668E1] border-2 border-[#0072FF] cursor-pointer rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
-                      <span className=" font-bold text-xl text-white">
-                        Unlock Connect EC for Free
-                      </span>
-        
-                      <FaArrowRight className="text-white text-base"/>
-                    </Link>
+        <AppLinkButton url={data.button_link} text={data.button_text} />
       </div>
     </>
   );

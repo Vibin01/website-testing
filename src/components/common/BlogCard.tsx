@@ -29,7 +29,7 @@ export default function BlogCard({
         
         <img src={img_url} alt={title} className="w-full  object-cover" />
         <div className="h-full flex flex-col justify-between">
-         <h1 className="text-base font-bold py-sm">{title}</h1>
+         <h4 className="text-base font-bold py-sm">{title}</h4>
          <p className="font-medium text-xl"><span className="font-bold">{heading_highlight}</span> {heading}</p>
         </div>
       </div>

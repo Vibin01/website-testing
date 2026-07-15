@@ -35,7 +35,7 @@ export const BlogSection = ({ blogs }: { blogs: any[] }) => {
       <h2 className="mb-8 text-h2 font-extrabold text-center md:mb-16 lg:mb-22">
         Every article and framework is designed to help you:
       </h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-xl md:grid-cols-3">
         {visibleBlogs.map((blog: any) => (
           <BlogCard key={blog.slug} {...blog} />
         ))}

@@ -4,8 +4,8 @@ export const HeroData = {
   title: "Talent Acquisition Aligned",
   sub_title: "Aligning Coordination, signals, and execution",
   description: "Creating Seamless Yield across the hiring system",
-  button_text: "Unlock Alignment for Free",
-  button_link: "#",
+  button_text: "Unlock Connect EC for Free",
+  button_link: "https://recruiter.connectec.app/register",
 };
 
 export const signalFlowData = {
