@@ -73,7 +73,7 @@
 --text-lg: clamp(11px, calc(12 / var(--width) * 100vw), 70px);              /* 14 */
 
 
---text-md: clamp(4px, calc(12 / var(--width) * 100vw), 65px); 
+--text-md: clamp(10px, calc(12 / var(--width) * 100vw), 65px); 
 --text-sm: clamp(14px, calc(10 / var(--width) * 100vw), 55px);     
 
 

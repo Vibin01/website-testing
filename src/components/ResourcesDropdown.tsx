@@ -7,7 +7,7 @@ const activeGroup={
       {
         title: "Blogs",
         icon:"/resources/icons/blogs-icon.svg",
-        description: "Decode Signals, Understaand Decisions.",
+        description: "Decode Signals, Understand Decisions.",
         href: "/resources/blogs",
       }, 
       {

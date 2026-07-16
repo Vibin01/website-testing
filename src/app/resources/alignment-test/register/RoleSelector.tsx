@@ -11,6 +11,9 @@ import {
 import { getAssessmentStatusAction } from "@/server/actions/assignment-action";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import TermsDialog from "./TermsDialogBox";
+import PrivacyPolicyDialog from "./PrivacyPolicyDiallog";
+import { showTermsToast } from "./toast";
 
 const personalEmailDomains = [
   "gmail.com",
@@ -106,6 +109,14 @@ const [otpEndTime, setOtpEndTime] = useState<number | null>(null);
   const [resendLoading, setResendLoading] = useState(false);
 
   const roleFromSearch = searchParams.get("role") as Role | null;
+
+  const [agree, setAgree] = useState(false);
+
+const [termsOpen, setTermsOpen] = useState(false);
+const [privacyOpen, setPrivacyOpen] = useState(false);
+
+const [termsAccepted, setTermsAccepted] = useState(false);
+const [privacyAccepted, setPrivacyAccepted] = useState(false);
  
 
 useEffect(() => {
@@ -160,6 +171,13 @@ const startTime = Date.now();
   setRegisterStartTime(startTime);
 
     setError("");
+
+if (!agree) {
+  setError(
+    "Please read and accept the Terms & Conditions and Privacy Policy."
+  );
+  return;
+}
 
     if (!selectedRole) {
       setError("Please select a role.");
@@ -464,10 +482,72 @@ const isLocked =
                 required
               />
 
-              <div className="pt-md">
+              <div className="pt-xs">
+
+  <div className="flex items-start gap-sm">
+
+<input
+  type="checkbox"
+  checked={agree}
+  onChange={(e) => {
+    if (!termsAccepted || !privacyAccepted) {
+     showTermsToast();
+      return;
+    }
+
+    setError("");
+    setAgree(e.target.checked);
+  }}
+  className="size-4 cursor-pointer"
+/>
+    <p className="text-lg">
+      I have read and agree to the{" "}
+
+      <button
+        type="button"
+        onClick={() => setTermsOpen(true)}
+        className={`font-semibold underline text-primary cursor-pointer`}
+      >
+        Terms & Conditions
+      </button>
+
+      {" "}and{" "}
+
+      <button
+        type="button"
+        onClick={() => setPrivacyOpen(true)}
+        className={`font-semibold underline text-primary cursor-pointer`}
+      >
+        Privacy Policy
+      </button>
+
+      .
+    </p>
+
+  </div>
+
+</div>
+
+<TermsDialog
+  open={termsOpen}
+  onOpenChange={setTermsOpen}
+  onAccept={() => setTermsAccepted(true)}
+/>
+
+<PrivacyPolicyDialog
+  open={privacyOpen}
+  onOpenChange={setPrivacyOpen}
+  onAccept={() => setPrivacyAccepted(true)}
+/>
+
+              <div className="pt-xs">
                 <button
                   type="submit"
-                  disabled={registerLoading}
+                    disabled={
+    registerLoading ||
+    !termsAccepted ||
+    !privacyAccepted
+  }
                   className="w-full rounded-sm cursor-pointer bg-primary px-md py-xs text-xl font-medium text-white disabled:opacity-70"
                 >
                   {registerLoading
@@ -492,6 +572,17 @@ const isLocked =
         setName={setName}
         email={email}
         setEmail={setEmail}
+        privacyOpen={privacyOpen}
+        setPrivacyOpen={setPrivacyOpen}
+        termsOpen={termsOpen}
+        setTermsOpen={setTermsOpen}
+        setPrivacyAccepted={setPrivacyAccepted}
+        setTermsAccepted={setTermsAccepted}
+        agree={agree}
+        setAgree={setAgree}
+        setError={setError}
+        privacyAccepted={privacyAccepted}
+        termsAccepted={termsAccepted}
       />
     </div>
   );

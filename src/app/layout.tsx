@@ -6,6 +6,7 @@ import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Exo_2 } from "next/font/google";
 import {IBM_Plex_Sans} from "next/font/google";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || "https://connectec.app"),
@@ -70,6 +71,12 @@ export default function RootLayout({
         className={`${exo2.variable} ${ibmPlexSans.variable} bg-white relative
        antialiased`}
       >
+        <Toaster
+          position="top-right"
+          richColors
+          closeButton
+          expand={false}
+        />
         {/* GTM NoScript */}
         <noscript>
           <iframe

@@ -1,6 +1,9 @@
 "use client";
 
-import { Drawer, DrawerContent } from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
+import TermsDialog from "./TermsDialogBox";
+import PrivacyPolicyDialog from "./PrivacyPolicyDiallog";
+import { showTermsToast } from "./toast";
 
 interface Role {
   id: string;
@@ -23,6 +26,20 @@ interface MobileRoleDrawerProps {
 
   email: string;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
+
+  privacyOpen: boolean;
+  setPrivacyOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  termsOpen: boolean;
+  setTermsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
+  privacyAccepted: boolean;
+  termsAccepted: boolean;
+  setPrivacyAccepted: React.Dispatch<React.SetStateAction<boolean>>;
+  setTermsAccepted: React.Dispatch<React.SetStateAction<boolean>>;
+
+  agree: boolean;
+  setAgree: React.Dispatch<React.SetStateAction<boolean>>;
+  setError: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export function MobileRoleDrawer({
@@ -36,6 +53,17 @@ export function MobileRoleDrawer({
   setName,
   email,
   setEmail,
+  privacyOpen,
+  setPrivacyOpen,
+  termsOpen,
+  setTermsOpen,
+  privacyAccepted,
+  termsAccepted,
+  setPrivacyAccepted,
+  setTermsAccepted,
+  agree,
+  setAgree,
+  setError,
 }: MobileRoleDrawerProps){
 
   if (!role) return null;
@@ -43,6 +71,12 @@ export function MobileRoleDrawer({
   return (
     <Drawer open={open} onOpenChange={onOpenChange}  >
       <DrawerContent className=" p-0 m-0 border-transparent">
+        <DrawerHeader className="sr-only">
+      <DrawerTitle>{role.title} Alignment Test</DrawerTitle>
+      <DrawerDescription>
+        Registration form for the {role.title} Alignment Test.
+      </DrawerDescription>
+    </DrawerHeader>
 
         <div className="rounded-t-[30px] border border-[#D3E6FF] bg-white p-5">
           <h3 className="text-base font-bold mt-2">
@@ -80,6 +114,52 @@ export function MobileRoleDrawer({
               required
             />
 
+                          <div className="pt-xs">
+
+  <div className="flex items-start gap-sm">
+
+<input
+  type="checkbox"
+  checked={agree}
+  onChange={(e) => {
+    if (!termsAccepted || !privacyAccepted) {
+      showTermsToast();
+      return;
+    }
+
+    setError("");
+    setAgree(e.target.checked);
+  }}
+  className="size-4 cursor-pointer"
+/>
+    <p className="text-lg">
+      I have read and agree to the{" "}
+
+      <button
+        type="button"
+        onClick={() => setTermsOpen(true)}
+        className={`font-semibold underline text-primary cursor-pointer`}
+      >
+        Terms & Conditions
+      </button>
+
+      {" "}and{" "}
+
+      <button
+        type="button"
+        onClick={() => setPrivacyOpen(true)}
+        className={`font-semibold underline text-primary cursor-pointer`}
+      >
+        Privacy Policy
+      </button>
+
+      .
+    </p>
+
+  </div>
+
+</div>
+
             <button
               type="submit"
               disabled={loading}
@@ -93,6 +173,18 @@ export function MobileRoleDrawer({
             </button>
           </form>
         </div>
+
+        <TermsDialog
+          open={termsOpen}
+          onOpenChange={setTermsOpen}
+          onAccept={() => setTermsAccepted(true)}
+        />
+        
+        <PrivacyPolicyDialog
+          open={privacyOpen}
+          onOpenChange={setPrivacyOpen}
+          onAccept={() => setPrivacyAccepted(true)}
+        />
       </DrawerContent>
     </Drawer>
   );
