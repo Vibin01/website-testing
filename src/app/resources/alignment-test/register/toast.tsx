@@ -3,7 +3,7 @@
 import { toast } from "sonner";
 import { IoAlertCircleSharp } from "react-icons/io5";
 
-export const showTermsToast = () => {
+export const showErrorToast = (messages: string[]) => {
   toast.custom(
     (id) => (
       <div className="relative w-[400px]- p-sm rounded-md border-2 border-red-500 bg-red-50  shadow-xl">
@@ -26,17 +26,12 @@ export const showTermsToast = () => {
               Error!
             </h3>
             </div>
-          <div>
-
-            
-
-            <p className="mt-xs text-md text-red-600">
-              Please click on <b>Terms and Conditions</b> link and ACCEPT.
-            </p>
-
-            <p className="text-md text-red-600">
-              Please click on <b>Privacy Policy</b> link and ACCEPT.
-            </p>
+          <div className="mt-xs">
+{messages.map((message, index) => (
+            <p  key={index} className=" text-md text-red-600">
+             {message}
+              </p>
+            ))}
 
           </div>
 

@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 type BlogCardProps = {
+  pathName:string,
   slug: string;
   date: string;
   heading_highlight: string;
@@ -18,12 +19,13 @@ export default function BlogCard({
   img_url,
   date,
   heading,
+  pathName,
 }: BlogCardProps) {
   return (
     <Link
       data-title={heading}
       className="blog-section"
-      href={`/resources/blogs/${slug}`}
+      href={`/resources/blogs/${pathName}`}
     >
       <div className="group p-sm flex flex-col justify-between items-stretch bg-[#FAFCFF] border-[#D3E6FF] border  shadow-mobile-small md:shadow-web-small relative overflow-hidden rounded-md transition hover:shadow-mobile-medium md:shadow-web-medium dark:bg-neutral-900">
         

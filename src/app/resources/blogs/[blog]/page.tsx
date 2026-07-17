@@ -4,7 +4,7 @@ export async function generateStaticParams() {
   const blogs = await getAllBlogs();
   // console.log(blogs);
 
-  return blogs.map((b) => ({ blog: b.slug }));
+  return blogs.map((b) => ({ blog: b.pathName }));
 }
 
 export async function generateMetadata({

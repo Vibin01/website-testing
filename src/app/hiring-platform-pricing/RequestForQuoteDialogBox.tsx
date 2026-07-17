@@ -134,6 +134,11 @@ export default function ButtonDialog({
   const handleClick = () => {
     //scroll to top of the page
     window.scrollTo({ top: 0, behavior: "smooth" });
+     window.open(
+    "https://employer.connectec.app/register/",
+    "_blank",
+    "noopener,noreferrer"
+  );
     if (!active) {
       // setOpen(true);
     }

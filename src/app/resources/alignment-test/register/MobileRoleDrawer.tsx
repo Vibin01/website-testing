@@ -3,7 +3,7 @@
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
 import TermsDialog from "./TermsDialogBox";
 import PrivacyPolicyDialog from "./PrivacyPolicyDiallog";
-import { showTermsToast } from "./toast";
+import { showErrorToast } from "./toast";
 
 interface Role {
   id: string;
@@ -122,10 +122,20 @@ export function MobileRoleDrawer({
   type="checkbox"
   checked={agree}
   onChange={(e) => {
-    if (!termsAccepted || !privacyAccepted) {
-      showTermsToast();
-      return;
-    }
+      if (!termsAccepted || !privacyAccepted) {
+     const messages: string[] = [];
+   
+     if (!termsAccepted) {
+       messages.push("Please click on the Terms & Conditions link and ACCEPT.");
+     }
+   
+     if (!privacyAccepted) {
+       messages.push("Please click on the Privacy Policy link and ACCEPT.");
+     }
+   
+     showErrorToast(messages);
+     return;
+   }
 
     setError("");
     setAgree(e.target.checked);

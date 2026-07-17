@@ -92,11 +92,10 @@ function SectionCard({
 }) {
   return (
     <div
-      className={`rounded-md border p-md shadow-mobile-medium md:shadow-web-medium ${
-        blue
-          ? "border-[#0668E1] bg-[#0668E1] text-white"
-          : "border-[#DEEDFF] bg-white text-[#2C2C2C]"
-      }`}
+      className={`rounded-md border p-md shadow-mobile-medium md:shadow-web-medium ${blue
+        ? "border-[#0668E1] bg-[#0668E1] text-white"
+        : "border-[#DEEDFF] bg-white text-[#2C2C2C]"
+        }`}
     >
       <h3 className="text-base font-bold uppercase">{title}</h3>
       <div className="mt-sm text-xl font-medium">{children}</div>
@@ -182,7 +181,7 @@ function HeaderBlock({
             </div>
           </div>
 
-<DownloadPdfButton mode={mode} role={role} phase={phase} action="share"/>
+          <DownloadPdfButton mode={mode} role={role} phase={phase} action="share" />
         </div>
       </div>
 
@@ -254,7 +253,7 @@ function PhaseReport({
   // console.log(content)
 
   // console.log(report)
-console.log(result.mode);
+  // console.log(result.mode);
   return (
     <section className="w-full bg-[#FAFDFF] px-[5%] pb-20">
       <HeaderBlock
@@ -278,32 +277,32 @@ console.log(result.mode);
           <div>
             <div className="flex items-center gap-md">
               {result.band !== "Dynamic" && (
-              <p className="text-h2 font-extrabold" style={{ color }}>
-                {result.percentage}%
-              </p>
+                <p className="text-h2 font-extrabold" style={{ color }}>
+                  {result.percentage}%
+                </p>
               )}
               <p className="text-h5 font-bold uppercase" style={{ color }}>
                 {result.mode}
               </p>
             </div>
 
-                <p className="mt-sm text-xl font-bold text-[#2C2C2C]">
-  Your Pattern:{" "}
-  <span className="text-xl font-medium">
-    {isOldData
-      ? content.patternName
-      : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
-  </span>
-</p>
+            <p className="mt-sm text-xl font-bold text-[#2C2C2C]">
+              Your Pattern:{" "}
+              <span className="text-xl font-medium">
+                {isOldData
+                  ? content.patternName
+                  : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
+              </span>
+            </p>
 
 
-  
-  <p className="text-xl font-medium">
-    {isOldData ? content.phaseIntro
-    :
-    content.patternName[result.band ?? "Strong"]?.[1] ?? ""}
-  </p>
-</div>
+
+            <p className="text-xl font-medium">
+              {isOldData ? content.phaseIntro
+                :
+                content.patternName[result.band ?? "Strong"]?.[1] ?? ""}
+            </p>
+          </div>
         </div>
 
         <div className="mt-lg grid grid-cols-1 gap-md md:grid-cols-3">
@@ -350,11 +349,10 @@ console.log(result.mode);
         <SectionCard title="Your Patterns">
           <div className="grid grid-cols-1 gap-md md:grid-cols-2">
             <div
-              className={`rounded-md bg-white p-sm transition-all ${
-                result.band === "Strong"
-                  ? "border border-[#B2D0F6] shadow-mobile-medium md:shadow-web-medium"
-                  : "border border-[#DEEDFF]"
-              }`}
+              className={`rounded-md bg-white p-sm transition-all ${result.band === "Strong"
+                ? "border border-[#B2D0F6] shadow-mobile-medium md:shadow-web-medium"
+                : "border border-[#DEEDFF]"
+                }`}
             >
               <h4 className="text-base font-bold uppercase text-[#0668E1]">
                 {result.band}
@@ -363,25 +361,25 @@ console.log(result.mode);
               <p className="mt-sm text-xl font-bold">
                 {content.yourPattern?.[result.band] ?? ""}
               </p>
-              {result.mode === "Dynamic" &&(
-              <p className="mt-sm text-xl font-medium text-[#2C2C2C]">
-                Sometimes you act quickly,<br/> sometimes you evaluate, <br/> and sometimes you continue without change.
+              {result.mode === "Dynamic" && (
+                <p className="mt-sm text-xl font-medium text-[#2C2C2C]">
+                  Sometimes you act quickly,<br /> sometimes you evaluate, <br /> and sometimes you continue without change.
                 </p>
               )}
 
               <div className="my-sm p-sm rounded-md bg-[#F2F8FF] border border-[#DEEDFF]">
                 <div className=" md:flex md:items-center gap-xs">
-                  <span><span  className="font-bold text-[#0668E1] ">Insight: </span>
-                  <span className="text-xl font-medium ">
-                    {report.primaryExpression.insight}
-                  </span></span>
+                  <span><span className="font-bold text-[#0668E1] ">Insight: </span>
+                    <span className="text-xl font-medium ">
+                      {report.primaryExpression.insight}
+                    </span></span>
                 </div>
                 <div className="my-xs border-t border-[#DEEDFF]" />
                 <div className="md:flex- md:items-center gap-xs inline-flex ">
-                  <span><span  className="font-bold text-[#0668E1] ">Belief: </span> <span className="text-xl font-medium">
+                  <span><span className="font-bold text-[#0668E1] ">Belief: </span> <span className="text-xl font-medium">
                     {report.primaryExpression.belief}
                   </span></span>
-                  
+
                 </div>
               </div>
 
@@ -390,38 +388,38 @@ console.log(result.mode);
                   "This suggests no single pattern consistently guides your decisions."
                 ) : (
                   " Over time, this shapes how consistently your decisions align with the situation."
-                  
+
                 )}
               </p>
             </div>
 
-<div className="flex flex-col gap-sm">
-{result.mode !== "Dynamic" && report.secondaryExpression && (
-                <div  className="rounded-md border border-[#DEEDFF] bg-white p-sm">
-                      <h4 className="text-base font-bold uppercase text-[#2C2C2C]">    
-                        {report?.secondaryExpression?.tendency ?? ""}
-                      </h4>
+            <div className="flex flex-col gap-sm">
+              {result.mode !== "Dynamic" && report.secondaryExpression && (
+                <div className="rounded-md border border-[#DEEDFF] bg-white p-sm">
+                  <h4 className="text-base font-bold uppercase text-[#2C2C2C]">
+                    {report?.secondaryExpression?.tendency ?? ""}
+                  </h4>
 
-                      <p className="mt-sm text-xl font-medium">
-                        {report?.secondaryExpression?.expression ?? ""}
-                      </p>
-{report?.secondaryExpression?.tendency &&(
-                      <hr className="my-sm border-[#DEEDFF]" />
-)}
-                      <p className="text-xl font-medium text-[#2C2C2C]">
-                        {report?.secondaryExpression?.summary ?? ""}
-                      </p>
-                 
+                  <p className="mt-sm text-xl font-medium">
+                    {report?.secondaryExpression?.expression ?? ""}
+                  </p>
+                  {report?.secondaryExpression?.tendency && (
+                    <hr className="my-sm border-[#DEEDFF]" />
+                  )}
+                  <p className="text-xl font-medium text-[#2C2C2C]">
+                    {report?.secondaryExpression?.summary ?? ""}
+                  </p>
+
                 </div>
-               
+
               )}
-             <div className="rounded-md border border-[#B2D0F6] bg-white p-sm">
-              <h4 className="font-bold text-[#0668E1] uppercase">Summary</h4>
-              <p className="text-xl text-[#0668E1] font-medium mt-xs">
-                {report.primaryExpression.actionSummary}
-              </p>
+              <div className="rounded-md border border-[#B2D0F6] bg-white p-sm">
+                <h4 className="font-bold text-[#0668E1] uppercase">Summary</h4>
+                <p className="text-xl text-[#0668E1] font-medium mt-xs">
+                  {report.primaryExpression.actionSummary}
+                </p>
+              </div>
             </div>
-          </div>
           </div>
         </SectionCard>
       </div>
@@ -456,7 +454,7 @@ console.log(result.mode);
               ? router.back()
               : router.push(`/resources/alignment-test`)
           }
-          className="h-[54px] cursor-pointer rounded-md border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
+          className="h-[54px] cursor-pointer rounded-sm border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
         >
           Back
         </button>
@@ -468,7 +466,7 @@ console.log(result.mode);
             onClick={() =>
               router.push(`/resources/alignment-test/${role}?mode=full`)
             }
-            className="flex h-[54px] cursor-pointer items-center gap-sm rounded-md bg-[#0668E1] px-8 text-xl font-medium text-white"
+            className="flex h-[54px] cursor-pointer items-center gap-sm rounded-sm bg-[#0668E1] px-8 text-xl font-medium text-white"
           >
             Continue Full Test
             <ArrowRight size={20} />
@@ -533,7 +531,7 @@ function OverallReport({
       icon: "/resources/alignment-test/execution-icon.svg",
     },
   ];
-const isOldInsight = Array.isArray(content.insight);
+  const isOldInsight = Array.isArray(content.insight);
 
   if (report === null) {
     return (
@@ -594,19 +592,19 @@ const isOldInsight = Array.isArray(content.insight);
             </div>
 
             <div className="mt-sm space-y-xs">
-{isOldInsight
-  ? content.insight.map((line: string, index: number) => (
-      <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-        {line}
-      </p>
-    ))
-  : (content.insight[overall.band ?? "Strong"] ?? []).map(
-      (line: string, index: number) => (
-        <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-          {line}
-        </p>
-      )
-    )}
+              {isOldInsight
+                ? content.insight.map((line: string, index: number) => (
+                  <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                    {line}
+                  </p>
+                ))
+                : (content.insight[overall.band ?? "Strong"] ?? []).map(
+                  (line: string, index: number) => (
+                    <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                      {line}
+                    </p>
+                  )
+                )}
             </div>
           </div>
         </div>
@@ -718,7 +716,7 @@ const isOldInsight = Array.isArray(content.insight);
           <div className="space-y-sm">
             {content.slips.map((slip: any, index: number) => (
               <div key={index} className="flex items-start gap-sm">
-                <div>
+                <div className="w-full border-[#DEEDFF] bg-[#F2F8FF] border rounded-md p-sm">
                   <p className="text-xl font-bold text-[#2C2C2C]">
                     {slip.title} → {slip.level}
                   </p>
@@ -782,7 +780,7 @@ const isOldInsight = Array.isArray(content.insight);
           Back
         </button>
 
-       <DownloadPdfButton mode={mode} role={role} phase={phase} />
+        <DownloadPdfButton mode={mode} role={role} phase={phase} />
       </div>
     </section>
   );
@@ -793,7 +791,7 @@ export default function ReportClient({ role }: { role: Role }) {
   // time stamp
 
   const [reportLoadTime, setReportLoadTime] =
-  useState<number | null>(null);
+    useState<number | null>(null);
 
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -829,15 +827,15 @@ export default function ReportClient({ role }: { role: Role }) {
 
         // time stamp 
 
-            const end = performance.now();
+        const end = performance.now();
 
-    setReportLoadTime(end - start);
+        setReportLoadTime(end - start);
 
-console.log(
-  "Report Load Time:",
-  ((end - start) / 1000).toFixed(2),
-  "seconds"
-);
+        // console.log(
+        //   "Report Load Time:",
+        //   ((end - start) / 1000).toFixed(2),
+        //   "seconds"
+        // );
 
         if (res?.success) {
           setReport(res.report);

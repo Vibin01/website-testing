@@ -201,6 +201,41 @@ export default function page() {
             compensation, or other employment decisions.
           </p>
         </div>
+        <div className="mb-xl">
+          <h2 className="font-semibold text-base mb-sm">
+            7B. Communications, Product Updates, and User Engagement
+          </h2>
+          <p className="mb-xs text-xl">
+            PRIMETHIC may use the contact information you provide, including your email address, mobile number, and other communication preferences, to communicate with you regarding the operation, improvement, and enhancement of the Platform.
+            Such communications may include:
+          </p>
+          <ul className="mb-md text-xl space-y-xs list-disc ml-1 pl-lg">
+            <li>  account verification and security notifications; </li>
+            <li>
+              password reset and authentication messages; </li>
+            <li>
+              hiring workflow updates and activity notifications; </li><li>
+              interview scheduling reminders and status updates; </li><li>
+              assessment results, reports, recommendations, and platform-generated insights; </li><li>
+              announcements relating to new features, services, products, or functionality; </li><li>
+              educational resources, knowledge articles, research publications, and best practices; </li><li>
+              invitations to webinars, events, user studies, surveys, beta programs, and product feedback initiatives;</li><li>
+              newsletters, platform announcements, and promotional communications relating to Connect EC and other products or services offered by PRIMETHIC. </li>
+
+          </ul>
+
+
+          <p className="mb-xs text-xl">
+            Where required under applicable law, promotional or marketing communications will be sent only with your consent or another lawful basis for processing. You may withdraw your consent or unsubscribe from such communications at any time through the unsubscribe mechanism provided in the communication, your account settings (where available), or by contacting us using the details provided in this Privacy Policy.
+            Withdrawal of consent for promotional communications will not affect communications that are reasonably necessary for account administration, security, fraud prevention, legal compliance, or the continued provision of the Platform.
+
+          </p>
+        </div>
+
+
+
+
+
 
         <div className="mb-xl">
           <h2 className="font-semibold text-base mb-sm">
@@ -313,14 +348,23 @@ export default function page() {
         <div className="mb-xl">
           <h2 className="font-semibold text-base mb-sm">14. Your Rights</h2>
           <p className="mb-xs text-xl">
-            Depending on applicable laws, you have the right to access, correct,
-            delete your personal data, withdraw consent, opt out of marketing
-            communications, request details of data processing activities, and
-            nominate another individual to act on your behalf in accordance with
-            the Digital Personal Data Protection Act, 2023. Requests may be
-            submitted to hello@connectec.app, subject to identity verification.
-            You may also seek grievance redressal and withdraw previously
-            granted consent in accordance with applicable law.
+            Subject to applicable law, you may have the right to:
+          </p>
+          <ul className="mb-md text-xl space-y-xs list-disc ml-1 pl-lg">
+            <li>
+              access your personal data;</li><li>
+              request correction of inaccurate or incomplete personal data;</li><li>
+              request deletion or anonymisation of personal data;</li><li>
+              withdraw previously granted consent where processing is based on consent;</li><li>
+              manage your communication preferences;</li><li>
+              opt out of newsletters, promotional communications, and marketing communications;</li><li>
+              request information regarding how your personal data is processed;</li><li>
+              nominate another individual to exercise applicable rights on your behalf in accordance with the Digital Personal Data Protection Act, 2023.
+            </li>
+          </ul>
+          <p className="mb-xs text-xl">
+
+            Requests may be submitted to hello@connectec.app, subject to appropriate identity verification.
           </p>
         </div>
 

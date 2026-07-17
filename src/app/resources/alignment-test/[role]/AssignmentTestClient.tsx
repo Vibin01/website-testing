@@ -288,8 +288,11 @@ const visibleItems = useMemo(() => {
     );
   }
 
-  const [situationTitle, situationDescription = ""] =
-    currentQuestion.situation.split("\n\n");
+const lines = currentQuestion.situation.trim().split("\n");
+
+const situationTitle = lines[0];
+const situationQuestion = lines[lines.length - 1];
+const situationDescription = lines.slice(1, -1).join("\n");
 
   const handleBack = () => {
      if (isProcessing) return;
@@ -560,7 +563,7 @@ for (const phase of phases) {
 
     setSubmitTime(duration);
 
-    console.log("Overall Assessment Submit Time:", duration.toFixed(2), "ms");
+    // console.log("Overall Assessment Submit Time:", duration.toFixed(2), "ms");
     router.push(`/resources/alignment-test/${role}/report?mode=full`);
     } catch (error) {
     console.error(error);
@@ -713,7 +716,7 @@ const startIndex = isMobile
                 {situationDescription}
               </p>
 
-              {/* <p className="mt-md text-xl font-medium">What do you do?</p> */}
+              <p className="mt-sm text-xl font-bold">{situationQuestion}</p>
 
               <div className="mt-md space-y-sm">
                 {options.map(

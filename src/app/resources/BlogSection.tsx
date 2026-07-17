@@ -4,26 +4,6 @@ import { getAllBlogs } from "@/lib/mdx";
 import Image from "next/image";
 import React, { useState } from "react";
 
-const resourceCards = [
-  {
-    image: "/resources/blogs/blog-1.svg",
-    title: "Why Hiring Outcomes Drift",
-    description:
-      "Hiring doesn’t fail due to lack of effort. It drifts when alignment breaks across perception, decision, and execution.",
-  },
-  {
-    image: "/resources/blogs/blog-1.svg",
-    title: "Why Hiring Outcomes Drift",
-    description:
-      "Hiring doesn’t fail due to lack of effort. It drifts when alignment breaks across perception, decision, and execution.",
-  },
-  {
-    image: "/resources/blogs/blog-1.svg",
-    title: "Why Hiring Outcomes Drift",
-    description:
-      "Hiring doesn’t fail due to lack of effort. It drifts when alignment breaks across perception, decision, and execution.",
-  },
-];
 
 export const BlogSection = ({ blogs }: { blogs: any[] }) => {
   const [showAll, setShowAll] = useState(false);
@@ -37,7 +17,7 @@ export const BlogSection = ({ blogs }: { blogs: any[] }) => {
       </h2>
       <div className="grid grid-cols-1 gap-xl md:grid-cols-3">
         {visibleBlogs.map((blog: any) => (
-          <BlogCard key={blog.slug} {...blog} />
+          <BlogCard key={blog.pathName} {...blog} />
         ))}
       </div>
 

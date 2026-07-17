@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function TermsContent() {
   return (
-   <div className="text-base py-[3%] ">
+    <div className="text-base py-[3%] ">
       <h1 className=" font-bold  mb-xl ">
         <span className="text-h5">
           CONNECT <span className="text-[#0668E1]">EC</span>
@@ -44,16 +44,7 @@ export default function TermsContent() {
           Platform.
         </p>
         <p className="mb-xs text-xl">
-          For the purposes of these Terms, “Platform” refers to the Connect EC
-          mobile application, website, systems, and services. “Employer” means
-          any organization or authorized representative using the Platform to
-          post jobs and engage Recruiters or Candidates. “Recruiter” refers to a
-          person authorized by an Employer to conduct hiring-related activities.
-          “Candidate” means an individual using the Platform to seek employment
-          or interact with Employers or Recruiters. “User” means any person
-          accessing or using the Platform. “Content” includes all data,
-          information, messages, documents, images, videos, and materials
-          uploaded or shared through the Platform.
+          For the purposes of these Terms, “Platform” refers to the Connect EC mobile application, website, systems, and services. “Employer” means any organization or authorized representative using the Platform to post jobs and engage Recruiters or Candidates. “Recruiter” refers to a person authorized by an Employer to conduct hiring-related activities. “Candidate” means an individual using the Platform to seek employment or interact with Employers or Recruiters. “User” means any person who accesses or uses the Platform. “Content” includes all data, information, messages, documents, images, videos, and materials uploaded or shared through the Platform.
         </p>
       </div>
 
@@ -106,6 +97,49 @@ export default function TermsContent() {
           accounts. Connect EC reserves the right to modify or remove accounts
           or usernames that are inappropriate or violate these Terms.
         </p>
+      </div>
+       <div className="mb-xl ">
+        <h2 className="font-semibold text-base mb-sm">
+          4A. User Communications
+        </h2>
+        <p className="mb-xs text-xl">
+          By registering for or using the Platform, Users acknowledge that PRIMETHIC may communicate with them through email, SMS, telephone, in-app notifications, push notifications, WhatsApp, or other electronic communication channels in connection with the operation and use of the Platform.
+        </p>
+        <p className="mb-xs text-xl font-medium">Such communications may include, without limitation:</p>
+        <ul className="mb-md text-xl space-y-xs list-disc indent-1 pl-lg">
+          
+          <li>account verification and authentication; </li>
+<li>password resets and security alerts; </li>
+<li>interview scheduling notifications; </li>
+<li>hiring workflow updates; </li>
+<li>assessment results and Platform outputs; </li>
+<li>system maintenance notices; </li>
+<li>policy updates; </li>
+<li>important service announcements; </li>
+<li>account administration and support communications. </li>
+        </ul>
+        <p className="mb-xs text-xl font-medium">
+          Where a User has separately provided consent or where otherwise permitted by applicable law, PRIMETHIC may also communicate information relating to:
+
+        </p>
+
+        <ul className="mb-md text-xl space-y-xs list-disc indent-1 pl-lg">
+          <li>new Platform features; </li>
+          <li>product enhancements; </li>
+          <li>additional services; </li>
+          <li>educational resources; </li>
+          <li>newsletters; </li>
+          <li>surveys; </li>
+          <li>research initiatives; </li>
+          <li>promotional campaigns; </li>
+          <li>events; and </li>
+          <li>other products or services offered by PRIMETHIC. </li>
+        </ul>
+
+        <p className="mb-xs text-xl">
+          Users may withdraw consent for promotional communications at any time using the unsubscribe mechanism provided or by updating their communication preferences where available. Withdrawal of such consent shall not affect communications that are necessary for providing the Platform, protecting user accounts, complying with legal obligations, or maintaining Platform security.
+        </p>
+
       </div>
 
       <div className="mb-xl ">

@@ -13,7 +13,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import TermsDialog from "./TermsDialogBox";
 import PrivacyPolicyDialog from "./PrivacyPolicyDiallog";
-import { showTermsToast } from "./toast";
+import { showErrorToast } from "./toast";
 
 const personalEmailDomains = [
   "gmail.com",
@@ -118,6 +118,30 @@ const [privacyOpen, setPrivacyOpen] = useState(false);
 const [termsAccepted, setTermsAccepted] = useState(false);
 const [privacyAccepted, setPrivacyAccepted] = useState(false);
  
+// Terms and Privacy Load from localStorage when component mounts
+
+// Terms and Privacy Save whenever both are accepted
+
+useEffect(() => {
+  const key = email.trim().toLowerCase();
+
+  if (!key) {
+    setTermsAccepted(false);
+    setPrivacyAccepted(false);
+    setAgree(false);
+    return;
+  }
+
+  const terms =
+    sessionStorage.getItem(`termsAccepted_${key}`) === "true";
+
+  const privacy =
+    sessionStorage.getItem(`privacyAccepted_${key}`) === "true";
+
+  setTermsAccepted(terms);
+  setPrivacyAccepted(privacy);
+  setAgree(terms && privacy);
+}, [email]);
 
 useEffect(() => {
   const role = searchParams.get("role") as Role | null;
@@ -178,6 +202,11 @@ if (!agree) {
   );
   return;
 }
+
+const key = email.trim().toLowerCase();
+
+sessionStorage.setItem(`termsAccepted_${key}`, "true");
+sessionStorage.setItem(`privacyAccepted_${key}`, "true");
 
     if (!selectedRole) {
       setError("Please select a role.");
@@ -273,13 +302,13 @@ if (!agree) {
     const endTime = Date.now();
     setOtpEndTime(endTime);
 
-    console.log("OTP Verify Start:", new Date(startTime).toISOString());
-    console.log("OTP Verify End:", new Date(endTime).toISOString());
-    console.log(
-      "OTP Verify Duration:",
-      ((endTime - startTime) / 1000).toFixed(2),
-      "seconds"
-    );
+    // console.log("OTP Verify Start:", new Date(startTime).toISOString());
+    // console.log("OTP Verify End:", new Date(endTime).toISOString());
+    // console.log(
+    //   "OTP Verify Duration:",
+    //   ((endTime - startTime) / 1000).toFixed(2),
+    //   "seconds"
+    // );
 
     if (res.error) {
       setError(res.error);
@@ -490,10 +519,20 @@ const isLocked =
   type="checkbox"
   checked={agree}
   onChange={(e) => {
-    if (!termsAccepted || !privacyAccepted) {
-     showTermsToast();
-      return;
-    }
+   if (!termsAccepted || !privacyAccepted) {
+  const messages: string[] = [];
+
+  if (!termsAccepted) {
+    messages.push("Please click on the Terms & Conditions link and ACCEPT.");
+  }
+
+  if (!privacyAccepted) {
+    messages.push("Please click on the Privacy Policy link and ACCEPT.");
+  }
+
+  showErrorToast(messages);
+  return;
+}
 
     setError("");
     setAgree(e.target.checked);

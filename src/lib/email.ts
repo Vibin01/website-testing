@@ -340,7 +340,7 @@ Phone :
   };
 
   await transporter.verify();
-  console.log("SMTP Connected");
+  // console.log("SMTP Connected");
 
   await transporter.sendMail(mailOptions);
 }
