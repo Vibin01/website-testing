@@ -13,19 +13,22 @@ const withinRoles = [
     role: "Candidates",
     roleId: "candidate",
     img: "/icons/candidate-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=candidate",
+    // url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=candidate",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
   },
   {
     role: "Recruiters",
     roleId: "recruiter",
     img: "/icons/recruiter-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=recruiter",
+    // url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=recruiter",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
   },
   {
     role: "Employers",
     roleId: "employer",
     img: "/icons/employer-icon.svg",
-    url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=employer",
+    // url: "/resources/alignment-test/register?mode=single&phase=uncertainty&role=employer",
+    url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
   },
 ];
 const acrossRoles = [
