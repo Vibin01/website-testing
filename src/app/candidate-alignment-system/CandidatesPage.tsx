@@ -22,6 +22,7 @@ export const CandidatesPage = () => {
     <>
 
       <section className="relative ">
+
         <div className="">
           <div className="bg-[url('/background/bg-hero-candidate-section.svg')] bg-no-repeat bg-cover bg-center">
             <section className="relative flex items-center justify-center  bg-transparent">

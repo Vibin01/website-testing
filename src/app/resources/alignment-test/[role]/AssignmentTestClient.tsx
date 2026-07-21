@@ -245,7 +245,7 @@ useEffect(() => {
   const isSubmitButton =
     mode === "single" ? isLastQuestion : isLastQuestion && isLastPhase;
 
-  const buttonText = isSubmitButton ? "Submit" : "Next";
+  const buttonText = isSubmitButton ? "Get Result" : "Next";
 
     const options = useMemo(() => {
   return Object.entries(currentQuestion.options);
@@ -692,7 +692,7 @@ const startIndex = isMobile
               </div>
             </div>
 
-            <div className="mt-sm rounded-md border border-[#B2D0F6] bg-[#F7FBFF] p-sm text-[12px] md:text-lg font-medium text-[#0668E1]">
+            <div className="mt-sm rounded-sm border border-[#B2D0F6] bg-[#F7FBFF] p-sm text-[12px] md:text-lg font-medium text-[#0668E1]">
               Choose what you would actually do — not what seems ideal.{" "}
               <span className="italic text-[#1B1C17]">
                 Your first instinct is usually the most accurate.
@@ -726,7 +726,7 @@ const startIndex = isMobile
                     return (
                       <label
                         key={key}
-                        className={`flex w-full cursor-pointer items-start gap-sm rounded-md border px-4 py-3 text-left text-xl font-medium transition ${
+                        className={`flex w-full cursor-pointer items-start gap-sm rounded-sm border px-4 py-3 text-left text-xl font-medium transition ${
                           active
                             ? "border-[#B2D0F6] text-[#2C2C2C]"
                             : "border-transparent text-[#9F9F9F]"
@@ -769,7 +769,7 @@ const startIndex = isMobile
                 <button
                   type="button"
                   onClick={handleBack}
-                  className="flex h-[52px] cursor-pointer items-center rounded-md border border-[#0668E1] px-md text-xl font-medium text-[#0668E1]"
+                  className="flex h-[52px] cursor-pointer items-center rounded-[8px] md:rounded-[12px] border border-[#0668E1] px-md text-xl font-medium text-[#0668E1]"
                 >
                   Back
                 </button>
@@ -781,7 +781,7 @@ const startIndex = isMobile
                 type="button"
                 onClick={handleNext}
                 disabled={!selectedOption || isProcessing}
-                className={`flex h-[52px] cursor-pointer items-center justify-center text-center gap-sm rounded-md w-[170px] text-xl font-medium text-white
+                className={`flex h-[52px] cursor-pointer items-center justify-center text-center gap-sm rounded-[8px] md:rounded-[12px] w-[170px] text-xl font-medium text-white
                   ${
                     !selectedOption || isProcessing
                       ? "cursor-not-allowed bg-gray-400"

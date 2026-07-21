@@ -454,7 +454,7 @@ function PhaseReport({
               ? router.back()
               : router.push(`/resources/alignment-test`)
           }
-          className="h-[54px] cursor-pointer rounded-sm border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
+          className="h-[54px] cursor-pointer rounded-[8px] md:rounded-[12px] border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
         >
           Back
         </button>
@@ -466,7 +466,7 @@ function PhaseReport({
             onClick={() =>
               router.push(`/resources/alignment-test/${role}?mode=full`)
             }
-            className="flex h-[54px] cursor-pointer items-center gap-sm rounded-sm bg-[#0668E1] px-8 text-xl font-medium text-white"
+            className="flex h-[54px] cursor-pointer items-center gap-sm rounded-[8px] md:rounded-[12px] bg-[#0668E1] px-8 text-xl font-medium text-white"
           >
             Continue Full Test
             <ArrowRight size={20} />
@@ -775,7 +775,7 @@ function OverallReport({
       <div className="mt-md flex justify-between md:justify-end gap-md">
         <button
           onClick={() => router.push("/resources/alignment-test")}
-          className="h-[54px] cursor-pointer rounded-md border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
+          className="h-[54px] cursor-pointer rounded-[8px] md:rounded-[12px] border border-[#0668E1] px-8 text-xl font-medium text-[#0668E1]"
         >
           Back
         </button>

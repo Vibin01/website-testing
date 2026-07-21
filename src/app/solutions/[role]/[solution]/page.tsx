@@ -8,6 +8,7 @@ import AlignmentComparisonSection from "../../AlignmentComparisonSection";
 import AlignmentSection from "../../AlignementSection";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
+import { HeroSection } from "./HeroSection";
 
 type PageProps = {
   params: Promise<{
@@ -71,21 +72,7 @@ const data = roleData?.[
       <div className="pt-[10%] md:pt-0">
         <div>
           <section className="mt-[10%] md:mt-0 relative flex items-center justify-center py-[5%] px-[5%] md:px-[7%] bg-transparent">
-            <div className="flex flex-col items-center justify-center py-[5%]">
-              <h1 className="text-h1 font-extrabold text-center text-[#0668E1]">
-                {data.title}
-              </h1>
-              <h2 className="text-h2 font-extrabold text-center">
-                {data.description}
-              </h2>
-                       <Link href={"https://play.google.com/store/apps/details?id=com.primethic.connectec"} target="_blank" className="w-fit mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
-            <span className=" font-bold text-xl text-white">
-              Unlock Connect EC for Free
-            </span>
-
-            <FaArrowRight className="text-white text-base" />
-          </Link>
-            </div>
+            <HeroSection title={data.title} description={data.description}/>
           </section>
         </div>
         <div className="">
