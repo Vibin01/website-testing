@@ -11,7 +11,7 @@ function MiniScoreCircle({
   mode: string;
 }) {
   return (
-    <div className="relative flex h-[96px] w-[96px] items-center justify-center rounded-full">
+    <div className="relative flex h-[96px] min-w-[96px] items-center justify-center rounded-full">
       <div
         className="absolute inset-0 rounded-full"
         style={{
