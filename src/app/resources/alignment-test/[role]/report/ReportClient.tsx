@@ -26,6 +26,7 @@ const phaseColors: Record<string, string> = {
   Dynamic: "#0668E1",
 };
 
+
 function getScoreColor(mode: string) {
   return phaseColors[mode] || "#0668E1";
 }
@@ -40,6 +41,7 @@ function ScoreCircle({
   size?: "small" | "large";
 }) {
   const color = getScoreColor(mode);
+
   const circleSize = size === "large" ? 120 : 110;
   const stroke = size === "large" ? 14 : 12;
   const radius = (circleSize - stroke) / 2;
@@ -75,7 +77,7 @@ function ScoreCircle({
         className="absolute inset-0 flex items-center justify-center text-h6 font-extrabold"
         style={{ color }}
       >
-        {percentage}%
+        {mode === "Dynamic" ? <p className="text-h4">D</p> : `${percentage}%`}
       </div>
     </div>
   );
@@ -271,9 +273,9 @@ function PhaseReport({
         </h2>
 
         <div className="mt-md flex flex-col gap-8 md:flex-row md:items-center">
-          {result.band !== "Dynamic" && (
-            <ScoreCircle percentage={result.percentage} mode={result.mode} />
-          )}
+
+          <ScoreCircle percentage={result.percentage} mode={result.mode} />
+
           <div>
             <div className="flex items-center gap-md">
               {result.band !== "Dynamic" && (
@@ -580,12 +582,13 @@ function OverallReport({
 
         <div className="mt-md flex flex-col gap-lg md:flex-row md:items-center">
           <ScoreCircle percentage={overall.percentage} mode={overall.mode} />
-
           <div>
             <div className="flex items-center gap-md">
-              <p className="text-h2 font-extrabold" style={{ color }}>
-                {overall.percentage}%
-              </p>
+              {overall.band !== "Dynamic" && (
+                <p className="text-h2 font-extrabold" style={{ color }}>
+                  {overall.percentage}%
+                </p>
+              )}
               <p className="text-h5 font-bold uppercase" style={{ color }}>
                 {overall.mode}
               </p>
@@ -617,7 +620,7 @@ function OverallReport({
       </div>
 
       <h2 className="mt-md text-base font-bold uppercase text-[#2C2C2C]">
-        Alignment Score by Phase
+        Alignment pattern by Phase
       </h2>
 
       <div className="mt-sm grid grid-cols-1 gap-md md:grid-cols-5">
@@ -638,6 +641,7 @@ function OverallReport({
                 mode={phase.mode}
                 size="small"
               />
+
             </div>
 
             <p className="mt-sm flex items-center justify-center gap-xs text-base font-bold capitalize text-[#2C2C2C]">

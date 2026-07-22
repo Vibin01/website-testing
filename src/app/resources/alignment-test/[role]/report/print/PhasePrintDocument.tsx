@@ -4,9 +4,11 @@ import { ImLinkedin2 } from "react-icons/im";
 function MiniScoreCircle({
   percentage,
   color = "#2B9B43",
+  mode,
 }: {
   percentage: number;
   color?: string;
+  mode: string;
 }) {
   return (
     <div className="relative flex h-[96px] w-[96px] items-center justify-center rounded-full">
@@ -18,7 +20,8 @@ function MiniScoreCircle({
       />
       <div className="absolute h-[68px] w-[68px] rounded-full bg-white" />
       <span className="relative text-h6 font-extrabold" style={{ color }}>
-        {percentage}%
+        {mode === "Dynamic" ? <p className="text-h4">D</p> : `${percentage}%`}
+
       </span>
     </div>
   );
@@ -44,7 +47,7 @@ export default function PhasePrintDocument({
 
   const color = getColor(result?.mode);
 
-    const isOldData = typeof content.patternName === "string";
+  const isOldData = typeof content.patternName === "string";
 
   return (
     <main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">
@@ -89,15 +92,13 @@ export default function PhasePrintDocument({
         </h2>
 
         <div className="mt-5 flex items-center gap-8">
-          {result.band !== "Dynamic" && (
-          <MiniScoreCircle percentage={result.percentage} color={color} />
-          )}
+          <MiniScoreCircle mode={result.mode} percentage={result.percentage} color={color} />
           <div>
             <div className="flex items-center gap-3">
               {result.band !== "Dynamic" && (
-              <p className="text-[34px] font-extrabold" style={{ color }}>
-                {result.percentage}%
-              </p>
+                <p className="text-[34px] font-extrabold" style={{ color }}>
+                  {result.percentage}%
+                </p>
               )}
               <p
                 className="text-[17px] font-extrabold uppercase"
@@ -109,12 +110,12 @@ export default function PhasePrintDocument({
 
             <p className="mt-1 text-[11px] font-extrabold">
               {isOldData
-      ? content.patternName
-      : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
+                ? content.patternName
+                : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
             </p>
             <p className="mt-1 text-[11px] font-medium">{isOldData ? content.phaseIntro
-    :
-    content.patternName[result.band ?? "Strong"]?.[1] ?? ""}</p>
+              :
+              content.patternName[result.band ?? "Strong"]?.[1] ?? ""}</p>
           </div>
         </div>
 

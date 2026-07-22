@@ -4,9 +4,11 @@ import { ImLinkedin2 } from "react-icons/im";
 function MiniScoreCircle({
   percentage,
   color = "#2B9B43",
+  mode,
 }: {
   percentage: number;
   color?: string;
+  mode: string;
 }) {
   return (
     <div className="relative flex h-[96px] w-[96px] items-center justify-center rounded-full">
@@ -18,7 +20,8 @@ function MiniScoreCircle({
       />
       <div className="absolute h-[68px] w-[68px] rounded-full bg-white" />
       <span className="relative text-[18px] font-extrabold" style={{ color }}>
-        {percentage}%
+        {mode === "Dynamic" ? <p className="text-h4">D</p> : `${percentage}%`}
+
       </span>
     </div>
   );
@@ -40,12 +43,12 @@ export default function OverallPrintDocument({
   user: any;
 }) {
   const { overall, phaseResults, content } = report;
-    if (!overall) return null;
+  if (!overall) return null;
 
   const color = getColor(overall?.mode);
-const isOldInsight = Array.isArray(content.insight);
+  const isOldInsight = Array.isArray(content.insight);
   return (
-<main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">    
+    <main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">
       <div className=" mt-[5%] flex items-center justify-between border-b border-[#D1E5FF] pb-4">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#E6F0FC] font-bold text-[#0668E1]">
@@ -57,7 +60,7 @@ const isOldInsight = Array.isArray(content.insight);
           </div>
         </div>
 
-             <img src="  /Connect_EC_Logo.svg" alt="connect ec" className="h-auto w-[160px]" />
+        <img src="  /Connect_EC_Logo.svg" alt="connect ec" className="h-auto w-[160px]" />
 
       </div >
 
@@ -82,31 +85,31 @@ const isOldInsight = Array.isArray(content.insight);
         </h2>
 
         <div className="mt-5 flex items-center gap-8">
-          <MiniScoreCircle percentage={overall.percentage} color={color} />
-
+          <MiniScoreCircle mode={overall.mode} percentage={overall.percentage} color={color} />
           <div>
             <div className="flex items-center gap-3">
-              <p className="text-[34px] font-extrabold" style={{ color }}>
-                {overall.percentage}%
-              </p>
+              {overall.mode !== "Dynamic" && (
+                <p className="text-[34px] font-extrabold" style={{ color }}>
+                  {overall.percentage}%
+                </p>)}
               <p className="text-[17px] font-extrabold uppercase" style={{ color }}>
                 {overall.mode}
               </p>
             </div>
 
             {isOldInsight
-  ? content.insight.map((line: string, index: number) => (
-      <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-        {line}
-      </p>
-    ))
-  : (content.insight[overall.band ?? "Strong"] ?? []).map(
-      (line: string, index: number) => (
-        <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-          {line}
-        </p>
-      )
-    )}
+              ? content.insight.map((line: string, index: number) => (
+                <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                  {line}
+                </p>
+              ))
+              : (content.insight[overall.band ?? "Strong"] ?? []).map(
+                (line: string, index: number) => (
+                  <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                    {line}
+                  </p>
+                )
+              )}
           </div>
         </div>
 
@@ -141,8 +144,9 @@ const isOldInsight = Array.isArray(content.insight);
               key={phase.phaseKey}
               className="rounded-[10px] border border-[#DEEDFF] bg-white p-3 text-center"
             >
-              <div className="flex justify-center">
+              <div className="flex justify-center h-[96px]">
                 <MiniScoreCircle
+                  mode={phase.mode}
                   percentage={phase.percentage}
                   color={phaseColor}
                 />
@@ -188,27 +192,27 @@ const isOldInsight = Array.isArray(content.insight);
         </div>
       </section>
 
-    
+
 
       <div className="mt-5 flex h-[42px] items-center justify-between bg-[#0668E1] px-5 text-[11px] font-semibold text-white">
         <div>Take Alignment Test</div>
         <div className=" flex text-[11px] gap-2 font-semibold text-white">
-                                   
-               
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <ImLinkedin2 />
-                                   </div>
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <FaMediumM />
-                                   </div>
-               
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <FaYoutube />
-                                   </div>
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <FaInstagram />
-                                   </div>
-                                 </div>
+
+
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <ImLinkedin2 />
+          </div>
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <FaMediumM />
+          </div>
+
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <FaYoutube />
+          </div>
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <FaInstagram />
+          </div>
+        </div>
       </div>
     </main>
   );
