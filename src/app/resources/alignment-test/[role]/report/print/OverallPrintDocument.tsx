@@ -34,7 +34,7 @@ function MiniScoreCircle({
   mode: string;
 }) {
   return (
-    <div className="relative flex h-[96px] min-w-[96px] items-center justify-center rounded-full">
+    <div className="relative flex h-[86px] min-w-[86px] items-center justify-center rounded-full">
       <div
         className="absolute inset-0 rounded-full"
         style={{
@@ -42,7 +42,7 @@ function MiniScoreCircle({
         }}
       />
       <div className="absolute h-[68px] w-[68px] rounded-full bg-white" />
-      <span className="relative text-[18px] font-extrabold" style={{ color }}>
+      <span className="relative text-[16px] font-extrabold" style={{ color }}>
         {mode === "Dynamic" ? <p className="text-h4">D</p> : `${percentage}%`}
 
       </span>
@@ -206,7 +206,7 @@ export default function OverallPrintDocument({
             </p>
               <p className=" mt-1 mb-3 text-[16px] font-bold">{phase.mode}</p>
             
-              <div className="flex justify-center h-[96px]">
+              <div className="flex justify-center h-[86px]">
               
                 <MiniScoreCircle
                   mode={phase.mode}
