@@ -102,11 +102,11 @@ export default function PhasePrintDocument({
             ].map((mode) => (
               <div key={mode} className="flex items-center gap-2">
                 <div
-                  className="size-iconsize-sm rounded-sm"
+                  className="size-iconsize-[14px] rounded-[8px]"
                   style={{ backgroundColor: getColor(mode) }}
                 />
 
-                <span className="text-xl font-medium">{mode}</span>
+                <span className="text-[10px] font-medium">{mode}</span>
               </div>
             ))}
           </div>

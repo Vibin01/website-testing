@@ -83,7 +83,7 @@ export default function OverallPrintDocument({
           </div>
         </div>
 
-        <img src="  /Connect_EC_Logo.svg" alt="connect ec" className="h-auto w-[160px]" />
+        <img src="/Connect_EC_Logo.svg" alt="connect ec" className="h-auto w-[160px]" />
 
       </div >
 
@@ -118,11 +118,11 @@ export default function OverallPrintDocument({
             ].map((mode) => (
               <div key={mode} className="flex items-center gap-2">
                 <div
-                  className="size-iconsize-sm rounded-sm"
+                  className="size-iconsize-[14px] rounded-[8px]"
                   style={{ backgroundColor: getColor(mode) }}
                 />
 
-                <span className="text-xl font-medium">{mode}</span>
+                <span className="text-[10px] font-medium">{mode}</span>
               </div>
             ))}
           </div>
@@ -144,13 +144,13 @@ export default function OverallPrintDocument({
 
             {isOldInsight
               ? content.insight.map((line: string, index: number) => (
-                <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                <p key={index} className="text-[10px] mt-0.5 font-medium text-[#2C2C2C]">
                   {line}
                 </p>
               ))
               : (content.insight[overall.band ?? "Strong"] ?? []).map(
                 (line: string, index: number) => (
-                  <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                  <p key={index} className="text-[10px] mt-0.5 font-medium text-[#2C2C2C]">
                     {line}
                   </p>
                 )
@@ -189,8 +189,7 @@ export default function OverallPrintDocument({
               key={phase.phaseKey}
               className="rounded-[10px] border border-[#DEEDFF] bg-white p-3 text-center"
             >
-              <div className="flex justify-center h-[96px]">
-                  <p className=" flex items-center justify-center gap-xs text-[17px] font-bold capitalize text-[#2C2C2C]">
+                  <p className=" flex items-center justify-center gap-xs text-[10px] font-bold capitalize text-[#2C2C2C]">
               <img
                 src={
                   icons.find(
@@ -205,8 +204,10 @@ export default function OverallPrintDocument({
 
               <span>{phase.phaseLabel}</span>
             </p>
-              <p className="text-[22px] font-medium">{phase.mode}</p>
+              <p className="text-[17px] font-medium">{phase.mode}</p>
             
+              <div className="flex justify-center h-[96px]">
+              
                 <MiniScoreCircle
                   mode={phase.mode}
                   percentage={phase.percentage}
