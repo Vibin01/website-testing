@@ -118,7 +118,7 @@ export default function OverallPrintDocument({
             ].map((mode) => (
               <div key={mode} className="flex items-center gap-2">
                 <div
-                  className="size-[14px] rounded-[6px]"
+                  className="size-[14px] rounded-[4px]"
                   style={{ backgroundColor: getColor(mode) }}
                 />
 
@@ -189,7 +189,7 @@ export default function OverallPrintDocument({
               key={phase.phaseKey}
               className="rounded-[10px] border border-[#DEEDFF] bg-white p-3 text-center"
             >
-                  <p className=" flex items-center justify-center gap-xs text-[10px] font-bold capitalize text-[#2C2C2C]">
+                  <p className=" flex items-center justify-center gap-xs text-[11px] font-medium capitalize text-[#2C2C2C]">
               <img
                 src={
                   icons.find(
@@ -199,12 +199,12 @@ export default function OverallPrintDocument({
                   )?.icon
                 }
                 alt={phase.phaseLabel}
-                className="size-iconsize-sm scale-95 object-contain"
+                className="size-iconsize-sm scale-90 object-contain"
               />
 
               <span>{phase.phaseLabel}</span>
             </p>
-              <p className="text-[17px] font-medium">{phase.mode}</p>
+              <p className=" mt-1 mb-3 text-[16px] font-bold">{phase.mode}</p>
             
               <div className="flex justify-center h-[96px]">
               
