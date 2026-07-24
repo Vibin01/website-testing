@@ -118,7 +118,7 @@ export default function OverallPrintDocument({
             ].map((mode) => (
               <div key={mode} className="flex items-center gap-2">
                 <div
-                  className="size-iconsize-[14px] rounded-[8px]"
+                  className="size-[14px] rounded-[6px]"
                   style={{ backgroundColor: getColor(mode) }}
                 />
 
