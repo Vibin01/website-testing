@@ -76,7 +76,7 @@ export default function DownloadPdfButton({
       onClick={handleDownload}
       disabled={loading}
 
-      className={action==="download" ?"flex h-[54px] cursor-pointer items-center justify-center gap-sm rounded-md  bg-[#0668E1] w-[200px] text-xl font-medium text-white disabled:opacity-50"
+      className={action==="download" ?"flex h-[54px] cursor-pointer items-center justify-center gap-sm rounded-[8px] md:rounded-[12px]  bg-[#0668E1] w-[200px] text-xl font-medium text-white disabled:opacity-50"
         :"flex items-center cursor-pointer gap-2 text-[16px] font-bold"}
     >
        {action === "download" ? (

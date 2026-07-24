@@ -4,12 +4,14 @@ import { ImLinkedin2 } from "react-icons/im";
 function MiniScoreCircle({
   percentage,
   color = "#2B9B43",
+  mode,
 }: {
   percentage: number;
   color?: string;
+  mode: string;
 }) {
   return (
-    <div className="relative flex h-[96px] w-[96px] items-center justify-center rounded-full">
+    <div className="relative flex h-[96px] min-w-[96px] items-center justify-center rounded-full">
       <div
         className="absolute inset-0 rounded-full"
         style={{
@@ -18,7 +20,8 @@ function MiniScoreCircle({
       />
       <div className="absolute h-[68px] w-[68px] rounded-full bg-white" />
       <span className="relative text-h6 font-extrabold" style={{ color }}>
-        {percentage}%
+        {mode === "Dynamic" ? <p className="text-h4">D</p> : `${percentage}%`}
+
       </span>
     </div>
   );
@@ -26,9 +29,9 @@ function MiniScoreCircle({
 
 function getColor(mode: string) {
   if (mode === "Aligned") return "#2B9B43";
-  if (mode === "Auto-Aligned") return "#0668E1";
+  if (mode === "Auto-Aligned") return "#36C354";
   if (mode === "Misaligned") return "#F0431D";
-  if (mode === "Unaligned") return "#F59E0B";
+  if (mode === "Unaligned") return "#F9A620";
   return "#0668E1";
 }
 
@@ -44,7 +47,7 @@ export default function PhasePrintDocument({
 
   const color = getColor(result?.mode);
 
-    const isOldData = typeof content.patternName === "string";
+  const isOldData = typeof content.patternName === "string";
 
   return (
     <main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">
@@ -84,20 +87,39 @@ export default function PhasePrintDocument({
       </section>
 
       <section className="mt-5 rounded-[14px] border border-[#DEEDFF] bg-white p-5">
-        <h2 className="text-[13px] font-extrabold uppercase">
+        
+        <div className="flex flex-col md:flex-row justify-between">
+          <h2 className="text-[13px] font-extrabold uppercase">
           Alignment Insights for {phaseLabel}
         </h2>
+          <div className="flex flex-wrap items-center gap-md mt-sm md:mt-0">
+            {[
+              "Aligned",
+              "Auto-Aligned",
+              "Unaligned",
+              "Misaligned",
+              "Dynamic",
+            ].map((mode) => (
+              <div key={mode} className="flex items-center gap-2">
+                <div
+                  className="size-iconsize-sm rounded-sm"
+                  style={{ backgroundColor: getColor(mode) }}
+                />
+
+                <span className="text-xl font-medium">{mode}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-5 flex items-center gap-8">
-          {result.band !== "Dynamic" && (
-          <MiniScoreCircle percentage={result.percentage} color={color} />
-          )}
+          <MiniScoreCircle mode={result.mode} percentage={result.percentage} color={color} />
           <div>
             <div className="flex items-center gap-3">
               {result.band !== "Dynamic" && (
-              <p className="text-[34px] font-extrabold" style={{ color }}>
-                {result.percentage}%
-              </p>
+                <p className="text-[34px] font-extrabold" style={{ color }}>
+                  {result.percentage}%
+                </p>
               )}
               <p
                 className="text-[17px] font-extrabold uppercase"
@@ -109,12 +131,12 @@ export default function PhasePrintDocument({
 
             <p className="mt-1 text-[11px] font-extrabold">
               {isOldData
-      ? content.patternName
-      : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
+                ? content.patternName
+                : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
             </p>
             <p className="mt-1 text-[11px] font-medium">{isOldData ? content.phaseIntro
-    :
-    content.patternName[result.band ?? "Strong"]?.[1] ?? ""}</p>
+              :
+              content.patternName[result.band ?? "Strong"]?.[1] ?? ""}</p>
           </div>
         </div>
 

@@ -144,6 +144,14 @@ useEffect(() => {
 }, [email]);
 
 useEffect(() => {
+  if (termsAccepted && privacyAccepted) {
+    setAgree(true);
+  } else {
+    setAgree(false);
+  }
+}, [termsAccepted, privacyAccepted]);
+
+useEffect(() => {
   const role = searchParams.get("role") as Role | null;
 
   if (
@@ -203,11 +211,6 @@ if (!agree) {
   return;
 }
 
-const key = email.trim().toLowerCase();
-
-sessionStorage.setItem(`termsAccepted_${key}`, "true");
-sessionStorage.setItem(`privacyAccepted_${key}`, "true");
-
     if (!selectedRole) {
       setError("Please select a role.");
       return;
@@ -256,9 +259,22 @@ sessionStorage.setItem(`privacyAccepted_${key}`, "true");
     }
 
     if (res.success) {
-      setUserId(res.userId!);
-      setStep("OTP");
-    }
+  const key = email.trim().toLowerCase();
+
+  // Save Terms & Privacy acceptance for this exact user
+  sessionStorage.setItem(
+    `termsAccepted_${key}`,
+    "true"
+  );
+
+  sessionStorage.setItem(
+    `privacyAccepted_${key}`,
+    "true"
+  );
+
+  setUserId(res.userId!);
+  setStep("OTP");
+}
 
     setRegisterLoading(false);
   };
@@ -591,9 +607,8 @@ const isLocked =
                 >
                   {registerLoading
                     ? "Checking..."
-                    : selectedRole === "candidate"
-                      ? "Register for Free"
-                      : "Submit"}
+                    :  "Register for Free"
+                      }
                 </button>
               </div>
             </form>

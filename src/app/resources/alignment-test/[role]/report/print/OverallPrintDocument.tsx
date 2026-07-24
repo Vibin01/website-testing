@@ -1,15 +1,40 @@
 import { FaInstagram, FaMediumM, FaYoutube } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 
+  const icons = [
+    {
+      title: "Uncertainty",
+      icon: "/resources/alignment-test/uncertainty-black-icon.svg",
+    },
+    {
+      title: "Pressure",
+      icon: "/resources/alignment-test/pressure-black-icon.svg",
+    },
+    {
+      title: "Control",
+      icon: "/resources/alignment-test/control-black-icon.svg",
+    },
+    {
+      title: "Perception",
+      icon: "/resources/alignment-test/perception-black-icon.svg",
+    },
+    {
+      title: "Outcome",
+      icon: "/resources/alignment-test/outcome-black-icon.svg",
+    },
+  ];
+
 function MiniScoreCircle({
   percentage,
   color = "#2B9B43",
+  mode,
 }: {
   percentage: number;
   color?: string;
+  mode: string;
 }) {
   return (
-    <div className="relative flex h-[96px] w-[96px] items-center justify-center rounded-full">
+    <div className="relative flex h-[96px] min-w-[96px] items-center justify-center rounded-full">
       <div
         className="absolute inset-0 rounded-full"
         style={{
@@ -18,7 +43,8 @@ function MiniScoreCircle({
       />
       <div className="absolute h-[68px] w-[68px] rounded-full bg-white" />
       <span className="relative text-[18px] font-extrabold" style={{ color }}>
-        {percentage}%
+        {mode === "Dynamic" ? <p className="text-h4">D</p> : `${percentage}%`}
+
       </span>
     </div>
   );
@@ -26,9 +52,9 @@ function MiniScoreCircle({
 
 function getColor(mode: string) {
   if (mode === "Aligned") return "#2B9B43";
-  if (mode === "Auto-Aligned") return "#0668E1";
+  if (mode === "Auto-Aligned") return "#36C354";
   if (mode === "Misaligned") return "#F0431D";
-  if (mode === "Unaligned") return "#F59E0B";
+  if (mode === "Unaligned") return "#F9A620";
   return "#0668E1";
 }
 
@@ -40,12 +66,12 @@ export default function OverallPrintDocument({
   user: any;
 }) {
   const { overall, phaseResults, content } = report;
-    if (!overall) return null;
+  if (!overall) return null;
 
   const color = getColor(overall?.mode);
-const isOldInsight = Array.isArray(content.insight);
+  const isOldInsight = Array.isArray(content.insight);
   return (
-<main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">    
+    <main className="mx-auto min-h-[297mm] w-[210mm] bg-[#FAFDFF] p-[10mm] text-[#1B1C17]">
       <div className=" mt-[5%] flex items-center justify-between border-b border-[#D1E5FF] pb-4">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#E6F0FC] font-bold text-[#0668E1]">
@@ -57,7 +83,7 @@ const isOldInsight = Array.isArray(content.insight);
           </div>
         </div>
 
-             <img src="  /Connect_EC_Logo.svg" alt="connect ec" className="h-auto w-[160px]" />
+        <img src="  /Connect_EC_Logo.svg" alt="connect ec" className="h-auto w-[160px]" />
 
       </div >
 
@@ -77,36 +103,58 @@ const isOldInsight = Array.isArray(content.insight);
       </section>
 
       <section className="mt-5 rounded-[14px] border border-[#DEEDFF] bg-white p-5">
-        <h2 className="text-[13px] font-extrabold uppercase">
+        
+        <div className="flex flex-col md:flex-row justify-between">
+          <h2 className="text-[13px] font-extrabold uppercase">
           Overall Alignment
         </h2>
+          <div className="flex flex-wrap items-center gap-md mt-sm md:mt-0">
+            {[
+              "Aligned",
+              "Auto-Aligned",
+              "Unaligned",
+              "Misaligned",
+              "Dynamic",
+            ].map((mode) => (
+              <div key={mode} className="flex items-center gap-2">
+                <div
+                  className="size-iconsize-sm rounded-sm"
+                  style={{ backgroundColor: getColor(mode) }}
+                />
+
+                <span className="text-xl font-medium">{mode}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
 
         <div className="mt-5 flex items-center gap-8">
-          <MiniScoreCircle percentage={overall.percentage} color={color} />
-
+          <MiniScoreCircle mode={overall.mode} percentage={overall.percentage} color={color} />
           <div>
             <div className="flex items-center gap-3">
-              <p className="text-[34px] font-extrabold" style={{ color }}>
-                {overall.percentage}%
-              </p>
+              {overall.mode !== "Dynamic" && (
+                <p className="text-[34px] font-extrabold" style={{ color }}>
+                  {overall.percentage}%
+                </p>)}
               <p className="text-[17px] font-extrabold uppercase" style={{ color }}>
                 {overall.mode}
               </p>
             </div>
 
             {isOldInsight
-  ? content.insight.map((line: string, index: number) => (
-      <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-        {line}
-      </p>
-    ))
-  : (content.insight[overall.band ?? "Strong"] ?? []).map(
-      (line: string, index: number) => (
-        <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-          {line}
-        </p>
-      )
-    )}
+              ? content.insight.map((line: string, index: number) => (
+                <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                  {line}
+                </p>
+              ))
+              : (content.insight[overall.band ?? "Strong"] ?? []).map(
+                (line: string, index: number) => (
+                  <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                    {line}
+                  </p>
+                )
+              )}
           </div>
         </div>
 
@@ -141,17 +189,31 @@ const isOldInsight = Array.isArray(content.insight);
               key={phase.phaseKey}
               className="rounded-[10px] border border-[#DEEDFF] bg-white p-3 text-center"
             >
-              <div className="flex justify-center">
+              <div className="flex justify-center h-[96px]">
+                  <p className=" flex items-center justify-center gap-xs text-[17px] font-bold capitalize text-[#2C2C2C]">
+              <img
+                src={
+                  icons.find(
+                    (item) =>
+                      item.title.toLowerCase() ===
+                      phase.phaseLabel.toLowerCase(),
+                  )?.icon
+                }
+                alt={phase.phaseLabel}
+                className="size-iconsize-sm scale-95 object-contain"
+              />
+
+              <span>{phase.phaseLabel}</span>
+            </p>
+              <p className="text-[22px] font-medium">{phase.mode}</p>
+            
                 <MiniScoreCircle
+                  mode={phase.mode}
                   percentage={phase.percentage}
                   color={phaseColor}
                 />
               </div>
-              <p className="mt-2 text-[11px] font-extrabold">
-                {phase.phaseLabel}
-              </p>
-              <p className="text-[10px] font-medium">{phase.mode}</p>
-            </div>
+           </div>
           );
         })}
       </section>
@@ -188,27 +250,27 @@ const isOldInsight = Array.isArray(content.insight);
         </div>
       </section>
 
-    
+
 
       <div className="mt-5 flex h-[42px] items-center justify-between bg-[#0668E1] px-5 text-[11px] font-semibold text-white">
         <div>Take Alignment Test</div>
         <div className=" flex text-[11px] gap-2 font-semibold text-white">
-                                   
-               
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <ImLinkedin2 />
-                                   </div>
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <FaMediumM />
-                                   </div>
-               
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <FaYoutube />
-                                   </div>
-                                   <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-                                     <FaInstagram />
-                                   </div>
-                                 </div>
+
+
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <ImLinkedin2 />
+          </div>
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <FaMediumM />
+          </div>
+
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <FaYoutube />
+          </div>
+          <div className="p-2 bg-[#FFFFFF1A] rounded-full">
+            <FaInstagram />
+          </div>
+        </div>
       </div>
     </main>
   );

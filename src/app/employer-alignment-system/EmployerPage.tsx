@@ -15,6 +15,7 @@ import InsightComparisonSection from "@/components/common/InsightComparisonSecti
 import WorkflowAlignmentSection from "@/components/common/WorkflowAlignmentSection";
 import OutcomeHighlightSection from "@/components/common/OutcomeHighlightSection";
 import FAQSection from "@/components/common/FAQSection";
+import ECLoadingAnimation from "@/components/common/Animation/LoadingEcAnimation";
 
 export const EmployerPage = () => {
   return (
@@ -25,6 +26,7 @@ export const EmployerPage = () => {
           <section className="relative flex items-center justify-center bg-transparent">
             <div className="mt-[5%] pt-[5%] pb-[15%] px-[5%]">
               <HeroTextContainerSection data={HeroData} />
+              {/* <ECLoadingAnimation/> */}
             </div>
           </section>
         </div>

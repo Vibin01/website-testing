@@ -24,12 +24,12 @@ const MDXComponents = {
 
   strong: (props: any) => <strong className="font-bold  " {...props} />,
 
-  // li: (props: any) => (
-  //   <li
-  //     className="list-disc ml-5 indent-2 lg:text-[18px] xl:text-[20px] 2xl:text-[24px] "
-  //     {...props}
-  //   />
-  // ),
+  li: (props: any) => (
+    <li
+      className="list-disc ml-5  "
+      {...props}
+    />
+  ),
   ul: (props: any) => (
     <ul
       {...props}
