@@ -4,11 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-<<<<<<< HEAD
-=======
 import { toast } from "sonner";
 import { TriangleAlert } from "lucide-react";
->>>>>>> 569b9e4 (new da)
 
 type OutcomeHighlightSectionData = {
   title: string;
@@ -52,8 +49,6 @@ export default function OutcomeHighlightSection({
 
   const showBottomBlock = !!(bottomTitle && bottomHighlight);
 const pathname=usePathname();
-<<<<<<< HEAD
-=======
 
 const showDesktopWarning = () => {
   toast.custom((t) => (
@@ -87,7 +82,6 @@ const isCandidate = pathname.includes("candidate");
 const isRecruiter = pathname.includes("recruiter");
 const isEmployer = pathname.includes("employer");
 
->>>>>>> 569b9e4 (new da)
   return (
     <section className="w-full bg-white">
       <div className="mx-auto grid items-center gap-8 sm:grid-cols-[1.25fr_0.75fr]">
@@ -140,18 +134,6 @@ const isEmployer = pathname.includes("employer");
               </h3>
             )}
           </div>
-<<<<<<< HEAD
-          <Link href={
-      pathname.includes("candidate")
-        ? "https://play.google.com/store/apps/details?id=com.primethic.connectec"
-        : pathname.includes("recruiter")
-          ? "https://recruiter.connectec.app/register"
-          : "https://employer.connectec.app/register"
-    } target="_blank" className="w-fit mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
-            <span className=" font-bold text-xl text-white">
-              Unlock Connect EC for Free
-            </span>
-=======
          <>
     {/* Mobile Candidate & Recruiter */}
     {(isCandidate || isRecruiter) && (
@@ -163,7 +145,6 @@ const isEmployer = pathname.includes("employer");
         <span className="font-bold text-xl text-white">
           Unlock Connect EC for Free
         </span>
->>>>>>> 569b9e4 (new da)
 
         <FaArrowRight className="text-white text-base" />
       </Link>

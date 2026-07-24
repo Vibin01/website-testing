@@ -297,10 +297,6 @@ function PhaseReport({
         </div>
 
         <div className="mt-md flex flex-col gap-8 md:flex-row md:items-center">
-<<<<<<< HEAD
-
-=======
->>>>>>> 569b9e4 (new da)
           <ScoreCircle percentage={result.percentage} mode={result.mode} />
 
           <div>
@@ -693,20 +689,7 @@ function OverallReport({
             }
             className="rounded-md cursor-pointer border border-[#DEEDFF] bg-white p-sm text-center"
           >
-<<<<<<< HEAD
-            <div className="flex justify-center">
-              <ScoreCircle
-                percentage={phase.percentage}
-                mode={phase.mode}
-                size="small"
-              />
-
-            </div>
-
-            <p className="mt-sm flex items-center justify-center gap-xs text-base font-bold capitalize text-[#2C2C2C]">
-=======
                 <p className=" text-xl font-medium flex items-center justify-center gap-xs  capitalize text-[#2C2C2C]">
->>>>>>> 569b9e4 (new da)
               <img
                 src={
                   icons.find(

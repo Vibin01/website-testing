@@ -1,12 +1,4 @@
 "use client";
-<<<<<<< HEAD
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { FaArrowRight } from 'react-icons/fa6';
-
-export const HeroSection = ({title,description}:{title:string,description:string}) => {
-      const pathname=usePathname();
-=======
 import { TriangleAlert } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -46,7 +38,6 @@ export const HeroSection = ({title,description}:{title:string,description:string
 const isCandidate = pathname.includes("candidate");
 const isRecruiter = pathname.includes("recruiter");
 const isEmployer = pathname.includes("employer");
->>>>>>> 569b9e4 (new da)
     
   return (
     <div className="flex flex-col items-center justify-center py-[5%]">
@@ -56,21 +47,6 @@ const isEmployer = pathname.includes("employer");
               <h2 className="text-h2 font-extrabold text-center">
                 {description}
               </h2>
-<<<<<<< HEAD
-                       <Link href={
-      pathname.includes("candidate")
-        ? "https://play.google.com/store/apps/details?id=com.primethic.connectec"
-        : pathname.includes("recruiter")
-          ? "https://recruiter.connectec.app/register"
-          : "https://employer.connectec.app/register"
-    } target="_blank" className="w-fit mt-lg h-btn-h text-nowrap  bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm">
-            <span className=" font-bold text-xl text-white">
-              Unlock Connect EC for Free
-            </span>
-
-            <FaArrowRight className="text-white text-base" />
-          </Link>
-=======
                       <>
     {/* Mobile Candidate & Recruiter */}
     {(isCandidate || isRecruiter) && (
@@ -121,7 +97,6 @@ const isEmployer = pathname.includes("employer");
       <FaArrowRight className="text-white text-base" />
     </Link>
   </>
->>>>>>> 569b9e4 (new da)
             </div>
   )
 }

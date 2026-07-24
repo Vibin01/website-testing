@@ -190,8 +190,6 @@ export default function OverallPrintDocument({
               className="rounded-[10px] border border-[#DEEDFF] bg-white p-3 text-center"
             >
               <div className="flex justify-center h-[96px]">
-<<<<<<< HEAD
-=======
                   <p className=" flex items-center justify-center gap-xs text-[17px] font-bold capitalize text-[#2C2C2C]">
               <img
                 src={
@@ -209,7 +207,6 @@ export default function OverallPrintDocument({
             </p>
               <p className="text-[22px] font-medium">{phase.mode}</p>
             
->>>>>>> 569b9e4 (new da)
                 <MiniScoreCircle
                   mode={phase.mode}
                   percentage={phase.percentage}
