@@ -204,7 +204,7 @@ export default function OverallPrintDocument({
 
               <span>{phase.phaseLabel}</span>
             </p>
-              <p className=" mt-1 mb-3 text-[16px] font-bold">{phase.mode}</p>
+              <p className=" mt-1 mb-3 text-[15px] font-bold">{phase.mode}</p>
             
               <div className="flex justify-center h-[86px]">
               
