@@ -29,9 +29,9 @@ function MiniScoreCircle({
 
 function getColor(mode: string) {
   if (mode === "Aligned") return "#2B9B43";
-  if (mode === "Auto-Aligned") return "#0668E1";
+  if (mode === "Auto-Aligned") return "#36C354";
   if (mode === "Misaligned") return "#F0431D";
-  if (mode === "Unaligned") return "#F59E0B";
+  if (mode === "Unaligned") return "#F9A620";
   return "#0668E1";
 }
 
@@ -87,9 +87,30 @@ export default function PhasePrintDocument({
       </section>
 
       <section className="mt-5 rounded-[14px] border border-[#DEEDFF] bg-white p-5">
-        <h2 className="text-[13px] font-extrabold uppercase">
+        
+        <div className="flex flex-col md:flex-row justify-between">
+          <h2 className="text-[13px] font-extrabold uppercase">
           Alignment Insights for {phaseLabel}
         </h2>
+          <div className="flex flex-wrap items-center gap-md mt-sm md:mt-0">
+            {[
+              "Aligned",
+              "Auto-Aligned",
+              "Unaligned",
+              "Misaligned",
+              "Dynamic",
+            ].map((mode) => (
+              <div key={mode} className="flex items-center gap-2">
+                <div
+                  className="size-iconsize-sm rounded-sm"
+                  style={{ backgroundColor: getColor(mode) }}
+                />
+
+                <span className="text-xl font-medium">{mode}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-5 flex items-center gap-8">
           <MiniScoreCircle mode={result.mode} percentage={result.percentage} color={color} />

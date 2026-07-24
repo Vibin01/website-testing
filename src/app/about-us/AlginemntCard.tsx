@@ -1,11 +1,14 @@
 "use client";
 
+import { TriangleAlert } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdGroups } from "react-icons/md";
 import { PiArrowsLeftRightBold } from "react-icons/pi";
 import { VscArrowBoth } from "react-icons/vsc";
+import { toast } from "sonner";
 
 const withinRoles = [
   {
@@ -47,6 +50,55 @@ const acrossRoles = [
     url: "https://employer.connectec.app/register",
   },
 ];
+
+const mobileAcrossRoles = [
+  {
+    role: "Candidates",
+    img: "/icons/candidate-icon.svg",
+    url: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
+    type: "link",
+  },
+  {
+    role: "Recruiters",
+    img: "/icons/recruiter-icon.svg",
+    url: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
+    type: "link",
+  },
+  {
+    role: "Employers",
+    img: "/icons/employer-icon.svg",
+    url:"",
+    type: "toast",
+  },
+];
+
+      const showDesktopWarning = () => {
+  toast.custom((t) => (
+     <div className="relative flex  items-start gap-xs rounded-lg border border-[#F5C451] bg-white p-sm shadow-lg">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FFF7DB]">
+            <TriangleAlert className="size-iconsize-sm text-[#D99A00]" />
+          </div>
+    
+          <div className="flex-1">
+            <p className="text-base font-semibold text-[#222]">
+              Desktop browser recommended
+            </p>
+    
+            <p className="mt-1 text-[13px] font-medium leading-5 text-[#666]">
+              For the best experience, please use a desktop browser to access the
+              dashboard.
+            </p>
+          </div>
+    
+          <button
+            onClick={() => toast.dismiss(t)}
+            className="text-sm font-medium text-[#666] hover:text-[#222]"
+          >
+            ✕
+          </button>
+        </div>
+  ));
+};
 
 export default function AlignmentCards() {
   return (
@@ -174,54 +226,154 @@ text-[#0668E1]
         </p>
 
         <div className="mb-sm flex items-center gap-xs md:gap-sm">
-          {acrossRoles.map((role, index) => (
-            <div key={role.role} className="flex items-center gap-xs md:gap-sm">
-              <Link
-                href={role.url}
-                target="_blank"
-                className={`cursor-pointer
-                  group
-                  flex
-                 flex-col
-                  items-start
-                  gap-xs
-                  rounded-md
-                  border
-                  border-[#DEEDFF]
-                  p-sm
-                  shadow-mobile-small md:shadow-web-small
-                 
-                  transition-all
-                  duration-300
-                  hover:border-[#0668E1]
-                  hover:text-[#0668E1]
-                `}
-              >
-                <div className="flex w-full items-center justify-between">
-                  <img
-                    src={role.img}
-                    alt={role.role}
-                    className="size-iconsize-sm scale-110"
-                  />
-                  <BsArrowUpRightCircleFill
-                    className="
-                    size-iconsize-sm
-                    scale-85
-                    opacity-0
-                    
-text-[#0668E1]
-                    group-hover:opacity-100
-                  "
-                  />
-                </div>
-                <span className="text-xl font-medium">{role.role}</span>
-              </Link>
+          <div className="flex items-center gap-xs md:gap-sm">
+  {/* Mobile */}
+  <div className="flex md:hidden items-center gap-xs md:gap-sm">
+    {mobileAcrossRoles.map((role, index) => (
+      <React.Fragment key={role.role}>
+        {role.type === "toast" ? (
+          <button
+            type="button"
+            onClick={showDesktopWarning}
+            className={`cursor-pointer
+              group
+              flex
+              flex-col
+              items-start
+              gap-xs
+              rounded-md
+              border
+              border-[#DEEDFF]
+              p-sm
+              shadow-mobile-small md:shadow-web-small
+              transition-all
+              duration-300
+              hover:border-[#0668E1]
+              hover:text-[#0668E1]
+            `}
+          >
+            <div className="flex w-full items-center justify-between">
+              <img
+                src={role.img}
+                alt={role.role}
+                className="size-iconsize-sm scale-110"
+              />
 
-              {index < acrossRoles.length - 1 && (
-                <PiArrowsLeftRightBold className="size-iconsize-sm my-sm font-medium text-[#B2D0F6] " />
-              )}
+              <BsArrowUpRightCircleFill
+                className="
+                  size-iconsize-sm
+                  scale-85
+                  opacity-0
+                  text-[#0668E1]
+                  group-hover:opacity-100
+                "
+              />
             </div>
-          ))}
+
+            <span className="text-xl font-medium">{role.role}</span>
+          </button>
+        ) : (
+          <Link
+            href={role.url}
+            target="_blank"
+            className={`cursor-pointer
+              group
+              flex
+              flex-col
+              items-start
+              gap-xs
+              rounded-md
+              border
+              border-[#DEEDFF]
+              p-sm
+              shadow-mobile-small md:shadow-web-small
+              transition-all
+              duration-300
+              hover:border-[#0668E1]
+              hover:text-[#0668E1]
+            `}
+          >
+            <div className="flex w-full items-center justify-between">
+              <img
+                src={role.img}
+                alt={role.role}
+                className="size-iconsize-sm scale-110"
+              />
+
+              <BsArrowUpRightCircleFill
+                className="
+                  size-iconsize-sm
+                  scale-85
+                  opacity-0
+                  text-[#0668E1]
+                  group-hover:opacity-100
+                "
+              />
+            </div>
+
+            <span className="text-xl font-medium">{role.role}</span>
+          </Link>
+        )}
+
+        {index < mobileAcrossRoles.length - 1 && (
+          <PiArrowsLeftRightBold className="size-iconsize-sm my-sm font-medium text-[#B2D0F6]" />
+        )}
+      </React.Fragment>
+    ))}
+  </div>
+
+  {/* Desktop */}
+  <div className="hidden md:flex items-center gap-xs md:gap-sm">
+    {acrossRoles.map((role, index) => (
+      <React.Fragment key={role.role}>
+        <Link
+          href={role.url}
+          target="_blank"
+          className={`cursor-pointer
+            group
+            flex
+            flex-col
+            items-start
+            gap-xs
+            rounded-md
+            border
+            border-[#DEEDFF]
+            p-sm
+            shadow-mobile-small md:shadow-web-small
+            transition-all
+            duration-300
+            hover:border-[#0668E1]
+            hover:text-[#0668E1]
+          `}
+        >
+          <div className="flex w-full items-center justify-between">
+            <img
+              src={role.img}
+              alt={role.role}
+              className="size-iconsize-sm scale-110"
+            />
+
+            <BsArrowUpRightCircleFill
+              className="
+                size-iconsize-sm
+                scale-85
+                opacity-0
+                text-[#0668E1]
+                group-hover:opacity-100
+              "
+            />
+          </div>
+
+          <span className="text-xl font-medium">{role.role}</span>
+        </Link>
+
+        {index < acrossRoles.length - 1 && (
+          <PiArrowsLeftRightBold className="size-iconsize-sm my-sm font-medium text-[#B2D0F6]" />
+        )}
+      </React.Fragment>
+    ))}
+  </div>
+</div>
         </div>
 
         <p className="mb-sm text-base font-medium">

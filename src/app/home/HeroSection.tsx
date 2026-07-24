@@ -5,8 +5,10 @@ import { MdGroups } from "react-icons/md";
 import { IoPersonSharp } from "react-icons/io5";
 import { PiArrowsLeftRightBold } from "react-icons/pi";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, TriangleAlert } from "lucide-react";
 import React from "react";
+import { toast } from "sonner";
+
 
 const withinRoles = [
   {
@@ -48,6 +50,27 @@ const acrossRoles = [
     url: "https://employer.connectec.app/register",
   },
 ];
+const mobileAcrossRoles = [
+  {
+    role: "Candidates",
+    img: "/icons/candidate-icon.svg",
+    url: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
+    type: "link",
+  },
+  {
+    role: "Recruiters",
+    img: "/icons/recruiter-icon.svg",
+    url: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
+    type: "link",
+  },
+  {
+    role: "Employers",
+    img: "/icons/employer-icon.svg",
+    url:"",
+    type: "toast",
+  },
+];
+
 
 export const HeroSection = () => {
   return (
@@ -157,8 +180,154 @@ export const HeroSection = () => {
               ))}
             </div>
           </TabsContent>
+{/* mobile */}
+           <TabsContent value="across" className="mt-xl md:hidden">
+            <div className="flex justify-evenly items-center h-[clamp(80px,11vw,200px)]">
+  {mobileAcrossRoles.map((role, index) => (
+    <React.Fragment key={role.role}>
+      {role.type === "toast" ? (
+        <button
+          type="button"
+          onClick={() =>
+  toast.custom((t) => (
+    <div className="relative flex  items-start gap-xs rounded-lg border border-[#F5C451] bg-white p-sm shadow-lg">
+      <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FFF7DB]">
+        <TriangleAlert className="size-iconsize-sm text-[#D99A00]" />
+      </div>
 
-          <TabsContent value="across" className="mt-xl">
+      <div className="flex-1">
+        <p className="text-base font-semibold text-[#222]">
+          Desktop browser recommended
+        </p>
+
+        <p className="mt-1 text-[13px] font-medium leading-5 text-[#666]">
+          For the best experience, please use a desktop browser to access the
+          dashboard.
+        </p>
+      </div>
+
+      <button
+        onClick={() => toast.dismiss(t)}
+        className="text-sm font-medium text-[#666] hover:text-[#222]"
+      >
+        ✕
+      </button>
+    </div>
+  ))
+}
+          className="w-1/3 group flex flex-col items-center gap-sm cursor-pointer"
+        >
+          <img
+            src={role.img}
+            alt={role.role}
+            className="
+              size-iconsize-2xl
+              transition-all
+              scale-90
+              duration-400
+              group-hover:scale-105
+            "
+          />
+
+          <div
+            className="
+              relative
+              mt-sm
+              flex items-center gap-xs
+              px-0 py-0
+              rounded-sm
+              border border-transparent
+              bg-transparent
+              transition-all
+              duration-400
+              group-hover:px-4
+              group-hover:py-2
+              group-hover:bg-white
+              group-hover:border-[#0066FF]
+              group-hover:scale-100
+              group-hover:pr-xl
+            "
+          >
+            <span className="font-medium text-xl group-hover:text-[#0066FF]">
+              {role.role}
+            </span>
+
+            <ArrowRight
+              className="
+                absolute right-2
+                text-[#0066FF]
+                opacity-0
+                transition-all duration-300
+                group-hover:opacity-100
+                group-hover:scale-85
+              "
+            />
+          </div>
+        </button>
+      ) : (
+        <Link
+          href={role.url}
+          target="_blank"
+          className="w-1/3 group flex flex-col items-center gap-sm cursor-pointer"
+        >
+          <img
+            src={role.img}
+            alt={role.role}
+            className="
+              size-iconsize-2xl
+              transition-all
+              scale-90
+              duration-400
+              group-hover:scale-105
+            "
+          />
+
+          <div
+            className="
+              relative
+              mt-sm
+              flex items-center gap-xs
+              px-0 py-0
+              rounded-sm
+              border border-transparent
+              bg-transparent
+              transition-all
+              duration-400
+              group-hover:px-4
+              group-hover:py-2
+              group-hover:bg-white
+              group-hover:border-[#0066FF]
+              group-hover:scale-100
+              group-hover:pr-xl
+            "
+          >
+            <span className="font-medium text-xl group-hover:text-[#0066FF]">
+              {role.role}
+            </span>
+
+            <ArrowRight
+              className="
+                absolute right-2
+                text-[#0066FF]
+                opacity-0
+                transition-all duration-300
+                group-hover:opacity-100
+                group-hover:scale-85
+              "
+            />
+          </div>
+        </Link>
+      )}
+
+      {index < mobileAcrossRoles.length - 1 && (
+        <PiArrowsLeftRightBold className="size-iconsize-sm scale-125 font-medium text-[#B2D0F6]" />
+      )}
+    </React.Fragment>
+  ))}
+</div>
+          </TabsContent>
+{/* web */}
+          <TabsContent value="across" className="mt-xl hidden md:flex flex-col">
             <div className="flex justify-evenly items-center h-[clamp(80px,11vw,200px)]">
               {acrossRoles.map((role, index) => (
                 <React.Fragment key={role.role}>
@@ -223,6 +392,7 @@ export const HeroSection = () => {
               ))}
             </div>
           </TabsContent>
+
         </Tabs>
 
         <h2 className="text-h2 font-extrabold text-[#0668E1]  mt-xl pt-sm">

@@ -1,10 +1,8 @@
 "use client";
 
-
 import { useEffect, useState } from "react";
 import { Anchor, ArrowRight, Share2, ShieldCheck } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-
 
 import {
   getAssessmentStatusAction,
@@ -20,9 +18,9 @@ type AnyReport = any;
 
 const phaseColors: Record<string, string> = {
   Aligned: "#2B9B43",
-  "Auto-Aligned": "#0668E1",
+  "Auto-Aligned": "#36C354",
   Misaligned: "#F0431D",
-  Unaligned: "#F59E0B",
+  Unaligned: "#F9A620",
   Dynamic: "#0668E1",
 };
 
@@ -94,10 +92,11 @@ function SectionCard({
 }) {
   return (
     <div
-      className={`rounded-md border p-md shadow-mobile-medium md:shadow-web-medium ${blue
-        ? "border-[#0668E1] bg-[#0668E1] text-white"
-        : "border-[#DEEDFF] bg-white text-[#2C2C2C]"
-        }`}
+      className={`rounded-md border p-md shadow-mobile-medium md:shadow-web-medium ${
+        blue
+          ? "border-[#0668E1] bg-[#0668E1] text-white"
+          : "border-[#DEEDFF] bg-white text-[#2C2C2C]"
+      }`}
     >
       <h3 className="text-base font-bold uppercase">{title}</h3>
       <div className="mt-sm text-xl font-medium">{children}</div>
@@ -127,7 +126,7 @@ function HeaderBlock({
   user,
   mode,
   phase,
-  role
+  role,
 }: {
   title: string;
   subtitle: string;
@@ -183,7 +182,12 @@ function HeaderBlock({
             </div>
           </div>
 
-          <DownloadPdfButton mode={mode} role={role} phase={phase} action="share" />
+          <DownloadPdfButton
+            mode={mode}
+            role={role}
+            phase={phase}
+            action="share"
+          />
         </div>
       </div>
 
@@ -268,12 +272,35 @@ function PhaseReport({
       />
 
       <div className="mt-lg rounded-md border border-[#DEEDFF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
-        <h2 className="text-base font-extrabold uppercase text-[#2C2C2C]">
-          Alignment Insights for {phaseLabel}
-        </h2>
+        <div className="flex flex-col md:flex-row justify-between">
+          <h2 className="text-base font-extrabold uppercase text-[#2C2C2C]">
+            Alignment Insights for {phaseLabel}
+          </h2>
+          <div className="flex flex-wrap items-center gap-md mt-sm md:mt-0">
+            {[
+              "Aligned",
+              "Auto-Aligned",
+              "Unaligned",
+              "Misaligned",
+              "Dynamic",
+            ].map((mode) => (
+              <div key={mode} className="flex items-center gap-2">
+                <div
+                  className="size-iconsize-sm rounded-sm"
+                  style={{ backgroundColor: getScoreColor(mode) }}
+                />
+
+                <span className="text-xl font-medium">{mode}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-md flex flex-col gap-8 md:flex-row md:items-center">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 569b9e4 (new da)
           <ScoreCircle percentage={result.percentage} mode={result.mode} />
 
           <div>
@@ -293,16 +320,14 @@ function PhaseReport({
               <span className="text-xl font-medium">
                 {isOldData
                   ? content.patternName
-                  : content.patternName[result.band ?? "Strong"]?.[0] ?? ""}
+                  : (content.patternName[result.band ?? "Strong"]?.[0] ?? "")}
               </span>
             </p>
 
-
-
             <p className="text-xl font-medium">
-              {isOldData ? content.phaseIntro
-                :
-                content.patternName[result.band ?? "Strong"]?.[1] ?? ""}
+              {isOldData
+                ? content.phaseIntro
+                : (content.patternName[result.band ?? "Strong"]?.[1] ?? "")}
             </p>
           </div>
         </div>
@@ -351,10 +376,11 @@ function PhaseReport({
         <SectionCard title="Your Patterns">
           <div className="grid grid-cols-1 gap-md md:grid-cols-2">
             <div
-              className={`rounded-md bg-white p-sm transition-all ${result.band === "Strong"
-                ? "border border-[#B2D0F6] shadow-mobile-medium md:shadow-web-medium"
-                : "border border-[#DEEDFF]"
-                }`}
+              className={`rounded-md bg-white p-sm transition-all ${
+                result.band === "Strong"
+                  ? "border border-[#B2D0F6] shadow-mobile-medium md:shadow-web-medium"
+                  : "border border-[#DEEDFF]"
+              }`}
             >
               <h4 className="text-base font-bold uppercase text-[#0668E1]">
                 {result.band}
@@ -365,33 +391,36 @@ function PhaseReport({
               </p>
               {result.mode === "Dynamic" && (
                 <p className="mt-sm text-xl font-medium text-[#2C2C2C]">
-                  Sometimes you act quickly,<br /> sometimes you evaluate, <br /> and sometimes you continue without change.
+                  Sometimes you act quickly,
+                  <br /> sometimes you evaluate, <br /> and sometimes you
+                  continue without change.
                 </p>
               )}
 
               <div className="my-sm p-sm rounded-md bg-[#F2F8FF] border border-[#DEEDFF]">
                 <div className=" md:flex md:items-center gap-xs">
-                  <span><span className="font-bold text-[#0668E1] ">Insight: </span>
+                  <span>
+                    <span className="font-bold text-[#0668E1] ">Insight: </span>
                     <span className="text-xl font-medium ">
                       {report.primaryExpression.insight}
-                    </span></span>
+                    </span>
+                  </span>
                 </div>
                 <div className="my-xs border-t border-[#DEEDFF]" />
                 <div className="md:flex- md:items-center gap-xs inline-flex ">
-                  <span><span className="font-bold text-[#0668E1] ">Belief: </span> <span className="text-xl font-medium">
-                    {report.primaryExpression.belief}
-                  </span></span>
-
+                  <span>
+                    <span className="font-bold text-[#0668E1] ">Belief: </span>{" "}
+                    <span className="text-xl font-medium">
+                      {report.primaryExpression.belief}
+                    </span>
+                  </span>
                 </div>
               </div>
 
               <p className="text-xl font-medium mt-xs">
-                {result.mode === "Dynamic" ? (
-                  "This suggests no single pattern consistently guides your decisions."
-                ) : (
-                  " Over time, this shapes how consistently your decisions align with the situation."
-
-                )}
+                {result.mode === "Dynamic"
+                  ? "This suggests no single pattern consistently guides your decisions."
+                  : " Over time, this shapes how consistently your decisions align with the situation."}
               </p>
             </div>
 
@@ -411,9 +440,7 @@ function PhaseReport({
                   <p className="text-xl font-medium text-[#2C2C2C]">
                     {report?.secondaryExpression?.summary ?? ""}
                   </p>
-
                 </div>
-
               )}
               <div className="rounded-md border border-[#B2D0F6] bg-white p-sm">
                 <h4 className="font-bold text-[#0668E1] uppercase">Summary</h4>
@@ -425,7 +452,6 @@ function PhaseReport({
           </div>
         </SectionCard>
       </div>
-
 
       <div className="mt-lg grid grid-cols-1 gap-md md:grid-cols-3">
         <SectionCard title="What This Means">
@@ -576,9 +602,29 @@ function OverallReport({
       />
 
       <div className="mt-lg rounded-md border border-[#DEEDFF] bg-white p-md shadow-mobile-medium md:shadow-web-medium">
-        <h2 className="text-base font-bold uppercase text-[#2C2C2C]">
-          Overall Alignment
-        </h2>
+        <div className="flex flex-col md:flex-row justify-between">
+          <h2 className="text-base font-bold uppercase text-[#2C2C2C]">
+            Overall Alignment
+          </h2>
+          <div className="flex flex-wrap items-center gap-md mt-sm md:mt-0">
+            {[
+              "Aligned",
+              "Auto-Aligned",
+              "Unaligned",
+              "Misaligned",
+              "Dynamic",
+            ].map((mode) => (
+              <div key={mode} className="flex items-center gap-2">
+                <div
+                  className="size-iconsize-sm rounded-sm"
+                  style={{ backgroundColor: getScoreColor(mode) }}
+                />
+
+                <span className="text-xl font-medium">{mode}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-md flex flex-col gap-lg md:flex-row md:items-center">
           <ScoreCircle percentage={overall.percentage} mode={overall.mode} />
@@ -597,24 +643,36 @@ function OverallReport({
             <div className="mt-sm space-y-xs">
               {isOldInsight
                 ? content.insight.map((line: string, index: number) => (
-                  <p key={index} className="text-xl font-medium text-[#2C2C2C]">
-                    {line}
-                  </p>
-                ))
-                : (content.insight[overall.band ?? "Strong"] ?? []).map(
-                  (line: string, index: number) => (
-                    <p key={index} className="text-xl font-medium text-[#2C2C2C]">
+                    <p
+                      key={index}
+                      className="text-xl font-medium text-[#2C2C2C]"
+                    >
                       {line}
                     </p>
-                  )
-                )}
+                  ))
+                : (content.insight[overall.band ?? "Strong"] ?? []).map(
+                    (line: string, index: number) => (
+                      <p
+                        key={index}
+                        className="text-xl font-medium text-[#2C2C2C]"
+                      >
+                        {line}
+                      </p>
+                    ),
+                  )}
             </div>
           </div>
         </div>
 
         <div className="mt-md grid grid-cols-1 gap-md md:grid-cols-3">
-          <SmallInfoCard title="Your Natural Response" lines={content.pattern} />
-          <SmallInfoCard title="What Drives Your Decisions" lines={content.trigger} />
+          <SmallInfoCard
+            title="Your Natural Response"
+            lines={content.pattern}
+          />
+          <SmallInfoCard
+            title="What Drives Your Decisions"
+            lines={content.trigger}
+          />
           <SmallInfoCard title="What This Creates" lines={content.outcome} />
         </div>
       </div>
@@ -635,6 +693,7 @@ function OverallReport({
             }
             className="rounded-md cursor-pointer border border-[#DEEDFF] bg-white p-sm text-center"
           >
+<<<<<<< HEAD
             <div className="flex justify-center">
               <ScoreCircle
                 percentage={phase.percentage}
@@ -645,6 +704,9 @@ function OverallReport({
             </div>
 
             <p className="mt-sm flex items-center justify-center gap-xs text-base font-bold capitalize text-[#2C2C2C]">
+=======
+                <p className=" text-xl font-medium flex items-center justify-center gap-xs  capitalize text-[#2C2C2C]">
+>>>>>>> 569b9e4 (new da)
               <img
                 src={
                   icons.find(
@@ -654,13 +716,23 @@ function OverallReport({
                   )?.icon
                 }
                 alt={phase.phaseLabel}
-                className="size-iconsize-sm object-contain"
+                className="size-iconsize-sm scale-90 object-contain"
               />
 
               <span>{phase.phaseLabel}</span>
             </p>
-            <p className="mt-xs text-xl font-medium">{phase.mode}</p>
-          </button>
+            <p className="mt-1 mb-md text-h5 font-bold ">{phase.mode}</p>
+         
+
+            <div className="flex justify-center">
+              <ScoreCircle
+                percentage={phase.percentage}
+                mode={phase.mode}
+                size="small"
+              />
+            </div>
+
+         </button>
         ))}
       </div>
 
@@ -791,11 +863,9 @@ function OverallReport({
 }
 
 export default function ReportClient({ role }: { role: Role }) {
-
   // time stamp
 
-  const [reportLoadTime, setReportLoadTime] =
-    useState<number | null>(null);
+  const [reportLoadTime, setReportLoadTime] = useState<number | null>(null);
 
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -817,7 +887,6 @@ export default function ReportClient({ role }: { role: Role }) {
 
   useEffect(() => {
     async function loadReport() {
-
       // time stamp
 
       const start = performance.now();
@@ -829,7 +898,7 @@ export default function ReportClient({ role }: { role: Role }) {
           phase,
         });
 
-        // time stamp 
+        // time stamp
 
         const end = performance.now();
 
@@ -958,15 +1027,15 @@ export default function ReportClient({ role }: { role: Role }) {
         }
 
         /* hide print document in UI */
-        
- .print-report {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  width: 794px; /* A4 width */
-  background: white;
-  visibility: visible;
-} 
+
+        .print-report {
+          position: absolute;
+          left: -9999px;
+          top: 0;
+          width: 794px; /* A4 width */
+          background: white;
+          visibility: visible;
+        }
 
         @media print {
           .no-print,
@@ -975,8 +1044,6 @@ export default function ReportClient({ role }: { role: Role }) {
           footer {
             display: none !important;
           }
-
-
 
           html,
           body {

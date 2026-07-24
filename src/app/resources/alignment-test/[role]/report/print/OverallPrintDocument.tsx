@@ -1,6 +1,29 @@
 import { FaInstagram, FaMediumM, FaYoutube } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 
+  const icons = [
+    {
+      title: "Uncertainty",
+      icon: "/resources/alignment-test/uncertainty-black-icon.svg",
+    },
+    {
+      title: "Pressure",
+      icon: "/resources/alignment-test/pressure-black-icon.svg",
+    },
+    {
+      title: "Control",
+      icon: "/resources/alignment-test/control-black-icon.svg",
+    },
+    {
+      title: "Perception",
+      icon: "/resources/alignment-test/perception-black-icon.svg",
+    },
+    {
+      title: "Outcome",
+      icon: "/resources/alignment-test/outcome-black-icon.svg",
+    },
+  ];
+
 function MiniScoreCircle({
   percentage,
   color = "#2B9B43",
@@ -29,9 +52,9 @@ function MiniScoreCircle({
 
 function getColor(mode: string) {
   if (mode === "Aligned") return "#2B9B43";
-  if (mode === "Auto-Aligned") return "#0668E1";
+  if (mode === "Auto-Aligned") return "#36C354";
   if (mode === "Misaligned") return "#F0431D";
-  if (mode === "Unaligned") return "#F59E0B";
+  if (mode === "Unaligned") return "#F9A620";
   return "#0668E1";
 }
 
@@ -80,9 +103,31 @@ export default function OverallPrintDocument({
       </section>
 
       <section className="mt-5 rounded-[14px] border border-[#DEEDFF] bg-white p-5">
-        <h2 className="text-[13px] font-extrabold uppercase">
+        
+        <div className="flex flex-col md:flex-row justify-between">
+          <h2 className="text-[13px] font-extrabold uppercase">
           Overall Alignment
         </h2>
+          <div className="flex flex-wrap items-center gap-md mt-sm md:mt-0">
+            {[
+              "Aligned",
+              "Auto-Aligned",
+              "Unaligned",
+              "Misaligned",
+              "Dynamic",
+            ].map((mode) => (
+              <div key={mode} className="flex items-center gap-2">
+                <div
+                  className="size-iconsize-sm rounded-sm"
+                  style={{ backgroundColor: getColor(mode) }}
+                />
+
+                <span className="text-xl font-medium">{mode}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
 
         <div className="mt-5 flex items-center gap-8">
           <MiniScoreCircle mode={overall.mode} percentage={overall.percentage} color={color} />
@@ -145,17 +190,33 @@ export default function OverallPrintDocument({
               className="rounded-[10px] border border-[#DEEDFF] bg-white p-3 text-center"
             >
               <div className="flex justify-center h-[96px]">
+<<<<<<< HEAD
+=======
+                  <p className=" flex items-center justify-center gap-xs text-[17px] font-bold capitalize text-[#2C2C2C]">
+              <img
+                src={
+                  icons.find(
+                    (item) =>
+                      item.title.toLowerCase() ===
+                      phase.phaseLabel.toLowerCase(),
+                  )?.icon
+                }
+                alt={phase.phaseLabel}
+                className="size-iconsize-sm scale-95 object-contain"
+              />
+
+              <span>{phase.phaseLabel}</span>
+            </p>
+              <p className="text-[22px] font-medium">{phase.mode}</p>
+            
+>>>>>>> 569b9e4 (new da)
                 <MiniScoreCircle
                   mode={phase.mode}
                   percentage={phase.percentage}
                   color={phaseColor}
                 />
               </div>
-              <p className="mt-2 text-[11px] font-extrabold">
-                {phase.phaseLabel}
-              </p>
-              <p className="text-[10px] font-medium">{phase.mode}</p>
-            </div>
+           </div>
           );
         })}
       </section>
