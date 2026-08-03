@@ -112,7 +112,7 @@ export const Header = () => {
         className={`${isMenuOpen ? "hidden" : ""} no-print h-[60px] lg:h-[100px] max-h-[100px]`}
       />
 
-      <div
+      <main
         className={`${isMenuOpen ? "h-0" : "h-[60px]"} no-print fixed left-0 top-0 z-50 flex w-full max-h-[100px] bg-cover bg-no-repeat transition-transform duration-300 lg:h-[100px] ${
           show ? "translate-y-0 bg-white" : "-translate-y-full"
         }`}
@@ -418,7 +418,7 @@ export const Header = () => {
               </>
             )}
         </nav>
-      </div>
+      </main>
     </>
   );
 };
