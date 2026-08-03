@@ -17,12 +17,12 @@ import AlignmentIntelligence from "./AlignmentIntelligence";
 export const HomePage = () => {
   return (
     <>
-      <main className="px-[5%]">
+      <main className="px-[5%] overflow-x-hidden">
         <div className=" relative -mx-[7%] bg-[url('/background/bg-hero-home-section.svg')] bg-no-repeat bg-cover bg-center">
 
           <HeroSection />
         </div>
-        <div className="py-[5%] -mx-[7%] md:-mx-0 ">
+        <div className="py-[5%] -mx-[7%] md:-mx-0 overflow-x-hidden ">
           <FlowCards />
         </div>
 

@@ -5,7 +5,7 @@ import { alignmentMechanisms } from "./alignmentEngine.data";
 
 export default function AlignmentEngine() {
   return (
-    <section className="relative isolate max-h-[100vh] px-[5%] py-[2%] overflow-hidden bg-[#F7FAFC] text-[#07111F]">
+    <section className="relative isolate h-[100vh] max-h-[100vh] px-[5%] py-[2%] overflow-hidden bg-[#F7FAFC] text-[#07111F]">
       {/* =========================================================
           BACKGROUND
       ========================================================== */}
