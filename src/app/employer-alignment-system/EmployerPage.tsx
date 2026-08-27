@@ -16,6 +16,8 @@ import WorkflowAlignmentSection from "@/components/common/WorkflowAlignmentSecti
 import OutcomeHighlightSection from "@/components/common/OutcomeHighlightSection";
 import FAQSection from "@/components/common/FAQSection";
 import ECLoadingAnimation from "@/components/common/Animation/LoadingEcAnimation";
+import BranchingConnectionTimeline from "./BranchingConnectionTimeline";
+import ContinuityBreaksSection from "./ContinuityBreaksSection";
 
 export const EmployerPage = () => {
   return (
@@ -30,11 +32,17 @@ export const EmployerPage = () => {
             </div>
           </section>
         </div>
-        <div className="">
+                <div className="">
           <section className=" relative pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
             <SignalFlowSection data={signalFlowData} />
           </section>
         </div>
+              <div className="">
+          <section className=" relative pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
+            <ContinuityBreaksSection/>
+          </section>
+        </div>
+
         <div className="">
           <section className="-mx-[10%] md:-mx-0">
             <BannerSection data={bannerSectionData} />

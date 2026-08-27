@@ -38,18 +38,18 @@ const situationCards = [
 const bottomCards = [
   {
     icon: "/resources/alignment-test/real-hiring-scenarios-and-decision-insights.svg",
-    title: "Built on real-world hiring experiences and scenarios",
-    description: "Grounded in real hiring situations and decisions.",
+    title: "Built around real-world hiring Situations",
+    description: "Grounded in hiring experiences, decisions, and changing conditions.",
   },
   {
     icon: "/resources/alignment-test/hiring-alignment-assessment-across-all-roles.svg",
-    title: "Designed for candidates, recruiters, and employers",
-    description: "Relevant across roles, industries, and hiring stages.",
+    title: "Designed for three hiring Perspectives",
+    description: "Relevant to candidates, recruiters, and employers across the hiring journey.",
   },
   {
     icon: "/icons/tick-gradient-icon.svg",
-    title: "Real-world actionable insights, not personality labels",
-    description: "Focused on decisions and alignment – not traits.",
+    title: "Real-world actionable insights",
+    description: "Focused on Alignment and continuity—not personality traits.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function AlignmentSituationsSection() {
 
   return (
     <section className="w-full px-[1.5%] py-[5%]">
-      <div className="text-center">
+      {/* <div className="text-center">
         <h2 className="text-h2 font-extrabold text-[#1B1C17]">
           Alignment shifts across situations
         </h2>
@@ -184,14 +184,14 @@ const lastWord = words.pop();
             <ArrowRight className="size-5" />
           )}
         </button>
-      </div>
+      </div> */}
 
       <div className="my-[15%] md:my-[5%] grid grid-cols-1 gap-sm md:grid-cols-3">
         {bottomCards.map((card) => {
           return (
             <div
               key={card.title}
-              className="flex items-start gap-sm rounded-[12px] border border-[#D0E5FF] bg-white p-sm shadow-mobile-small md:shadow-web-small"
+              className="flex flex-col items-start gap-sm rounded-md border border-[#D0E5FF] bg-white p-sm shadow-mobile-small md:shadow-web-small"
             >
               <div className="flex size-iconsize-md shrink-0 items-center justify-center">
                 <img
@@ -202,8 +202,8 @@ const lastWord = words.pop();
               </div>
 
               <div>
-                <h4 className="text-xl font-bold">{card.title}</h4>
-                <p className=" text-xl font-medium">{card.description}</p>
+                <h4 className="text-xl font-bold ">{card.title}</h4>
+                <p className=" text-xl font-medium mt-xs">{card.description}</p>
               </div>
             </div>
           );

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export default function ECLoadingAnimation() {
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <div className="relative h-[60px] h-[60px]  lg:h-[120px] lg:w-[120px]">
+      <div className="relative h-[80px] w-[80px]  lg:h-[120px] lg:w-[120px]">
 
         {/* EC Box */}
         <motion.div

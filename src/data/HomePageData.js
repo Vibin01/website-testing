@@ -442,4 +442,190 @@ const homePageData = [
   },
 ];
 
-export { homePageData };
+const Roles = [
+  {
+    id: "candidate",
+    label: "Candidates",
+
+    cards: [
+      {
+        from: "Resume",
+        to: "Interview",
+
+        fromIcon: "file",
+        toIcon: "interview",
+
+        title: "APPLICATION → INTERVIEW",
+
+        description:
+          "The candidate moves from applying for a role to confirming and preparing for an interview.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "The candidate applies for the role, but delayed responses, scheduling changes, and scattered communication prevent the candidate from confirming and preparing for the interview.",
+      },
+
+      {
+        from: "Interview",
+        to: "Offer",
+
+        fromIcon: "interview",
+        toIcon: "offer",
+
+        title: "INTERVIEW → OFFER",
+
+        description:
+          "The candidate moves from completing the interview to understanding the hiring outcome and next steps.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "The interview is completed, but delayed feedback, unclear decision status, and inconsistent communication leave the candidate uncertain about the outcome and what follows.",
+      },
+
+      {
+        from: "Offer",
+        to: "Join",
+
+        fromIcon: "offer",
+        toIcon: "join",
+
+        title: "OFFER → JOINING",
+
+        description:
+          "The candidate moves from receiving an offer to evaluating it, communicating a decision, and progressing toward joining.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "The offer is received, but limited evaluation time, decision pressure, and weak post-offer engagement put the candidate’s offer decision and joining commitment at risk.",
+      },
+    ],
+  },
+
+  {
+    id: "recruiter",
+    label: "Recruiters",
+
+    cards: [
+      {
+        from: "Requirement",
+        to: "Interview",
+
+        fromIcon: "briefcase",
+        toIcon: "interview",
+
+        title: "REQUIREMENT → INTERVIEW",
+
+        description:
+          "The recruiter moves from understanding the hiring requirement to identifying and coordinating suitable candidates for interview.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "Changing requirements, delayed responses, and fragmented candidate information make it difficult for the recruiter to maintain momentum toward interviews.",
+      },
+
+      {
+        from: "Interview",
+        to: "Offer",
+
+        fromIcon: "interview",
+        toIcon: "offer",
+
+        title: "INTERVIEW → OFFER",
+
+        description:
+          "The recruiter moves from coordinating interviews to collecting feedback and progressing the selected candidate toward an offer.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "Delayed interviewer feedback, unclear ownership, and inconsistent decisions slow the recruiter’s ability to move candidates toward an offer.",
+      },
+
+      {
+        from: "Offer",
+        to: "Joining",
+
+        fromIcon: "offer",
+        toIcon: "join",
+
+        title: "OFFER → JOINING",
+
+        description:
+          "The recruiter moves from releasing an offer to maintaining candidate engagement and supporting the joining process.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "Limited follow-up, competing offers, and weak communication can cause candidates to disengage before joining.",
+      },
+    ],
+  },
+
+  {
+    id: "employer",
+    label: "Employers",
+
+    cards: [
+      {
+        from: "Demand",
+        to: "Interview",
+
+        fromIcon: "briefcase",
+        toIcon: "interview",
+
+        title: "DEMAND → INTERVIEW",
+
+        description:
+          "The employer moves from identifying a hiring need to creating a reliable pipeline of candidates for interviews.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "Unclear hiring priorities, slow coordination, and fragmented information create delays between workforce demand and interviews.",
+      },
+
+      {
+        from: "Interview",
+        to: "Decision",
+
+        fromIcon: "interview",
+        toIcon: "offer",
+
+        title: "INTERVIEW → DECISION",
+
+        description:
+          "The employer moves from evaluating candidates to making clear and timely hiring decisions.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "Delayed feedback, inconsistent evaluation, and unclear ownership make hiring decisions slower and less predictable.",
+      },
+
+      {
+        from: "Decision",
+        to: "Joining",
+
+        fromIcon: "offer",
+        toIcon: "join",
+
+        title: "DECISION → JOINING",
+
+        description:
+          "The employer moves from selecting a candidate to ensuring a successful transition into the organization.",
+
+        breakTitle: "Continuity Break",
+
+        breakDescription:
+          "Weak post-selection communication, onboarding delays, and lack of ownership can put the candidate’s joining commitment at risk.",
+      },
+    ],
+  },
+];
+
+
+export { homePageData, Roles };

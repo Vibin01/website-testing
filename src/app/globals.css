@@ -231,7 +231,6 @@
   html,body {
     @apply bg-white text-[#1B1C17] !m-0 !p-0;
   }
-
   p {
     @apply lg:text-[16px] xl:text-[20px] 2xl:text-[24px];
   }

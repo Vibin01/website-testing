@@ -24,7 +24,6 @@ const phaseColors: Record<string, string> = {
   Dynamic: "#0668E1",
 };
 
-
 function getScoreColor(mode: string) {
   return phaseColors[mode] || "#0668E1";
 }
@@ -704,7 +703,12 @@ function OverallReport({
 
               <span>{phase.phaseLabel}</span>
             </p>
-            <p className="mt-1 mb-md text-h5 font-bold ">{phase.mode}</p>
+            <p
+  className="mt-1 mb-md text-h5 font-bold"
+  style={{ color: getScoreColor(phase.mode) }}
+>
+  {phase.mode}
+</p>
          
 
             <div className="flex justify-center">

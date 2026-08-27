@@ -1,4 +1,5 @@
 "use client";
+import { ShowDesktopWarning } from '@/components/common/Toast/ShowDesktopWarning';
 import { TriangleAlert } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -9,29 +10,7 @@ export const HeroSection = ({title,description}:{title:string,description:string
       const pathname=usePathname();
       const showDesktopWarning = () => {
   toast.custom((t) => (
-     <div className="relative flex  items-start gap-xs rounded-lg border border-[#F5C451] bg-white p-sm shadow-lg">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FFF7DB]">
-            <TriangleAlert className="size-iconsize-sm text-[#D99A00]" />
-          </div>
-    
-          <div className="flex-1">
-            <p className="text-base font-semibold text-[#222]">
-              Desktop browser recommended
-            </p>
-    
-            <p className="mt-1 text-[13px] font-medium leading-5 text-[#666]">
-              For the best experience, please use a desktop browser to access the
-              dashboard.
-            </p>
-          </div>
-    
-          <button
-            onClick={() => toast.dismiss(t)}
-            className="text-sm font-medium text-[#666] hover:text-[#222]"
-          >
-            ✕
-          </button>
-        </div>
+    <ShowDesktopWarning toastId={t}/>
   ));
 };
 

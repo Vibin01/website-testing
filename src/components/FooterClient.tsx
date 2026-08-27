@@ -34,7 +34,7 @@ export default function FooterClient({
         !pathname.includes("forgot-password") &&
         !pathname.includes("otp-verify") &&
         !pathname.includes("account-verify") && (
-          <footer  className="overflow-x-hidden no-print bg-[#0668E1] text-[16px] xl:text-[18px] 2xl:text-[20px]  text-white pt-[2%]  px-[3%]">
+          <footer className="overflow-x-hidden no-print bg-[#0668E1] text-[16px] xl:text-[18px] 2xl:text-[20px]  text-white pt-[2%]  px-[3%]">
             <div className="flex flex-col  justify-center items-center xl:justify-between pb-10  mx-auto">
               <div className=" w-[100%]  flex flex-col lg:flex-row justify-center  md:justify-between  lg:items-end gap-6">
                 <div className=" mt-10 lg:mt-0 px-[2%]- mb-2 lg:mb-0">
