@@ -17,11 +17,11 @@ type Role = "candidate" | "recruiter" | "employer";
 type AnyReport = any;
 
 const phaseColors: Record<string, string> = {
-  Aligned: "#2B9B43",
-  "Auto-Aligned": "#36C354",
-  Misaligned: "#F0431D",
-  Unaligned: "#F9A620",
-  Dynamic: "#0668E1",
+  Aligned: "#0668E1",
+  "Auto-Aligned": "#2182F9",
+  Misaligned: "#E106D6",
+  Unaligned: "#E17F06",
+  Dynamic: "#06E111",
 };
 
 function getScoreColor(mode: string) {

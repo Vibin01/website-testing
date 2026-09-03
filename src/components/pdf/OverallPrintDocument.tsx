@@ -25,11 +25,11 @@ function MiniScoreCircle({
 }
 
 function getColor(mode: string) {
-  if (mode === "Aligned") return "#2B9B43";
-  if (mode === "Auto-Aligned") return "#36C354";
-  if (mode === "Misaligned") return "#F0431D";
-  if (mode === "Unaligned") return "#F9A620";
-  return "#0668E1";
+    if (mode === "Aligned") return "#0668E1";
+  if (mode === "Auto-Aligned") return "#2182F9";
+  if (mode === "Misaligned") return "#E106D6";
+  if (mode === "Unaligned") return "#E17F06";
+  return "#06E111";
 }
 
 export default function OverallPrintDocument({

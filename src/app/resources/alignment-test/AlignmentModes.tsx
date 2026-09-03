@@ -6,40 +6,40 @@ const alignmentModes = [
     title: "Pattern-Led Response",
     description:
       "Established approaches continue to guide responses even as conditions begin to.",
-    badge: "bg-[#36C354]",
-    card: "border-[#36C354] bg-[#36C3541A]",
+    badge: "bg-[#2182F9]",
+    card: "border-[#2182F9] bg-[#2182F91A]",
   },
   {
     label: "ALIGNED",
     title: "Clarity-Led Response",
     description:
       "Understanding, intention, and action remain coherent as conditions continue to change.",
-    badge: "bg-[#2B9B43]",
-    card: "border-[#2B9B43] bg-[#2B9B431A]",
+    badge: "bg-[#0668E1]",
+    card: "border-[#0668E1] bg-[#0668E11A]",
   },
   {
     label: "DYNAMIC",
     title: "Context-Led Response",
     description:
       "Different patterns emerge across situations, with no single mode consistently guiding.",
-    badge: "bg-[#0668E1]",
-    card: "border-[#0668E1] bg-[#0668E11A]",
+    badge: "bg-[#06E111]",
+    card: "border-[#06E111] bg-[#06E1111A]",
   },
   {
     label: "UNALIGNED",
     title: "Action-Led Response",
     description:
       "Action moves before understanding and intention becomes sufficiently clear to guide it.",
-    badge: "bg-[#F9A620]",
-    card: "border-[#F9A620] bg-[#F9A6201A]",
+    badge: "bg-[#E17F06]",
+    card: "border-[#E17F06] bg-[#E17F061A]",
   },
   {
     label: "MISALIGNED",
     title: "Perception-Led Response",
     description:
       "Interpretation shapes the response before what is happening is sufficiently validated.",
-    badge: "bg-[#F0431D]",
-    card: "border-[#F0431D] bg-[#F0431D1A]",
+    badge: "bg-[#E106D6]",
+    card: "border-[#E106D6] bg-[#E106D61A]",
   },
 ];
 
