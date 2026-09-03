@@ -186,7 +186,7 @@ const lastWord = words.pop();
         </button>
       </div> */}
 
-      <div className="my-[15%] md:my-[5%] grid grid-cols-1 gap-sm md:grid-cols-3">
+      <div className="my-[10%] md:my-[5%] grid grid-cols-1 gap-sm md:grid-cols-3">
         {bottomCards.map((card) => {
           return (
             <div

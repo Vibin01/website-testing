@@ -1,61 +1,63 @@
-import { HeroTextContainerSection } from "@/components/common/HeroTextContainerSection";
-import React from "react";
+import HeroTextContainerSection from "@/components/common/HeroTextContainerSection";
 import {
-  bannerSectionData,
+  employerAlignmentSystemData,
+  employerContinuityData,
   employerFaqs,
+  employerImpactData,
   HeroData,
-  insightComparisonData,
   outcomeHighlightData,
   signalFlowData,
-  workflowAlignmentSectionData,
 } from "@/data/EmployerPageData";
 import SignalFlowSection from "@/components/common/SignalFlowSection";
-import BannerSection from "@/components/common/BannerSection";
-import InsightComparisonSection from "@/components/common/InsightComparisonSection ";
-import WorkflowAlignmentSection from "@/components/common/WorkflowAlignmentSection";
+import ImpactSection from "@/components/common/ImpactSection";
 import OutcomeHighlightSection from "@/components/common/OutcomeHighlightSection";
 import FAQSection from "@/components/common/FAQSection";
-import ECLoadingAnimation from "@/components/common/Animation/LoadingEcAnimation";
-import BranchingConnectionTimeline from "./BranchingConnectionTimeline";
-import ContinuityBreaksSection from "./ContinuityBreaksSection";
+import ContinuityBreaksSection from "../../components/common/ContinuityBreaksSection";
+import AlignmentSystemSection from "@/components/common/AlignmentSystemSection";
+
 
 export const EmployerPage = () => {
   return (
     <>
       <section className="relative overflow-x-hidden ">
-                  <div className="bg-[url('/background/bg-hero-candidate-section.svg')] bg-no-repeat bg-cover bg-center">
-
-          <section className="relative flex items-center justify-center bg-transparent">
-            <div className="mt-[5%] pt-[5%] pb-[15%] px-[5%]">
-              <HeroTextContainerSection data={HeroData} />
-              {/* <ECLoadingAnimation/> */}
-            </div>
-          </section>
-        </div>
-                <div className="">
-          <section className=" relative pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
+        <section className="relative flex items-center justify-center bg-transparent">
+          
+    {/* Background */}
+    <div
+      className="
+        absolute
+        inset-x-0
+top-[90%]
+        md:top-[80%]
+        bottom-0
+        pointer-events-none
+        bg-[#F2F8FF]
+        rounded-t-[50%]
+      "
+    />
+          <div className="mt-[5%] pt-[5%] pb-[15%] px-[5%]">
+            <HeroTextContainerSection data={HeroData} />
+          </div>
+        </section>
+        <div className="bg-[#F2F8FF]">
+          <section className=" relative pb-[5%] px-[5%]- md:px-[7%]">
             <SignalFlowSection data={signalFlowData} />
           </section>
         </div>
-              <div className="">
-          <section className=" relative pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
-            <ContinuityBreaksSection/>
+        <div className="bg-[#F2F8FF]">
+          <section className=" relative pb-[5%] px-[5%] md:px-[7%] bg-transparent">
+            <ContinuityBreaksSection data={employerContinuityData} />
           </section>
         </div>
 
-        <div className="">
-          <section className="-mx-[10%] md:-mx-0">
-            <BannerSection data={bannerSectionData} />
-          </section>
-        </div>
-        <div className="">
+        <div className="bg-[#F2F8FF]">
           <section className="relative  py-[5%] px-[5%]">
-            <InsightComparisonSection data={insightComparisonData} />
+            <AlignmentSystemSection data={employerAlignmentSystemData} />
           </section>
         </div>
         <div className="">
-          <section className="mt-[5%] md:mt-0 relative py-[5%] px-[5%] ">
-            <WorkflowAlignmentSection data={workflowAlignmentSectionData} />
+          <section className=" relative  ">
+            <ImpactSection data={employerImpactData} />
           </section>
         </div>
         <div className="relative mt-[5%] md:mt-0 py-[5%] px-[5%]">

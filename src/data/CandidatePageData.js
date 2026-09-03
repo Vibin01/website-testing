@@ -1,19 +1,43 @@
 
 export const HeroData = {
-  title: "Career Progress, Aligned",
-  sub_title: "Aligning opportunities, signals, and decisions",
-  description:"Creating Seamless Yield across the hiring system",
+ 
+  title:"Career Progress, Aligned",
+  subTitle:"Seamless continuity across",
+  stages : [
+  {
+    id: 1,
+    title: "Application",
+    icon: "/candidate/icons/application-icon.svg",
+  },
+  {
+    id: 2,
+    title: "Interview",
+    icon: "/candidate/icons/interview-icon.svg",
+  },
+  {
+    id: 3,
+    title: "Offer",
+    icon: "/candidate/icons/offer-icon.svg",
+  },
+  {
+    id: 4,
+    title: "Joining",
+    icon: "/candidate/icons/joining-icon.svg",
+  },
+],
 button_text: "Unlock Connect EC for Free",
   button_link: "https://play.google.com/store/apps/details?id=com.primethic.connectec",
+
 
 };
 
 
 export const signalFlowData = {
-  title: "The Changing Situation",
+  title: "The Changing ",
+  titleHighlight: "Candidate Situation",
 
   centerImage: "/candidate/candidate-situation-changes-during-hiring-process.svg",
-  centerText: "A candidate’s situation rarely stays constant during hiring process",
+  centerText: "A candidate’s situation rarely stays constant during hiring.",
 
   flowData: [
     {
@@ -28,7 +52,7 @@ export const signalFlowData = {
   leftCards: [
     {
       icon: "/candidate/icons/multiple-calls-icon.svg",
-      text: "Multiple calls.",
+      text: "Multiple conversations.",
       top: "6%",
       mobile_top:"5%",
       left: "3%",
@@ -80,6 +104,69 @@ export const signalFlowData = {
   ],
 };
 
+export const candidateContinuityData = {
+  eyebrow: "CANDIDATE CONTINUITY",
+
+  heading: "From Separate Interactions to",
+
+  headingHighlight: "One Connected Candidate Journey",
+
+  breaksTitle: "When Continuity Breaks between Stages",
+
+  alignmentTitle: "When Alignment Connects the Stages",
+
+  stages: [
+    {
+      title: "Application",
+      icon: "/candidate/icons/application-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Interview",
+      icon: "/candidate/icons/interview-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Offer",
+      icon: "/candidate/icons/offer-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Joining",
+      icon: "/candidate/icons/joining-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+
+    },
+  ],
+
+  connections: [
+    {
+      title: "Application → Interview",
+      description: "Coordination and  confirmation weaken.",
+    },
+    {
+      title: "Interview → Offer",
+      description: "Candidate participation and panel feedback weaken. ",
+    },
+    {
+      title: "Offer → Joining",
+      description: "Decision communication and commitment weaken.",
+    },
+  ],
+
+  continuityActions: [
+    "Coordinate",
+    "Prepare",
+    "Learn",
+    "Decide",
+  ],
+
+  continuityDescription:
+    "Candidate Alignment keeps each interaction connected to what follows.",
+
+  continuityButton: "Alignment Preserve Candidate Continuity",
+};
+
 export const bannerSectionData = {
 
 
@@ -92,6 +179,216 @@ export const bannerSectionData = {
     },{
       text:"Am I making the right decision — or missing a better opportunity?"
     }
+  ],
+};
+
+export const candidateAlignmentSystemData = {
+  eyebrow: "THE CANDIDATE ALIGNMENT SYSTEM",
+
+  headingFirst: "Four Capabilities. ",
+  headingHighlight: "One Connected Journey.",
+
+  intro:
+    "Candidate Alignment helps candidates coordinate interviews, prepare with trusted insight, learn from feedback, and make clear offer decisions as opportunities change.",
+
+  tabs: ["Coordinate", "Prepare", "Learn", "Decide"],
+
+  views: {
+    Coordinate: {
+      label: "Coordinate",
+      title: "One View Across Every Interview",
+      icon: "/candidate/icons/coordinate-icon.svg",
+      description:
+        "Keep schedules, responses, changes, and recruiter communication connected across opportunities.",
+
+      answers: [
+        "Which interviews require my response?",
+        "Have schedule changes been communicated clearly?",
+      ],
+
+      see: [
+        "Interview schedules",
+        "Response status",
+        "Schedule changes",
+        "Recruiter communication",
+      ],
+
+      act: [
+        "Accept, reschedule, or decline",
+        "Clarify details",
+        "Stay organized",
+      ],
+
+      outcome:
+        "More reliable interview coordination.",
+         links: [
+      {
+        title: "Coordination Alignment",
+        linkText: "Easy Scheduler",
+      },
+      
+    ]
+    },
+
+    Prepare: {
+      label: "Prepare",
+      icon: "/candidate/icons/prepare-icon.svg",
+      title: "Prepare with Insight You Can Trust",
+      description:
+        "Use verified employer insights to understand the interview process and prepare with confidence.",
+
+      answers: [
+        "What should I expect from this employer’s interview process?",
+        "Which employer insights can I trust?",
+      ],
+
+      see: [
+        "Interview structure",
+        "Typical questions",
+        "Candidate experiences",
+        "Reviewer credibility",
+      ],
+
+      act: [
+        "Review verified insights",
+        "Ask reviewers questions",
+        "Prepare with confidence",
+      ],
+
+      outcome:
+        "More focused preparation and clearer employer understanding.",
+         links: [
+      {
+        title: "Employer Insight Alignment",
+        linkText: "Easy Reviewer",
+      },
+    ]
+    },
+
+    Learn: {
+      label: "Learn",
+      icon: "/candidate/icons/learn-icon.svg",
+      title: "Feedback Should Explain More Than the Outcome",
+      description:
+        "Use stage-based feedback to understand how you were evaluated and what you can improve.",
+
+      answers: [
+        "How was I evaluated?",
+        "What can I improve before my next opportunity?",
+      ],
+
+      see: [
+        "Resume feedback",
+        "Interview feedback",
+        "Offer-stage feedback",
+        "Decision status",
+      ],
+
+      act: [
+        "Understand outcomes",
+        "Identify improvement areas",
+        "Prepare more effectively",
+      ],
+
+      outcome:
+        "Clearer learning and more informed next steps.",
+         links: [
+      {
+        title: "Evaluation Alignment",
+        linkText: "Easy Evaluator",
+      },
+      
+    ]
+    },
+
+    Decide: {
+      label: "Decide",
+      icon: "/candidate/icons/decide-icon.svg",
+      title: "An Offer Decision Is More Than Yes or No",
+      description:
+        "Bring offer details, recruiter conversations, and evaluation time into one organized view.",
+
+      answers: [
+        "Which opportunity best supports my goals?",
+        "Should I accept, evaluate, or decline?",
+      ],
+
+      see: [
+        "Offer details",
+        "Offer status",
+        "Evaluation time",
+        "Recruiter conversations",
+      ],
+
+      act: [
+        "Accept, evaluate, or decline",
+        "Compare opportunities",
+        "Communicate clearly",
+      ],
+
+      outcome:
+        "More confident and timely offer decisions.",
+         links: [
+      {
+        title: "Decision Alignment",
+        linkText: "Easy Facilitator",
+      },
+    ]
+    },
+  },
+
+  cards: [
+    {
+      title: "Coordination Alignment",
+      linkText: "Easy Scheduler",
+      link:"/solutions/candidate-alignment-system/manage-interview-schedule"
+    },
+    {
+      title: "Insights Alignment",
+      linkText: "Easy Reviewer",
+      link:"/solutions/candidate-alignment-system/verified-employer-interview-insights"
+    },
+    {
+      title: "Evaluation Alignment",
+      linkText: "Easy Evaluator",
+      link:"/solutions/candidate-alignment-system/interview-feedback-for-candidates"
+    },
+    {
+      title: "Decision Alignment",
+      linkText: "Easy Facilitator",
+      link:"/solutions/candidate-alignment-system/manage-job-offers"
+    },
+  ],
+};
+
+export const candidateImpactData = {
+  eyebrow: "CANDIDATE IMPACT",
+
+  heading: {
+    first: "See Clearly",
+    second: "Act Confidently",
+    third: "Keep Progress Moving",
+  },
+
+  description:
+    "Four connected career views help candidates recognize changing opportunities and act before skill gaps widen, applications stall, or career transitions lose momentum.",
+
+  cards: [
+    {
+      title: "See Clearly",
+      description:
+        "Know which interviews, employer insights, feedback, and offers need attention—and what requires action next.",
+    },
+    {
+      title: "Act Confidently",
+      description:
+        "Coordinate, prepare, learn, and decide with reliable information that supports timely action at each stage.",
+    },
+    {
+      title: "Keep Progress Moving",
+      description:
+        "Respond to changing schedules, delayed feedback, and decision pressure before they slow career progress.",
+    },
   ],
 };
 
@@ -554,15 +851,19 @@ export const workflowAlignmentSectionData = {
 };
 
 export const outcomeHighlightData = {
-  title: "Confidence Creates Momentum",
+  title: "Confidence ",
+  titleHighlight: "Creates Momentum",
   subtitle:
-    "When opportunities, signals, and decisions align, candidates move forward with clarity.",
+    "Clarity Guides Each Decision. Alignment Connects the Journey.",
+  description_top:"When candidates can see what changed and understand what follows:",
+
   points: [
-    "Interviews become meaningful conversations.",
-    "Feedback becomes visible.",
-    "Offer decisions become confident choices.",
+    "Interviews remain coordinated.",
+    "Verified insight strengthens preparation.",
+    "Feedback creates clearer learning.",
+    "Offer decisions become clear and timely."
   ],
-  description: "Career progress accelerates.",
+  description: "Career progress moves from aspiration to achievement.",
   footerText: "This is",
   footerHighlight: "Seamless Yield",
   footerSuffix: "for candidates.",

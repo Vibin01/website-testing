@@ -1,8 +1,30 @@
 
 export const HeroData = {
-  title: "Hiring Strategy, Aligned",
-  sub_title: "Aligning priorities, signals, and outcomes",
-  description:"Creating Seamless Yield across the hiring system",
+ 
+  title:"Hiring Strategy, Aligned",
+  subTitle:"Seamless Continuity Across",
+  stages : [
+  {
+    id: 1,
+    title: "Target",
+    icon: "/employer/icons/target-icon.svg",
+  },
+  {
+    id: 2,
+    title: "Evaluation",
+    icon: "/employer/icons/evaluation-icon.svg",
+  },
+  {
+    id: 3,
+    title: "Selection",
+    icon: "/employer/icons/selection-icon.svg",
+  },
+  {
+    id: 4,
+    title: "Hiring",
+    icon: "/employer/icons/hiring-icon.svg",
+  },
+],
 button_text: "Unlock Connect EC for Free",
   button_link: "https://employer.connectec.app/register",
 
@@ -10,10 +32,10 @@ button_text: "Unlock Connect EC for Free",
 
 
 export const signalFlowData = {
-  title: "The Changing Business Environment",
-
+  title: "The changing ",
+ titleHighlight: "Business Environment",
   centerImage: "/employer/employer-context-shifts-in-hiring-system.svg",
-  centerText: "An employer’s context shifts across markets, roles, and decisions",
+  centerText: "An employer’s hiring environment rarely stays constant.",
 
   flowData: [
     {
@@ -80,6 +102,70 @@ export const signalFlowData = {
   ],
 };
 
+export const employerContinuityData = {
+  eyebrow: "EMPLOYER CONTINUITY",
+
+  heading: "From Separate Interactions to",
+
+  headingHighlight: "One Connected Employer Journey",
+
+  breaksTitle: "When Continuity Breaks between Stages",
+
+  alignmentTitle: "When Alignment Connects the Stages",
+
+  stages: [
+    {
+      title: "Target",
+      icon: "/employer/icons/target-icon.svg",
+      iconWhite: "/employer/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Evaluation",
+      icon: "/employer/icons/evaluation-icon.svg",
+      iconWhite: "/employer/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Selection",
+      icon: "/employer/icons/selection-icon.svg",
+      iconWhite: "/employer/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Hiring",
+      icon: "/employer/icons/hiring-icon.svg",
+      iconWhite: "/employer/icons/hiring-white-icon.svg",
+
+    },
+  ],
+
+  connections: [
+    {
+      title: "Target → Evaluation",
+      description: "Target feasibility and readiness weaken.",
+    },
+    {
+      title: "Evaluation → Selection",
+      description: "Consistency and decision clarity weaken.",
+    },
+    {
+      title: "Selection → Hiring",
+      description: "Post-offer commitment visibility weakens.",
+    },
+  ],
+
+  continuityActions: [
+    "Calibrate",
+    "Diagnose",
+    "Standardize",
+    "Protect",
+  ],
+
+  continuityDescription:
+    "Employer Alignment keeps each hiring activity connected to what follows.",
+
+  continuityButton: "Alignment Preserve Employer Continuity",
+};
+
+
 export const bannerSectionData = {
   title: "The Pressure",
 
@@ -95,6 +181,243 @@ export const bannerSectionData = {
   ],
 };
 
+
+
+export const employerAlignmentSystemData = {
+  eyebrow: "THE EMPLOYER ALIGNMENT SYSTEM",
+
+  headingFirst: "Four Leadership Views.",
+  headingHighlight: "One Connected Hiring Direction.",
+
+  intro:
+    "Employer Alignment helps leadership calibrate hiring targets, diagnose changing execution signals, standardize evaluation, and protect hiring transitions as business and market conditions change.",
+
+  tabs: ["Calibrate", "Diagnose", "Standardize", "Protect"],
+
+  views: {
+    Calibrate: {
+      label: "Calibrate",
+      title: "See the Gap. Calibrate the Path.",
+      icon: "/employer/icons/calibrate-icon.svg",
+      description:
+        "Use current targets, forecasts, and execution conditions to identify the adjustments that can improve target achievement.",
+
+      answers: [
+        "Are we on track to achieve our hiring targets?",
+        "Which adjustments can help close the hiring gap?",
+      ],
+
+      see: [
+        "Target–forecast gap",
+        "Hiring pressure",
+        "Position load",
+        "Conversion strength",
+        "Hiring velocity",
+      ],
+
+      act: [
+        "Model recovery paths",
+        "Rebalance capacity",
+        "Prioritize intervention",
+      ],
+
+      outcome:
+        "A clearer recovery path and more predictable target achievement.",
+         links: [
+      {
+        title: "Target Alignment",
+        linkText: "Easy Calibrator",
+      },
+      {
+        title: "Exploration Alignment",
+        linkText: "Easy Explorer",
+      },
+    ]
+    },
+
+    Diagnose: {
+      label: "Diagnose",
+      title: "Diagnose What Outcomes Do Not Explain.",
+      icon: "/employer/icons/diagnose-icon.svg",
+      description:
+        "Reveal the drivers behind changing outcomes and identify the roles losing momentum.",
+
+      answers: [
+        "What is driving hiring friction?",
+        "Which roles need attention now?",
+      ],
+
+      see: [
+        "Compensation signals",
+        "Process signals",
+        "Role value and market conditions",
+        "Ownership and momentum",
+      ],
+
+      act: [
+        "Interpret misalignment",
+        "Prioritize roles",
+        "Restore progress",
+      ],
+
+      outcome:
+        "Better-informed decisions and stronger hiring momentum.",
+         links: [
+      {
+        title: "Signal Alignment",
+        linkText: "Easy Navigator",
+      },
+      {
+        title: "Momentum Alignment",
+        linkText: "Easy Role Tracker",
+      },
+    ]
+    },
+
+    Standardize: {
+      label: "Standardize",
+      title: "One Organization. One Evaluation Standard.",
+      icon: "/employer/icons/standardize-icon.svg",
+      description:
+        "Keep evaluation, feedback, and candidate communication consistent across applications, interviews, and offers.",
+
+      answers: [
+        "Are candidates evaluated consistently across hiring stages?",
+        "Does candidate communication reflect one organizational standard?",
+      ],
+
+      see: [
+        "Evaluation workflows",
+        "Feedback consistency",
+        "Communication variation",
+        "Decision clarity",
+      ],
+
+      act: [
+        "Standardize evaluation flows",
+        "Align candidate communication",
+        "Strengthen decision consistency",
+      ],
+
+      outcome:
+        "More consistent evaluations, clearer decisions, and one coherent candidate experience.",
+         links: [
+      {
+        title: "Evaluation Alignment",
+        linkText: "Easy Evaluator",
+      },
+    ]
+    },
+
+    Protect: {
+      label: "Protect",
+      title: "Protect Every Critical Hiring Transition.",
+      icon: "/employer/icons/protect-icon.svg",
+      description:
+        "Sustain engagement after offer acceptance and recognize risk across interviews, offers, and joining.",
+
+      answers: [
+        "Are candidates staying connected after offer acceptance?",
+        "Which interviews, offers, or joining transitions may be at risk?",
+      ],
+
+      see: [
+        "Acceptance, confirmation, and commitment",
+        "Post-offer engagement",
+        "Intent signals",
+        "Transition risk",
+      ],
+
+      act: [
+        "Sustain engagement",
+        "Prioritize intervention",
+        "Protect hiring continuity",
+      ],
+
+      outcome:
+        "Earlier intervention and more reliable hiring transitions.",
+         links: [
+      {
+        title: "Facilitation Alignment",
+        linkText: "Easy Facilitator",
+      },
+      {
+        title: "Predictive Alignment",
+        linkText: "Easy Predictor",
+      },
+    ]
+    },
+  },
+
+  cards: [
+    {
+      title: "Target Alignment",
+      linkText: "Easy Calibrator",
+      link:"/solutions/employer-alignment-system/improve-hiring-target-achievement"
+    },
+    {
+      title: "Exploration Alignment",
+      linkText: "Easy Explorer",
+      link:"/solutions/employer-alignment-system/analyze-hiring-workload-and-velocity"
+    },
+    {
+      title: "Signal Alignment",
+      linkText: "Easy Navigator",
+      link:"/solutions/employer-alignment-system/identify-hiring-misalignment-signals",
+    },
+    {
+      title: "Momentum Alignment",
+      linkText: "Easy Role Tracker",
+      link:"/solutions/employer-alignment-system/track-hiring-progress-and-bottlenecks"
+    },
+    {
+      title: "Evaluation Alignment",
+      linkText: "Easy Evaluator",
+      link:"/solutions/employer-alignment-system/standardize-hiring-communication",
+    },
+    {
+      title: "Facilitation Alignment",
+      linkText: "Easy Facilitator",
+      link:"/solutions/employer-alignment-system/improve-offer-acceptance-to-joining"
+    },
+    {
+      title: "Predictive Alignment",
+      linkText: "Easy Predictor",
+      link:"/solutions/employer-alignment-system/predict-hiring-drop-offs-early"
+    },
+  ],
+};
+
+export const employerImpactData = {
+  eyebrow: "EMPLOYER IMPACT",
+
+  heading: {
+    first: "See Earlier",
+    second: "Act Sooner",
+    third: "Shape what follows",
+  },
+
+  description:
+    "Four connected leadership views help employers recognize changing hiring conditions and act before target gaps widen, roles stall, or hiring transitions fail.",
+
+  cards: [
+    {
+      title: "See Earlier",
+      description:
+        "Know which targets, execution signals, evaluations, and hiring transitions require immediate leadership attention.",
+    },
+    {
+      title: "Act Sooner",
+      description:
+        "Calibrate, diagnose, standardize, and protect before disruption compounds across roles and hiring transitions.",
+    },
+    {
+      title: "Shape What Follows",
+      description:
+        "Protect target achievement from drift, stalled roles, inconsistent evaluation, and weakened transitions.",
+    },
+  ],
+};
 
 export const insightComparisonData = [
   {
@@ -567,15 +890,19 @@ export const workflowAlignmentSectionData = {
 };
 
 export const outcomeHighlightData = {
-  title: "Direction Creates Momentum",
+  title: "Direction ",
+  titleHighlight: "Creates Momentum",
   subtitle:
-    "When priorities, signals, and execution align:",
+    "Direction Sets Hiring in Motion. Alignment Keeps It Moving.",
+  description_top:"When employers can see what changed and act on what follows:",
+
   points: [
-    "Strategy reflects real hiring conditions",
-    "Execution supports enterprise priorities",
-    "Outcomes become predictable",
+    "Targets remain connected to forecasts and execution signals.",
+    "Structural and market realities inform hiring decisions.",
+    "Evaluations remain consistent across the organization.",
+    "Hiring transitions stay protected through joining."
   ],
-  description: "Hiring momentum strengthens across the organization.",
+  description: "Hiring targets move from aspiration to achievement.",
   footerText: "This is",
   footerHighlight: "Seamless Yield",
   footerSuffix: "for employers.",

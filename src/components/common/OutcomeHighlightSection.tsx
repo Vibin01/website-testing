@@ -10,6 +10,7 @@ import { ShowDesktopWarning } from "./Toast/ShowDesktopWarning";
 
 type OutcomeHighlightSectionData = {
   title: string;
+  titleHighlight: string;
   subtitle: string;
   points: string[];
   description?: string;
@@ -36,6 +37,7 @@ export default function OutcomeHighlightSection({
 }: OutcomeHighlightSectionProps) {
   const {
     title,
+    titleHighlight,
     subtitle,
     points,
     description,
@@ -64,17 +66,19 @@ const isEmployer = pathname.includes("employer");
 
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto grid items-center gap-8 sm:grid-cols-[1.25fr_0.75fr]">
+      <div className="mx-auto grid items-center gap-md sm:grid-cols-[1.25fr_0.75fr]">
         {/* Left Content */}
         <div>
-          <h2 className="text-h2 font-extrabold text-[#0668E1]">{title}</h2>
+          <h2 className="text-h2 font-extrabold text-[#0668E1]">{title}
+            <span className="text-[#1B1C17]">{titleHighlight}</span>
+          </h2>
 
           <p className="mt-xs text-h6 font-bold mb-md">{subtitle}</p>
 
           {description_top && (
             <p className="text-base font-medium mt-md">{description_top} </p>
           )}
-          <div className="mt-xs space-y-sm">
+          <div className="md:w-[80%] mt-sm space-y-sm p-md bg-[#F2F8FF] border border-[#B2D0F6] rounded-md ">
             <div className="space-y-[1.8%]">
               {points.map((point, index) => (
                 <div key={index} className="flex items-start gap-xs">
@@ -89,7 +93,7 @@ const isEmployer = pathname.includes("employer");
             </div>
           </div>
 
-          <p className="text-base font-medium mt-md">{description} </p>
+          <p className="text-base font-medium mt-sm">{description} </p>
 
           <div className="mt-md">
             <p
@@ -120,7 +124,7 @@ const isEmployer = pathname.includes("employer");
       <Link
         href="https://play.google.com/store/apps/details?id=com.primethic.connectec"
         target="_blank"
-        className="md:hidden w-fit mt-lg h-btn-h text-nowrap bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm"
+        className="md:hidden w-fit mt-lg h-btn-h text-nowrap group bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer  rounded-md px-md py-sm flex items-center justify-center gap-sm"
       >
         <span className="font-bold text-xl text-white">
           Unlock Connect EC for Free
@@ -135,7 +139,7 @@ const isEmployer = pathname.includes("employer");
       <button
         type="button"
         onClick={showDesktopWarning}
-        className="md:hidden w-fit mt-lg h-btn-h text-nowrap bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm flex items-center justify-center gap-sm"
+        className="md:hidden w-fit mt-lg h-btn-h text-nowrap group bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer rounded-md px-md py-sm flex items-center justify-center gap-sm"
       >
         <span className="font-bold text-xl text-white">
           Unlock Connect EC for Free
@@ -155,7 +159,7 @@ const isEmployer = pathname.includes("employer");
             : "https://employer.connectec.app/register"
       }
       target="_blank"
-      className="hidden md:flex w-fit mt-lg h-btn-h text-nowrap bg-[#0668E1] border-2 cursor-pointer border-[#0072FF] rounded-[12px] px-md py-sm items-center justify-center gap-sm"
+      className="hidden md:flex w-fit mt-lg h-btn-h text-nowrap group bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer rounded-md px-md py-sm items-center justify-center gap-sm"
     >
       <span className="font-bold text-xl text-white">
         Unlock Connect EC for Free

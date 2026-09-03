@@ -216,7 +216,7 @@ const roleData: Record<Role, RoleData> = {
 
 export default function HiringContinuity() {
   const [activeRole, setActiveRole] =
-    useState<Role>("recruiter");
+    useState<Role>("employer");
 
   // Card 0 = first icon active initially
   const [activeCard, setActiveCard] = useState(0);
@@ -724,7 +724,7 @@ md:left-0
                     border-[#DCE8F6]
                     bg-white
                     p-md
-                    shadow-web-medium
+                    shadow-mobile-medium
                   "
                 >
 
@@ -778,29 +778,7 @@ md:left-0
                     </p>
                   </div>
 
-                  {/* =================================================
-                      MOBILE PROGRESS
-                  ================================================= */}
-
-                  <div className="mt-md flex justify-center gap-xs md:hidden">
-                    {data.cards.map((_, index) => (
-                      <button
-                        key={index}
-                        type="button"
-                        onClick={() => setActiveCard(index)}
-                        className={`
-                          h-[6px]
-                          rounded-full
-                          transition-all
-                          ${
-                            activeCard === index
-                              ? "w-[24px] bg-[#0668E1]"
-                              : "w-[6px] bg-[#D0E5FF]"
-                          }
-                        `}
-                      />
-                    ))}
-                  </div>
+                
                 </motion.div>
               </AnimatePresence>
             </div>

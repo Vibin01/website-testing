@@ -1,5 +1,4 @@
-import React from "react";
-import { GradientButton } from "./Button/GradientButton";
+import { AppLinkButton } from "./Button/AppLinkButton";
 
 interface HeroTextContainerSectionProps {
   data: {
@@ -37,7 +36,7 @@ export const FeaturesHeroSection = ({
           <span className="font-bold">{data.content_highlight} </span>
           {data.content}
         </p>
-        <GradientButton text={data.button_text} link={data.button_link} />
+        <AppLinkButton text={data.button_text} url={data.button_link} />
       </div>
     </>
   );

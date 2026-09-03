@@ -78,6 +78,7 @@ export default function HiringAlignmentCTA() {
             md:items-center
             md:justify-between
             md:gap-xl
+            
           "
         >
           {/* ==================================================
@@ -94,6 +95,7 @@ export default function HiringAlignmentCTA() {
                 gap-md
 
                 sm:grid-cols-3
+                
 
               "
             >
@@ -102,7 +104,7 @@ export default function HiringAlignmentCTA() {
               ))}
             </div>
 
-<div className="md:hidden flex">
+<div className="md:hidden flex justify-center mt-xl">
           <PhonePreview />
 
 </div>
@@ -324,7 +326,7 @@ export default function HiringAlignmentCTA() {
           {/* ==================================================
               RIGHT PHONE
           ================================================== */}
-<div className="hidden md:flex">
+<div className="hidden md:flex h-full">
           <PhonePreview />
 
 </div>
@@ -407,13 +409,13 @@ items-center
 
 function PhonePreview() {
   return (
-    <div className="w-full ">
+    <div className="flex ">
       <Image
         src="/home/hiring-banner.svg"
         alt="Connect EC mobile application"
-        height={200}
         width={200}
-        className="h-auto sm:h-full w-full sm:w-auto"
+        height={200}
+        className="sm:h-[clamp(200px,calc(280_/_var(--width)*100vw),600px)] w-auto object-contain"
       />
     </div>
   );

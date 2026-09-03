@@ -1,19 +1,42 @@
 
-
 export const HeroData = {
-  title: "Talent Acquisition Aligned",
-  sub_title: "Aligning Coordination, signals, and execution",
-  description: "Creating Seamless Yield across the hiring system",
-  button_text: "Unlock Connect EC for Free",
+ 
+  title:"Hiring Strategy, Aligned",
+  subTitle:"Seamless Continuity Across",
+  stages : [
+  {
+    id: 1,
+    title: "Sourcing",
+    icon: "/recruiters/icons/sourcing-icon.svg",
+  },
+  {
+    id: 2,
+    title: "Scheduling",
+    icon: "/recruiters/icons/scheduling-icon.svg",
+  },
+  {
+    id: 3,
+    title: "Evaluation",
+    icon: "/recruiters/icons/evaluation-icon.svg",
+  },
+  {
+    id: 4,
+    title: "Closure",
+    icon: "/recruiters/icons/closure-icon.svg",
+  },
+],
+button_text: "Unlock Connect EC for Free",
   button_link: "https://recruiter.connectec.app/register",
+
 };
 
 export const signalFlowData = {
-  title: "The Shifting Priorities",
+  title: "The changing ",
+  titleHighlight: "Hiring Environment",
 
   centerImage: "/recruiters/recruiter-execution-changes-in-hiring-process.svg",
   centerText:
-    "Recruiters operate inside a constantly changing hiring environment.",
+    "A recruiter’s hiring environment rarely stays constant.",
 
   flowData: [
     {
@@ -80,6 +103,69 @@ export const signalFlowData = {
   ],
 };
 
+export const recruiterContinuityData = {
+  eyebrow: "RECRUITER CONTINUITY",
+
+  heading: "From Separate Interactions to",
+
+  headingHighlight: "One Connected Recruiter Journey",
+
+  breaksTitle: "When Continuity Breaks between Stages",
+
+  alignmentTitle: "When Alignment Connects the Stages",
+
+  stages: [
+    {
+      title: "Sourcing",
+      icon: "/recruiters/icons/sourcing-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Scheduling",
+      icon: "/recruiters/icons/scheduling-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Evaluation",
+      icon: "/recruiters/icons/evaluation-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+    },
+    {
+      title: "Closure",
+      icon: "/recruiters/icons/closure-icon.svg",
+      iconWhite: "/recruiters/icons/hiring-white-icon.svg",
+
+    },
+  ],
+
+  connections: [
+    {
+      title: "Sourcing → Scheduling",
+      description: "Coordination and  confirmation weaken.",
+    },
+    {
+      title: "Scheduling → Evaluation",
+      description: "Candidate participation and panel feedback weaken. ",
+    },
+    {
+      title: "Evaluation → Closure",
+      description: "Decision communication and commitment weaken.",
+    },
+  ],
+
+  continuityActions: [
+    "Coordinate",
+    "Anticipate",
+    "Evaluate",
+    "Engage",
+  ],
+
+  continuityDescription:
+    "Recruiter Alignment keeps each workflow connected to what follows.",
+
+  continuityButton: "Alignment Preserve Recruiter Continuity",
+};
+
 export const bannerSectionData = {
 
   cards: [
@@ -93,6 +179,215 @@ export const bannerSectionData = {
   ],
 };
 
+export const recruiterAlignmentSystemData = {
+  eyebrow: "THE RECRUITER ALIGNMENT SYSTEM",
+
+  headingFirst: "Four Capabilities. ",
+  headingHighlight: "One Connected Flow.",
+
+  intro:
+    "Recruiter Alignment helps recruiters coordinate interviews, anticipate participation risk, move feedback toward decisions, and sustain candidate commitment as hiring conditions change.",
+
+  tabs: ["Coordinate", "Anticipate", "Evaluate", "Engage"],
+
+  views: {
+    Coordinate: {
+      label: "Coordinate",
+      title: "Keep Every Interview on One Timeline.",
+      icon: "/recruiters/icons/coordinate-icon.svg",
+      description:
+        "Keep schedules, candidate responses, panel availability, and changes connected across interviews.",
+
+      answers: [
+        "Are candidates and panels working from the same schedule?",
+        "Which interviews need a response or schedule update?",
+      ],
+
+      see: [
+        "Interview schedules",
+        "Candidate responses",
+        "Panel availability",
+        "Schedule changes",
+      ],
+
+      act: [
+        "Schedule centrally",
+        "Track responses",
+        "Update stakeholders",
+      ],
+
+      outcome:
+        "More reliable interview coordination.",
+         links: [
+      {
+        title: "Coordination Alignment",
+        linkText: "Easy Easy Scheduler",
+      },
+      
+    ]
+    },
+
+    Anticipate: {
+      label: "Anticipate",
+      title: "Participation Changes Before Attendance Does.",
+      icon:"/recruiters/icons/anticipate-icon.svg",
+      description:
+        "Use response and reminder patterns to recognize attendance risk before an interview is disrupted.",
+
+      answers: [
+        "Which interviews may be at risk?",
+        "Where is candidate participation weakening?",
+      ],
+
+      see: [
+        "Response patterns",
+        "Reminder engagement",
+        "Reschedule behaviour",
+        "Attendance risk",
+      ],
+
+      act: [
+        "Prioritize follow-up",
+        "Protect panel time",
+        "Intervene earlier",
+      ],
+
+      outcome:
+        "More reliable interview participation.",
+         links: [
+      {
+        title: "Participation Alignment",
+        linkText: "Easy Predictor",
+      },
+    ]
+    },
+
+    Evaluate: {
+      label: "Evaluate",
+      title: "Move Every Interview Toward an Outcome.",
+      icon:"/recruiters/icons/evaluate-icon.svg",
+      description:
+        "Keep panel feedback, decision timing, and candidate communication connected after every interview.",
+
+      answers: [
+        "Has panel feedback been received?",
+        "Has the candidate been informed on time?",
+      ],
+
+      see: [
+        "Panel feedback status",
+        "Evaluation progress",
+        "Decision timing",
+        "Candidate communication",
+      ],
+
+      act: [
+        "Prompt panel feedback",
+        "Structure feedback",
+        "Communicate outcomes clearly",
+      ],
+
+      outcome:
+        "Faster feedback and clearer candidate communication.",
+         links: [
+      {
+        title: "Feedback Alignment",
+        linkText: "Easy Evaluator",
+      },
+    ]
+    },
+
+    Engage: {
+      label: "Engage",
+      title: "Acceptance Is Not Arrival.",
+      icon:"/recruiters/icons/engage-icon.svg",
+      description:
+        "Keep candidate engagement active from offer acceptance through joining.",
+
+      answers: [
+        "Are accepted candidates staying engaged?",
+        "Which joining commitments need attention?",
+      ],
+
+      see: [
+        "Post-offer participation",
+        "Engagement activity",
+        "Joining readiness",
+        "Commitment strength",
+      ],
+
+      act: [
+        "Maintain contact",
+        "Strengthen engagement",
+        "Reinforce commitment",
+      ],
+
+      outcome:
+        "More reliable joining.",
+         links: [
+      {
+        title: "Commitment Alignment",
+        linkText: "Easy Facilitator",
+      },
+      
+    ]
+    },
+  },
+
+  cards: [
+    {
+      title: "Coordination Alignment",
+      linkText: "Easy Scheduler",
+      link:"/solutions/recruiter-alignment-system/manage-interview-scheduling"
+    },
+    {
+      title: "Participation Alignment",
+      linkText: "Easy Predictor",
+      link:"/solutions/recruiter-alignment-system/predict-interview-no-shows"
+    },
+    {
+      title: "Feedback Alignment",
+      linkText: "Easy Evaluator",
+      link:"/solutions/recruiter-alignment-system/collect-interview-feedback"
+    },
+    {
+      title: "Commitment Alignment",
+      linkText: "Easy Facilitator",
+      link:"/solutions/recruiter-alignment-system/predict-interview-no-shows"
+    },
+  ],
+};
+
+export const recruiterImpactData = {
+  eyebrow: "RECRUITER IMPACT",
+
+  heading: {
+    first: "See Earlier",
+    second: "Act Sooner",
+    third: "Protect what follows",
+  },
+
+  description:
+    "Four connected capabilities help recruiters recognize changing execution signals and act before hiring flow breaks.",
+
+  cards: [
+    {
+      title: "See Earlier",
+      description:
+        "Know which schedules, participation signals, feedback, and commitments require immediate attention.",
+    },
+    {
+      title: "Act Sooner",
+      description:
+        "Coordinate, anticipate, evaluate, and engage before delays compound and disrupt the next stage.",
+    },
+    {
+      title: "Protect What Follows",
+      description:
+        "Prevent no-shows, delayed feedback, and weakening commitment from disrupting hiring delivery.",
+    },
+  ],
+};
 
 export const insightComparisonData= [
   {
@@ -565,15 +860,19 @@ export const workflowAlignmentSectionData = {
 };
 
 export const outcomeHighlightData = {
-  title: "Execution Creates Momentum",
+  title: "Execution ",
+  titleHighlight: "Creates Momentum",
   subtitle:
-    "When coordination, signals, and execution align, hiring pipelines stabilize.",
+    "Execution Moves Hiring Forward. Alignment Keeps Every Transition Connected.",
+  description_top:"When recruiters can see what changed and act on what follows:",
+
   points: [
-    "Interviews happen on time.",
-    "Feedback flows between stages.",
-    "Offers convert into committed hires.",
+    "Interviews remain coordinated.",
+    "Participation becomes more reliable.",
+    "Feedback moves toward timely outcomes.",
+    "Candidate commitment remains visible through joining."
   ],
-  description: "Hiring execution becomes predictable.",
+  description: "Hiring delivery moves from aspiration to achievement.",
   footerText: "This is",
   footerHighlight: "Seamless Yield",
   footerSuffix: "for recruiters.",

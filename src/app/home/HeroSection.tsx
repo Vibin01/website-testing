@@ -42,7 +42,7 @@ export const HeroSection = () => {
           Alignment Preserves
           <br/><span className="text-[#0668E1]"> Hiring Continuity.</span>
         </h1>
-<div className="w-full mt-md">
+<div className="w-full mt-sm">
           <AlignmentTabs />
 
       </div>

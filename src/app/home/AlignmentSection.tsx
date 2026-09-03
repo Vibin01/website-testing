@@ -114,7 +114,7 @@ const alignmentCards = [
         </p>
 
         {/* Title */}
-        <h2
+        <h3
           className={
             isCenter
               ? "text-h5 font-bold leading-tight"
@@ -122,7 +122,7 @@ const alignmentCards = [
           }
         >
           {card.title}
-        </h2>
+        </h3>
 
         {/* Description */}
         <p

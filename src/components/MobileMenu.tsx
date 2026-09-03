@@ -123,15 +123,6 @@ export default function MobileMenu({
               Employers
             </Link>
 
-            {/* Candidates */}
-            <Link
-              href="/candidate-alignment-system"
-              onClick={handleCloseMenu}
-              className="border-b border-[#E5E5E5] py-md text-base font-medium text-[#1B1C17]"
-            >
-              Candidates
-            </Link>
-
             {/* Recruiters */}
             <Link
               href="/recruiter-alignment-system"
@@ -139,6 +130,15 @@ export default function MobileMenu({
               className="border-b border-[#E5E5E5] py-md text-base font-medium text-[#1B1C17]"
             >
               Recruiters
+            </Link>
+
+             {/* Candidates */}
+            <Link
+              href="/candidate-alignment-system"
+              onClick={handleCloseMenu}
+              className="border-b border-[#E5E5E5] py-md text-base font-medium text-[#1B1C17]"
+            >
+              Candidates
             </Link>
 
             {/* Solutions */}

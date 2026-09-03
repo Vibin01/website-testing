@@ -291,7 +291,7 @@ function WithinActor({
       : "clamp(60px, calc(80 / var(--width) * 100vw), 400px)";
 
   const initialSize =
-    "clamp(60px, calc(110 / var(--width) * 100vw), 400px)";
+    "clamp(60px, calc(100 / var(--width) * 100vw), 400px)";
 
   return (
     <motion.div
@@ -326,7 +326,7 @@ function WithinActor({
 
         zIndex: isAligned
           ? index === 1
-            ? 50
+            ? 40
             : 20
           : 20,
 
@@ -423,8 +423,8 @@ function WithinActor({
               <span
                 className="
                   block
-                  h-[clamp(3px,0.28vw,4px)]
-                  w-[40%]
+                  h-[clamp(2px,0.28vw,3px)]
+                  w-[20%]
                   shrink-0
                   rounded-full
                   bg-[#0668E1]
@@ -434,8 +434,8 @@ function WithinActor({
               <span
                 className="
                   block
-                  h-[clamp(3px,0.28vw,4px)]
-                  w-[40%]
+                  h-[clamp(2px,0.28vw,3px)]
+                  w-[20%]
                   shrink-0
                   rounded-full
                   bg-[#0668E1]
@@ -480,8 +480,8 @@ function WithinActor({
               <span
                 className="
                   block
-                  h-[clamp(3px,0.28vw,4px)]
-                  w-[40%]
+                  h-[clamp(2px,0.28vw,3px)]
+                  w-[20%]
                   shrink-0
                   rounded-full
                   bg-[#0668E1]
@@ -491,8 +491,8 @@ function WithinActor({
               <span
                 className="
                   block
-                  h-[clamp(3px,0.28vw,4px)]
-                  w-[40%]
+                  h-[clamp(2px,0.28vw,3px)]
+                  w-[20%]
                   shrink-0
                   rounded-full
                   bg-[#0668E1]
@@ -518,7 +518,7 @@ function WithinActor({
         className="
           absolute
           left-1/2
-          top-[clamp(70px,10.8vw,155px)]
+          top-[clamp(70px,calc(120_/_var(--width)*100vw),400px)]
           z-30
           flex
           -translate-x-1/2
@@ -718,7 +718,7 @@ function WithinActor({
           pointer-events-none
           absolute
           left-1/2
-          top-[clamp(95px,10.8vw,155px)]
+          top-[clamp(70px,calc(120_/_var(--width)*100vw),400px)]
           z-50
           -translate-x-1/2
           text-[clamp(13px,1vw,16px)]
@@ -1034,7 +1034,7 @@ function WithinActor({
                 }
               : {
                   duration: 0.9,
-                  delay: 4.5,
+                  delay: 4.9,
                   times: [
                     0,
                     0.65,
@@ -1269,8 +1269,7 @@ export default function AlignmentTabs() {
           className="
             relative
             w-full
-            pt-[clamp(0px,3%,4%)]
-            pb-[clamp(12px,2%,2%)]
+            py-sm
           "
         >
           <div
@@ -1283,8 +1282,8 @@ export default function AlignmentTabs() {
               px-[clamp(3%,10%,10%)]
               ${
                 isAligned
-                  ? "h-[clamp(70px,calc(120_/_var(--width)*100vw),320px)]"
-                  : "h-[clamp(90px,calc(140_/_var(--width)*100vw),380px)]"
+                  ? "h-[clamp(70px,calc(105_/_var(--width)*100vw),320px)]"
+                  : "h-[clamp(90px,calc(140_/_var(--width)*100vw),500px)]"
               }
             `}
           >
@@ -1309,7 +1308,7 @@ export default function AlignmentTabs() {
               ALIGNED TEXT
           ================================================== */}
 
-          <motion.span
+          <motion.h2
             initial={{
               opacity: 0,
               y: 12,
@@ -1348,7 +1347,7 @@ export default function AlignmentTabs() {
             "
           >
             Aligned
-          </motion.span>
+          </motion.h2>
 
           {/* ==================================================
               POWERED BY
@@ -1380,7 +1379,7 @@ export default function AlignmentTabs() {
               ease,
             }}
             className="
-              mt-md
+              mt-sm
               flex
               w-full
               items-center
@@ -1395,7 +1394,9 @@ export default function AlignmentTabs() {
                 border
                 border-[#B2D0F6]
                 bg-[#F2F8FF]
-                p-sm
+                py-sm
+                pl-sm
+                pr-lg
               "
             >
               <h3
@@ -1428,7 +1429,7 @@ export default function AlignmentTabs() {
                   />
 
                   Powered by Alignment
-                  Intelligence
+                  Intelligence 
                 </span>
               </h3>
             </div>

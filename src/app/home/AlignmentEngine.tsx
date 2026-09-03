@@ -41,21 +41,21 @@ export default function AlignmentEngine() {
   const activeCard = alignmentData[activeIndex];
 
   return (
-    <section className="w-full p-[5%]">
+    <section className="w-full px-[5%] py-[10%] md:py-[5%]">
       <div className="mx-auto grid grid-cols-1 gap-md md:grid-cols-[1.1fr_0.6fr_1fr] lg:items-center">
         {/* =====================================================
             LEFT CONTENT
         ===================================================== */}
         <div className="text-white">
-          <h2 className="text-h2 font-extrabold leading-tight">
-            The
-            <br />
-            Alignment
-            <br />
-            Engine
-          </h2>
+         <h2 className="text-h2 font-extrabold leading-tight">
+  The
+  <br className="hidden md:block" />
+  Alignment
+  <br className="hidden md:block" />
+  Engine
+</h2>
 
-          <p className="mt-xs font-medium text-base text-white">
+          <p className="mt-sm md:mt-xs font-medium text-base text-white">
             Connect EC’s proprietary Alignment
             <br />
             Architecture makes Alignment Intelligence
@@ -82,9 +82,13 @@ export default function AlignmentEngine() {
                   group
                   flex
                   
-                  flex-col
-                  items-start
-                  justify-center
+                  md:flex-col
+                  items-center
+
+                  md:items-start
+                  md:justify-center
+                  gap-xl
+                  md:gap-0
                   rounded-md
                   border
                   p-md
@@ -101,14 +105,17 @@ export default function AlignmentEngine() {
                 {/* Number */}
                 <span
                   className={`
-                    mb-sm
+                    sm:mb-sm
                     flex
                     size-iconsize-sm
                     items-center
                     justify-center
-                    rounded-[8px]
-                    text-md
+                    rounded-[5px]
+                    md:rounded-[8px]
+                    text-xl
+                    md:text-md
                     font-bold
+                    p-3 md:p-sm                  
                     ${
                       isActive
                         ? "bg-[#0873E8] text-white"
@@ -131,7 +138,7 @@ export default function AlignmentEngine() {
         {/* =====================================================
             ANIMATED CARD
         ===================================================== */}
-          <div className="relative h-full overflow-hidden rounded-md">
+          <div className="mt-md md:mt-0 relative h-full overflow-hidden rounded-md ">
   <AnimatePresence mode="wait">
     <motion.article
       key={activeCard.id}
@@ -164,21 +171,19 @@ export default function AlignmentEngine() {
           IMAGE
       ================================================= */}
 
-      <div className="relative w-full">
-        <Image
-          src={activeCard.image}
-          alt={activeCard.title}
-          width={800}
-          height={600}
-          className="
-            block
-            w-full
-            h-auto
-            rounded-md
-            object-contain
-          "
-        />
-      </div>
+    <div className="w-full overflow-hidden rounded-md">
+  <img
+    src={activeCard.image}
+    alt={activeCard.title}
+    className="
+      block
+      w-full
+      h-[clamp(160px,calc(220_/_var(--width)*100vw),800px)]
+      rounded-md
+      object-cover
+    "
+  />
+</div>
 
       {/* =================================================
           CONTENT

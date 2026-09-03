@@ -1,69 +1,70 @@
-import { HeroTextContainerSection } from "@/components/common/HeroTextContainerSection";
-import React from "react";
+import FAQSection from "@/components/common/FAQSection";
+import HeroTextContainerSection from "@/components/common/HeroTextContainerSection";
 import {
-  bannerSectionData,
+  candidateAlignmentSystemData,
+  candidateContinuityData,
   candidateFaqs,
+  candidateImpactData,
   HeroData,
-  insightComparisonPages,
   outcomeHighlightData,
   signalFlowData,
-  workflowAlignmentSectionData,
 } from "@/data/CandidatePageData";
-import FAQSection from "@/components/common/FAQSection";
 import SignalFlowSection from "@/components/common/SignalFlowSection";
-import BannerSection from "@/components/common/BannerSection";
-import InsightComparisonSection  from "@/components/common/InsightComparisonSection ";
-import WorkflowAlignmentSection  from "@/components/common/WorkflowAlignmentSection";
+import ContinuityBreaksSection from "@/components/common/ContinuityBreaksSection";
+import AlignmentSystemSection from "@/components/common/AlignmentSystemSection";
+import ImpactSection from "@/components/common/ImpactSection";
 import OutcomeHighlightSection from "@/components/common/OutcomeHighlightSection";
 
 export const CandidatesPage = () => {
   return (
-    
     <>
-
-      <section className="relative ">
-
-        <div className="">
-          <div className="bg-[url('/background/bg-hero-candidate-section.svg')] bg-no-repeat bg-cover bg-center">
-            <section className="relative flex items-center justify-center  bg-transparent">
-              <div className="mt-[5%] pt-[5%] pb-[15%] px-[5%]" >
-                <HeroTextContainerSection data={HeroData} />
-              </div>
-              
-            </section>
+      <section className="relative overflow-x-hidden ">
+        <section className="relative flex items-center justify-center bg-transparent">
+           {/* Background */}
+    <div
+      className="
+        absolute
+        inset-x-0
+        top-[90%]
+        md:top-[80%]
+        bottom-0
+        bg-[#F2F8FF]
+        rounded-t-[50%]
+      "
+    />
+          <div className="mt-[5%] pt-[5%] pb-[15%] px-[5%]">
+            <HeroTextContainerSection data={HeroData} />
           </div>
-          <div className="">
-            <section className="relative pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
-             <SignalFlowSection data={signalFlowData} />
-            </section>
-          </div>
+        </section>
+        <div className="bg-[#F2F8FF]">
+          <section className=" relative pb-[5%] px-[5%]- md:px-[7%] bg-transparent">
+            <SignalFlowSection data={signalFlowData} />
+          </section>
         </div>
-        <div className="">
-          <section className="-mx-[10%] md:-mx-0">
-            <BannerSection data={bannerSectionData} />
+        <div className="bg-[#F2F8FF]">
+          <section className=" relative pb-[5%] px-[5%] md:px-[7%] bg-transparent">
+            <ContinuityBreaksSection data={candidateContinuityData} />
           </section>
         </div>
 
-        <div className="">
-          <section className="relative py-[5%] px-[5%]">
-            <InsightComparisonSection data={insightComparisonPages}/>
+        <div className="bg-[#F2F8FF]">
+          <section className="relative  py-[5%] px-[5%]">
+            <AlignmentSystemSection data={candidateAlignmentSystemData} />
           </section>
         </div>
         <div className="">
-          <section className="mt-[5%] md:mt-0 relative py-[5%] px-[5%] ">
-          <WorkflowAlignmentSection data={workflowAlignmentSectionData} />
+          <section className="relative">
+            <ImpactSection data={candidateImpactData} />
           </section>
         </div>
-        <div className="">
-          <section className="mt-[5%] md:mt-0  relative py-[5%] px-[5%] ">
-          <OutcomeHighlightSection data={outcomeHighlightData}/>
-          </section>
+        <div className="relative mt-[5%] md:mt-0 py-[5%] px-[5%]">
+          <OutcomeHighlightSection data={outcomeHighlightData} />
         </div>
         <div className="flex justify-center items-center">
-      <div className="w-full -mx-[8%]  border-t-2 border-[#0668E1]" />
-      </div>
-        <div className="mt-[5%] md:mt-0 px-[5%]  py-[5%]">
-<FAQSection data={candidateFaqs}/>
+          <div className="w-full -mx-[8%]  border-t-2 border-[#0668E1]" />
+        </div>
+        <div className="relative mt-[5%] md:mt-0 py-[5%] px-[5%]">
+          <FAQSection data={candidateFaqs} />
         </div>
       </section>
     </>

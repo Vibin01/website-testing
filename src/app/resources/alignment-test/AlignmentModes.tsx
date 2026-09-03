@@ -83,11 +83,12 @@ export default function Page() {
                 <div
                   key={`first-${index}`}
                   className={`
-                    w-[clamp(280px,calc(400_/_var(--width)*100vw),600px)]
+                    w-[clamp(180px,calc(400_/_var(--width)*100vw),600px)]
                     shrink-0
                     rounded-md
                     border
-                    p-sm
+                    p-md
+                    md:p-sm
                     
                     ${item.card}
                   `}
@@ -126,11 +127,12 @@ export default function Page() {
                 <div
                   key={`second-${index}`}
                   className={`
-                    w-[clamp(280px,calc(400_/_var(--width)*100vw),600px)]
+                    w-[clamp(180px,calc(400_/_var(--width)*100vw),600px)]
                     shrink-0
                     rounded-md
                     border
-                    p-sm
+                    p-md
+                    md:p-sm
                     
                     ${item.card}
                   `}

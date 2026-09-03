@@ -1,7 +1,6 @@
 import React from "react";
-import { GradientButton } from "./Button/GradientButton";
 import Image from "next/image";
-import { Description } from "@radix-ui/react-dialog";
+import { AppLinkButton } from "./Button/AppLinkButton";
 
 interface CTASectionProps {
   data: {
@@ -28,7 +27,7 @@ export const CTASection = ({ data }: CTASectionProps) => {
         <h2 className=" font-bold text-[16px] md:text-[18px] lg:text-[22px] xl:text-[28px] 2xl:text-[32px]">
           {data.sub_title}
         </h2>
-        <GradientButton text={data.button_text} link={data.button_link} />
+        <AppLinkButton text={data.button_text} url={data.button_link} />
       </div>
       <div className=" justify-center items-center mb-6 lg:mb-0">
         <Image

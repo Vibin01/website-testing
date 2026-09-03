@@ -16,8 +16,8 @@ const MobileMenu = dynamic(() => import("./MobileMenu"));
 const navItems = [
   { name: "Home", link: "/" },
   { name: "Employers", link: "/employer-alignment-system" },
-  { name: "Candidates", link: "/candidate-alignment-system" },
   { name: "Recruiters", link: "/recruiter-alignment-system" },
+  { name: "Candidates", link: "/candidate-alignment-system" },
   { name: "Solutions", link: "#solutions" },
 
   { name: "Resources", link: "#resources" },

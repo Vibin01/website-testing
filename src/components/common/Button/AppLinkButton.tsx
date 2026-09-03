@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
-import { TriangleAlert } from "lucide-react";
+import { ArrowRight, TriangleAlert } from "lucide-react";
 import { toast } from "sonner";
 import { ShowDesktopWarning } from "../Toast/ShowDesktopWarning";
 
@@ -37,11 +37,22 @@ export const AppLinkButton = ({ url, text }: AppLinkButtonProps) => {
         <Link
           href={PLAY_STORE_URL}
           target="_blank"
-          className="md:hidden h-btn-h text-nowrap bg-[#0668E1] border-2 border-[#0072FF] cursor-pointer rounded-[12px] px-md py-sm flex items-center justify-center gap-sm"
+          className="md:hidden h-btn-h text-nowrap group bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)]  cursor-pointer rounded-md px-md py-sm flex items-center justify-center gap-sm"
         >
           <span className="font-bold text-xl text-white">{text}</span>
 
-          <FaArrowRight className="text-white text-base" />
+               <ArrowRight
+                          className=" 
+                           size-iconsize-sm
+                           text-white
+                            opacity-0
+                            -translate-x-2
+                            transition-all
+                            duration-300
+                            group-hover:translate-x-0
+                            group-hover:opacity-100
+                          "
+                        />
         </Link>
       )}
 
@@ -50,11 +61,22 @@ export const AppLinkButton = ({ url, text }: AppLinkButtonProps) => {
         <button
           type="button"
           onClick={showDesktopWarning}
-          className="md:hidden h-btn-h text-nowrap bg-[#0668E1] border-2 border-[#0072FF] cursor-pointer rounded-[12px] px-md py-sm flex items-center justify-center gap-sm"
+          className="md:hidden h-btn-h text-nowrap group  bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer rounded-md px-md py-sm flex items-center justify-center gap-sm"
         >
           <span className="font-bold text-xl text-white">{text}</span>
 
-          <FaArrowRight className="text-white text-base" />
+              <ArrowRight
+                          className=" 
+                           size-iconsize-sm
+                           text-white
+                            opacity-0
+                            -translate-x-2
+                            transition-all
+                            duration-300
+                            group-hover:translate-x-0
+                            group-hover:opacity-100
+                          "
+                        />
         </button>
       )}
 
@@ -62,11 +84,22 @@ export const AppLinkButton = ({ url, text }: AppLinkButtonProps) => {
       <Link
         href={url}
         target="_blank"
-        className="hidden md:flex h-btn-h text-nowrap bg-[#0668E1] border-2 border-[#0072FF] cursor-pointer rounded-[12px] px-md py-sm items-center justify-center gap-sm"
+        className="hidden md:flex h-btn-h w-fit text-nowrap group  bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer rounded-md px-md py-sm items-center justify-center gap-sm"
       >
         <span className="font-bold text-xl text-white">{text}</span>
 
-        <FaArrowRight className="text-white text-base" />
+             <ArrowRight
+                          className=" 
+                           size-iconsize-sm
+                            opacity-0
+                            -translate-x-2
+                            transition-all
+                            duration-300
+                            text-white
+                            group-hover:translate-x-0
+                            group-hover:opacity-100
+                          "
+                        />
       </Link>
     </>
   );

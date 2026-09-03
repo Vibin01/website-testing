@@ -2,22 +2,26 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const actors = [
   {
     role: "Employer",
     subtitle: "Hiring Targets",
     image: "/home/icons/hiring-target-icon.svg",
+    acrossLink:"https://employer.connectec.app/register"
   },
   {
     role: "Recruiter",
     subtitle: "Hiring Delivery",
     image: "/home/icons/successful-placements-icon.svg",
+    acrossLink:"https://recruiter.connectec.app/"
   },
   {
     role: "Candidate",
     subtitle: "Career Progress",
     image: "/home/icons/right-talent-icon.svg",
+    acrossLink:"https://play.google.com/store/apps/details?id=com.primethic.connectec"
   },
 ];
 
@@ -111,8 +115,8 @@ export default function ActorCards() {
 
               {/* BEGIN WITHIN */}
 
-              <button
-              
+              <Link
+              href={`/resources/alignment-test/register?mode=single&phase=uncertainty&role=${actor.role.toLowerCase()}`}
                 type="button"
                 className="
                 group
@@ -150,11 +154,13 @@ export default function ActorCards() {
                     group-hover:opacity-100
                   "
                 />
-              </button>
+              </Link>
 
               {/* CONTINUES ACROSS */}
 
-              <button
+              <Link
+              href={actor.acrossLink}
+              target={"_blank"}
                 type="button"
                 className="
                 group
@@ -189,7 +195,7 @@ export default function ActorCards() {
                     group-hover:opacity-100
                   "
                 />
-              </button>
+              </Link>
 
             </div>
           </div>
