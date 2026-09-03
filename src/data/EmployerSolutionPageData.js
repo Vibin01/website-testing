@@ -48,6 +48,7 @@ export const easyCalibrator  =
 },
   outcomeHighlightData: {
   title: "A Clear Signal",
+  titleHighlight,
   subtitle:
     "Targets don’t fail. Alignment does.",
 
@@ -125,6 +126,7 @@ export const easyEvalutor  =
 
   outcomeHighlightData: {
   title: "A Clear Signal",
+  titleHighlight,
   subtitle:
     "Every message is not just communication. It is a brand signal.",
 
@@ -202,6 +204,7 @@ export const easyExplorer  =
 
   outcomeHighlightData: {
   title: "A Clear Signal",
+  titleHighlight,
   subtitle:
     "Misalignment doesn’t appear suddenly. It builds as pressure.",
 
@@ -279,6 +282,7 @@ export const easyFacilitator  =
 
   outcomeHighlightData: {
   title: "A Clear Signal",
+  titleHighlight,
   subtitle:
     "Confirmation is not commitment. It needs reinforcement.",
 
@@ -356,6 +360,7 @@ export const easyNavigator  =
 },
 
   outcomeHighlightData: {
+    titleHighlight,
   title: "A Clear Signal",
   subtitle:
     "Declines are not losses. They are alignment signals.",
@@ -434,6 +439,7 @@ export const easyPredictor  =
 
   outcomeHighlightData: {
   title: "A Clear Signal",
+  titleHighlight,
   subtitle:
     "Drop-offs don’t surprise. They signal early.",
 
@@ -511,6 +517,7 @@ export const easyRoleTracker  =
 
   outcomeHighlightData: {
   title: "A Clear Signal",
+  titleHighlight,
   subtitle:
     "Momentum doesn’t stop suddenly. It slows before it stalls.",
 
