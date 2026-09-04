@@ -33,7 +33,7 @@ const actors: Actor[] = [
       "Keep targets, execution signals, evaluations, and hiring transitions connected as business and market conditions change.",
     buttonText: "Explore Employer Alignment",
     avatar: "/icons/employer-round-icon.svg",
-    buttonLink:""
+    buttonLink:"/employer-alignment-system"
   },
   {
     id: "recruiter",
@@ -44,7 +44,7 @@ const actors: Actor[] = [
       "Keep schedules, participation, feedback, and candidate commitment connected across every hiring stage.",
     buttonText: "Explore Recruiter Alignment",
     avatar: "/icons/recruiters-round-icon.svg",
-    buttonLink:""
+    buttonLink:"/recruiter-alignment-system"
   },
   {
     id: "candidate",
@@ -55,7 +55,7 @@ const actors: Actor[] = [
       "Keep interviews, verified employer insights, feedback, and offer decisions connected across opportunities.",
     buttonText: "Explore Candidate Alignment",
     avatar: "/icons/candidate-round-icon.svg",
-buttonLink:""
+buttonLink:"/candidate-alignment-system"
   },
 ];
 
@@ -126,7 +126,7 @@ export default function AlignmentActors() {
             MOBILE
         ==================================================== */}
 
-        <div className="grid grid-cols-1 gap-xl md:hidden">
+        <div className="grid grid-cols-1 gap-md md:hidden">
           {actors.map((actor, index) => (
             <motion.div
               key={actor.id}
@@ -202,11 +202,11 @@ function AlignmentCard({
         ================================================== */}
 
         <div className="flex justify-center">
-          <div>
+          <div className="bg-[#CED8F2] rounded-full">
             <img
               src={actor.avatar}
               alt={actor.role}
-              className="size-iconsize-xl"
+              className="size-[60px] md:size-iconsize-xl"
             />
           </div>
         </div>
@@ -223,7 +223,7 @@ function AlignmentCard({
             className="
               text-h6
               font-bold
-              w-[60%]
+              md:w-[60%]
               text-center
             "
           >
@@ -239,6 +239,7 @@ function AlignmentCard({
               text-xl
               font-bold
               text-[#0668E1]
+              text-center
             "
           >
             {actor.keywords}
@@ -265,7 +266,7 @@ function AlignmentCard({
 
         <div className="mt-auto pt-lg">
           <Link
-          href={`/resources/alignment-test/register?mode=single&phase=uncertainty&role=${actor.role.toLowerCase()}`}
+          href={actor.buttonLink}
             className="
               group
               relative
@@ -276,7 +277,8 @@ function AlignmentCard({
               justify-center
               overflow-hidden
               rounded-md
-              border-2
+              border
+              md:border-2
               border-[#0668E1]
               bg-transparent
               pl-sm

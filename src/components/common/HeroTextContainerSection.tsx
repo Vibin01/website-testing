@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AppLinkButton } from "./Button/AppLinkButton";
 
 interface HeroStage { id: number; title: string; icon: string; } 
@@ -113,6 +113,7 @@ function ProcessCard({
   activeCard: number | null;
   setActiveCard: React.Dispatch<React.SetStateAction<number | null>>;
 }) {
+ const resetTimer = useRef<NodeJS.Timeout | null>(null);
   return (
     <motion.div
       initial={{
@@ -142,15 +143,26 @@ function ProcessCard({
           ease,
         },
         y: {
-          duration: 0.25,
+          duration: 0.5,
           ease: "easeOut",
         },
       }}
-      onClick={() => {
-        if (window.innerWidth >= 640) return;
+ onClick={() => {
+  if (window.innerWidth >= 640) return;
 
-        setActiveCard(index);
-      }}
+  // Clear previous timer
+  if (resetTimer.current) {
+    clearTimeout(resetTimer.current);
+  }
+
+  // Activate clicked card
+  setActiveCard(index);
+
+  // Move back after 5 seconds
+  resetTimer.current = setTimeout(() => {
+    setActiveCard(null);
+  }, 4000);
+}}
       data-process-card={index}
       className="
         relative

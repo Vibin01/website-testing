@@ -14,7 +14,7 @@ export const HomePage = () => {
   {/* =====================================================
       HERO + ACTOR CARDS
   ====================================================== */}
-  <div className="relative">
+  <div className="relative overflow-x-hidden">
 
     {/* Background */}
     <div

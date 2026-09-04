@@ -87,7 +87,7 @@ const isEmployer = pathname.includes("employer");
                     alt="tick icon"
                     className="mt-[0.5%] size-iconsize-sm p-[0.1%]"
                   />
-                  <p className="text-base font-medium">{point}</p>
+                  <p className="text-xl font-medium">{point}</p>
                 </div>
               ))}
             </div>

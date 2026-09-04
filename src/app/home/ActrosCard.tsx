@@ -80,7 +80,7 @@ export default function ActorCards() {
                 ROLE
             ================================================= */}
 
-            <h2
+            <h3
               className="
                 mt-md
                 text-center
@@ -90,7 +90,7 @@ export default function ActorCards() {
               "
             >
               {actor.role}
-            </h2>
+            </h3>
 
             {/* =================================================
                 SUBTITLE

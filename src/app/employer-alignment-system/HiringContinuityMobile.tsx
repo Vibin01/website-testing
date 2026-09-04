@@ -364,10 +364,9 @@ function MobileBrokenConnection({
           >
             <h3
               className="
-                text-[11px]
+                text-xl
                 font-bold
                 leading-4
-                text-[#171717]
               "
             >
               {connection.title}
@@ -376,9 +375,7 @@ function MobileBrokenConnection({
             <p
               className="
                 mt-1
-                text-[11px]
-                leading-[17px]
-                text-[#444]
+                text-xl
               "
             >
               {connection.description}
@@ -404,7 +401,8 @@ function MobileBreaksCard({data}: {data: ContinuityData}) {
         rounded-md
         bg-white
         px-sm
-        py-[15%]
+        pt-[5%]
+        pb-[15%]
         shadow-web-medium
       "
     >
@@ -812,11 +810,11 @@ function ContinuityAction({
       <motion.p
         initial={{
           opacity: 0,
-          x: 15,
+          y: -15,
         }}
         animate={{
           opacity: 1,
-          x: 0,
+          y: 0,
         }}
         transition={{
           delay: actionDelay,
@@ -1020,7 +1018,7 @@ function AlignmentContinuityMobile({data}: {data: ContinuityData}) {
             />
       
                 <span>
-                  Alignment Preserve Employer Continuity
+                  {data.continuityButton}
                 </span>
               </motion.div>
     </motion.div>

@@ -24,7 +24,7 @@ type ImpactSectionProps = {
 
 export default function ImpactSection({ data }: ImpactSectionProps) {
   return (
-    <section className="w-full overflow-hidden bg-[#0868E1] px-[5%] py-[10%] md:py-[6%] text-white">
+    <section className="w-full overflow-hidden bg-[#0868E1] px-[5%] py-[10%] text-white md:py-[6%]">
       <div className="mx-auto">
         {/* Eyebrow */}
         <motion.p
@@ -51,16 +51,16 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
             ease: "easeOut",
           }}
           className="
-        mt-xs
-        flex
-        flex-wrap
-        items-center
-        gap-x-md
-        gap-y-xs
-        text-h2
-        font-extrabold
-        leading-tight
-      "
+            mt-xs
+            flex
+            flex-wrap
+            items-center
+            gap-x-md
+            gap-y-xs
+            text-h2
+            font-extrabold
+            leading-tight
+          "
         >
           <span>{data.heading.first}</span>
 
@@ -83,45 +83,43 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
             delay: 0.25,
           }}
           className="
-        mt-md
-        text-base
-        font-medium
-      "
+            mt-md
+            text-base
+            font-medium
+          "
         >
           {data.description}
         </motion.p>
 
         {/* ============================================================
-    MOBILE — ARROW + DESCRIPTION PAIRS
-============================================================ */}
+            MOBILE — ARROW + DESCRIPTION PAIRS
+        ============================================================ */}
 
         <div className="mt-lg grid grid-cols-1 gap-xl md:hidden">
           {data.cards.map((card, index) => (
-            <div
+            <motion.div
               key={`mobile-card-${card.title}`}
+              initial={{
+                opacity: 0,
+                x: -60,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.6 + index * 0.45,
+                ease: "easeOut",
+              }}
               className="flex flex-col gap-md"
             >
               {/* Arrow Header Box */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  x: -60,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.2,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.6 + index * 0.45,
-                  ease: "easeOut",
-                }}
-                className="relative h-btn-h w-full"
-              >
+              <div className="relative h-btn-h w-full">
                 {/* SVG Arrow Background */}
                 <svg
                   viewBox="0 0 400 46"
@@ -131,6 +129,120 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
                 >
                   <path
                     d="
+                      M 10 1
+                      H 377
+
+                      Q 381 1 384 5
+                      L 399 21
+
+                      Q 400 23 399 25
+                      L 384 41
+
+                      Q 381 45 377 45
+                      H 10
+
+                      Q 5 45 7 42
+                      L 18 33
+
+                      Q 30 23 32 21
+                      L 5 4
+
+                      Q 5 1 8 1
+
+                      Z
+                    "
+                    fill="rgba(255,255,255,0.035)"
+                    stroke="rgba(255,255,255,0.65)"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                  />
+                </svg>
+
+                {/* Text */}
+                <div className="relative z-10 flex h-full items-center justify-center">
+                  <span className="text-base font-bold text-white">
+                    {card.title}
+                  </span>
+                </div>
+              </div>
+
+              {/* Description Card */}
+              <motion.div
+                whileHover={{
+                  y: -4,
+                  transition: {
+                    duration: 0.2,
+                  },
+                }}
+                className="
+                  flex
+                  min-h-[92px]
+                  items-center
+                  justify-center
+                  rounded-md
+                  border
+                  border-[#B2D0F6]
+                  bg-[#FFFFFF1A]
+                  p-md
+                  text-center
+                  transition-colors
+                  duration-500
+                "
+              >
+                <p className="text-base font-medium">
+                  {card.description}
+                </p>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* ============================================================
+            DESKTOP — KEEP YOUR EXISTING TWO ROW LAYOUT
+        ============================================================ */}
+
+{/* Desktop Cards */}
+<div className="mt-md hidden grid-cols-1 gap-md md:grid md:grid-cols-3">
+  {data.cards.map((card, index) => (
+    <motion.div
+      key={`card-${card.title}`}
+      initial={{
+        opacity: 0,
+        x: -60,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.6,
+        delay: 0.6 + index * 0.45,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        y: -4,
+        transition: {
+          duration: 0.2,
+        },
+      }}
+      className="flex flex-col"
+    >
+      {/* Arrow Header Box */}
+      <div className="relative h-btn-h w-full">
+        {/* SVG Arrow Background */}
+        <svg
+          viewBox="0 0 400 46"
+          preserveAspectRatio="none"
+          className="absolute inset-0 h-full w-full"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="
               M 10 1
               H 377
 
@@ -153,49 +265,26 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
 
               Z
             "
-                    fill="rgba(255,255,255,0.035)"
-                    stroke="rgba(255,255,255,0.65)"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                  />
-                </svg>
+            fill="rgba(255,255,255,0.035)"
+            stroke="rgba(255,255,255,0.65)"
+            strokeWidth="2"
+            strokeLinejoin="round"
+            strokeLinecap="round"
+          />
+        </svg>
 
-                {/* Text */}
-                <div className="relative z-10 flex h-full items-center justify-center">
-                  <span className="text-base font-bold text-white">
-                    {card.title}
-                  </span>
-                </div>
-              </motion.div>
+        {/* Text */}
+        <div className="relative z-10 flex h-full items-center justify-center">
+          <span className="text-base font-bold text-white">
+            {card.title}
+          </span>
+        </div>
+      </div>
 
-              {/* Description Card */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  x: -60,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.2,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.6 + index * 0.45,
-                  ease: "easeOut",
-                }}
-                whileHover={{
-                  y: -4,
-                  transition: {
-                    duration: 0.2,
-                  },
-                }}
-                className="
-        
+      {/* Description Card */}
+      <div
+        className="
+          mt-lg
           flex
           min-h-[92px]
           items-center
@@ -209,137 +298,14 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
           transition-colors
           duration-500
         "
-              >
-                <p className="text-base font-medium ">{card.description}</p>
-              </motion.div>
-            </div>
-          ))}
-        </div>
-
-        {/* ============================================================
-    DESKTOP — KEEP YOUR EXISTING TWO ROW LAYOUT
-============================================================ */}
-
-        {/* Arrow Header Boxes */}
-        <div className="mt-md hidden grid-cols-1 gap-md md:grid md:grid-cols-3">
-          {data.cards.map((card, index) => (
-            <motion.div
-              key={`header-${card.title}`}
-              initial={{
-                opacity: 0,
-                x: -60,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.6 + index * 0.45,
-                ease: "easeOut",
-              }}
-              className="relative h-btn-h w-full"
-            >
-              {/* SVG Arrow Background */}
-              <svg
-                viewBox="0 0 400 46"
-                preserveAspectRatio="none"
-                className="absolute inset-0 h-full w-full"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="
-            M 10 1
-            H 377
-
-            Q 381 1 384 5
-            L 399 21
-
-            Q 400 23 399 25
-            L 384 41
-
-            Q 381 45 377 45
-            H 10
-
-            Q 5 45 7 42
-            L 18 33
-
-            Q 30 23 32 21
-            L 5 4
-
-            Q 5 1 8 1
-
-            Z
-          "
-                  fill="rgba(255,255,255,0.035)"
-                  stroke="rgba(255,255,255,0.65)"
-                  strokeWidth="2"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                />
-              </svg>
-
-              {/* Text */}
-              <div className="relative z-10 flex h-full items-center justify-center">
-                <span className="text-base font-bold text-white">
-                  {card.title}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Description Cards */}
-        <div className="mt-lg hidden grid-cols-1 gap-md md:grid md:grid-cols-3">
-          {data.cards.map((card, index) => (
-            <motion.div
-              key={`description-${card.title}`}
-              initial={{
-                opacity: 0,
-                x: -60,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.6 + index * 0.45,
-                ease: "easeOut",
-              }}
-              whileHover={{
-                y: -4,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-              className="
-        flex
-        min-h-[92px]
-        items-center
-        justify-center
-        rounded-md
-        border
-        border-[#B2D0F6]
-        bg-[#FFFFFF1A]
-        p-md
-        text-center
-        transition-colors
-        duration-500
-      "
-            >
-              <p className="text-base font-medium">{card.description}</p>
-            </motion.div>
-          ))}
-        </div>
+      >
+        <p className="text-base font-medium">
+          {card.description}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
       </div>
     </section>
   );

@@ -91,7 +91,7 @@ const alignmentCards = [
             width={58}
             height={58}
             className={isCenter
-              ? "object-contain size-iconsize-2xl md:size-iconsize-xl":"object-contain size-iconsize-g scale-120"}
+              ? "object-contain size-iconsize-2xl md:size-iconsize-xl":"object-contain size-iconsize-lg scale-120"}
           />
         </div>
 

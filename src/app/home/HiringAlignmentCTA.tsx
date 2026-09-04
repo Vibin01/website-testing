@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 // ============================================================
 // TYPES
@@ -45,6 +46,7 @@ const actors: ActorCard[] = [
 // ============================================================
 
 export default function HiringAlignmentCTA() {
+  const router=useRouter();
   return (
     <section className="w-full py-[3]">
       <div
@@ -57,7 +59,8 @@ export default function HiringAlignmentCTA() {
           rounded-xl
           border
           border-[#5D9DF5]
-        p-xl
+          p-md
+        md:p-xl
         "
         style={{
           background:
@@ -104,10 +107,9 @@ export default function HiringAlignmentCTA() {
               ))}
             </div>
 
-<div className="md:hidden flex justify-center mt-xl">
-          <PhonePreview />
-
-</div>
+            <div className="md:hidden flex justify-center mt-xl">
+              <PhonePreview />
+            </div>
             {/* ==================================================
                 CTA AREA
             ================================================== */}
@@ -123,9 +125,10 @@ export default function HiringAlignmentCTA() {
                 Hiring Alignment Made EASY
               </h3>
 
-       <div className="flex flex-col md:flex-row gap-md mt-md md:mt-xs">
-<motion.div
-  className="
+              <div className="flex flex-col md:flex-row gap-md mt-md md:mt-xs">
+                <motion.button
+                onClick={()=>router.push("/resources/alignment-test/register?mode=single&phase=uncertainty")}
+                  className="
     relative
     flex
     h-btn-h
@@ -143,49 +146,50 @@ export default function HiringAlignmentCTA() {
     overflow-hidden
     pl-sm
   "
-  initial="rest"
-  whileHover="hover"
-  variants={{
-    rest: {
-      borderColor: "#FFFFFF",
-    },
-    hover: {
-      borderColor: "#0668E1",
-    },
-  }}
-  transition={{
-    borderColor: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  }}
->
-  {/* Blue background */}
-  <motion.div
-    className="
+
+                  initial="rest"
+                  whileHover="hover"
+                  variants={{
+                    rest: {
+                      borderColor: "#FFFFFF",
+                    },
+                    hover: {
+                      borderColor: "#0668E1",
+                    },
+                  }}
+                  transition={{
+                    borderColor: {
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  }}
+                >
+                  {/* Blue background */}
+                  <motion.div
+                    className="
       absolute
       inset-0
       bg-[#0668E1]
       z-0
       origin-left
     "
-    variants={{
-      rest: {
-        scaleX: 0,
-      },
-      hover: {
-        scaleX: 1,
-      },
-    }}
-    transition={{
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-  />
+                    variants={{
+                      rest: {
+                        scaleX: 0,
+                      },
+                      hover: {
+                        scaleX: 1,
+                      },
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  />
 
-  {/* Content */}
-  <motion.div
-    className="
+                  {/* Content */}
+                  <motion.div
+                    className="
       relative
       z-10
       flex
@@ -194,36 +198,39 @@ export default function HiringAlignmentCTA() {
       gap-sm
       
     "
-  >
-    {/* Text */}
-    <span className="font-bold text-xl text-white">
-      Begins Within
-    </span>
+                  >
+                    {/* Text */}
+                    <span className="font-bold text-xl text-white">
+                      Begins Within
+                    </span>
 
-    {/* Arrow */}
-    <motion.div
-      variants={{
-        rest: {
-          opacity: 0,
-          x: -10,
-        },
-        hover: {
-          opacity: 1,
-          x: 0,
-        },
-      }}
-      transition={{
-        duration: 0.4,
-        delay: 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <FaArrowRight className="text-white size-iconsize-sm scale-90" />
-    </motion.div>
-  </motion.div>
-</motion.div>
-<motion.div
-  className="
+                    {/* Arrow */}
+                    <motion.div
+                      variants={{
+                        rest: {
+                          opacity: 0,
+                          x: -10,
+                        },
+                        hover: {
+                          opacity: 1,
+                          x: 0,
+                        },
+                      }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.1,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    >
+                      <FaArrowRight className="text-white size-iconsize-sm scale-90" />
+                    </motion.div>
+                  </motion.div>
+                </motion.button>
+                <motion.button
+            onClick={() =>
+    window.open("https://play.google.com/store/apps/details?id=com.primethic.connectec", "_blank")
+  }
+                  className="
     relative
     flex
     h-btn-h
@@ -241,49 +248,49 @@ export default function HiringAlignmentCTA() {
     overflow-hidden
     pl-sm
   "
-  initial="rest"
-  whileHover="hover"
-  variants={{
-    rest: {
-      borderColor: "#FFFFFF",
-    },
-    hover: {
-      borderColor: "#0668E1",
-    },
-  }}
-  transition={{
-    borderColor: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  }}
->
-  {/* Blue background */}
-  <motion.div
-    className="
+                  initial="rest"
+                  whileHover="hover"
+                  variants={{
+                    rest: {
+                      borderColor: "#FFFFFF",
+                    },
+                    hover: {
+                      borderColor: "#0668E1",
+                    },
+                  }}
+                  transition={{
+                    borderColor: {
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  }}
+                >
+                  {/* Blue background */}
+                  <motion.div
+                    className="
       absolute
       inset-0
       bg-[#0668E1]
       z-0
       origin-left
     "
-    variants={{
-      rest: {
-        scaleX: 0,
-      },
-      hover: {
-        scaleX: 1,
-      },
-    }}
-    transition={{
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-  />
+                    variants={{
+                      rest: {
+                        scaleX: 0,
+                      },
+                      hover: {
+                        scaleX: 1,
+                      },
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  />
 
-  {/* Content */}
-  <motion.div
-    className="
+                  {/* Content */}
+                  <motion.div
+                    className="
       relative
       z-10
       flex
@@ -291,45 +298,44 @@ export default function HiringAlignmentCTA() {
       justify-center
       gap-sm
     "
-  >
-    {/* Text */}
-    <span className="font-bold text-xl text-white">
-      Continues Across
-    </span>
+                  >
+                    {/* Text */}
+                    <span className="font-bold text-xl text-white">
+                      Continues Across
+                    </span>
 
-    {/* Arrow */}
-    <motion.div
-      variants={{
-        rest: {
-          opacity: 0,
-          x: -10,
-        },
-        hover: {
-          opacity: 1,
-          x: 0,
-        },
-      }}
-      transition={{
-        duration: 0.4,
-        delay: 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <FaArrowRight className="text-white size-iconsize-sm scale-90" />
-    </motion.div>
-  </motion.div>
-</motion.div>
-</div>
+                    {/* Arrow */}
+                    <motion.div
+                      variants={{
+                        rest: {
+                          opacity: 0,
+                          x: -10,
+                        },
+                        hover: {
+                          opacity: 1,
+                          x: 0,
+                        },
+                      }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.1,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    >
+                      <FaArrowRight className="text-white size-iconsize-sm scale-90" />
+                    </motion.div>
+                  </motion.div>
+                </motion.button>
+              </div>
             </div>
           </div>
 
           {/* ==================================================
               RIGHT PHONE
           ================================================== */}
-<div className="hidden md:flex h-full">
-          <PhonePreview />
-
-</div>
+          <div className="hidden md:flex h-full">
+            <PhonePreview />
+          </div>
         </div>
       </div>
     </section>
@@ -364,40 +370,40 @@ items-center
       "
     >
       {/* Avatar */}
-<div>
-      <Image
-        src={actor.avatar}
-        alt={actor.role}
-        width={52}
-        height={52}
-        className="size-iconsize-2xl scale-120 md:scale-100 md:size-iconsize-lg object-cover"
-      />
-</div>
-<div >
-      {/* Role */}
+      <div>
+        <Image
+          src={actor.avatar}
+          alt={actor.role}
+          width={52}
+          height={52}
+          className="size-iconsize-2xl scale-120 md:scale-100 md:size-iconsize-lg object-cover"
+        />
+      </div>
+      <div>
+        {/* Role */}
 
-      <h3
-        className="
+        <h3
+          className="
           mt-xs
           text-xl
           font-medium
         "
-      >
-        {actor.role}
-      </h3>
+        >
+          {actor.role}
+        </h3>
 
-      {/* Title */}
+        {/* Title */}
 
-      <p
-        className="
+        <p
+          className="
         
           text-base
           font-bold
           text-[#0668E1]
         "
-      >
-        {actor.title}
-      </p>
+        >
+          {actor.title}
+        </p>
       </div>
     </article>
   );
@@ -413,9 +419,9 @@ function PhonePreview() {
       <Image
         src="/home/hiring-banner.svg"
         alt="Connect EC mobile application"
-        width={200}
+        width={300}
         height={200}
-        className="sm:h-[clamp(200px,calc(280_/_var(--width)*100vw),600px)] w-auto object-contain"
+        className=" w-[600px] h-auto sm:h-[clamp(200px,calc(280_/_var(--width)*100vw),600px)] sm:w-auto object-contain"
       />
     </div>
   );

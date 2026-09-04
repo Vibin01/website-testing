@@ -70,7 +70,7 @@ export default function AlignmentSystemSection({ data }: { data: RoleData }) {
           className=" text-h2 font-extrabold leading-tight"
         >
           {data.headingFirst}{" "}
-          <span className="text-[#086be3]">{data.headingHighlight}</span>
+          <span className="text-primary block md:inline-block">{data.headingHighlight}</span>
         </motion.h1>
 
         {/* Description */}
@@ -96,10 +96,42 @@ export default function AlignmentSystemSection({ data }: { data: RoleData }) {
           duration: 0.35,
           delay: 0.1 + index * 0.05,
         }}
-        onClick={() => setActiveTab(tab)}
+       onClick={(e) => {
+  setActiveTab(tab);
+
+  // Mobile only
+  if (window.innerWidth < 768) {
+    const button = e.currentTarget;
+    const container = button.parentElement;
+
+    if (container) {
+      const buttonCenter =
+        button.offsetLeft + button.offsetWidth / 2;
+
+      const containerCenter = container.clientWidth / 2;
+
+      const maxScrollLeft =
+        container.scrollWidth - container.clientWidth;
+
+      const targetScroll =
+        buttonCenter - containerCenter;
+
+      // Keep scroll strictly inside the tabs container
+      const safeScroll = Math.max(
+        0,
+        Math.min(targetScroll, maxScrollLeft)
+      );
+
+      container.scrollTo({
+        left: safeScroll,
+        behavior: "smooth",
+      });
+    }
+  }
+}}
         className={`relative h-btn-h w-[clamp(110px,calc(172_/_var(--width)*100vw),330px)] shrink-0 cursor-pointer rounded-md border text-xl transition-all duration-200 ${
           active
-            ? "border-[#086be3] bg-primary font-bold text-white shadow-[0_8px_22px_rgba(9,109,225,0.15)]"
+            ? "border-[#086be3] bg-primary font-bold text-white"
             : "border-[#DEEDFF] bg-white font-medium hover:border-[#086be3] hover:text-primary"
         }`}
       >
@@ -144,38 +176,38 @@ export default function AlignmentSystemSection({ data }: { data: RoleData }) {
                     {activeView.description}
                   </p>
 
-                  {/* Dynamic Links */}
-                  <div className="mt-xs flex flex-wrap items-center gap-x-md gap-y-xs">
-                    {activeView.links.map((link, index) => (
-                      <div
-                        key={`${link.title}-${index}`}
-                        className="flex items-center text-wrap"
-                      >
-                        {/* Link title */}
-                        <button className="text-nowrap text-xl font-medium text-primary hover:underline">
-                          {link.title}
-                        </button>
+                 {/* Dynamic Links */}
+<div className="mt-xs flex flex-wrap items-center gap-y-xs">
+  {activeView.links.map((link, index) => (
+    <div
+      key={`${link.title}-${index}`}
+      className="flex items-center flex-wrap  text-wrap"
+    >
+      {/* Link title */}
+      <button className=" mt-1 text-nowrap text-xl font-medium text-primary hover:underline">
+        {link.title}
+      </button>
 
-                        {/* Arrow + secondary link */}
-                        {link.linkText && (
-                          <>
-                            <span className="mx-md text-xl font-light text-[#006ce5]">
-                              »
-                            </span>
+      {/* Arrow + secondary link */}
+      {link.linkText && (
+        <>
+          <span className="mt-1 mx-md text-xl font-light text-[#006ce5]">
+            »
+          </span>
 
-                            <button className="text-nowrap text-xl font-medium text-primary hover:underline">
-                              {link.linkText}
-                            </button>
-                          </>
-                        )}
+          <button className="mt-1 text-nowrap text-xl font-medium text-primary hover:underline">
+            {link.linkText}
+          </button>
+        </>
+      )}
 
-                        {/* Divider between link groups */}
-                        {index !== activeView.links.length - 1 && (
-                          <span className="mx-md  h-6 w-px bg-primary block" />
-                        )}
-                      </div>
-                    ))}
-                  </div>
+      {/* Divider between link groups */}
+      {index !== activeView.links.length - 1 && (
+        <span className="mx-md h-4 md:h-6 w-px bg-primary block shrink-0" />
+      )}
+    </div>
+  ))}
+</div>
                 </div>
               </div>
 

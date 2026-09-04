@@ -88,7 +88,7 @@ const alignmentCards = [
         <div
           className={
             isCenter
-              ? "mb-md md:mb-sm grid p-sm scale-125 md:scale-110 place-items-center rounded-full bg-[#0668E166]"
+              ? "mb-md md:mb-sm grid p-sm scale-90 md:scale-110 place-items-center rounded-full bg-[#0668E166]"
               : "mb-sm grid p-sm  place-items-center rounded-full bg-[#edf5ff]"
           }
         >
@@ -98,7 +98,7 @@ const alignmentCards = [
             width={58}
             height={58}
             className={isCenter
-              ? "object-contain size-iconsize-2xl md:size-iconsize-xl":"object-contain size-iconsize-md"}
+              ? "object-contain size-[80px] md:size-iconsize-xl":"object-contain size-[52px] md:size-iconsize-md"}
           />
         </div>
 

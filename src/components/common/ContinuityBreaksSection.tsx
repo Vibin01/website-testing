@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import HiringContinuityMobile from "../../app/employer-alignment-system/HiringContinuityMobile";
+
 /* ============================================================
    TYPES
 ============================================================ */
@@ -38,16 +39,13 @@ type ContinuityData = {
   continuityButton: string;
 };
 
- type ContinuityBreaksSectionProps = {
+type ContinuityBreaksSectionProps = {
   data: ContinuityData;
 };
 
 /* ============================================================
    DATA
 ============================================================ */
-
-
-
 
 const BLUE_DURATION = 1.4;
 const RED_DURATION = 1.4;
@@ -62,10 +60,10 @@ const STEP_DURATION =
   CARD_DURATION +
   STEP_GAP;
 
-  const ALIGNMENT_CARD_DELAY =
+const ALIGNMENT_CARD_DELAY =
   3 * STEP_DURATION + 0.8;
 
-  const BLUE_CARD_DELAY =
+const BLUE_CARD_DELAY =
   ALIGNMENT_CARD_DELAY + 2.2;
 
 const BLUE_CARD_STAGGER = 0.35;
@@ -79,21 +77,23 @@ function StageNode({
 }: {
   stage: Stage;
 }) {
-
   return (
-    <div className="relative z-40 flex shrink-0 flex-col items-center">
-      <div className="flex size-iconsize-md items-center justify-center">
+    <div
+      key={stage.title}
+      className={`flex min-w-0 items-center`}
+    >
+      <div className="flex shrink-0 flex-col items-center px-sm">
         <Image
-        src={stage.icon}
-        alt={stage.title}
-        height={100}
-        width={100}
+          src={stage.icon}
+          alt={stage.title}
+          width={100}
+          height={100}
           className="size-iconsize-md "
         />
-      </div>
 
-      <div className="mt-xs whitespace-nowrap text-xl font-medium w-iconsize-2xl text-center">
-        {stage.title}
+        <div className="mt-sm whitespace-nowrap text-xl font-medium">
+          {stage.title}
+        </div>
       </div>
     </div>
   );
@@ -112,11 +112,9 @@ function BrokenLink({
     <motion.div
       initial={{
         opacity: 0,
-        
       }}
       animate={{
         opacity: [0, 0, 1],
-        
       }}
       transition={{
         delay,
@@ -163,13 +161,15 @@ function AnimatedConnection({
   index,
   title,
   description,
+  isInView,
 }: Connection & {
   index: number;
+  isInView: boolean;
 }) {
   const stepStart = index * STEP_DURATION;
 
   /*
-    BLUE starts immediately.
+    BLUE starts immediately after the main 50% viewport trigger.
 
     RED starts only after blue reaches center.
 
@@ -178,25 +178,27 @@ function AnimatedConnection({
     CARD starts after red + vertical.
   */
 
-  const blueStart = stepStart-1;
+  const blueStart = stepStart - 1;
 
   const redStart =
-    stepStart + BLUE_DURATION ;
+    stepStart + BLUE_DURATION;
 
   const cardStart =
     redStart +
     Math.max(
       RED_DURATION,
       VERTICAL_DURATION
-    ) ;
+    );
 
   return (
-    <div className="relative  flex w-full flex-col items-center">
+    <div className="relative flex w-full flex-col items-center">
+
       {/* ======================================================
           HORIZONTAL LINE
       ======================================================= */}
 
       <div className="relative lg:h-iconsize-2xl w-full">
+
         {/* ====================================================
             BLUE MOVING LINE
 
@@ -211,9 +213,15 @@ function AnimatedConnection({
           initial={{
             width: "0%",
           }}
-          animate={{
-            width: "40%",
-          }}
+          animate={
+            isInView
+              ? {
+                  width: "40%",
+                }
+              : {
+                  width: "0%",
+                }
+          }
           transition={{
             delay: blueStart,
             duration: BLUE_DURATION,
@@ -231,44 +239,58 @@ function AnimatedConnection({
             There is NO red line before this animation.
         ===================================================== */}
 
-<motion.div
-  initial={{
-    width: "0%",
-  }}
-  animate={{
-    width: "50%",
-  }}
-  transition={{
-    delay: redStart,
-    duration: RED_DURATION,
-    ease: [0, 1, 0.36, 1],
-  }}
-  className="absolute left-1/2 top-1/2 h-[2px] -translate-y-1/2 bg-red-400"
-/>
+        <motion.div
+          initial={{
+            width: "0%",
+          }}
+          animate={
+            isInView
+              ? {
+                  width: "50%",
+                }
+              : {
+                  width: "0%",
+                }
+          }
+          transition={{
+            delay: redStart,
+            duration: RED_DURATION,
+            ease: [0, 1, 0.36, 1],
+          }}
+          className="absolute left-1/2 top-1/2 h-[2px] -translate-y-1/2 bg-red-400"
+        />
 
         {/* ====================================================
             CENTER BROKEN LINK
         ===================================================== */}
 
-        <BrokenLink
-          delay={
-            blueStart +
-            BLUE_DURATION -
-            0.25
-          }
-        />
+        {isInView && (
+          <BrokenLink
+            delay={
+              blueStart +
+              BLUE_DURATION -
+              0.25
+            }
+          />
+        )}
       </div>
-
 
       <motion.div
         initial={{
           height: 0,
           opacity: 0,
         }}
-        animate={{
-          height: 76,
-          opacity: 1,
-        }}
+        animate={
+          isInView
+            ? {
+                height: 76,
+                opacity: 1,
+              }
+            : {
+                height: 0,
+                opacity: 0,
+              }
+        }
         transition={{
           delay: redStart,
           duration: VERTICAL_DURATION,
@@ -287,19 +309,27 @@ function AnimatedConnection({
           y: 20,
           scale: 0.97,
         }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          scale: 1,
-        }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }
+            : {
+                opacity: 0,
+                y: 20,
+                scale: 0.97,
+              }
+        }
         transition={{
-          delay: cardStart - 1.2 ,
+          delay: cardStart - 1.2,
           duration: CARD_DURATION + 1,
           ease: [0.22, 1, 0.36, 1],
         }}
         className="w-full"
       >
-        <div className=" rounded-md border border-red-200 bg-[#fff7f5] p-sm text-center shadow-[0_15px_45px_rgba(15,23,42,0.06)]">
+        <div className="rounded-md border border-red-200 bg-[#fff7f5] p-sm text-center shadow-[0_15px_45px_rgba(15,23,42,0.06)]">
           <h3 className="text-base font-bold">
             {title}
           </h3>
@@ -317,164 +347,200 @@ function AnimatedConnection({
    ALIGNMENT CONNECTS CARD
 ============================================================ */
 
-function AlignmentConnectsCard({title}:{title:string}) {
+function AlignmentConnectsCard({
+  title,
+  isInView,
+}: {
+  title: string;
+  isInView: boolean;
+}) {
   return (
-<motion.div
-  initial={{
-    opacity: 0,
-    y: 30,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-  }}
-  transition={{
-    opacity: {
-      delay: ALIGNMENT_CARD_DELAY,
-      duration: 0.4,
-    },
-    y: {
-      delay: ALIGNMENT_CARD_DELAY,
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  }}
-  className="
-    relative
-    mt-xl
-    flex
-    w-fit 
-    items-center
-    justify-center
-    py-sm
-    pr-lg
-    pl-sm
-  "
->
-  {/* =====================================================
-      ANIMATED BACKGROUND + BORDER
-  ====================================================== */}
-
-  <motion.div
-    initial={{
-      scale: 0,
-    }}
-    animate={{
-      scale: 1,
-    }}
-    transition={{
-      delay: ALIGNMENT_CARD_DELAY,
-      duration: 1.2,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-    style={{
-      transformOrigin: "center",
-    }}
-    className="
-      absolute
-      inset-0
-      rounded-full
-      border
-      border-[#B2D0F6]
-      bg-[#EEF6FF]
-      
-    "
-  />
-
-  {/* =====================================================
-      CONTENT
-  ====================================================== */}
-
-  <motion.div
-    layout
-    className="
-      relative
-      z-20
-      flex
-      items-center
-      justify-center
-      
-    "
-  >
-    {/* =====================================================
-        IMAGE
-    ====================================================== */}
-
-    <motion.div
-      initial={{
-        x: 0,
-      }}
-      animate={{
-        x: 0,
-      }}
-      transition={{
-        delay: ALIGNMENT_CARD_DELAY + 0.3,
-        duration: 1.2,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="
-        relative
-        flex
-        shrink-0
-        items-center
-        justify-center
-      "
-    >
-      <Image
-        src="/icons/star-icon.svg"
-        alt="Alignment"
-        width={100}
-        height={100}
-        className="size-iconsize-xl"
-      />
-    </motion.div>
-
-    {/* =====================================================
-        TEXT
-    ====================================================== */}
-
     <motion.div
       initial={{
         opacity: 0,
-        width: 0,
-        marginLeft: 0,
+        y: 30,
       }}
-      animate={{
-        opacity: 1,
-        width: "auto",
-        marginLeft: "1rem",
-      }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : {
+              opacity: 0,
+              y: 30,
+            }
+      }
       transition={{
-        delay: ALIGNMENT_CARD_DELAY + 1.35,
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        opacity: {
+          delay: ALIGNMENT_CARD_DELAY,
+          duration: 0.4,
+        },
+        y: {
+          delay: ALIGNMENT_CARD_DELAY,
+          duration: 0.7,
+          ease: [0.22, 1, 0.36, 1],
+        },
       }}
       className="
-        overflow-hidden
-        whitespace-nowrap
-        text-center
-        text-h5
-        font-bold
-        text-primary
-        pr-xl
-        md:pr-0
+        relative
+        mt-xl
+        flex
+        w-fit
+        items-center
+        justify-center
+        py-sm
+        pr-lg
+        pl-sm
       "
     >
-      {title}
+      {/* =====================================================
+          ANIMATED BACKGROUND + BORDER
+      ====================================================== */}
+
+      <motion.div
+        initial={{
+          scale: 0,
+        }}
+        animate={
+          isInView
+            ? {
+                scale: 1,
+              }
+            : {
+                scale: 0,
+              }
+        }
+        transition={{
+          delay: ALIGNMENT_CARD_DELAY,
+          duration: 1.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        style={{
+          transformOrigin: "center",
+        }}
+        className="
+          absolute
+          inset-0
+          rounded-full
+          border
+          border-[#B2D0F6]
+          bg-[#EEF6FF]
+        "
+      />
+
+      {/* =====================================================
+          CONTENT
+      ====================================================== */}
+
+      <motion.div
+        layout
+        className="
+          relative
+          z-20
+          flex
+          items-center
+          justify-center
+        "
+      >
+        {/* =====================================================
+            IMAGE
+        ====================================================== */}
+
+        <motion.div
+          initial={{
+            x: 0,
+          }}
+          animate={{
+            x: 0,
+          }}
+          transition={{
+            delay: ALIGNMENT_CARD_DELAY + 0.3,
+            duration: 1.2,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="
+            relative
+            flex
+            shrink-0
+            items-center
+            justify-center
+          "
+        >
+          <Image
+            src="/icons/star-icon.svg"
+            alt="Alignment"
+            width={100}
+            height={100}
+            className="size-iconsize-xl"
+          />
+        </motion.div>
+
+        {/* =====================================================
+            TEXT
+        ====================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            width: 0,
+            marginLeft: 0,
+          }}
+          animate={
+            isInView
+              ? {
+                  opacity: 1,
+                  width: "auto",
+                  marginLeft: "1rem",
+                }
+              : {
+                  opacity: 0,
+                  width: 0,
+                  marginLeft: 0,
+                }
+          }
+          transition={{
+            delay: ALIGNMENT_CARD_DELAY + 1.35,
+            duration: 0.6,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="
+            overflow-hidden
+            whitespace-nowrap
+            text-center
+            text-h5
+            font-bold
+            text-primary
+            pr-xl
+            md:pr-0
+          "
+        >
+          {title}
+        </motion.div>
+      </motion.div>
     </motion.div>
-  </motion.div>
-</motion.div>
   );
 }
 
+/* ============================================================
+   ALIGNMENT CONTINUITY CARD
+============================================================ */
 
-function AlignmentContinuityCard({data}:{data: ContinuityData}) {
+function AlignmentContinuityCard({
+  data,
+  isInView,
+}: {
+  data: ContinuityData;
+  isInView: boolean;
+}) {
   return (
     <div className="relative w-full">
+
       {/* =====================================================
           SKELETON
-          
+
           SHOWS IMMEDIATELY
+
           Does NOT wait for BLUE_CARD_DELAY
       ===================================================== */}
 
@@ -626,8 +692,8 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
 
       {/* =====================================================
           REAL CARD
-          
-          THIS WAITS FOR BLUE_CARD_DELAY
+
+          WAITS FOR THE 50% VIEWPORT TRIGGER
       ===================================================== */}
 
       <motion.div
@@ -635,10 +701,17 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
           opacity: 0,
           y: 50,
         }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                y: 0,
+              }
+            : {
+                opacity: 0,
+                y: 50,
+              }
+        }
         transition={{
           delay: BLUE_CARD_DELAY,
           duration: 2.5,
@@ -695,9 +768,15 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
                     initial={{
                       scaleX: 0,
                     }}
-                    animate={{
-                      scaleX: 1,
-                    }}
+                    animate={
+                      isInView
+                        ? {
+                            scaleX: 1,
+                          }
+                        : {
+                            scaleX: 0,
+                          }
+                    }
                     transition={{
                       delay:
                         BLUE_CARD_DELAY +
@@ -761,10 +840,22 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
                           x: -30,
                         }
                   }
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
+                  animate={
+                    isInView
+                      ? {
+                          opacity: 1,
+                          x: 0,
+                        }
+                      : isInitial
+                        ? {
+                            opacity: 1,
+                            x: 0,
+                          }
+                        : {
+                            opacity: 0,
+                            x: -30,
+                          }
+                  }
                   transition={
                     isInitial
                       ? {
@@ -789,47 +880,41 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
                     DOUBLE ARROW
                 ================================================== */}
 
-                {index < data.continuityActions.length - 1 && (
-                  <motion.div
-                    initial={
-                      isInitial
-                        ? {
-                            opacity: 1,
-                            x: 0,
-                          }
-                        : {
-                            opacity: 0,
-                            x: -10,
-                          }
-                    }
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={
-                      isInitial
-                        ? {
-                            duration: 0,
-                          }
-                        : {
-                            delay: actionDelay + 0.5,
-                            duration: 1.4,
-                            ease: [0.16, 1, 0.3, 1],
-                          }
-                    }
-                    className="
-                      w-full
-                      text-center
-                      px-2
-                      text-h4
-                      font-medium
-                      leading-none
-                      sm:px-3
-                    "
-                  >
-                    »
-                  </motion.div>
-                )}
+              {index < data.continuityActions.length - 1 && (
+  <motion.div
+    initial={{
+      opacity: 0,
+      x: -10,
+    }}
+    animate={
+      isInView
+        ? {
+            opacity: 1,
+            x: 0,
+          }
+        : {
+            opacity: 0,
+            x: -10,
+          }
+    }
+    transition={{
+      delay: actionDelay + 1.2,
+      duration: 1.4,
+      ease: [0.16, 1, 0.3, 1],
+    }}
+    className="
+      w-full
+      text-center
+      px-2
+      text-h4
+      font-medium
+      leading-none
+      sm:px-3
+    "
+  >
+    »
+  </motion.div>
+)}
               </div>
             );
           })}
@@ -844,10 +929,17 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
             opacity: 0,
             y: 15,
           }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
+          animate={
+            isInView
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 15,
+                }
+          }
           transition={{
             delay: BLUE_CARD_DELAY + 6.8,
             duration: 1.8,
@@ -872,10 +964,17 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
             opacity: 0,
             scale: 0.9,
           }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
+          animate={
+            isInView
+              ? {
+                  opacity: 1,
+                  scale: 1,
+                }
+              : {
+                  opacity: 0,
+                  scale: 0.9,
+                }
+          }
           transition={{
             delay: BLUE_CARD_DELAY + 7.8,
             duration: 1.8,
@@ -895,7 +994,7 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
             pl-sm
             pr-md
             py-sm
-            text-lg
+            text-xl
             font-bold
             backdrop-blur-sm
           "
@@ -919,12 +1018,6 @@ function AlignmentContinuityCard({data}:{data: ContinuityData}) {
   );
 }
 
-
-
-/* ============================================================
-   MAIN COMPONENT
-============================================================ */
-
 /* ============================================================
    MAIN COMPONENT
 ============================================================ */
@@ -934,149 +1027,177 @@ export default function ContinuityBreaksSection({
 }: ContinuityBreaksSectionProps) {
   const sectionRef = React.useRef<HTMLElement | null>(null);
 
+  /*
+    IMPORTANT:
+
+    This is the ONE animation trigger.
+
+    All desktop animations wait until 50% of this
+    section is visible in the viewport.
+
+    once: true
+    -> animation happens only once.
+
+    amount: 0.5
+    -> animation starts when 50% is visible.
+  */
+
   const isInView = useInView(sectionRef, {
     once: true,
     amount: 0.5,
-    
   });
 
   return (
     <section ref={sectionRef} className="">
-      {isInView && (
-        <>
-          <p className="mb-1 text-xl font-bold text-primary text-center">
-            {data.eyebrow}
-          </p>
+      <>
+        <p className="mb-1 text-xl font-bold text-primary text-center">
+          {data.eyebrow}
+        </p>
 
-          <h2 className="text-h2 font-extrabold leading-tight text-center">
-            {data.heading}
-            <br />
-            <span className="text-primary">
-              {data.headingHighlight}
-            </span>
-          </h2>
+        <h2 className="text-h2 font-extrabold leading-tight text-center">
+          {data.heading}
+          <br />
+          <span className="text-primary">
+            {data.headingHighlight}
+          </span>
+        </h2>
 
-          <div className="hidden sm:flex flex-col">
-            <div className="relative w-full gap-xl mt-xl">
-              <div className="mx-auto w-full rounded-lg bg-white px-lg pt-lg pb-[10%] md:pb-xl shadow-web-medium">
+        <div className="hidden sm:flex flex-col">
+          <div className="relative w-full gap-xl mt-xl">
+            <div className="mx-auto w-full rounded-lg bg-white px-lg pt-lg pb-[10%] md:pb-xl shadow-web-medium">
 
-                {/* ====================================================
-                    TITLE
-                ===================================================== */}
+              {/* ====================================================
+                  TITLE
+              ===================================================== */}
 
-                <motion.h3
-                  initial={{
-                    opacity: 0,
-                    y: -10,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.5,
-                  }}
-                  className="text-center text-h5 font-bold"
-                >
-                  {data.breaksTitle}
-                </motion.h3>
+              <motion.h3
+                initial={{
+                  opacity: 0,
+                  y: -10,
+                }}
+                animate={
+                  isInView
+                    ? {
+                        opacity: 1,
+                        y: 0,
+                      }
+                    : {
+                        opacity: 0,
+                        y: -10,
+                      }
+                }
+                transition={{
+                  duration: 0.5,
+                }}
+                className="text-center text-h5 font-bold"
+              >
+                {data.breaksTitle}
+              </motion.h3>
 
-                {/* ====================================================
-                    DESKTOP
-                ===================================================== */}
+              {/* ====================================================
+                  DESKTOP
+              ===================================================== */}
 
-                <div className="mt-xl hidden sm:block">
-                  <div className="flex items-start">
+              <div className="mt-xl hidden sm:block">
+                <div className="flex items-start">
 
-                    {/* ==================================================
-                        TARGET
-                    =================================================== */}
+                  {/* ==================================================
+                      TARGET
+                  =================================================== */}
 
-                    <StageNode stage={data.stages[0]} />
+                  <StageNode stage={data.stages[0]} />
 
-                    {/* ==================================================
-                        CONNECTION 1
-                    =================================================== */}
+                  {/* ==================================================
+                      CONNECTION 1
+                  =================================================== */}
 
-                    <div className="min-w-0 flex-1 pt-1">
-                      <AnimatedConnection
-                        index={0}
-                        {...data.connections[0]}
-                      />
-                    </div>
-
-                    {/* ==================================================
-                        EVALUATION
-                    =================================================== */}
-
-                    <StageNode stage={data.stages[1]} />
-
-                    {/* ==================================================
-                        CONNECTION 2
-                    =================================================== */}
-
-                    <div className="min-w-0 flex-1 pt-1">
-                      <AnimatedConnection
-                        index={1}
-                        {...data.connections[1]}
-                      />
-                    </div>
-
-                    {/* ==================================================
-                        SELECTION
-                    =================================================== */}
-
-                    <StageNode stage={data.stages[2]} />
-
-                    {/* ==================================================
-                        CONNECTION 3
-                    =================================================== */}
-
-                    <div className="min-w-0 flex-1 pt-1">
-                      <AnimatedConnection
-                        index={2}
-                        {...data.connections[2]}
-                      />
-                    </div>
-
-                    {/* ==================================================
-                        HIRING
-                    =================================================== */}
-
-                    <StageNode stage={data.stages[3]} />
+                  <div className="min-w-0 flex-1 pt-1">
+                    <AnimatedConnection
+                      index={0}
+                      {...data.connections[0]}
+                      isInView={isInView}
+                    />
                   </div>
+
+                  {/* ==================================================
+                      EVALUATION
+                  =================================================== */}
+
+                  <StageNode stage={data.stages[1]} />
+
+                  {/* ==================================================
+                      CONNECTION 2
+                  =================================================== */}
+
+                  <div className="min-w-0 flex-1 pt-1">
+                    <AnimatedConnection
+                      index={1}
+                      {...data.connections[1]}
+                      isInView={isInView}
+                    />
+                  </div>
+
+                  {/* ==================================================
+                      SELECTION
+                  =================================================== */}
+
+                  <StageNode stage={data.stages[2]} />
+
+                  {/* ==================================================
+                      CONNECTION 3
+                  =================================================== */}
+
+                  <div className="min-w-0 flex-1 pt-1">
+                    <AnimatedConnection
+                      index={2}
+                      {...data.connections[2]}
+                      isInView={isInView}
+                    />
+                  </div>
+
+                  {/* ==================================================
+                      HIRING
+                  =================================================== */}
+
+                  <StageNode stage={data.stages[3]} />
                 </div>
               </div>
+            </div>
 
-              {/* ====================================================
-                  ALIGNMENT CONNECTS CARD
-              ===================================================== */}
+            {/* ====================================================
+                ALIGNMENT CONNECTS CARD
+            ===================================================== */}
 
-              <div className="absolute left-1/2 lg:top-1/2 z-50 -translate-x-1/2 -translate-y-1/2">
-                <AlignmentConnectsCard
-                  title={data.alignmentTitle}
-                />
-              </div>
+            <div className="absolute left-1/2 lg:top-1/2 z-50 -translate-x-1/2 -translate-y-1/2">
+              <AlignmentConnectsCard
+                title={data.alignmentTitle}
+                isInView={isInView}
+              />
+            </div>
 
-              {/* ====================================================
-                  ALIGNMENT CONTINUITY CARD
-              ===================================================== */}
+            {/* ====================================================
+                ALIGNMENT CONTINUITY CARD
+            ===================================================== */}
 
-              <div className="flex w-full justify-center">
-                <AlignmentContinuityCard data={data} />
-              </div>
+            <div className="flex w-full justify-center">
+              <AlignmentContinuityCard
+                data={data}
+                isInView={isInView}
+              />
             </div>
           </div>
+        </div>
 
-          {/* ====================================================
-              MOBILE
-          ===================================================== */}
+        {/* ====================================================
+            MOBILE
+        ===================================================== */}
 
-          <div className="mt-10 sm:hidden">
+        <div className="mt-10 sm:hidden">
+          {isInView && (
             <HiringContinuityMobile data={data} />
-          </div>
-        </>
-      )}
+          )}
+        </div>
+      </>
     </section>
   );
 }

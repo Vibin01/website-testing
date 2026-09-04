@@ -1,14 +1,7 @@
 "use client";
 
 const alignmentModes = [
-  {
-    label: "AUTO-ALIGNED",
-    title: "Pattern-Led Response",
-    description:
-      "Established approaches continue to guide responses even as conditions begin to.",
-    badge: "bg-[#2182F9]",
-    card: "border-[#2182F9] bg-[#2182F91A]",
-  },
+
   {
     label: "ALIGNED",
     title: "Clarity-Led Response",
@@ -16,6 +9,14 @@ const alignmentModes = [
       "Understanding, intention, and action remain coherent as conditions continue to change.",
     badge: "bg-[#0668E1]",
     card: "border-[#0668E1] bg-[#0668E11A]",
+  },
+    {
+    label: "AUTO-ALIGNED",
+    title: "Pattern-Led Response",
+    description:
+      "Established approaches continue to guide responses even as conditions begin to.",
+    badge: "bg-[#2182F9]",
+    card: "border-[#2182F9] bg-[#2182F91A]",
   },
   {
     label: "DYNAMIC",
@@ -109,9 +110,9 @@ export default function Page() {
                   </span>
 
                   {/* Title */}
-                  <h2 className="mt-sm text-base font-bold">
+                  <h3 className="mt-sm text-base font-bold">
                     {item.title}
-                  </h2>
+                  </h3>
 
                   {/* Description */}
                   <p className="mt-1 text-xl font-medium">

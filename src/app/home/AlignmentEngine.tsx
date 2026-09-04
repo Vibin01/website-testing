@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 type AlignmentItem = {
   id: number;
   title: string;
+  heading:string,
   description: string;
   image: string;
 };
@@ -15,6 +16,7 @@ const alignmentData: AlignmentItem[] = [
   {
     id: 1,
     title: "Alignment Trigger",
+    heading:"Makes the Decision Point Visible",
     description:
       "Surfaces the decision required for an actor to continue, redirect, pause, or close the hiring flow on time.",
     image: "/home/alignment-trigger.svg",
@@ -22,15 +24,17 @@ const alignmentData: AlignmentItem[] = [
   {
     id: 2,
     title: "Alignment Signal",
+    heading:"Makes Follow-Through Visible",
     description:
-      "Identifies changes in alignment and makes emerging signals visible before they affect the hiring flow.",
+      "Shows whether an actor responds on time and whether the action that follows remains coherent with the communicated decision.",
     image: "/home/alignment-signal.svg",
   },
   {
     id: 3,
     title: "Alignment Spectrum",
+    heading:"Makes the Wider Pattern Visible",
     description:
-      "Shows the degree of alignment across the hiring journey, helping teams understand where action is required.",
+      "Brings signals from across hiring interactions together to reveal alignment patterns across the hiring ecosystem.",
     image: "/home/alignment-spectrum.svg",
   },
 ];
@@ -42,7 +46,7 @@ export default function AlignmentEngine() {
 
   return (
     <section className="w-full px-[5%] py-[10%] md:py-[5%]">
-      <div className="mx-auto grid grid-cols-1 gap-md md:grid-cols-[1.1fr_0.6fr_1fr] lg:items-center">
+      <div className="mx-auto grid grid-cols-1 gap-md md:grid-cols-[1.1fr_0.6fr_1fr] md:items-center">
         {/* =====================================================
             LEFT CONTENT
         ===================================================== */}
@@ -159,6 +163,7 @@ export default function AlignmentEngine() {
         ease: [0.22, 1, 0.36, 1],
       }}
       className="
+      md:h-[clamp(300px,calc(360_/_var(--width)*100vw),1900px)]
         w-full
         rounded-md
         bg-white
@@ -178,7 +183,7 @@ export default function AlignmentEngine() {
     className="
       block
       w-full
-      h-[clamp(160px,calc(220_/_var(--width)*100vw),800px)]
+      lg:h-[clamp(160px,calc(220_/_var(--width)*100vw),800px)]
       rounded-md
       object-cover
     "
@@ -189,11 +194,9 @@ export default function AlignmentEngine() {
           CONTENT
       ================================================= */}
 
-      <div className="mt-xs shrink-0">
+      <div className="mt-xs shrink-0 ">
         <h3 className="text-h6 font-bold">
-          {activeCard.title === "Alignment Trigger"
-            ? "Makes the Decision Point Visible"
-            : activeCard.title}
+          {activeCard.heading}
         </h3>
 
         <p className="mt-1 text-xl font-medium">

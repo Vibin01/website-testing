@@ -52,7 +52,7 @@ export default function SignalFlowSection({
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="relative overflow-hidden py-[8%] md:py-[5%]"
+      className="relative overflow-hidden py-[10%] md:py-[5%]"
     >
       <div className="mx-auto">
         <motion.h2
