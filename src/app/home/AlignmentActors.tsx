@@ -94,7 +94,7 @@ export default function AlignmentActors() {
         ==================================================== */}
 
         <div className="hidden md:block">
-          <div className="grid grid-cols-3 gap-xl">
+          <div className="grid grid-cols-3 gap-md">
             {actors.map((actor, index) => (
               <motion.div
                 key={actor.id}
@@ -282,7 +282,7 @@ function AlignmentCard({
               border-[#0668E1]
               bg-transparent
               pl-sm
-              shadow-web-mini
+              md:shadow-web-mini
             "
           >
 

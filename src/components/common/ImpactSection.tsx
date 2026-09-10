@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 type ImpactCard = {
   title: string;
+  subTitle?: string;
   description: string;
 };
 
@@ -14,7 +15,7 @@ type ImpactData = {
     second: string;
     third: string;
   };
-  description: string;
+  description?: string;
   cards: ImpactCard[];
 };
 
@@ -74,6 +75,7 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
         </motion.h1>
 
         {/* Description */}
+        {data.description && (
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -90,7 +92,7 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
         >
           {data.description}
         </motion.p>
-
+        )}
         {/* ============================================================
             MOBILE — ARROW + DESCRIPTION PAIRS
         ============================================================ */}
@@ -178,6 +180,7 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
                 className="
                   flex
                   min-h-[92px]
+                  flex-col
                   items-center
                   justify-center
                   rounded-md
@@ -190,6 +193,11 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
                   duration-500
                 "
               >
+                {card.subTitle && (
+                  <p className="mb-sm text-base font-bold">
+                    {card.subTitle}
+                  </p>
+                )}
                 <p className="text-base font-medium">
                   {card.description}
                 </p>
@@ -281,28 +289,35 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
         </div>
       </div>
 
-      {/* Description Card */}
-      <div
-        className="
-          mt-lg
-          flex
-          min-h-[92px]
-          items-center
-          justify-center
-          rounded-md
-          border
-          border-[#B2D0F6]
-          bg-[#FFFFFF1A]
-          p-md
-          text-center
-          transition-colors
-          duration-500
-        "
-      >
-        <p className="text-base font-medium">
-          {card.description}
-        </p>
-      </div>
+   {/* Description Card */}
+<div
+  className="
+    mt-lg
+    flex
+    flex-1
+    flex-col
+    items-center
+    justify-center
+    rounded-md
+    border
+    border-[#B2D0F6]
+    bg-[#FFFFFF1A]
+    p-md
+    text-center
+    transition-colors
+    duration-500
+  "
+>
+  {card.subTitle && (
+    <p className="mb-sm text-xl font-bold">
+      {card.subTitle}
+    </p>
+  )}
+
+  <p className="text-xl font-medium">
+    {card.description}
+  </p>
+</div>
     </motion.div>
   ))}
 </div>

@@ -52,11 +52,11 @@ export default function AlignmentEngine() {
         ===================================================== */}
         <div className="text-white">
          <h2 className="text-h2 font-extrabold leading-tight">
-  The
+  The {" "}
   <br className="hidden md:block" />
-  Alignment
+  Alignment  {" "}
   <br className="hidden md:block" />
-  Engine
+  Engine 
 </h2>
 
           <p className="mt-sm md:mt-xs font-medium text-base text-white">

@@ -16,8 +16,8 @@ type OutcomeHighlightSectionData = {
   description?: string;
   description_top?: string;
   footerText: string;
-  footerHighlight: string;
-  footerSuffix: string;
+  footerHighlight?: string;
+  footerSuffix?: string;
   image: {
     src: string;
     alt: string;
@@ -101,11 +101,11 @@ const isEmployer = pathname.includes("employer");
                 showBottomBlock ? "mt-1" : "mt-"
               }`}
             >
-              {footerText}{" "}
+<span dangerouslySetInnerHTML={{ __html: footerText }} />
               <span
                 className={`font-bold ${!showBottomBlock ? "text-[#0668E1]" : ""} `}
               >
-                {footerHighlight}{" "}
+               {" "} {footerHighlight}{" "}
               </span>
               {!showBottomBlock && <br />}
               {footerSuffix}

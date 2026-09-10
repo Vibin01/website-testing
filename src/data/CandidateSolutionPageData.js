@@ -1,7 +1,8 @@
 
  export const  easyEvaluator={
-        title:"Easy Evaluator",
-        description:"The Feedback Transparency System",
+        title:"EASY EVALUATOR",
+        subTitle:"Feedback, Aligned.",
+        description:"Understand hiring outcomes, learn from structured feedback, and prepare for what follows.",
     
            metadata: {
       title: "Interview Feedback for Candidates | Connect EC",
@@ -9,281 +10,265 @@
         "Get structured interview feedback and actionable insights to improve interview performance and career outcomes with Connect EC.",
     },
 
- InsightTabItem: [
-  {
-    id: 1,
-    title: "The Aspiration",
-    subtitle: "Evaluation becomes visible",
-    icon: "/solutions/recruiter/aspiration-icon.svg",
-    contentTitle: "The Aspiration",
-    paragraphs: [
-      "Candidates want to understand how they are evaluated.",
-      "Each application reflects effort and intent.",
-      "Every interview represents an opportunity to improve.",
-    ],
-    listTitle: "Candidates seek a simple outcome:",
-    bullets: [
-      "Understand how decisions were made.",
-      "Learn from each hiring interaction.",
-      "Improve their next step.",
-    ],
-    footerLines: [
-      "Clear feedback helps candidates grow with every experience.",
-    ],
-  },
-  {
-    id: 2,
-    title: "The Changing Situation",
-    subtitle: "Decisions remain unclear",
-    icon: "/solutions/recruiter/changing-situation-icon.svg",
-    contentTitle: "The Changing Situation",
-    paragraphs: [
-      "Across many hiring processes, outcomes remain unclear.",
-      "Candidates often wait without clarity into decisions.",
-    ],
-    listTitle: "After applying or interviewing:",
-    bullets: [
-      "Updates may be delayed or absent.",
-      "Rejections arrive without explanation.",
-      "Outcomes remain open-ended or unclear.",
-    ],
-    footerLines: [
-      "Candidates continue investing effort across opportunities.",
-      "Visibility into evaluation becomes difficult to access.",
-    ],
-  },
-  {
-    id: 3,
-    title: "The Learning Gap",
-    subtitle: "Learning becomes fragmented",
-    icon: "/solutions/candidate/learning-friction-icon.svg",
-    contentTitle: "The Learning Gap",
-    paragraphs: [
-      "When feedback is unclear, clarity begins to break.",
-      "Evaluation signals become difficult to interpret.",
-      "Learning slows across hiring experiences.",
-    ],
-    listTitle: "As a result:",
-    bullets: [
-      "Silence creates ongoing uncertainty.",
-      "Generic responses provide little insight.",
-      "Delayed updates disrupt decision-making.",
-    ],
-    footerLines: [
-      "Candidates are left guessing what to improve.",
-      "Each experience becomes isolated instead of cumulative.",
-      "Progress weakens without clear learning signals.",
-    ],
-  },
-],
+ feedbackChallengeData : {
+  eyebrow: "THE FEEDBACK CHALLENGE",
 
-FeatureHighlightData : {
-  title: "Easy Evaluator",
-  intro: [
-    "Easy Evaluator is the feedback transparency layer of the Connect EC Alignment System.",
-    "It brings structured feedback into the hiring journey.",
-  ],
-  sectionTitle: "Candidates receive feedback across three stages:",
-  points: [
-    {
-      title: "Resume Feedback",
-      description: "how the profile was evaluated",
-    },
-    {
-      title: "Interview Feedback",
-      description:
-        "performance and evaluation factors",
-    },
-    {
-      title: "Offer-Stage Feedback",
-      description: "why decisions did not progress",
-    },
-  ],
-  outro: [
-    "Candidates gain visibility into how applications and interviews are assessed.",
-    "Every opportunity becomes a step toward better preparation.",
-    "Feedback becomes structured and transparent.",
-    "Learning becomes continuous across opportunities."
-  ],
-  image: {
-    src: "/solutions/candidate/structured-interview-feedback-and-evaluation-system.svg",
-    alt: "structured-interview-feedback-and-evaluation-system",
+  heading: {
+    normal: "The Hiring Process Moves.",
+    highlight: " Candidate Understanding Stalls.",
   },
-  flowSteps: [
-    "Evaluation becomes visible",
-    "Learning becomes consistent",
-    "Improvement becomes continuous",
-  ]
-},
 
+  description:
+    "A hiring stage may end while the outcome, its explanation, or what the candidate can learn from it remains unclear.",
 
- AlignmentComparisonData : {
-  sectionTitle: "Aligning Feedback Transparency",
-  headers: [
-    {
-      title: "Candidate Situation",
-    },
-    {
-      title: "Behavior Seam",
-    },
-    {
-      title: "Connect EC Alignment",
-    },
-  ],
-  rows: [
-    {
-      left: "Waiting for interview outcomes",
-      middle: "Feedback may take days or remain unclear",
-      right: "Structured feedback encourages timely updates",
-    },
-    {
-      left: "Understanding hiring decisions",
-      middle: "Rejections often arrive without explanation",
-      right: "Feedback includes clear evaluation insights",
-    },
-    {
-      left: "Planning next career steps",
-      middle: "Unclear outcomes delay next actions",
-      right: "Clear status updates: shortlisted, rejected, or on hold",
-    },
-    {
-      left: "Improving interview performance",
-      middle: "Candidates lack insight into evaluation criteria",
-      right: "Stage-based feedback provides structured guidance",
-    },
-  ],
-},
-
-
- InsightOutcomeData : {
-  mainCard: {
-    image: {
-      src: "/candidate/understanding-alignment.svg",
-      alt: "Understanding Feedback Signals",
-    },
-    title: "Understanding Evaluation Alignment",
-    paragraphs: [
-      "Feedback reflects evaluation alignment in the hiring process.",
-      "Each interaction contributes to how alignment is formed.",
-      "Signals make this alignment visible across stages.",
-      "When evaluation alignment is clear, learning strengthens.",
-      "When alignment weakens, progress begins to slow.",
-    ],
-    listTitle: "Alignment becomes visible through signals that show:",
-    bullets: [
-      "How their profile was assessed.",
-      "How interview performance was evaluated.",
-      "Why decisions progressed or stopped.",
-    ],
-    footerParagraphs: [
-      "Structured feedback restores evaluation alignment across stages.",
-    ],
-  },
-  outcomeCard: {
-    title: "The Outcome",
-    bullets: [
-      "Clear visibility into interview outcomes.",
-      "Meaningful insight into performance.",
-      "Better preparation for future opportunities.",
-      
-    ],
-    footerParagraphs:[
-        "Candidates understand how they are evaluated at every stage.",
-      "They move forward with clarity and confidence.",
-    ],
-  },
-  behavioralCard: {
-    title: "Behavioral Insight",
-    paragraphs: [
-      "In hiring, feedback drives learning signals.",
-      "Delayed responses create uncertainty.",
-      "Generic messages create confusion.",
-      "Silence weakens improvement.",
-    ],
-    highlightTitle: "Structured feedback restores clarity.",
-    callout: {
-      badge: "EC",
-      text: "Easy Evaluator helps candidates understand decisions, improve preparation, and approach the next opportunity with greater awareness.",
-    },
-  },
-},
-
-
-  AlignmentSectionData : {
-  title: "Evaluation Alignment",
   cards: [
     {
-      icon: "/solutions/recruiter/signal-visibility-icon.svg",
-      title: "Signal Visibility",
-      description: [
-        "Feedback generates learning signals across hiring stages.",
-        "Each interaction reflects how candidates are evaluated.",
-      ],
-      points: [
-        "Resume signals reflect profile fit",
-        "Interview signals reflect performance",
-        "Outcome signals reflect selection factors",
-      ],
-      footer: [
-        "Signals build a visible layer of evaluation.",
-        "Evaluation becomes observable.",
-      ],
+      id: "01",
+      title: "UNCLEAR STATUS",
+      heading: "The Stage Changes. Waiting Continues.",
+      description:
+        "Candidates can remain uncertain when application, interview, or offer-stage status is not promptly and clearly communicated.",
+    },
+
+    {
+      id: "02",
+      title: "LIMITED CONTEXT",
+      heading: "A Decision Arrives. The Reason Does Not.",
+      description:
+        "Shortlisted, On Hold, or Rejected outcomes may be communicated without enough context to understand what shaped them.",
+    },
+
+    {
+      id: "03",
+      title: "DISCONNECTED LEARNING",
+      heading: "One Stage Ends. Learning Gets Left Behind.",
+      description:
+        "Resume, interview, and offer-stage feedback can remain disconnected from what the candidate needs to understand or improve next.",
+    },
+  ],
+
+  bottomText:
+    "Learning begins to weaken when an outcome becomes visible, but the context needed to understand it and prepare for what follows does not.",
+},
+
+feedbackAlignmentData : {
+  heading: {
+    normal: "Evaluation ",
+    highlight: " Alignment",
+  },
+
+  cards: [
+    {
+      id: "01",
+      title: "Outcomes",
+      icon: "/solutions/candidate/outcomes-icon.svg",
+    },
+
+    {
+      id: "02",
+      title: "Feedback",
+      icon: "/solutions/candidate/feedback-icon.svg",
+    },
+
+    {
+      id: "03",
+      title: "Learning",
+      icon: "/solutions/candidate/learning-icon.svg",
+    },
+
+    {
+      id: "04",
+      title: "Connected",
+      icon: "/icons/tick-white-icon.svg",
+      active: true,
+    },
+  ],
+
+  description:
+    "Evaluation Alignment keeps hiring outcomes, structured feedback, and candidate learning connected across each stage of an opportunity.",
+},
+
+feedbackFlowData:   {
+  heading: {
+    normal: "Four Views.",
+    highlight: " One Connected Learning Flow.",
+  },
+
+  description:
+    "Easy Evaluator makes Evaluation Alignment actionable from understanding the outcome to carrying learning forward.",
+   bottomText:
+        "Every outcome, feedback point, and learning stays connected to the stage and opportunity it belongs to—even when that opportunity does not continue.",
+    
+  steps: [
+    {
+      id: "outcome",
+      number: "01",
+
+      badge: "OUTCOME",
+
+      title: "Know Where You Stand.",
+
+      description:
+        "See the hiring outcome communicated at the current stage.",
+
+      see: {
+        items: [
+          "Shortlisted",
+          "On Hold",
+          "Rejected",
+          "Decision status"
+        ],
+      },
+
+      act: {
+        items: [
+          "Understand the outcome",
+          "Know what it means",
+          "See what follows",
+        ],
+      },
+
+    },
+
+    {
+      id: "resume",
+      number: "02",
+
+      badge: "RESUME",
+
+      title: "Understand the First Evaluation.",
+
+      description:
+        "See how your profile was evaluated during the application stage.",
+
+      see: {
+        items: [
+          "Resume feedback",
+          "Evaluation context",
+          "Improvement areas",
+        ],
+      },
+
+      act: {
+        items: [
+          "Understand the evaluation",
+          "Identify improvement areas",
+          "Strengthen preparation",
+        ],
+      },
+
+    },
+
+    {
+      id: "interview",
+      number: "03",
+
+      badge: "INTERVIEW",
+
+      title: "Learn from the Conversation.",
+
+      description:
+        "Review structured feedback about your interview performance and evaluation factors.",
+
+      see: {
+        items: [
+          "Interview feedback",
+          "Evaluation factors",
+          "Performance context",
+        ],
+      },
+
+      act: {
+        items: [
+          "Understand the evaluation",
+          "Identify improvement areas",
+          "Prepare more effectively",
+        ],
+      },
+    },
+
+    {
+      id: "offer",
+      number: "04",
+
+      badge: "OFFER",
+
+      title: "Understand What Changed.",
+
+      description:
+        "Access the reasons communicated when an opportunity does not progress at the offer stage.",
+
+      see: {
+        items: [
+          "Offer-stage feedback",
+          "Decision outcome",
+          "Communicated reasons",
+        ],
+      },
+        act: {
+        items: [
+          "Understand what shaped the outcome",
+          "Identify relevant learning",
+          "Carry learning forward",
+        ],
+      },
+
+   },
+  
+  ],
+},
+ impactData : {
+  eyebrow: "CANDIDATE IMPACT",
+
+  heading: {
+    first: "Less Waiting",
+    second: "Less Uncertainty",
+    third: "More Useful Learning.",
+  },
+
+  description:
+    "Easy Evaluator helps candidates move from waiting for an outcome to understanding what it means and what they can carry forward.",
+
+  cards: [
+    {
+      title: "KNOW WHERE YOU STAND",
+      subTitle:"Status Clarifies What Follows."
+,      description:
+        "Understand whether the opportunity is progressing, paused, or closed.",
     },
     {
-      icon: "/solutions/recruiter/alignment-state-icon.svg",
-      title: "Alignment State",
-      description: [
-        "Alignment becomes visible through evaluation patterns.",
-        "Signals reflect how performance aligns with expectations.",
-      ],
-      points: [
-        "Strong alignment leads to clearer outcomes",
-        "Weak alignment creates uncertainty",
-        "Signals indicate areas for improvement",
-      ],
-      footer: [
-        "Alignment emerges through observable patterns.",
-        "Evaluation becomes measurable.",
-      ],
+      title: "UNDERSTAND THE OUTCOME",
+      subTitle:"Feedback Adds Context to the Outcome.",
+      description:
+        "Structured feedback helps candidates understand more than the status communicated at the end of a stage.",
     },
     {
-      icon: "/solutions/recruiter/outcome-icon.svg",
-      title: "Outcome",
-      description: [
-        "Visible feedback restores learning clarity.",
-        "Structured signals enable continuous improvement.",
-      ],
-      points: [
-        "Candidates understand how they are evaluated",
-        "Preparation becomes more focused and effective",
-        "Future decisions become more informed",
-      ],
-      footer: [
-        "Clarity strengthens learning across opportunities.",
-        "Progress becomes predictable.",
-      ],
+      title: "LEARN FOR WHAT FOLLOWS",
+      subTitle:"One Experience Strengthens the Next.",
+      description:
+        "Carry relevant learning from resume, interview, and offer-stage feedback into future preparation.",
     },
   ],
 },
-
 outcomeHighlightData: {
-  title: "A Clear Signal",
+  title: "Feedback ",
+  titleHighlight: "Creates momentum",
   subtitle:
-    "Every interview experience generates meaningful insight.",
-
+    "An Outcome Ends a Stage. Feedback Strengthens What Follows.",
   description_top:
-    "Easy Evaluator transforms hiring outcomes into visible learning signals.",
-
+  "When outcomes, feedback, and learning remain aligned:"
+,
   points: [
-    "Clear feedback.",
-    "Better preparation.",
-    "Stronger opportunities.",
+    "Candidates know where they stand.",
+    "Feedback explains what status alone cannot.",
+    "Evaluation experiences become useful learning.",
+    "Learning strengthens preparation for what follows."
   ],
 
-  footerText: "Part of the",
-  footerHighlight: "Connect EC Alignment System",
-  footerSuffix:
-    "aligning candidates, recruiters, and employers across the hiring journey.",
+  description: "Career progress can continue even when one opportunity does not.",
+
+  footerText: `This is <span class="font-bold text-[#0668E1]"> Evaluation Alignment with Easy Evaluator </span> — part of <span class="text-[#0668E1]"">Connect EC, <br />The Hiring Alignment System™.</span>`,
+
 
   image: {
     src: "/clear-hiring-signal-and-aligned-outcomes.svg",
@@ -293,302 +278,283 @@ outcomeHighlightData: {
   },
 }
 
+
 }
 
  export const  easyFacilitator={
-        title:"Easy Facilitator",
-        description:"The Offer Decision System"
+        title:"EASY FACILITATOR",
+        subTitle:"Offer Decisions, Aligned.",
+        description:"Keep offer understanding, communicated intent, and joining commitment connected as opportunities and circumstances change."
     ,
     metadata: {
       title: "Manage Job Offers and Decide Confidently | Connect EC",
       description:
         "Compare, organize, and manage multiple job offers efficiently with Connect EC to make informed career decisions.",
     },
-   InsightTabItem:   [
-  {
-    id: 1,
-    title: "The Aspiration",
-    subtitle: "Offers made Visible.",
-    contentTitle: "The Aspiration",
-    icon: "/solutions/recruiter/aspiration-icon.svg",
-    paragraphs: [
-      "Candidates aim to evaluate opportunities before making a decision.",
-      "Each offer represents a critical career milestone.",
-      "Every decision shapes the next step forward.",
-    ],
-    listTitle: "Candidates seek a simple outcome:",
-    bullets: [
-      "Review opportunities with clarity.",
-      "Communicate decisions with confidence.",
-      "Choose roles aligned with their goals.",
-    ],
-    footerLines: [
-      "Clear offer conversations support thoughtful decision-making.",
-    ],
+ 
+
+ feedbackChallengeData : {
+  eyebrow: "THE DECISION CHALLENGE",
+
+  heading: {
+    normal: "Acceptance Is a Decision.",
+    highlight: " Joining Is the Follow-Through.",
   },
 
-  {
-    id: 2,
-    title: "The Changing Situation  ",
-    subtitle: "Conversations stay fragmented",
-    contentTitle: "The Changing Situation",
-    icon: "/solutions/recruiter/changing-situation-icon.svg",
-    paragraphs: [
-      "At the offer stage, conversations expand across channels.",
-      "Candidates engage with multiple stakeholders and organizations.",
-    ],
-    listTitle: "Offer details begin to spread across interactions.",
-    bullets: [
-      "Offer letters shared via email.",
-      "Negotiations conducted over calls.",
-      "Updates appearing across messages.",
-    ],
-    footerLines: [
-      "Candidates must track multiple discussions simultaneously.",
-      "Comparing opportunities becomes difficult.",
-    ],
-  },
+  description:
+    "Offer continuity can weaken before or after a decision when information, intent, or engagement becomes disconnected from what follows.",
 
-  {
-    id: 3,
-    title: "The Decision Gap",
-    subtitle: "Decisions become fragmented",
-    contentTitle: "The Decision Gap",
-    icon: "/solutions/candidate/decision-friction-icon.svg",
-    paragraphs: [
-      "When the offer communication spreads, clarity begins to break.",
-      "Decision alignment becomes difficult to maintain.",
-      "Confidence in communication starts to decline.",
-    ],
-    listTitle: "As a result:",
-    bullets: [
-      "Offer details get buried in threads.",
-      "Negotiations fragment across conversations.",
-      "Follow-ups lack a clear context.",
-    ],
-    footerLines: [
-      "Candidates hesitate during critical decisions.",
-      "Communication becomes inconsistent across offers.",
-      "Confident decision-making becomes harder to achieve.",
-    ],
-  },
-],
-
-FeatureHighlightData : {
-  title: "Easy Facilitator",
-  subtitle: "The Offer Decision System",
-
-  intro: [
-    "Easy Facilitator is the offer decision layer of the Connect EC Alignment System.",
-    "It brings offer conversations and decisions into a single, structured environment.",
-  ],
-
-  sectionTitle: "Candidates can:",
-
-  points: [
-    {
-      title: "Accept an offer",
-      description: "",
-    },
-    {
-      title: "Decline an offer",
-      description: "",
-    },
-    {
-      title: "Request time to evaluate",
-      description: "",
-    },
-  ],
-
-  outro: [
-    "All offer details remain visible in one organized space.",
-    "Candidates can review multiple opportunities and track each discussion.",
-    "Built-in recruiter chat keeps communication clear during the final decision stage.",
-    "Offer communication becomes structured and transparent.",
-    "Candidates stay in control while evaluating their next step.",
-  ],
-
-  image: {
-    src: "/solutions/candidate/post-offer-candidate-engagement-and-communication-system.svg",
-    alt: "Post-offer engagement system with recruiter communication and candidate interaction tracking",
-  },
-    flowSteps: [
-    "Decisions become visible",
-    "Communication becomes consistent",
-    "Commitment becomes clear",
-  ]
-},
-
- AlignmentComparisonData : {
-  sectionTitle: "Aligning Offer Decisions",
-  headers: [
-    {
-      title: "Candidate Situation",
-    },
-    {
-      title: "Behavior Seam",
-    },
-    {
-      title: "Connect EC Alignment",
-    },
-  ],
-  rows: [
-    {
-      left: "Reviewing offer details",
-      middle: "Offer discussions appear across scattered emails and messages",
-      right: "Centralized offer hub organizes all offer details",
-    },
-    {
-      left: "Comparing multiple opportunities",
-      middle: "Conversations with different employers become difficult to track",
-      right: "Structured view of all offers and their status",
-    },
-    {
-      left: "Communicating decisions",
-      middle: "Accepting or declining offers requires multiple communications",
-      right: "Simple Accept or Decline actions streamline responses",
-    },
-    {
-      left: "Requesting time to decide",
-      middle: "Candidates hesitate to ask for more time",
-      right: "Evaluate option allows candidates to request decision time",
-    },
-    {
-        left:"Maintaining recruiter communication",
-        middle:"Follow-ups become fragmented across channels",
-        right:"Built-in recruiter chat keeps discussions organized"
-    }
-  ],
-},
-
- InsightOutcomeData : {
-  mainCard: {
-    image: {
-      src: "/candidate/understanding-alignment.svg",
-      alt: "Understanding Feedback Signals",
-    },
-    title: "Understanding Decision Alignment",
-    paragraphs: [
-      "The offer stage reflects decision alignment in the hiring journey.",
-      "Candidate actions shape how alignment is formed.",
-      "Signals make commitment alignment visible across decisions.",
-      "When decision alignment is strong, clarity holds across stakeholders.",
-      "When alignment weakens, uncertainty begins to grow.",
-    ],
-    listTitle: "Alignment becomes visible through signals that show:",
-    bullets: [
-      "Accept an offer",
-      "Decline an offer",
-      "Request time to evaluate.",
-    ],
-    footerParagraphs: [
-      "Structured communication restores alignment across decisions.",
-    ],
-  },
-  outcomeCard: {
-    title: "The Outcome",
-    bullets: [
-      "Clear and structured offer discussions.",
-      "Organized communication across opportunities.",
-      "Confident and timely career decisions.",
-      
-    ],
-    footerParagraphs:["Candidates evaluate options with clarity and consistency.",
-        "They move forward with confidence."
-    ]
-  },
-  behavioralCard: {
-    title: "Behavioral Insight",
-    paragraphs: [
-      "In hiring, the offer stage reveals commitment signals.",
-      "Delayed responses create uncertainty.",
-      "Scattered communication weakens clarity.",
-      "Unclear decisions disrupt planning.",
-    ],
-    highlightTitle: "Transparent communication restores alignment.",
-    callout: {
-      badge: "EC",
-      text:"Easy Facilitator helps candidates evaluate opportunities, communicate decisions clearly, and move forward with confidence."
-    },
-  },
-},
-
-  AlignmentSectionData : {
-  title: "Decision Alignment",
   cards: [
     {
-      icon: "/solutions/recruiter/signal-visibility-icon.svg",
-      title: "Signal Visibility",
-      description: [
-        "Offer decisions generate commitment signals across interactions.",
-        "Candidate actions reflect intent and engagement.",
-      ],
-      points: [
-        "Accepting reflects commitment",
-        "Declining reflects direction",
-        "Evaluation reflects consideration",
-      ],
-      footer: [
-        "Signals build a visible layer of decision-making.",
-        "Commitment becomes observable.",
-      ],
+      id: "01",
+      title: "FRAGMENTED CONTEXT",
+      heading: "Offers Arrive. Context Scatters.",
+      description:
+        "Offer details, evaluation time, and recruiter conversations can remain spread across opportunities and communication channels.",
+    },
+
+    {
+      id: "02",
+      title: "UNCLEAR INTENT",
+      heading: "More Time Is Needed. Silence Says Nothing.",
+      description:
+        "Candidates may still be evaluating an offer while their continued interest and need for decision time remain unclear to the recruiter.",
+    },
+
+    {
+      id: "03",
+      title: "WEAKENING COMMITMENT",
+      heading: "The Offer Is Accepted. Connection Can Still Weaken.",
+      description:
+        "Post-offer communication, engagement, and joining-date changes, if left unaddressed, can weaken commitment before Day One.",
+    },
+  ],
+
+  bottomText:
+    "Decision continuity begins to weaken when offer context, communicated intent, or post-acceptance engagement loses connection to what follows.",
+},
+
+feedbackAlignmentData : {
+  heading: {
+    normal: "Decision ",
+    highlight: " Alignment",
+  },
+
+  cards: [
+    {
+      id: "01",
+      title: "Understanding",
+      icon: "/solutions/candidate/understanding-icon.svg",
+    },
+
+    {
+      id: "02",
+      title: "Intent",
+      icon: "/solutions/candidate/intent-icon.svg",
+    },
+
+    {
+      id: "03",
+      title: "Commitment",
+      icon: "/solutions/candidate/commitment-icon.svg",
+    },
+
+    {
+      id: "04",
+      title: "Connected",
+      icon: "/icons/tick-white-icon.svg",
+      active: true,
+    },
+  ],
+
+  description:
+    "Decision Alignment keeps offer understanding, communicated intent, commitment, and joining follow-through connected as opportunities and circumstances change.",
+},
+
+feedbackFlowData:   {
+  heading: {
+    normal: "Four Actions.",
+    highlight: " One Connected Offer-to-Joining Flow.",
+  },
+
+  description:
+    "Easy Facilitator makes Decision Alignment actionable from evaluating an offer through joining.",
+   bottomText:
+        "Every offer, decision, conversation, and commitment stays connected to the opportunity it belongs to—through evaluation, decision, and, when accepted, joining.",
+    
+  steps: [
+    {
+      id: "organize",
+      number: "01",
+
+      badge: "ORGANIZE ",
+
+      title: "Bring Every Offer into View.",
+
+      description:
+        "Keep offer details, status, evaluation time, and related recruiter conversations connected across ",
+
+      see: {
+        items: [
+          "Offer details",
+          "Offer status",
+          "Evaluation time",
+          "Recruiter conversations"
+        ],
+      },
+
+      act: {
+        items: [
+          "Review each offer",
+          "Identify what needs attention",
+          "Keep context organized",
+        ],
+      },
+
+    },
+
+    {
+      id: "compare",
+      number: "02",
+
+      badge: "COMPARE",
+
+      title: "Understand What Each Opportunity Means.",
+
+      description:
+        "Compare opportunities using the information and conversations connected to each offer.",
+
+      see: {
+        items: [
+          "Offer details",
+          "Opportunity context",
+          "Recruiter clarification",
+          "Competing offers"
+        ],
+      },
+
+      act: {
+        items: [
+          "Compare opportunities",
+          "Clarify what matters",
+          "Consider your goals",
+        ],
+      },
+
+    },
+
+    {
+      id: "decide",
+      number: "03",
+
+      badge: "DECIDE",
+
+      title: "Make What Follows Clear.",
+
+      description:
+        "Each response makes candidate intent visible and establishes what should happen next.",
+
+      see: {
+        items: [
+          "Offer status",
+          "Evaluation time",
+          "Current decision",
+          "Recruiter conversation"
+        ],
+      },
+
+      act: {
+        items: [
+          "Accept",
+          "Evaluate",
+          "Decline",
+        ],
+      },
+    },
+
+    {
+      id: "continue",
+      number: "04",
+
+      badge: "CONTINUE",
+
+      title: "Keep Commitment Connected Through Joining.",
+
+      description:
+        "After acceptance, stay connected with the recruiter as the journey continues toward Day One.",
+
+      see: {
+        items: [
+          "Post-offer communication",
+          "Shared content",
+          "Joining date",
+          "Joining status"
+        ],
+      },
+        act: {
+        items: [
+          "Review shared content",
+          "Stay connected",
+          "Respond to joining changes",
+        ],
+      },
+
+   },
+  
+  ],
+},
+ impactData : {
+  eyebrow: "CANDIDATE IMPACT",
+
+  heading: {
+    first: "Less Fragmentation",
+    second: "Less Decision Pressure",
+    third: "More Confident Commitment.",
+  },
+
+  description:
+    "Easy Facilitator moves candidates from understanding an offer to communicating intent and following through on their commitment.",
+
+  cards: [
+    {
+      title: "EVALUATE WITH CONTEXT",
+      subTitle:"Every Opportunity Has a Clearer Picture."
+,      description:
+        "Keep offer information, competing opportunities, and recruiter conversations together while considering your goals.",
     },
     {
-      icon: "/solutions/recruiter/alignment-state-icon.svg",
-      title: "Alignment State",
-      description: [
-        "Alignment becomes visible through decision behavior.",
-        "Signals reflect how candidates engage with opportunities.",
-      ],
-      points: [
-        "Strong alignment leads to clear decisions",
-        "Weak alignment creates uncertainty",
-        "Signals indicate decision readiness",
-      ],
-      footer: [
-        "Alignment emerges through observable patterns.",
-        "Commitment becomes measurable.",
-      ],
+      title: "MAKE INTENT VISIBLE",
+      subTitle:"Consideration Becomes Communicable.",
+      description:
+        "Choosing Accept, Evaluate, or Decline makes the decision state visible instead of leaving intent unclear.",
     },
     {
-      icon: "/solutions/recruiter/outcome-icon.svg",
-      title: "Outcome",
-      description: [
-        "Visible decisions restore clarity across stakeholders.",
-        "Structured signals enable confident and timely decisions.",
-      ],
-      points: [
-        "Candidates evaluate opportunities with clarity",
-        "Communication remains consistent across offers",
-        "Decisions are made with confidence",
-      ],
-      footer: [
-        "Clarity sustains momentum in the final stage.",
-        "Decisions become predictable.",
-      ],
+      title: "SUSTAIN THE COMMITMENT",
+      subTitle:"Acceptance Stays Connected to Joining.",
+      description:
+        "Continued communication, post-offer engagement, and joining visibility help carry an accepted offer through to Day One.",
     },
   ],
 },
-
-
 outcomeHighlightData: {
-  title: "A Clear Signal",
+  title: "Decisions ",
+  titleHighlight: "Creates momentum",
   subtitle:
-    "Every offer represents a career decision.",
-
+    "A Decision Sets the Direction. Commitment Carries It Through.",
   description_top:
-  "Easy Facilitator transforms offer conversations into visible commitment signals."
+  "When offer understanding, communicated intent, engagement, and follow-through remain aligned:"
 ,
   points: [
-    "Organized discussions.",
-    "Transparent decisions.",
-    "Confident career moves.",
+    "Candidates evaluate offers with clearer context.",
+    "Communicated decisions make intent visible.",
+    "Accepted candidates remain connected through post-offer engagement.",
+    "Commitment remains connected through joining."
   ],
 
-  footerText: "Part of the",
-  footerHighlight: "Connect EC Alignment System",
-  footerSuffix:
-    "aligning candidates, recruiters, and employers across the hiring journey.",
+  description: "Career progress moves forward through clear decisions and reliable follow-through.",
+
+  footerText: `This is <span class="font-bold text-[#0668E1]"> Decision Alignment with Easy Facilitator </span> — part of <span class="text-[#0668E1]"">Connect EC, <br />The Hiring Alignment System™.</span>`,
+
 
   image: {
     src: "/clear-hiring-signal-and-aligned-outcomes.svg",
@@ -601,290 +567,272 @@ outcomeHighlightData: {
 }
 
  export const  easyScheduler={
-        title:"Easy Scheduler",
-        description:"The Interview Coordination System"
+        title:"EASY SCHEDULER",
+        subTitle:"Interview Coordination, Aligned.",
+        description:"Keep every interview schedule, response, change, and recruiter conversation connected across opportunities."
     ,
  metadata: {
       title: "Manage Interview Schedule and Stay Organized | Connect EC",
       description:
         "Track and organize interview schedules efficiently to stay prepared and never miss an opportunity with Connect EC.",
     },
-   InsightTabItem:   [
-  {
-    id: 1,
-    title: "The Aspiration",
-    subtitle: "Coordination becomes visible",
-    icon: "/solutions/recruiter/aspiration-icon.svg",
-    contentTitle: "The Aspiration",
-    paragraphs: [
-      "Candidates pursue opportunities across multiple companies.",
-      "Each interview signals progress.",
-      "Every interaction moves decisions forward.",
-    ],
-    listTitle: "Candidates seek to:",
-    bullets: [
-      "Stay organized across opportunities.",
-      "Respond clearly and on time.",
-      "Maintain momentum between stages.",
-    ],
-    footerLines: [
-      "Clear coordination enables candidates to demonstrate reliability, professionalism, and commitment.",
-    ],
+ feedbackChallengeData : {
+  eyebrow: "THE COORDINATION CHALLENGE",
+
+  heading: {
+    normal: "Scheduled Doesn’t Mean",
+    highlight: " Coordinated.",
   },
 
-  {
-    id: 2,
-    title: "The Changing Situation",
-    subtitle: "Updates remain fragmented",
-    icon: "/solutions/recruiter/changing-situation-icon.svg",
-    contentTitle: "The Changing Situation",
-    paragraphs: [
-      "Modern job searches rarely follow a single track.",
-      "Candidates engage with multiple organizations simultaneously.",
-    ],
-    listTitle: "Interview updates arrive across:",
-    bullets: [
-      "Emails and calendar invites.",
-      "Messages and recruiter calls.",
-      "Changing schedules and availability.",
-    ],
-    footerLines: [
-      "Candidates must track evolving commitments while continuing their search.",
-      "Critical updates remain scattered across channels.",
-    ],
-  },
+  description:
+    "An interview may appear on the calendar while the response, latest change, or recruiter conversation remains disconnected.",
 
-  {
-    id: 3,
-    title: "The Coordination Gap",
-    subtitle: "Progress becomes fragmented",
-    icon: "/solutions/candidate/coordination-friction-icon.svg",
-    contentTitle: "The Coordination Gap",
-    paragraphs: [
-      "When coordination spreads across channels, clarity begins to break.",
-      "Alignment becomes harder to maintain.",
-      "Timely responses become difficult.",
-    ],
-    listTitle: "As a result:",
-    bullets: [
-      "Invitations are missed or buried",
-      "Updates remain split across threads",
-      "Questions go unanswered or delayed",
-    ],
-    footerLines: [
-      "Even with strong intent, silence can appear as disengagement.",
-      "Opportunities move fast—coordination clarity becomes essential.",
-    ],
-  },
-],
-
-FeatureHighlightData : {
-  title: "Easy Scheduler",
-  subtitle: "The Interview Coordination System",
-
-  intro: [
-    "Easy Scheduler is the interview coordination layer of the Connect EC Alignment System.",
-    "It brings interview coordination into a single, structured environment.",
-  ],
-
-  sectionTitle: "Candidates can:",
-
-  points: [
-    {
-      title: "Accept interview invitations instantly",
-      description: "",
-    },
-    {
-      title: "Decline when necessary",
-      description: "",
-    },
-    {
-      title: "Reschedule when availability changes",
-      description: "",
-    },
-  ],
-
-  outro: [
-    "All interview commitments remain visible in one place.",
-    "Alignment Triggers prompt timely responses.",
-    "Direct recruiter chat enables quick clarification.",
-  ],
-
-  image: {
-    src: "/solutions/candidate/interview-coordination-alignment-for-recruiters.svg",
-    alt: "Interview coordination alignment showing scheduling and availability signals for recruiters",
-  },
-    flowSteps: ["Coordination becomes visible",
-      "Responses become consistent",
-      "Momentum is maintained"
-    ]
-},
-
- AlignmentComparisonData : {
-  sectionTitle: "Coordination Alignment in Practice",
-  headers: [
-    {
-      title: "Candidate Situation",
-    },
-    {
-      title: "Behavior Seam",
-    },
-    {
-      title: "Connect EC Alignment",
-    },
-  ],
-  rows: [
-    {
-      left: "Managing interviews across multiple companies",
-      middle: "Invitations arrive across fragmented channels",
-      right: "Centralized dashboard organizes all interview schedules",
-    },
-    {
-      left: "Clarifying interview details",
-      middle: "Questions get buried in threads",
-      right: "Direct recruiter chat enables clarity",
-    },
-    {
-      left: "Responding to interview invitations",
-      middle: "Delays signal uncertainty",
-      right: "Alignment Triggers prompt responses",
-    },
-    {
-      left: "Handling schedule changes",
-      middle: "Updates fragmented",
-      right: "Real-time notifications maintain alignment",
-    },
-   
-  ],
-},
-
- InsightOutcomeData : {
-  mainCard: {
-    image: {
-      src: "/candidate/understanding-alignment.svg",
-      alt: "Understanding Feedback Signals",
-    },
-    title: "Understanding Coordination Alignment",
-    paragraphs: [
-      "Interview coordination reflects coordination alignment in the hiring process.",
-      "Candidate responses shape how alignment develops across interviews.",
-      "Signals make coordination alignment visible over time.",
-      "When coordination alignment is strong, interview momentum strengthens.",
-      "When alignment weakens, coordination gaps begin to emerge.",
-    ],
-    listTitle: "Alignment becomes visible through signals that show:",
-    bullets: [
-      "How interview coordination is being managed.",
-      "When scheduling consistency begins to shift.",
-      "Where coordination gaps may emerge.",
-    ],
-    footerParagraphs: [
-      "Clear visibility restores coordination alignment across interviews.",
-    ],
-  },
-  outcomeCard: {
-    title: "The Outcome",
-    bullets: [
-      "Clear coordination across opportunities.",
-      "Timely and consistent responses.",
-      "Stronger signals of reliability.",
-      
-    ],
-    footerParagraphs:["Candidates stay organized throughout the process.",
-        "They maintain momentum across interviews."
-    ]
-  },
-  behavioralCard: {
-    title: "Behavioral Insight",
-    paragraphs: [
-      "In hiring, timing reflects coordination alignment:",
-      "Delayed responses create uncertainty.",
-      "Missed invitations weaken coordination alignment.",
-      "Fragmented communication introduces noise.",
-    ],
-    highlightTitle: "Structured coordination restores clarity.",
-    callout: {
-      badge: "EC",
-      text:"Easy Scheduler helps candidates respond clearly, maintain professional momentum, and signal reliability throughout the interview process."
-    },
-  },
-},
-
-  AlignmentSectionData : {
-  title: "Coordination Alignment",
   cards: [
     {
-      icon: "/solutions/recruiter/signal-visibility-icon.svg",
-      title: "Signal Visibility",
-      description: [
-        "Coordination signals emerge through execution.",
-        "Candidate responses generate signals across interviews.",
-      ],
-      points: [
-        "Responses reflect engagement",
-        "Timing reflects intent",
-        "Patterns begin to form",
-      ],
-      footer: [
-        "Signals build a visible layer of coordination.",
-        "Coordination becomes observable.",
-      ],
+      id: "01",
+      title: "SCATTERED SCHEDULES",
+      heading: "One Interview. Multiple Channels.",
+      description:
+        "Interview invitations and details can remain spread across emails, messages, and calendars.",
+    },
+
+    {
+      id: "02",
+      title: "UNCLEAR RESPONSES",
+      heading: "The Invitation Is Visible. The Decision Is Not.",
+      description:
+        "Accept, Reschedule, and Decline responses become difficult to track across opportunities.",
+    },
+
+    {
+      id: "03",
+      title: "MISSED CHANGES",
+      heading: "The Schedule Moves. The Update Does Not.",
+      description:
+        "Changes can be overlooked when the latest schedule and communication are not kept together.",
+    },
+  ],
+
+  bottomText:
+    "Coordination begins to weaken before an interview is missed—when an invitation, response, or change loses connection to what follows.",
+},
+
+feedbackAlignmentData : {
+  heading: {
+    normal: "Coordination ",
+    highlight: "Alignment",
+  },
+
+  cards: [
+    {
+      id: "01",
+      title: "Schedules",
+      icon: "/solutions/candidate/schedules-icon.svg",
+    },
+
+    {
+      id: "02",
+      title: "Responses",
+      icon: "/solutions/candidate/responses-icon.svg",
+    },
+
+    {
+      id: "03",
+      title: "Changes",
+      icon: "/solutions/candidate/changes-icon.svg",
+    },
+
+    {
+      id: "04",
+      title: "Connected",
+      icon: "/icons/tick-white-icon.svg",
+      active: true,
+    },
+  ],
+
+  description:
+    "Coordination Alignment keeps interview schedules, candidate responses, schedule changes, and recruiter communication connected as opportunities and availability change.",
+},
+
+feedbackFlowData:   {
+  heading: {
+    normal: "Four Actions.",
+    highlight: " One Coordinated Interview Flow.",
+  },
+
+  description:
+    "Easy Scheduler makes Coordination Alignment actionable from invitation through change.",
+   bottomText:
+        "Every schedule, response, conversation, and change stays connected to the opportunity it belongs to—whether the candidate accepts, reschedules, or declines.",
+    
+  steps: [
+    {
+      id: "organize",
+      number: "01",
+
+      badge: "ORGANIZE ",
+
+      title: "See Every Interview.",
+
+      description:
+        "Bring upcoming interviews across opportunities into one connected view.",
+
+      see: {
+        items: [
+          "Interview schedules",
+          "Interview details",
+          "Response status",
+        ],
+      },
+
+      act: {
+        items: [
+          "Review upcoming interviews",
+          "Identify what needs attention",
+          "Stay organized",
+        ],
+      },
+
+    },
+
+    {
+      id: "respond",
+      number: "02",
+
+      badge: "RESPOND",
+
+      title: "Make What Follows Clear.",
+
+      description:
+        "Each response makes candidate intent visible and establishes what should happen next.",
+
+      see: {
+        items: [
+          "Interview invitation",
+          "Current response",
+          "Response status",
+        ],
+      },
+
+      act: {
+        items: [
+          "Accept",
+          "Reschedule",
+          "Decline",
+        ],
+      },
+
+    },
+
+    {
+      id: "clarify",
+      number: "03",
+
+      badge: "CLARIFY",
+
+      title: "Resolve Details Before They Become Confusion.",
+
+      description:
+        "Use recruiter chat to clarify the interview schedule, format, or other details connected to the interview.",
+
+      see: {
+        items: [
+          "Recruiter conversation",
+          "Interview schedule",
+          "Interview details",
+        ],
+      },
+
+      act: {
+        items: [
+          "Ask questions",
+          "Clarify details",
+          "Resolve uncertainty",
+        ],
+      },
+    },
+
+    {
+      id: "adapt",
+      number: "04",
+
+      badge: "ADAPT",
+
+      title: "Stay Connected When Plans Change.",
+
+      description:
+        "Receive notifications when interview schedules or details change.",
+
+      see: {
+        items: [
+          "Schedule changes",
+          "Updated details",
+          "Latest interview information",
+        ],
+      },
+        act: {
+        items: [
+          "Recognize changes",
+          "Respond on time",
+          "Adjust interview plans",
+        ],
+      },
+
+   },
+  
+  ],
+},
+ impactData : {
+  eyebrow: "CANDIDATE IMPACT",
+
+  heading: {
+    first: "Less Tracking",
+    second: "Less Coordination Work",
+    third: "More Career Focus.",
+  },
+
+  description:
+    "Easy Scheduler reduces the effort required to manage changing interviews while keeping candidate decisions and commitments clear.",
+
+  cards: [
+    {
+      title: "SEE CLEARLY",
+      subTitle:"Every Interview Has a Place."
+,      description:
+        "Know which upcoming interviews require immediate attention, which responses are  pending, and what has recently changed.",
     },
     {
-      icon: "/solutions/recruiter/alignment-state-icon.svg",
-      title: "Alignment State",
-      description: [
-        "Alignment becomes visible through decision behavior.",
-        "Signals reflect how coordination evolves across interviews.",
-      ],
-      points: [
-        "Strong alignment strengthens interview momentum",
-        "Weak alignment creates coordination gaps",
-        "Signals indicate where alignment is shifting",
-      ],
-      footer: [
-        "Alignment emerges through observable patterns.",
-        "Alignment becomes measurable.",
-      ],
+      title: "ACT ON TIME",
+      subTitle:"The Next Action Is Clear.",
+      description:
+        "Respond, clarify, or adapt quickly and confidently without tracing information across disconnected channels.",
     },
     {
-      icon: "/solutions/recruiter/outcome-icon.svg",
-      title: "Outcome",
-      description: [
-        "Visible coordination restores clarity.",
-        "Clear signals enable consistent participation across interviews.",
-      ],
-      points: [
-        "Candidates stay organized across opportunities",
-        "Responses remain timely and consistent",
-        "Signals of reliability strengthen",
-      ],
-      footer: [
-        "Clarity sustains momentum across interviews.",
-        "Execution becomes predictable.",
-      ],
+      title: "FOLLOW THROUGH RELIABLY",
+      subTitle:"Decisions and Actions Stay Connected.",
+      description:
+        "Clear responses and current information help candidates follow through on the interview commitments they communicate.",
     },
   ],
 },
-
 outcomeHighlightData: {
-  title: "A Clear Signal",
+  title: "Coordination ",
+  titleHighlight: "Creates momentum",
   subtitle:
-    "Interview coordination reflects candidate intent.",
-
+    "An Interview Begins Before the Meeting. It Begins with a Clear Commitment.",
   description_top:
-  "Easy Scheduler transforms coordination behavior into visible alignment signals:"
+  "When schedules, responses, changes, and communication remain aligned:"
 ,
   points: [
-    "Clear coordination.",
-    "Timely responses.",
-    "Stronger reliability.",
+    "Candidates know what requires attention.",
+    "Accept · Reschedule · Decline responses make what follows clear.",
+    "Recruiters receive clear and timely responses.",
+    "Interview commitments become more reliable."
   ],
 
-  footerText: "Part of the",
-  footerHighlight: "Connect EC Alignment System",
-  footerSuffix:
-    "aligning candidates, recruiters, and employers across the hiring journey.",
+  description: "Career progress moves with greater focus and reliability.",
+
+  footerText: `This is <span class="font-bold text-[#0668E1]"> Coordination Alignment with Easy Scheduler </span> — part of <span class="text-[#0668E1]"">Connect EC, <br />The Hiring Alignment System™.</span>`,
 
   image: {
     src: "/clear-hiring-signal-and-aligned-outcomes.svg",
@@ -897,8 +845,9 @@ outcomeHighlightData: {
 }
 
  export const  easyReviewer={
-        title:"Easy Reviewer",
-        description:"The Employer Insight System"
+        title:"EASY REVIEWER",
+        subTitle:"Employer Insight, Aligned.",
+        description:"Use verified employer insights to understand the interview process and prepare with confidence."
     ,
 
    metadata: {
@@ -907,300 +856,264 @@ outcomeHighlightData: {
       description:
         "Access verified employer interview insights and prepare effectively for upcoming interviews with Connect EC.",
     },
-   InsightTabItem:   [
-  {
-    id: 1,
-    title: "The Aspiration",
-    subtitle: "Insights made Visible.",
-    icon: "/solutions/recruiter/aspiration-icon.svg",
-    contentTitle: "The Aspiration",
-    paragraphs: [
-      "Candidates want to understand an employer before engaging.",
-      "Each opportunity requires informed preparation.",
-      "Every decision depends on reliable insight.",
-    ],
-    listTitle: "Candidates seek a simple outcome:",
-    bullets: [
-      "Understand the hiring process clearly.",
-      "Prepare effectively for interviews.",
-      "Evaluate opportunities with confidence.",
-    ],
-    footerLines: [
-      "Reliable employer insight helps candidates act with clarity and readiness.",
-    ],
+ feedbackChallengeData : {
+  eyebrow: "THE INSIGHT CHALLENGE",
+
+  heading: {
+    normal: "Information Is Everywhere. ",
+    highlight: "Credibility Is Not.",
   },
 
-  {
-    id: 2,
-    title: "The Changing Situation",
-    subtitle: "Sources remain fragmented",
-    icon: "/solutions/recruiter/changing-situation-icon.svg",
-    contentTitle: "The Changing Situation",
-    paragraphs: [
-      "Employer insights rarely exist in one place.",
-      "Candidates search across multiple platforms for information.",
-      "Information varies in quality, relevance, and trust.",
-    ],
-    listTitle: "Insights emerge from:",
-    bullets: [
-      "Anonymous reviews and shared experiences.",
-      "Forum discussions and community threads.",
-      "Outdated posts and unverified sources.",
-    ],
-    footerLines: [
-      "Candidates must interpret scattered inputs before deciding.",
-      "Credibility becomes difficult to establish.",
-    ],
-  },
+  description:
+    "Employer interview experiences may be easy to find while their source, context, and relevance remain difficult to judge.",
 
-  {
-    id: 3,
-    title: "The Preparation Gap  ",
-    subtitle: "Preparation stays fragmented",
-    icon: "/solutions/candidate/preparation-friction-icon.svg", 
-    contentTitle: "The Preparation Gap  ",
-    paragraphs: [
-      "When insight sources are unclear, clarity begins to break.",
-      "Preparation alignment becomes difficult to maintain.",
-      "Confidence in decisions starts to decline.",
-    ],
-    listTitle: "As a result:",
-    bullets: [
-      "Anonymous feedback creates doubt.",
-      "Outdated information reduces relevance.",
-      "Unverified opinions introduce noise.",
-    ],
-    footerLines: [
-      "Candidates struggle to identify reliable insights.",
-      "Preparation becomes inconsistent across opportunities.",
-"Decision quality weakens without credible insight.",
-    ],
-  },
-],
-
-FeatureHighlightData : {
-  title: "Easy Reviewer",
-  subtitle: "The Employer Insight System",
-
-  intro: [
-    "Easy Reviewer is the employer insight layer of the Connect EC Alignment System.",
-    "It brings verified employer insights into a single, structured environment.",
-],
-
-
-
-  sectionTitle: "Candidates can:",
-
-  points: [
-    {
-      title: "Read reviews from candidates who attended interviews",
-      description: "",
-    },
-    {
-      title: "Access insights directly alongside job postings",
-      description: "",
-    },
-    {
-      title: "Connect with reviewers to clarify details",
-      description: "",
-    },
-  ],
-
-  sectionTitle2: "Candidates gain visibility into:",
-points2:[
-    {
-        title:"Interview structure",
-        description: ""
-    },{
-        title:"Typical interview questions",
-        description: ""
-    },{
-        title:"Overall interview experience",
-        description: ""
-    },
-  ],
-  outro: [
-    "Reviewer profiles display Signals indicating credibility.",
-    "Employer insight becomes structured and trustworthy.",
-    "Credibility signals enable confident interpretation.",
-  ],
-
-  image: {
-    src: "/solutions/candidate/verified-employer-insights-and-interview-reviews-for-candidates.svg",
-    alt: "Verified employer insights and interview reviews helping candidates prepare for interviews",
-  },
-  flowSteps:[
-    "Insight becomes visible",
-    "Preparation becomes consistent",
-"Decisions become confident"
-  ]
-},
-
- AlignmentComparisonData : {
-  sectionTitle: "Aligning Employer Insight",
-  headers: [
-    {
-      title: "Candidate Situation",
-    },
-    {
-      title: "Behavior Seam",
-    },
-    {
-      title: "Connect EC Alignment",
-    },
-  ],
-  rows: [
-    {
-      left: "Understanding the interview process",
-      middle: "Online reviews are anonymous and difficult to trust",
-      right: "Only candidates who attended the interview can submit employer reviews",
-    },
-    {
-      left: "Preparing for interviews",
-      middle: "Limited visibility into interview structure or expectations",
-      right: "Verified reviews provide real interview insights",
-    },
-    {
-      left: "Asking clarifying questions",
-      middle: "Candidates cannot interact with reviewers",
-      right: "Built-in chat enables direct conversations with reviewers",
-    },
-    {
-      left: "Identifying reliable feedback",
-      middle: "Difficult to judge review credibility",
-      right: "Reviewer profiles display Alignment Signals indicating credibility",
-    },
-   
-  ],
-},
-
- InsightOutcomeData : {
-  mainCard: {
-    image: {
-      src: "/candidate/understanding-alignment.svg",
-      alt: "Understanding Feedback Signals",
-    },
-    title: "Understanding Reviewer Alignment",
-    paragraphs: [
-      "Every review reflects a real interview experience.",
-      "Verified participation strengthens the credibility of insight.",
-      "Each contribution signals alignment with the hiring journey.",
-      "When alignment is strong, insight reliability increases.",
-      "When alignment is unclear, confidence in information weakens.",
-    ],
-    listTitle: "Alignment becomes visible through signals that show:",
-    bullets: [
-      "How credible a reviewer’s experience is.",
-      "How closely actions align with the hiring process.",
-      "When insights can be trusted for preparation.",
-    ],
-    footerParagraphs: [
-      "Structured insight restores alignment in interview preparation.",
-    ],
-  },
-  outcomeCard: {
-    title: "The Outcome",
-    bullets: [
-      "Clear and credible employer insights.",
-      "Focused and effective interview preparation.",
-      "More informed career decisions.",
-      
-    ],
-    footerParagraphs:["Candidates evaluate opportunities with greater clarity.",
-        "They approach interviews with confidence."
-    ]
-  },
-  behavioralCard: {
-    title: "Behavioral Insight",
-    paragraphs: [
-      "In hiring, preparation depends on credible information.",
-      "Anonymous opinions introduce noise.",
-      "Unverified feedback creates uncertainty.",
-      "Scattered insights weaken preparation clarity.",
-    ],
-    highlightTitle: "Verified signals restore trust.",
-    callout: {
-      badge: "EC",
-      text:"Easy Reviewer helps candidates access reliable insights, prepare with confidence, and approach interviews with greater awareness."
-    },
-  },
-},
-
-  AlignmentSectionData : {
-  title: "Employer Insight Alignment",
   cards: [
     {
-      icon: "/solutions/recruiter/signal-visibility-icon.svg",
-      title: "Signal Visibility",
-      description: [
-        "Verified interview experiences generate reliable insight signals.",
-        "Candidate participation strengthens the credibility of information.",
-      ],
-      points: [
-        "Signals reflect real interview experiences",
-        "Participation indicates relevance",
-        "Patterns reveal insight reliability",
-      ],
-      footer: [
-        "Signals build a visible layer of employer insight.",
-        "Insight becomes observable.",
-      ],
+      id: "01",
+      title: "UNCERTAIN SOURCE",
+      heading: "A Review Is Visible. Participation Is Not.",
+      description:
+        "Unverified reviews provide little assurance the reviewer participated in the employer’s interview process.",
+    },
+
+    {
+      id: "02",
+      title: "FRAGMENTED CONTEXT",
+      heading: "Information Is Available. Meaning Is Scattered.",
+      description:
+        "Interview structures, typical questions, and candidate experiences can remain spread across disconnected sources.",
+    },
+
+    {
+      id: "03",
+      title: "LIMITED CLARIFICATION",
+      heading: "The Review Ends. Questions Remain.",
+      description:
+        "Important details can remain unclear when candidates have no way to ask the reviewer for additional context.",
+    },
+  ],
+
+  bottomText:
+    "Preparation begins to weaken before the interview—when the source, context, or relevance of available insight remains uncertain.",
+},
+
+feedbackAlignmentData : {
+  heading: {
+    normal: "Employer Insight",
+    highlight: " Alignment",
+  },
+
+  cards: [
+    {
+      id: "01",
+      title: "Participation",
+      icon: "/solutions/candidate/participation-icon.svg",
+    },
+
+    {
+      id: "02",
+      title: "Credibility",
+      icon: "/solutions/candidate/credibility-icon.svg",
+    },
+
+    {
+      id: "03",
+      title: "Preparation",
+      icon: "/solutions/candidate/preparation-icon.svg",
+    },
+
+    {
+      id: "04",
+      title: "Connected",
+      icon: "/icons/tick-white-icon.svg",
+      active: true,
+    },
+  ],
+
+  description:
+    "Employer Insight Alignment keeps relevant interview insight, verified participation, and reviewer credibility connected to candidate preparation.",
+},
+
+feedbackFlowData:   {
+  heading: {
+    normal: "Four Actions.",
+    highlight: " One Trusted Preparation Flow.",
+  },
+
+  description:
+    "Easy Reviewer makes Employer Insight Alignment actionable from discovering an experience to clarifying what it means.",
+   bottomText:
+        "Every verified experience, credibility signal, insight, and clarification stays connected to the employer context it belongs to.",
+    
+  steps: [
+    {
+      id: "verify",
+      number: "01",
+
+      badge: "VERIFY ",
+
+      title: "Know Who Experienced the Process.",
+
+      description:
+        "Access reviews from candidates whose participation in the employer’s interview process is verified.",
+
+      see: {
+        items: [
+          "Verified participation",
+          "Interview experience",
+          "Review source",
+        ],
+      },
+
+      act: {
+        items: [
+          "Identify verified experiences",
+          "Assess source credibility",
+          "Choose relevant insights",
+        ],
+      },
+
+    },
+
+    {
+      id: "assess",
+      number: "02",
+
+      badge: "ASSESS",
+
+      title: "Read Credibility in Context.",
+
+      description:
+        "Use visible credibility signals to understand the context behind each reviewer.",
+
+      see: {
+        items: [
+          "Reviewer credibility",
+          "Participation context",
+          "Review context",
+        ],
+      },
+
+      act: {
+        items: [
+          "Assess credibility",
+          "Consider relevance",
+          "Interpret the experience",
+        ],
+      },
+
+    },
+
+    {
+      id: "decide",
+      number: "03",
+
+      badge: "DECIDE",
+
+      title: "See What the Interview May Involve.",
+
+      description:
+        "Explore interview structures, typical questions, and candidate experiences connected to the employer.",
+
+      see: {
+        items: [
+          "Interview structure",
+          "Typical questions",
+          "Candidate experiences",
+        ],
+      },
+
+      act: {
+        items: [
+          "Review relevant insights",
+          "Understand what to expect",
+          "Focus preparation",
+        ],
+      },
+    },
+
+    {
+      id: "clarify",
+      number: "04",
+
+      badge: "CLARIFY",
+
+      title: "Ask What the Review Does Not Explain.",
+
+      description:
+        "Connect with reviewers when additional context or clarification is required.",
+
+      see: {
+        items: [
+          "Reviewer conversation",
+          "Existing review context",
+          "Unanswered questions",
+        ],
+      },
+        act: {
+        items: [
+          "Ask questions",
+          "Clarify details",
+          "Strengthen preparation",
+        ],
+      },
+
+   },
+  
+  ],
+},
+ impactData : {
+  eyebrow: "CANDIDATE IMPACT",
+
+  heading: {
+    first: "Less Searching",
+    second: "Less Uncertainty",
+    third: "More Informed Preparation.",
+  },
+
+  description:
+    "Easy Reviewer reduces the effort required to interpret scattered employer information while helping candidates prepare from insight they can evaluate and trust.",
+
+  cards: [
+    {
+      title: "SEE CREDIBILITY",
+      subTitle:"The Source Becomes Part of the Insight."
+,      description:
+        "Know whether an interview experience comes from a verified participant and what credibility context surrounds it.",
     },
     {
-      icon: "/solutions/recruiter/alignment-state-icon.svg",
-      title: "Alignment State",
-      description: [
-        "Alignment becomes visible through reviewer behavior.",
-        "Signals reflect how closely insight aligns with the hiring process.",
-      ],
-      points: [
-        "Strong alignment increases insight reliability",
-        "Weak alignment reduces confidence in information",
-        "Signals indicate which insights can be trusted",
-      ],
-      footer: [
-        "Alignment emerges through observable patterns.",
-        "Insight becomes measurable.",
-      ],
+      title: "PREPARE WITH CONTEXT",
+      subTitle:"Know What to Prepare For.",
+      description:
+        "Use interview structures, typical questions, and candidate experiences to focus preparation on what may matter.",
     },
     {
-      icon: "/solutions/recruiter/outcome-icon.svg",
-      title: "Outcome",
-      description: [
-        "Visible insight restores preparation clarity.",
-        "Credible signals enable focused and effective preparation.",
-      ],
-      points: [
-        "Candidates access clear and reliable insights",
-        "Preparation becomes structured and consistent",
-        "Decision-making becomes more informed",
-      ],
-      footer: [
-        "Clarity strengthens preparation confidence.",
-        "Decisions become confident.",
-      ],
+      title: "CLARIFY WHAT MATTERS",
+      subTitle:"Questions Continue Beyond the Review.",
+      description:
+        "Ask reviewers when important details remain unclear and carry that additional context into preparation.",
     },
   ],
 },
-
 outcomeHighlightData: {
-  title: "A Clear Signal",
+  title: "Insights ",
+  titleHighlight: "Creates momentum",
   subtitle:
-    "Verified interview experiences transform preparation into informed decisions.",
-
+    "Information Becomes Insight When Source and Context Stay Connected.",
   description_top:
-  "Easy Reviewer converts candidate experience into visible insight signals:"
+  "When verified participation, credibility, interview context, and clarification remain aligned:"
 ,
   points: [
-    "Verified insights",
-    "Credible preparation",
-    "Confident decisions",
+    "Candidates know which experiences come from verified participants.",
+    "Interview expectations become easier to understand.",
+    "Preparation becomes more focused and relevant.",
+    "Unanswered questions can be clarified before the interview."
   ],
 
-  footerText: "Part of the",
-  footerHighlight: "Connect EC Alignment System",
-  footerSuffix:
-    "aligning candidates, recruiters, and employers across the hiring journey.",
+  description: "Career progress moves with clearer expectations and greater confidence.",
+
+  footerText: `This is <span class="font-bold text-[#0668E1]"> Employer Insight Alignment with Easy Reviewer </span> — part of <span class="text-[#0668E1]"">Connect EC, <br />The Hiring Alignment System™.</span>`,
+
 
   image: {
     src: "/clear-hiring-signal-and-aligned-outcomes.svg",

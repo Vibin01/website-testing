@@ -2,13 +2,11 @@ import React from "react";
 
 import OutcomeHighlightSection from "@/components/common/OutcomeHighlightSection";
 import { solutionPageMap } from "@/data/SolutionPageMap";
-import InsightTabsSection from "../../InsightTabsSection";
-import FeatureHighlightSection from "../../FeatureHighlightSection";
-import AlignmentComparisonSection from "../../AlignmentComparisonSection";
-import AlignmentSection from "../../AlignementSection";
-import { FaArrowRight } from "react-icons/fa";
-import Link from "next/link";
-import { HeroSection } from "./HeroSection";
+import { HeroSection } from "../../HeroSection";
+import { FeedbackChallenge } from "../../FeedbackChallenge";
+import FeedbackAlignment from "../../FeedbackAlignment";
+import FeedbackFlow from "../../FeedbackFlow";
+import ImpactSection from "@/components/common/ImpactSection";
 
 type PageProps = {
   params: Promise<{
@@ -23,10 +21,11 @@ type SolutionData = {
   };
   title: string;
   description: string;
-  InsightTabItem: any;
-  FeatureHighlightData: any;
-  AlignmentComparisonData: any;
-  AlignmentSectionData: any;
+  subTitle:string;
+  feedbackChallengeData: any;
+  feedbackAlignmentData: any;
+  feedbackFlowData: any;
+  impactData: any;
   outcomeHighlightData: any;
 };
 
@@ -70,37 +69,47 @@ const data = roleData?.[
   return (
     <section className="relative ">
       <div className="pt-[10%] md:pt-0">
-        <div>
-          <section className="mt-[10%] md:mt-0 relative flex items-center justify-center py-[5%] px-[5%] md:px-[7%] bg-transparent">
-            <HeroSection title={data.title} description={data.description}/>
+        <div className="relative">
+    
+          <section className="relative mt-[5%] md:mt-0 relative flex items-center justify-center py-[10%] md:py-[5%] px-[5%] md:px-[7%] bg-transparent">
+                   {/* Background */}
+    <div
+      className="
+        absolute
+        inset-x-0
+        top-[90%]
+        md:top-[80%]
+        bottom-0
+        bg-[#F2F8FF]
+        rounded-t-[50%]
+      "
+    />
+            <HeroSection title={data.title} description={data.description} subTitle={data.subTitle}/>
           </section>
         </div>
-        <div className="">
-          <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
-            <InsightTabsSection data={data.InsightTabItem} />
+        <div className="bg-[#F2F8FF]">
+          <section className="relative py-[10%] md:py-[5%] px-[5%] md:px-[7%] bg-transparent">
+           <FeedbackChallenge data={data.feedbackChallengeData}/>
           </section>
         </div>
       </div>
 
-      <div className="py-[5%] md:py-0">
+      <div className="py-[5%] md:py-0 bg-[#F2F8FF]">
         <section className="relative py-[5%] px-[5%]">
-          <FeatureHighlightSection data={data.FeatureHighlightData} />
+          <FeedbackAlignment data={data.feedbackAlignmentData}/>
         </section>
       </div>
-      <div className="py-[5%] md:py-0">
+      <div className="py-[5%] md:py-0 bg-[#F2F8FF]">
         <section className=" relative py-[5%] px-[5%] ">
-          <AlignmentComparisonSection data={data.AlignmentComparisonData} />
+        <FeedbackFlow data={data.feedbackFlowData}/>
         </section>
       </div>
-      <div className="py-[5%] md:py-0">
-        <section className=" relative py-[5%] px-[5%] ">
-          {/* <InsightOutcomeSection data={data.InsightOutcomeData} /> */}
-          <AlignmentSection data={data.AlignmentSectionData} />
-        </section>
-      </div>
-      <div className="py-[5%] flex justify-center items-center">
-      <div className="w-full -mx-[8%]  border-t-2 border-[#0668E1]" />
-      </div>
+      <div className="">
+                <section className="relative">
+                  <ImpactSection data={data.impactData} />
+                </section>
+              </div>
+
       <div className="py-[5%] md:py-0">
         <section className=" relative py-[5%] px-[5%] ">
           <OutcomeHighlightSection data={data.outcomeHighlightData} />

@@ -285,7 +285,7 @@ function PhaseReport({
             ].map((mode) => (
               <div key={mode} className="flex items-center gap-2">
                 <div
-                  className="size-iconsize-sm rounded-sm"
+                  className="size-iconsize-sm rounded-[6px]"
                   style={{ backgroundColor: getScoreColor(mode) }}
                 />
 
@@ -611,7 +611,7 @@ function OverallReport({
             ].map((mode) => (
               <div key={mode} className="flex items-center gap-2">
                 <div
-                  className="size-iconsize-sm rounded-sm"
+                  className="size-iconsize-sm rounded-[6px]"
                   style={{ backgroundColor: getScoreColor(mode) }}
                 />
 

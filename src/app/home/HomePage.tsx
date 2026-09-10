@@ -43,10 +43,10 @@ export const HomePage = () => {
   ====================================================== */}
 
   <div className="px-[5%] pt-[5%] md:pt-0 bg-[#F2F8FF]">
-    <div className="mt-[5%]- md:mt-0 py-[5%]">
+    <div className="mt-[5%]- md:mt-0 md:py-[5%]">
       <HiringContinuity />
     </div>
-
+ 
     <div className="mt-[5%] pb-[5%] md:mt-0">
       <AlignmentSection />
     </div>

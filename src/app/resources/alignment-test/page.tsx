@@ -27,7 +27,7 @@ const page = () => {
        <div className="pt-[5%]">
         <AlignmentModes />
       </div>
-      <div className="pt-[5%] px-[5%] bg-[#F2F8FF]">
+      <div className="py-[10%] px-[5%] bg-[#F2F8FF]">
         <AlignmentRespont />
       </div>
      

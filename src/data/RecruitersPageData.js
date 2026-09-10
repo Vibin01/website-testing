@@ -1,7 +1,7 @@
 
 export const HeroData = {
  
-  title:"Hiring Strategy, Aligned",
+  title:"Talent Acquisition, Aligned",
   subTitle:"Seamless Continuity Across",
   stages : [
   {
@@ -353,7 +353,7 @@ export const recruiterAlignmentSystemData = {
     {
       title: "Commitment Alignment",
       linkText: "Easy Facilitator",
-      link:"/solutions/recruiter-alignment-system/predict-interview-no-shows"
+      link:"/solutions/recruiter-alignment-system/improve-offer-to-joining-conversion"
     },
   ],
 };

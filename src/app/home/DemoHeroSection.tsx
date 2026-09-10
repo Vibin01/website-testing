@@ -13,16 +13,19 @@ import { IoMdPerson } from "react-icons/io";
 const withinRoles = [
   {
     role: "Employer",
+    imgSmile:"",
     img: "/icons/employer-round-icon.svg",
     url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
   },
   {
     role: "Recruiter",
     img: "/icons/recruiters-round-icon.svg",
+    imgSmile:"",
     url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
   },
   {
     role: "Candidate",
+    imgSmile:"",
     img: "/icons/candidate-round-icon.svg",
     url: "/resources/alignment-test/register?mode=single&phase=uncertainty",
   },
@@ -99,7 +102,7 @@ function ProcessTabLine({
             duration: 8,
             times: [
               0,
-              0.8,
+              0.90,
               0.92,
               1,
             ],
@@ -144,7 +147,7 @@ function ProcessTabLine({
             duration: 8,
             times: [
               0,
-              0.8,
+              0.90,
               0.92,
               1,
             ],
@@ -553,8 +556,8 @@ function WithinActor({
             ],
           }}
           transition={{
-            delay: 1,
-            duration: 3,
+            delay: 2,
+            duration: 2.5,
             times: [
               0,
               1 / 4,
@@ -598,8 +601,8 @@ function WithinActor({
             ],
           }}
           transition={{
-            delay: 1,
-            duration: 3,
+            delay: 2,
+            duration: 2.5,
             times: [
               0,
               1 / 4,
@@ -643,8 +646,8 @@ function WithinActor({
             ],
           }}
           transition={{
-            delay: 1,
-            duration: 3,
+            delay: 2,
+            duration: 2.5,
             times: [
               0,
               1 / 4,
@@ -703,8 +706,8 @@ function WithinActor({
           ],
         }}
         transition={{
-          duration: 2.2,
-          delay: 3.5,
+          duration: 3,
+          delay: 4.6,
           times: [
             0,
             0.32,
@@ -827,11 +830,11 @@ function WithinActor({
             ],
           }}
           transition={{
-            duration: 2,
+            duration: 2.5,
             times: [
               0,
-              0.9,
-              0.9,
+              0.2,
+              0.98,
               1,
             ],
             ease,
@@ -844,7 +847,7 @@ function WithinActor({
             uppercase
           "
         >
-          {role.role}
+          {role.role} 
         </motion.span>
       </motion.div>
 
@@ -878,14 +881,14 @@ function WithinActor({
 
             delay: isAligned
               ? 0
-              : 4.2,
+              : 6.2,
 
             ease,
           },
 
           scale: {
             duration: 1.6,
-            delay: 4.2,
+            delay: 6.2,
             ease,
           },
         }}
@@ -925,7 +928,7 @@ function WithinActor({
           }}
           transition={{
             duration: 2,
-            delay: 4.2,
+            delay: 6.2,
             times: [
               0,
               0.35,
@@ -961,7 +964,7 @@ function WithinActor({
               : initialSize,
           }}
           transition={{
-            duration: 1.8,
+            duration: 4,
             delay:
               index === 1 ? 0 : 0.15,
             ease,
@@ -1034,7 +1037,7 @@ function WithinActor({
                 }
               : {
                   duration: 0.9,
-                  delay: 4.9,
+                  delay: 6.5,
                   times: [
                     0,
                     0.65,
@@ -1428,8 +1431,7 @@ export default function AlignmentTabs() {
                     "
                   />
 
-                  Powered by Alignment
-                  Intelligence 
+                  Powered by Connect EC
                 </span>
               </h3>
             </div>

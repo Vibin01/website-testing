@@ -125,6 +125,8 @@ export const Header = () => {
                 alt="Logo"
                 width={280}
                 height={100}
+                priority
+                loading="eager"
                 className="h-auto w-[65%] cursor-pointer object-contain md:w-full xl:min-w-[200px] 2xl:min-w-[280px]"
               />
             </Link>

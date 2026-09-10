@@ -83,7 +83,7 @@ export default function FAQSection({ data }: FAQSectionProps) {
                       }}
                       className="flex shrink-0"
                     >
-                      <IoAddCircle className="size-iconsize-sm" />
+                      <IoAddCircle className="size-iconsize-md md:size-iconsize-sm md:scale-110" />
                     </motion.div>
                   </button>
                 </div>

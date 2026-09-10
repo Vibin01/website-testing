@@ -90,6 +90,8 @@ export default function MobileMenu({
               alt="Logo"
               width={150}
               height={40}
+              loading="eager"
+              priority
               className="h-auto w-[160px]"
             />
           </div>

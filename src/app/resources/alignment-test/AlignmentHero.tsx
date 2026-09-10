@@ -35,7 +35,7 @@ export default function AlignmentHero() {
             }}
             className=" text-xl font-bold"
           >
-            <span className="text-primary">Situation Change</span> - <span className="block md:flex">You Know What You Would Do.</span>
+            <span className="text-primary">SITUATION CHANGE</span> - <span className="block md:inline-flex">You Know What You Would Do.</span>
           </motion.p>
 
           {/* Heading */}
@@ -165,9 +165,8 @@ export default function AlignmentHero() {
 
 
 
-
     {/* ===================================================
-        DYNAMIC
+        UNALIGNED
     =================================================== */}
 
     <motion.div
@@ -205,127 +204,20 @@ export default function AlignmentHero() {
             whitespace-nowrap
             text-[clamp(6.5px,calc(10_/_var(--width)*100vw),14px)]
             font-bold
-            text-[#00C853]
-          "
-        >
-          Dynamic
-        </span>
-
-        <ProgressCircle
-          percentage={70}
-          color="#00C853"
-        />
-      </div>
-    </motion.div>
-
-
-    {/* ===================================================
-        MISALIGNED
-    =================================================== */}
-
- <motion.div
-  animate={{
-    y: [0, -6, 0, 6, 0],
-    x: [0, 2, 0, -2, 0],
-  }}
-  transition={{
-    duration: 6,
-    repeat: Infinity,
-    ease: "easeInOut",
-    delay: 1,
-  }}
-      className="
-        absolute
-        right-[5%]
-        top-[14%]
-        z-30
-       size-[clamp(49px,calc(80_/_var(--width)*100vw),255px)]
-      "
-    >
-      <div
-        className="
-          flex
-          flex-col
-          items-center
-          justify-center
-          rounded-sm
-          bg-white
-          p-sm
-          shadow-[0_8px_30px_rgba(0,0,0,0.08)]
-        "
-      >
-        <span
-          className="
-            mb-[clamp(5px,0.6vw,9px)]
-            whitespace-nowrap
-            text-[clamp(6.5px,calc(10_/_var(--width)*100vw),14px)]
-            font-bold
-            text-[#E000C7]
-          "
-        >
-          Misaligned
-        </span>
-
-        <ProgressCircle
-          percentage={40}
-          color="#E000C7"
-        />
-      </div>
-    </motion.div>
-
-
-    {/* ===================================================
-        UNALIGNED
-    =================================================== */}
-
-    <motion.div
-     animate={{
-                y: [0, -3, 0],
-              }}
-              transition={{
-                duration: 4,
-                delay:0.6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-      className="
-        absolute
-        left-[-1%]
-        top-[18%]
-        z-30
-        size-[clamp(56px,calc(90_/_var(--width)*100vw),290px)]
-      "
-    >
-      <div
-        className="
-          flex
-          flex-col
-          items-center
-          justify-center
-          rounded-sm
-          bg-white
-          p-sm
-          shadow-[0_8px_30px_rgba(0,0,0,0.08)]
-        "
-      >
-        <span
-          className="
-            mb-[clamp(5px,0.6vw,9px)]
-            whitespace-nowrap
-            text-[clamp(7.5px,calc(12_/_var(--width)*100vw),16px)]
-            font-bold
             text-[#E57C00]
           "
         >
-          Unaligned
+                    Unaligned
+
         </span>
 
         <ProgressCircle
-          percentage={67}
+          percentage={33}
           color="#E57C00"
         />
       </div>
     </motion.div>
+
 
 
     {/* ===================================================
@@ -344,8 +236,8 @@ export default function AlignmentHero() {
               }}
       className="
         absolute
-        bottom-[16%]
-        left-[-9%]
+        top-[30%]
+        left-[-7%]
         z-40
         size-[clamp(70px,calc(120_/_var(--width)*100vw),380px)]
       "
@@ -401,8 +293,8 @@ export default function AlignmentHero() {
               }}
       className="
         absolute
-        bottom-[0%]
-        left-1/2
+        bottom-[5%]
+        left-1/3
         z-30
         size-[clamp(56px,calc(80_/_var(--width)*100vw),260px)]
         -translate-x-1/2
@@ -433,7 +325,7 @@ export default function AlignmentHero() {
         </span>
 
         <ProgressCircle
-          percentage={75}
+          percentage={67}
           color="#0668E1"
         />
       </div>

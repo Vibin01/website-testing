@@ -153,12 +153,12 @@ export default function AlignmentSystemSection({ data }: { data: RoleData }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25 }}
-              className="p-6 md:p-7"
+              className="p-md"
             >
               {/* Top area */}
               <div className="flex flex-col gap-[1.5%] md:flex-row">
                 {/* Illustration */}
-                <div className="flex size-[clamp(60px,calc(120_/_var(--width)*100vw),300px)] shrink-0 items-center justify-center">
+                <div className="mb-2 md:mt-0 flex size-[clamp(60px,calc(120_/_var(--width)*100vw),300px)] shrink-0 items-center justify-center">
                   <Image
                   src={activeView.icon}
                   alt={activeView.title}
@@ -301,7 +301,7 @@ export default function AlignmentSystemSection({ data }: { data: RoleData }) {
     p-sm
     text-left
     hover:text-white
-    shadow-web-medium
+    md:shadow-web-medium
     transition-colors
     duration-700
     ease-in-out
