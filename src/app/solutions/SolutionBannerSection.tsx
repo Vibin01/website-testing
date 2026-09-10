@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, type Variants } from "framer-motion";
 
 /* ============================================================
@@ -31,6 +31,7 @@ export type SolutionBannerSectionProps = {
   data?: SolutionBannerItem[];
   items?: SolutionBannerItem[]; // alias for convenience
   className?: string;
+  isTriggered?: boolean;
 };
 
 /* ============================================================
@@ -38,12 +39,13 @@ export type SolutionBannerSectionProps = {
 ============================================================ */
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: {
+    opacity: 0,
+  },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -59,7 +61,7 @@ const cardVariants: Variants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.45,
+      duration: 0.5,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -129,8 +131,6 @@ function HighlightItem({
   return <span className="font-bold text-white leading-normal">{item}</span>;
 }
 
-
-
 /* ============================================================
    SINGLE CARD COMPONENT
 ============================================================ */
@@ -148,15 +148,13 @@ export function SolutionBannerCard({
   return (
     <motion.div
       variants={cardVariants}
-      className={`relative w-full rounded-md ${bgClass} py-md pl-md pr-md  shadow-mobile-medium md:shadow-web-medium transition-all duration-300 overflow-hidden ${
+      className={`relative w-full rounded-md ${bgClass} py-md pl-md pr-md shadow-mobile-medium md:shadow-web-medium transition-shadow duration-300 overflow-hidden ${
         item.className ?? ""
       }`}
     >
       <div className="flex flex-col items-start md:grid md:grid-cols-[max-content_1fr] md:items-stretch gap-sm">
         {/* Left Side: Icon Container */}
-        <motion.div
-          
-          
+        <div
           className="flex-center shrink-0 w-[60px] h-[60px] md:w-auto md:h-full aspect-square"
         >
           {typeof item.icon === "string" ? (
@@ -168,8 +166,7 @@ export function SolutionBannerCard({
           ) : item.icon && (
             item.icon
           ) }
-          
-        </motion.div>
+        </div>
 
         {/* Right Side: Text Information */}
         <div className={`flex space-y-1 flex-col justify-center flex-1 text-left ${textClass}`}>
@@ -205,22 +202,69 @@ export default function SolutionBannerSection({
   data,
   items,
   className = "",
+  isTriggered,
 }: SolutionBannerSectionProps) {
   const bannerItems = data ?? items;
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const hasAnimatedRef = useRef(false);
+
+  useEffect(() => {
+    // Once animated, never re-trigger or listen again
+    if (hasAnimatedRef.current) return;
+
+    // If isTriggered was explicitly passed as true
+    if (isTriggered) {
+      hasAnimatedRef.current = true;
+      setShouldAnimate(true);
+      return;
+    }
+
+    const alignSection = typeof document !== "undefined"
+      ? (document.querySelector("[data-feedback-alignment]") as HTMLElement | null)
+      : null;
+
+    // If FeedbackAlignment is not on this page, show immediately once
+    if (!alignSection) {
+      hasAnimatedRef.current = true;
+      setShouldAnimate(true);
+      return;
+    }
+
+    // If FeedbackAlignment on this page already completed
+    if (alignSection.dataset.alignmentComplete === "true") {
+      hasAnimatedRef.current = true;
+      setShouldAnimate(true);
+      return;
+    }
+
+    const onComplete = () => {
+      if (!hasAnimatedRef.current) {
+        hasAnimatedRef.current = true;
+        setShouldAnimate(true);
+      }
+    };
+
+    window.addEventListener("feedbackAlignmentComplete", onComplete, { once: true });
+
+    return () => {
+      window.removeEventListener("feedbackAlignmentComplete", onComplete);
+    };
+  }, [isTriggered]);
 
   if (!bannerItems || bannerItems.length === 0) {
     return null;
   }
+
+  const isVisible = isTriggered || shouldAnimate;
 
   return (
     <section className={`w-full mt-md ${className}`}>
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-40px" }}
+        animate={isVisible ? "visible" : "hidden"}
         className="flex flex-col gap-md w-full"
-            >
+      >
         {bannerItems.map((item, index) => (
           <SolutionBannerCard
             key={item.id ?? index}
