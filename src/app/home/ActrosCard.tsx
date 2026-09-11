@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { toast } from "sonner";
+import { ShowDesktopWarning } from "@/components/common/Toast/ShowDesktopWarning";
 
 const actors = [
   {
@@ -26,6 +28,12 @@ const actors = [
 ];
 
 export default function ActorCards() {
+  const showDesktopWarning = () => {
+    toast.custom((t) => (
+      <ShowDesktopWarning toastId={t}/>
+    ));
+  };
+
   return (
     <section className="w-full pt-[5%] pb-[2%] md:py-[1%]">
       <div className="grid grid-cols-1 gap-md md:grid-cols-3">
@@ -158,44 +166,128 @@ export default function ActorCards() {
 
               {/* CONTINUES ACROSS */}
 
-              <Link
-              href={actor.acrossLink}
-              target={"_blank"}
-                type="button"
-                className="
-                group
-                  flex
-                  h-btn-h
-                  w-full
-                  items-center
-                  justify-center
-                  gap-sm
-                  rounded-md
-                  border
-                  border-[#0668E1]
-                  bg-[#0668E1]
-                  text-base
-                  font-medium
-                  text-white
-                  transition-all
-                  duration-300
-                  hover:bg-[#005FCC]
-                "
-              >
-                <span>Continues Across</span>
+              {actor.role === "Employer" || actor.role === "Recruiter" ? (
+                <>
+                  {/* Mobile: Show Desktop Warning Toast */}
+                  <button
+                    type="button"
+                    onClick={showDesktopWarning}
+                    className="
+                      group
+                      flex
+                      md:hidden
+                      h-btn-h
+                      w-full
+                      items-center
+                      justify-center
+                      gap-sm
+                      rounded-md
+                      border
+                      border-[#0668E1]
+                      bg-[#0668E1]
+                      text-base
+                      font-medium
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:bg-[#005FCC]
+                      cursor-pointer
+                    "
+                  >
+                    <span>Continues Across</span>
 
-                <ArrowRight
+                    <ArrowRight
+                      className="
+                        size-iconsize-sm
+                        opacity-0
+                        -translate-x-2
+                        transition-all
+                        duration-300
+                        group-hover:translate-x-0
+                        group-hover:opacity-100
+                      "
+                    />
+                  </button>
+
+                  {/* Desktop: Standard Link */}
+                  <Link
+                    href={actor.acrossLink}
+                    target="_blank"
+                    className="
+                      group
+                      hidden
+                      md:flex
+                      h-btn-h
+                      w-full
+                      items-center
+                      justify-center
+                      gap-sm
+                      rounded-md
+                      border
+                      border-[#0668E1]
+                      bg-[#0668E1]
+                      text-base
+                      font-medium
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:bg-[#005FCC]
+                    "
+                  >
+                    <span>Continues Across</span>
+
+                    <ArrowRight
+                      className="
+                        size-iconsize-sm
+                        opacity-0
+                        -translate-x-2
+                        transition-all
+                        duration-300
+                        group-hover:translate-x-0
+                        group-hover:opacity-100
+                      "
+                    />
+                  </Link>
+                </>
+              ) : (
+                <Link
+                  href={actor.acrossLink}
+                  target="_blank"
                   className="
-                   size-iconsize-sm
-                    opacity-0
-                    -translate-x-2
+                    group
+                    flex
+                    h-btn-h
+                    w-full
+                    items-center
+                    justify-center
+                    gap-sm
+                    rounded-md
+                    border
+                    border-[#0668E1]
+                    bg-[#0668E1]
+                    text-base
+                    font-medium
+                    text-white
                     transition-all
                     duration-300
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
+                    hover:bg-[#005FCC]
                   "
-                />
-              </Link>
+                >
+                  <span>Continues Across</span>
+
+                  <ArrowRight
+                    className="
+                      size-iconsize-sm
+                      opacity-0
+                      -translate-x-2
+                      transition-all
+                      duration-300
+                      group-hover:translate-x-0
+                      group-hover:opacity-100
+                    "
+                  />
+                </Link>
+              )}
 
             </div>
           </div>

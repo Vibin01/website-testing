@@ -85,8 +85,8 @@ export const easyCalibrator = {
       iconAlt: "Easy Calibrator",
       title: "Measure the Gap. Calibrate the Response.",
       description:
-        "Easy Calibrator compares current hiring progress with targets, helping leadership identify emerging gaps, understand changing conditions, and focus intervention where achievement needs it most.",
-      highlights: [
+      "Easy Calibrator compares current hiring progress with targets, helping leadership identify emerging gaps, understand changing conditions, and focus intervention where achievement needs it most."
+     , highlights: [
         { prefix: "Targets become", highlight: "visible." },
         { prefix: "Progress becomes", highlight: "measurable." },
         { prefix: "Intervention becomes", highlight: "possible." },
@@ -266,7 +266,7 @@ export const easyEvalutor = {
       {
         id: "02",
         title: "FEEDBACK VARIES",
-        heading: "One Outcome Can Sound Different.",
+        heading: "Same Outcome. Different Voice.",
         description:
           "Wording, explanation, and tone can vary depending on the recruiter responsible for communicating the outcome.",
       },
@@ -739,7 +739,7 @@ export const easyExplorer = {
       },
       {
         title: "LOCATE THE PRESSURE",
-        subTitle: "See Where Demand Begins Outrunning Flow.",
+        subTitle: "See Where Demand Outruns Flow.",
         description:
           "Identify where load, execution intensity, commitment, or velocity begins to move out of balance across hiring.",
       },
@@ -855,14 +855,14 @@ export const easyFacilitator = {
         title: "THE WINDOW OPENS",
         heading: "Time Creates a Longer Distance.",
         description:
-          "Days or weeks may separate acceptance from joining, allowing circumstances and engagement to change.",
+          "Days or weeks may separate acceptance from joining, letting circumstances and engagement shift.",
       },
       {
         id: "03",
         title: "THE RELATIONSHIP MATTERS",
         heading: "Silence Can Weaken Commitment.",
         description:
-          "When interaction fades, changes in commitment become harder to recognize before the agreed joining date.",
+          "When interaction fades, commitment changes become harder to recognize before the agreed joining date.",
       },
     ],
 

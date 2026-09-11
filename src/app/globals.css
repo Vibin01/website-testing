@@ -74,7 +74,7 @@
 
 
 --text-md: clamp(10px, calc(12 / var(--width) * 100vw), 65px); 
---text-sm: clamp(14px, calc(10 / var(--width) * 100vw), 55px);     
+--text-sm: clamp(8px, calc(10 / var(--width) * 100vw), 55px);     
 
 
 
@@ -229,8 +229,19 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scrollbar-gutter: stable;
+  }
   html,body {
     @apply bg-white text-[#1B1C17] !m-0 !p-0;
+  }
+  body[data-scroll-locked],
+  body[data-scroll-locked] * {
+    --removed-body-scroll-bar-size: 0px !important;
+    margin-right: 0px !important;
+  }
+  body[data-scroll-locked] {
+    padding-right: 0px !important;
   }
   p {
     @apply lg:text-[16px] xl:text-[20px] 2xl:text-[24px];

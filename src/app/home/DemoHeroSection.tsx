@@ -1431,7 +1431,14 @@ export default function AlignmentTabs() {
                     "
                   />
 
-                  Powered by Connect EC
+                  <span className="inline-flex items-start gap-1">
+                    Powered by Connect EC
+                    <img
+                      src="/icons/r-badage-icon.svg"
+                      alt="Registered trademark"
+                      className="inline size-iconsize-sm scale-80 -mt-0.5"
+                    />
+                  </span>
                 </span>
               </h3>
             </div>

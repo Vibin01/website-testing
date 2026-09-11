@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import {
   ArrowRight,
   ArrowDown,
@@ -258,10 +258,12 @@ function AlignmentCardItem({
   card,
   index,
   isVisible,
+  onAnimationComplete,
 }: {
   card: AlignmentCard;
   index: number;
   isVisible: boolean;
+  onAnimationComplete?: () => void;
 }) {
   return (
     <motion.div
@@ -269,6 +271,11 @@ function AlignmentCardItem({
       variants={cardVariants}
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
+      onAnimationComplete={(definition) => {
+        if (definition === "visible") {
+          onAnimationComplete?.();
+        }
+      }}
       className={`
         relative
         flex
@@ -349,10 +356,12 @@ function MobileAlignmentCardItem({
   card,
   index,
   isVisible,
+  onAnimationComplete,
 }: {
   card: AlignmentCard;
   index: number;
   isVisible: boolean;
+  onAnimationComplete?: () => void;
 }) {
   return (
     <motion.div
@@ -360,6 +369,11 @@ function MobileAlignmentCardItem({
       variants={mobileCardVariants}
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
+      onAnimationComplete={(definition) => {
+        if (definition === "visible") {
+          onAnimationComplete?.();
+        }
+      }}
       className={`
         mt-sm
         relative
@@ -419,30 +433,45 @@ function MobileAlignmentCardItem({
 
 export const FeedbackAlignment = ({
   data,
+  onAnimationComplete,
+  children,
 }: {
   data: FeedbackAlignmentData;
+  onAnimationComplete?: () => void;
+  children?: React.ReactNode;
 }) => {
-  /* ==========================================================
-     SECTION VISIBILITY
-
-     Animation starts ONLY when the section enters the viewport.
-     
-     once: true
-     → Animation happens only once.
-
-     amount: 0.2
-     → Starts when around 20% of the section is visible.
-  ========================================================== */
-
   const sectionRef = useRef<HTMLElement>(null);
+  const hasTriggeredRef = useRef(false);
 
   const isVisible = useInView(sectionRef, {
     once: true,
     amount: 0.2,
   });
 
+  const notifyComplete = () => {
+    if (hasTriggeredRef.current) return;
+    hasTriggeredRef.current = true;
+    if (sectionRef.current) {
+      sectionRef.current.dataset.alignmentComplete = "true";
+    }
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("feedbackAlignmentComplete"));
+    }
+    onAnimationComplete?.();
+  };
+
+  useEffect(() => {
+    if (isVisible) {
+      // Fallback timer (6.5s) to guarantee completion event fires
+      const timer = setTimeout(() => {
+        notifyComplete();
+      }, 6500);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
+
   return (
-    <section ref={sectionRef}>
+    <section ref={sectionRef} data-feedback-alignment="true">
       <div className="mx-auto w-full">
 
         {/* =====================================================
@@ -516,6 +545,9 @@ export const FeedbackAlignment = ({
                 card={card}
                 index={index}
                 isVisible={isVisible}
+                onAnimationComplete={
+                  index === data.cards.length - 1 ? notifyComplete : undefined
+                }
               />
 
               {/* ARROW */}
@@ -565,6 +597,9 @@ export const FeedbackAlignment = ({
                 card={card}
                 index={index}
                 isVisible={isVisible}
+                onAnimationComplete={
+                  index === data.cards.length - 1 ? notifyComplete : undefined
+                }
               />
 
               {/* DOWN ARROW */}
@@ -599,6 +634,7 @@ export const FeedbackAlignment = ({
         >
           {data.description}
         </motion.p>
+        {children}
       </div>
     </section>
   );

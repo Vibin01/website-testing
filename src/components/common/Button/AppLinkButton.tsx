@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-import { FaArrowRight } from "react-icons/fa6";
-import { ArrowRight, TriangleAlert } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { ShowDesktopWarning } from "../Toast/ShowDesktopWarning";
 

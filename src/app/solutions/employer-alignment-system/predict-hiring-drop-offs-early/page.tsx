@@ -1,7 +1,7 @@
 import React from "react";
 import OutcomeHighlightSection from "@/components/common/OutcomeHighlightSection";
 import SolutionBannerSection from "../../SolutionBannerSection";
-import { HeroSection } from "../../HeroSection";
+import PredictorHeroSection from "./PredictorHeroSection";
 import { FeedbackChallenge } from "../../FeedbackChallenge";
 import FeedbackAlignment from "../../FeedbackAlignment";
 import FeedbackFlow from "../../FeedbackFlow";
@@ -32,7 +32,7 @@ const page = () => {
                 rounded-t-[50%]
               "
             />
-            <HeroSection
+            <PredictorHeroSection
               title={easyPredictor.title}
               description={easyPredictor.description}
               subTitle={easyPredictor.subTitle}

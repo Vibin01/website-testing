@@ -17,7 +17,16 @@ const achievementSteps = [
         <br />
         <span className="font-bold text-[12px] sm:text-xl md:text-base">S</span>eamless
         <br />
-        <span className="font-bold text-[12px] sm:text-xl md:text-base">Y</span>ield
+        <span className="inline-flex items-center gap-xs">
+          <span>
+            <span className="font-bold text-[12px] sm:text-xl md:text-base">Y</span>ield
+          </span>
+          <img
+            src="/icons/tm-badge-black.svg"
+            alt="tm-badge"
+            className="size-[12px] sm:size-[15px] md:size-[18px] -mt-1 inline"
+          />
+        </span>
       </>
     ),
   },
@@ -49,7 +58,16 @@ const achievementSteps = [
         <br />
         <span className="font-bold text-[12px] sm:text-xl md:text-base">S</span>eamless
         <br />
-        <span className="font-bold text-[12px] sm:text-xl md:text-base">Y</span>ield
+        <span className="inline-flex items-center gap-xs">
+          <span>
+            <span className="font-bold text-[12px] sm:text-xl md:text-base">Y</span>ield
+          </span>
+          <img
+            src="/icons/tm-badge-black.svg"
+            alt="tm-badge"
+            className="size-[12px] sm:size-[15px] md:size-[18px] -mt-1 inline brightness-0 invert"
+          />
+        </span>
       </>
     ),
   },
