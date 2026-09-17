@@ -61,9 +61,15 @@ const alignmentCards = [
             HOW ALIGNMENT PRESERVES CONTINUITY
           </p>
 
+<<<<<<< HEAD
           <h2 className="text-h2 font-extrabold ">
             Within. Across. Actively Sustained.
           </h2>
+=======
+          <h1 className="text-h2 font-extrabold ">
+            Within. Across. Actively Sustained.
+          </h1>
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
           <p className="mx-auto font-medium text-base">
             Alignment is the structural condition that enables behavioural
@@ -107,14 +113,22 @@ const alignmentCards = [
           className={
             isCenter
               ? "mb-sm text-xl font-bold"
+<<<<<<< HEAD
               : "mb-sm text-xl font-bold text-[#0668E1]"
+=======
+              : "mb-sm text-xl font-bold text-[#006bea]"
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           }
         >
           {card.label}
         </p>
 
         {/* Title */}
+<<<<<<< HEAD
         <p
+=======
+        <h3
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           className={
             isCenter
               ? "text-h5 font-bold leading-tight"
@@ -122,7 +136,11 @@ const alignmentCards = [
           }
         >
           {card.title}
+<<<<<<< HEAD
         </p>
+=======
+        </h3>
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
         {/* Description */}
         <p

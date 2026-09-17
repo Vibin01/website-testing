@@ -12,7 +12,11 @@ function AchievementDiagramCard() {
         {/* Left faded */}
         <div className="relative  ">
 
+<<<<<<< HEAD
           <h2 className="inline md:flex flex-col items-start  text-center text-h2 font-extrabold text-[#0668E1] leading-tight gap-xs">
+=======
+          <h1 className="inline md:flex flex-col items-start  text-center text-h2 font-extrabold text-[#0668E1CC] leading-tight gap-xs">
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           <span >
             {" "}
             <span className="inline font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">E</span>veryone{" "}
@@ -41,7 +45,11 @@ function AchievementDiagramCard() {
 
 
 
+<<<<<<< HEAD
         </h2>
+=======
+        </h1>
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
         </div>
 
@@ -57,7 +65,11 @@ function AchievementDiagramCard() {
         {/* Main Text */}
         <div className="relative md:px-xl">
 
+<<<<<<< HEAD
           <h2 className="inline md:flex flex-col items-start  text-center text-h2 font-extrabold text-[#0668E1] leading-tight gap-xs">
+=======
+          <h1 className="inline md:flex flex-col items-start  text-center text-h2 font-extrabold text-[#0668E1] leading-tight gap-xs">
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           <span>
             {" "}
             <span className="inline font-extrabold text-[clamp(25px,calc(44_/_var(--width)*100vw),180px)]">E</span>veryone{" "}
@@ -83,7 +95,11 @@ function AchievementDiagramCard() {
               />
             </span>
           </span>
+<<<<<<< HEAD
         </h2>
+=======
+        </h1>
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
         </div>
 
@@ -92,7 +108,10 @@ function AchievementDiagramCard() {
 
           <img
             src="/home/aspire-align-achieve-hiring-alignment-across-candidate-recruiter-employer.svg"
+<<<<<<< HEAD
             alt="Hiring Alignment Across Candidate, Recruiter, and Employer"
+=======
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             className="max-h-[300px] w-auto"
           />
 
@@ -107,6 +126,7 @@ function AchievementDiagramCard() {
         <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr] gap-xl md:gap-md lg:gap-xl">
  
  <div className="grid md:grid-cols-3 gap-md">
+<<<<<<< HEAD
           <div className="py-sm rounded-md border border-[#B2D0F6] pl-sm flex items-center text-base font-medium gap-xs bg-white">
             <img
               src="/icons/employer-round-icon.svg"
@@ -137,6 +157,35 @@ function AchievementDiagramCard() {
           <div className="py-sm rounded-md border border-[#B2D0F6] text-nowrap bg-white px-sm text-h5 font-bold text-[#0668E1] flex items-center justify-center">
             Hiring Alignment Made EASY
           </div>
+=======
+          <button className="py-sm rounded-md border border-[#B2D0F6] pl-sm flex items-center text-base font-medium gap-xs bg-white">
+            <img
+              src="/icons/employer-round-icon.svg"
+              className="size-iconsize-sm"
+            />
+            Employer
+          </button>
+
+          <button className="py-sm rounded-md border border-[#B2D0F6] pl-sm flex items-center text-base font-medium gap-xs bg-white">
+            <img
+              src="/icons/recruiters-round-icon.svg"
+              className="size-iconsize-sm"
+            />
+            Recruiter
+          </button>
+
+          <button className="py-sm rounded-md border border-[#B2D0F6] pl-sm flex items-center text-base gap-xs font-medium bg-white">
+            <img
+              src="/icons/candidate-round-icon.svg"
+              className="size-iconsize-sm"
+            />
+            Candidate
+          </button>
+</div>
+          <button className="py-sm rounded-md border border-[#B2D0F6] text-nowrap bg-white px-sm text-h5 font-bold text-[#0668E1]">
+            Hiring Alignment Made EASY
+          </button>
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
         </div>
 

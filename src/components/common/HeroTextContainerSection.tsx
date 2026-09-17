@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { AppLinkButton } from "./Button/AppLinkButton";
+<<<<<<< HEAD
 import { GradientButton } from "./Button/GradientButton";
+=======
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
 interface HeroStage { id: number; title: string; icon: string; } 
  interface HeroDataType { title: string; subTitle: string; stages: HeroStage[]; button_text: string; button_link: string; }
@@ -89,7 +92,11 @@ export default function HeroTextContainerSection({data}:{data:HeroDataType}) {
                       delay: 3,
                       ease: [0.16, 1, 0.3, 1],
                     }} className="mt-md ">
+<<<<<<< HEAD
                  <GradientButton text={data.button_text} link={data.button_link}/>
+=======
+                 <AppLinkButton text={data.button_text} url={data.button_link}/>
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
               </motion.div>
               </div>
       </div>

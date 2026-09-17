@@ -127,8 +127,11 @@ export default function HiringAlignmentCTA() {
 
               <div className="flex flex-col md:flex-row gap-md mt-md md:mt-xs">
                 <motion.button
+<<<<<<< HEAD
                 type="button"
                 aria-label="Start alignment test - begins within"
+=======
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                 onClick={()=>router.push("/resources/alignment-test/register?mode=single&phase=uncertainty")}
                   className="
     relative
@@ -229,11 +232,17 @@ export default function HiringAlignmentCTA() {
                   </motion.div>
                 </motion.button>
                 <motion.button
+<<<<<<< HEAD
                   type="button"
                   aria-label="Download Connect EC app on Google Play"
                   onClick={() =>
                     window.open("https://play.google.com/store/apps/details?id=com.primethic.connectec", "_blank")
                   }
+=======
+            onClick={() =>
+    window.open("https://play.google.com/store/apps/details?id=com.primethic.connectec", "_blank")
+  }
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                   className="
     relative
     flex

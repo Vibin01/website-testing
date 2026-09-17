@@ -491,7 +491,10 @@ export default function HiringContinuity() {
   <motion.button
     type="button"
     onClick={() => setActiveCard(0)}
+<<<<<<< HEAD
     aria-label={`Select condition: ${data.cards[0]?.title || "Uncertainty"}`}
+=======
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
     animate={{
       scale: activeCard === 0 ? 1.05 : 1,
     }}
@@ -521,7 +524,11 @@ export default function HiringContinuity() {
   >
     <Image
       src={data.cards[0].iconCircle}
+<<<<<<< HEAD
       alt={data.cards[0]?.title || "Condition 1"}
+=======
+      alt=""
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
       width={40}
       height={40}
       className={`
@@ -545,7 +552,10 @@ export default function HiringContinuity() {
   <motion.button
     type="button"
     onClick={() => setActiveCard(1)}
+<<<<<<< HEAD
     aria-label={`Select condition: ${data.cards[1]?.title || "Pressure"}`}
+=======
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
     animate={{
       scale: activeCard === 1 ? 1.05 : 1,
     }}
@@ -580,7 +590,11 @@ export default function HiringContinuity() {
   >
     <Image
       src={data.cards[1].iconCircle}
+<<<<<<< HEAD
       alt={data.cards[1]?.title || "Condition 2"}
+=======
+      alt=""
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
       width={40}
       height={40}
       className={`
@@ -604,7 +618,10 @@ export default function HiringContinuity() {
   <motion.button
     type="button"
     onClick={() => setActiveCard(2)}
+<<<<<<< HEAD
     aria-label={`Select condition: ${data.cards[2]?.title || "Perception"}`}
+=======
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
     animate={{
       scale: activeCard === 2 ? 1.05 : 1,
     }}
@@ -639,7 +656,11 @@ export default function HiringContinuity() {
   >
     <Image
       src={data.cards[2].iconCircle}
+<<<<<<< HEAD
       alt={data.cards[2]?.title || "Condition 3"}
+=======
+      alt=""
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
       width={40}
       height={40}
       className={`

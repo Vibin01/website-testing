@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import React from "react";
 import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
@@ -17,10 +18,14 @@ type GradientButtonProps = {
   className?: string;
   onClick?: () => void;
 };
+=======
+import { ArrowRight } from "lucide-react";
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
 export const GradientButton = ({
   text,
   link,
+<<<<<<< HEAD
   className = "",
   onClick,
 }: GradientButtonProps) => {
@@ -102,6 +107,31 @@ export const GradientButton = ({
         <span className="whitespace-nowrap">{text}</span>
         {renderArrow()}
       </a>
+=======
+}: {
+  text: string;
+  link: string;
+}) => {
+
+  return (
+    <>
+      <button   onClick={() => {
+    window.open(link, "_blank", "noopener,noreferrer");
+  }}   id={text} className="group gap-xs flex justify-center cursor-pointer items-center bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer font-bold text-white text-xl w-fit h-btn-h rounded-md px-lg">
+       <span>{text}</span> 
+         <ArrowRight
+                          className=" 
+                           size-iconsize-sm
+                            opacity-0
+                            -translate-x-2
+                            transition-all
+                            duration-300
+                            group-hover:translate-x-0
+                            group-hover:opacity-100
+                          "
+                        />
+      </button>
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
     </>
   );
 };

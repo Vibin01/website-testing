@@ -85,11 +85,15 @@ export default function AlignmentIntelligence() {
                   </span>
                 </p>
 
+<<<<<<< HEAD
                 <button
                   type="button"
                   aria-label={`Stage details: ${item.title}`}
                   className="mt-md p-[0.5%] md:p-1.5 flex rotate-90 sm:rotate-0  items-center justify-center rounded-full bg-[#0668E1] text-white transition hover:scale-110"
                 >
+=======
+                <button className="mt-md p-[0.5%] md:p-1.5 flex rotate-90 sm:rotate-0  items-center justify-center rounded-full bg-[#0668E1] text-white transition hover:scale-110">
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                   <ChevronRight className="size-iconsize-sm md:scale-105" />
                 </button>
               </div>
@@ -126,11 +130,16 @@ export default function AlignmentIntelligence() {
 
                 <p className="mt-2 font-medium text-xl text-white">{item.description}</p>
 {index !== resultCards.length - 1 && (
+<<<<<<< HEAD
                 <button
                   type="button"
                   aria-label={`Next result: ${item.title}`}
                   className="mx-auto mt-md p-[1%] md:p-1.5 rotate-90 sm:rotate-0 flex  items-center justify-center rounded-full bg-white text-[#0668E1] transition hover:scale-110"
                 >
+=======
+                <button className="mx-auto mt-md p-[1%] md:p-1.5 rotate-90 sm:rotate-0 flex  items-center justify-center rounded-full bg-white text-[#0668E1] transition hover:scale-110">
+
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                   <ChevronRight className="size-iconsize-sm md:scale-105"/>
                 </button>
 )}

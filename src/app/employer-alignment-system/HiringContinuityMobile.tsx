@@ -70,11 +70,19 @@ function MobileStage({
     <motion.div
       initial={{
         opacity: 0,
+<<<<<<< HEAD
         y: -10,
       }}
       animate={{
         opacity: 1,
         y: 0,
+=======
+        x: -20,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
       }}
       transition={{
         delay: index * STAGE_STEP,
@@ -715,11 +723,19 @@ function ContinuityStage({
       <motion.p
         initial={{
           opacity: 0,
+<<<<<<< HEAD
           y: -5,
         }}
         animate={{
           opacity: 1,
           y: 0,
+=======
+          x: 15,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         }}
         transition={{
           delay: stageDelay + 0.2,
@@ -893,8 +909,12 @@ function AlignmentContinuityMobile({data}: {data: ContinuityData}) {
         rounded-md
         bg-[#0668E1]
         px-[4%]
+<<<<<<< HEAD
         pt-[15%]
         pb-[8%]
+=======
+        py-[15%]
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         text-white
       "
     >

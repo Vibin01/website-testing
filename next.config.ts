@@ -24,6 +24,7 @@ const nextConfig = {
         "./node_modules/@sparticuz/chromium/bin/**/*",
       ],
     },
+<<<<<<< HEAD
    async headers() {
     return [
       {
@@ -62,6 +63,8 @@ const nextConfig = {
       },
     ];
   },
+=======
+>>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 };
 
 // const withBundleAnalyzer = require("@next/bundle-analyzer")({
