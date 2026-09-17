@@ -10,23 +10,49 @@ import Image from "next/image";
 import { MdGroups } from "react-icons/md";
 
 export type ActiveTab = "interview" | "offer";
+export type ActiveTier = "tier1" | "tier2" | "tier3";
 
 interface AlignmentIntentCalculatorProps {
   onClose?: () => void;
   defaultTab?: ActiveTab;
+  defaultTier?: ActiveTier;
 }
+
+const TIER_DATA = {
+  interview: {
+    unit: "Hours",
+    tier1: { label: "Tier 1 - Free", rate: "10%", value: 2.4, timelinePercent: 10 },
+    tier2: { label: "Tier 2 - Standard", rate: "20%", value: 4.8, timelinePercent: 20 },
+    tier3: { label: "Tier 3 - Premium", rate: "40%", value: 9.6, timelinePercent: 40 },
+  },
+  offer: {
+    unit: "Days",
+    tier1: { label: "Tier 1 - Free", rate: "10%", value: 0.4, timelinePercent: 10 },
+    tier2: { label: "Tier 2 - Standard", rate: "20%", value: 0.8, timelinePercent: 20 },
+    tier3: { label: "Tier 3 - Premium", rate: "40%", value: 1.6, timelinePercent: 40 },
+  },
+} as const;
+
+const TIERS: { id: ActiveTier; label: string }[] = [
+  { id: "tier1", label: "Tier 1 - Free" },
+  { id: "tier2", label: "Tier 2 - Standard" },
+  { id: "tier3", label: "Tier 3 - Premium" },
+];
 
 export default function AlignmentIntentCalculator({
   onClose,
-  defaultTab = "offer",
+  defaultTab = "interview",
+  defaultTier = "tier1",
 }: AlignmentIntentCalculatorProps) {
   const [activeTab, setActiveTab] = useState<ActiveTab>(defaultTab);
+  const [activeTier, setActiveTier] = useState<ActiveTier>(defaultTier);
   const [inputCount, setInputCount] = useState<number | string>(10);
   const [appliedCount, setAppliedCount] = useState<number>(10);
 
-  // Single candidate values
-  const perCandidateValue = activeTab === "interview" ? 9.6 : 1.6;
-  const unit = activeTab === "interview" ? "Hours" : "Days";
+  // Dynamic values based on active tab and tier
+  const currentTierConfig = TIER_DATA[activeTab][activeTier];
+  const perCandidateValue = currentTierConfig.value;
+  const unit = TIER_DATA[activeTab].unit;
 
   // Calculate aggregate
   const currentCount = Number(appliedCount) > 0 ? Number(appliedCount) : 1;
@@ -50,16 +76,16 @@ export default function AlignmentIntentCalculator({
   };
 
   return (
-    <div className="relative w-full bg-white rounded-lg  p-md">
+    <div className="relative w-full bg-white rounded-lg p-md">
       {/* Close button */}
       {onClose && (
         <button
           onClick={onClose}
           type="button"
           aria-label="Close dialog"
-          className="absolute top-5 right-5 sm:top-6 sm:right-6 p-[1%] rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:text-gray-700 hover:border-gray-500 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0052FF]/20"
+          className="absolute top-5 right-5 sm:top-6 sm:right-6 p-[0.2%] rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:text-gray-700 hover:border-gray-500 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0052FF]/20"
         >
-          <X className="size-iconsize-sm" />
+          <X className="size-iconsize-sm scale-80" />
         </button>
       )}
 
@@ -76,6 +102,29 @@ export default function AlignmentIntentCalculator({
           Estimate how early alignment signals may emerge before an outcome—and
           how much intervention time that earlier visibility may create.
         </p>
+
+        {/* Tier Selector Tabs */}
+        <div className="mt-lg md:w-[70%] lg:w-[60%] border-b-2 border-[#D3E6FF]">
+          <div className="flex ">
+            {TIERS.map((tier) => {
+              const isActive = activeTier === tier.id;
+              return (
+                <button
+                  key={tier.id}
+                  type="button"
+                  onClick={() => setActiveTier(tier.id)}
+                  className={`relative flex-1 pb-3 text-center text-sm sm:text-base md:text-xl font-bold transition-all cursor-pointer -mb-[2px] ${
+                    isActive
+                      ? "text-[#0668E1] border-b-2 border-[#0668E1]"
+                      : "text-[#1B1C17] hover:text-[#0668E1] border-b-2 border-transparent"
+                  }`}
+                >
+                  {tier.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {/* 2-Column Grid (Responsive Stack: Calculator Form First on Mobile) */}
@@ -88,11 +137,16 @@ export default function AlignmentIntentCalculator({
               <h3 className="text-base font-bold">
                 Intervention Time Gained
               </h3>
-
+              <div className="bg-[#D3E6FF] w-full h-px mt-2" />
               <div className="mt-2 flex items-baseline">
-                <span className="text-h2 font-extrabold text-primary">
+                <motion.h2
+                  key={`val-${perCandidateValue}-${unit}`}
+                  initial={{ scale: 0.95, opacity: 0.8 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className="text-h2 font-extrabold text-primary"
+                >
                   +{perCandidateValue}
-                </span>
+                </motion.h2>
                 <span className="text-xl font-bold text-primary ml-1.5">
                   {unit}
                 </span>
@@ -103,17 +157,19 @@ export default function AlignmentIntentCalculator({
               </p>
               <p className="text-xl font-medium mt-1">
                 {activeTab === "offer"
-                  ? "Alignment signals are projected to become visible 1.6 days before the joining outcome."
-                  : "Alignment signals are projected to become visible 9.6 hours before the interview outcome."}
+                  ? `Alignment signals are projected to become visible ${perCandidateValue} days before the joining outcome.`
+                  : `Alignment signals are projected to become visible ${perCandidateValue} hours before the interview outcome.`}
               </p>
-            </div>            {/* Timeline Graphic */}
+            </div>
+
+            {/* Timeline Graphic */}
             <div className="pt-xs">
               <div className="flex items-center justify-between gap-1.5 sm:gap-sm">
                 {/* Left Milestone */}
                 <div className="flex flex-col items-center text-center shrink-0 w-[20%] sm:w-[15%]">
-                   <Image
+                  <Image
                     src={activeTab === "offer" ? "/icons/offer-icon.svg" : "/icons/video-icon.svg"}
-                    alt={activeTab === "offer" ? "Int Date" : "Joining Date"}
+                    alt={activeTab === "offer" ? "Offer Released" : "Int Confirmed"}
                     width={32}
                     height={32}
                     className="size-7 sm:size-iconsize-md scale-90 object-contain mb-1 sm:mb-1.5"
@@ -130,14 +186,17 @@ export default function AlignmentIntentCalculator({
                 <div className="flex-1 flex flex-col justify-end min-w-0">
                   {/* Tooltip badge placed above the blue highlight section */}
                   <div className="flex justify-end pr-0.5 sm:pr-1 mb-xs mr-xs">
-                    <span className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-xs border border-[#B2D0F6] bg-white text-[11px] sm:text-md font-medium text-primary whitespace-nowrap">
-                      {activeTab === "offer"
-                        ? "1.6 days earlier"
-                        : "1.6 hours earlier"}
-                    </span>
+                    <motion.span
+                      key={`badge-${perCandidateValue}-${unit}`}
+                      initial={{ scale: 0.95, opacity: 0.8 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-xs border border-[#B2D0F6] bg-white text-[11px] sm:text-md font-medium text-primary whitespace-nowrap"
+                    >
+                      {perCandidateValue} {unit.toLowerCase()} earlier
+                    </motion.span>
                   </div>
 
-                  <div className="h-7 sm:h-9 rounded-full bg-[#DEEDFF] flex items-center justify-between p-1 w-full relative">
+                  <div className="h-7 sm:h-9 rounded-full bg-[#DEEDFF] flex items-center justify-between p-1 w-full relative overflow-hidden">
                     <AnimatePresence mode="wait">
                       {activeTab === "offer" ? (
                         <motion.div
@@ -243,18 +302,18 @@ export default function AlignmentIntentCalculator({
               Aggregate Intervention Time Gained
             </h3>
 
-            <div className="my-2 border-t border-[#D3E6FF]" />
+            <div className="mt-2 border-t border-[#D3E6FF]" />
 
             <div className="flex items-baseline mt-2">
-              <motion.span
-                key={aggregateValue}
+              <motion.h2
+                key={`agg-${aggregateValue}-${unit}`}
                 initial={{ scale: 0.95, opacity: 0.8 }}
                 animate={{ scale: 1, opacity: 1 }}
                 className="text-h2 font-extrabold text-primary"
               >
                 {aggregateValue}
-              </motion.span>
-              <span className="text-h6 font-bold text-primary ml-1.5">
+              </motion.h2>
+              <span className="text-xl font-bold text-primary ml-1.5">
                 {unit}
               </span>
             </div>
@@ -277,7 +336,7 @@ export default function AlignmentIntentCalculator({
                 </span>
               </div>
 
-              <div className="w-full py-2.5 px-3 bg-primary text-white font-medium text-xl rounded-sm text-center break-words">
+              <div className="w-full py-3 px-3 bg-primary text-white font-medium text-xl rounded-xs text-center break-words">
                 {perCandidateValue} {unit.toLowerCase()} * {currentCount}{" "}
                 Candidates = {aggregateValue} {unit.toLowerCase()}
               </div>
@@ -293,11 +352,11 @@ export default function AlignmentIntentCalculator({
             </h3>
 
             {/* Segmented Switch */}
-            <div className="grid grid-cols-2 rounded-xl border border-gray-200 p-1 bg-white mb-5">
+            <div className="grid grid-cols-2 rounded-xs border border-gray-200 p-1 bg-white mb-5">
               <button
                 type="button"
                 onClick={() => handleTabSwitch("interview")}
-                className={`py-2 rounded-lg text-xl transition-all cursor-pointer ${
+                className={`py-3 rounded-xs text-xl transition-all cursor-pointer ${
                   activeTab === "interview"
                     ? "bg-primary text-white font-bold"
                     : "font-medium text-gray-700"
@@ -309,7 +368,7 @@ export default function AlignmentIntentCalculator({
               <button
                 type="button"
                 onClick={() => handleTabSwitch("offer")}
-                className={`py-2 rounded-lg text-xl transition-all cursor-pointer ${
+                className={`py-3 rounded-xs text-xl transition-all cursor-pointer ${
                   activeTab === "offer"
                     ? "bg-primary text-white font-bold"
                     : "font-medium text-gray-700"
@@ -334,7 +393,7 @@ export default function AlignmentIntentCalculator({
                     ? "Interview Confirmed:"
                     : "Offer Released:"}
                 </p>
-                <div className="flex items-center gap-sm rounded-sm border border-[#D3E6FF] bg-white px-3.5 py-2.5">
+                <div className="flex items-center gap-sm rounded-xs border border-[#D3E6FF] bg-white px-3.5 py-2.5">
                   <Image
                     src={activeTab === "interview" ? "/icons/video-icon.svg" : "/icons/offer-icon.svg"}
                     alt="Milestone 1"
@@ -342,7 +401,7 @@ export default function AlignmentIntentCalculator({
                     height={20}
                     className="size-5 grayscale opacity-60 shrink-0"
                   />
-                  <span className="text-md font-medium text-[#727272] ">
+                  <span className="text-md font-medium text-[#727272]">
                     Mon 10:00 AM
                   </span>
                 </div>
@@ -354,7 +413,7 @@ export default function AlignmentIntentCalculator({
                     ? "Interview Date:"
                     : "Joining Date:"}
                 </p>
-                <div className="flex items-center gap-sm rounded-sm border border-[#D3E6FF] bg-white px-3.5 py-2">
+                <div className="flex items-center gap-sm rounded-xs border border-[#D3E6FF] bg-white px-3.5 py-2">
                   <Image
                     src={activeTab === "interview" ? "/icons/calender-icon.svg" : "/icons/joining-icon.svg"}
                     alt="Milestone 2"
@@ -362,7 +421,7 @@ export default function AlignmentIntentCalculator({
                     height={20}
                     className="size-5 grayscale opacity-60 shrink-0"
                   />
-                  <span className="text-md font-medium text-[#727272] ">
+                  <span className="text-md font-medium text-[#727272]">
                     {activeTab === "interview" ? "Tue 10:00 AM" : "Tue 10:00 AM"}
                   </span>
                 </div>
@@ -377,8 +436,7 @@ export default function AlignmentIntentCalculator({
               >
                 Adjust the candidate count to estimate aggregate intervention time.
               </label>
-              <div className="mt-1 flex items-center rounded-sm border border-gray-300 bg-white px-3.5 py-2.5 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
-                
+              <div className="mt-1 flex items-center rounded-xs border border-gray-300 bg-white px-3.5 py-2.5 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
                 <input
                   id="candidate-count-input"
                   type="number"
