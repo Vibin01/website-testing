@@ -126,7 +126,12 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
                 <div
                   className="absolute inset-x-0 h-2 rounded-full pointer-events-none"
                   style={{
-                    background: `linear-gradient(to right, #0668E1 ${(ranges[index] / 3) * 100}%, #D1D5DB ${(ranges[index] / 3) * 100}%)`,
+                    background:
+                      ranges[index] === 0
+                        ? "#D1D5DB"
+                        : ranges[index] === 3
+                          ? "#0668E1"
+                          : `linear-gradient(to right, #0668E1 calc((100% - 20px) * (${ranges[index]} / 3) + 10px), #D1D5DB calc((100% - 20px) * (${ranges[index]} / 3) + 10px))`,
                   }}
                 />
 
@@ -141,11 +146,11 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
                     newRanges[index] = Number(e.target.value);
                     setRanges(newRanges);
                   }}
-                  className="relative z-10 w-full h-6 bg-transparent appearance-none cursor-pointer outline-none accent-[#0668E1]
-                    [&::-webkit-slider-runnable-track]:bg-transparent [&::-webkit-slider-runnable-track]:h-2
-                    [&::-moz-range-track]:bg-transparent [&::-moz-range-track]:h-2
-                    [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#0668E1] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer
-                    [&::-moz-range-thumb]:size-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#0668E1] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer
+                  className="relative z-10 w-full h-6 m-0 p-0 bg-transparent appearance-none cursor-pointer outline-none
+                    [&::-webkit-slider-runnable-track]:bg-transparent [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:w-full
+                    [&::-moz-range-track]:bg-transparent [&::-moz-range-track]:h-2 [&::-moz-range-track]:w-full
+                    [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:-mt-1.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#0668E1] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer
+                    [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#0668E1] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer
                     active:[&::-webkit-slider-thumb]:bg-[#0668E1] focus:[&::-webkit-slider-thumb]:bg-[#0668E1]
                     active:[&::-moz-range-thumb]:bg-[#0668E1] focus:[&::-moz-range-thumb]:bg-[#0668E1]"
                 />
