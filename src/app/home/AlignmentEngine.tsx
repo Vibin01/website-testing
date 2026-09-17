@@ -1,0 +1,212 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+
+type AlignmentItem = {
+  id: number;
+  title: string;
+  heading:string,
+  description: string;
+  image: string;
+};
+
+const alignmentData: AlignmentItem[] = [
+  {
+    id: 1,
+    title: "Alignment Trigger",
+    heading:"Makes the Decision Point Visible",
+    description:
+      "Surfaces the decision required for an actor to continue, redirect, pause, or close the hiring flow on time.",
+    image: "/home/alignment-trigger.svg",
+  },
+  {
+    id: 2,
+    title: "Alignment Signal",
+    heading:"Makes Follow-Through Visible",
+    description:
+      "Shows whether an actor responds on time and whether the action that follows remains coherent with the communicated decision.",
+    image: "/home/alignment-signal.svg",
+  },
+  {
+    id: 3,
+    title: "Alignment Spectrum",
+    heading:"Makes the Wider Pattern Visible",
+    description:
+      "Brings signals from across hiring interactions together to reveal alignment patterns across the hiring ecosystem.",
+    image: "/home/alignment-spectrum.svg",
+  },
+];
+
+export default function AlignmentEngine() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const activeCard = alignmentData[activeIndex];
+
+  return (
+    <section className="w-full px-[5%] py-[10%] md:py-[5%]">
+      <div className="mx-auto grid grid-cols-1 gap-md md:grid-cols-[1.1fr_0.6fr_1fr] md:items-center">
+        {/* =====================================================
+            LEFT CONTENT
+        ===================================================== */}
+        <div className="text-white">
+         <h2 className="text-h2 font-extrabold leading-tight">
+  The {" "}
+  <br className="hidden md:block" />
+  Alignment  {" "}
+  <br className="hidden md:block" />
+  Engine 
+</h2>
+
+          <p className="mt-sm md:mt-xs font-medium text-base text-white">
+            Connect EC’s proprietary Alignment
+            <br />
+            Architecture makes Alignment Intelligence
+            <br />
+            actionable through three connected
+            <br />
+            behavioural mechanisms.
+          </p>
+        </div>
+
+        {/* =====================================================
+            TABS
+        ===================================================== */}
+        <div className="flex flex-col gap-sm">
+          {alignmentData.map((item, index) => {
+            const isActive = activeIndex === index;
+
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`
+                  group
+                  flex
+                  
+                  md:flex-col
+                  items-center
+
+                  md:items-start
+                  md:justify-center
+                  gap-xl
+                  md:gap-0
+                  rounded-md
+                  border
+                  p-md
+                  text-left
+                  transition-all
+                  duration-300
+                  ${
+                    isActive
+                      ? "border-white bg-white text-[#0868D8]"
+                      : "border-white/80 bg-transparent text-white hover:bg-white/10"
+                  }
+                `}
+              >
+                {/* Number */}
+                <span
+                  className={`
+                    sm:mb-sm
+                    flex
+                    size-iconsize-sm
+                    items-center
+                    justify-center
+                    rounded-[5px]
+                    md:rounded-[8px]
+                    text-xl
+                    md:text-md
+                    font-bold
+                    p-3 md:p-sm                  
+                    ${
+                      isActive
+                        ? "bg-[#0873E8] text-white"
+                        : "bg-transparent text-white"
+                    }
+                  `}
+                >
+                  {item.id}
+                </span>
+
+                {/* Title */}
+                <span className="text-base font-bold">
+                  {item.title}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* =====================================================
+            ANIMATED CARD
+        ===================================================== */}
+          <div className="mt-md md:mt-0 relative h-full overflow-hidden rounded-md ">
+  <AnimatePresence mode="wait">
+    <motion.article
+      key={activeCard.id}
+      initial={{
+        y: activeIndex === 0 ? 30 : 80,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      exit={{
+        y: -80,
+        opacity: 0,
+      }}
+      transition={{
+        duration: 0.45,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="
+      md:h-[clamp(300px,calc(360_/_var(--width)*100vw),1900px)]
+        w-full
+        rounded-md
+        bg-white
+        flex
+        flex-col
+        p-md
+      "
+    >
+      {/* =================================================
+          IMAGE
+      ================================================= */}
+
+    <div className="w-full overflow-hidden rounded-md">
+  <img
+    src={activeCard.image}
+    alt={activeCard.title}
+    className="
+      block
+      w-full
+      lg:h-[clamp(160px,calc(220_/_var(--width)*100vw),800px)]
+      rounded-md
+      object-cover
+    "
+  />
+</div>
+
+      {/* =================================================
+          CONTENT
+      ================================================= */}
+
+      <div className="mt-xs shrink-0 ">
+        <h3 className="text-h6 font-bold">
+          {activeCard.heading}
+        </h3>
+
+        <p className="mt-1 text-xl font-medium">
+          {activeCard.description}
+        </p>
+      </div>
+    </motion.article>
+  </AnimatePresence>
+</div>
+      </div>
+    </section>
+  );
+}
