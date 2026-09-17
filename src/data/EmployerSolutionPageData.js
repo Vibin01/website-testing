@@ -124,11 +124,7 @@ export const easyCalibrator = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Read overall progress",
             "Examine Primary Skills",
@@ -1248,11 +1244,7 @@ export const easyNavigator = {
         description:
           "Start with the signals establishing the current alignment and misalignment picture—creating an organization-wide view before moving into the key areas behind the pattern.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Alignment score",
             "Stage misalignment",
@@ -1260,11 +1252,7 @@ export const easyNavigator = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Assess alignment",
             "Compare stages",
@@ -1280,11 +1268,7 @@ export const easyNavigator = {
         description:
           "Move from the organization-wide picture to the context where misalignment requires attention—revealing the level, department, location, skill, or recruiter most affected.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Context concentration",
             "Driver distribution",
@@ -1292,11 +1276,7 @@ export const easyNavigator = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Narrow the context",
             "Separate drivers",
@@ -1312,11 +1292,7 @@ export const easyNavigator = {
         description:
           "Track changing drivers over time to understand whether their influence is strengthening, weakening, or shifting—and which changing conditions require closer attention.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Driver trends",
             "Context movement",
@@ -1324,11 +1300,7 @@ export const easyNavigator = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Compare shifts",
             "Recognize emerging patterns",
@@ -1569,11 +1541,7 @@ export const easyPredictor = {
         description:
           "Start with the current risk picture and the time available before conditions intensify—showing how exposure is emerging while there is still an opportunity to intervene.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Risk exposure",
             "Projected loss",
@@ -1581,11 +1549,7 @@ export const easyPredictor = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Assess exposure",
             "Read current confidence",
@@ -1601,11 +1565,7 @@ export const easyPredictor = {
         description:
           "Separate changing risk across interview and offer stages and distinguish levels of exposure—showing where recruiter attention should be focused first.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Interview risk",
             "Offer risk",
@@ -1613,11 +1573,7 @@ export const easyPredictor = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Compare stages",
             "Separate risk levels",
@@ -1633,11 +1589,7 @@ export const easyPredictor = {
         description:
           "Prioritize exposed candidates and estimate how much intervention time earlier alignment visibility may create—helping recruiters act early before risk becomes an outcome.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Candidate risk",
             "Recruiter ownership",
@@ -1645,11 +1597,7 @@ export const easyPredictor = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Prioritize candidates",
             "Focus recruiter attention",
@@ -1889,11 +1837,7 @@ export const easyRoleTracker = {
         description:
           "Keep open requirements connected to their age, location, recruiter ownership, and hiring activity, providing the context needed to understand whether each role is moving.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Role context",
             "Recruiter ownership",
@@ -1901,11 +1845,7 @@ export const easyRoleTracker = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Review open roles",
             "Compare role age",
@@ -1921,11 +1861,7 @@ export const easyRoleTracker = {
         description:
           "Use current activity, role age, schedules, offers, and joining progress to identify where momentum is weakening, and distinguish routine movement from a new hiring stall.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Active roles",
             "Stalled roles",
@@ -1933,11 +1869,7 @@ export const easyRoleTracker = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Spot inactivity",
             "Recognize slowdown",
@@ -1953,11 +1885,7 @@ export const easyRoleTracker = {
         description:
           "Connect the requirement to what is blocking progress, who owns it, and what needs to happen next—turning a role slowdown into clear direction for restoring role momentum.",
         see: {
-<<<<<<< HEAD
-          label: "Makes Visible",
-=======
           label: "MAKES VISIBLE",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Role blockers",
             "Priority signals",
@@ -1965,11 +1893,7 @@ export const easyRoleTracker = {
           ],
         },
         act: {
-<<<<<<< HEAD
-          label: "Enables",
-=======
           label: "ENABLES",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           items: [
             "Unblock delay",
             "Prioritize roles",

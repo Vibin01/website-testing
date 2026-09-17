@@ -46,11 +46,7 @@ export const HeroSection = ({
               },
             },
           }}
-<<<<<<< HEAD
           className="text-center text-base font-extrabold border border-[#B2D0F6] bg-[#F2F8FF] text-[#0668E1] py-xs px-lg rounded-full"
-=======
-          className="text-center text-h5 font-extrabold border border-[#B2D0F6] bg-[#F2F8FF] text-[#0668E1] py-sm px-lg rounded-full"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         >
           {title}
         </motion.p>
@@ -71,11 +67,7 @@ export const HeroSection = ({
               },
             },
           }}
-<<<<<<< HEAD
           className="text-center text-h1 font-extrabold text-primary"
-=======
-          className="text-center text-h1 font-extrabold"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         >
           {subTitle}
 

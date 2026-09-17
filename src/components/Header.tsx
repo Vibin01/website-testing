@@ -119,22 +119,12 @@ export const Header = () => {
       >
         <nav className="relative z-[9999] flex w-full items-center justify-between border-b border-[#D1E5FF] bg-[#FFFFFF33] px-3 py-6 md:border-[#E5E5E5] md:bg-[#FFFFFF66] md:py-4 lg:px-4 lg:text-[14px] xl:px-6 xl:text-[18px] 2xl:px-8 2xl:text-[24px]">
           <div className="flex items-center lg:w-1/5">
-<<<<<<< HEAD
             <Link href="https://connectec.app/" aria-label="Connect EC Home">
               <Image
                 src="/Connect_EC_Logo.svg"
                 alt="Connect EC Logo"
                 width={280}
                 height={100}
-=======
-            <Link href="https://connectec.app/">
-              <Image
-                src="/Connect_EC_Logo.svg"
-                alt="Logo"
-                width={280}
-                height={100}
-                priority
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                 loading="eager"
                 className="h-auto w-[65%] cursor-pointer object-contain md:w-full xl:min-w-[200px] 2xl:min-w-[280px]"
               />
@@ -291,10 +281,7 @@ export const Header = () => {
                               key={item.label}
                               href={item.login}
                               target="_blank"
-<<<<<<< HEAD
                               aria-label={`Login as ${item.label}`}
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                               className={`
           cursor-pointer
           group
@@ -377,11 +364,7 @@ export const Header = () => {
                               key={item.label}
                               href={item.register}
                               target="_blank"
-<<<<<<< HEAD
                               aria-label={`Register as ${item.label}`}
-=======
-                              
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                               className={`
           cursor-pointer
           group

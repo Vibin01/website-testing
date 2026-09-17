@@ -220,11 +220,7 @@ function MobileAccordion({
         onClick={onToggle}
         className="flex w-full items-center justify-between text-left"
       >
-<<<<<<< HEAD
         <span className="text-base font-bold text-[#1B1C17]">{title}</span>
-=======
-        <h3 className="text-base font-bold text-[#1B1C17]">{title}</h3>
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         {isOpen ? (
           <ChevronUp className="h-5 w-5 text-[#1B1C17]" />
         ) : (
@@ -276,15 +272,9 @@ function DesktopView({
             className="size-iconsize-xl"
           />
 
-<<<<<<< HEAD
           <h2 className="text-h2 font-extrabold text-[#1B1C17]">
             {activeCard.title}
           </h2>
-=======
-          <h1 className="text-h2 font-extrabold text-[#1B1C17]">
-            {activeCard.title}
-          </h1>
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         </div>
 
         {/* Main Card */}
@@ -357,15 +347,9 @@ useEffect(() => {
       {/* Header */}
       <div className="mb-sm flex items-center gap-[3%]">
         <img src={activeCard.icon} alt={activeCard.title} className="size-8" />
-<<<<<<< HEAD
         <h2 className="text-h2 font-extrabold text-[#1B1C17]">
           {activeCard.title}
         </h2>
-=======
-        <h1 className="text-h2 font-extrabold text-[#1B1C17]">
-          {activeCard.title}
-        </h1>
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
       </div>
 
       <div className="rounded-lg border border-[#DDECFF] bg-white p-md">

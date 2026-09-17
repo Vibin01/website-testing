@@ -1,25 +1,18 @@
 "use client";
 
 import { useState } from "react";
-<<<<<<< HEAD
 import Image from "next/image";
 import { X, ArrowRight } from "lucide-react";
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 import Calibrator, { leverCards } from "./Calibrator";
 
 const quarterlyTarget = 120;
 const baseHires = 104;
 
-<<<<<<< HEAD
 interface EasyCalibratorProps {
   onClose?: () => void;
 }
 
 export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
-=======
-export default function EasyCalibrator() {
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
   const [ranges, setRanges] = useState(leverCards.map(() => 0));
 
   const getValue = (val: string) => parseInt(val) || 0;
@@ -34,7 +27,6 @@ export default function EasyCalibrator() {
 
   const projectedHires = baseHires + addedHires;
   const hiresGap = Math.max(quarterlyTarget - projectedHires, 0);
-<<<<<<< HEAD
 
   const isTargetReached = projectedHires >= quarterlyTarget;
   const isTargetExceeded = projectedHires > quarterlyTarget;
@@ -213,92 +205,6 @@ export default function EasyCalibrator() {
             </span>
           </div>
         </div>
-=======
-  // const isTargetReached = hiresGap === 0;
-
-  const excessHires = Math.max(projectedHires - quarterlyTarget, 0);
-const isTargetReached = projectedHires >= quarterlyTarget;
-const isTargetExceeded = projectedHires > quarterlyTarget;
-
-  const summaryCards = [
-    {
-      value: quarterlyTarget,
-      label: "Quarterly Target",
-      bg: "bg-[#EEF6FF]",
-      border: "border-[#B2D0F6]",
-      text: "text-[#0668E1]",
-    },
-    {
-      value: projectedHires,
-      label: "Forecast Hires",
-      bg: "bg-[#E7FFF3]",
-      border: "border-[#9ADFA9]",
-      text: "text-[#2B9B43]",
-    },
-    {
-      value: hiresGap,
-      label: isTargetExceeded
-    ? "Target Exceeded"
-    : isTargetReached
-    ? "Target Reached"
-    : "Hiring Gap",
-      bg: isTargetReached ? "bg-[#E7FFF3]" : "bg-[#FFF4F2]",
-      border: isTargetReached ? "border-[#9ADFA9]" : "border-[#FFD3CA]",
-      text: isTargetReached ? "text-[#2B9B43]" : "text-[#F0431D]",
-    },
-  ];
-
-  return (
-    <div className="mx-auto">
-      <h1 className="text-h2 font-extrabold text-[#1B1C17]">
-        Easy Calibrator
-      </h1>
-
-      <p className="mt-2 text-base font-bold text-[#1B1C17]">
-        The Hiring Alignment control System.
-      </p>
-
-      <p className="mt-2 text-base font-medium text-[#1B1C17]">
-     Identify where hiring performance is drifting, understand which interventions will have the greatest impact, and see how those changes improve target achievement. </p>
-
-      <p className="mt-2 text-base font-medium text-[#1B1C17]">
-        Based on current pipeline performance and conversion signals.
-      </p>
-
-      <div className="grid grid-cols-3 gap-[clamp(8px,calc(16/var(--width)*100vw),40px)] mt-6">
-        {summaryCards.map((card, index) => (
-          <div
-            key={index}
-            className={`${card.bg} ${card.border} flex md:flex-row flex-col justify-center rounded-md border p-4 text-center`}
-          >
-           <div
-  className={`text-h2 block font-extrabold md:text-nowrap ${card.text}`}
->
-  {!(index === 2 && isTargetReached) && (
-    <span className="exo-2">
-      {card.value}
-    </span>
-  )}
-
-  <span
-    className={`text-base font-medium ${
-      !(index === 2 && isTargetReached) ? "md:pl-[3%]" : ""
-    } block md:inline-block`}
-  >
-    {card.label}
-  </span>
-</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="font-medium flex justify-center items-center text-center gap-[clamp(8px,calc(16/var(--width)*100vw),40px)] mt-6 text-base text-[#1B1C17]">
-        <span className="flex-1">Use Easy Calibrator </span>
-        <span>→</span>
-        <span className="flex-1">System Calculates</span>
-        <span>→</span>
-        <span className="flex-1">Achieve Targets</span>
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
       </div>
 
       <Calibrator ranges={ranges} setRanges={setRanges} />

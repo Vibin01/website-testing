@@ -53,11 +53,7 @@ export default function PredictorHeroSection({
                   },
                 },
               }}
-<<<<<<< HEAD
               className="text-center text-base font-extrabold border border-[#B2D0F6] bg-[#F2F8FF] text-[#0668E1] py-xs px-lg rounded-full"
-=======
-              className="text-center text-h5 font-extrabold border border-[#B2D0F6] bg-[#F2F8FF] text-[#0668E1] py-sm px-lg rounded-full"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             >
               {title}
             </motion.p>
@@ -78,11 +74,7 @@ export default function PredictorHeroSection({
                   },
                 },
               }}
-<<<<<<< HEAD
               className="text-center text-h1 font-extrabold text-primary"
-=======
-              className="text-center text-h1 font-extrabold"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             >
               {subTitle}
     
@@ -163,19 +155,12 @@ export default function PredictorHeroSection({
               }}
               type="button"
               onClick={() => setIsCalculatorOpen(true)}
-<<<<<<< HEAD
               className="group flex justify-center cursor-pointer items-center font-bold border-2 border-[#0668E1] text-[#0668E1] text-xl w-fit h-btn-h rounded-md px-lg transition-all duration-500 ease-out hover:bg-[#F2F8FF] hover:shadow-[0_8px_25px_rgba(6,104,225,0.15)]"
             >
               <span className="whitespace-nowrap">Calculate Intervention Time</span>
               <span className="inline-flex max-w-0 -translate-x-4 items-center overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:max-w-8 group-hover:ml-2 group-hover:translate-x-0 group-hover:opacity-100">
                 <ArrowRight className="size-iconsize-sm shrink-0 text-[#0668E1]" />
               </span>
-=======
-              className="group gap-xs flex justify-center cursor-pointer items-center  cursor-pointer font-bold border-2 border-[#0668E1] text-[#0668E1] text-xl w-fit h-btn-h rounded-md px-lg"
-            >
-              <span>Calculate Intervention Time</span>
-              <ArrowRight className="size-iconsize-sm text-primary" />
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             </motion.button>
             </div>
           </motion.div>

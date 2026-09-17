@@ -7,10 +7,7 @@ import { usePathname } from "next/navigation";
 import { toast } from "sonner";
 import { TriangleAlert } from "lucide-react";
 import { ShowDesktopWarning } from "./Toast/ShowDesktopWarning";
-<<<<<<< HEAD
 import { GradientButton } from "./Button/GradientButton";
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
 type OutcomeHighlightSectionData = {
   title: string;
@@ -122,63 +119,10 @@ const isEmployer = pathname.includes("employer");
               </h3>
             )}
           </div>
-<<<<<<< HEAD
         
         <div className="mt-md">
         <GradientButton text={"Unlock Connect EC for Free"}/>
         </div>
-=======
-         <>
-    {/* Mobile Candidate & Recruiter */}
-    {(isCandidate || isRecruiter) && (
-      <Link
-        href="https://play.google.com/store/apps/details?id=com.primethic.connectec"
-        target="_blank"
-        className="md:hidden w-fit mt-lg h-btn-h text-nowrap group bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer  rounded-md px-md py-sm flex items-center justify-center gap-sm"
-      >
-        <span className="font-bold text-xl text-white">
-          Unlock Connect EC for Free
-        </span>
-
-        <FaArrowRight className="text-white text-base" />
-      </Link>
-    )}
-
-    {/* Mobile Employer */}
-    {isEmployer && (
-      <button
-        type="button"
-        onClick={showDesktopWarning}
-        className="md:hidden w-fit mt-lg h-btn-h text-nowrap group bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer rounded-md px-md py-sm flex items-center justify-center gap-sm"
-      >
-        <span className="font-bold text-xl text-white">
-          Unlock Connect EC for Free
-        </span>
-
-        <FaArrowRight className="text-white text-base" />
-      </button>
-    )}
-
-    {/* Desktop */}
-    <Link
-      href={
-        isCandidate
-          ? "https://play.google.com/store/apps/details?id=com.primethic.connectec"
-          : isRecruiter
-            ? "https://recruiter.connectec.app/register"
-            : "https://employer.connectec.app/register"
-      }
-      target="_blank"
-      className="hidden md:flex w-fit mt-lg h-btn-h text-nowrap group bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] cursor-pointer rounded-md px-md py-sm items-center justify-center gap-sm"
-    >
-      <span className="font-bold text-xl text-white">
-        Unlock Connect EC for Free
-      </span>
-
-      <FaArrowRight className="text-white text-base" />
-    </Link>
-  </>
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         </div>
 
         {/* Right Image */}

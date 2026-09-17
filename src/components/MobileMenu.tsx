@@ -90,16 +90,10 @@ export default function MobileMenu({
               alt="Logo"
               width={150}
               height={40}
-<<<<<<< HEAD
-=======
-              loading="eager"
-              priority
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
               className="h-auto w-[160px]"
             />
           </div>
 
-<<<<<<< HEAD
           <button
             type="button"
             onClick={() => setIsMenuOpen(false)}
@@ -108,12 +102,6 @@ export default function MobileMenu({
           >
             <X className="size-iconsize-xl" />
           </button>
-=======
-          <X
-            onClick={() => setIsMenuOpen(false)}
-            className="size-iconsize-xl cursor-pointer text-[#1B1C17]"
-          />
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
         </div>
 
         {/* Menu */}
@@ -497,7 +485,6 @@ export default function MobileMenu({
               Log in/Sign up
             </h2>
 
-<<<<<<< HEAD
             <button
               type="button"
               onClick={() => setShowAuthSheet(false)}
@@ -506,12 +493,6 @@ export default function MobileMenu({
             >
               <X className="size-8" />
             </button>
-=======
-            <X
-              onClick={() => setShowAuthSheet(false)}
-              className="size-8 cursor-pointer text-[#B3B3B3]"
-            />
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           </div>
 
           <div className="flex flex-col gap-4 p-md">
@@ -519,10 +500,7 @@ export default function MobileMenu({
               <Link
                 key={item.label}
                 href={item.login}
-<<<<<<< HEAD
                 aria-label={`Log in as ${item.label}`}
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                 className={`flex items-center gap-4 rounded-md border p-4 transition hover:border hover:border-[#B9D8FF] hover:bg-[#F4F8FF]  border-transparent`}
               >
                 <img

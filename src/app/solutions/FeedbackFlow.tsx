@@ -309,23 +309,15 @@ const goPrevious = () => {
               p-md
               shadow-mobile-medium
               md:shadow-web-medium
-<<<<<<< HEAD
               flex
               flex-col
-=======
-              
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             "
           >
 
 
               <div
                 
-<<<<<<< HEAD
                 className="flex flex-col flex-1 h-full"
-=======
-                className="h-full"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
               >
 
                 {/* BADGE */}
@@ -384,12 +376,9 @@ const goPrevious = () => {
                     border-[#B2D0F6]
                     bg-[#F2F8FF]
                     p-sm
-<<<<<<< HEAD
                     flex-1
                     md:flex-none
                     md:h-auto
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                   "
                 >
 
@@ -402,11 +391,7 @@ const goPrevious = () => {
                         shrink-0
                         text-xl
                         font-bold
-<<<<<<< HEAD
                         
-=======
-                        text-[#0868E1]
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                       "
                     >
                       {currentStep.see.label || "See"}
@@ -442,27 +427,13 @@ const goPrevious = () => {
                             {index !==
                               currentStep.see.items.length -
                                 1 && (
-<<<<<<< HEAD
                               
-=======
-                              (currentStep.separator === "double" || data.separator === "double") ? (
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                                 <ChevronsRight
                                   size={18}
                                   strokeWidth={2}
                                   className="mx-2 text-[#777777]"
                                 />
-<<<<<<< HEAD
                               
-=======
-                              ) : (
-                                <ChevronRight
-                                  size={22}
-                                  strokeWidth={1.8}
-                                  className="mx-2 text-[#777777]"
-                                />
-                              )
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                             )}
 
                           </div>
@@ -527,26 +498,12 @@ const goPrevious = () => {
                             {index !==
                               currentStep.act.items.length -
                                 1 && (
-<<<<<<< HEAD
-=======
-                              (currentStep.separator === "double" || data.separator === "double") ? (
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                                 <ChevronsRight
                                   size={18}
                                   strokeWidth={2}
                                   className="mx-2 text-[#777777]"
                                 />
-<<<<<<< HEAD
                              
-=======
-                              ) : (
-                                <ChevronRight
-                                  size={22}
-                                  strokeWidth={1.8}
-                                  className="mx-2 text-[#777777]"
-                                />
-                              )
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                             )}
 
                           </div>

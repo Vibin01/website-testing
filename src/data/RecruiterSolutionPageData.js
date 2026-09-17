@@ -917,11 +917,7 @@ feedbackAlignmentData : {
     {
       id: "02",
       title: "signals",
-<<<<<<< HEAD
       icon: "/solutions/recruiter/signals-icon.svg",
-=======
-      icon: "/solutions/recruiter/Signals-icon.svg",
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
     },
 
     {

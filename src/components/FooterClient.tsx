@@ -39,7 +39,6 @@ export default function FooterClient({
               <div className=" w-[100%]  flex flex-col lg:flex-row justify-center  md:justify-between  lg:items-end gap-6">
                 <div className=" mt-10 lg:mt-0 px-[2%]- mb-2 lg:mb-0">
                   <div className="flex justify-center lg:justify-start mb-4">
-<<<<<<< HEAD
                     <Link href={"https://connectec.app/"} aria-label="Connect EC Homepage">
                       <Image
                         src="/Connect_EC_Logo-white.svg"
@@ -47,15 +46,6 @@ export default function FooterClient({
                         width={200}
                         height={200}
                         className="h-auto mb-8 w-auto max-w-[300px] cursor-pointer"
-=======
-                    <Link href={"https://connectec.app/"}>
-                      <Image
-                        src="/Connect_EC_Logo-white.svg"
-                        alt="Logo"
-                        width={200}
-                        height={200}
-                        className="h-auto  mb-8 w-auto max-w-[300px] cursor-pointer"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                       />
                     </Link>
                   </div>
@@ -75,10 +65,7 @@ export default function FooterClient({
                       "https://play.google.com/store/apps/details?id=com.primethic.connectec"
                     }
                     target="_blank"
-<<<<<<< HEAD
                     aria-label="Download Connect EC App on Google Play"
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                   >
                     <Image
                       src="/googleplay.svg"
@@ -91,35 +78,24 @@ export default function FooterClient({
                   </Link>
 
                   {/* Social Icons */}
-<<<<<<< HEAD
                   <div className="mt-3 lg:mt-0 flex items-center gap-3 lg:gap-6 lg:text-xl">
-=======
-                  <div className="mt-3 lg:mt-0 flex items-center gap-3 lg:gap-6  lg:text-xl">
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                     <div className="p-2 bg-[#FFFFFF1A] rounded-full">
                       <Link
                         href={
                           "https://www.linkedin.com/company/connect-ec-app/about/"
                         }
                         target="_blank"
-<<<<<<< HEAD
                         aria-label="Connect EC on LinkedIn"
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                       >
                         <ImLinkedin2 />
                       </Link>
                     </div>
                     <div className="p-2 bg-[#FFFFFF1A] rounded-full">
-<<<<<<< HEAD
                       <Link
                         href={"https://connectec.blog"}
                         target="_blank"
                         aria-label="Connect EC Blog on Medium"
                       >
-=======
-                      <Link href={"https://connectec.blog"} target="_blank">
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                         <FaMediumM />
                       </Link>
                     </div>
@@ -128,10 +104,7 @@ export default function FooterClient({
                       <Link
                         href={"https://www.youtube.com/@TeamConnectEC"}
                         target="_blank"
-<<<<<<< HEAD
                         aria-label="Connect EC on YouTube"
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                       >
                         <FaYoutube />
                       </Link>
@@ -139,16 +112,10 @@ export default function FooterClient({
                     <div className="p-2 bg-[#FFFFFF1A] rounded-full">
                       <Link
                         href={
-<<<<<<< HEAD
                           "https://www.instagram.com/team_connect_ec/?hl=en"
                         }
                         target="_blank"
                         aria-label="Connect EC on Instagram"
-=======
-                          " https://www.instagram.com/team_connect_ec/?hl=en"
-                        }
-                        target="_blank"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                       >
                         <FaInstagram />
                       </Link>
@@ -176,15 +143,9 @@ export default function FooterClient({
               </div>
             </div>
             <div className="bg-[#FFFFFF1A] -mx-[8%] md:-mx-[5%]  flex flex-col items-center justify-center py-3 md:py-[2%]">
-<<<<<<< HEAD
               <p className=" text-lg font-normal flex flex-col justify-center items-center ">
                 <span>
                   <Link href="https://primethic.com/" target="_blank" aria-label="Primethic Private Limited">
-=======
-              <p className=" text-lg  font-normal flex flex-col justify-center items-center ">
-                <span>
-                  <Link href="https://primethic.com/" target="_blank">
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                     © Copyright Primethic Private Limited{" "}
                   </Link>
                   {new Date().getFullYear()}. All Rights Reserved.
@@ -195,11 +156,7 @@ export default function FooterClient({
                 and owned by Primethic Private Limited. Unauthorized use,
                 reproduction, or distribution is strictly prohibited.
               </p>
-<<<<<<< HEAD
               <p className="text-[5px] lg:text-[9px] mt-[1%] text-white/90"> {children}</p>
-=======
-              <p className="text-[5px] lg:text-[9px] mt-[1%] "> {children}</p>
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             </div>
           </footer>
         )}

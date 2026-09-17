@@ -94,11 +94,7 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
   ];
 
   return (
-<<<<<<< HEAD
     <div className="grid md:grid-cols-[1.3fr_0.7fr] gap-md mt-lg">
-=======
-    <div className="grid md:grid-cols-[1.3fr_0.7fr] gap-6 mt-6">
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
       {/* LEFT SIDE */}
       <div className="space-y-6">
         {leverCards.map((card, index) => {
@@ -125,7 +121,6 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
               </div>
 
               {/* SLIDER */}
-<<<<<<< HEAD
               <div className="relative flex items-center w-full mt-3 h-6">
                 {/* Track Line: Primary active, gray-300 inactive */}
                 <div
@@ -155,20 +150,6 @@ export default function Calibrator({ ranges, setRanges }: CalibratorProps) {
                     active:[&::-moz-range-thumb]:bg-[#0668E1] focus:[&::-moz-range-thumb]:bg-[#0668E1]"
                 />
               </div>
-=======
-              <input
-                type="range"
-                min={0}
-                max={3}
-                value={ranges[index]}
-                onChange={(e) => {
-                  const newRanges = [...ranges];
-                  newRanges[index] = Number(e.target.value);
-                  setRanges(newRanges);
-                }}
-                className="mt-3 w-full"
-              />
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
               {/* ITEMS */}
               {ranges[index] > 0 && (

@@ -1,9 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
 import { Fragment } from "react";
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 import { motion, type Variants } from "framer-motion";
 
 /* ============================================================
@@ -141,11 +138,7 @@ export const FeedbackChallenge = ({data}:{data:FeedbackChallengeData}) => {
             className="
               font-bold
               text-[#0668E1]
-<<<<<<< HEAD
               text-base
-=======
-              text-h5
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             "
           >
             {data.eyebrow}
@@ -222,11 +215,7 @@ export const FeedbackChallenge = ({data}:{data:FeedbackChallengeData}) => {
                 border
                 border-[#DEEDFF]
                 bg-white
-<<<<<<< HEAD
                 p-sm
-=======
-                p-md
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                 shadow-mobile-medium
                 md:shadow-web-medium
 
@@ -294,7 +283,6 @@ export const FeedbackChallenge = ({data}:{data:FeedbackChallengeData}) => {
                     mt-sm
                     text-base
                     font-bold
-<<<<<<< HEAD
                   "
                 >
                   {card.heading
@@ -307,12 +295,6 @@ export const FeedbackChallenge = ({data}:{data:FeedbackChallengeData}) => {
                         {index < arr.length - 1 && <br />}
                       </Fragment>
                     ))}
-=======
-                    
-                  "
-                >
-                  {card.heading}
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                 </h4>
 
                 {/* INNER DESCRIPTION */}

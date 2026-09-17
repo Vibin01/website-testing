@@ -124,13 +124,8 @@ export default function ActorCards() {
               {/* BEGIN WITHIN */}
 
               <Link
-<<<<<<< HEAD
                 href={`/resources/alignment-test/register?mode=single&phase=uncertainty&role=${actor.role.toLowerCase()}`}
                 aria-label={`Alignment begins within for ${actor.role}`}
-=======
-              href={`/resources/alignment-test/register?mode=single&phase=uncertainty&role=${actor.role.toLowerCase()}`}
-                type="button"
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                 className="
                 group
                   flex
@@ -177,10 +172,7 @@ export default function ActorCards() {
                   <button
                     type="button"
                     onClick={showDesktopWarning}
-<<<<<<< HEAD
                     aria-label={`Alignment continues across for ${actor.role}`}
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                     className="
                       group
                       flex
@@ -222,10 +214,7 @@ export default function ActorCards() {
                   <Link
                     href={actor.acrossLink}
                     target="_blank"
-<<<<<<< HEAD
                     aria-label={`Alignment continues across for ${actor.role}`}
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                     className="
                       group
                       hidden
@@ -266,10 +255,7 @@ export default function ActorCards() {
                 <Link
                   href={actor.acrossLink}
                   target="_blank"
-<<<<<<< HEAD
                   aria-label={`Alignment continues across for ${actor.role}`}
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                   className="
                     group
                     flex

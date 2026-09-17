@@ -144,11 +144,7 @@ function ProcessTabLine({
             ],
           }}
           transition={{
-<<<<<<< HEAD
             duration: 7,
-=======
-            duration: 8,
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             times: [
               0,
               0.90,
@@ -728,11 +724,7 @@ function WithinActor({
           top-[clamp(70px,calc(120_/_var(--width)*100vw),400px)]
           z-50
           -translate-x-1/2
-<<<<<<< HEAD
           text-[clamp(12px,1vw,16px)]
-=======
-          text-[clamp(13px,1vw,16px)]
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
           font-extrabold
           tracking-tight
           text-[#0668E1]
@@ -850,12 +842,8 @@ function WithinActor({
           className="
             mt-[clamp(6px,0.75vw,12px)]
             whitespace-nowrap
-<<<<<<< HEAD
             text-xl
             sm:text-base
-=======
-            text-base
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             font-extrabold
             uppercase
           "
@@ -1130,11 +1118,7 @@ export default function AlignmentTabs() {
   // PROCESS
   //
   // WITHIN  → 8 sec
-<<<<<<< HEAD
   // ACROSS  → 7 sec
-=======
-  // ACROSS  → 8 sec
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
   // ALIGNED
   // ==========================================================
 
@@ -1145,11 +1129,8 @@ export default function AlignmentTabs() {
       return;
     }
 
-<<<<<<< HEAD
     const delay = processState === "across" ? 7000 : 8000;
 
-=======
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
     const timer = setTimeout(() => {
       if (
         processState === "within"
@@ -1162,11 +1143,7 @@ export default function AlignmentTabs() {
       ) {
         setProcessState("aligned");
       }
-<<<<<<< HEAD
     }, delay);
-=======
-    }, 8000);
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
 
     return () => {
       clearTimeout(timer);
@@ -1428,11 +1405,7 @@ export default function AlignmentTabs() {
                 pr-lg
               "
             >
-<<<<<<< HEAD
               <h2
-=======
-              <h3
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
                 className="
                   flex
                   items-center
@@ -1470,11 +1443,7 @@ export default function AlignmentTabs() {
                     />
                   </span>
                 </span>
-<<<<<<< HEAD
               </h2>
-=======
-              </h3>
->>>>>>> 9a490c05fe492c1b6ea227b018957e550718f11d
             </div>
           </motion.div>
     </section>
