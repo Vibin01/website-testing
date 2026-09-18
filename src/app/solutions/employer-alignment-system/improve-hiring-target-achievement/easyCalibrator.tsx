@@ -32,27 +32,17 @@ export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
   const isTargetExceeded = projectedHires > quarterlyTarget;
 
   return (
-    <div className="relative w-full bg-white rounded-lg p-md md:p-lg border border-[#D3E6FF]">
-      {/* Close button */}
-      {onClose && (
-        <button
-          onClick={onClose}
-          type="button"
-          aria-label="Close dialog"
-          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-1 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:text-gray-700 hover:border-gray-500 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0066FF]/20 z-10"
-        >
-          <X className="size-iconsize-sm" />
-        </button>
-      )}
+    <div className="relative w-full">
+      
 
       {/* Header */}
-      <div className="w-full text-center flex flex-col items-center justify-center mt-4 sm:mt-0 mb-6 sm:mb-8">
+      <div className="w-full text-center flex flex-col items-center justify-center mt-10 md:mt-0 mb-6 sm:mb-8">
         <p className="text-xl font-bold tracking-wider text-primary uppercase text-center">
           TARGET ALIGNMENT CALCULATOR
         </p>
 
         <h2 className="text-h2 font-extrabold mt-2 text-[#1B1C17] tracking-tight text-center">
-          See the Gap. <span className="text-primary">Calibrate the Response.</span>
+          See the Gap. <span className="text-primary block md:inline">Calibrate the Response.</span>
         </h2>
 
         <p className="mt-3 text-base font-medium text-[#4A4A4A] w-full md:w-[70%] text-center leading-relaxed">
@@ -61,13 +51,13 @@ export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-md mt-lg">
+      <div className="grid grid-cols-3 gap-sm md:gap-md mt-lg">
         {/* Card 1: Quarterly Target */}
         <div className="bg-[#F0F7FF] border border-[#B2D0F6] rounded-2xl py-6 px-4 flex flex-col items-center justify-center text-center shadow-xs">
-          <span className="text-[38px] md:text-[44px] font-extrabold text-primary exo-2 leading-none">
+          <span className="text-h2 font-extrabold text-primary exo-2 leading-none">
             {quarterlyTarget}
           </span>
-          <span className="text-base font-bold text-primary mt-2.5">
+          <span className="text-xl md:text-base font-bold text-primary mt-2.5">
             Quarterly Target
           </span>
         </div>
@@ -81,14 +71,14 @@ export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
           } border rounded-2xl py-6 px-4 flex flex-col items-center justify-center text-center shadow-xs`}
         >
           <span
-            className={`text-[38px] md:text-[44px] font-extrabold exo-2 leading-none ${
+            className={`text-h2 font-extrabold exo-2 leading-none ${
               isTargetReached ? "text-[#1DB05B]" : "text-[#F0431D]"
             }`}
           >
             {projectedHires}
           </span>
           <span
-            className={`text-base font-bold mt-2.5 ${
+            className={`text-xl md:text-base font-bold mt-2.5 ${
               isTargetReached ? "text-[#1DB05B]" : "text-[#F0431D]"
             }`}
           >
@@ -128,7 +118,7 @@ export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
             </div>
           )}
           <span
-            className={`text-base font-bold mt-2.5 ${
+            className={`text-xl md:text-base font-bold mt-2.5 md:text-nowrap ${
               isTargetReached ? "text-[#1DB05B]" : "text-[#F0431D]"
             }`}
           >
@@ -136,7 +126,7 @@ export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
               isTargetExceeded ? "Target Exceeded" : "Target Reached"
             ) : (
               <>
-                <span className="exo-2 font-extrabold">{hiresGap}</span> Hiring Gap
+                <span className="exo-2 font-extrabold px-[1%]">{hiresGap}</span> Hiring Gap
               </>
             )}
           </span>
@@ -169,7 +159,7 @@ export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
         </div>
 
         {/* Step 02 */}
-        <div className="relative flex items-center gap-sm w-full pl-sm">
+        <div className="relative flex items-center gap-sm w-full md:pl-sm">
           <div className="flex items-center justify-center text-xl p-sm rounded-xs bg-[#EEF6FF] text-primary font-extrabold shrink-0">
             02
           </div>
@@ -192,7 +182,7 @@ export default function EasyCalibrator({ onClose }: EasyCalibratorProps) {
         </div>
 
         {/* Step 03 */}
-        <div className="relative flex items-center gap-sm w-full pl-sm">
+        <div className="relative flex items-center gap-sm w-full md:pl-sm">
           <div className="flex items-center justify-center text-xl p-sm rounded-xs bg-[#EEF6FF] text-primary font-extrabold shrink-0">
             03
           </div>

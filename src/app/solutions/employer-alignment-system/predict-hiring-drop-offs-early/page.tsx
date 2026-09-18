@@ -6,6 +6,7 @@ import { FeedbackChallenge } from "../../FeedbackChallenge";
 import FeedbackAlignment from "../../FeedbackAlignment";
 import FeedbackFlow from "../../FeedbackFlow";
 import ImpactSection from "@/components/common/ImpactSection";
+import AlignmentIntentCalculator from "./AlignmentIntentCalculator";
 import { easyPredictor } from "@/data/EmployerSolutionPageData";
 
 export const metadata = {
@@ -64,6 +65,15 @@ const page = () => {
       <div>
         <section className="relative">
           <ImpactSection data={easyPredictor.impactData} />
+        </section>
+      </div>
+
+      <div
+        id="easy-predictor"
+        className="py-[5%] md:py-0 scroll-mt-[80px] lg:scroll-mt-[110px]"
+      >
+        <section className="relative py-[5%] px-[5%]">
+            <AlignmentIntentCalculator />
         </section>
       </div>
 

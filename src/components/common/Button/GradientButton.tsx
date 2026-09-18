@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { ShowDesktopWarning } from "../Toast/ShowDesktopWarning";
+import { cn } from "@/lib/utils";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.primethic.connectec";
@@ -15,6 +16,7 @@ type GradientButtonProps = {
   text: string;
   link?: string;
   className?: string;
+  textClassName?: string;
   onClick?: () => void;
 };
 
@@ -22,6 +24,7 @@ export const GradientButton = ({
   text,
   link,
   className = "",
+  textClassName = "",
   onClick,
 }: GradientButtonProps) => {
   const pathname = usePathname() || "";
@@ -49,7 +52,8 @@ export const GradientButton = ({
         ? link
         : EMPLOYER_URL;
 
-  const buttonStyle = `group flex justify-center cursor-pointer items-center bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] font-bold text-white text-xl w-fit h-btn-h rounded-md px-lg transition-all duration-500 ease-out hover:shadow-[0_8px_25px_rgba(0,117,255,0.35)] hover:brightness-105 ${className}`;
+  const buttonBaseStyle =
+    "group flex justify-center cursor-pointer items-center border-2 border-transparent bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] font-bold text-white text-xl w-fit h-btn-h rounded-md px-lg transition-all duration-500 ease-out hover:shadow-[0_8px_25px_rgba(0,117,255,0.35)] hover:brightness-105";
 
   const renderArrow = () => (
     <span className="inline-flex max-w-0 -translate-x-4 items-center overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:max-w-8 group-hover:ml-2 group-hover:translate-x-0 group-hover:opacity-100">
@@ -67,9 +71,9 @@ export const GradientButton = ({
           rel="noopener noreferrer"
           id={text}
           onClick={onClick}
-          className={`md:hidden ${buttonStyle}`}
+          className={cn(buttonBaseStyle, className, "flex md:hidden")}
         >
-          <span className="whitespace-nowrap">{text}</span>
+          <span className={cn("whitespace-nowrap", textClassName)}>{text}</span>
           {renderArrow()}
         </a>
       )}
@@ -83,9 +87,9 @@ export const GradientButton = ({
             onClick?.();
           }}
           id={text}
-          className={`md:hidden ${buttonStyle}`}
+          className={cn(buttonBaseStyle, className, "flex md:hidden")}
         >
-          <span className="whitespace-nowrap">{text}</span>
+          <span className={cn("whitespace-nowrap", textClassName)}>{text}</span>
           {renderArrow()}
         </button>
       )}
@@ -97,9 +101,9 @@ export const GradientButton = ({
         rel="noopener noreferrer"
         id={text}
         onClick={onClick}
-        className={`hidden md:flex ${buttonStyle}`}
+        className={cn(buttonBaseStyle, className, "hidden md:flex")}
       >
-        <span className="whitespace-nowrap">{text}</span>
+        <span className={cn("whitespace-nowrap", textClassName)}>{text}</span>
         {renderArrow()}
       </a>
     </>

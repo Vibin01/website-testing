@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import AlignmentIntentCalculator from "./AlignmentIntentCalculator";
 import { GradientButton } from "@/components/common/Button/GradientButton";
 
 interface PredictorHeroSectionProps {
@@ -18,7 +16,42 @@ export default function PredictorHeroSection({
   subTitle = "Hiring Outcomes, Aligned.",
   description = "Detect the Shift. Read the Risk. Intervene Earlier.",
 }: PredictorHeroSectionProps) {
-  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToPredictor = () => {
+    const element = document.getElementById("easy-predictor");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
+    useEffect(() => {
+      const sync = () => {
+        if (!containerRef.current) return;
+        const spans = Array.from(
+          containerRef.current.querySelectorAll<HTMLSpanElement>(".btn-text-sync")
+        );
+        spans.forEach((s) => (s.style.minWidth = ""));
+  
+        let maxW = 0;
+        spans.forEach((s) => {
+          const w = s.offsetWidth || s.scrollWidth;
+          if (w > maxW) maxW = w;
+        });
+  
+        if (maxW > 0) {
+          spans.forEach((s) => (s.style.minWidth = `${maxW}px`));
+        }
+      };
+  
+      if (typeof document !== "undefined" && document.fonts) {
+        document.fonts.ready.then(sync);
+      }
+      sync();
+  
+      window.addEventListener("resize", sync);
+      return () => window.removeEventListener("resize", sync);
+    }, []);
 
   return (
     <>
@@ -109,7 +142,7 @@ export default function PredictorHeroSection({
     
             </motion.p>
     
-    <div className="flex flex-col md:flex-row gap-md">
+   <div ref={containerRef} className="flex flex-col md:flex-row gap-md items-center justify-center">
             {/* BUTTON */}
             <motion.div
               variants={{
@@ -132,6 +165,7 @@ export default function PredictorHeroSection({
               <GradientButton
                 text="Unlock Connect EC for Free"
                 link=""
+                textClassName="btn-text-sync inline-block text-center"
               />
             </motion.div>
 
@@ -154,10 +188,10 @@ export default function PredictorHeroSection({
                 },
               }}
               type="button"
-              onClick={() => setIsCalculatorOpen(true)}
+              onClick={scrollToPredictor}
               className="group flex justify-center cursor-pointer items-center font-bold border-2 border-[#0668E1] text-[#0668E1] text-xl w-fit h-btn-h rounded-md px-lg transition-all duration-500 ease-out hover:bg-[#F2F8FF] hover:shadow-[0_8px_25px_rgba(6,104,225,0.15)]"
             >
-              <span className="whitespace-nowrap">Calculate Intervention Time</span>
+              <span className="btn-text-sync inline-block text-center whitespace-nowrap">Calculate Intervention Time</span>
               <span className="inline-flex max-w-0 -translate-x-4 items-center overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:max-w-8 group-hover:ml-2 group-hover:translate-x-0 group-hover:opacity-100">
                 <ArrowRight className="size-iconsize-sm shrink-0 text-[#0668E1]" />
               </span>
@@ -165,25 +199,6 @@ export default function PredictorHeroSection({
             </div>
           </motion.div>
         </section>
-
-      {/* Popup Modal with shadcn Dialog */}
-      <Dialog open={isCalculatorOpen} onOpenChange={setIsCalculatorOpen}>
-        <DialogContent
-          className="w-[90%] md:w-[70%] mx-auto p-0 border-0 bg-transparent shadow-none max-h-[92vh] overflow-y-scroll scrollbar-hidden"
-          showCloseButton={false}
-          onCloseAutoFocus={(e) => e.preventDefault()}
-        >
-          <DialogTitle className="sr-only">
-            Intervention Time Calculator
-          </DialogTitle>
-          <DialogDescription className="sr-only">
-            Estimate how early alignment signals may emerge before an outcome and how much intervention time that earlier visibility may create.
-          </DialogDescription>
-          <AlignmentIntentCalculator
-            onClose={() => setIsCalculatorOpen(false)}
-          />
-        </DialogContent>
-      </Dialog>
     </>
   );
 }

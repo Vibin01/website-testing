@@ -124,7 +124,7 @@ export const easyCalibrator = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Read overall progress",
             "Examine Primary Skills",
@@ -1244,7 +1244,7 @@ export const easyNavigator = {
         description:
           "Start with the signals establishing the current alignment and misalignment picture—creating an organization-wide view before moving into the key areas behind the pattern.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Alignment score",
             "Stage misalignment",
@@ -1252,7 +1252,7 @@ export const easyNavigator = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Assess alignment",
             "Compare stages",
@@ -1268,7 +1268,7 @@ export const easyNavigator = {
         description:
           "Move from the organization-wide picture to the context where misalignment requires attention—revealing the level, department, location, skill, or recruiter most affected.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Context concentration",
             "Driver distribution",
@@ -1276,7 +1276,7 @@ export const easyNavigator = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Narrow the context",
             "Separate drivers",
@@ -1292,7 +1292,7 @@ export const easyNavigator = {
         description:
           "Track changing drivers over time to understand whether their influence is strengthening, weakening, or shifting—and which changing conditions require closer attention.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Driver trends",
             "Context movement",
@@ -1300,7 +1300,7 @@ export const easyNavigator = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Compare shifts",
             "Recognize emerging patterns",
@@ -1541,7 +1541,7 @@ export const easyPredictor = {
         description:
           "Start with the current risk picture and the time available before conditions intensify—showing how exposure is emerging while there is still an opportunity to intervene.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Risk exposure",
             "Projected loss",
@@ -1549,7 +1549,7 @@ export const easyPredictor = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Assess exposure",
             "Read current confidence",
@@ -1565,7 +1565,7 @@ export const easyPredictor = {
         description:
           "Separate changing risk across interview and offer stages and distinguish levels of exposure—showing where recruiter attention should be focused first.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Interview risk",
             "Offer risk",
@@ -1573,7 +1573,7 @@ export const easyPredictor = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Compare stages",
             "Separate risk levels",
@@ -1589,7 +1589,7 @@ export const easyPredictor = {
         description:
           "Prioritize exposed candidates and estimate how much intervention time earlier alignment visibility may create—helping recruiters act early before risk becomes an outcome.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Candidate risk",
             "Recruiter ownership",
@@ -1597,7 +1597,7 @@ export const easyPredictor = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Prioritize candidates",
             "Focus recruiter attention",
@@ -1837,7 +1837,7 @@ export const easyRoleTracker = {
         description:
           "Keep open requirements connected to their age, location, recruiter ownership, and hiring activity, providing the context needed to understand whether each role is moving.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Role context",
             "Recruiter ownership",
@@ -1845,7 +1845,7 @@ export const easyRoleTracker = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Review open roles",
             "Compare role age",
@@ -1861,7 +1861,7 @@ export const easyRoleTracker = {
         description:
           "Use current activity, role age, schedules, offers, and joining progress to identify where momentum is weakening, and distinguish routine movement from a new hiring stall.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Active roles",
             "Stalled roles",
@@ -1869,7 +1869,7 @@ export const easyRoleTracker = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Spot inactivity",
             "Recognize slowdown",
@@ -1885,7 +1885,7 @@ export const easyRoleTracker = {
         description:
           "Connect the requirement to what is blocking progress, who owns it, and what needs to happen next—turning a role slowdown into clear direction for restoring role momentum.",
         see: {
-          label: "MAKES VISIBLE",
+          label: "Makes Visible",
           items: [
             "Role blockers",
             "Priority signals",
@@ -1893,7 +1893,7 @@ export const easyRoleTracker = {
           ],
         },
         act: {
-          label: "ENABLES",
+          label: "Enables",
           items: [
             "Unblock delay",
             "Prioritize roles",
