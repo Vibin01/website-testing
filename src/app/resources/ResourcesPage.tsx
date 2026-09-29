@@ -1,7 +1,7 @@
 import { HeroData } from "@/data/ResourcesPageData";
 import Image from "next/image";
 import React from "react";
-import { getAllBlogs } from "@/lib/mdx";
+import { getAllBlogs } from "@/blog_contents";
 import ChroniclesPage from "./ChroniclesPage";
 import { BlogSection } from "./BlogSection";
 import dynamic from "next/dynamic";

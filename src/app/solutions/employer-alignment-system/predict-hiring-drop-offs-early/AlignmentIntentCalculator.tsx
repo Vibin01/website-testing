@@ -415,7 +415,7 @@ export default function AlignmentIntentCalculator({
                     className="size-5 grayscale opacity-60 shrink-0"
                   />
                   <span className="text-xl font-medium text-[#727272]">
-                    {activeTab === "interview" ? "Tue 10:00 AM" : "Tue 10:00 AM"}
+                    {activeTab === "interview" ? "Tue 10:00 AM" : "Fri 10:00 AM"}
                   </span>
                 </div>
               </div>

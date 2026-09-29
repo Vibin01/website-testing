@@ -50,11 +50,11 @@ export default function FooterClient({
                     </Link>
                   </div>
 
-                  <p className="mt-4 text-[14px] xl:text-[18px] lg:font-medium">
+                  <p className="mt-4 text-xl lg:font-medium">
                     Phone : <a href="tel:+919499045851">+91 9499045851</a>
                   </p>
 
-                  <p className="mt-1 lg:mt-2 text-[14px] xl:text-[18px] lg:font-medium">
+                  <p className="mt-1 lg:mt-2 text-xl lg:font-medium">
                     Email :{" "}
                     <a href="mailto:hello@connectec.app">hello@connectec.app</a>
                   </p>
@@ -128,33 +128,42 @@ export default function FooterClient({
                   <div className="w-[100%] h-px   border-t border-[#FFFFFF] my-2"></div>
                 </div>
 
-                <div className="mt-5 lg:mt-0 flex flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between ">
-                  <div className="flex justify-center items-center flex-wrap lg:flex-nowrap lg:block   text-[12px] md:text-[14px]  text-start lg:font-medium space-x-3">
-                    <Link href="/about-us">About us</Link>|{" "}
-                    <Link href="/terms-and-condition" target="_blank">
-                      &nbsp;&nbsp;Terms & Conditions
+                <div className="mt-5 lg:mt-0 flex flex-col lg:flex-row justify-center items-center lg:justify-between gap-2">
+                  <div className="flex justify-center items-center flex-wrap text-xl font-medium space-x-2">
+                    <Link href="/about-us" className="hover:underline">About us</Link>
+                    <span>|</span>
+                    <Link href="/terms-and-condition" target="_blank" className="hover:underline">
+                      Terms & Conditions
                     </Link>
-                    |&nbsp;&nbsp; {""}
-                    <Link href="/privacy-policy" target="_blank">
+                    <span>|</span>
+                    <Link href="/privacy-policy" target="_blank" className="hover:underline">
                       Privacy Policy
                     </Link>
                   </div>
+                  <p className="mt-2 lg:mt-0 text-xl font-medium text-center lg:text-end">
+                    Connect EC® is a product of{" "}
+                    <Link
+                      href="https://primethic.com/"
+                      target="_blank"
+                      aria-label="Primethic Private Limited"
+                      className="hover:underline"
+                    >
+                      Primethic Private Limited.
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="bg-[#FFFFFF1A] -mx-[8%] md:-mx-[5%]  flex flex-col items-center justify-center py-3 md:py-[2%]">
-              <p className=" text-lg font-normal flex flex-col justify-center items-center ">
+            <div className="bg-[#FFFFFF1A] -mx-[8%] md:-mx-[5%] flex flex-col items-center justify-center py-4 md:py-[2%] px-[4%]">
+              <p className="text-lg font-normal flex flex-col justify-center items-center">
                 <span>
-                  <Link href="https://primethic.com/" target="_blank" aria-label="Primethic Private Limited">
-                    © Copyright Primethic Private Limited{" "}
+                  <Link href="https://primethic.com/" target="_blank" aria-label="Primethic Private Limited" className="hover:underline">
+                    © {new Date().getFullYear()} Primethic Private Limited.
                   </Link>
-                  {new Date().getFullYear()}. All Rights Reserved.
                 </span>
               </p>
-              <p className="font-medium text-lg mt-[1%] text-center px-[4%]">
-                The principles, frameworks, and methodologies are proprietary to
-                and owned by Primethic Private Limited. Unauthorized use,
-                reproduction, or distribution is strictly prohibited.
+              <p className="font-normal md:font-medium text-lg mt-[1%] text-center px-[5%] leading-relaxed">
+                Alignment Continuity, the Theory of Alignment Continuity, and the proprietary Alignment Architecture—as expressed and implemented through the original definitions, frameworks, models, methodologies, assessment logic, visual representations, and associated content presented on this website—were developed by Primethic Private Limited. Unauthorized reproduction, adaptation, distribution, or commercial exploitation of these protected materials is prohibited.
               </p>
               <p className="text-[5px] lg:text-[9px] mt-[1%] text-white/90"> {children}</p>
             </div>

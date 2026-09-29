@@ -26,22 +26,22 @@ const solutionGroups: SolutionGroup[] = [
     pages: [
       {
         title: "Easy Evaluator",
-        description: "The Feedback Transparency System.",
+        description: "Evaluation Alignment",
         href: "/solutions/candidate-alignment-system/interview-feedback-for-candidates",
       },
       {
         title: "Easy Facilitator",
-        description: "The Offer Decision System.",
+        description: "Decision Alignment",
         href: "/solutions/candidate-alignment-system/manage-job-offers",
       },
       {
         title: "Easy Scheduler",
-        description: "The Interview Coordination System.",
+        description: "Coordination Alignment",
         href: "/solutions/candidate-alignment-system/manage-interview-schedule",
       },
       {
         title: "Easy Reviewer",
-        description: "The Employer Insight System.",
+        description: "Insights Alignment",
         href: "/solutions/candidate-alignment-system/verified-employer-interview-insights",
       },
     ],
@@ -53,22 +53,22 @@ const solutionGroups: SolutionGroup[] = [
     pages: [
       {
         title: "Easy Evaluator",
-        description: "Interview Evaluation System.",
+        description: "Feedback Alignment",
         href: "/solutions/recruiter-alignment-system/collect-interview-feedback",
       },
       {
         title: "Easy Facilitator",
-        description: "The Offer Decision System.",
+        description: "Commitment Alignment",
         href: "/solutions/recruiter-alignment-system/improve-offer-to-joining-conversion",
       },
       {
         title: "Easy Scheduler",
-        description: "The Interview Coordination System.",
+        description: "Coordination Alignment",
         href: "/solutions/recruiter-alignment-system/manage-interview-scheduling",
       },
       {
         title: "Easy Predictor",
-        description: "The Interview Transition System.",
+        description: "Participation Alignment",
         href: "/solutions/recruiter-alignment-system/predict-interview-no-shows",
       },
     ],
@@ -80,37 +80,37 @@ const solutionGroups: SolutionGroup[] = [
     pages: [
       {
         title: "Easy Calibrator",
-        description: "Transform Targets into Outcomes.",
+        description: "Target Alignment",
         href: "/solutions/employer-alignment-system/improve-hiring-target-achievement",
       },
       {
         title: "Easy Evaluator",
-        description: "Transform Templates into Touchpoints.",
+        description: "Evaluation Alignment",
         href: "/solutions/employer-alignment-system/standardize-hiring-communication",
       },
       {
         title: "Easy Explorer",
-        description: "Transform Information into Insights.",
+        description: "Exploration Alignment",
         href: "/solutions/employer-alignment-system/analyze-hiring-workload-and-velocity",
       },
       {
         title: "Easy Facilitator",
-        description: "Transform Offer into Onboarding.",
+        description: "Facilitation Alignment",
         href: "/solutions/employer-alignment-system/improve-offer-acceptance-to-joining",
       },
       {
         title: "Easy Navigator",
-        description: "Transform Declines into directions.",
+        description: "Signal Alignment",
         href: "/solutions/employer-alignment-system/identify-hiring-misalignment-signals",
       },
       {
         title: "Easy Predictor",
-        description: "Transform No-shows into Know-shows.",
+        description: "Predictive Alignment",
         href: "/solutions/employer-alignment-system/predict-hiring-drop-offs-early",
       },
       {
         title: "Easy Role Tracker",
-        description: "Transform Inactive Pipeline into Active Progress.",
+        description: "Momentum Alignment",
         href: "/solutions/employer-alignment-system/track-hiring-progress-and-bottlenecks",
       },
     ],

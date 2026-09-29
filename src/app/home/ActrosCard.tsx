@@ -9,13 +9,13 @@ import { ShowDesktopWarning } from "@/components/common/Toast/ShowDesktopWarning
 const actors = [
   {
     role: "Employer",
-    subtitle: "Hiring Targets",
+    subtitle: "Hiring Strategy",
     image: "/home/icons/hiring-target-icon.svg",
     acrossLink:"https://employer.connectec.app/register"
   },
   {
     role: "Recruiter",
-    subtitle: "Hiring Delivery",
+    subtitle: "Talent Acquisition",
     image: "/home/icons/successful-placements-icon.svg",
     acrossLink:"https://recruiter.connectec.app/"
   },
@@ -109,7 +109,7 @@ export default function ActorCards() {
                 text-center
                 text-xl
                 font-bold
-                text-[#2C2C2C]
+                text-[#727272]
               "
             >
               {actor.subtitle}

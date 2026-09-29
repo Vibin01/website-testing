@@ -193,7 +193,7 @@ export default function MobileMenu({
                       >
                         Easy Evaluator
                         <span className="mt-xs block text-lg font-medium">
-                          The Feedback Transparency System.
+                          Evaluation Alignment
                         </span>
                       </Link>
 
@@ -204,7 +204,7 @@ export default function MobileMenu({
                       >
                         Easy Facilitator
                         <span className="mt-xs block text-lg font-medium">
-                          The Offer Decision System.
+                         Decision Alignment
                         </span>
                       </Link>
 
@@ -215,7 +215,7 @@ export default function MobileMenu({
                       >
                         Easy Scheduler
                         <span className="mt-xs block text-lg font-medium">
-                          The Interview Coordination System.
+                          Coordination Alignment
                         </span>
                       </Link>
 
@@ -226,7 +226,7 @@ export default function MobileMenu({
                       >
                         Easy Reviewer
                         <span className="mt-xs block text-lg font-medium">
-                          The Employer Insight System.
+                          Insights Alignment
                         </span>
                       </Link>
                     </div>
@@ -249,7 +249,7 @@ export default function MobileMenu({
                       >
                         Easy Evaluator
                         <span className="mt-xs block text-lg font-medium">
-                          Interview Evaluation System.
+                          Feedback Alignment
                         </span>
                       </Link>
 
@@ -260,7 +260,7 @@ export default function MobileMenu({
                       >
                         Easy Facilitator
                         <span className="mt-xs block text-lg font-medium">
-                          The Offer Decision System.
+                          Commitment Alignment
                         </span>
                       </Link>
 
@@ -271,7 +271,7 @@ export default function MobileMenu({
                       >
                         Easy Scheduler
                         <span className="mt-xs block text-lg font-medium">
-                          The Interview Coordination System.
+                          Coordination Alignment
                         </span>
                       </Link>
 
@@ -282,7 +282,7 @@ export default function MobileMenu({
                       >
                         Easy Predictor
                         <span className="mt-xs block text-lg font-medium">
-                          The Interview Transition System.
+                          Participation Alignment
                         </span>
                       </Link>
                     </div>
@@ -305,7 +305,7 @@ export default function MobileMenu({
                       >
                         Easy Calibrator
                         <span className="mt-xs block text-lg font-medium">
-                          Transform Targets into Outcomes.
+                          Target Alignment
                         </span>
                       </Link>
 
@@ -316,7 +316,7 @@ export default function MobileMenu({
                       >
                         Easy Evaluator
                         <span className="mt-xs block text-lg font-medium">
-                          Transform Templates into Touchpoints.
+                          Evaluation Alignment
                         </span>
                       </Link>
 
@@ -327,7 +327,7 @@ export default function MobileMenu({
                       >
                         Easy Explorer
                         <span className="mt-xs block text-lg font-medium">
-                          Transform Information into Insights.
+                          Exploration Alignment
                         </span>
                       </Link>
 
@@ -338,7 +338,7 @@ export default function MobileMenu({
                       >
                         Easy Facilitator
                         <span className="mt-xs block text-lg font-medium">
-                          Transform Offer into Onboarding.
+                          Facilitation Alignment
                         </span>
                       </Link>
 
@@ -349,7 +349,7 @@ export default function MobileMenu({
                       >
                         Easy Navigator
                         <span className="mt-xs block text-lg font-medium">
-                          Transform Declines into directions.
+                          Signal Alignment
                         </span>
                       </Link>
 
@@ -360,7 +360,7 @@ export default function MobileMenu({
                       >
                         Easy Predictor
                         <span className="mt-xs block text-lg font-medium">
-                          Transform No-shows into Know-shows.
+                          Predictive Alignment
                         </span>
                       </Link>
                       <Link
@@ -370,7 +370,7 @@ export default function MobileMenu({
                       >
                         Easy Role Tracker
                         <span className="mt-xs block text-lg font-medium">
-                          Transform Inactive Pipeline into Active Progress.
+                          Momentum Alignment
                         </span>
                       </Link>
                     </div>

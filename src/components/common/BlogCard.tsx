@@ -3,16 +3,18 @@
 import Link from "next/link";
 
 type BlogCardProps = {
-  pathName:string,
-  slug: string;
-  date: string;
+  id?: string;
+  pathName: string;
+  slug?: string;
+  date?: string;
   heading_highlight: string;
-  img_url:string;
+  img_url: string;
   heading: string;
   title: string;
 };
 
 export default function BlogCard({
+  id,
   title,
   slug,
   heading_highlight,
@@ -21,6 +23,8 @@ export default function BlogCard({
   heading,
   pathName,
 }: BlogCardProps) {
+  const displayId = (id || slug || "").toUpperCase();
+
   return (
     <Link
       data-title={heading}
@@ -31,8 +35,11 @@ export default function BlogCard({
         
         <img src={img_url} alt={title} className="w-full  object-cover" />
         <div className="h-full flex flex-col justify-between">
-         <h4 className="text-base font-bold py-sm">{title}</h4>
-         <p className="font-medium text-xl"><span className="font-bold">{heading_highlight}</span> {heading}</p>
+          <div>
+            
+            <h4 className="text-base font-bold py-sm">{title}</h4>
+          </div>
+          <p className="font-medium text-xl"><span className="font-bold">{heading_highlight}</span> {heading}</p>
         </div>
       </div>
     </Link>

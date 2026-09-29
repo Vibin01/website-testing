@@ -268,7 +268,7 @@ export const Header = () => {
                           prev === "login" ? null : "login",
                         )
                       }
-                      className="w-[110px] h-[44px] cursor-pointer border border-[#0668E1] text-[#0668E1] rounded-sm"
+                      className="w-[clamp(80px,calc(120/var(--width)*100vw),220px)] py-xs cursor-pointer border border-[#0668E1] text-[#0668E1] rounded-sm"
                     >
                       Login
                     </button>
@@ -351,7 +351,7 @@ export const Header = () => {
                           prev === "register" ? null : "register",
                         )
                       }
-                      className="w-[110px] h-[44px] cursor-pointer bg-[#0668E1] rounded-sm text-white"
+                      className="w-[clamp(80px,calc(120/var(--width)*100vw),220px)] py-xs cursor-pointer bg-[#0668E1] rounded-sm text-white"
                     >
                       Register
                     </button>

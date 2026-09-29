@@ -3,86 +3,166 @@
 import React from "react";
 import ButtonDialog from "./RequestForQuoteDialogBox";
 
-const pricingCards = [
+type FeatureItem = {
+  text: string;
+  subtext?: string;
+};
+
+type PricingSection = {
+  title: string;
+  features: FeatureItem[];
+};
+
+type PricingCardData = {
+  tierTag: string;
+  tier: string;
+  label: string;
+  subtitle: string;
+  active: boolean;
+  sections: PricingSection[];
+  outcome: {
+    line1: string;
+    line2: string;
+  };
+  buttonText: string;
+  footer: string;
+};
+
+const pricingCards: PricingCardData[] = [
   {
+    tierTag: "Tier 1",
     tier: "Visibility",
     label: "Free Forever",
-    subtitle: "See Where friction exists",
+    subtitle: "See where hiring friction exists.",
     active: false,
     sections: [
       {
-        title: "Hiring Foundation",
-        features: ["Job Posting", "Recruiter Management", "Panel Management"],
+        title: "Hiring foundation",
+        features: [
+          { text: "Job Posting" },
+          { text: "Recruiter Management" },
+          { text: "Panel Management" },
+        ],
       },
       {
         title: "Evaluation System",
-        features: ["Easy Evaluator", "System Templates"],
+        features: [
+          { text: "Easy Evaluator" },
+          { text: "System Templates" },
+        ],
       },
       {
-        title: "Early Signals (Basic)",
-        features: ["Interview No-show → 10% ahead", "Offer No-show →10% ahead"],
-      },
-      {
-        title: "Signal Foundation",
-        features: ["Easy Facilitator → Doc Vault"],
+        title: "Intervention time",
+        features: [
+          {
+            text: "Interview Intervention Time",
+            subtext: "10% of the available window",
+          },
+          {
+            text: "Offer-to-Join Intervention Time",
+            subtext: "10% of the available window",
+          },
+          {
+            text: "Easy Facilitator · DOC Vault",
+          },
+        ],
       },
     ],
-    outcome: "You stop guessing where hiring breaks.",
-    buttonText: "Start Seeing Friction",
+    outcome: {
+      line1: "See where hiring",
+      line2: "friction begins.",
+    },
+    buttonText: "Start Free",
     footer: "",
   },
   {
+    tierTag: "Tier 2",
     tier: "Diagnosis",
-    label: "Tier 2",
-    subtitle: "Understand Why friction exists",
+    label: "Custom pricing",
+    subtitle: "Understand what is driving hiring friction.",
     active: true,
     sections: [
       {
         title: "Tracking & Exploration",
-        features: ["Easy Role Tracker", "Easy Explorer"],
-      },
-      {
-        title: "Advanced Signals",
         features: [
-          "Interview No-show → 20% ahead",
-          "Offer No-show → 20% ahead",
+          { text: "Easy Role Tracker" },
+          { text: "Easy Explorer" },
         ],
       },
       {
-        title: "Signal Foundation",
-        features: ["Easy Facilitator → Pix Vault"],
+        title: "Intervention Time",
+        features: [
+          {
+            text: "Interview Intervention Time",
+            subtext: "20% of the available window",
+          },
+          {
+            text: "Offer-to-Join Intervention Time",
+            subtext: "20% of the available window",
+          },
+        ],
+      },
+      {
+        title: "Expanded engagement",
+        features: [
+          {
+            text: "Easy Facilitator · DOC + PIX Vaults",
+          },
+        ],
       },
     ],
-    outcome: "You See patterns behind drop-offs and delays.",
-    buttonText: "Unlock Clarity",
-    footer: "Everything in Visibility +",
+    outcome: {
+      line1: "Understand the patterns behind delays",
+      line2: "and drop-offs.",
+    },
+    buttonText: "Talk to us",
+    footer: "Everything in Visibility, plus",
   },
   {
+    tierTag: "Tier 3",
     tier: "Alignment",
-    label: "Tier 3",
-    subtitle: "Act on friction before compounds",
+    label: "Custom pricing",
+    subtitle: "Act before hiring friction becomes an outcome.",
     active: false,
     sections: [
       {
-        title: "Deep Signal Intelligence",
-        features: ["Interview No-show 40% ahead", "Offer No-show 40% ahead"],
+        title: "Intervention time",
+        features: [
+          {
+            text: "Interview Intervention Time",
+            subtext: "40% of the available window",
+          },
+          {
+            text: "Offer-to-Join Intervention Time",
+            subtext: "40% of the available window",
+          },
+        ],
       },
       {
         title: "Expanded Systems",
-        features: ["Easy Calibrator", "Easy Navigator"],
+        features: [
+          { text: "Easy Calibrator" },
+          { text: "Easy Navigator" },
+        ],
       },
       {
-        title: "Full Signal Layer",
-        features: ["Easy Facilitator → Vid Vault"],
-      },
-      {
-        title: "Brand Management",
-        features: ["Customized Templates"],
+        title: "Full signal layer",
+        features: [
+          {
+            text: "Easy Facilitator · DOC + PIX + VID Vaults",
+          },
+          {
+            text: "Customized Templates",
+          },
+        ],
       },
     ],
-    outcome: "You prevent hiring failures before they happen.",
-    buttonText: "Reduce Friction",
-    footer: "Everything in Diagnosis +",
+    outcome: {
+      line1: "Intervene before risk becomes a",
+      line2: "completed outcome.",
+    },
+    buttonText: "Talk to us",
+    footer: "Everything in Visibility, plus",
   },
 ];
 
@@ -92,8 +172,8 @@ function CheckIcon({ active }: { active: boolean }) {
       src={`${
         active ? "/icons/tick-white-icon.svg" : "/icons/tick-gradient-icon.svg"
       }`}
-      alt="question icon"
-      className="size-iconsize-sm p-[0.1%]"
+      alt="check icon"
+      className="size-iconsize-sm shrink-0 p-[0.1%]"
     />
   );
 }
@@ -109,27 +189,35 @@ export default function PricingCardsSection() {
               className={`flex flex-col rounded-md border border-[#C8DEFA] shadow-mobile-medium md:shadow-web-medium ${
                 card.active
                   ? "bg-[#0668E1] text-white"
-                  : "bg-white text-[#1B1C17] "
+                  : "bg-white text-[#1B1C17]"
               }`}
             >
               {/* Header */}
               <div
-                className={`border-b px-md md:px-sm py-md ${
+                className={`px-md md:px-sm py-md ${
                   card.active
-                    ? "border-[#2E83EC] bg-[#1E77E4] rounded-t-md"
-                    : "border-[#D3E6FF]"
+                    ? "border-b border-white/10"
+                    : "border-b border-[#D3E6FF]"
                 }`}
               >
+                <span
+                  className={`text-base font-bold ${
+                    card.active ? "text-white" : "text-[#0668E1]"
+                  }`}
+                >
+                  {card.tierTag}
+                </span>
+
                 <h2
-                  className={`text-h2 font-extrabold  ${
+                  className={`text-h2 font-extrabold mt-1 ${
                     card.active ? "text-white" : "text-[#1B1C17]"
                   }`}
                 >
-                  {card.tier} 
+                  {card.tier}
                 </h2>
 
                 <p
-                  className={`mt-md text-base font-bold ${
+                  className={`mt-2 text-base font-bold ${
                     card.active ? "text-white" : "text-[#0668E1]"
                   }`}
                 >
@@ -137,8 +225,8 @@ export default function PricingCardsSection() {
                 </p>
 
                 <p
-                  className={`mt-xs text-base font-medium ${
-                    card.active ? "text-white" : "text-[#1B1C17]"
+                  className={`mt-1 text-base font-medium ${
+                    card.active ? "text-white/90" : "text-[#1B1C17]"
                   }`}
                 >
                   {card.subtitle}
@@ -161,13 +249,28 @@ export default function PricingCardsSection() {
                       <div className="mt-sm space-y-sm">
                         {section.features.map((feature) => (
                           <div
-                            key={feature}
-                            className="flex items-center gap-xs text-xl font-medium"
+                            key={feature.text}
+                            className="flex items-start gap-xs text-xl font-medium"
                           >
-                            <CheckIcon active={card.active} />
-                            <span className="text-xl font-medium">
-                              {feature}
-                            </span>
+                            <div className="shrink-0 mt-[3px]">
+                              <CheckIcon active={card.active} />
+                            </div>
+                            <div className="flex flex-col">
+                              <span className="text-xl font-medium leading-snug">
+                                {feature.text}
+                              </span>
+                              {feature.subtext && (
+                                <span
+                                  className={`text-md mt-1 ${
+                                    card.active
+                                      ? "text-white"
+                                      : "text-[#727272]"
+                                  }`}
+                                >
+                                  {feature.subtext}
+                                </span>
+                              )}
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -177,15 +280,19 @@ export default function PricingCardsSection() {
 
                 {/* Bottom */}
                 <div className="mt-md">
-                  <div
-                    className={`rounded-sm border px-md py-xs text-xl ${
-                      card.active
-                        ? "border-white/60 bg-white/10 text-white"
-                        : "border-[#BBD7F8] bg-[#EEF6FF] text-[#0668E1]"
+                  <p
+                    className={`text-center text-lg md:text-md font-medium px-2 min-h-[44px] flex flex-col items-center justify-center leading-snug ${
+                      card.active ? "text-white" : "text-[#1B1C17]"
                     }`}
                   >
-                    <span className="font-bold">Outcome:</span> {card.outcome}
-                  </div>
+                    <div className="inline-flex">
+                      <span className="font-bold">
+                    Outcome: &nbsp;
+                    </span>
+                    <span className="font-medium">{card.outcome.line1}</span>
+                    </div>
+                    <span className="font-medium">{card.outcome.line2}</span>
+                  </p>
 
                   <div className="mt-md">
                     <ButtonDialog
@@ -196,7 +303,7 @@ export default function PricingCardsSection() {
                   </div>
 
                   <p
-                    className={`mt-xs text-center text-lg font-medium ${
+                    className={`mt-xs text-center text-md md:text-sm font-medium ${
                       card.active ? "text-white" : "text-[#1B1C17]"
                     } md:min-h-[24px]`}
                   >

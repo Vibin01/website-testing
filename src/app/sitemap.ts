@@ -1,10 +1,10 @@
-import { getAllBlogs } from "@/lib/mdx";
+import { getAllBlogs } from "@/blog_contents";
 import { MetadataRoute } from "next";
 
 export const revalidate = 3600;
 
 
-const blogs = await getAllBlogs();
+const blogs = getAllBlogs();
 
 function getBiWeeklyDate(): Date {
   const now = new Date();
@@ -65,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 
   blogs.forEach((b) => {
-    const url = `${process.env.BASE_URL}/resources/blogs/${b.slug}`;
+    const url = `${process.env.BASE_URL}/resources/blogs/${b.pathName}`;
     resourceRoutes.push({
       url: url,
       lastModified: b.date,
