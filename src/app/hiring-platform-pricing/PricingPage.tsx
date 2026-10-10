@@ -7,7 +7,7 @@ export default function PricingPage() {
   return (
     <main className=" py-[10%] md:py-0 flex flex-col items-center justify-center ">
       <div className="px-[5%] mt-[5%] py-[5%] md:w-[80%]  text-center">
-        <h1 className="text-center text-h1 font-extrabold text-[#0668E1]">
+        <h1 className="text-center text-h1 font-extrabold text-[#0668E1] leading-tight">
           Choose How Early You Want to
           <span className="block">See—and Act.</span>
         </h1>

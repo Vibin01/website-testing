@@ -44,8 +44,9 @@ export default function FooterClient({
                         src="/Connect_EC_Logo-white.svg"
                         alt="Connect EC Logo"
                         width={200}
-                        height={200}
+                        height={40}
                         className="h-auto mb-8 w-auto max-w-[300px] cursor-pointer"
+                        style={{ height: "auto" }}
                       />
                     </Link>
                   </div>
@@ -71,9 +72,10 @@ export default function FooterClient({
                       src="/googleplay.svg"
                       alt="Google Play"
                       loading="lazy"
-                      width={200}
-                      height={200}
-                      className=" w-auto h-[50px]"
+                      width={173}
+                      height={50}
+                      className="w-auto h-[50px]"
+                      style={{ width: "auto" }}
                     />
                   </Link>
 

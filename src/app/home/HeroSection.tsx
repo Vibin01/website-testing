@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AlignmentTabs from "./DemoHeroSection";
+import AlignmentTabs from "./AlignmentTabAnimation";
 
 
 export const HeroSection = () => {
@@ -9,7 +9,7 @@ export const HeroSection = () => {
 
   return (
     <section className="flex items-center justify-center px-[5%] sm:px-0 pb-[4%]">
-     <motion.div
+      <motion.div
         initial={{
           opacity: 0,
           y: 90,
@@ -40,12 +40,12 @@ export const HeroSection = () => {
 
         <h1 className="font-extrabold text-h1 pb-lg leading-tight">
           Alignment Preserves
-          <br/><span className="text-[#0668E1]"> Hiring Continuity</span>
+          <br /><span className="text-[#0668E1]"> Hiring Continuity</span>
         </h1>
-<div className="w-full mt-sm">
+        <div className="w-full mt-sm">
           <AlignmentTabs />
 
-      </div>
+        </div>
       </motion.div>
     </section>
   );

@@ -112,8 +112,8 @@ const pricingCards: PricingCardData[] = [
       },
     ],
     outcome: {
-      line1: "Understand the patterns behind delays",
-      line2: "and drop-offs.",
+      line1: "Understand the patterns behind",
+      line2: "delays and drop-offs.",
     },
     buttonText: "Talk to us",
     footer: "Everything in Visibility, plus",
@@ -162,7 +162,7 @@ const pricingCards: PricingCardData[] = [
       line2: "completed outcome.",
     },
     buttonText: "Talk to us",
-    footer: "Everything in Visibility, plus",
+    footer: "Everything in Diagnosis, plus",
   },
 ];
 
@@ -280,19 +280,17 @@ export default function PricingCardsSection() {
 
                 {/* Bottom */}
                 <div className="mt-md">
-                  <p
-                    className={`text-center text-lg md:text-md font-medium px-2 min-h-[44px] flex flex-col items-center justify-center leading-snug ${
+                  <div
+                    className={`text-center text-[13px] md:text-md font-medium px-2 min-h-[44px] flex flex-col items-center justify-center leading-snug ${
                       card.active ? "text-white" : "text-[#1B1C17]"
                     }`}
                   >
                     <div className="inline-flex">
-                      <span className="font-bold">
-                    Outcome: &nbsp;
-                    </span>
-                    <span className="font-medium">{card.outcome.line1}</span>
+                      <span className="font-bold">Outcome: &nbsp;</span>
+                      <span className="font-medium">{card.outcome.line1}</span>
                     </div>
                     <span className="font-medium">{card.outcome.line2}</span>
-                  </p>
+                  </div>
 
                   <div className="mt-md">
                     <ButtonDialog
@@ -303,7 +301,7 @@ export default function PricingCardsSection() {
                   </div>
 
                   <p
-                    className={`mt-xs text-center text-md md:text-sm font-medium ${
+                    className={`mt-xs text-center text-[13px] md:text-md font-medium ${
                       card.active ? "text-white" : "text-[#1B1C17]"
                     } md:min-h-[24px]`}
                   >

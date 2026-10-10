@@ -188,8 +188,9 @@ export default function ButtonDialog({
                   src="/Connect_EC_Logo-white.svg"
                   alt="Logo"
                   width={200}
-                  height={200}
-                  className="h-[25px] lg:h-[50px]  mb-5 lg:mb-8 w-auto cursor-pointer"
+                  height={40}
+                  className="h-[25px] lg:h-[50px] mb-5 lg:mb-8 w-auto cursor-pointer"
+                  style={{ width: "auto" }}
                 />
                 <h2 className="text-[16px] lg:text-[28px] font-semibold leading-snug mb-2">
                   Request a Quote – Elevate your Hiring Excellence

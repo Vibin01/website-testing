@@ -124,9 +124,10 @@ export const Header = () => {
                 src="/Connect_EC_Logo.svg"
                 alt="Connect EC Logo"
                 width={280}
-                height={100}
-                loading="eager"
+                height={56}
+                priority
                 className="h-auto w-[65%] cursor-pointer object-contain md:w-full xl:min-w-[200px] 2xl:min-w-[280px]"
+                style={{ height: "auto" }}
               />
             </Link>
           </div>

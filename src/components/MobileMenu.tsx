@@ -88,9 +88,10 @@ export default function MobileMenu({
             <Image
               src="/Connect_EC_Logo.svg"
               alt="Logo"
-              width={150}
-              height={40}
+              width={160}
+              height={32}
               className="h-auto w-[160px]"
+              style={{ height: "auto" }}
             />
           </div>
 
