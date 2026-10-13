@@ -246,10 +246,10 @@ function GapConnector({
     >
       {isMobile ? (
         <svg
-          viewBox="0 0 80 28"
+          viewBox="0 0 80 45"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="size-full overflow-visible"
+          className="size-full overflow-visible mt-4"
           preserveAspectRatio="none"
         >
           {/* MOBILE FAINT BACKGROUND GUIDE TRACKS (ONLY IF showOutline IS EXPLICITLY TRUE) */}
@@ -424,7 +424,7 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
       transition={{
         opacity: {
           duration: 7,
-          times: [0, 0.4 / 7, 5.6 / 7, 5.8 / 7, 1],
+          times: [0, 0.4 / 7, 5.0 / 7, 5.2 / 7, 1],
           ease: "linear",
         },
         y: {
@@ -437,25 +437,30 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
         absolute
         left-0
         right-0
-        top-[clamp(75px,calc(120_/_var(--width)*100vw),405px)]
+        top-[clamp(75px,calc(100_/_var(--width)*100vw),405px)]
         z-30
-        h-[clamp(48px,calc(60_/_var(--width)*100vw),68px)]
+        h-[clamp(44px,calc(100_/_var(--width)*100vw),100px)]
         w-full
       "
     >
-      {/* ANIMATED MOVING DASHED BORDER BOX: SYMMETRICALLY WRAPS AROUND THE 3 ACTOR TEXTS (DESKTOP ONLY; HIDDEN ON MOBILE) */}
-      {!isMobile && (
+      {/* ANIMATED MOVING DASHED BORDER BOX: SYMMETRICALLY WRAPS AROUND THE 3 ACTOR TEXTS */}
+      {(
         <div
           className="
             pointer-events-none
             absolute
             top-0
             bottom-0
-            rounded-xl
+            rounded-sm
+            md:rounded-xl
           "
           style={{
-            left: "calc(23.5% - clamp(65px, 6vw, 95px))",
-            right: "calc(23.5% - clamp(65px, 6vw, 95px))",
+            left: isMobile
+              ? "clamp(-20px, -4.5vw, -14px)"
+              : "calc(23.5% - clamp(65px, 6vw, 95px))",
+            right: isMobile
+              ? "clamp(-20px, -4.5vw, -14px)"
+              : "calc(23.5% - clamp(65px, 6vw, 95px))",
           }}
         >
           <motion.svg
@@ -562,7 +567,7 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
         }}
         transition={{
           duration: 7,
-          times: [0, 4.4 / 7, 5.6 / 7, 1],
+          times: [0, 4.4 / 7, 5.0 / 7, 1],
           ease: "easeInOut",
         }}
         className="absolute top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 text-center"
@@ -596,7 +601,7 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
         }}
         transition={{
           duration: 7,
-          times: [0, 4.4 / 7, 5.6 / 7, 1],
+          times: [0, 4.4 / 7, 5.0 / 7, 1],
           ease: "easeInOut",
         }}
         className="absolute top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 text-center"
@@ -635,7 +640,7 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
         }}
         transition={{
           duration: 7,
-          times: [0, 4.4 / 7, 5.6 / 7, 1],
+          times: [0, 4.4 / 7, 5.0 / 7, 1],
           ease: "easeInOut",
         }}
         className="absolute top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 text-center"
@@ -737,11 +742,11 @@ function WithinActor({
 
   const finalSize =
     index === 1
-      ? "clamp(70px, calc(100 / var(--width) * 100vw), 400px)"
-      : "clamp(60px, calc(80 / var(--width) * 100vw), 400px)";
+      ? "clamp(65px, calc(90 / var(--width) * 100vw), 400px)"
+      : "clamp(55px, calc(75 / var(--width) * 100vw), 400px)";
 
   const initialSize =
-    "clamp(60px, calc(100 / var(--width) * 100vw), 400px)";
+    "clamp(65px, calc(90 / var(--width) * 100vw), 400px)";
 
   return (
     <motion.div
@@ -777,16 +782,7 @@ function WithinActor({
             ]
             : initialLeft,
 
-        top: isAligned
-          ? "clamp(-10px, -4.2vw, -60px)"
-          : processState === "across"
-            ? [
-              "0px",
-              "0px",
-              "clamp(-10px, -4.2vw, -60px)",
-              "clamp(-10px, -4.2vw, -60px)",
-            ]
-            : "0px",
+        top: 0,
 
         zIndex: isAligned
           ? index === 1
@@ -798,69 +794,20 @@ function WithinActor({
               : 25
             : 20,
 
-        marginTop: isAligned
-          ? index === 1
-            ? "clamp(-10px, -0.7vw, -10px)"
-            : "0px"
-          : processState === "across"
-            ? index === 1
-              ? [
-                "0px",
-                "0px",
-                "clamp(-10px, -0.7vw, -10px)",
-                "clamp(-10px, -0.7vw, -10px)",
-              ]
-              : "0px"
-            : "0px",
+        marginTop: "0px",
       }}
       transition={{
         left: isAligned
           ? {
-            duration: 1.8,
+            duration: 0.6,
             delay:
-              index === 1 ? 0 : 0.15,
+              index === 1 ? 0 : 0.08,
             ease,
           }
           : processState === "across"
             ? {
               duration: 7,
-              times: [0, 4.4 / 7, 5.6 / 7, 1],
-              ease: "easeInOut",
-            }
-            : {
-              duration: 0.5,
-              ease,
-            },
-
-        top: isAligned
-          ? {
-            duration: 1.8,
-            delay:
-              index === 1 ? 0 : 0.15,
-            ease,
-          }
-          : processState === "across"
-            ? {
-              duration: 7,
-              times: [0, 4.4 / 7, 5.6 / 7, 1],
-              ease: "easeInOut",
-            }
-            : {
-              duration: 0.5,
-              ease,
-            },
-
-        marginTop: isAligned
-          ? {
-            duration: 1.8,
-            delay:
-              index === 1 ? 0 : 0.15,
-            ease,
-          }
-          : processState === "across"
-            ? {
-              duration: 7,
-              times: [0, 4.4 / 7, 5.6 / 7, 1],
+              times: [0, 4.4 / 7, 5.0 / 7, 1],
               ease: "easeInOut",
             }
             : {
@@ -906,9 +853,12 @@ function WithinActor({
           z-20
           flex
           -translate-x-1/2
-          flex-col
           items-center
+          justify-center
         "
+        style={{
+          height: initialSize,
+        }}
       >
         {/* AVATAR WITH 3-PART CIRCLE BG (: 33% -> 66% -> 100%) */}
 
@@ -943,14 +893,14 @@ function WithinActor({
           transition={{
             width: isAligned
               ? {
-                duration: 1.8,
-                delay: index === 1 ? 0 : 0.15,
+                duration: 0.6,
+                delay: index === 1 ? 0 : 0.08,
                 ease,
               }
               : processState === "across"
                 ? {
                   duration: 7,
-                  times: [0, 4.4 / 7, 5.6 / 7, 1],
+                  times: [0, 4.4 / 7, 5.0 / 7, 1],
                   ease: "easeInOut",
                 }
                 : {
@@ -960,14 +910,14 @@ function WithinActor({
 
             height: isAligned
               ? {
-                duration: 1.8,
-                delay: index === 1 ? 0 : 0.15,
+                duration: 0.6,
+                delay: index === 1 ? 0 : 0.08,
                 ease,
               }
               : processState === "across"
                 ? {
                   duration: 7,
-                  times: [0, 4.4 / 7, 5.6 / 7, 1],
+                  times: [0, 4.4 / 7, 5.0 / 7, 1],
                   ease: "easeInOut",
                 }
                 : {
@@ -1096,8 +1046,9 @@ function WithinActor({
             top-[clamp(70px,calc(120_/_var(--width)*100vw),400px)]
             z-30
             flex
-            h-[clamp(32px,2.6vw,44px)]
             w-[clamp(200px,26vw,360px)]
+            mt-2
+            md:mt-0
             -translate-x-1/2
             items-center
             justify-center
@@ -1108,7 +1059,7 @@ function WithinActor({
             key={`role-${role.role}-${animationKey}`}
             initial={{
               opacity: 0,
-              y: 35,
+              y: isMobile ? 10 : 35,
             }}
             animate={{
               opacity: isAligned
@@ -1122,10 +1073,10 @@ function WithinActor({
               y: isAligned
                 ? 0
                 : [
-                  35,
+                  isMobile ? 10 : 35,
                   0,
                   0,
-                  -35,
+                  isMobile ? -10 : -35,
                 ],
             }}
             transition={{
@@ -1156,7 +1107,7 @@ function WithinActor({
               key={`${step.text.toLowerCase()}-${animationKey}`}
               initial={{
                 opacity: 0,
-                y: 35,
+                y: isMobile ? 10 : 35,
               }}
               animate={{
                 opacity: isAligned
@@ -1170,10 +1121,10 @@ function WithinActor({
                 y: isAligned
                   ? 0
                   : [
-                    35,
+                    isMobile ? 10 : 35,
                     0,
                     0,
-                    -35,
+                    isMobile ? -10 : -35,
                   ],
               }}
               transition={{
@@ -1258,9 +1209,12 @@ function WithinActor({
           z-40
           flex
           -translate-x-1/2
-          flex-col
           items-center
+          justify-center
         "
+        style={{
+          height: initialSize,
+        }}
       >
         {/* GLOW */}
 
@@ -1297,7 +1251,7 @@ function WithinActor({
             opacity: processState === "across"
               ? {
                 duration: 7,
-                times: [0, 4.4 / 7, 5.2 / 7, 1],
+                times: [0, 4.4 / 7, 4.9 / 7, 1],
                 ease: "easeInOut",
               }
               : {
@@ -1367,15 +1321,15 @@ function WithinActor({
           transition={{
             width: isAligned
               ? {
-                duration: 1.8,
+                duration: 0.6,
                 delay:
-                  index === 1 ? 0 : 0.15,
+                  index === 1 ? 0 : 0.08,
                 ease,
               }
               : processState === "across"
                 ? {
                   duration: 7,
-                  times: [0, 4.4 / 7, 5.6 / 7, 1],
+                  times: [0, 4.4 / 7, 5.0 / 7, 1],
                   ease: "easeInOut",
                 }
                 : {
@@ -1385,15 +1339,15 @@ function WithinActor({
 
             height: isAligned
               ? {
-                duration: 1.8,
+                duration: 0.6,
                 delay:
-                  index === 1 ? 0 : 0.15,
+                  index === 1 ? 0 : 0.08,
                 ease,
               }
               : processState === "across"
                 ? {
                   duration: 7,
-                  times: [0, 4.4 / 7, 5.6 / 7, 1],
+                  times: [0, 4.4 / 7, 5.0 / 7, 1],
                   ease: "easeInOut",
                 }
                 : {
@@ -1747,7 +1701,7 @@ export default function AlignmentTabs() {
 
           <div className="relative flex min-h-[clamp(44px,5vw,64px)]- items-center justify-center">
             <AnimatePresence mode="wait">
-              {/* ALIGNED TEXT: Opens slowly when join completes at 5.6s, and STAYS THERE permanently (not removed in aligned state) */}
+              {/* ALIGNED TEXT: Opens when join completes at 5.0s, and STAYS THERE permanently (not removed in aligned state) */}
               {(processState === "across" || isAligned) && (
                 <motion.h2
                   key={`aligned-heading-${animationKey}`}
@@ -1778,8 +1732,8 @@ export default function AlignmentTabs() {
                     },
                   }}
                   transition={{
-                    delay: isAligned ? 0 : 5.6,
-                    duration: 0.8,
+                    delay: isAligned ? 0 : 5.0,
+                    duration: 0.6,
                     ease: "easeOut",
                   }}
                   className="
@@ -1845,22 +1799,22 @@ export default function AlignmentTabs() {
           <img
             src="/icons/star-icon.svg"
             alt="Star icon"
-            className="size-iconsize-md"
+            className="size-iconsize-sm scale-125 "
           />
         </div>
 
         {/* POWERED BY */}
-        <p className="font-bold text-h6">
+        <p className="font-bold text-h6 leading-none">
           Powered by
         </p>
 
         {/* CONNECT EC (R) */}
-        <h2 className="inline-flex items-start justify-center  text-[#0668E1]  text-h1 font-extrabold">
+        <h2 className="inline-flex items-start justify-center text-[#0668E1] text-h1 font-extrabold leading-tight -mt-1 md:-mt-1.5">
           <span>Connect EC</span>
           <img
             src="/icons/r-badage-icon.svg"
             alt="Registered trademark"
-            className="ml-1 sm:ml-1.5 size-3.5 sm:size-4 md:size-5 mt-1 sm:mt-1.5"
+            className="ml-0.5 size-3.5 sm:size-4 md:size-5 mt-xs"
           />
         </h2>
       </motion.div>
