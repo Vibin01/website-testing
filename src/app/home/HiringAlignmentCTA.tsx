@@ -46,7 +46,7 @@ const actors: ActorCard[] = [
 // ============================================================
 
 export default function HiringAlignmentCTA() {
-  const router=useRouter();
+  const router = useRouter();
   return (
     <section className="w-full py-[3]">
       <div
@@ -127,9 +127,9 @@ export default function HiringAlignmentCTA() {
 
               <div className="flex flex-col md:flex-row gap-md mt-md md:mt-xs">
                 <motion.button
-                type="button"
-                aria-label="Start alignment test - begins within"
-                onClick={()=>router.push("/resources/alignment-test/register?mode=single&phase=uncertainty")}
+                  type="button"
+                  aria-label="Start alignment test - begins within"
+                  onClick={() => router.push("/resources/alignment-test/register?mode=single&phase=uncertainty")}
                   className="
     relative
     flex

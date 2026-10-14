@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Exo_2 } from "next/font/google";
-import {IBM_Plex_Sans} from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const exo2 = Exo_2({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  variable:"--font-exo2",
+  variable: "--font-exo2",
   display: "swap",
 });
 
@@ -50,8 +50,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) 
-{
+}>) {
   return (
     <html lang="en">
       <head>
@@ -66,6 +65,18 @@ export default function RootLayout({
                 `}
         </Script>
         {/* End Google Tag Manager */}
+
+        {/* Preload hero actor SVGs for fast loading */}
+        <link rel="preload" as="image" href="/icons/employer-round-icon.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/icons/recruiters-round-icon.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/icons/candidate-round-icon.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/home/employer-thinking.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/home/recruiter-thinking.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/home/candidate-thinking.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/home/alignment-triger.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/home/alignment-spectrum.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/home/alignment-signal.svg" type="image/svg+xml" />
+
       </head>
       <body
         className={`${exo2.variable} ${ibmPlexSans.variable} bg-white relative

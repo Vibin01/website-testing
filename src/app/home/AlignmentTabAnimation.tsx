@@ -1020,6 +1020,8 @@ function WithinActor({
             <img
               src={role.img}
               alt={role.role}
+              loading="eager"
+              decoding="async"
               className="
                 relative
                 z-10
@@ -1372,6 +1374,8 @@ function WithinActor({
           <img
             src={role.img}
             alt={role.role}
+            loading="eager"
+            decoding="async"
             className="
               h-full
               w-full
@@ -1468,6 +1472,16 @@ export default function AlignmentTabs() {
   // ==========================================================
   // RESET WHEN LEAVING VIEWPORT
   // ==========================================================
+
+  // Preload SVG assets immediately on mount
+  useEffect(() => {
+    withinRoles.forEach((role) => {
+      const img = new Image();
+      img.src = role.img;
+    });
+    const harmonyBadge = new Image();
+    harmonyBadge.src = "/home/icons/harmony-badge.svg";
+  }, []);
 
   useEffect(() => {
     if (!isInView) {
