@@ -73,7 +73,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/home/employer-thinking.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/home/recruiter-thinking.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/home/candidate-thinking.svg" type="image/svg+xml" />
-        <link rel="preload" as="image" href="/home/alignment-triger.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/home/alignment-trigger.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/home/alignment-spectrum.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/home/alignment-signal.svg" type="image/svg+xml" />
 

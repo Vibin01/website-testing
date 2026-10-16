@@ -1,9 +1,12 @@
 import React from "react";
-import AlignmentWeakensSection from "./AlignmentWeaknesSection";
-import AlignmentRestoreSection from "./AlignmentRestoreSection";
-import WhatThisMeansSection from "./WhatThisMeanSection";
-import OurGoal from "./OurGoal";
-import AlignmentCards from "./AlginemntCard";
+import BuiltByPrimethicSection from "./BuiltByPrimethicSection";
+import SystemsRespondWhenPeopleChangeSection from "./SystemsRespondWhenPeopleChangeSection";
+import ChangeIsInevitableSection from "./ChangeIsInevitableSection";
+import WhyConnectECExistsSection from "./WhyConnectECExistsSection";
+import OneHiringSystemSection from "./OneHiringSystemSection";
+import UnseenMovementSection from "./UnseenMovementSection";
+import AboutUsHeroSection from "./AboutUsHeroSection";
+import OutcomeHappensLastSection from "./OutcomeHappensLastSection";
 
 export const metadata = {
   title: "Bringing Clarity and Predictability to Hiring | Connect EC",
@@ -14,48 +17,57 @@ export const metadata = {
 const Page = () => {
   return (
     <>
-      <section className="relative ">
-          <div className="py-[10%] md:py-[5%]">
-            <section className="relative flex items-center justify-center py-[5%] px-[5%] bg-transparent">
-              <div className="w-full flex flex-col gap-1 pb-14 lg:pb-0 items-center justify-center">
-                <h1 className="mb-[0.5%] text-h1 font-extrabold text-[#0668E1]">
-                  Connect EC
-                </h1>
-                <h3 className="mb-[2%] text-base font-bold text-center">
-                  The Hiring Alignment System
-                </h3>
+      <section className="relative">
+        <div className="py-[10%] md:py-[8%] px-[5%]">
+          <AboutUsHeroSection />
+        </div>
+        <div className="bg-[#F2F8FF]">
+          <div className="py-[5%] md:py-0">
+            <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
+              <UnseenMovementSection />
+            </section>
+          </div>
+          <div className="py-[5%] md:py-0">
+            <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
+              <OutcomeHappensLastSection />
+            </section>
+          </div>
+        </div>
 
-                <p className="text-center text-base font-medium ">
-                 Bringing visibility, continuity, and alignment across candidates, recruiters, and employers.
-                </p>
-              </div>
-            </section>
-          </div>
-          <div className="py-[5%] md:py-0">
-            <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
-              <AlignmentCards />
-            </section>
-          </div>
-          <div className="py-[5%] md:py-0">
-            <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
-              <AlignmentWeakensSection />
-            </section>
-          </div>
-        <div className="relative py-[10%] md:py-[5%] px-[5%] md:px-[7%]">
-          <section>
-            <AlignmentRestoreSection />
+        <div className="py-[5%] md:py-0">
+          <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
+            <ChangeIsInevitableSection />
           </section>
         </div>
 
         <div className="py-[5%] md:py-0">
-          <section className="relative py-[5%] px-[5%]">
-            <WhatThisMeansSection />
+          <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
+            <WhyConnectECExistsSection />
           </section>
         </div>
 
-        <div className="bg-[#F7FBFF] px-[5%] py-[10%] md:py-[5%]">
-          <OurGoal/>
+        <div className="py-[5%] md:py-0">
+          <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
+            <OneHiringSystemSection />
+          </section>
         </div>
+
+
+        <div className="pt-[5%] md:pt-0">
+          <BuiltByPrimethicSection />
+        </div>
+
+        <div className="bg-[#F2F8FF]">
+          <div className="py-[5%] md:py-0">
+            <section className="relative py-[5%] px-[5%] md:px-[7%] bg-transparent">
+              <SystemsRespondWhenPeopleChangeSection />
+
+            </section>
+          </div>
+        </div>
+
+
+
       </section>
     </>
   );

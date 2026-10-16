@@ -439,7 +439,7 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
         right-0
         top-[clamp(75px,calc(100_/_var(--width)*100vw),405px)]
         z-30
-        h-[clamp(44px,calc(100_/_var(--width)*100vw),100px)]
+        h-[clamp(39px,calc(95_/_var(--width)*100vw),95px)]
         w-full
       "
     >
@@ -493,7 +493,7 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
               pathLength={1000}
               fill="none"
               stroke="#0668E1"
-              strokeWidth="2"
+              strokeWidth={isMobile ? 1 : 2}
               strokeLinecap="round"
               strokeDasharray="5 7 5 7 5 7 5 7 5 447"
               initial={{ opacity: 0 }}
@@ -527,7 +527,7 @@ function AcrossTextBox({ animationKey }: { animationKey: number }) {
               pathLength={1000}
               fill="none"
               stroke="#0668E1"
-              strokeWidth="2"
+              strokeWidth={isMobile ? 1 : 2}
               strokeLinecap="round"
               strokeDasharray="5 7 5 7 5 7 5 7 5 447"
               initial={{ opacity: 0 }}
@@ -742,11 +742,11 @@ function WithinActor({
 
   const finalSize =
     index === 1
-      ? "clamp(65px, calc(90 / var(--width) * 100vw), 400px)"
-      : "clamp(55px, calc(75 / var(--width) * 100vw), 400px)";
+      ? "clamp(65px, calc(85 / var(--width) * 100vw), 400px)"
+      : "clamp(55px, calc(70 / var(--width) * 100vw), 380px)";
 
   const initialSize =
-    "clamp(65px, calc(90 / var(--width) * 100vw), 400px)";
+    "clamp(65px, calc(85 / var(--width) * 100vw), 400px)";
 
   return (
     <motion.div
@@ -1710,10 +1710,10 @@ export default function AlignmentTabs() {
           </div>
 
           {/* ==================================================
-              ALIGNED TEXT / ALIGNMENT INTELLIGENCE
+              ALIGNED TEXT
           ================================================== */}
 
-          <div className="relative flex min-h-[clamp(44px,5vw,64px)]- items-center justify-center">
+          <div className="relative flex  items-center justify-center">
             <AnimatePresence mode="wait">
               {/* ALIGNED TEXT: Opens when join completes at 5.0s, and STAYS THERE permanently (not removed in aligned state) */}
               {(processState === "across" || isAligned) && (
@@ -1750,8 +1750,9 @@ export default function AlignmentTabs() {
                     duration: 0.6,
                     ease: "easeOut",
                   }}
-                  className="
-                    z-[60]
+                  className={`
+                  ${isAligned ? "" : "-mt-lg"}
+                  z-[60]
                     flex
                     justify-center
                     whitespace-nowrap
@@ -1760,7 +1761,7 @@ export default function AlignmentTabs() {
                     text-[#0668E1]
                     text-shadow-black
                     text-shadow-2xs
-                  "
+                  `}
                 >
                   Aligned
                 </motion.h2>
@@ -1799,7 +1800,7 @@ export default function AlignmentTabs() {
           ease,
         }}
         className="
-          mt-md
+          mt-sm
           flex
           w-full
           flex-col
@@ -1828,7 +1829,7 @@ export default function AlignmentTabs() {
           <img
             src="/icons/r-badage-icon.svg"
             alt="Registered trademark"
-            className="ml-0.5 size-3.5 sm:size-4 md:size-5 mt-xs"
+            className="ml-0.5 size-3.5 sm:size-4 xl:size-5  mt-sm"
           />
         </h2>
       </motion.div>
