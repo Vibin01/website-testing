@@ -11,7 +11,7 @@ type ContinuityCard = {
   title: string;
   description: string;
   icon: string;
-  iconCircle:string,
+  iconCircle: string,
   breakTitle: string;
   breakDescription: string;
 };
@@ -42,7 +42,7 @@ const roleData: Record<Role, RoleData> = {
         description:
           "The employer moves from defining hiring targets to aligning priorities and capacity for candidate evaluation.",
         icon: "/home/icons/target-evalution-red-icon.svg",
-        iconCircle:"/home/icons/target-evalution-blue-icon.svg",
+        iconCircle: "/home/icons/target-evalution-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "The hiring target is defined, but capacity, hiring pressure, and position load are not assessed together—putting target achievement at risk.",
@@ -52,7 +52,7 @@ const roleData: Record<Role, RoleData> = {
         description:
           "The employer moves from evaluating candidates to selecting the right talent through consistent standards.",
         icon: "/home/icons/evaluation-selection-red-icon.svg",
-        iconCircle:"/home/icons/evaluation-selection-blue-icon.svg",
+        iconCircle: "/home/icons/evaluation-selection-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "Candidates are evaluated, but inconsistent evaluation criteria and fragmented feedback across evaluators often delay clear, timely selection decisions.",
@@ -62,7 +62,7 @@ const roleData: Record<Role, RoleData> = {
         description:
           "The employer moves from selecting a candidate to securing the hire through joining.",
         icon: "/home/icons/selecion-hiring-red-icon.svg",
-        iconCircle:"/home/icons/selecion-hiring-blue-icon.svg",
+        iconCircle: "/home/icons/selecion-hiring-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "The candidate is selected, but weak post-offer engagement, changing candidate intent, and disconnected commitment signals put the hire at risk.",
@@ -103,7 +103,7 @@ const roleData: Record<Role, RoleData> = {
         description:
           "The recruiter moves from identifying a candidate to coordinating and confirming an interview.",
         icon: "/home/icons/sourcing-scheduling-red-icon.svg",
-        iconCircle:"/home/icons/sourcing-scheduling-blue-icon.svg",
+        iconCircle: "/home/icons/sourcing-scheduling-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "The recruiter identifies the candidate, but changing availability, reschedules, and scattered communication delay interview confirmation.",
@@ -113,7 +113,7 @@ const roleData: Record<Role, RoleData> = {
         description:
           "The recruiter moves from scheduling the interview to securing reliable participation and completing the evaluation.",
         icon: "/home/icons/target-evalution-red-icon.svg",
-        iconCircle:"/home/icons/target-evalution-blue-icon.svg",
+        iconCircle: "/home/icons/target-evalution-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "The interview is scheduled, but last-minute withdrawals, candidate no-shows, and delayed panel feedback prevent a reliable transition to evaluation.",
@@ -122,8 +122,8 @@ const roleData: Record<Role, RoleData> = {
         title: "EVALUATION → CLOSURE",
         description:
           "The recruiter moves from evaluation to communicating the decision and sustaining commitment through joining.",
-                icon: "/home/icons/selecion-hiring-red-icon.svg",
-        iconCircle:"/home/icons/selecion-hiring-blue-icon.svg",
+        icon: "/home/icons/selecion-hiring-red-icon.svg",
+        iconCircle: "/home/icons/selecion-hiring-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "Evaluation is completed, but delayed decision communication, weak post-offer engagement, and changing candidate intent put joining at risk.",
@@ -164,7 +164,7 @@ const roleData: Record<Role, RoleData> = {
         description:
           "The candidate moves from applying for a role to confirming and preparing for an interview.",
         icon: "/home/icons/application-interview-red-icon.svg",
-        iconCircle:"/home/icons/application-interview-blue-icon.svg",
+        iconCircle: "/home/icons/application-interview-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "The candidate applies for the role, but delayed responses, scheduling changes, and scattered communication prevent the candidate from confirming and preparing for the interview.",
@@ -174,7 +174,7 @@ const roleData: Record<Role, RoleData> = {
         description:
           "The candidate moves from completing the interview to understanding the hiring outcome and next steps.",
         icon: "/home/icons/interview-offer-red-icon.svg",
-        iconCircle:"/home/icons/interview-offer-blue-icon.svg",
+        iconCircle: "/home/icons/interview-offer-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "The interview is completed, but delayed feedback, unclear decision status, and inconsistent communication leave the candidate uncertain about the outcome and what follows.",
@@ -183,8 +183,8 @@ const roleData: Record<Role, RoleData> = {
         title: "OFFER → JOINING",
         description:
           "The candidate moves from receiving an offer to evaluating it, communicating a decision, and progressing toward joining.",
-                icon: "/home/icons/selecion-hiring-red-icon.svg",
-        iconCircle:"/home/icons/selecion-hiring-blue-icon.svg",
+        icon: "/home/icons/selecion-hiring-red-icon.svg",
+        iconCircle: "/home/icons/selecion-hiring-blue-icon.svg",
         breakTitle: "Continuity Break",
         breakDescription:
           "The offer is received, but limited evaluation time, decision pressure, and weak post-offer engagement put the candidate’s offer decision and joining commitment at risk.",
@@ -315,10 +315,9 @@ export default function HiringContinuity() {
                       font-bold
                       transition-all
                       duration-300
-                      ${
-                        active
-                          ? "bg-[#0668E1] text-white"
-                          : "text-[#0668E1] hover:bg-[#F2F7FF]"
+                      ${active
+                        ? "bg-[#0668E1] text-white"
+                        : "text-[#0668E1] hover:bg-[#F2F7FF]"
                       }
                     `}
                   >
@@ -345,12 +344,12 @@ export default function HiringContinuity() {
           "
         >
 
-{/* ===================================================
+          {/* ===================================================
     LEFT SIDE
 =================================================== */}
 
-<div
-  className="
+          <div
+            className="
     
     flex
     w-full
@@ -361,17 +360,17 @@ export default function HiringContinuity() {
     p-xl
     md:p-0
   "
->
-  <div className="relative w-fit flex justify-center items-center">
- 
+          >
+            <div className="relative w-fit flex justify-center items-center">
 
 
-{/* =================================================
+
+              {/* =================================================
     CIRCULAR PROGRESS LINE
 ================================================= */}
 
-<div
-  className="
+              <div
+                className="
     pointer-events-none
     absolute
     z-[5]
@@ -379,87 +378,87 @@ export default function HiringContinuity() {
     max-w-[90vw]
     max-h-[90vw]
   "
->
-  <svg
-    viewBox="0 0 430 430"
-    preserveAspectRatio="xMidYMid meet"
-    className="
+              >
+                <svg
+                  viewBox="0 0 430 430"
+                  preserveAspectRatio="xMidYMid meet"
+                  className="
       block
       h-full
       w-full
     "
-  >
-    {/* =================================================
+                >
+                  {/* =================================================
         LIGHT CIRCLE — FULL ORBIT
     ================================================= */}
 
-    <circle
-      cx="215"
-      cy="215"
-      r="180"
-      fill="none"
-      stroke="#D9E9FC"
-      strokeWidth="4"
-    />
+                  <circle
+                    cx="215"
+                    cy="215"
+                    r="180"
+                    fill="none"
+                    stroke="#D9E9FC"
+                    strokeWidth="4"
+                  />
 
-    {/* =================================================
+                  {/* =================================================
         RED CIRCULAR PROGRESS
         Starts at TOP and moves CLOCKWISE
     ================================================= */}
 
-    <motion.circle
-      cx="215"
-      cy="215"
-      r="180"
-      fill="none"
-      stroke="#F0431D"
-      strokeWidth="4"
-      strokeLinecap="round"
-      pathLength={1}
-      transform="rotate(-90 215 215)"
-      initial={{
-        pathLength: 0.01,
-      }}
-      animate={{
-        pathLength:
-          activeCard === 0
-            ? 0.36
-            : activeCard === 1
-              ? 0.64
-              : 1,
-      }}
-      transition={{
-        duration: 1.2,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    />
-  </svg>
-</div>
+                  <motion.circle
+                    cx="215"
+                    cy="215"
+                    r="180"
+                    fill="none"
+                    stroke="#F0431D"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    pathLength={1}
+                    transform="rotate(-90 215 215)"
+                    initial={{
+                      pathLength: 0.01,
+                    }}
+                    animate={{
+                      pathLength:
+                        activeCard === 0
+                          ? 0.36
+                          : activeCard === 1
+                            ? 0.64
+                            : 1,
+                    }}
+                    transition={{
+                      duration: 1.2,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  />
+                </svg>
+              </div>
 
-  {/* =================================================
+              {/* =================================================
       PERSON IMAGE
   ================================================= */}
 
-  <AnimatePresence mode="wait">
-    <motion.div
-      key={data.image}
-      initial={{
-        opacity: 0,
-        x: 20,
-      }}
-      animate={{
-        opacity: 1,
-        x: 0,
-      }}
-      exit={{
-        opacity: 0,
-        x: -20,
-      }}
-      transition={{
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={data.image}
+                  initial={{
+                    opacity: 0,
+                    x: 20,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    x: -20,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="
         relative
         z-10
         flex
@@ -468,48 +467,49 @@ export default function HiringContinuity() {
         items-end
         justify-center
       "
-    >
-      <Image
-        src={data.image}
-        alt={data.label}
-        width={400}
-        height={500}
-        className="
+                >
+                  <Image
+                    src={data.image}
+                    alt={data.label}
+                    width={400}
+                    height={500}
+                    className="
           h-full
           w-auto
           max-w-full
           object-contain
         "
-      />
-    </motion.div>
-  </AnimatePresence>
+                  />
+                </motion.div>
+              </AnimatePresence>
 
-  {/* =================================================
+              {/* =================================================
       ICON 1 — TOP
   ================================================= */}
 
-  <motion.button
-    type="button"
-    onClick={() => setActiveCard(0)}
-    aria-label={`Select condition: ${data.cards[0]?.title || "Uncertainty"}`}
-    animate={{
-      scale: activeCard === 0 ? 1.05 : 1,
-    }}
-    transition={{
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-    className="
+              <motion.button
+                type="button"
+                onClick={() => setActiveCard(0)}
+                aria-label={`Select condition: ${data.cards[0]?.title || "Uncertainty"}`}
+                animate={{
+                  scale: activeCard === 0 ? 1.05 : 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="
       absolute
       left-1/2
 
-      -top-[clamp(30px,calc(40_/_var(--width)*100vw),80px)]
+      max-md:-top-[35px]
 
       md:-top-[clamp(25px,calc(40_/_var(--width)*100vw),80px)]
 
       z-20
       flex
-      p-sm
+      max-md:p-1.5
+      md:p-sm
       -translate-x-1/2
       items-center
       justify-center
@@ -518,42 +518,41 @@ export default function HiringContinuity() {
       border-[#BBD4F5]
       bg-white
     "
-  >
-    <Image
-      src={data.cards[0].iconCircle}
-      alt={data.cards[0]?.title || "Condition 1"}
-      width={40}
-      height={40}
-      className={`
+              >
+                <Image
+                  src={data.cards[0].iconCircle}
+                  alt={data.cards[0]?.title || "Condition 1"}
+                  width={40}
+                  height={40}
+                  className={`
         size-iconsize-md
-        max-[480px]:size-[clamp(28px,9vw,40px)]
+        max-[480px]:size-[clamp(24px,9vw,40px)]
         transition-all
         duration-500
-        ${
-          activeCard === 0
-            ? "opacity-100"
-            : "opacity-65"
-        }
+        ${activeCard === 0
+                      ? "opacity-100"
+                      : "opacity-65"
+                    }
       `}
-    />
-  </motion.button>
+                />
+              </motion.button>
 
-  {/* =================================================
+              {/* =================================================
       ICON 2 — BOTTOM RIGHT
   ================================================= */}
 
-  <motion.button
-    type="button"
-    onClick={() => setActiveCard(1)}
-    aria-label={`Select condition: ${data.cards[1]?.title || "Pressure"}`}
-    animate={{
-      scale: activeCard === 1 ? 1.05 : 1,
-    }}
-    transition={{
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-    className="
+              <motion.button
+                type="button"
+                onClick={() => setActiveCard(1)}
+                aria-label={`Select condition: ${data.cards[1]?.title || "Pressure"}`}
+                animate={{
+                  scale: activeCard === 1 ? 1.05 : 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="
       absolute
       z-20
       flex
@@ -563,7 +562,8 @@ export default function HiringContinuity() {
       border
       border-[#BBD4F5]
       bg-white
-      p-sm
+      max-md:p-1.5
+      md:p-sm
 
       /*
        * DESKTOP — KEEP YOUR ORIGINAL VALUE
@@ -577,42 +577,41 @@ export default function HiringContinuity() {
       -right-[4%]
       max-md:bottom-[clamp(25px,8vw,45px)]
     "
-  >
-    <Image
-      src={data.cards[1].iconCircle}
-      alt={data.cards[1]?.title || "Condition 2"}
-      width={40}
-      height={40}
-      className={`
+              >
+                <Image
+                  src={data.cards[1].iconCircle}
+                  alt={data.cards[1]?.title || "Condition 2"}
+                  width={40}
+                  height={40}
+                  className={`
         size-iconsize-md
-        max-[480px]:size-[clamp(28px,9vw,40px)]
+        max-[480px]:size-[clamp(24px,9vw,40px)]
         transition-all
         duration-500
-        ${
-          activeCard === 1
-            ? "opacity-100"
-            : "opacity-65"
-        }
+        ${activeCard === 1
+                      ? "opacity-100"
+                      : "opacity-65"
+                    }
       `}
-    />
-  </motion.button>
+                />
+              </motion.button>
 
-  {/* =================================================
+              {/* =================================================
       ICON 3 — BOTTOM LEFT
   ================================================= */}
 
-  <motion.button
-    type="button"
-    onClick={() => setActiveCard(2)}
-    aria-label={`Select condition: ${data.cards[2]?.title || "Perception"}`}
-    animate={{
-      scale: activeCard === 2 ? 1.05 : 1,
-    }}
-    transition={{
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-    className="
+              <motion.button
+                type="button"
+                onClick={() => setActiveCard(2)}
+                aria-label={`Select condition: ${data.cards[2]?.title || "Perception"}`}
+                animate={{
+                  scale: activeCard === 2 ? 1.05 : 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="
       absolute
       z-20
       flex
@@ -622,8 +621,8 @@ export default function HiringContinuity() {
       border
       border-[#BBD4F5]
       bg-white
-      p-sm
-
+      max-md:p-1.5
+      md:p-sm
       /*
        * DESKTOP — KEEP YOUR ORIGINAL VALUE
        */
@@ -636,27 +635,26 @@ export default function HiringContinuity() {
       -left-[4%]
       max-md:bottom-[clamp(25px,8vw,45px)]
     "
-  >
-    <Image
-      src={data.cards[2].iconCircle}
-      alt={data.cards[2]?.title || "Condition 3"}
-      width={40}
-      height={40}
-      className={`
+              >
+                <Image
+                  src={data.cards[2].iconCircle}
+                  alt={data.cards[2]?.title || "Condition 3"}
+                  width={40}
+                  height={40}
+                  className={`
         size-iconsize-md
-        max-[480px]:size-[clamp(28px,9vw,40px)]
+        max-[480px]:size-[clamp(24px,9vw,40px)]
         transition-all
         duration-500
-        ${
-          activeCard === 2
-            ? "opacity-100"
-            : "opacity-65"
-        }
+        ${activeCard === 2
+                      ? "opacity-100"
+                      : "opacity-65"
+                    }
       `}
-    />
-  </motion.button>
-  </div>
-</div>
+                />
+              </motion.button>
+            </div>
+          </div>
           {/* ===================================================
               RIGHT SIDE
           =================================================== */}
@@ -686,10 +684,9 @@ md:left-0
                 transition-all
                 flex
                 
-                ${
-                  activeCard === 0
-                    ? "cursor-not-allowed bg-[#0668E1] text-white opacity-50"
-                    : "bg-[#0668E1] text-white hover:bg-[#055BC6] cursor-pointer"
+                ${activeCard === 0
+                  ? "cursor-not-allowed bg-[#0668E1] text-white opacity-50"
+                  : "bg-[#0668E1] text-white hover:bg-[#055BC6] cursor-pointer"
                 }
               `}
             >
@@ -781,7 +778,7 @@ md:left-0
                     </p>
                   </div>
 
-                
+
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -810,10 +807,9 @@ md:left-0
                 rounded-full
                 transition-all
                 flex
-                ${
-                  activeCard === data.cards.length - 1
-                    ? "cursor-not-allowed bg-[#0668E1] text-white opacity-50"
-                    : "bg-[#0668E1] text-white hover:bg-[#055BC6] cursor-pointer"
+                ${activeCard === data.cards.length - 1
+                  ? "cursor-not-allowed bg-[#0668E1] text-white opacity-50"
+                  : "bg-[#0668E1] text-white hover:bg-[#055BC6] cursor-pointer"
                 }
               `}
             >
@@ -837,10 +833,9 @@ md:left-0
                   rounded-md
                   border
                   p-sm
-                  ${
-                    preserve
-                      ? "border-[#0668E1] bg-[#0668E1] text-white"
-                      : "border-[#DEEDFF] bg-white text-[#303030]"
+                  ${preserve
+                    ? "border-[#0668E1] bg-[#0668E1] text-white"
+                    : "border-[#DEEDFF] bg-white text-[#303030]"
                   }
                 `}
               >
@@ -854,10 +849,9 @@ md:left-0
                       items-center
                       justify-center
                       rounded-full
-                      ${
-                        preserve
-                          ? "bg-white"
-                          : "bg-[#DEEDFF]"
+                      ${preserve
+                        ? "bg-white"
+                        : "bg-[#DEEDFF]"
                       }
                     `}
                   >
@@ -880,10 +874,9 @@ md:left-0
                         mt-1
                         text-xl
                         font-medium
-                        ${
-                          preserve
-                            ? "text-white"
-                            : "text-[#303030]"
+                        ${preserve
+                          ? "text-white"
+                          : "text-[#303030]"
                         }
                       `}
                     >
