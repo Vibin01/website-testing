@@ -1713,7 +1713,7 @@ export default function AlignmentTabs() {
               ALIGNED TEXT
           ================================================== */}
 
-          <div className="relative flex  items-center justify-center">
+          <div className="relative flex items-center justify-center h-[22px] md:h-auto">
             <AnimatePresence mode="wait">
               {/* ALIGNED TEXT: Opens when join completes at 5.0s, and STAYS THERE permanently (not removed in aligned state) */}
               {(processState === "across" || isAligned) && (

@@ -10,21 +10,21 @@ interface RoleCard {
 
 const roleCards: RoleCard[] = [
   {
-    role: "For Employers",
+    role: "Employers",
     avatar: "/about/icons/employers-icon.svg",
     title: "Hiring Strategy",
     description:
       "Keep priorities, execution conditions and hiring decisions connected as business realities change.",
   },
   {
-    role: "For Recruiters",
+    role: "Recruiters",
     avatar: "/about/icons/recruiters-icon.svg",
     title: "Talent Acquisition",
     description:
       "Keep coordination, participation, feedback and candidate commitment moving across hiring stages.",
   },
   {
-    role: "For Candidates",
+    role: "Candidates",
     avatar: "/about/icons/candidate-icon.svg",
     title: "Career Progress",
     description:
@@ -44,8 +44,8 @@ export default function OneHiringSystemSection() {
 
         {/* Main Title */}
         <h2 className="mb-xs text-h2 font-extrabold tracking-tight leading-tight">
-          <span className="text-[#1B1C17]">Different Goals. </span>
-          <span className="text-[#0668E1]">One Need for Continuity.</span>
+          <span className="block md:inline text-[#1B1C17]">Different Goals. </span>
+          <span className="block md:inline text-[#0668E1]">One Need for Continuity.</span>
         </h2>
       </div>
 

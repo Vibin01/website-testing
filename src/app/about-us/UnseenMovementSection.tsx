@@ -31,8 +31,8 @@ export default function UnseenMovementSection() {
 
       {/* Main Title */}
       <h2 className="mb-xs text-h2 font-extrabold tracking-tight leading-tight">
-        <span className="text-[#1B1C17]">The Status Holds. </span>
-        <span className="text-[#0668E1]">The Conditions Move.</span>
+        <span className="block md:inline text-[#1B1C17]">The Status Holds. </span>
+        <span className="block md:inline text-[#0668E1]">The Conditions Move.</span>
       </h2>
 
       {/* Description */}

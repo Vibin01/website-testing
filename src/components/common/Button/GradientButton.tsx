@@ -53,7 +53,7 @@ export const GradientButton = ({
         : EMPLOYER_URL;
 
   const buttonBaseStyle =
-    "group flex justify-center cursor-pointer items-center border-2 border-transparent bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] font-bold text-white text-xl w-fit h-btn-h rounded-md px-lg transition-all duration-500 ease-out hover:shadow-[0_8px_25px_rgba(0,117,255,0.35)] hover:brightness-105";
+    "group flex justify-center cursor-pointer items-center border-[2px] border-[#0668E1] bg-[linear-gradient(203.87deg,#0075FF_15.37%,#004BA6_84.69%)] font-bold text-white text-xl w-fit h-btn-h rounded-md px-lg transition-all duration-500 ease-out hover:shadow-[0_8px_25px_rgba(0,117,255,0.35)] hover:brightness-105";
 
   const renderArrow = () => (
     <span className="inline-flex max-w-0 -translate-x-4 items-center overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:max-w-8 group-hover:ml-2 group-hover:translate-x-0 group-hover:opacity-100">

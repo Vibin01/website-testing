@@ -76,13 +76,13 @@ export default function ChangeIsInevitableSection() {
         <div className="w-full lg:w-[54%] flex flex-col items-start text-left">
           {/* Eyebrow */}
           <p className="mb-xs text-xl font-bold uppercase tracking-wider text-[#0668E1]">
-            WHERE CHANGES BECOMES VISIBLE
+            THE MISSING CONDITION
           </p>
 
           {/* Main Title */}
           <h2 className="mb-md text-h2 font-extrabold tracking-tight leading-tight">
-            <span className="text-[#1B1C17]">Change Is Inevitable. </span>
-            <span className="text-[#0668E1]">Disconnection Is Not.</span>
+            <span className="block md:inline text-[#1B1C17]">Change Is Inevitable. </span>
+            <span className="block md:inline text-[#0668E1]">Disconnection Is Not.</span>
           </h2>
 
           {/* Description Paragraph 1 */}

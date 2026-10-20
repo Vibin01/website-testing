@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function IntentionIcon({ className = "size-7" }: { className?: string }) {
@@ -106,28 +107,28 @@ const steps = [
     title: "Intention",
     description: "What a person expects or wants.",
     color: "#3886E7",
-    icon: <IntentionIcon className="size-7 sm:size-8" />,
+    icon: "/about/icons/intention-icon.svg",
   },
   {
     id: "decision",
     title: "Decision",
     description: "What the record captures.",
     color: "#0668E1",
-    icon: <DecisionIcon className="size-7 sm:size-8" />,
+    icon: "/about/icons/decision-icon.svg",
   },
   {
     id: "action",
     title: "Action",
     description: "What behaviour begins to reveal.",
     color: "#055FCD",
-    icon: <ActionIcon className="size-7 sm:size-8" />,
+    icon: "/about/icons/action-icon.svg",
   },
   {
     id: "outcome",
     title: "Outcome",
     description: "What becomes visible last.",
     color: "#044AA0",
-    icon: <OutcomeIcon className="size-7 sm:size-8" />,
+    icon: "/about/icons/outcome-icon.svg",
   },
 ];
 
@@ -207,7 +208,15 @@ export default function OutcomeHappensLastSection() {
                   }}
                   className="w-full h-full flex flex-col justify-start p-md"
                 >
-                  <div className="mb-xs text-white">{step.icon}</div>
+                  <div className="mb-xs">
+                    <Image
+                      src={step.icon}
+                      alt={step.title}
+                      width={32}
+                      height={32}
+                      className="size-icon-lg"
+                    />
+                  </div>
                   <h3 className="mb-xs text-base font-bold text-white tracking-wide">
                     {step.title}
                   </h3>
@@ -229,7 +238,15 @@ export default function OutcomeHappensLastSection() {
               className={`relative flex-1 min-w-0 -ml-[42px] flex flex-col justify-start px-xl py-md ${zIndexes[index]}`}
             >
               <div className="pl-md">
-                <div className="mb-xs text-white">{step.icon}</div>
+                <div className="mb-xs">
+                  <Image
+                    src={step.icon}
+                    alt={step.title}
+                    width={32}
+                    height={32}
+                    className="size-7 sm:size-8"
+                  />
+                </div>
                 <h3 className="mb-xs text-base font-bold text-white tracking-wide">
                   {step.title}
                 </h3>
@@ -258,7 +275,15 @@ export default function OutcomeHappensLastSection() {
               }}
               className="relative flex flex-col justify-center p-sm pr-10 text-white"
             >
-              <div className="mb-xs text-white">{step.icon}</div>
+              <div className="mb-xs">
+                <Image
+                  src={step.icon}
+                  alt={step.title}
+                  width={32}
+                  height={32}
+                  className="size-7 sm:size-8"
+                />
+              </div>
               <h3 className="mb-xs text-base font-bold text-white tracking-wide">
                 {step.title}
               </h3>

@@ -11,31 +11,31 @@ const actors = [
     role: "Employer",
     subtitle: "Hiring Strategy",
     image: "/home/icons/hiring-target-icon.svg",
-    acrossLink:"https://employer.connectec.app/register"
+    acrossLink: "https://employer.connectec.app/register"
   },
   {
     role: "Recruiter",
     subtitle: "Talent Acquisition",
     image: "/home/icons/successful-placements-icon.svg",
-    acrossLink:"https://recruiter.connectec.app/"
+    acrossLink: "https://recruiter.connectec.app/"
   },
   {
     role: "Candidate",
     subtitle: "Career Progress",
     image: "/home/icons/right-talent-icon.svg",
-    acrossLink:"https://play.google.com/store/apps/details?id=com.primethic.connectec"
+    acrossLink: "https://play.google.com/store/apps/details?id=com.primethic.connectec"
   },
 ];
 
 export default function ActorCards() {
   const showDesktopWarning = () => {
     toast.custom((t) => (
-      <ShowDesktopWarning toastId={t}/>
+      <ShowDesktopWarning toastId={t} />
     ));
   };
 
   return (
-    <section className="w-full pt-[5%] pb-[2%] md:py-[1%]">
+    <section className="w-full pt-[8%] pb-[2%] md:py-[1%] mt-xl md:mt-0">
       <div className="grid grid-cols-1 gap-md md:grid-cols-3">
 
         {actors.map((actor) => (

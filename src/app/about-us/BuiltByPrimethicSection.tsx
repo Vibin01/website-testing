@@ -51,7 +51,7 @@ export default function BuiltByPrimethicSection() {
 
           {/* Right Column: Phone Mockup */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px]">
+            <div className="relative w-full md:w-[45%]">
               <Image
                 src="/about/alignment-restore.svg"
                 alt="Connect EC Application Preview"
