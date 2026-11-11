@@ -1,0 +1,144 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+import { toast } from "sonner";
+import { TriangleAlert } from "lucide-react";
+import { ShowDesktopWarning } from "./Toast/ShowDesktopWarning";
+import { GradientButton } from "./Button/GradientButton";
+
+type OutcomeHighlightSectionData = {
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  points: string[];
+  description?: string;
+  description_top?: string;
+  footerText: string;
+  footerHighlight?: string;
+  footerSuffix?: string;
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  bottomTitle?: string;
+  bottomHighlight?: string;
+};
+
+interface OutcomeHighlightSectionProps {
+  data: OutcomeHighlightSectionData;
+}
+
+export default function OutcomeHighlightSection({
+  data,
+}: OutcomeHighlightSectionProps) {
+  const {
+    title,
+    titleHighlight,
+    subtitle,
+    points,
+    description,
+    description_top,
+    footerText,
+    footerHighlight,
+    footerSuffix,
+    bottomTitle,
+    bottomHighlight,
+    image,
+  } = data;
+
+  const showBottomBlock = !!(bottomTitle && bottomHighlight);
+const pathname=usePathname();
+
+const showDesktopWarning = () => {
+  toast.custom((t) => (
+       <ShowDesktopWarning toastId={t}/>
+   
+  ));
+};
+
+const isCandidate = pathname.includes("candidate");
+const isRecruiter = pathname.includes("recruiter");
+const isEmployer = pathname.includes("employer");
+
+  return (
+    <section className="w-full bg-white">
+      <div className="mx-auto grid items-center gap-md sm:grid-cols-[1.25fr_0.75fr]">
+        {/* Left Content */}
+        <div>
+          <h2 className="text-h2 font-extrabold text-[#0668E1]">{title}
+            <span className="text-[#1B1C17]">{titleHighlight}</span>
+          </h2>
+
+          <p className="mt-xs text-h6 font-bold mb-md">{subtitle}</p>
+
+          {description_top && (
+            <p className="text-base font-medium mt-md">{description_top} </p>
+          )}
+          <div className="md:w-[80%] mt-sm space-y-sm p-md bg-[#F2F8FF] border border-[#B2D0F6] rounded-md ">
+            <div className="space-y-[1.8%]">
+              {points.map((point, index) => (
+                <div key={index} className="flex items-start gap-xs">
+                  <img
+                    src="/icons/tick-gradient-icon.svg"
+                    alt="tick icon"
+                    className="mt-[0.5%] size-iconsize-sm p-[0.1%]"
+                  />
+                  <p className="text-xl font-medium">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-base font-medium mt-sm">{description} </p>
+
+          <div className="mt-md">
+            <p
+              className={`text-base font-medium ${
+                showBottomBlock ? "mt-1" : "mt-"
+              }`}
+            >
+<span dangerouslySetInnerHTML={{ __html: footerText }} />
+              <span
+                className={`font-bold ${!showBottomBlock ? "text-[#0668E1]" : ""} `}
+              >
+               {" "} {footerHighlight}{" "}
+              </span>
+              {!showBottomBlock && <br />}
+              {footerSuffix}
+            </p>
+
+            {showBottomBlock && (
+              <h3 className="text-h5 font-bold">
+                {bottomTitle}{" "}
+                <span className="text-[#0668E1]">{bottomHighlight}</span>
+              </h3>
+            )}
+          </div>
+        
+        <div className="mt-md">
+        <GradientButton text={"Unlock Connect EC for Free"}/>
+        </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="flex justify-center lg:justify-end">
+          <div className="relative w-[90%]">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              className="h-auto w-full object-contain"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
